@@ -4,10 +4,12 @@
 > Enterprise-grade page building blocks for hospitals, clinics, corporate sites, and e-commerce.
 
 [![License: GPL v2 or later](https://img.shields.io/badge/License-GPL%20v2%20or%20later-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+[![GitHub](https://img.shields.io/badge/GitHub-mawkunnmyat%2Ftwork--builder-181717.svg)](https://github.com/mawkunnmyat/twork-builder)
 [![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-blue.svg)](https://wordpress.org/)
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg)](https://www.php.net/)
 [![Node.js](https://img.shields.io/badge/Node.js-18.0%2B-339933.svg)](https://nodejs.org/)
 [![Gutenberg](https://img.shields.io/badge/Gutenberg-Block%20Editor-0073aa.svg)](https://developer.wordpress.org/block-editor/)
+[![Blocks](https://img.shields.io/badge/Blocks-270%2B-orange.svg)](#-block-catalog)
 
 ---
 
@@ -89,9 +91,11 @@ Built with **ES6+**, **SCSS**, **@wordpress/scripts**, and **WordPress best prac
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/tworksystem/twork-builder.git
+git clone https://github.com/mawkunnmyat/twork-builder.git
 cd twork-builder
 ```
+
+> 🔗 **Upstream mirror:** [tworksystem/twork-builder](https://github.com/tworksystem/twork-builder) — official T-Work System organization repository.
 
 ### 2️⃣ Install Dependencies
 
@@ -590,12 +594,14 @@ This project is licensed under the **GPL v2 or later** — see [LICENSE](LICENSE
 
 - 🌐 **Website:** [https://www.tworksystem.com](https://www.tworksystem.com)
 - 🔗 **Plugin URI:** [https://www.tworksystem.com/twork-builder](https://www.tworksystem.com/twork-builder)
-- 🐙 **GitHub:** [https://github.com/tworksystem/twork-builder](https://github.com/tworksystem/twork-builder)
+- 🐙 **Primary Repo:** [https://github.com/mawkunnmyat/twork-builder](https://github.com/mawkunnmyat/twork-builder)
+- 🏢 **Org Repo:** [https://github.com/tworksystem/twork-builder](https://github.com/tworksystem/twork-builder)
 
-### Author
+### Author & Maintainer
 
 **Maw Kunn Myat** — [@mawkunnmyat](https://github.com/mawkunnmyat)  
-📧 mapoeeiphyu2017.miitinternship@gmail.com
+📧 [mapoeeiphyu2017.miitinternship@gmail.com](mailto:mapoeeiphyu2017.miitinternship@gmail.com)  
+💼 Principal Developer — T-Work System Co., Ltd.
 
 ---
 
