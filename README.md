@@ -10,7 +10,7 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18.0%2B-339933.svg)](https://nodejs.org/)
 [![Gutenberg](https://img.shields.io/badge/Gutenberg-Block%20Editor-0073aa.svg)](https://developer.wordpress.org/block-editor/)
 [![Blocks](https://img.shields.io/badge/Blocks-270%2B-orange.svg)](#-block-catalog)
-[![Version](https://img.shields.io/badge/Version-1.0.0-green.svg)](https://github.com/mawkunnmyat/mk-builder/releases)
+[![Version](https://img.shields.io/badge/Version-1.1.0-green.svg)](https://github.com/mawkunnmyat/mk-builder/releases)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/mawkunnmyat/mk-builder)
 
 ---
@@ -31,6 +31,8 @@
 - [Block Architecture](#-block-architecture)
 - [PHP Render Callbacks](#-php-render-callbacks)
 - [Frontend Assets](#-frontend-assets)
+- [Shared Editor Utilities](#-shared-editor-utilities)
+- [Jivaka Hospital Blocks](#-jivaka-hospital-blocks)
 - [Security](#-security)
 - [Deployment](#-deployment)
 - [Troubleshooting](#-troubleshooting)
@@ -43,7 +45,20 @@
 
 ## 🆕 What's New
 
-### ✨ July 11, 2026 — MK Builder v1.0.0
+### ✨ July 11, 2026 — MK Builder v1.1.0
+
+| Area | Update |
+|------|--------|
+| 🏥 **Jivaka Header** | New `mk/jivaka-header-section` block with desktop mega menu and mobile navigation |
+| 🩺 **Help Section** | Enhanced booking card, department select, media helpers, and frontend init script |
+| 👨‍⚕️ **Doctor Suite** | Shared filter utilities powering directory, search, and card blocks |
+| 🚑 **Ambulance Blocks** | Refined process and technology section editor controls |
+| 🔬 **Radiology Blocks** | Improved hero section and diagnostic tabs markup parity |
+| 🎨 **Hero New** | Dedicated editor styles and improved block editor preview |
+| 🧰 **Shared Module** | `@mk-builder/shared` webpack alias for cross-block editor helpers |
+| 📚 **Documentation** | Expanded README with hospital block suite and developer guides |
+
+### 🎉 July 11, 2026 — MK Builder v1.0.0
 
 | Area | Update |
 |------|--------|
@@ -189,6 +204,11 @@ mk-builder/
 │   ├── ph-*/                        # Pharmacy / WooCommerce blocks
 │   ├── csr-*/                       # CSR & community blocks
 │   ├── brand-*/                     # Industry-agnostic brand page blocks
+│   ├── jivaka-header-section/       # Jivaka Hospital site header + mega menu
+│   ├── help-section/                # Healthcare help & booking CTA section
+│   ├── hero-new-section/            # Modern hero with editor-only styles
+│   ├── doctor-*/                    # Doctor directory, search, and card blocks
+│   ├── shared/                      # Cross-block editor utilities (@mk-builder/shared)
 │   ├── hero-banner-*/               # Hero carousel parent + slide child
 │   ├── image-card-*/                # Services / promo carousel blocks
 │   ├── category-card-*/             # Product category grid blocks
@@ -249,7 +269,8 @@ Department layouts, centre pages, doctor directories, emergency units, neuro/rad
 
 ```
 emergency-hero · doctor-search-filter-section · health-check-packages-section
-neuro-centre-section · rad-stats-section · phy-conditions-section · paediatrics-hero · …
+neuro-centre-section · rad-stats-section · phy-conditions-section · paediatrics-hero
+jivaka-header-section · help-section · hero-new-section · …
 ```
 
 ### 🛒 Pharmacy & E-Commerce
@@ -499,6 +520,67 @@ assets/js/
 
 ---
 
+## 🧰 Shared Editor Utilities
+
+Cross-block editor helpers live in `src/shared/` and are importable via the `@mk-builder/shared` webpack alias.
+
+| Module | Purpose |
+|--------|---------|
+| `block-helpers.js` | 🎨 Flexible icon renderer, department labels, shared markup helpers |
+| `doctor-filter-data.js` | 👨‍⚕️ Default doctor filter taxonomy and department slug maps |
+| `doctor-filter-sync.js` | 🔄 Sync filter state between parent sections and child card blocks |
+| `use-doctor-filter-lists.js` | 🪝 React hook for inspector filter list management |
+| `use-doctor-card-filter-options.js` | 🪝 Hook for per-card filter option binding |
+| `filter-lists-inspector-panel.js` | 🎛️ Reusable inspector panel for filter list editing |
+| `inspector-option-table.js` | 📋 Tabular inspector control for option rows |
+| `select-options.js` | 📝 Shared select/dropdown option builders |
+| `doctor-filter-editor.scss` | 🎨 Editor-only styles for doctor filter controls |
+
+**Usage in block `edit.js`:**
+
+```javascript
+import { FlexibleIcon, getDepartmentLabel } from '@mk-builder/shared/block-helpers';
+import FilterListsInspectorPanel from '@mk-builder/shared/filter-lists-inspector-panel';
+```
+
+> 💡 **Tip:** Keep shared logic in `src/shared/` — never duplicate filter or icon helpers across individual blocks.
+
+---
+
+## 🏥 Jivaka Hospital Blocks
+
+Purpose-built blocks for **Jivaka Hospital** and similar healthcare portals.
+
+| Block | Slug | Description |
+|-------|------|-------------|
+| 🏷️ Jivaka Header | `mk/jivaka-header-section` | Site header with logo, hotline, CTA, desktop mega menu, and mobile drawer |
+| 🩺 Help Section | `mk/help-section` | Two-column care intro with department booking card and media helpers |
+| 🖼️ Hero New | `mk/hero-new-section` | Modern hero banner with dedicated `editor.scss` for accurate editor preview |
+| 🔍 Doctor Search Filter | `mk/doctor-search-filter-section` | Searchable doctor directory with department and specialty filters |
+| 📋 Doctor Directory | `mk/doctor-directory-section` | Grid layout for doctor profiles with shared filter sync |
+| 👤 Doctor Card Item | `mk/doctor-card-item` | Individual doctor profile card child block |
+| 🚑 Ambulance Process | `mk/amb-process-section` | Emergency ambulance process flow section |
+| 🔬 Radiology Hero | `mk/rad-hero-section` | Radiology department hero with CTA and imagery |
+| 🧪 Diagnostic Tabs | `mk/rad-diagnostic-tabs` | Tabbed radiology diagnostic services layout |
+
+### 🏠 Recommended Jivaka Home Page Stack
+
+```
+jivaka-header-section → hero-new-section → help-section → doctor-search-filter-section
+→ doctor-directory-section → key-services-section → testimonial-section
+```
+
+### ⚡ Frontend Init Scripts
+
+| Script | Block | Purpose |
+|--------|-------|---------|
+| `jivaka-header-init.js` | `mk/jivaka-header-section` | Mega menu, mobile drawer, sticky header |
+| `help-section-init.js` | `mk/help-section` | Booking form interactions and department select |
+| `hero-new-init.js` | `mk/hero-new-section` | Hero animations and responsive layout |
+| `doctor-directory-init.js` | `mk/doctor-directory-section` | Live search and filter toggling |
+
+---
+
 ## 🔒 Security
 
 MK Builder follows WordPress security best practices across PHP, JavaScript, and the block editor.
@@ -623,6 +705,17 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 ---
 
 ## 📅 Changelog
+
+### 🚀 `1.1.0` — July 11, 2026
+
+- 🏥 **Jivaka Header:** New `mk/jivaka-header-section` with mega menu and mobile navigation
+- 🩺 **Help Section:** Booking helpers, media utilities, and `help-section-init.js` frontend script
+- 👨‍⚕️ **Doctor Suite:** Shared `@mk-builder/shared` filter utilities across directory blocks
+- 🚑 **Ambulance:** Refined `amb-process-section` and `amb-tech-section` editor controls
+- 🔬 **Radiology:** Improved `rad-hero-section` and `rad-diagnostic-tabs` markup parity
+- 🎨 **Hero New:** Added `editor.scss` for accurate block editor preview
+- 🧰 **Webpack:** `@mk-builder/shared` alias for cross-block imports
+- 📚 **Docs:** Expanded README with hospital block suite and shared utilities guide
 
 ### 🚀 `1.0.0` — July 11, 2026
 

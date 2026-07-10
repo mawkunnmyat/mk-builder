@@ -15,9 +15,8 @@ my-avocado/
 .cursorrules
 **/.cursorrules
 
-# Backup assets
-*.bak
-*.bak.*
+# Local dev sync utilities (machine-specific paths)
+scripts/sync-from-twork.py
 
 # Build outputs
 build/
