@@ -1,0 +1,75 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "mk/jivaka-header-section",
+	"version": "1.0.0",
+	"title": "Jivaka Header",
+	"category": "mk-builder",
+	"icon": "menu",
+	"description": "Jivaka Hospital site header with desktop mega menu and mobile navigation.",
+	"keywords": [ "header", "navigation", "jivaka", "menu", "mk" ],
+	"attributes": {
+		"logoUrl": {
+			"type": "string",
+			"default": "/"
+		},
+		"logoImage": {
+			"type": "string",
+			"default": "https://jivakahospital.com/wp-content/uploads/2025/12/0-02-06-a90eb79c273489ee9c9d50c8cd87cd8185f0ff16619e0905d2055889329a1c5a_2231d085a20.jpg"
+		},
+		"logoImageId": {
+			"type": "number"
+		},
+		"logoAlt": {
+			"type": "string",
+			"default": "Jivaka Hospital Logo"
+		},
+		"ctaText": {
+			"type": "string",
+			"default": "Book Now"
+		},
+		"ctaUrl": {
+			"type": "string",
+			"default": "/appointment/"
+		},
+		"mobileCtaText": {
+			"type": "string",
+			"default": "Book Appointment"
+		},
+		"hotlineText": {
+			"type": "string",
+			"default": "09-789 101 101"
+		},
+		"navItems": {
+			"type": "array",
+			"default": []
+		},
+		"containerMaxWidth": {
+			"type": "number",
+			"default": 1200
+		},
+		"containerPadding": {
+			"type": "number",
+			"default": 30
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [ "wide", "full" ],
+		"multiple": false
+	},
+	"example": {
+		"viewportWidth": 1200,
+		"attributes": {
+			"logoUrl": "/",
+			"ctaText": "Book Now",
+			"ctaUrl": "/appointment/",
+			"hotlineText": "09-789 101 101"
+		}
+	},
+	"textdomain": "mk-builder",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"style": "file:./style-index.css"
+}
