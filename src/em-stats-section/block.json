@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/em-stats-section",
+	"name": "mk/em-stats-section",
 	"version": "1.0.0",
 	"title": "Stats Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "chart-bar",
 	"description": "24/7 emergency quick stats bar with icon, value and label items (em-stats).",
-	"keywords": [ "emergency", "stats", "24/7", "grid", "twork" ],
+	"keywords": [ "emergency", "stats", "24/7", "grid", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -101,7 +101,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/em-stat-item",
+				"name": "mk/em-stat-item",
 				"attributes": {
 					"iconClass": "fas fa-clock",
 					"statValue": "24/7",
@@ -109,7 +109,7 @@
 				}
 			},
 			{
-				"name": "twork/em-stat-item",
+				"name": "mk/em-stat-item",
 				"attributes": {
 					"iconClass": "fas fa-user-md",
 					"statValue": "10+",
@@ -117,7 +117,7 @@
 				}
 			},
 			{
-				"name": "twork/em-stat-item",
+				"name": "mk/em-stat-item",
 				"attributes": {
 					"iconClass": "fas fa-ambulance",
 					"statValue": "15 min",
@@ -125,7 +125,7 @@
 				}
 			},
 			{
-				"name": "twork/em-stat-item",
+				"name": "mk/em-stat-item",
 				"attributes": {
 					"iconClass": "fas fa-bed",
 					"statValue": "20+",
@@ -134,7 +134,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

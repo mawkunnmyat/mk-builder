@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-process-step",
+	"name": "mk/agrezer-process-step",
 	"version": "1.0.0",
 	"title": "Agrezer Process — Step",
-	"category": "twork-builder",
-	"parent": [ "twork/agrezer-process-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/agrezer-process-section" ],
 	"icon": "editor-ol",
 	"description": "Left or right process step with badge, copy, and optional CTA.",
 	"supports": {
@@ -53,6 +53,6 @@
 			"ctaUrl": "#"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

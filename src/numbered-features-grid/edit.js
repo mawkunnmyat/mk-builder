@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -8,10 +8,10 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, RangeControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/numbered-feature-item' ];
+const ALLOWED_BLOCKS = [ 'mk/numbered-feature-item' ];
 const TEMPLATE = [
 	[
-		'twork/numbered-feature-item',
+		'mk/numbered-feature-item',
 		{
 			number: '01',
 			title: 'Natural Ingredients',
@@ -20,7 +20,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/numbered-feature-item',
+		'mk/numbered-feature-item',
 		{
 			number: '02',
 			title: 'Consistent Quality',
@@ -29,7 +29,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/numbered-feature-item',
+		'mk/numbered-feature-item',
 		{
 			number: '03',
 			title: 'Trusted Brand',
@@ -38,7 +38,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/numbered-feature-item',
+		'mk/numbered-feature-item',
 		{
 			number: '04',
 			title: 'Fair Pricing',
@@ -47,7 +47,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/numbered-feature-item',
+		'mk/numbered-feature-item',
 		{
 			number: '05',
 			title: 'Multiple Pack Sizes',
@@ -56,7 +56,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/numbered-feature-item',
+		'mk/numbered-feature-item',
 		{
 			number: '06',
 			title: 'Mandalay Origin',
@@ -79,7 +79,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'why-choose-us twork-numbered-features-grid-editor',
+				'why-choose-us mk-numbered-features-grid-editor',
 			style: {
 				backgroundColor: backgroundColor || '#ffffff',
 				paddingTop: `${ padding }px`,
@@ -105,12 +105,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ PanelColorSettings && (
 							<PanelColorSettings
-								title={ __( 'Background', 'twork-builder' ) }
+								title={ __( 'Background', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: backgroundColor,
@@ -120,14 +120,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Background Color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
 							/>
 						) }
 						<RangeControl
-							label={ __( 'Padding (px)', 'twork-builder' ) }
+							label={ __( 'Padding (px)', 'mk-builder' ) }
 							value={ padding }
 							onChange={ ( val ) =>
 								setAttributes( { padding: val } )
@@ -139,7 +139,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -151,11 +151,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Grid', 'twork-builder' ) }
+						title={ __( 'Grid', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Columns', 'twork-builder' ) }
+							label={ __( 'Columns', 'mk-builder' ) }
 							value={ columns }
 							onChange={ ( val ) =>
 								setAttributes( { columns: val } )
@@ -183,7 +183,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section eyebrow…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 						<RichText
@@ -195,7 +195,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section title…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</header>

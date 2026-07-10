@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/em-process-step",
+	"name": "mk/em-process-step",
 	"version": "1.0.0",
 	"title": "Process Step",
-	"parent": [ "twork/em-process-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/em-process-section" ],
+	"category": "mk-builder",
 	"icon": "controls-repeat",
 	"description": "Single process step (numbered circle, title, description) for the Emergency Process Section.",
-	"keywords": [ "step", "process", "emergency", "twork" ],
+	"keywords": [ "step", "process", "emergency", "mk" ],
 	"attributes": {
 		"stepNumber": {
 			"type": "string",
@@ -33,6 +33,6 @@
 			"description": ""
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

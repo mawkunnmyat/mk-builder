@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/dept-doc-card-item",
+	"name": "mk/dept-doc-card-item",
 	"title": "Doc Card Item",
-	"category": "twork-builder",
-	"parent": [ "twork/dept-specialists-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/dept-specialists-section" ],
 	"attributes": {
 		"imageUrl": {
 			"type": "string",

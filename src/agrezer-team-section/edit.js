@@ -16,10 +16,10 @@ import {
 	Button,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/team-member' ];
+const ALLOWED_BLOCKS = [ 'mk/team-member' ];
 const TEMPLATE = [
 	[
-		'twork/team-member',
+		'mk/team-member',
 		{
 			name: 'Harry Black',
 			role: 'Chief Executive Officer',
@@ -27,7 +27,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/team-member',
+		'mk/team-member',
 		{
 			name: 'Marry Olson',
 			role: 'Shop Keeper',
@@ -35,7 +35,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/team-member',
+		'mk/team-member',
 		{
 			name: 'Arun Patel',
 			role: 'Chief Agronomist',
@@ -77,7 +77,7 @@ export default function Edit( {
 	);
 
 	const dynamicStyles = `
-    #twork-block-${ clientId } {
+    #mk-block-${ clientId } {
         ${
 			backgroundColor
 				? `background-color: ${ backgroundColor } !important;`
@@ -89,11 +89,11 @@ export default function Edit( {
         --tw-team-pb: ${
 			paddingBottom !== undefined ? paddingBottom : 110
 		}px;
-        --twork-team-max: ${ containerMaxWidth }px;
-        --twork-team-width-pct: ${ containerWidthPct }%;
-        --twork-team-gap: ${ gridGap }px;
-        --twork-team-cols: ${ parsedCols };
-        --twork-team-header-mb: ${ headerMarginBottom }px;
+        --mk-team-max: ${ containerMaxWidth }px;
+        --mk-team-width-pct: ${ containerWidthPct }%;
+        --mk-team-gap: ${ gridGap }px;
+        --mk-team-cols: ${ parsedCols };
+        --mk-team-header-mb: ${ headerMarginBottom }px;
         --tw-tag-color: ${ taglineColor };
         --tw-tag-size: ${ taglineFontSize }px;
         --tw-tag-icon-size: ${ tagIconSize }px;
@@ -108,13 +108,13 @@ export default function Edit( {
 `;
 
 	const blockProps = useBlockProps( {
-		id: `twork-block-${ clientId }`,
-		className: 'twork-team-section twork-team-section-editor',
+		id: `mk-block-${ clientId }`,
+		className: 'mk-team-section mk-team-section-editor',
 	} );
 
 	const innerBlocksProps = useInnerBlocksProps(
 		{
-			className: 'twork-team-section__grid',
+			className: 'mk-team-section__grid',
 		},
 		{
 			allowedBlocks: ALLOWED_BLOCKS,
@@ -129,11 +129,11 @@ export default function Edit( {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Tagline', 'twork-builder' ) }
+						title={ __( 'Tagline', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ tagIconAlt }
 							onChange={ ( val ) =>
 								setAttributes( { tagIconAlt: val } )
@@ -143,7 +143,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Tagline font size (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ taglineFontSize }
 							onChange={ ( val ) =>
@@ -156,7 +156,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Tag icon size (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ tagIconSize }
 							onChange={ ( val ) =>
@@ -167,7 +167,7 @@ export default function Edit( {
 						/>
 
 						<RangeControl
-							label={ __( 'Tagline gap (px)', 'twork-builder' ) }
+							label={ __( 'Tagline gap (px)', 'mk-builder' ) }
 							value={ taglineGap }
 							onChange={ ( val ) =>
 								setAttributes( { taglineGap: val } )
@@ -190,7 +190,7 @@ export default function Edit( {
 								labels={ {
 									title: __(
 										'Small tagline icon',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -199,7 +199,7 @@ export default function Edit( {
 								<img
 									src={ tagIcon }
 									alt=""
-									className="twork-team-section__tag-icon"
+									className="mk-team-section__tag-icon"
 									width={ tagIconSize }
 									height={ tagIconSize }
 								/>
@@ -214,36 +214,36 @@ export default function Edit( {
 										} )
 									}
 								>
-									{ __( 'Remove icon', 'twork-builder' ) }
+									{ __( 'Remove icon', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Tagline color', 'twork-builder' ) }
+						title={ __( 'Tagline color', 'mk-builder' ) }
 						colorSettings={ [
 							{
 								value: taglineColor,
 								onChange: ( val ) =>
 									setAttributes( { taglineColor: val } ),
-								label: __( 'Tagline text', 'twork-builder' ),
+								label: __( 'Tagline text', 'mk-builder' ),
 							},
 						] }
 					/>
 
 					<PanelBody
-						title={ __( 'Title Settings', 'twork-builder' ) }
+						title={ __( 'Title Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title', 'twork-builder' ) }
+							title={ __( 'Title', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title color', 'twork-builder' ),
+									label: __( 'Title color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -251,11 +251,11 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Title font size (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							help={ __(
 								'Reset to use the default responsive size. Custom: 20–100 px.',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleFontSize < 20 ? 20 : titleFontSize }
 							onChange={ ( val ) =>
@@ -271,13 +271,13 @@ export default function Edit( {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Grid', 'twork-builder' ) }
+						title={ __( 'Grid', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Columns (large screens)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ columns }
 							onChange={ ( val ) =>
@@ -288,7 +288,7 @@ export default function Edit( {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gridGap }
 							onChange={ ( val ) =>
 								setAttributes( { gridGap: val } )
@@ -300,7 +300,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Space below heading (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ headerMarginBottom }
 							onChange={ ( val ) =>
@@ -312,13 +312,13 @@ export default function Edit( {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -332,7 +332,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Container width (%)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerWidthPct }
 							onChange={ ( val ) =>
@@ -343,7 +343,7 @@ export default function Edit( {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -356,7 +356,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -369,7 +369,7 @@ export default function Edit( {
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						colorSettings={ [
 							{
 								value: backgroundColor,
@@ -377,7 +377,7 @@ export default function Edit( {
 									setAttributes( { backgroundColor: val } ),
 								label: __(
 									'Section background',
-									'twork-builder'
+									'mk-builder'
 								),
 							},
 						] }
@@ -389,9 +389,9 @@ export default function Edit( {
 				dangerouslySetInnerHTML={ { __html: dynamicStyles } }
 			/>
 			<section { ...blockProps }>
-				<div className="twork-team-section__container">
-					<div className="twork-team-section__header">
-						<div className="twork-team-section__tagline">
+				<div className="mk-team-section__container">
+					<div className="mk-team-section__header">
+						<div className="mk-team-section__tagline">
 							{ tagIcon && (
 								<MediaUpload
 									onSelect={ ( media ) =>
@@ -407,7 +407,7 @@ export default function Edit( {
 										<img
 											src={ tagIcon }
 											alt={ tagIconAlt || '' }
-											className="twork-team-section__tag-icon"
+											className="mk-team-section__tag-icon"
 											width={ tagIconSize }
 											height={ tagIconSize }
 											onClick={ open }
@@ -432,7 +432,7 @@ export default function Edit( {
 								onChange={ ( val ) =>
 									setAttributes( { tagline: val } )
 								}
-								placeholder={ __( 'Tagline', 'twork-builder' ) }
+								placeholder={ __( 'Tagline', 'mk-builder' ) }
 								allowedFormats={ [
 									'core/bold',
 									'core/italic',
@@ -441,14 +441,14 @@ export default function Edit( {
 						</div>
 						<RichText
 							tagName="h2"
-							className="twork-team-section__title"
+							className="mk-team-section__title"
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
 							}
 							placeholder={ __(
 								'Section title',
-								'twork-builder'
+								'mk-builder'
 							) }
 							allowedFormats={ [
 								'core/bold',

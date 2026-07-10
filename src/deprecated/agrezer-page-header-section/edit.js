@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -58,7 +58,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		setAttributes( {
 			breadcrumbs: [
 				...crumbs,
-				{ label: __( 'New item', 'twork-builder' ), url: '' },
+				{ label: __( 'New item', 'mk-builder' ), url: '' },
 			],
 		} );
 	};
@@ -75,7 +75,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'agrezer-page-header twork-agrezer-page-header-section-editor',
+				'agrezer-page-header mk-agrezer-page-header-section-editor',
 			style: {
 				backgroundColor: fallbackBgColor,
 				paddingTop: `${ paddingTop }px`,
@@ -104,24 +104,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Title', 'twork-builder' ) }
+						title={ __( 'Title', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Page title', 'twork-builder' ) }
+							label={ __( 'Page title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
 							}
 							help={ __(
 								'Shown as the main heading (agrezer-page-header__title). You can also click the title in the preview.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Background', 'twork-builder' ) }
+						title={ __( 'Background', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ ! backgroundImage ? (
@@ -138,7 +138,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Header background',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -167,7 +167,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								>
 									{ __(
 										'Remove background',
-										'twork-builder'
+										'mk-builder'
 									) }
 								</Button>
 							</>
@@ -175,28 +175,28 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<SelectControl
 							label={ __(
 								'Background position',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ backgroundPosition }
 							options={ [
 								{
-									label: __( 'Center', 'twork-builder' ),
+									label: __( 'Center', 'mk-builder' ),
 									value: 'center center',
 								},
 								{
-									label: __( 'Top', 'twork-builder' ),
+									label: __( 'Top', 'mk-builder' ),
 									value: 'center top',
 								},
 								{
-									label: __( 'Bottom', 'twork-builder' ),
+									label: __( 'Bottom', 'mk-builder' ),
 									value: 'center bottom',
 								},
 								{
-									label: __( 'Left', 'twork-builder' ),
+									label: __( 'Left', 'mk-builder' ),
 									value: 'left center',
 								},
 								{
-									label: __( 'Right', 'twork-builder' ),
+									label: __( 'Right', 'mk-builder' ),
 									value: 'right center',
 								},
 							] }
@@ -207,13 +207,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Overlay & fallback', 'twork-builder' ) }
+						title={ __( 'Overlay & fallback', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
 							label={ __(
 								'Photo overlay (CSS)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ overlayColor }
 							onChange={ ( val ) =>
@@ -221,14 +221,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. rgba(12, 38, 20, 0.85)',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
 							label={ __(
 								'Fallback background (CSS)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ fallbackBgColor }
 							onChange={ ( val ) =>
@@ -236,7 +236,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Shown behind overlay when no image is set.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -244,12 +244,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					<PanelBody
 						title={ __(
 							'Graphic (e.g. tractor)',
-							'twork-builder'
+							'mk-builder'
 						) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Image alt text', 'twork-builder' ) }
+							label={ __( 'Image alt text', 'mk-builder' ) }
 							value={ graphicAlt }
 							onChange={ ( val ) =>
 								setAttributes( { graphicAlt: val } )
@@ -271,7 +271,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Side graphic (PNG/SVG)',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -296,12 +296,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove graphic', 'twork-builder' ) }
+									{ __( 'Remove graphic', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ graphicMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { graphicMaxWidth: val } )
@@ -314,7 +314,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Slide-in animation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ enableTractorAnimation }
 							onChange={ ( val ) =>
@@ -322,17 +322,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Still respects visitor “reduce motion” settings.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Breadcrumb', 'twork-builder' ) }
+						title={ __( 'Breadcrumb', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Separator', 'twork-builder' ) }
+							label={ __( 'Separator', 'mk-builder' ) }
 							value={ separatorChar }
 							onChange={ ( val ) =>
 								setAttributes( { separatorChar: val } )
@@ -342,7 +342,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<p className="components-base-control__help">
 							{ __(
 								'Leave URL empty for the current page (shown in green, not linked).',
-								'twork-builder'
+								'mk-builder'
 							) }
 						</p>
 						{ crumbs.map( ( crumb, index ) => (
@@ -355,7 +355,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								} }
 							>
 								<TextControl
-									label={ __( 'Label', 'twork-builder' ) }
+									label={ __( 'Label', 'mk-builder' ) }
 									value={ crumb.label }
 									onChange={ ( val ) =>
 										updateCrumb( index, 'label', val )
@@ -365,7 +365,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'URL (empty = current)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ crumb.url }
 									onChange={ ( val ) =>
@@ -380,23 +380,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									disabled={ crumbs.length < 2 }
 									onClick={ () => removeCrumb( index ) }
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button isSecondary onClick={ addCrumb }>
-							{ __( 'Add crumb', 'twork-builder' ) }
+							{ __( 'Add crumb', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -410,7 +410,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container width (%)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerWidthPct }
 							onChange={ ( val ) =>
@@ -421,7 +421,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -434,7 +434,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -448,7 +448,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Content row min height (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMinHeight }
 							onChange={ ( val ) =>
@@ -484,7 +484,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
 							}
-							placeholder={ __( 'Page title', 'twork-builder' ) }
+							placeholder={ __( 'Page title', 'mk-builder' ) }
 							allowedFormats={ [ 'core/bold', 'core/italic' ] }
 						/>
 
@@ -549,7 +549,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								allowedTypes={ [ 'image' ] }
 								multiple={ false }
 								labels={ {
-									title: __( 'Graphic', 'twork-builder' ),
+									title: __( 'Graphic', 'mk-builder' ),
 								} }
 							/>
 						</div>

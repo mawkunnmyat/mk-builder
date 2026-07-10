@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	MediaUpload,
@@ -164,48 +164,48 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Content Settings', 'twork-builder' ) }
+						title={ __( 'Content Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Meta Title', 'twork-builder' ) }
+							label={ __( 'Meta Title', 'mk-builder' ) }
 							value={ metaTitle }
 							onChange={ ( value ) =>
 								setAttributes( { metaTitle: value } )
 							}
 							help={ __(
 								'Small uppercase title above main heading',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextareaControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( value ) =>
 								setAttributes( { title: value } )
 							}
 							help={ __(
 								'Main title (use \\n for line breaks)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							rows={ 2 }
 						/>
 
 						<TextControl
-							label={ __( 'Highlight Text', 'twork-builder' ) }
+							label={ __( 'Highlight Text', 'mk-builder' ) }
 							value={ highlightText }
 							onChange={ ( value ) =>
 								setAttributes( { highlightText: value } )
 							}
 							help={ __(
 								'Text to highlight in orange',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextareaControl
-							label={ __( 'Description', 'twork-builder' ) }
+							label={ __( 'Description', 'mk-builder' ) }
 							value={ description }
 							onChange={ ( value ) =>
 								setAttributes( { description: value } )
@@ -215,7 +215,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Image Settings', 'twork-builder' ) }
+						title={ __( 'Image Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<MediaUploadCheck>
@@ -253,11 +253,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											{ backgroundImage
 												? __(
 														'Change Image',
-														'twork-builder'
+														'mk-builder'
 												  )
 												: __(
 														'Select Image',
-														'twork-builder'
+														'mk-builder'
 												  ) }
 										</Button>
 										{ backgroundImage && (
@@ -272,7 +272,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'Remove Image',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										) }
@@ -284,7 +284,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Or enter image URL',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ backgroundImage }
 								onChange={ ( value ) =>
@@ -296,7 +296,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Image Min Height (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ parseInt( imageMinHeight ) }
 							onChange={ ( value ) =>
@@ -310,32 +310,32 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Author Section', 'twork-builder' ) }
+						title={ __( 'Author Section', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<BaseControl>
 							<TextControl
-								label={ __( 'Author Name', 'twork-builder' ) }
+								label={ __( 'Author Name', 'mk-builder' ) }
 								value={ authorName }
 								onChange={ ( value ) =>
 									setAttributes( { authorName: value } )
 								}
 								help={ __(
 									'Author name (e.g., CHASE FRANKLIN)',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</BaseControl>
 						<BaseControl>
 							<TextControl
-								label={ __( 'Author Title', 'twork-builder' ) }
+								label={ __( 'Author Title', 'mk-builder' ) }
 								value={ authorTitle }
 								onChange={ ( value ) =>
 									setAttributes( { authorTitle: value } )
 								}
 								help={ __(
 									'Author title (e.g., Founder & CEO)',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</BaseControl>
@@ -343,7 +343,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Signature Image URL',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ authorSignature }
 								onChange={ ( value ) =>
@@ -352,20 +352,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								placeholder="https://example.com/signature.png"
 								help={ __(
 									'URL to signature image (optional)',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</BaseControl>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content Styling', 'twork-builder' ) }
+						title={ __( 'Content Styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<BaseControl
 							label={ __(
 								'Content Background Color',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<ColorPalette
@@ -394,12 +394,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								style={ { marginTop: '12px' } }
 								help={ __(
 									'Enter hex color code',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</BaseControl>
 						<RangeControl
-							label={ __( 'Top Padding (px)', 'twork-builder' ) }
+							label={ __( 'Top Padding (px)', 'mk-builder' ) }
 							value={ parseInt( contentPadding.top ) }
 							onChange={ ( value ) =>
 								updateContentPadding( 'top', value.toString() )
@@ -411,7 +411,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Bottom Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ parseInt( contentPadding.bottom ) }
 							onChange={ ( value ) =>
@@ -425,7 +425,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Left Padding (px)', 'twork-builder' ) }
+							label={ __( 'Left Padding (px)', 'mk-builder' ) }
 							value={ parseInt( contentPadding.left ) }
 							onChange={ ( value ) =>
 								updateContentPadding( 'left', value.toString() )
@@ -437,7 +437,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Right Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ parseInt( contentPadding.right ) }
 							onChange={ ( value ) =>
@@ -452,12 +452,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Features', 'twork-builder' ) }
+						title={ __( 'Features', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<div style={ { marginBottom: '15px' } }>
 							<Button onClick={ addFeature } isPrimary>
-								{ __( 'Add Feature', 'twork-builder' ) }
+								{ __( 'Add Feature', 'mk-builder' ) }
 							</Button>
 						</div>
 
@@ -466,7 +466,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelBody
 									key={ index }
 									title={
-										__( 'Feature', 'twork-builder' ) +
+										__( 'Feature', 'mk-builder' ) +
 										' ' +
 										( index + 1 )
 									}
@@ -487,7 +487,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											isDestructive
 											isSmall
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 										{ index > 0 && (
 											<Button
@@ -499,7 +499,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'↑ Move Up',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										) }
@@ -513,7 +513,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'↓ Move Down',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										) }
@@ -523,7 +523,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<TextControl
 											label={ __(
 												'Icon Class',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={
 												feature.icon || 'fas fa-star'
@@ -537,7 +537,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											}
 											help={ __(
 												'Font Awesome icon class (e.g., fas fa-user-md)',
-												'twork-builder'
+												'mk-builder'
 											) }
 											placeholder="fas fa-star"
 										/>
@@ -546,7 +546,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<TextControl
 											label={ __(
 												'Title',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={ feature.title || '' }
 											onChange={ ( value ) =>
@@ -558,7 +558,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											}
 											placeholder={ __(
 												'Feature Title',
-												'twork-builder'
+												'mk-builder'
 											) }
 										/>
 									</BaseControl>
@@ -566,7 +566,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<TextareaControl
 											label={ __(
 												'Description',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={ feature.text || '' }
 											onChange={ ( value ) =>
@@ -579,7 +579,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											rows={ 3 }
 											placeholder={ __(
 												'Feature description',
-												'twork-builder'
+												'mk-builder'
 											) }
 										/>
 									</BaseControl>
@@ -598,7 +598,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							>
 								{ __(
 									'No features added yet. Click "Add Feature" to get started.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</div>
 						) }
@@ -735,7 +735,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								>
 									{ __(
 										'No features added yet. Use the sidebar to add features.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								</div>
 							) }

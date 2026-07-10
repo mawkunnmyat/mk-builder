@@ -15,28 +15,28 @@ export default function save( { attributes } ) {
 	const phoneDigits = ( phone || '' ).replace( /\D/g, '' );
 
 	const blockProps = useBlockProps.save( {
-		className: `twork-brand-header${
-			stickyHeader ? ' twork-brand-header--sticky' : ''
+		className: `mk-brand-header${
+			stickyHeader ? ' mk-brand-header--sticky' : ''
 		}`,
 		style: {
-			'--twork-brand-header-bg': backgroundColor || '#ffffff',
+			'--mk-brand-header-bg': backgroundColor || '#ffffff',
 		},
-		'data-block': 'twork/brand-header',
+		'data-block': 'mk/brand-header',
 		'data-sticky': stickyHeader ? 'true' : 'false',
 	} );
 
 	return (
 		<header { ...blockProps }>
-			<div className="twork-brand-header__main">
-				<div className="twork-brand-header__inner l-section">
+			<div className="mk-brand-header__main">
+				<div className="mk-brand-header__inner l-section">
 					<a
-						className="twork-brand-header__brand"
+						className="mk-brand-header__brand"
 						href={ homeUrl || '/' }
 						aria-label={ `${ brandName || 'Shwe Myanmar' } home` }
 					>
 						{ logoImage ? (
 							<img
-								className="twork-brand-header__brand-logo"
+								className="mk-brand-header__brand-logo"
 								src={ logoImage }
 								alt={ brandName || 'Shwe Myanmar' }
 								width="560"
@@ -45,7 +45,7 @@ export default function save( { attributes } ) {
 								decoding="async"
 							/>
 						) : (
-							<span className="twork-brand-header__brand-text">
+							<span className="mk-brand-header__brand-text">
 								{ brandName || 'Shwe Myanmar' }
 							</span>
 						) }
@@ -53,17 +53,17 @@ export default function save( { attributes } ) {
 
 					<nav
 						id="header-nav"
-						className="twork-brand-header__nav"
+						className="mk-brand-header__nav"
 						aria-label="Main navigation"
 					>
 						<InnerBlocks.Content />
 					</nav>
 
-					<div className="twork-brand-header__actions">
+					<div className="mk-brand-header__actions">
 						{ showSearch && (
 							<button
 								type="button"
-								className="twork-brand-header__icon-btn"
+								className="mk-brand-header__icon-btn"
 								aria-label="Search"
 							>
 								<svg
@@ -81,9 +81,9 @@ export default function save( { attributes } ) {
 							</button>
 						) }
 
-						<div className="twork-brand-header__hotline">
+						<div className="mk-brand-header__hotline">
 							<span
-								className="twork-brand-header__hotline-icon"
+								className="mk-brand-header__hotline-icon"
 								aria-hidden="true"
 							>
 								<svg
@@ -99,13 +99,13 @@ export default function save( { attributes } ) {
 							</span>
 							<div>
 								{ hotlineLabel && (
-									<p className="twork-brand-header__hotline-label">
+									<p className="mk-brand-header__hotline-label">
 										{ hotlineLabel }
 									</p>
 								) }
 								{ phone && (
 									<a
-										className="twork-brand-header__hotline-phone"
+										className="mk-brand-header__hotline-phone"
 										href={
 											phoneDigits ? `tel:${ phoneDigits }` : '#'
 										}
@@ -117,7 +117,7 @@ export default function save( { attributes } ) {
 						</div>
 
 						<button
-							className="twork-brand-header__toggle"
+							className="mk-brand-header__toggle"
 							type="button"
 							data-action="menu-toggle"
 							aria-expanded="false"
@@ -125,7 +125,7 @@ export default function save( { attributes } ) {
 						>
 							<span className="u-hidden">Menu</span>
 							<span
-								className="twork-brand-header__toggle-bar"
+								className="mk-brand-header__toggle-bar"
 								aria-hidden="true"
 							/>
 						</button>

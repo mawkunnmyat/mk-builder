@@ -11,8 +11,8 @@
 // === EDITOR STYLES ===
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-phy-stats-section {
-    .twork-phy-stats-section-editor {
+.wp-block-mk-phy-stats-section {
+    .mk-phy-stats-section-editor {
         position: relative;
         min-height: 80px;
 
@@ -34,7 +34,7 @@
 
                     > .wp-block,
                     > .block-editor-block-list__block,
-                    > [data-type="twork/phy-stat-card"] {
+                    > [data-type="mk/phy-stat-card"] {
                         display: flex !important;
                         flex-direction: column !important;
                         min-width: 0;
@@ -42,7 +42,7 @@
 
                     > .wp-block > .block-editor-block-list__block-edit,
                     > .block-editor-block-list__block > .block-editor-block-list__block-edit,
-                    > [data-type="twork/phy-stat-card"] > .block-editor-block-list__block-edit {
+                    > [data-type="mk/phy-stat-card"] > .block-editor-block-list__block-edit {
                         display: flex !important;
                         flex: 1 !important;
                         flex-direction: column !important;
@@ -51,7 +51,7 @@
 
                     > .wp-block > .block-editor-block-list__block-edit > div,
                     > .block-editor-block-list__block > .block-editor-block-list__block-edit > div,
-                    > [data-type="twork/phy-stat-card"] > .block-editor-block-list__block-edit > div {
+                    > [data-type="mk/phy-stat-card"] > .block-editor-block-list__block-edit > div {
                         display: flex !important;
                         flex: 1 !important;
                         flex-direction: column !important;
@@ -75,7 +75,7 @@
 }
 
 // === FRONTEND STYLES ===
-.twork-phy-stats-section {
+.mk-phy-stats-section {
     font-family: $font-primary;
     position: relative;
     overflow: hidden;
@@ -129,7 +129,7 @@
 
 // === RESPONSIVE ===
 @media (max-width: 768px) {
-    .twork-phy-stats-section {
+    .mk-phy-stats-section {
         .phy-stats-grid {
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 20px;

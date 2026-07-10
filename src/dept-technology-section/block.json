@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/dept-technology-section",
+	"name": "mk/dept-technology-section",
 	"title": "Technology Section",
-	"category": "twork-builder",
-	"parent": [ "twork/dept-layout-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/dept-layout-section" ],
 	"attributes": {
 		"sectionId": {
 			"type": "string",
@@ -29,13 +29,13 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/dept-tech-item",
+				"name": "mk/dept-tech-item",
 				"attributes": {
 					"caption": "Philips Azurion Cath Lab"
 				}
 			},
 			{
-				"name": "twork/dept-tech-item",
+				"name": "mk/dept-tech-item",
 				"attributes": {
 					"caption": "Modular Cardiac OT"
 				}

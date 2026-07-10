@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -14,22 +14,22 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/tele-store-btn' ];
+const ALLOWED_BLOCKS = [ 'mk/tele-store-btn' ];
 const TEMPLATE = [
 	[
-		'twork/tele-store-btn',
+		'mk/tele-store-btn',
 		{ url: 'https://jivakahospital.com/download-detail/' },
 	],
 
 	[
-		'twork/tele-store-btn',
+		'mk/tele-store-btn',
 		{
 			url: 'https://play.google.com/store/apps/details?id=com.jivaka.user',
 		},
 	],
 
 	[
-		'twork/tele-store-btn',
+		'mk/tele-store-btn',
 		{ url: 'https://jivaka.advent-soft.com/download/jivaka-care.apk' },
 	],
 ];
@@ -62,7 +62,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-tele-download-section-editor',
+			className: 'mk-tele-download-section-editor',
 			style: {
 				paddingTop: `${ sectionPaddingTop }px`,
 				paddingBottom: `${ sectionPaddingBottom }px`,
@@ -103,11 +103,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Section anchor ID', 'twork-builder' ) }
+							label={ __( 'Section anchor ID', 'mk-builder' ) }
 							value={ sectionAnchor }
 							onChange={ ( val ) =>
 								setAttributes( {
@@ -116,12 +116,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Used for #download link. Leave empty to use block anchor.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
@@ -129,7 +129,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Description', 'twork-builder' ) }
+							label={ __( 'Description', 'mk-builder' ) }
 							value={ description }
 							onChange={ ( val ) =>
 								setAttributes( { description: val } )
@@ -139,7 +139,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Add fade-up class (for GSAP)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ useFadeUp }
 							onChange={ ( val ) =>
@@ -148,17 +148,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Title & Description', 'twork-builder' ) }
+						title={ __( 'Title & Description', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -166,7 +166,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Title Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
@@ -178,7 +178,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Title Font Weight', 'twork-builder' ) }
+							label={ __( 'Title Font Weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -190,7 +190,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Description Color', 'twork-builder' ) }
+							title={ __( 'Description Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: descriptionColor,
@@ -200,7 +200,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Description Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -209,7 +209,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Description Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ descriptionFontSize }
 							onChange={ ( val ) =>
@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Description Margin Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ descriptionMarginBottom }
 							onChange={ ( val ) =>
@@ -237,23 +237,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'CTA Box', 'twork-builder' ) }
+						title={ __( 'CTA Box', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Gradient', 'twork-builder' ) }
+							title={ __( 'Gradient', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: gradientStart,
 									onChange: ( val ) =>
 										setAttributes( { gradientStart: val } ),
-									label: __( 'Start', 'twork-builder' ),
+									label: __( 'Start', 'mk-builder' ),
 								},
 								{
 									value: gradientEnd,
 									onChange: ( val ) =>
 										setAttributes( { gradientEnd: val } ),
-									label: __( 'End', 'twork-builder' ),
+									label: __( 'End', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -261,7 +261,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gradient Angle (deg)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gradientAngle }
 							onChange={ ( val ) =>
@@ -275,7 +275,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'CTA Padding Top (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ ctaPaddingTop }
 							onChange={ ( val ) =>
@@ -289,7 +289,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'CTA Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ ctaPaddingBottom }
 							onChange={ ( val ) =>
@@ -303,7 +303,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'CTA Padding Horizontal (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ ctaPaddingHorizontal }
 							onChange={ ( val ) =>
@@ -317,7 +317,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'CTA Border Radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ ctaBorderRadius }
 							onChange={ ( val ) =>
@@ -331,7 +331,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gap Between Buttons (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ storeBtnsGap }
 							onChange={ ( val ) =>
@@ -343,13 +343,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Section & Container', 'twork-builder' ) }
+						title={ __( 'Section & Container', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Section Padding Top (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionPaddingTop }
 							onChange={ ( val ) =>
@@ -363,7 +363,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Section Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionPaddingBottom }
 							onChange={ ( val ) =>
@@ -377,7 +377,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -391,7 +391,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -419,7 +419,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Download Jivaka Health App',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								fontSize: `${ titleFontSize }rem`,
@@ -439,7 +439,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Manage appointments, view lab reports…',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								fontSize: `${ descriptionFontSize }rem`,

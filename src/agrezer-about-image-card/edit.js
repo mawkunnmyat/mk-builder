@@ -127,8 +127,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useBlockProps( {
 		className: [
-			'twork-about-card',
-			variant === 'overlay' ? 'twork-about-card--overlay' : '',
+			'mk-about-card',
+			variant === 'overlay' ? 'mk-about-card--overlay' : '',
 			`is-media-${ mediaType }`,
 		]
 			.filter( Boolean )
@@ -145,7 +145,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image', 'video' ] }
 						accept="image/*,video/*"
 						onSelect={ handleMediaSelect }
-						name={ __( 'Replace media', 'twork-builder' ) }
+						name={ __( 'Replace media', 'mk-builder' ) }
 					/>
 				</BlockControls>
 			) }
@@ -153,23 +153,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Media Settings', 'twork-builder' ) }
+						title={ __( 'Media Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Media type', 'twork-builder' ) }
+							label={ __( 'Media type', 'mk-builder' ) }
 							value={ mediaType }
 							options={ [
 								{
-									label: __( 'Image', 'twork-builder' ),
+									label: __( 'Image', 'mk-builder' ),
 									value: 'image',
 								},
 								{
-									label: __( 'Video', 'twork-builder' ),
+									label: __( 'Video', 'mk-builder' ),
 									value: 'video',
 								},
 								{
-									label: __( 'Solid color', 'twork-builder' ),
+									label: __( 'Solid color', 'mk-builder' ),
 									value: 'color',
 								},
 							] }
@@ -179,17 +179,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Layout', 'twork-builder' ) }
+							label={ __( 'Layout', 'mk-builder' ) }
 							value={ variant }
 							options={ [
 								{
-									label: __( 'Image only', 'twork-builder' ),
+									label: __( 'Image only', 'mk-builder' ),
 									value: 'simple',
 								},
 								{
 									label: __(
 										'Image with overlay',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'overlay',
 								},
@@ -200,7 +200,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Media alt text', 'twork-builder' ) }
+							label={ __( 'Media alt text', 'mk-builder' ) }
 							value={ mediaAlt }
 							onChange={ ( val ) =>
 								setAttributes( { mediaAlt: val } )
@@ -211,7 +211,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<BaseControl
 								label={ __(
 									'Background color',
-									'twork-builder'
+									'mk-builder'
 								) }
 							>
 								<ColorPalette
@@ -237,18 +237,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove media', 'twork-builder' ) }
+								{ __( 'Remove media', 'mk-builder' ) }
 							</Button>
 						) }
 					</PanelBody>
 
 					{ mediaType === 'video' && (
 						<PanelBody
-							title={ __( 'Video Options', 'twork-builder' ) }
+							title={ __( 'Video Options', 'mk-builder' ) }
 							initialOpen={ false }
 						>
 							<ToggleControl
-								label={ __( 'Autoplay', 'twork-builder' ) }
+								label={ __( 'Autoplay', 'mk-builder' ) }
 								checked={ videoAutoplay }
 								onChange={ ( val ) =>
 									setAttributes( {
@@ -257,21 +257,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 							/>
 							<ToggleControl
-								label={ __( 'Loop', 'twork-builder' ) }
+								label={ __( 'Loop', 'mk-builder' ) }
 								checked={ videoLoop }
 								onChange={ ( val ) =>
 									setAttributes( { videoLoop: val } )
 								}
 							/>
 							<ToggleControl
-								label={ __( 'Muted', 'twork-builder' ) }
+								label={ __( 'Muted', 'mk-builder' ) }
 								checked={ videoMuted }
 								onChange={ ( val ) =>
 									setAttributes( { videoMuted: val } )
 								}
 							/>
 							<ToggleControl
-								label={ __( 'Show controls', 'twork-builder' ) }
+								label={ __( 'Show controls', 'mk-builder' ) }
 								checked={ videoControls }
 								onChange={ ( val ) =>
 									setAttributes( {
@@ -283,27 +283,27 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					) }
 
 					<PanelBody
-						title={ __( 'Design Settings', 'twork-builder' ) }
+						title={ __( 'Design Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ acceptsMedia && (
 							<SelectControl
-								label={ __( 'Object fit', 'twork-builder' ) }
+								label={ __( 'Object fit', 'mk-builder' ) }
 								value={ objectFit }
 								options={ [
 									{
-										label: __( 'Cover', 'twork-builder' ),
+										label: __( 'Cover', 'mk-builder' ),
 										value: 'cover',
 									},
 									{
 										label: __(
 											'Contain',
-											'twork-builder'
+											'mk-builder'
 										),
 										value: 'contain',
 									},
 									{
-										label: __( 'Fill', 'twork-builder' ),
+										label: __( 'Fill', 'mk-builder' ),
 										value: 'fill',
 									},
 								] }
@@ -315,13 +315,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Overlay Settings', 'twork-builder' ) }
+						title={ __( 'Overlay Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ variant === 'overlay' && (
 							<>
 								<TextControl
-									label={ __( 'Button URL', 'twork-builder' ) }
+									label={ __( 'Button URL', 'mk-builder' ) }
 									value={ overlayButtonUrl }
 									onChange={ ( val ) =>
 										setAttributes( { overlayButtonUrl: val } )
@@ -331,7 +331,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Show overlay button icon',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ showButtonIcon }
 									onChange={ ( val ) =>
@@ -340,32 +340,32 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<SelectControl
-									label={ __( 'Button icon type', 'twork-builder' ) }
+									label={ __( 'Button icon type', 'mk-builder' ) }
 									value={ buttonIconType }
 									options={ [
 										{
 											label: __(
 												'Diagonal arrow',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'diagonal-arrow',
 										},
 										{
 											label: __(
 												'Arrow right',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'arrow-right',
 										},
 										{
 											label: __(
 												'External link',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'external',
 										},
 										{
-											label: __( 'Plus', 'twork-builder' ),
+											label: __( 'Plus', 'mk-builder' ),
 											value: 'plus',
 										},
 									] }
@@ -390,10 +390,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						labels={ {
 							title: __(
 								'Card image or video',
-								'twork-builder'
+								'mk-builder'
 							),
 						} }
-						className="twork-about-card__placeholder"
+						className="mk-about-card__placeholder"
 					/>
 				) : (
 					<>
@@ -417,28 +417,28 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) }
 						{ mediaType === 'color' && (
 							<div
-								className="twork-about-card__color-bg"
+								className="mk-about-card__color-bg"
 								style={ { backgroundColor } }
 								aria-hidden="true"
 							/>
 						) }
 
 						{ variant === 'overlay' && (
-							<div className="twork-about-card__overlay">
+							<div className="mk-about-card__overlay">
 								<RichText
 									tagName="p"
-									className="twork-about-card__overlay-text"
+									className="mk-about-card__overlay-text"
 									value={ overlayText }
 									onChange={ ( val ) =>
 										setAttributes( { overlayText: val } )
 									}
 									placeholder={ __(
 										'Overlay text…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
-								<div className="twork-about-card__overlay-btn">
+								<div className="mk-about-card__overlay-btn">
 									<RichText
 										tagName="span"
 										value={ overlayButtonText }
@@ -449,13 +449,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Button',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 
 									{ showButtonIcon && (
 										<span
-											className="twork-about-card__overlay-btn-icon"
+											className="mk-about-card__overlay-btn-icon"
 											aria-hidden="true"
 										>
 											{ actionIcon }

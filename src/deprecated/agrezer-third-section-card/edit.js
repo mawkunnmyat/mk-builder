@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -13,9 +13,9 @@ import {
 } from '@wordpress/components';
 
 const ALIGN_OPTIONS = [
-	{ label: __( 'Left (default layout)', 'twork-builder' ), value: 'left' },
-	{ label: __( 'Center (raised)', 'twork-builder' ), value: 'center' },
-	{ label: __( 'Right', 'twork-builder' ), value: 'right' },
+	{ label: __( 'Left (default layout)', 'mk-builder' ), value: 'left' },
+	{ label: __( 'Center (raised)', 'mk-builder' ), value: 'center' },
+	{ label: __( 'Right', 'mk-builder' ), value: 'right' },
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -33,11 +33,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Card layout', 'twork-builder' ) }
+						title={ __( 'Card layout', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Column style', 'twork-builder' ) }
+							label={ __( 'Column style', 'mk-builder' ) }
 							value={ cardAlign }
 							options={ ALIGN_OPTIONS }
 							onChange={ ( val ) =>
@@ -45,16 +45,16 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Center card is visually offset upward on large screens.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Image alt text', 'twork-builder' ) }
+							label={ __( 'Image alt text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -72,7 +72,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove image', 'twork-builder' ) }
+								{ __( 'Remove image', 'mk-builder' ) }
 							</Button>
 						) }
 					</PanelBody>
@@ -95,7 +95,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						labels={ {
 							title: __(
 								'Card background image',
-								'twork-builder'
+								'mk-builder'
 							),
 						} }
 					/>
@@ -112,7 +112,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						className="agrezer-third-section__stat"
 						value={ stat }
 						onChange={ ( val ) => setAttributes( { stat: val } ) }
-						placeholder={ __( '80%', 'twork-builder' ) }
+						placeholder={ __( '80%', 'mk-builder' ) }
 						allowedFormats={ [ 'core/bold' ] }
 					/>
 
@@ -121,7 +121,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						className="agrezer-third-section__label"
 						value={ label }
 						onChange={ ( val ) => setAttributes( { label: val } ) }
-						placeholder={ __( 'Label', 'twork-builder' ) }
+						placeholder={ __( 'Label', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 				</div>

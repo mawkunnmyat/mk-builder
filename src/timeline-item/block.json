@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/timeline-item",
+	"name": "mk/timeline-item",
 	"title": "Timeline Item",
-	"parent": [ "twork/timeline-wrapper" ],
-	"category": "twork-builder",
+	"parent": [ "mk/timeline-wrapper" ],
+	"category": "mk-builder",
 	"icon": "clock",
 	"description": "Individual timeline item with year, heading, description, and optional image.",
-	"keywords": [ "timeline", "item", "milestone", "history", "twork" ],
+	"keywords": [ "timeline", "item", "milestone", "history", "mk" ],
 	"attributes": {
 		"year": {
 			"type": "string",
@@ -427,7 +427,7 @@
 			"buttonPaddingHorizontalMobile": 0
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

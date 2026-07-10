@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/contact-map",
+	"name": "mk/contact-map",
 	"version": "1.0.0",
 	"title": "Contact Map",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "location-alt",
 	"description": "Contact map / embed section.",
 	"keywords": [
@@ -12,7 +12,7 @@
 		"form",
 		"map",
 		"google maps",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"sectionTitle": {
@@ -129,7 +129,7 @@
 			"full"
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

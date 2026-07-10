@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/dept-faq-section",
+	"name": "mk/dept-faq-section",
 	"title": "FAQ Section",
-	"category": "twork-builder",
-	"parent": [ "twork/dept-layout-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/dept-layout-section" ],
 	"attributes": {
 		"sectionId": {
 			"type": "string",
@@ -25,21 +25,21 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/dept-faq-item",
+				"name": "mk/dept-faq-item",
 				"attributes": {
 					"question": "What are the signs of a heart attack?",
 					"answer": "Symptoms include chest pain, shortness of breath, pain in the arm or jaw, and cold sweats. Seek emergency care immediately."
 				}
 			},
 			{
-				"name": "twork/dept-faq-item",
+				"name": "mk/dept-faq-item",
 				"attributes": {
 					"question": "Do I need an appointment for ECG?",
 					"answer": "Routine ECGs require appointments, but emergency ECGs are available 24/7 at our Emergency Department."
 				}
 			},
 			{
-				"name": "twork/dept-faq-item",
+				"name": "mk/dept-faq-item",
 				"attributes": {
 					"question": "Does Jivaka accept international insurance?",
 					"answer": "Yes, we partner with major international insurance providers including Cigna, Aetna, and Allianz."

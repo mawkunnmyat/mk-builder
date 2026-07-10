@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/centre-treatments-section",
+	"name": "mk/centre-treatments-section",
 	"version": "1.0.0",
 	"title": "Treatments Section",
-	"category": "twork-builder",
-	"parent": [ "twork/centre-layout-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/centre-layout-section" ],
 	"attributes": {
 		"sectionId": {
 			"type": "string",
@@ -30,7 +30,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/centre-treatment-card",
+				"name": "mk/centre-treatment-card",
 				"attributes": {
 					"iconClass": "fas fa-brain",
 					"title": "Stroke Management",
@@ -38,7 +38,7 @@
 				}
 			},
 			{
-				"name": "twork/centre-treatment-card",
+				"name": "mk/centre-treatment-card",
 				"attributes": {
 					"iconClass": "fas fa-microscope",
 					"title": "Brain Tumor Surgery",
@@ -46,7 +46,7 @@
 				}
 			},
 			{
-				"name": "twork/centre-treatment-card",
+				"name": "mk/centre-treatment-card",
 				"attributes": {
 					"iconClass": "fas fa-bone",
 					"title": "Spinal Surgery",
@@ -54,7 +54,7 @@
 				}
 			},
 			{
-				"name": "twork/centre-treatment-card",
+				"name": "mk/centre-treatment-card",
 				"attributes": {
 					"iconClass": "fas fa-wave-square",
 					"title": "EEG & EMG Services",

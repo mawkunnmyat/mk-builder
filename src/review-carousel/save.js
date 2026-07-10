@@ -4,7 +4,7 @@ export default function save( { attributes } ) {
 	const { eyebrow, title, prevLabel, nextLabel } = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'testimonials twork-review-carousel',
+		className: 'testimonials mk-review-carousel',
 	} );
 
 	return (

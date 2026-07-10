@@ -18,13 +18,13 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-about twork-about-section',
+		className: 'mk-about mk-about-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-about-max-width': `${ containerMaxWidth }px`,
-			'--twork-about-gutter': `${ containerGutter }px`,
+			'--mk-about-max-width': `${ containerMaxWidth }px`,
+			'--mk-about-gutter': `${ containerGutter }px`,
 		},
 	} );
 
@@ -37,15 +37,15 @@ export default function save( { attributes } ) {
 
 	return (
 		<section { ...blockProps }>
-			<div className="twork-about__container" style={ containerStyle }>
-				<div className="twork-about__header">
-					<div className="twork-about__heading">
+			<div className="mk-about__container" style={ containerStyle }>
+				<div className="mk-about__header">
+					<div className="mk-about__heading">
 						<p
-							className="twork-about__label"
+							className="mk-about__label"
 							style={ { color: labelColor } }
 						>
 							<span
-								className="twork-about__label-icon"
+								className="mk-about__label-icon"
 								style={ { color: labelIconColor } }
 								aria-hidden="true"
 							>
@@ -58,7 +58,7 @@ export default function save( { attributes } ) {
 						</p>
 						<RichText.Content
 							tagName="h2"
-							className="twork-about__title"
+							className="mk-about__title"
 							value={ sectionTitle }
 							style={ {
 								color: titleColor,

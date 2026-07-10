@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	useInnerBlocksProps,
@@ -16,10 +16,10 @@ import {
 	Button,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/testimonial' ];
+const ALLOWED_BLOCKS = [ 'mk/testimonial' ];
 const TEMPLATE = [
 	[
-		'twork/testimonial',
+		'mk/testimonial',
 		{
 			quote: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
 			authorName: 'Alex Robin',
@@ -28,7 +28,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/testimonial',
+		'mk/testimonial',
 		{
 			quote: 'We saw measurable growth after switching to their organic program — clear communication and real results.',
 			authorName: 'Jordan Lee',
@@ -37,7 +37,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/testimonial',
+		'mk/testimonial',
 		{
 			quote: 'Reliable partners who understand both sustainability and scale. Highly recommended for any agri business.',
 			authorName: 'Sam Rivera',
@@ -79,14 +79,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'twork-testimonials twork-testimonials-section-editor',
+				'mk-testimonials mk-testimonials-section-editor',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
-				'--twork-testimonials-max': `${ containerMaxWidth }px`,
-				'--twork-testimonials-width-pct': `${ widthPercent }%`,
-				'--twork-testimonials-gap': `${ columnGap }px`,
+				'--mk-testimonials-max': `${ containerMaxWidth }px`,
+				'--mk-testimonials-width-pct': `${ widthPercent }%`,
+				'--mk-testimonials-gap': `${ columnGap }px`,
 			},
 		} ),
 		[
@@ -100,7 +100,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	);
 
 	const innerBlocksProps = useInnerBlocksProps(
-		{ className: 'twork-testimonials__slides twork-testimonials__slides--editor' },
+		{ className: 'mk-testimonials__slides mk-testimonials__slides--editor' },
 		{
 			allowedBlocks: ALLOWED_BLOCKS,
 			template: TEMPLATE,
@@ -114,11 +114,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -131,7 +131,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -145,7 +145,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -159,7 +159,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Side inset (% each side)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerGutter }
 							onChange={ ( val ) =>
@@ -170,12 +170,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 1 }
 							help={ __(
 								'Container width ≈ 100% minus twice this value.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
-							label={ __( 'Column gap (px)', 'twork-builder' ) }
+							label={ __( 'Column gap (px)', 'mk-builder' ) }
 							value={ columnGap }
 							onChange={ ( val ) =>
 								setAttributes( { columnGap: val } )
@@ -187,13 +187,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Left image & badge', 'twork-builder' ) }
+						title={ __( 'Left image & badge', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Main image alt text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mainImageAlt }
 							onChange={ ( val ) =>
@@ -216,7 +216,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Testimonial main photo',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -243,14 +243,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove image', 'twork-builder' ) }
+									{ __( 'Remove image', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 						<ToggleControl
 							label={ __(
 								'Show experience badge',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showBadge }
 							onChange={ ( val ) =>
@@ -260,7 +260,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ showBadge && (
 							<TextControl
-								label={ __( 'Badge number', 'twork-builder' ) }
+								label={ __( 'Badge number', 'mk-builder' ) }
 								value={ badgeNum }
 								onChange={ ( val ) =>
 									setAttributes( { badgeNum: val } )
@@ -270,11 +270,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Tagline icon', 'twork-builder' ) }
+						title={ __( 'Tagline icon', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ tagIconAlt }
 							onChange={ ( val ) =>
 								setAttributes( { tagIconAlt: val } )
@@ -296,7 +296,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Small tagline icon',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -318,18 +318,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove icon', 'twork-builder' ) }
+									{ __( 'Remove icon', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Carousel', 'twork-builder' ) }
+						title={ __( 'Carousel', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Loop slides', 'twork-builder' ) }
+							label={ __( 'Loop slides', 'mk-builder' ) }
 							checked={ loopCarousel }
 							onChange={ ( val ) =>
 								setAttributes( { loopCarousel: val } )
@@ -339,7 +339,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Previous button label (screen readers)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ prevLabel }
 							onChange={ ( val ) =>
@@ -350,7 +350,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Next button label (screen readers)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ nextLabel }
 							onChange={ ( val ) =>
@@ -360,7 +360,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						colorSettings={ [
 							{
 								value: backgroundColor,
@@ -368,7 +368,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									setAttributes( { backgroundColor: val } ),
 								label: __(
 									'Section background',
-									'twork-builder'
+									'mk-builder'
 								),
 							},
 						] }
@@ -377,13 +377,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<section { ...blockProps }>
-				<div className="twork-testimonials__container">
-					<div className="twork-testimonials__left">
-						<div className="twork-testimonials__img-box">
+				<div className="mk-testimonials__container">
+					<div className="mk-testimonials__left">
+						<div className="mk-testimonials__img-box">
 							{ mainImage ? (
 								<img
 									src={ mainImage }
-									className="twork-testimonials__img"
+									className="mk-testimonials__img"
 									alt=""
 								/>
 							) : (
@@ -402,19 +402,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Main testimonial image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
 							) }
 							{ showBadge && (
-								<div className="twork-testimonials__badge">
-									<span className="twork-testimonials__badge-num">
+								<div className="mk-testimonials__badge">
+									<span className="mk-testimonials__badge-num">
 										{ badgeNum }
 									</span>
 									<RichText
 										tagName="span"
-										className="twork-testimonials__badge-text"
+										className="mk-testimonials__badge-text"
 										value={ badgeText }
 										onChange={ ( val ) =>
 											setAttributes( { badgeText: val } )
@@ -426,7 +426,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										] }
 										placeholder={ __(
 											'Badge line…',
-											'twork-builder'
+											'mk-builder'
 										) }
 										multiline="br"
 									/>
@@ -435,13 +435,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</div>
 					</div>
 
-					<div className="twork-testimonials__right">
-						<div className="twork-testimonials__tagline">
+					<div className="mk-testimonials__right">
+						<div className="mk-testimonials__tagline">
 							{ tagIcon && (
 								<img
 									src={ tagIcon }
 									alt=""
-									className="twork-testimonials__tag-icon"
+									className="mk-testimonials__tag-icon"
 								/>
 							) }
 							<RichText
@@ -450,46 +450,46 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { tagline: val } )
 								}
-								placeholder={ __( 'Tagline', 'twork-builder' ) }
+								placeholder={ __( 'Tagline', 'mk-builder' ) }
 								allowedFormats={ [] }
 							/>
 						</div>
 
 						<RichText
 							tagName="h2"
-							className="twork-testimonials__title"
+							className="mk-testimonials__title"
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
 							}
 							placeholder={ __(
 								'Section title',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
-						<div className="twork-testimonials__quote-region twork-testimonials__quote-region--editor">
+						<div className="mk-testimonials__quote-region mk-testimonials__quote-region--editor">
 							<div { ...innerBlocksProps } />
 						</div>
 
-						<div className="twork-testimonials__bottom twork-testimonials__bottom--editor">
-							<p className="twork-testimonials__editor-hint">
+						<div className="mk-testimonials__bottom mk-testimonials__bottom--editor">
+							<p className="mk-testimonials__editor-hint">
 								{ __(
 									'Author for each slide appears here on the site when visitors change slides.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</p>
-							<div className="twork-testimonials__controls">
+							<div className="mk-testimonials__controls">
 								<button
 									type="button"
-									className="twork-testimonials__control-btn"
+									className="mk-testimonials__control-btn"
 									disabled
 								>
 									←
 								</button>
 								<button
 									type="button"
-									className="twork-testimonials__control-btn"
+									className="mk-testimonials__control-btn"
 									disabled
 								>
 									→

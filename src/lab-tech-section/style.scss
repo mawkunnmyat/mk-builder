@@ -5,8 +5,8 @@
  * All colors overridable via block "Colors" panel (CSS vars from attributes).
  */
 
-.lab-section.twork-lab-tech-section,
-.lab-section.twork-lab-tech-section-editor,
+.lab-section.mk-lab-tech-section,
+.lab-section.mk-lab-tech-section-editor,
 .lab-section.lab-tech-section-editor {
     --lab-primary: #f48b2a;
     --lab-item-tag-bg: #f0f4f8;
@@ -19,8 +19,8 @@
     --lab-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
-.lab-section.twork-lab-tech-section,
-.lab-section.twork-lab-tech-section-editor,
+.lab-section.mk-lab-tech-section,
+.lab-section.mk-lab-tech-section-editor,
 .lab-section.lab-tech-section-editor {
     position: relative;
     width: 100%;
@@ -76,9 +76,9 @@
 
 // === EDITOR: layout and focus ===
 .editor-styles-wrapper,
-.wp-block-twork-lab-tech-section {
+.wp-block-mk-lab-tech-section {
     .lab-tech-section-editor,
-    .twork-lab-tech-section-editor {
+    .mk-lab-tech-section-editor {
         position: relative;
         width: 100%;
         box-sizing: border-box;
@@ -105,7 +105,7 @@
         }
 
         // Rows: in editor, item wrappers are direct children; row-reverse for even
-        .lab-container > .wp-block[data-type="twork/lab-tech-item"]:nth-child(even) .lab-tech-row,
+        .lab-container > .wp-block[data-type="mk/lab-tech-item"]:nth-child(even) .lab-tech-row,
         .lab-container > .lab-tech-row:nth-child(even) {
             flex-direction: row-reverse;
         }
@@ -118,27 +118,27 @@
 
 // === RESPONSIVE (section + editor) ===
 @media (max-width: 992px) {
-    .lab-section.twork-lab-tech-section,
-    .lab-section.twork-lab-tech-section-editor,
+    .lab-section.mk-lab-tech-section,
+    .lab-section.mk-lab-tech-section-editor,
     .lab-section.lab-tech-section-editor {
         .lab-container > .lab-tech-row,
         .lab-container > .lab-tech-row:nth-child(even),
-        .lab-container > .wp-block[data-type="twork/lab-tech-item"] .lab-tech-row {
+        .lab-container > .wp-block[data-type="mk/lab-tech-item"] .lab-tech-row {
             flex-direction: column;
             text-align: center;
             gap: 32px;
             margin-bottom: 60px;
         }
 
-        .lab-container > .wp-block[data-type="twork/lab-tech-item"]:nth-child(even) .lab-tech-row {
+        .lab-container > .wp-block[data-type="mk/lab-tech-item"]:nth-child(even) .lab-tech-row {
             flex-direction: column;
         }
     }
 }
 
 @media (max-width: 768px) {
-    .lab-section.twork-lab-tech-section,
-    .lab-section.twork-lab-tech-section-editor,
+    .lab-section.mk-lab-tech-section,
+    .lab-section.mk-lab-tech-section-editor,
     .lab-section.lab-tech-section-editor {
         .lab-container {
             padding-left: 16px;
@@ -159,7 +159,7 @@
 
         .lab-container > .lab-tech-row,
         .lab-container > .lab-tech-row:nth-child(even),
-        .lab-container > .wp-block[data-type="twork/lab-tech-item"] .lab-tech-row {
+        .lab-container > .wp-block[data-type="mk/lab-tech-item"] .lab-tech-row {
             gap: 24px;
             margin-bottom: 48px;
         }

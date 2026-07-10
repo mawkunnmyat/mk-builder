@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/numbered-feature-item",
+	"name": "mk/numbered-feature-item",
 	"title": "Numbered Feature Item",
-	"parent": [ "twork/numbered-features-grid" ],
-	"category": "twork-builder",
+	"parent": [ "mk/numbered-features-grid" ],
+	"category": "mk-builder",
 	"description": "Single numbered feature with icon, title, and description.",
-	"keywords": [ "feature", "number", "icon", "why choose", "twork" ],
+	"keywords": [ "feature", "number", "icon", "why choose", "mk" ],
 	"attributes": {
 		"number": {
 			"type": "string",
@@ -37,6 +37,6 @@
 			"iconKey": "cube"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

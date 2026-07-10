@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-package-card",
+	"name": "mk/hc-package-card",
 	"title": "Package Card",
-	"parent": [ "twork/hc-packages-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/hc-packages-section" ],
+	"category": "mk-builder",
 	"description": "Single care package card: title, price, feature list, and CTA button.",
-	"keywords": [ "home care", "package", "pricing", "card", "twork" ],
+	"keywords": [ "home care", "package", "pricing", "card", "mk" ],
 	"attributes": {
 		"title": {
 			"type": "string",
@@ -66,6 +66,6 @@
 			"headBackground": ""
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

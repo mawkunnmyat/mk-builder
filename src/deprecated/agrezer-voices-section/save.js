@@ -26,7 +26,7 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'agrezer-voices-section twork-agrezer-voices-section',
+		className: 'agrezer-voices-section mk-agrezer-voices-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,

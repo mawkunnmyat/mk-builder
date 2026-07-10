@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-about-intro-section",
+	"name": "mk/agrezer-about-intro-section",
 	"version": "1.0.0",
 	"title": "Agrezer About Intro",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "welcome-learn-more",
 	"description": "Two-column about intro: stacked images, copy, feature grid, and author row.",
-	"keywords": [ "about", "intro", "agriculture", "agrezer", "twork" ],
+	"keywords": [ "about", "intro", "agriculture", "agrezer", "mk" ],
 	"supports": {
 		"html": false,
 		"align": [ "wide", "full" ],
@@ -179,7 +179,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/agrezer-about-intro-feature",
+				"name": "mk/agrezer-about-intro-feature",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=128&q=80",
 					"imageAlt": "Leaf icon",
@@ -187,7 +187,7 @@
 				}
 			},
 			{
-				"name": "twork/agrezer-about-intro-feature",
+				"name": "mk/agrezer-about-intro-feature",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=128&q=80",
 					"imageAlt": "Vegetables icon",
@@ -195,7 +195,7 @@
 				}
 			},
 			{
-				"name": "twork/agrezer-about-intro-feature",
+				"name": "mk/agrezer-about-intro-feature",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=128&q=80",
 					"imageAlt": "Grains icon",
@@ -203,7 +203,7 @@
 				}
 			},
 			{
-				"name": "twork/agrezer-about-intro-feature",
+				"name": "mk/agrezer-about-intro-feature",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=128&q=80",
 					"imageAlt": "Farm icon",
@@ -212,7 +212,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

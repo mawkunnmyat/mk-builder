@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, Button } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'phy-cond-col twork-phy-condition-col-editor',
+			className: 'phy-cond-col mk-phy-condition-col-editor',
 		} ),
 		[]
 	);
@@ -23,7 +23,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		setAttributes( {
 			items: [
 				...( items || [] ),
-				__( 'New condition…', 'twork-builder' ),
+				__( 'New condition…', 'mk-builder' ),
 			],
 		} );
 	};
@@ -39,13 +39,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Condition column', 'twork-builder' ) }
+						title={ __( 'Condition column', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon CSS class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass || '' }
 							onChange={ ( val ) =>
@@ -55,12 +55,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-bone, fas fa-running, fas fa-brain',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Heading', 'twork-builder' ) }
+							label={ __( 'Heading', 'mk-builder' ) }
 							value={ heading || '' }
 							onChange={ ( val ) =>
 								setAttributes( {
@@ -71,7 +71,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Conditions list', 'twork-builder' ) }
+						title={ __( 'Conditions list', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ( items || [] ).map( ( item, index ) => (
@@ -90,14 +90,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Condition…',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ { flex: 1 } }
 								/>
 
 								<Button
 									icon="no-alt"
-									label={ __( 'Remove', 'twork-builder' ) }
+									label={ __( 'Remove', 'mk-builder' ) }
 									isDestructive
 									isSmall
 									onClick={ () => removeItem( index ) }
@@ -105,7 +105,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							</div>
 						) ) }
 						<Button variant="secondary" isSmall onClick={ addItem }>
-							{ __( 'Add condition', 'twork-builder' ) }
+							{ __( 'Add condition', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 				</InspectorControls>
@@ -122,7 +122,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { heading: val || 'Orthopedic' } )
 						}
-						placeholder={ __( 'Heading…', 'twork-builder' ) }
+						placeholder={ __( 'Heading…', 'mk-builder' ) }
 					/>
 				</h3>
 				<ul className="phy-cond-list">
@@ -138,7 +138,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Condition…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</span>
@@ -148,7 +148,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<li>
 							<i className="fas fa-check" aria-hidden="true" />
 							<span>
-								{ __( 'Example condition', 'twork-builder' ) }
+								{ __( 'Example condition', 'mk-builder' ) }
 							</span>
 						</li>
 					) }

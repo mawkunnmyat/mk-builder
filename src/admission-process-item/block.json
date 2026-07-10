@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/admission-process-item",
+	"name": "mk/admission-process-item",
 	"title": "Admission Process Item",
-	"parent": [ "twork/admission-process-section" ],
+	"parent": [ "mk/admission-process-section" ],
 	"description": "Single step card for the admission process (e.g. Registration, During Stay, Discharge).",
-	"keywords": [ "admission", "process", "step", "card", "twork" ],
+	"keywords": [ "admission", "process", "step", "card", "mk" ],
 	"attributes": {
 		"stepNumber": {
 			"type": "number",
@@ -131,7 +131,7 @@
 			"cardPaddingMobile": 30
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

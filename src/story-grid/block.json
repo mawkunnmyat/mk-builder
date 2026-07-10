@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/story-grid",
+	"name": "mk/story-grid",
 	"title": "Story Grid",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Professional story grid with content and image layout options",
-	"keywords": [ "story", "content", "image", "grid", "layout", "twork" ],
+	"keywords": [ "story", "content", "image", "grid", "layout", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -160,7 +160,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/story-item",
+				"name": "mk/story-item",
 				"attributes": {}
 			}
 		]

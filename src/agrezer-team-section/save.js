@@ -37,26 +37,26 @@ export default function save( { attributes } ) {
 		blockStyle[ '--tw-team-pb' ] = `${ paddingBottom }px`;
 	}
 	if ( containerMaxWidth ) {
-		blockStyle[ '--twork-team-max' ] = `${ containerMaxWidth }px`;
+		blockStyle[ '--mk-team-max' ] = `${ containerMaxWidth }px`;
 	}
 	if ( containerWidthPct ) {
-		blockStyle[ '--twork-team-width-pct' ] = `${ containerWidthPct }px`;
+		blockStyle[ '--mk-team-width-pct' ] = `${ containerWidthPct }px`;
 	}
 	if ( containerWidthPct ) {
-		blockStyle[ '--twork-team-width-pct' ] = `${ containerWidthPct }%`;
+		blockStyle[ '--mk-team-width-pct' ] = `${ containerWidthPct }%`;
 	}
 	if ( gridGap !== undefined ) {
-		blockStyle[ '--twork-team-gap' ] = `${ gridGap }px`;
+		blockStyle[ '--mk-team-gap' ] = `${ gridGap }px`;
 	}
 	const parsedCols = Math.min(
 		4,
 		Math.max( 1, parseInt( columns, 10 ) || 3 )
 	);
 	if ( parsedCols ) {
-		blockStyle[ '--twork-team-cols' ] = String( parsedCols );
+		blockStyle[ '--mk-team-cols' ] = String( parsedCols );
 	}
 	if ( headerMarginBottom !== undefined ) {
-		blockStyle[ '--twork-team-header-mb' ] = `${ headerMarginBottom }px`;
+		blockStyle[ '--mk-team-header-mb' ] = `${ headerMarginBottom }px`;
 	}
 	if ( taglineColor ) {
 		blockStyle[ '--tw-tag-color' ] = taglineColor;
@@ -78,24 +78,24 @@ export default function save( { attributes } ) {
 	}
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-team-section',
+		className: 'mk-team-section',
 		style: blockStyle,
 	} );
 
 	const innerBlocksProps = useInnerBlocksProps.save( {
-		className: 'twork-team-section__grid',
+		className: 'mk-team-section__grid',
 	} );
 
 	return (
 		<section { ...blockProps }>
-			<div className="twork-team-section__container">
-				<div className="twork-team-section__header">
-					<div className="twork-team-section__tagline">
+			<div className="mk-team-section__container">
+				<div className="mk-team-section__header">
+					<div className="mk-team-section__tagline">
 						{ tagIcon && (
 							<img
 								src={ tagIcon }
 								alt={ tagIconAlt || '' }
-								className="twork-team-section__tag-icon"
+								className="mk-team-section__tag-icon"
 								width={ tagIconSize }
 								height={ tagIconSize }
 								loading="lazy"
@@ -106,7 +106,7 @@ export default function save( { attributes } ) {
 					</div>
 					<RichText.Content
 						tagName="h2"
-						className="twork-team-section__title"
+						className="mk-team-section__title"
 						value={ title }
 					/>
 				</div>

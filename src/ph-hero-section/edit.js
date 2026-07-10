@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -32,7 +32,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'ph-hero twork-ph-hero-section',
+			className: 'ph-hero mk-ph-hero-section',
 			style: {
 				minHeight: `${ minHeight }px`,
 			},
@@ -45,7 +45,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Background image', 'twork-builder' ) }
+						title={ __( 'Background image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ! backgroundImage ? (
@@ -59,7 +59,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								allowedTypes={ [ 'image' ] }
 								multiple={ false }
 								labels={ {
-									title: __( 'Hero image', 'twork-builder' ),
+									title: __( 'Hero image', 'mk-builder' ),
 								} }
 							/>
 						) : (
@@ -84,7 +84,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove image', 'twork-builder' ) }
+									{ __( 'Remove image', 'mk-builder' ) }
 								</button>
 							</div>
 						) }
@@ -94,7 +94,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Minimum height (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ minHeight }
 							onChange={ ( val ) =>
@@ -107,25 +107,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Tag text', 'twork-builder' ) }
+							label={ __( 'Tag text', 'mk-builder' ) }
 							value={ tagText }
 							onChange={ ( val ) =>
 								setAttributes( { tagText: val } )
 							}
 							placeholder={ __(
 								'Official Hospital Pharmacy',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<Divider />
 
 						<ToggleControl
-							label={ __( 'Show search box', 'twork-builder' ) }
+							label={ __( 'Show search box', 'mk-builder' ) }
 							checked={ showSearch }
 							onChange={ ( val ) =>
 								setAttributes( { showSearch: val } )
@@ -137,7 +137,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Search placeholder',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ searchPlaceholder }
 									onChange={ ( val ) =>
@@ -150,11 +150,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Popular text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									help={ __(
 										'Short helper text under the search bar.',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ popularText }
 									onChange={ ( val ) =>
@@ -166,11 +166,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Floating pills', 'twork-builder' ) }
+						title={ __( 'Floating pills', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Pill 1 text', 'twork-builder' ) }
+							label={ __( 'Pill 1 text', 'mk-builder' ) }
 							value={ pill1Text }
 							onChange={ ( val ) =>
 								setAttributes( { pill1Text: val } )
@@ -178,10 +178,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Pill 1 icon class', 'twork-builder' ) }
+							label={ __( 'Pill 1 icon class', 'mk-builder' ) }
 							help={ __(
 								'Font Awesome class, e.g. "fas fa-shipping-fast".',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ pill1IconClass }
 							onChange={ ( val ) =>
@@ -192,7 +192,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<TextControl
-							label={ __( 'Pill 2 text', 'twork-builder' ) }
+							label={ __( 'Pill 2 text', 'mk-builder' ) }
 							value={ pill2Text }
 							onChange={ ( val ) =>
 								setAttributes( { pill2Text: val } )
@@ -200,10 +200,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Pill 2 icon class', 'twork-builder' ) }
+							label={ __( 'Pill 2 icon class', 'mk-builder' ) }
 							help={ __(
 								'Font Awesome class, e.g. "fas fa-shield-alt".',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ pill2IconClass }
 							onChange={ ( val ) =>
@@ -236,7 +236,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Authentic Medicine,\nDelivered to You.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 
@@ -248,7 +248,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									"Order prescriptions, OTC medicines, and wellness products from Jivaka Hospital's trusted inventory. 100% genuine and safe.",
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 

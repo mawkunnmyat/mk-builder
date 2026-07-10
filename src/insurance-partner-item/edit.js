@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -13,22 +13,22 @@ import {
 } from '@wordpress/components';
 
 const ICON_OPTIONS = [
-	{ label: __( 'Shield', 'twork-builder' ), value: 'fas fa-shield-alt' },
-	{ label: __( 'Umbrella', 'twork-builder' ), value: 'fas fa-umbrella' },
-	{ label: __( 'Leaf', 'twork-builder' ), value: 'fas fa-leaf' },
-	{ label: __( 'Building', 'twork-builder' ), value: 'fas fa-building' },
-	{ label: __( 'Landmark', 'twork-builder' ), value: 'fas fa-landmark' },
+	{ label: __( 'Shield', 'mk-builder' ), value: 'fas fa-shield-alt' },
+	{ label: __( 'Umbrella', 'mk-builder' ), value: 'fas fa-umbrella' },
+	{ label: __( 'Leaf', 'mk-builder' ), value: 'fas fa-leaf' },
+	{ label: __( 'Building', 'mk-builder' ), value: 'fas fa-building' },
+	{ label: __( 'Landmark', 'mk-builder' ), value: 'fas fa-landmark' },
 	{
-		label: __( 'Hand Holding Heart', 'twork-builder' ),
+		label: __( 'Hand Holding Heart', 'mk-builder' ),
 		value: 'fas fa-hand-holding-heart',
 	},
-	{ label: __( 'Globe Asia', 'twork-builder' ), value: 'fas fa-globe-asia' },
+	{ label: __( 'Globe Asia', 'mk-builder' ), value: 'fas fa-globe-asia' },
 	{
-		label: __( 'File Medical', 'twork-builder' ),
+		label: __( 'File Medical', 'mk-builder' ),
 		value: 'fas fa-file-medical',
 	},
-	{ label: __( 'Heart', 'twork-builder' ), value: 'fas fa-heart' },
-	{ label: __( 'Handshake', 'twork-builder' ), value: 'fas fa-handshake' },
+	{ label: __( 'Heart', 'mk-builder' ), value: 'fas fa-heart' },
+	{ label: __( 'Handshake', 'mk-builder' ), value: 'fas fa-handshake' },
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -51,7 +51,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-insurance-partner-item-editor insurance-card',
+			className: 'mk-insurance-partner-item-editor insurance-card',
 			style: {
 				borderRadius: `${ cardBorderRadius }px`,
 				minHeight: `${ cardMinHeight }px`,
@@ -71,11 +71,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Partner Name', 'twork-builder' ) }
+						title={ __( 'Partner Name', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon', 'twork-builder' ) }
+							label={ __( 'Icon', 'mk-builder' ) }
 							value={ iconClass }
 							options={ ICON_OPTIONS }
 							onChange={ ( val ) =>
@@ -85,7 +85,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Text Color', 'twork-builder' ) }
+							title={ __( 'Text Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: partnerNameColor,
@@ -95,14 +95,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Partner Name',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
 									value: iconColor,
 									onChange: ( val ) =>
 										setAttributes( { iconColor: val } ),
-									label: __( 'Icon', 'twork-builder' ),
+									label: __( 'Icon', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -110,7 +110,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Name Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ partnerNameFontSize }
 							onChange={ ( val ) =>
@@ -122,7 +122,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ partnerNameFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { partnerNameFontWeight: val } )
@@ -133,19 +133,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Text Transform', 'twork-builder' ) }
+							label={ __( 'Text Transform', 'mk-builder' ) }
 							value={ partnerNameTextTransform }
 							options={ [
 								{
-									label: __( 'None', 'twork-builder' ),
+									label: __( 'None', 'mk-builder' ),
 									value: 'none',
 								},
 								{
-									label: __( 'Uppercase', 'twork-builder' ),
+									label: __( 'Uppercase', 'mk-builder' ),
 									value: 'uppercase',
 								},
 								{
-									label: __( 'Capitalize', 'twork-builder' ),
+									label: __( 'Capitalize', 'mk-builder' ),
 									value: 'capitalize',
 								},
 							] }
@@ -157,7 +157,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Icon Size (rem)', 'twork-builder' ) }
+							label={ __( 'Icon Size (rem)', 'mk-builder' ) }
 							value={ iconSize }
 							onChange={ ( val ) =>
 								setAttributes( { iconSize: val } )
@@ -169,17 +169,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Card Styling', 'twork-builder' ) }
+						title={ __( 'Card Styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Card Colors', 'twork-builder' ) }
+							title={ __( 'Card Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: cardBgColor,
 									onChange: ( val ) =>
 										setAttributes( { cardBgColor: val } ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 								{
 									value: cardBorderColor,
@@ -187,13 +187,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											cardBorderColor: val,
 										} ),
-									label: __( 'Border', 'twork-builder' ),
+									label: __( 'Border', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Border Width (px)', 'twork-builder' ) }
+							label={ __( 'Border Width (px)', 'mk-builder' ) }
 							value={ cardBorderWidth }
 							onChange={ ( val ) =>
 								setAttributes( { cardBorderWidth: val } )
@@ -206,7 +206,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Border Radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardBorderRadius }
 							onChange={ ( val ) =>
@@ -218,7 +218,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding (px)', 'twork-builder' ) }
+							label={ __( 'Padding (px)', 'mk-builder' ) }
 							value={ cardPadding }
 							onChange={ ( val ) =>
 								setAttributes( { cardPadding: val } )
@@ -229,7 +229,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Min Height (px)', 'twork-builder' ) }
+							label={ __( 'Min Height (px)', 'mk-builder' ) }
 							value={ cardMinHeight }
 							onChange={ ( val ) =>
 								setAttributes( { cardMinHeight: val } )
@@ -273,7 +273,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { partnerName: val } )
 						}
-						placeholder={ __( 'Partner name...', 'twork-builder' ) }
+						placeholder={ __( 'Partner name...', 'mk-builder' ) }
 						withoutInteractiveFormatting
 					/>
 				</div>

@@ -12,8 +12,8 @@
 // Ensure section and testimonial cards display correctly in the block editor
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-hc-testimonials-section {
-    .twork-hc-testimonials-section-editor {
+.wp-block-mk-hc-testimonials-section {
+    .mk-hc-testimonials-section-editor {
         .hc-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -48,7 +48,7 @@
 
                     > .wp-block,
                     > .block-editor-block-list__block,
-                    > [data-type="twork/hc-testimonial-card"] {
+                    > [data-type="mk/hc-testimonial-card"] {
                         display: flex !important;
                         flex-direction: column !important;
                         min-width: 0;
@@ -58,7 +58,7 @@
                     /* Block wrapper: fill grid cell so card is visible */
                     > .wp-block > .block-editor-block-list__block-edit,
                     > .block-editor-block-list__block > .block-editor-block-list__block-edit,
-                    > [data-type="twork/hc-testimonial-card"] > .block-editor-block-list__block-edit {
+                    > [data-type="mk/hc-testimonial-card"] > .block-editor-block-list__block-edit {
                         display: flex !important;
                         flex: 1 !important;
                         flex-direction: column !important;
@@ -68,7 +68,7 @@
 
                     > .wp-block > .block-editor-block-list__block-edit > div,
                     > .block-editor-block-list__block > .block-editor-block-list__block-edit > div,
-                    > [data-type="twork/hc-testimonial-card"] > .block-editor-block-list__block-edit > div {
+                    > [data-type="mk/hc-testimonial-card"] > .block-editor-block-list__block-edit > div {
                         display: flex !important;
                         flex: 1 !important;
                         flex-direction: column !important;
@@ -80,8 +80,8 @@
         }
 
         /* Card appearance in editor (match front-end so content is visible) */
-        .twork-hc-testimonial-card-editor.hc-testi-card,
-        .hc-testi-card.twork-hc-testimonial-card-editor {
+        .mk-hc-testimonial-card-editor.hc-testi-card,
+        .hc-testi-card.mk-hc-testimonial-card-editor {
             border: 2px dashed #e0e0e0;
             border-radius: var(--hc-radius);
             background: #fff;
@@ -152,7 +152,7 @@
 }
 
 // === FRONTEND STYLES ===
-.twork-hc-testimonials-section {
+.mk-hc-testimonials-section {
     font-family: $font-primary;
 
     .hc-container {

@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/voice",
+	"name": "mk/voice",
 	"version": "1.0.0",
 	"title": "Voice",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/voices"
+		"mk/voices"
 	],
 	"icon": "format-quote",
 	"description": "Single voice/testimonial slide.",
@@ -53,6 +53,6 @@
 			"quoteMark": "❝"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

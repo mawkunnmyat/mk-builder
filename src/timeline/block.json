@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/timeline",
+	"name": "mk/timeline",
 	"version": "1.0.0",
 	"title": "Timeline",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "networking",
 	"description": "Professional timeline section with accordion functionality for displaying milestones and events.",
-	"keywords": [ "timeline", "accordion", "milestones", "history", "twork" ],
+	"keywords": [ "timeline", "accordion", "milestones", "history", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -98,7 +98,7 @@
 			"activeIndex": 0
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js"

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -22,11 +22,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -50,7 +50,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image' ] }
 						multiple={ false }
 						labels={ {
-							title: __( 'Partner icon', 'twork-builder' ),
+							title: __( 'Partner icon', 'mk-builder' ),
 						} }
 					/>
 				) : (
@@ -68,7 +68,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								setAttributes( { image: '', imageId: null } )
 							}
 						>
-							{ __( 'Replace', 'twork-builder' ) }
+							{ __( 'Replace', 'mk-builder' ) }
 						</Button>
 					</div>
 				) }
@@ -77,7 +77,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-partners__name"
 					value={ name }
 					onChange={ ( val ) => setAttributes( { name: val } ) }
-					placeholder={ __( 'Partner name', 'twork-builder' ) }
+					placeholder={ __( 'Partner name', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 			</div>

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -37,10 +37,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		sectionSubtitleFontSize,
 	} = attributes;
 
-	const ALLOWED_BLOCKS = [ 'twork/rad-why-item' ];
+	const ALLOWED_BLOCKS = [ 'mk/rad-why-item' ];
 	const TEMPLATE = [
 		[
-			'twork/rad-why-item',
+			'mk/rad-why-item',
 			{
 				iconClass: 'fas fa-certificate',
 				title: 'ISO Certified',
@@ -49,7 +49,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		],
 
 		[
-			'twork/rad-why-item',
+			'mk/rad-why-item',
 			{
 				iconClass: 'fas fa-bolt',
 				title: 'Fast Turnaround',
@@ -58,7 +58,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		],
 
 		[
-			'twork/rad-why-item',
+			'mk/rad-why-item',
 			{
 				iconClass: 'fas fa-user-md',
 				title: 'Sub-Specialists',
@@ -67,7 +67,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		],
 
 		[
-			'twork/rad-why-item',
+			'mk/rad-why-item',
 			{
 				iconClass: 'fas fa-money-bill-wave',
 				title: 'Affordable',
@@ -78,7 +78,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-rad-why-section-editor',
+			className: 'mk-rad-why-section-editor',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
@@ -105,11 +105,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section Background', 'twork-builder' ) }
+						title={ __( 'Section Background', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
-							title={ __( 'Background Color', 'twork-builder' ) }
+							title={ __( 'Background Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -119,7 +119,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -128,7 +128,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -141,7 +141,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -154,13 +154,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Section Heading', 'twork-builder' ) }
+						title={ __( 'Section Heading', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Show Section Title',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSectionTitle }
 							onChange={ ( val ) =>
@@ -178,7 +178,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Section Title...',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ { marginBottom: '10px' } }
 								/>
@@ -186,7 +186,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelColorSettings
 									title={ __(
 										'Title Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -197,7 +197,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Title Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -206,7 +206,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Title Font Size (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitleFontSize }
 									onChange={ ( val ) =>
@@ -222,7 +222,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Title Font Weight',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitleFontWeight }
 									onChange={ ( val ) =>
@@ -238,28 +238,28 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Title Alignment',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitleAlignment }
 									options={ [
 										{
 											label: __(
 												'Left',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'left',
 										},
 										{
 											label: __(
 												'Center',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'center',
 										},
 										{
 											label: __(
 												'Right',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'right',
 										},
@@ -278,7 +278,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show Section Subtitle',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSectionSubtitle }
 							onChange={ ( val ) =>
@@ -298,14 +298,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Section Subtitle...',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<PanelColorSettings
 									title={ __(
 										'Subtitle Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -316,7 +316,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Subtitle Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -325,7 +325,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Subtitle Font Size (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionSubtitleFontSize }
 									onChange={ ( val ) =>
@@ -342,11 +342,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Grid Layout', 'twork-builder' ) }
+						title={ __( 'Grid Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Columns (Desktop)', 'twork-builder' ) }
+							label={ __( 'Columns (Desktop)', 'mk-builder' ) }
 							value={ columns }
 							onChange={ ( val ) =>
 								setAttributes( { columns: val } )
@@ -357,7 +357,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Columns (Tablet)', 'twork-builder' ) }
+							label={ __( 'Columns (Tablet)', 'mk-builder' ) }
 							value={ columnsTablet }
 							onChange={ ( val ) =>
 								setAttributes( { columnsTablet: val } )
@@ -368,7 +368,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Columns (Mobile)', 'twork-builder' ) }
+							label={ __( 'Columns (Mobile)', 'mk-builder' ) }
 							value={ columnsMobile }
 							onChange={ ( val ) =>
 								setAttributes( { columnsMobile: val } )
@@ -383,7 +383,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gap Between Items (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gap }
 							onChange={ ( val ) =>
@@ -396,11 +396,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Container', 'twork-builder' ) }
+						title={ __( 'Container', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Max Width (px)', 'twork-builder' ) }
+							label={ __( 'Max Width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -413,7 +413,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Horizontal Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -446,7 +446,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Section Title...',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ {
 										fontSize: `${ sectionTitleFontSize }rem`,
@@ -469,7 +469,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Section Subtitle...',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ {
 										fontSize: `${ sectionSubtitleFontSize }rem`,

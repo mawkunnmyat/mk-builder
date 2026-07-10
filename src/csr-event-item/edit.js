@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -31,7 +31,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-csr-event-item-editor event-card stagger-event',
+			className: 'mk-csr-event-item-editor event-card stagger-event',
 			style: {
 				display: 'flex',
 				flexDirection: 'row',
@@ -53,82 +53,82 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Event Date', 'twork-builder' ) }
+						title={ __( 'Event Date', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Day', 'twork-builder' ) }
+							label={ __( 'Day', 'mk-builder' ) }
 							value={ dateDay }
 							onChange={ ( val ) =>
 								setAttributes( { dateDay: val || '15' } )
 							}
-							help={ __( 'e.g., 15', 'twork-builder' ) }
+							help={ __( 'e.g., 15', 'mk-builder' ) }
 						/>
 
 						<TextControl
-							label={ __( 'Month', 'twork-builder' ) }
+							label={ __( 'Month', 'mk-builder' ) }
 							value={ dateMonth }
 							onChange={ ( val ) =>
 								setAttributes( { dateMonth: val || 'Nov' } )
 							}
-							help={ __( 'e.g., Nov', 'twork-builder' ) }
+							help={ __( 'e.g., Nov', 'mk-builder' ) }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Date Block Colors', 'twork-builder' ) }
+							title={ __( 'Date Block Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: dateBgColor,
 									onChange: ( val ) =>
 										setAttributes( { dateBgColor: val } ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 								{
 									value: dateTextColor,
 									onChange: ( val ) =>
 										setAttributes( { dateTextColor: val } ),
-									label: __( 'Text', 'twork-builder' ),
+									label: __( 'Text', 'mk-builder' ),
 								},
 							] }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Event Info', 'twork-builder' ) }
+						title={ __( 'Event Info', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Location', 'twork-builder' ) }
+							label={ __( 'Location', 'mk-builder' ) }
 							value={ location }
 							onChange={ ( val ) =>
 								setAttributes( { location: val } )
 							}
 							help={ __(
 								'e.g., Kyaukse Township',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Time', 'twork-builder' ) }
+							label={ __( 'Time', 'mk-builder' ) }
 							value={ time }
 							onChange={ ( val ) =>
 								setAttributes( { time: val } )
 							}
 							help={ __(
 								'e.g., 8:00 AM – 4:00 PM',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Text Colors', 'twork-builder' ) }
+							title={ __( 'Text Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 								{
 									value: infoColor,
@@ -136,7 +136,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { infoColor: val } ),
 									label: __(
 										'Location/Time Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -144,23 +144,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Button', 'twork-builder' ) }
+						title={ __( 'Button', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Button Text', 'twork-builder' ) }
+							label={ __( 'Button Text', 'mk-builder' ) }
 							value={ buttonText }
 							onChange={ ( val ) =>
 								setAttributes( { buttonText: val } )
 							}
 							help={ __(
 								'e.g., Volunteer, Register',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ buttonUrl || '' }
 							onChange={ ( val ) =>
 								setAttributes( { buttonUrl: val || '#' } )
@@ -168,12 +168,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							placeholder="#"
 							help={ __(
 								'e.g. https://example.com/register or #',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<ToggleControl
-							label={ __( 'Open in New Tab', 'twork-builder' ) }
+							label={ __( 'Open in New Tab', 'mk-builder' ) }
 							checked={ buttonOpensInNewTab }
 							onChange={ ( val ) =>
 								setAttributes( { buttonOpensInNewTab: val } )
@@ -245,7 +245,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Event title...',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								margin: '0 0 5px 0',
@@ -281,7 +281,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						style={ { fontSize: '0.75rem', padding: '10px 20px' } }
 						onClick={ ( e ) => e.preventDefault() }
 					>
-						{ buttonText || __( 'Register', 'twork-builder' ) }
+						{ buttonText || __( 'Register', 'mk-builder' ) }
 					</a>
 				</div>
 			</div>

@@ -2,7 +2,7 @@
 	'use strict';
 
 	const CAROUSEL_SELECTOR =
-		'.wp-block-twork-hero-banner-carousel.twork-hero-banner-carousel, .twork-hero-banner-carousel';
+		'.wp-block-mk-hero-banner-carousel.mk-hero-banner-carousel, .mk-hero-banner-carousel';
 
 	function on( rootEl, eventName, selector, handler ) {
 		rootEl.addEventListener( eventName, ( event ) => {
@@ -150,18 +150,18 @@
 	}
 
 	function initCarousel( section ) {
-		if ( section.dataset.tworkHeroCarouselInit === 'true' ) {
+		if ( section.dataset.mkHeroCarouselInit === 'true' ) {
 			return;
 		}
 
 		const wrap = section.querySelector(
-			'.twork-hero-banner-carousel__wrap'
+			'.mk-hero-banner-carousel__wrap'
 		);
 		if ( ! wrap ) {
 			return;
 		}
 
-		section.dataset.tworkHeroCarouselInit = 'true';
+		section.dataset.mkHeroCarouselInit = 'true';
 
 		const autoplayMs =
 			parseInt( section.getAttribute( 'data-autoplay-ms' ), 10 ) || 7000;

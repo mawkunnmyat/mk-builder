@@ -4,10 +4,10 @@ import {
 	InnerBlocks,
 } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/image-card' ];
+const ALLOWED_BLOCKS = [ 'mk/image-card' ];
 const TEMPLATE = [
 	[
-		'twork/image-card',
+		'mk/image-card',
 		{
 			variant: 'simple',
 			image: 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1400&q=80',
@@ -16,7 +16,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/image-card',
+		'mk/image-card',
 		{
 			variant: 'overlay',
 			image: 'https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&w=1400&q=80',
@@ -32,7 +32,7 @@ const TEMPLATE = [
 export default function Edit() {
 	const blockProps = useBlockProps( {
 		className:
-			'twork-about__images-grid twork-about-images-grid-editor',
+			'mk-about__images-grid mk-about-images-grid-editor',
 	} );
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {
 		allowedBlocks: ALLOWED_BLOCKS,

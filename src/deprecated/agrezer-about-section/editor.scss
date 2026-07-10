@@ -2,7 +2,7 @@
  * Editor-only: InnerBlocks + child grid blocks (features / images) match frontend.
  */
 
-.twork-agrezer-about-section-editor {
+.mk-agrezer-about-section-editor {
 	.agrezer-about__label span[contenteditable="true"],
 	.agrezer-about__title[contenteditable="true"] {
 		&:focus {
@@ -28,7 +28,7 @@
 		}
 	}
 
-	.twork-agrezer-about-features-grid-editor {
+	.mk-agrezer-about-features-grid-editor {
 		display: grid !important;
 		grid-template-columns: repeat(4, 1fr) !important;
 		gap: 2rem !important;
@@ -41,14 +41,14 @@
 				display: contents !important;
 
 				> .wp-block,
-				> [data-type="twork/agrezer-about-feature-item"] {
+				> [data-type="mk/agrezer-about-feature-item"] {
 					display: block !important;
 				}
 			}
 		}
 	}
 
-	.twork-agrezer-about-images-grid-editor {
+	.mk-agrezer-about-images-grid-editor {
 		display: grid !important;
 		grid-template-columns: repeat(2, 1fr) !important;
 		gap: 2rem !important;
@@ -61,7 +61,7 @@
 				display: contents !important;
 
 				> .wp-block,
-				> [data-type="twork/agrezer-about-image-card"] {
+				> [data-type="mk/agrezer-about-image-card"] {
 					display: block !important;
 				}
 			}
@@ -86,20 +86,20 @@
 }
 
 @media (max-width: 1040px) {
-	.twork-agrezer-about-section-editor {
-		.twork-agrezer-about-features-grid-editor {
+	.mk-agrezer-about-section-editor {
+		.mk-agrezer-about-features-grid-editor {
 			grid-template-columns: repeat(2, 1fr) !important;
 		}
 
-		.twork-agrezer-about-images-grid-editor {
+		.mk-agrezer-about-images-grid-editor {
 			grid-template-columns: 1fr !important;
 		}
 	}
 }
 
 @media (max-width: 700px) {
-	.twork-agrezer-about-section-editor {
-		.twork-agrezer-about-features-grid-editor {
+	.mk-agrezer-about-section-editor {
+		.mk-agrezer-about-features-grid-editor {
 			grid-template-columns: 1fr !important;
 		}
 	}

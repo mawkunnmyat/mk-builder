@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/review-card",
+	"name": "mk/review-card",
 	"title": "Review Card",
-	"parent": [ "twork/review-carousel" ],
-	"category": "twork-builder",
+	"parent": [ "mk/review-carousel" ],
+	"category": "mk-builder",
 	"description": "Single customer review card for the review carousel.",
-	"keywords": [ "review", "testimonial", "quote", "twork" ],
+	"keywords": [ "review", "testimonial", "quote", "mk" ],
 	"attributes": {
 		"text": {
 			"type": "string",
@@ -46,7 +46,7 @@
 			"avatarAlt": "Daw Khin M."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

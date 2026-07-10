@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -40,7 +40,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'treatment-card stagger-card twork-neuro-treatment-item-editor',
+				'treatment-card stagger-card mk-neuro-treatment-item-editor',
 		} ),
 		[]
 	);
@@ -52,13 +52,13 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Treatment Card', 'twork-builder' ) }
+						title={ __( 'Treatment Card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Use image instead of icon',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ useImage }
 							onChange={ ( val ) =>
@@ -68,7 +68,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Toggle between a Font Awesome icon or a custom image.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -77,7 +77,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Icon preset',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ icon }
 									options={ [
@@ -85,14 +85,14 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 											value: '',
 											label: __(
 												'Custom / None',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 										...ICON_PRESETS.map( ( p ) => ( {
 											value: p.value,
 											label: __(
 												p.label,
-												'twork-builder'
+												'mk-builder'
 											),
 										} ) ),
 									] }
@@ -104,7 +104,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Custom icon class',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ icon }
 									onChange={ ( val ) =>
@@ -112,7 +112,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'e.g. fas fa-brain',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</>
@@ -143,7 +143,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Remove image',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</button>
 									</>
@@ -160,7 +160,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Treatment image',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -177,21 +177,21 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 				) }
 				{ useImage && ! imageUrl && (
 					<span className="treatment-media-placeholder">
-						{ __( 'Add image in sidebar', 'twork-builder' ) }
+						{ __( 'Add image in sidebar', 'mk-builder' ) }
 					</span>
 				) }
 				<RichText
 					tagName="h4"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Treatment title…', 'twork-builder' ) }
+					placeholder={ __( 'Treatment title…', 'mk-builder' ) }
 				/>
 
 				<RichText
 					tagName="p"
 					value={ text }
 					onChange={ ( val ) => setAttributes( { text: val } ) }
-					placeholder={ __( 'Description…', 'twork-builder' ) }
+					placeholder={ __( 'Description…', 'mk-builder' ) }
 				/>
 			</div>
 		</>

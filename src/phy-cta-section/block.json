@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-cta-section",
+	"name": "mk/phy-cta-section",
 	"version": "1.0.0",
 	"title": "CTA Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "megaphone",
 	"description": "Full-width physio call-to-action card (Start Your Recovery Journey Today) with flexible background: color, image, video or GIF.",
-	"keywords": [ "physio", "cta", "call to action", "button", "twork" ],
+	"keywords": [ "physio", "cta", "call to action", "button", "mk" ],
 	"attributes": {
 		"backgroundMode": {
 			"type": "string",
@@ -141,7 +141,7 @@
 			"animationDelay": 100
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

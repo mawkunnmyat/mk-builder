@@ -1,17 +1,17 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/intro-section",
+	"name": "mk/intro-section",
 	"version": "1.0.0",
 	"title": "Intro Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "welcome-learn-more",
 	"description": "Intro section with media and feature list.",
 	"keywords": [
 		"about",
 		"intro",
 		"agriculture",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -187,7 +187,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/intro-feature",
+				"name": "mk/intro-feature",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=128&q=80",
 					"imageAlt": "Leaf icon",
@@ -195,7 +195,7 @@
 				}
 			},
 			{
-				"name": "twork/intro-feature",
+				"name": "mk/intro-feature",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=128&q=80",
 					"imageAlt": "Vegetables icon",
@@ -203,7 +203,7 @@
 				}
 			},
 			{
-				"name": "twork/intro-feature",
+				"name": "mk/intro-feature",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=128&q=80",
 					"imageAlt": "Grains icon",
@@ -211,7 +211,7 @@
 				}
 			},
 			{
-				"name": "twork/intro-feature",
+				"name": "mk/intro-feature",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=128&q=80",
 					"imageAlt": "Farm icon",
@@ -220,7 +220,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

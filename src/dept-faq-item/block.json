@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/dept-faq-item",
+	"name": "mk/dept-faq-item",
 	"title": "FAQ Item",
-	"category": "twork-builder",
-	"parent": [ "twork/dept-faq-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/dept-faq-section" ],
 	"attributes": {
 		"question": {
 			"type": "string",

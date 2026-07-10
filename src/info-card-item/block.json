@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/info-card-item",
+	"name": "mk/info-card-item",
 	"title": "Info Card Item",
-	"parent": [ "twork/info-cards-section" ],
+	"parent": [ "mk/info-cards-section" ],
 	"description": "Single info card with icon, title, description and optional CTA link.",
 	"attributes": {
 		"iconType": {
@@ -104,6 +104,6 @@
 			"openInNewTab": false
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

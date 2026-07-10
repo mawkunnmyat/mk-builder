@@ -12,8 +12,8 @@ $em-alert: #dc3545;
 // --- Editor: 3 columns per row, inner blocks participate as grid children ---
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-em-triage-section {
-    .twork-em-triage-section-editor {
+.wp-block-mk-em-triage-section {
+    .mk-em-triage-section-editor {
         .em-triage-grid {
             display: grid !important;
             grid-template-columns: repeat(3, 1fr) !important;
@@ -26,7 +26,7 @@ $em-alert: #dc3545;
                     display: contents !important;
 
                     > .wp-block,
-                    > [data-type="twork/em-triage-card"] {
+                    > [data-type="mk/em-triage-card"] {
                         display: flex !important;
                         flex-direction: column !important;
                         min-width: 0;
@@ -46,7 +46,7 @@ $em-alert: #dc3545;
 }
 
 // --- Frontend: section ---
-.twork-em-triage-section.em-section {
+.mk-em-triage-section.em-section {
     position: relative;
 
     .em-container {

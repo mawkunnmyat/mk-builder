@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/info-cards-section",
+	"name": "mk/info-cards-section",
 	"title": "Info Cards Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "phone",
 	"description": "Responsive contact/info cards grid with accent icons and CTAs, matching contact.html design.",
-	"keywords": [ "contact", "info", "card", "cta", "twork" ],
+	"keywords": [ "contact", "info", "card", "cta", "mk" ],
 	"attributes": {
 		"showSectionHeader": {
 			"type": "boolean",
@@ -120,7 +120,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/info-card-item",
+				"name": "mk/info-card-item",
 				"attributes": {
 					"iconClass": "fas fa-phone-volume",
 					"title": "Emergency Cases",
@@ -131,7 +131,7 @@
 				}
 			},
 			{
-				"name": "twork/info-card-item",
+				"name": "mk/info-card-item",
 				"attributes": {
 					"iconClass": "fas fa-envelope-open-text",
 					"title": "General Enquiry",
@@ -141,7 +141,7 @@
 				}
 			},
 			{
-				"name": "twork/info-card-item",
+				"name": "mk/info-card-item",
 				"attributes": {
 					"iconClass": "fas fa-map-marked-alt",
 					"title": "Visit Us",
@@ -152,7 +152,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"editorStyle": "file:./style-index.css"

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/gm-services-section",
+	"name": "mk/gm-services-section",
 	"version": "1.0.0",
 	"title": "Services Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "General Medicine services grid with title, subtitle and responsive cards.",
-	"keywords": [ "general medicine", "services", "grid", "twork" ],
+	"keywords": [ "general medicine", "services", "grid", "mk" ],
 	"supports": {
 		"html": false,
 		"align": [ "wide", "full" ]
@@ -90,21 +90,21 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/gm-service-item",
+				"name": "mk/gm-service-item",
 				"attributes": {
 					"icon": "fas fa-thermometer-half",
 					"title": "Acute Illnesses"
 				}
 			},
 			{
-				"name": "twork/gm-service-item",
+				"name": "mk/gm-service-item",
 				"attributes": {
 					"icon": "fas fa-heartbeat",
 					"title": "Chronic Management"
 				}
 			},
 			{
-				"name": "twork/gm-service-item",
+				"name": "mk/gm-service-item",
 				"attributes": {
 					"icon": "fas fa-user-shield",
 					"title": "Preventative Care"
@@ -112,7 +112,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

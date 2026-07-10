@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-about-image-card",
+	"name": "mk/agrezer-about-image-card",
 	"version": "1.0.0",
 	"title": "Agrezer About Image Card",
-	"category": "twork-builder",
-	"parent": [ "twork/agrezer-about-images-grid" ],
+	"category": "mk-builder",
+	"parent": [ "mk/agrezer-about-images-grid" ],
 	"icon": "format-image",
 	"description": "Image card — plain or with overlay CTA.",
 	"supports": {
@@ -51,6 +51,6 @@
 			"overlayButtonUrl": "#"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

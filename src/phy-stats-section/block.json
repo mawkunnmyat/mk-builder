@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-stats-section",
+	"name": "mk/phy-stats-section",
 	"version": "1.0.0",
 	"title": "Stats Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "chart-bar",
 	"description": "Stats grid with number + label cards (e.g. Happy Patients, Expert Therapists). Matches physiotherapy-rehab.html phy-stats-grid.",
-	"keywords": [ "physio", "stats", "grid", "numbers", "twork" ],
+	"keywords": [ "physio", "stats", "grid", "numbers", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -91,28 +91,28 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/phy-stat-card",
+				"name": "mk/phy-stat-card",
 				"attributes": {
 					"statNumber": "5k+",
 					"label": "Happy Patients"
 				}
 			},
 			{
-				"name": "twork/phy-stat-card",
+				"name": "mk/phy-stat-card",
 				"attributes": {
 					"statNumber": "10+",
 					"label": "Expert Therapists"
 				}
 			},
 			{
-				"name": "twork/phy-stat-card",
+				"name": "mk/phy-stat-card",
 				"attributes": {
 					"statNumber": "98%",
 					"label": "Recovery Rate"
 				}
 			},
 			{
-				"name": "twork/phy-stat-card",
+				"name": "mk/phy-stat-card",
 				"attributes": {
 					"statNumber": "15",
 					"label": "Years Experience"
@@ -120,7 +120,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

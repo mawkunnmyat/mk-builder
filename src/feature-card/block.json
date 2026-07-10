@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/feature-card",
+	"name": "mk/feature-card",
 	"version": "1.0.0",
 	"title": "Feature Card",
-	"category": "twork-builder",
-	"parent": [ "twork/features-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/features-section" ],
 	"description": "Single feature card with icon, title, and description for the About features grid.",
 	"attributes": {
 		"iconClass": {
@@ -28,6 +28,6 @@
 			"description": "4K Laparoscopy towers and modern modular operation theaters."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

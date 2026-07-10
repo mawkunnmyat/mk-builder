@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	MediaPlaceholder,
@@ -14,26 +14,26 @@ import {
 } from '@wordpress/components';
 
 const ICON_TYPE_OPTIONS = [
-	{ value: 'fontawesome', label: __( 'Font Awesome', 'twork-builder' ) },
+	{ value: 'fontawesome', label: __( 'Font Awesome', 'mk-builder' ) },
 	{
 		value: 'dashicon',
-		label: __( 'WordPress (Dashicons)', 'twork-builder' ),
+		label: __( 'WordPress (Dashicons)', 'mk-builder' ),
 	},
-	{ value: 'image', label: __( 'Image / GIF', 'twork-builder' ) },
-	{ value: 'video', label: __( 'Video', 'twork-builder' ) },
+	{ value: 'image', label: __( 'Image / GIF', 'mk-builder' ) },
+	{ value: 'video', label: __( 'Video', 'mk-builder' ) },
 ];
 
 const DASHICON_OPTIONS = [
-	{ value: 'dashicons-heart', label: __( 'Heart', 'twork-builder' ) },
+	{ value: 'dashicons-heart', label: __( 'Heart', 'mk-builder' ) },
 	{
 		value: 'dashicons-performance',
-		label: __( 'Performance', 'twork-builder' ),
+		label: __( 'Performance', 'mk-builder' ),
 	},
-	{ value: 'dashicons-editor-help', label: __( 'Help', 'twork-builder' ) },
-	{ value: 'dashicons-plus-alt', label: __( 'Plus', 'twork-builder' ) },
-	{ value: 'dashicons-yes', label: __( 'Check', 'twork-builder' ) },
-	{ value: 'dashicons-admin-generic', label: __( 'Cog', 'twork-builder' ) },
-	{ value: 'dashicons-chart-line', label: __( 'Chart', 'twork-builder' ) },
+	{ value: 'dashicons-editor-help', label: __( 'Help', 'mk-builder' ) },
+	{ value: 'dashicons-plus-alt', label: __( 'Plus', 'mk-builder' ) },
+	{ value: 'dashicons-yes', label: __( 'Check', 'mk-builder' ) },
+	{ value: 'dashicons-admin-generic', label: __( 'Cog', 'mk-builder' ) },
+	{ value: 'dashicons-chart-line', label: __( 'Chart', 'mk-builder' ) },
 ];
 
 function ConditionCardIconRender( {
@@ -88,7 +88,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	} = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'condition-card twork-centre-condition-card-editor',
+			className: 'condition-card mk-centre-condition-card-editor',
 		} ),
 		[]
 	);
@@ -97,16 +97,16 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Card', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Card', 'mk-builder' ) }>
 						<BaseControl
-							label={ __( 'Icon', 'twork-builder' ) }
+							label={ __( 'Icon', 'mk-builder' ) }
 							help={ __(
 								'Choose icon type: Font Awesome, WordPress icon, image/GIF, or video.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<SelectControl
-								label={ __( 'Icon type', 'twork-builder' ) }
+								label={ __( 'Icon type', 'mk-builder' ) }
 								value={ iconType || 'fontawesome' }
 								options={ ICON_TYPE_OPTIONS }
 								onChange={ ( v ) =>
@@ -119,7 +119,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Font Awesome class',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ iconClass || 'fas fa-heart-broken' }
 									onChange={ ( v ) =>
@@ -130,7 +130,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'e.g. fas fa-heart-broken, fas fa-bolt',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							) }
@@ -138,7 +138,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'WordPress Dashicon',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ iconDashicon || 'dashicons-heart' }
 									options={ DASHICON_OPTIONS }
@@ -161,7 +161,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Icon image / GIF',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -187,7 +187,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }
@@ -205,7 +205,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Icon video',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -233,13 +233,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }
 						</BaseControl>
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( v ) => setAttributes( { title: v } ) }
 						/>
@@ -259,7 +259,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h4"
 					value={ title }
 					onChange={ ( v ) => setAttributes( { title: v } ) }
-					placeholder={ __( 'Condition title…', 'twork-builder' ) }
+					placeholder={ __( 'Condition title…', 'mk-builder' ) }
 				/>
 			</div>
 		</>

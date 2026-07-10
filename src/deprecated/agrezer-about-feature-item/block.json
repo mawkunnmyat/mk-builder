@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-about-feature-item",
+	"name": "mk/agrezer-about-feature-item",
 	"version": "1.0.0",
 	"title": "Agrezer About Feature",
-	"category": "twork-builder",
-	"parent": [ "twork/agrezer-about-features-grid" ],
+	"category": "mk-builder",
+	"parent": [ "mk/agrezer-about-features-grid" ],
 	"icon": "yes-alt",
 	"description": "Single feature column with icon, title, and description.",
 	"supports": {
@@ -33,6 +33,6 @@
 			"iconVariant": "growth"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

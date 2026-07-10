@@ -2,13 +2,13 @@
  * Health Check Package Card – layout in parent section.
  * Editor styles: prevent cut-off and ensure full content visible.
  */
-.editor-styles-wrapper .wp-block-twork-health-check-package-card,
-.block-editor-block-list__layout .wp-block-twork-health-check-package-card {
+.editor-styles-wrapper .wp-block-mk-health-check-package-card,
+.block-editor-block-list__layout .wp-block-mk-health-check-package-card {
     overflow: visible !important;
 }
 
-.editor-styles-wrapper .twork-chk-pkg-card-editor,
-.wp-block-twork-health-check-package-card .twork-chk-pkg-card-editor {
+.editor-styles-wrapper .mk-chk-pkg-card-editor,
+.wp-block-mk-health-check-package-card .mk-chk-pkg-card-editor {
     overflow: visible !important;
     min-height: 280px;
     width: 100%;

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/ph-upload-section",
+	"name": "mk/ph-upload-section",
 	"version": "1.0.0",
 	"title": "Upload Prescription Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "upload",
 	"description": "Upload prescription CTA section for the pharmacy page.",
-	"keywords": [ "pharmacy", "upload", "prescription", "twork" ],
+	"keywords": [ "pharmacy", "upload", "prescription", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -86,7 +86,7 @@
 			"imageAlt": "Prescription"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

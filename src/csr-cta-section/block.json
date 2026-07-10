@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/csr-cta-section",
+	"name": "mk/csr-cta-section",
 	"version": "1.0.0",
 	"title": "CTA Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "megaphone",
 	"description": "Join Our Mission - Call-to-action section for CSR pages with title, subtitle, and button.",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"volunteer",
 		"mission",
 		"call-to-action",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundType": {
@@ -208,7 +208,7 @@
 			"animationOnScroll": true
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js"

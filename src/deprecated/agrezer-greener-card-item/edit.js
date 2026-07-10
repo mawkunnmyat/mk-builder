@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -19,11 +19,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Link', 'twork-builder' ) }
+						title={ __( 'Link', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'URL', 'twork-builder' ) }
+							label={ __( 'URL', 'mk-builder' ) }
 							value={ linkUrl }
 							onChange={ ( val ) =>
 								setAttributes( { linkUrl: val } )
@@ -31,7 +31,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Image alt', 'twork-builder' ) }
+							label={ __( 'Image alt', 'mk-builder' ) }
 							value={ alt }
 							onChange={ ( val ) =>
 								setAttributes( { alt: val } )
@@ -54,7 +54,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image' ] }
 						multiple={ false }
 						labels={ {
-							title: __( 'Card image', 'twork-builder' ),
+							title: __( 'Card image', 'mk-builder' ),
 						} }
 					/>
 				) : (
@@ -76,7 +76,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove image', 'twork-builder' ) }
+								{ __( 'Remove image', 'mk-builder' ) }
 							</Button>
 						</div>
 					</>
@@ -86,7 +86,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-greener-card__title"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Card title', 'twork-builder' ) }
+					placeholder={ __( 'Card title', 'mk-builder' ) }
 				/>
 
 				<div className="agrezer-greener-card__link agrezer-greener-card__link--editor">
@@ -96,7 +96,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { linkText: val } )
 						}
-						placeholder={ __( 'Read More', 'twork-builder' ) }
+						placeholder={ __( 'Read More', 'mk-builder' ) }
 					/>
 
 					<span aria-hidden="true">-&gt;</span>

@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/accreditation-section",
+	"name": "mk/accreditation-section",
 	"version": "1.0.0",
 	"title": "Accreditation Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "awards",
 	"description": "Professional accreditations and certifications grid with intro text, cert cards, and scroll animations.",
 	"keywords": [
@@ -15,7 +15,7 @@
 		"ISO",
 		"JCI",
 		"hospital",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundColor": {
@@ -198,7 +198,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/accreditation-cert-card",
+				"name": "mk/accreditation-cert-card",
 				"attributes": {
 					"iconClass": "fas fa-certificate",
 					"certTitle": "ISO 9001:2015",
@@ -207,7 +207,7 @@
 				}
 			},
 			{
-				"name": "twork/accreditation-cert-card",
+				"name": "mk/accreditation-cert-card",
 				"attributes": {
 					"iconClass": "fas fa-globe",
 					"certTitle": "JCI Accreditation",
@@ -216,7 +216,7 @@
 				}
 			},
 			{
-				"name": "twork/accreditation-cert-card",
+				"name": "mk/accreditation-cert-card",
 				"attributes": {
 					"iconClass": "fas fa-shield-alt",
 					"certTitle": "Safety Excellence",
@@ -226,7 +226,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./view.js",
 	"style": "file:./style-index.css"

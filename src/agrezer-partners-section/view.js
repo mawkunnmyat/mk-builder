@@ -1,7 +1,7 @@
 /**
  * Agrezer Partners: clone logo row for seamless CSS marquee (no deps).
  *
- * @package twork-builder
+ * @package mk-builder
  */
 
 ( function () {
@@ -19,17 +19,17 @@
 			return;
 		}
 		if ( shouldReduceMotion() ) {
-			section.classList.add( 'twork-partners--reduced-motion' );
+			section.classList.add( 'mk-partners--reduced-motion' );
 			return;
 		}
 
-		var track = section.querySelector( '.twork-partners__track' );
+		var track = section.querySelector( '.mk-partners__track' );
 		if ( ! track || track.getAttribute( 'data-partners-cloned' ) === '1' ) {
 			return;
 		}
 
 		var items = track.querySelectorAll(
-			':scope > .wp-block-twork-partners-item, :scope > .twork-partners__item'
+			':scope > .wp-block-mk-partners-item, :scope > .mk-partners__item'
 		);
 		if ( ! items.length ) {
 			return;
@@ -44,7 +44,7 @@
 	function init() {
 		document
 			.querySelectorAll(
-				'.twork-partners-section.twork-partners'
+				'.mk-partners-section.mk-partners'
 			)
 			.forEach( cloneTrackItems );
 	}

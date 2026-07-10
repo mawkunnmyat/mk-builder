@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -35,7 +35,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-agrezer-contact-map-editor',
+			className: 'mk-agrezer-contact-map-editor',
 			style: {
 				backgroundColor: sectionBackgroundColor,
 				paddingTop: `${ paddingTop }px`,
@@ -69,23 +69,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Form', 'twork-builder' ) }
+						title={ __( 'Form', 'mk-builder' ) }
 						initialOpen
 					>
 						<TextControl
-							label={ __( 'Form action URL', 'twork-builder' ) }
+							label={ __( 'Form action URL', 'mk-builder' ) }
 							value={ formAction }
 							onChange={ ( v ) =>
 								setAttributes( { formAction: v } )
 							}
 							help={ __(
 								'Endpoint to receive submissions (e.g. Contact Form 7, admin-ajax, or custom REST). Leave empty to use #.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<SelectControl
-							label={ __( 'HTTP method', 'twork-builder' ) }
+							label={ __( 'HTTP method', 'mk-builder' ) }
 							value={ formMethod }
 							options={ [
 								{ label: 'POST', value: 'post' },
@@ -99,7 +99,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Name field placeholder',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ namePlaceholder }
 							onChange={ ( v ) =>
@@ -108,7 +108,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Phone placeholder', 'twork-builder' ) }
+							label={ __( 'Phone placeholder', 'mk-builder' ) }
 							value={ phonePlaceholder }
 							onChange={ ( v ) =>
 								setAttributes( { phonePlaceholder: v } )
@@ -116,7 +116,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Email placeholder', 'twork-builder' ) }
+							label={ __( 'Email placeholder', 'mk-builder' ) }
 							value={ emailPlaceholder }
 							onChange={ ( v ) =>
 								setAttributes( { emailPlaceholder: v } )
@@ -126,7 +126,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Subject placeholder',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ subjectPlaceholder }
 							onChange={ ( v ) =>
@@ -137,7 +137,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Message placeholder',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ messagePlaceholder }
 							onChange={ ( v ) =>
@@ -148,7 +148,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Submit button text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ submitButtonText }
 							onChange={ ( v ) =>
@@ -156,23 +156,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 						/>
 					</PanelBody>
-					<PanelBody title={ __( 'Map', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Map', 'mk-builder' ) }>
 						<TextControl
-							label={ __( 'Embed URL (https)', 'twork-builder' ) }
+							label={ __( 'Embed URL (https)', 'mk-builder' ) }
 							value={ mapEmbedUrl }
 							onChange={ ( v ) =>
 								setAttributes( { mapEmbedUrl: v } )
 							}
 							help={ __(
 								'Google Maps embed or any https iframe URL.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
 							label={ __(
 								'Iframe title (accessibility)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mapIframeTitle }
 							onChange={ ( v ) =>
@@ -181,10 +181,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout & colors', 'twork-builder' ) }
+						title={ __( 'Layout & colors', 'mk-builder' ) }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -196,7 +196,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -209,7 +209,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container corner radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerBorderRadius }
 							onChange={ ( v ) =>
@@ -236,7 +236,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<BaseControl
 							label={ __(
 								'Section background',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<input
@@ -252,7 +252,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<BaseControl
 							label={ __(
 								'Card / form area background',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<input
@@ -269,7 +269,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Map min height — desktop (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mapMinHeightDesktop }
 							onChange={ ( v ) =>
@@ -282,7 +282,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Map min height — tablet (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mapMinHeightTablet }
 							onChange={ ( v ) =>
@@ -295,7 +295,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Map min height — mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mapMinHeightMobile }
 							onChange={ ( v ) =>
@@ -323,7 +323,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section heading…',
-								'twork-builder'
+								'mk-builder'
 							) }
 							allowedFormats={ [ 'core/bold', 'core/italic' ] }
 						/>
@@ -397,7 +397,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								className="agrezer-contact-map__iframe"
 								title={
 									mapIframeTitle ||
-									__( 'Map', 'twork-builder' )
+									__( 'Map', 'mk-builder' )
 								}
 								src={ mapEmbedUrl.trim() }
 								loading="lazy"
@@ -408,7 +408,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<p>
 									{ __(
 										'Add a map embed URL in the sidebar.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								</p>
 							</div>

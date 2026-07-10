@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/em-doc-card",
+	"name": "mk/em-doc-card",
 	"version": "1.0.0",
 	"title": "Specialist / Expert Card",
-	"parent": [ "twork/em-doc-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/em-doc-section" ],
+	"category": "mk-builder",
 	"icon": "id",
 	"description": "Single Emergency Specialist card with photo, role, name, and specialty.",
-	"keywords": [ "doctor", "specialist", "emergency", "card", "twork" ],
+	"keywords": [ "doctor", "specialist", "emergency", "card", "mk" ],
 	"attributes": {
 		"imageUrl": {
 			"type": "string",
@@ -51,6 +51,6 @@
 			"showSpecialty": true
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

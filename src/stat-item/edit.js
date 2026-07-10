@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -45,7 +45,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-stat-item-editor stat-item',
+			className: 'mk-stat-item-editor stat-item',
 			style: {
 				display: 'flex',
 				flexDirection: 'column',
@@ -62,11 +62,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Stat Number', 'twork-builder' ) }
+						title={ __( 'Stat Number', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
-							title={ __( 'Number Color', 'twork-builder' ) }
+							title={ __( 'Number Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: numberColor,
@@ -74,14 +74,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { numberColor: val } ),
 									label: __(
 										'Number Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ numberFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { numberFontSize: val } )
@@ -92,7 +92,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ numberFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { numberFontWeight: val } )
@@ -104,23 +104,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Stat Label', 'twork-builder' ) }
+						title={ __( 'Stat Label', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Label Color', 'twork-builder' ) }
+							title={ __( 'Label Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: labelColor,
 									onChange: ( val ) =>
 										setAttributes( { labelColor: val } ),
-									label: __( 'Label Color', 'twork-builder' ),
+									label: __( 'Label Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ labelFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { labelFontSize: val } )
@@ -131,7 +131,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ labelFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { labelFontWeight: val } )
@@ -142,23 +142,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Text Transform', 'twork-builder' ) }
+							label={ __( 'Text Transform', 'mk-builder' ) }
 							value={ labelTextTransform }
 							options={ [
 								{
-									label: __( 'None', 'twork-builder' ),
+									label: __( 'None', 'mk-builder' ),
 									value: 'none',
 								},
 								{
-									label: __( 'Uppercase', 'twork-builder' ),
+									label: __( 'Uppercase', 'mk-builder' ),
 									value: 'uppercase',
 								},
 								{
-									label: __( 'Lowercase', 'twork-builder' ),
+									label: __( 'Lowercase', 'mk-builder' ),
 									value: 'lowercase',
 								},
 								{
-									label: __( 'Capitalize', 'twork-builder' ),
+									label: __( 'Capitalize', 'mk-builder' ),
 									value: 'capitalize',
 								},
 							] }
@@ -175,7 +175,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h3"
 					value={ derivedStatNumber }
 					onChange={ ( val ) => setAttributes( { statNumber: val } ) }
-					placeholder={ __( '50+', 'twork-builder' ) }
+					placeholder={ __( '50+', 'mk-builder' ) }
 					style={ {
 						fontSize: `${ derivedNumberFontSize }rem`,
 						fontWeight: derivedNumberFontWeight,
@@ -190,7 +190,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="p"
 					value={ derivedStatLabel }
 					onChange={ ( val ) => setAttributes( { statLabel: val } ) }
-					placeholder={ __( 'Rural Medical Camps', 'twork-builder' ) }
+					placeholder={ __( 'Rural Medical Camps', 'mk-builder' ) }
 					style={ {
 						fontSize: `${ derivedLabelFontSize }rem`,
 						fontWeight: derivedLabelFontWeight,

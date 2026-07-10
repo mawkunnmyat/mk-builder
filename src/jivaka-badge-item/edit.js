@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	MediaPlaceholder,
@@ -18,7 +18,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'jivaka-badge-item twork-jivaka-badge-item-editor',
+			className: 'jivaka-badge-item mk-jivaka-badge-item-editor',
 		} ),
 		[]
 	);
@@ -28,11 +28,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Badge Link', 'twork-builder' ) }
+						title={ __( 'Badge Link', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Link URL', 'twork-builder' ) }
+							label={ __( 'Link URL', 'mk-builder' ) }
 						>
 							<URLInput
 								value={ linkUrl }
@@ -41,12 +41,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'https://...',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</BaseControl>
 						<ToggleControl
-							label={ __( 'Open in new tab', 'twork-builder' ) }
+							label={ __( 'Open in new tab', 'mk-builder' ) }
 							checked={ linkTarget === '_blank' }
 							onChange={ ( checked ) =>
 								setAttributes( {
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Link rel', 'twork-builder' ) }
+							label={ __( 'Link rel', 'mk-builder' ) }
 							value={ linkRel }
 							onChange={ ( val ) =>
 								setAttributes( {
@@ -65,23 +65,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. noopener noreferrer',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Alt text', 'twork-builder' ) }
+							label={ __( 'Alt text', 'mk-builder' ) }
 							value={ alt }
 							onChange={ ( val ) =>
 								setAttributes( { alt: val } )
 							}
 							help={ __(
 								'Accessibility description for the badge image',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -101,10 +101,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image' ] }
 						multiple={ false }
 						labels={ {
-							title: __( 'App store badge', 'twork-builder' ),
+							title: __( 'App store badge', 'mk-builder' ),
 							instructions: __(
 								'Upload or select a badge image (e.g. Google Play, App Store)',
-								'twork-builder'
+								'mk-builder'
 							),
 						} }
 					/>

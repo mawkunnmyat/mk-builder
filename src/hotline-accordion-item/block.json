@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hotline-accordion-item",
+	"name": "mk/hotline-accordion-item",
 	"title": "Hotline Accordion Item",
-	"parent": [ "twork/contact-layout-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/contact-layout-section" ],
+	"category": "mk-builder",
 	"icon": "phone",
 	"description": "Single accordion item for department hotline (title, label, phone number).",
 	"attributes": {
@@ -33,6 +33,6 @@
 			"iconClass": "fas fa-phone-alt"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

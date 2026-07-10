@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/stat-item",
+	"name": "mk/stat-item",
 	"version": "1.0.0",
 	"title": "Stat Item",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/stats-row"
+		"mk/stats-row"
 	],
 	"icon": "yes",
 	"description": "Single stat item with icon, title and description.",
@@ -43,6 +43,6 @@
 			"description": "Measured gains in plant vigor and stand uniformity across pilot fields and demonstration plots."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

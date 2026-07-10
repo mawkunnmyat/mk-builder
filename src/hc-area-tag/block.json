@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-area-tag",
+	"name": "mk/hc-area-tag",
 	"title": "Area Tag",
-	"parent": [ "twork/hc-area-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/hc-area-section" ],
+	"category": "mk-builder",
 	"description": "Single coverage area tag (e.g. township name) for the Home Care Area section.",
-	"keywords": [ "home care", "area", "coverage", "tag", "twork" ],
+	"keywords": [ "home care", "area", "coverage", "tag", "mk" ],
 	"attributes": {
 		"label": {
 			"type": "string",
@@ -21,6 +21,6 @@
 			"label": "Chanayethazan"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

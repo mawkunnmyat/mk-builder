@@ -5,8 +5,8 @@ export default function save( { attributes } ) {
 		attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-subscribe-bar newsletter',
-		'data-block': 'twork/subscribe-bar',
+		className: 'mk-subscribe-bar newsletter',
+		'data-block': 'mk/subscribe-bar',
 	} );
 
 	return (

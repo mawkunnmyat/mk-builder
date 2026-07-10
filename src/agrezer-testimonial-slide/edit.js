@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, RangeControl } from '@wordpress/components';
 
@@ -9,7 +9,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'twork-testimonials__slide twork-testimonials__slide--editor',
+				'mk-testimonials__slide mk-testimonials__slide--editor',
 		} ),
 		[]
 	);
@@ -24,11 +24,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Rating', 'twork-builder' ) }
+						title={ __( 'Rating', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Stars (1–5)', 'twork-builder' ) }
+							label={ __( 'Stars (1–5)', 'mk-builder' ) }
 							value={ rating }
 							onChange={ ( val ) =>
 								setAttributes( { rating: val ?? 5 } )
@@ -42,52 +42,52 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<div { ...blockProps }>
-				<div className="twork-testimonials__content">
+				<div className="mk-testimonials__content">
 					<div
-						className="twork-testimonials__quote-icon"
+						className="mk-testimonials__quote-icon"
 						aria-hidden="true"
 					>
 						&ldquo;
 					</div>
 					<RichText
 						tagName="p"
-						className="twork-testimonials__text"
+						className="mk-testimonials__text"
 						value={ quote }
 						onChange={ ( val ) => setAttributes( { quote: val } ) }
 						placeholder={ __(
 							'Testimonial quote…',
-							'twork-builder'
+							'mk-builder'
 						) }
 					/>
 				</div>
-				<div className="twork-testimonials__author-box">
+				<div className="mk-testimonials__author-box">
 					<RichText
 						tagName="h4"
-						className="twork-testimonials__author-name"
+						className="mk-testimonials__author-name"
 						value={ authorName }
 						onChange={ ( val ) =>
 							setAttributes( { authorName: val } )
 						}
-						placeholder={ __( 'Author name', 'twork-builder' ) }
+						placeholder={ __( 'Author name', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 
 					<RichText
 						tagName="span"
-						className="twork-testimonials__author-role"
+						className="mk-testimonials__author-role"
 						value={ authorRole }
 						onChange={ ( val ) =>
 							setAttributes( { authorRole: val } )
 						}
-						placeholder={ __( 'Role / title', 'twork-builder' ) }
+						placeholder={ __( 'Role / title', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 
 					<div
-						className="twork-testimonials__stars"
+						className="mk-testimonials__stars"
 						aria-label={ __(
 							'Star rating preview',
-							'twork-builder'
+							'mk-builder'
 						) }
 					>
 						{ stars }

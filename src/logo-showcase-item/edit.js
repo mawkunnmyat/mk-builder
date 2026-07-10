@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -14,7 +14,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'partners__logo-cell twork-logo-showcase-item-editor',
+				'partners__logo-cell mk-logo-showcase-item-editor',
 		} ),
 		[]
 	);
@@ -24,11 +24,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Logo image', 'twork-builder' ) }
+						title={ __( 'Logo image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Alt text', 'twork-builder' ) }
+							label={ __( 'Alt text', 'mk-builder' ) }
 							value={ imageAlt || '' }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -60,7 +60,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Choose image',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									) }
@@ -103,7 +103,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												>
 													{ __(
 														'Replace',
-														'twork-builder'
+														'mk-builder'
 													) }
 												</Button>
 											) }
@@ -120,7 +120,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								</div>
@@ -147,7 +147,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { name: val } )
 							}
-							placeholder={ __( 'Region name', 'twork-builder' ) }
+							placeholder={ __( 'Region name', 'mk-builder' ) }
 							allowedFormats={ [] }
 						/>
 					</span>
@@ -158,7 +158,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						className="partners__logo-name"
 						value={ name }
 						onChange={ ( val ) => setAttributes( { name: val } ) }
-						placeholder={ __( 'Region name', 'twork-builder' ) }
+						placeholder={ __( 'Region name', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 				) }

@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/exclusive-service-item",
+	"name": "mk/exclusive-service-item",
 	"title": "Exclusive Service Item",
-	"parent": [ "twork/exclusive-services-section" ],
+	"parent": [ "mk/exclusive-services-section" ],
 	"description": "Single service card with icon (left) and content for Exclusive Services section.",
 	"keywords": [
 		"exclusive",
@@ -11,7 +11,7 @@
 		"icon",
 		"international",
 		"patient",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"icon": {
@@ -84,7 +84,7 @@
 			"cardGap": 20
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

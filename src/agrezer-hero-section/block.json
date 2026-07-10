@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hero-section",
+	"name": "mk/hero-section",
 	"version": "1.0.0",
 	"title": "Hero Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "cover-image",
 	"description": "Hero section with background and feature items.",
 	"keywords": [
@@ -12,7 +12,7 @@
 		"agriculture",
 		"organic",
 		"banner",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -160,21 +160,21 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/hero-feature",
+				"name": "mk/hero-feature",
 				"attributes": {
 					"title": "Healthy Soil<br />Solutions",
 					"iconVariant": "leaf"
 				}
 			},
 			{
-				"name": "twork/hero-feature",
+				"name": "mk/hero-feature",
 				"attributes": {
 					"title": "Pure Organic<br />Growth",
 					"iconVariant": "drop"
 				}
 			},
 			{
-				"name": "twork/hero-feature",
+				"name": "mk/hero-feature",
 				"attributes": {
 					"title": "Nature-Driven<br />Innovation",
 					"iconVariant": "sprout"
@@ -182,7 +182,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

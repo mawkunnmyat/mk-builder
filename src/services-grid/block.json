@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/services-grid",
+	"name": "mk/services-grid",
 	"version": "1.0.0",
 	"title": "Services Grid",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "A professional services grid container with customizable layout and styling options.",
 	"supports": {
@@ -217,25 +217,25 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/service-item",
+				"name": "mk/service-item",
 				"attributes": {
 					"cardStyle": "primary"
 				}
 			},
 			{
-				"name": "twork/service-item",
+				"name": "mk/service-item",
 				"attributes": {
 					"cardStyle": "primary"
 				}
 			},
 			{
-				"name": "twork/service-item",
+				"name": "mk/service-item",
 				"attributes": {
 					"cardStyle": "primary"
 				}
 			},
 			{
-				"name": "twork/service-item",
+				"name": "mk/service-item",
 				"attributes": {
 					"cardStyle": "dark",
 					"itemType": "info"
@@ -243,7 +243,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -37,7 +37,7 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-contact-card',
+		className: 'mk-contact-card',
 		style: {
 			backgroundColor: cardBgColor,
 		},
@@ -48,11 +48,11 @@ export default function save( { attributes } ) {
 	return (
 		<article { ...blockProps }>
 			{ iconUrl && (
-				<div className="twork-contact-card__icon-wrap">
+				<div className="mk-contact-card__icon-wrap">
 					<img
 						src={ iconUrl }
 						alt={ iconAlt || '' }
-						className="twork-contact-card__icon"
+						className="mk-contact-card__icon"
 						width={ 24 }
 						height={ 24 }
 						loading="lazy"
@@ -62,28 +62,28 @@ export default function save( { attributes } ) {
 			) }
 			<RichText.Content
 				tagName="h3"
-				className="twork-contact-card__title"
+				className="mk-contact-card__title"
 				value={ title }
 			/>
 			<RichText.Content
 				tagName="p"
-				className="twork-contact-card__subtitle"
+				className="mk-contact-card__subtitle"
 				value={ subtitle }
 			/>
 			{ contentType === 'link' && href && (
-				<a href={ href } className="twork-contact-card__link">
+				<a href={ href } className="mk-contact-card__link">
 					{ linkText || linkUrl }
 				</a>
 			) }
 			{ contentType === 'link' && ! href && ( linkText || linkUrl ) && (
-				<p className="twork-contact-card__text">
+				<p className="mk-contact-card__text">
 					{ linkText || linkUrl }
 				</p>
 			) }
 			{ contentType === 'text' && (
 				<RichText.Content
 					tagName="p"
-					className="twork-contact-card__text"
+					className="mk-contact-card__text"
 					value={ plainText }
 				/>
 			) }

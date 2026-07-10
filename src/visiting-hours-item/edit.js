@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -29,7 +29,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-visiting-hours-item-editor hours-row',
+			className: 'mk-visiting-hours-item-editor hours-row',
 			style: {
 				display: 'flex',
 				justifyContent: 'space-between',
@@ -48,53 +48,53 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Ward / Area', 'twork-builder' ) }
+						title={ __( 'Ward / Area', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Ward Name', 'twork-builder' ) }
+							label={ __( 'Ward Name', 'mk-builder' ) }
 							value={ wardName }
 							onChange={ ( val ) =>
 								setAttributes( { wardName: val } )
 							}
 							help={ __(
 								'e.g. General Ward, ICU / CCU',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Icon Class', 'twork-builder' ) }
+							label={ __( 'Icon Class', 'mk-builder' ) }
 							value={ iconClass }
 							onChange={ ( val ) =>
 								setAttributes( { iconClass: val } )
 							}
 							help={ __(
 								'Font Awesome class, e.g. fas fa-procedures, fas fa-heartbeat',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Ward Name Color', 'twork-builder' ) }
+							title={ __( 'Ward Name Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: wardNameColor,
 									onChange: ( val ) =>
 										setAttributes( { wardNameColor: val } ),
-									label: __( 'Text Color', 'twork-builder' ),
+									label: __( 'Text Color', 'mk-builder' ),
 								},
 								{
 									value: iconColor,
 									onChange: ( val ) =>
 										setAttributes( { iconColor: val } ),
-									label: __( 'Icon Color', 'twork-builder' ),
+									label: __( 'Icon Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ wardNameFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { wardNameFontSize: val } )
@@ -105,7 +105,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ wardNameFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { wardNameFontWeight: val } )
@@ -117,29 +117,29 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Time Slot', 'twork-builder' ) }
+						title={ __( 'Time Slot', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Time Slot Text', 'twork-builder' ) }
+							label={ __( 'Time Slot Text', 'mk-builder' ) }
 							value={ timeSlot }
 							onChange={ ( val ) =>
 								setAttributes( { timeSlot: val } )
 							}
 							help={ __(
 								'e.g. 10:00 AM – 8:00 PM or 24 Hours Allowed',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Time Slot Styling', 'twork-builder' ) }
+							title={ __( 'Time Slot Styling', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: timeSlotColor,
 									onChange: ( val ) =>
 										setAttributes( { timeSlotColor: val } ),
-									label: __( 'Text Color', 'twork-builder' ),
+									label: __( 'Text Color', 'mk-builder' ),
 								},
 								{
 									value: timeSlotBgColor,
@@ -149,14 +149,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ timeSlotFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { timeSlotFontSize: val } )
@@ -168,13 +168,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Row Spacing', 'twork-builder' ) }
+						title={ __( 'Row Spacing', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Padding Vertical (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ rowPaddingVertical }
 							onChange={ ( val ) =>
@@ -215,7 +215,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { wardName: val } )
 						}
-						placeholder={ __( 'Ward name...', 'twork-builder' ) }
+						placeholder={ __( 'Ward name...', 'mk-builder' ) }
 						style={ { border: 'none', background: 'none' } }
 					/>
 				</span>
@@ -237,7 +237,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { timeSlot: val } )
 						}
-						placeholder={ __( 'Time slot...', 'twork-builder' ) }
+						placeholder={ __( 'Time slot...', 'mk-builder' ) }
 						style={ { border: 'none', background: 'none' } }
 					/>
 				</span>

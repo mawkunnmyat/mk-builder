@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -30,14 +30,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'service-card twork-surgical-service-card-editor stagger-up',
+				'service-card mk-surgical-service-card-editor stagger-up',
 		} ),
 		[]
 	);
 
 	const addListItem = () =>
 		setAttributes( {
-			listItems: [ ...listItems, __( 'New item', 'twork-builder' ) ],
+			listItems: [ ...listItems, __( 'New item', 'mk-builder' ) ],
 		} );
 	const removeListItem = ( index ) =>
 		setAttributes( {
@@ -55,13 +55,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Service Card', 'twork-builder' ) }
+						title={ __( 'Service Card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass || 'fas fa-procedures' }
 							onChange={ ( v ) =>
@@ -71,7 +71,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-procedures',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -85,7 +85,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							{ ICON_SUGGESTIONS.join( ', ' ) }
 						</p>
 						<TextControl
-							label={ __( 'Link URL', 'twork-builder' ) }
+							label={ __( 'Link URL', 'mk-builder' ) }
 							value={ linkUrl }
 							onChange={ ( v ) =>
 								setAttributes( { linkUrl: v || '#' } )
@@ -93,7 +93,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Link text', 'twork-builder' ) }
+							label={ __( 'Link text', 'mk-builder' ) }
 							value={ linkText }
 							onChange={ ( v ) =>
 								setAttributes( { linkText: v || 'Read More' } )
@@ -103,7 +103,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Open link in new tab',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ !! linkTarget }
 							onChange={ ( v ) =>
@@ -132,7 +132,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="h3"
 						value={ title }
 						onChange={ ( v ) => setAttributes( { title: v } ) }
-						placeholder={ __( 'Service title…', 'twork-builder' ) }
+						placeholder={ __( 'Service title…', 'mk-builder' ) }
 					/>
 
 					<RichText
@@ -141,7 +141,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( v ) =>
 							setAttributes( { description: v } )
 						}
-						placeholder={ __( 'Description…', 'twork-builder' ) }
+						placeholder={ __( 'Description…', 'mk-builder' ) }
 						style={ { color: '#64748b', marginBottom: 15 } }
 					/>
 
@@ -198,7 +198,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											removeListItem( index )
 										}
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</li>
 							) ) }
@@ -210,7 +210,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onClick={ addListItem }
 						style={ { marginBottom: 15 } }
 					>
-						{ __( 'Add list item', 'twork-builder' ) }
+						{ __( 'Add list item', 'mk-builder' ) }
 					</Button>
 					<a
 						href={ linkUrl || '#' }

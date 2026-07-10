@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-packages-section",
+	"name": "mk/hc-packages-section",
 	"version": "1.0.0",
 	"title": "Packages Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "Care Packages section: header + grid of package cards. Matches home-care.html.",
-	"keywords": [ "home care", "packages", "pricing", "plans", "twork" ],
+	"keywords": [ "home care", "packages", "pricing", "plans", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -86,7 +86,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/hc-package-card",
+				"name": "mk/hc-package-card",
 				"attributes": {
 					"title": "Nursing (Short Term)",
 					"price": "30,000",
@@ -103,7 +103,7 @@
 				}
 			},
 			{
-				"name": "twork/hc-package-card",
+				"name": "mk/hc-package-card",
 				"attributes": {
 					"title": "Physio Recovery",
 					"price": "25,000",
@@ -121,7 +121,7 @@
 				}
 			},
 			{
-				"name": "twork/hc-package-card",
+				"name": "mk/hc-package-card",
 				"attributes": {
 					"title": "Doctor Visit",
 					"price": "40,000",
@@ -139,7 +139,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

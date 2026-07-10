@@ -12,12 +12,12 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-faq-accordion-section faq',
+		className: 'mk-faq-accordion-section faq',
 		style: {
 			backgroundColor: backgroundColor || '#ffffff',
 			paddingBlock: `${ padding }px`,
 		},
-		'data-block': 'twork/faq-accordion-section',
+		'data-block': 'mk/faq-accordion-section',
 	} );
 
 	return (

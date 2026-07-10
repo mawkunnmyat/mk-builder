@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	RichText,
@@ -16,7 +16,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-brand-header__nav-link twork-brand-nav-item',
+			className: 'mk-brand-header__nav-link mk-brand-nav-item',
 		} ),
 		[]
 	);
@@ -26,17 +26,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Nav Item', 'twork-builder' ) }
+						title={ __( 'Nav Item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
-						<BaseControl label={ __( 'Link URL', 'twork-builder' ) }>
+						<BaseControl label={ __( 'Link URL', 'mk-builder' ) }>
 							<URLInput
 								value={ url }
 								onChange={ ( val ) => setAttributes( { url: val } ) }
 							/>
 						</BaseControl>
 						<ToggleControl
-							label={ __( 'Show Dropdown Chevron', 'twork-builder' ) }
+							label={ __( 'Show Dropdown Chevron', 'mk-builder' ) }
 							checked={ hasDropdown }
 							onChange={ ( val ) =>
 								setAttributes( { hasDropdown: val } )
@@ -55,7 +55,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="span"
 					value={ label }
 					onChange={ ( val ) => setAttributes( { label: val } ) }
-					placeholder={ __( 'Menu Item', 'twork-builder' ) }
+					placeholder={ __( 'Menu Item', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 				{ hasDropdown && (

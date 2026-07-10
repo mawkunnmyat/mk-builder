@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'lab-step-row stagger-up twork-lab-step-item-editor',
+			className: 'lab-step-row stagger-up mk-lab-step-item-editor',
 		} ),
 		[]
 	);
@@ -18,18 +18,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Step settings', 'twork-builder' ) }
+						title={ __( 'Step settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Step number', 'twork-builder' ) }
+							label={ __( 'Step number', 'mk-builder' ) }
 							value={ stepNumber }
 							onChange={ ( val ) =>
 								setAttributes( { stepNumber: val } )
 							}
 							help={ __(
 								'Shown in the circle (e.g. 1, 2, 3, 4).',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -43,7 +43,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="h4"
 						value={ title }
 						onChange={ ( val ) => setAttributes( { title: val } ) }
-						placeholder={ __( 'Step title', 'twork-builder' ) }
+						placeholder={ __( 'Step title', 'mk-builder' ) }
 					/>
 
 					<RichText
@@ -54,7 +54,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'Step description…',
-							'twork-builder'
+							'mk-builder'
 						) }
 					/>
 				</div>

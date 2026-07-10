@@ -46,7 +46,7 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-brand-footer footer',
+		className: 'mk-brand-footer footer',
 		style: {
 			backgroundColor: backgroundColor || '#f7fcff',
 		},

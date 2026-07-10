@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -8,10 +8,10 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/paediatrics-condition-card' ];
+const ALLOWED_BLOCKS = [ 'mk/paediatrics-condition-card' ];
 const TEMPLATE = [
 	[
-		'twork/paediatrics-condition-card',
+		'mk/paediatrics-condition-card',
 		{
 			iconClass: 'fas fa-lungs',
 			title: 'Respiratory Issues',
@@ -20,7 +20,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/paediatrics-condition-card',
+		'mk/paediatrics-condition-card',
 		{
 			iconClass: 'fas fa-temperature-high',
 			title: 'Infectious Diseases',
@@ -29,7 +29,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/paediatrics-condition-card',
+		'mk/paediatrics-condition-card',
 		{
 			iconClass: 'fas fa-allergies',
 			title: 'Allergies & Skin',
@@ -38,7 +38,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/paediatrics-condition-card',
+		'mk/paediatrics-condition-card',
 		{
 			iconClass: 'fas fa-utensils',
 			title: 'Nutritional Health',
@@ -47,7 +47,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/paediatrics-condition-card',
+		'mk/paediatrics-condition-card',
 		{
 			iconClass: 'fas fa-brain',
 			title: 'Development',
@@ -56,7 +56,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/paediatrics-condition-card',
+		'mk/paediatrics-condition-card',
 		{
 			iconClass: 'fas fa-baby',
 			title: 'Neonatal Care',
@@ -65,7 +65,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/paediatrics-condition-card',
+		'mk/paediatrics-condition-card',
 		{
 			iconClass: 'fas fa-heartbeat',
 			title: 'Congenital Heart',
@@ -74,7 +74,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/paediatrics-condition-card',
+		'mk/paediatrics-condition-card',
 		{
 			iconClass: 'fas fa-bone',
 			title: 'Orthopaedics',
@@ -105,7 +105,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'paed-section paed-conditions-section twork-paed-conditions-section-editor',
+				'paed-section paed-conditions-section mk-paed-conditions-section-editor',
 			style: {
 				backgroundColor: backgroundColor || '#ffffff',
 				paddingTop: `${ Number( paddingTop ) }px`,
@@ -136,13 +136,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section header', 'twork-builder' ) }
+						title={ __( 'Section header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Show section header',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ !! showSectionHeader }
 							onChange={ ( val ) =>
@@ -163,7 +163,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Title color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 										{
@@ -175,7 +175,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Subtitle color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -184,7 +184,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Title font size (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitleFontSize }
 									onChange={ ( v ) =>
@@ -200,7 +200,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Subtitle font size (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionSubtitleFontSize }
 									onChange={ ( v ) =>
@@ -216,7 +216,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) }
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
@@ -229,18 +229,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Section background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -253,7 +253,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -267,7 +267,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -281,7 +281,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -295,7 +295,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Min column width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ minColumnWidth }
 							onChange={ ( v ) =>
@@ -309,7 +309,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gap between cards (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gap }
 							onChange={ ( v ) => setAttributes( { gap: v } ) }
@@ -319,13 +319,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Animation on scroll',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ !! animationOnScroll }
 							onChange={ ( val ) =>
@@ -351,7 +351,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Conditions We Treat',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									fontSize: `${ sectionTitleFontSize }rem`,
@@ -370,7 +370,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Expert care for…',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									fontSize: `${ sectionSubtitleFontSize }rem`,

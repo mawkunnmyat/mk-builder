@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, RangeControl, BaseControl } from '@wordpress/components';
 
@@ -16,50 +16,50 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		iconWrapBgColor,
 	} = attributes;
 
-	const ALLOWED_BLOCKS = [ 'twork/agrezer-contact-card-item' ];
+	const ALLOWED_BLOCKS = [ 'mk/agrezer-contact-card-item' ];
 	const TEMPLATE = [
 		[
-			'twork/agrezer-contact-card-item',
+			'mk/agrezer-contact-card-item',
 			{
-				title: __( 'Mobile', 'twork-builder' ),
-				subtitle: __( 'Free Dial Number', 'twork-builder' ),
+				title: __( 'Mobile', 'mk-builder' ),
+				subtitle: __( 'Free Dial Number', 'mk-builder' ),
 				contentType: 'link',
 				linkUrl: 'tel:+15284567592',
-				linkText: __( '✆ + (528) 456-7592', 'twork-builder' ),
-				iconAlt: __( 'Phone', 'twork-builder' ),
+				linkText: __( '✆ + (528) 456-7592', 'mk-builder' ),
+				iconAlt: __( 'Phone', 'mk-builder' ),
 			},
 		],
 
 		[
-			'twork/agrezer-contact-card-item',
+			'mk/agrezer-contact-card-item',
 			{
-				title: __( 'Email', 'twork-builder' ),
-				subtitle: __( 'Feel Free to Mail', 'twork-builder' ),
+				title: __( 'Email', 'mk-builder' ),
+				subtitle: __( 'Feel Free to Mail', 'mk-builder' ),
 				contentType: 'link',
 				linkUrl: 'mailto:info@agrezen.com',
-				linkText: __( '✉ info@agrezen.com', 'twork-builder' ),
-				iconAlt: __( 'Email', 'twork-builder' ),
+				linkText: __( '✉ info@agrezen.com', 'mk-builder' ),
+				iconAlt: __( 'Email', 'mk-builder' ),
 			},
 		],
 
 		[
-			'twork/agrezer-contact-card-item',
+			'mk/agrezer-contact-card-item',
 			{
-				title: __( 'Address', 'twork-builder' ),
-				subtitle: __( 'Our form Address', 'twork-builder' ),
+				title: __( 'Address', 'mk-builder' ),
+				subtitle: __( 'Our form Address', 'mk-builder' ),
 				contentType: 'text',
 				plainText: __(
 					'132, Tic St, Kingston, NY, USA',
-					'twork-builder'
+					'mk-builder'
 				),
-				iconAlt: __( 'Address', 'twork-builder' ),
+				iconAlt: __( 'Address', 'mk-builder' ),
 			},
 		],
 	];
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-agrezer-contact-cards-editor',
+			className: 'mk-agrezer-contact-cards-editor',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
@@ -84,11 +84,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -101,7 +101,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -115,7 +115,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -129,7 +129,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Horizontal padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -141,7 +141,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Columns (desktop)', 'twork-builder' ) }
+							label={ __( 'Columns (desktop)', 'mk-builder' ) }
 							value={ columns }
 							onChange={ ( v ) =>
 								setAttributes( { columns: v } )
@@ -153,7 +153,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Columns (tablet & below)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ columnsTablet }
 							onChange={ ( v ) =>
@@ -164,7 +164,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gap }
 							onChange={ ( v ) => setAttributes( { gap: v } ) }
 							min={ 0 }
@@ -174,7 +174,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<BaseControl
 							label={ __(
 								'Icon circle background',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<input
@@ -190,7 +190,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<BaseControl
 							label={ __(
 								'Section background',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<input

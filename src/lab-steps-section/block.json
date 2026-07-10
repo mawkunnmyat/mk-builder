@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/lab-steps-section",
+	"name": "mk/lab-steps-section",
 	"version": "1.0.0",
 	"title": "How It Works Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "list-view",
 	"description": "Lab 'How It Works' section with vertical timeline and zig-zag step rows (number + content card).",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"process",
 		"how it works",
 		"timeline",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -158,7 +158,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/lab-step-item",
+				"name": "mk/lab-step-item",
 				"attributes": {
 					"stepNumber": "1",
 					"title": "Book a Test",
@@ -166,7 +166,7 @@
 				}
 			},
 			{
-				"name": "twork/lab-step-item",
+				"name": "mk/lab-step-item",
 				"attributes": {
 					"stepNumber": "2",
 					"title": "Sample Collection",
@@ -174,7 +174,7 @@
 				}
 			},
 			{
-				"name": "twork/lab-step-item",
+				"name": "mk/lab-step-item",
 				"attributes": {
 					"stepNumber": "3",
 					"title": "Analysis",
@@ -182,7 +182,7 @@
 				}
 			},
 			{
-				"name": "twork/lab-step-item",
+				"name": "mk/lab-step-item",
 				"attributes": {
 					"stepNumber": "4",
 					"title": "Report",
@@ -191,7 +191,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

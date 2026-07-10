@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'phy-stat-card twork-phy-stat-card-editor',
+			className: 'phy-stat-card mk-phy-stat-card-editor',
 			style: {
 				padding: '30px',
 				textAlign: 'center',
@@ -26,23 +26,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Stat card', 'twork-builder' ) }
+						title={ __( 'Stat card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Number / value', 'twork-builder' ) }
+							label={ __( 'Number / value', 'mk-builder' ) }
 							value={ statNumber || '' }
 							onChange={ ( val ) =>
 								setAttributes( { statNumber: val || '5k+' } )
 							}
 							help={ __(
 								'e.g. 5k+, 10+, 98%, 15',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Label', 'twork-builder' ) }
+							label={ __( 'Label', 'mk-builder' ) }
 							value={ label || '' }
 							onChange={ ( val ) =>
 								setAttributes( {
@@ -51,7 +51,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Short label under the number',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -66,7 +66,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { statNumber: val || '5k+' } )
 					}
-					placeholder={ __( '5k+', 'twork-builder' ) }
+					placeholder={ __( '5k+', 'mk-builder' ) }
 					style={ {
 						fontSize: '2.5rem',
 						fontWeight: 900,
@@ -82,7 +82,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { label: val || 'Happy Patients' } )
 					}
-					placeholder={ __( 'Happy Patients', 'twork-builder' ) }
+					placeholder={ __( 'Happy Patients', 'mk-builder' ) }
 					style={ {
 						margin: 0,
 						fontSize: '1rem',

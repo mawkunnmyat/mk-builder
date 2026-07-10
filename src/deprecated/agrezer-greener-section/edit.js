@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -16,17 +16,17 @@ import {
 } from '@wordpress/components';
 
 const ALLOWED_BLOCKS = [
-	'twork/agrezer-greener-stats-row',
-	'twork/agrezer-greener-cards-row',
+	'mk/agrezer-greener-stats-row',
+	'mk/agrezer-greener-cards-row',
 ];
 
 const TEMPLATE = [
 	[
-		'twork/agrezer-greener-stats-row',
+		'mk/agrezer-greener-stats-row',
 		{},
 		[
 			[
-				'twork/agrezer-greener-stat-item',
+				'mk/agrezer-greener-stat-item',
 				{
 					iconVariant: 'growth',
 					title: '80% Pure Growth',
@@ -36,7 +36,7 @@ const TEMPLATE = [
 			],
 
 			[
-				'twork/agrezer-greener-stat-item',
+				'mk/agrezer-greener-stat-item',
 				{
 					iconVariant: 'organic',
 					title: '95% Organic Roots',
@@ -48,11 +48,11 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-greener-cards-row',
+		'mk/agrezer-greener-cards-row',
 		{},
 		[
 			[
-				'twork/agrezer-greener-card-item',
+				'mk/agrezer-greener-card-item',
 				{
 					title: 'Organic Farm Solutions',
 					linkText: 'Read More',
@@ -63,7 +63,7 @@ const TEMPLATE = [
 			],
 
 			[
-				'twork/agrezer-greener-card-item',
+				'mk/agrezer-greener-card-item',
 				{
 					title: 'The Eco-Friendly Farming',
 					linkText: 'Read More',
@@ -74,7 +74,7 @@ const TEMPLATE = [
 			],
 
 			[
-				'twork/agrezer-greener-card-item',
+				'mk/agrezer-greener-card-item',
 				{
 					title: 'Organic Produce Supply',
 					linkText: 'Read More',
@@ -109,7 +109,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'agrezer-greener twork-agrezer-greener-section-editor',
+			className: 'agrezer-greener mk-agrezer-greener-section-editor',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
@@ -133,11 +133,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Left image', 'twork-builder' ) }
+						title={ __( 'Left image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Alt text', 'twork-builder' ) }
+							label={ __( 'Alt text', 'mk-builder' ) }
 							value={ mainImageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { mainImageAlt: val } )
@@ -146,13 +146,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Header', 'twork-builder' ) }
+						title={ __( 'Header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Tagline icon (emoji)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ taglineIcon }
 							onChange={ ( val ) =>
@@ -161,13 +161,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Tagline', 'twork-builder' ) }
+							title={ __( 'Tagline', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: taglineColor,
 									onChange: ( val ) =>
 										setAttributes( { taglineColor: val } ),
-									label: __( 'Text', 'twork-builder' ),
+									label: __( 'Text', 'mk-builder' ),
 								},
 								{
 									value: taglineIconColor,
@@ -175,26 +175,26 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											taglineIconColor: val,
 										} ),
-									label: __( 'Icon', 'twork-builder' ),
+									label: __( 'Icon', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Title', 'twork-builder' ) }
+							title={ __( 'Title', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Color', 'twork-builder' ),
+									label: __( 'Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Title size (rem)', 'twork-builder' ) }
+							label={ __( 'Title size (rem)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -205,7 +205,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Title weight', 'twork-builder' ) }
+							label={ __( 'Title weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -217,11 +217,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -229,13 +229,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											backgroundColor: val,
 										} ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Column gap (px)', 'twork-builder' ) }
+							label={ __( 'Column gap (px)', 'mk-builder' ) }
 							value={ mainColumnGap }
 							onChange={ ( val ) =>
 								setAttributes( { mainColumnGap: val } )
@@ -246,7 +246,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -257,7 +257,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Side gutter (px)', 'twork-builder' ) }
+							label={ __( 'Side gutter (px)', 'mk-builder' ) }
 							value={ containerGutter }
 							onChange={ ( val ) =>
 								setAttributes( { containerGutter: val } )
@@ -268,7 +268,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -281,7 +281,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -314,7 +314,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Main image (farmer)',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -336,7 +336,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Replace image', 'twork-builder' ) }
+									{ __( 'Replace image', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
@@ -363,7 +363,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Agro Excellence',
-										'twork-builder'
+										'mk-builder'
 									) }
 									allowedFormats={ [] }
 								/>
@@ -376,7 +376,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { sectionTitle: val } )
 								}
-								placeholder={ __( 'Title…', 'twork-builder' ) }
+								placeholder={ __( 'Title…', 'mk-builder' ) }
 								style={ {
 									color: titleColor,
 									fontSize: `${ titleFontSize }rem`,

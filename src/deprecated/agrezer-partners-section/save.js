@@ -15,7 +15,7 @@ export default function save( { attributes } ) {
 	const gapHalf = `${ trackGap / 2 }px`;
 
 	const blockProps = useBlockProps.save( {
-		className: 'agrezer-partners twork-agrezer-partners-section',
+		className: 'agrezer-partners mk-agrezer-partners-section',
 		style: {
 			backgroundColor,
 			'--agrezer-partners-py': `${ marqueePaddingY }px`,

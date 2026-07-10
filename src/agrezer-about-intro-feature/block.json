@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/intro-feature",
+	"name": "mk/intro-feature",
 	"version": "1.0.0",
 	"title": "Intro Feature",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/intro-section"
+		"mk/intro-section"
 	],
 	"icon": "star-filled",
 	"description": "Small feature label (intro list item).",
@@ -38,6 +38,6 @@
 			"label": "World Class Services"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

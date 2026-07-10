@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, RangeControl } from '@wordpress/components';
 
@@ -24,11 +24,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Rating', 'twork-builder' ) }
+						title={ __( 'Rating', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Stars (1–5)', 'twork-builder' ) }
+							label={ __( 'Stars (1–5)', 'mk-builder' ) }
 							value={ rating }
 							onChange={ ( val ) =>
 								setAttributes( { rating: val ?? 5 } )
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) => setAttributes( { quote: val } ) }
 						placeholder={ __(
 							'Testimonial quote…',
-							'twork-builder'
+							'mk-builder'
 						) }
 					/>
 				</div>
@@ -68,7 +68,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { authorName: val } )
 						}
-						placeholder={ __( 'Author name', 'twork-builder' ) }
+						placeholder={ __( 'Author name', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 
@@ -79,7 +79,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { authorRole: val } )
 						}
-						placeholder={ __( 'Role / title', 'twork-builder' ) }
+						placeholder={ __( 'Role / title', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 
@@ -87,7 +87,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						className="agrezer-testimonials__stars"
 						aria-label={ __(
 							'Star rating preview',
-							'twork-builder'
+							'mk-builder'
 						) }
 					>
 						{ stars }

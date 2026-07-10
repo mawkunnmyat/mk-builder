@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-neuro-centre-section',
+			className: 'mk-neuro-centre-section',
 			style: {
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
@@ -75,7 +75,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			}
 			allowedTypes={ [ 'image' ] }
 			multiple={ false }
-			labels={ { title: __( 'Overview Image', 'twork-builder' ) } }
+			labels={ { title: __( 'Overview Image', 'mk-builder' ) } }
 		/>
 	);
 
@@ -84,11 +84,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section Spacing', 'twork-builder' ) }
+						title={ __( 'Section Spacing', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -101,7 +101,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -114,13 +114,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Section Visibility', 'twork-builder' ) }
+						title={ __( 'Section Visibility', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Show Sidebar (Clinical Centres + Emergency)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSidebar !== false }
 							onChange={ ( val ) =>
@@ -129,7 +129,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show Overview', 'twork-builder' ) }
+							label={ __( 'Show Overview', 'mk-builder' ) }
 							checked={ showOverview !== false }
 							onChange={ ( val ) =>
 								setAttributes( { showOverview: val } )
@@ -139,7 +139,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show Treatments & Services',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showTreatments !== false }
 							onChange={ ( val ) =>
@@ -147,14 +147,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Treatment cards can be added, removed, or reordered using the + button below the grid and the block toolbar (⋮) on each card.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<ToggleControl
 							label={ __(
 								'Show Specialists strip',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSpecialists !== false }
 							onChange={ ( val ) =>
@@ -163,7 +163,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show FAQs', 'twork-builder' ) }
+							label={ __( 'Show FAQs', 'mk-builder' ) }
 							checked={ showFaq !== false }
 							onChange={ ( val ) =>
 								setAttributes( { showFaq: val } )
@@ -171,7 +171,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show CTA banner', 'twork-builder' ) }
+							label={ __( 'Show CTA banner', 'mk-builder' ) }
 							checked={ showCta !== false }
 							onChange={ ( val ) =>
 								setAttributes( { showCta: val } )
@@ -181,7 +181,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show Nearby Accommodation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showNearbyAccommodation === true }
 							onChange={ ( val ) =>
@@ -190,18 +190,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								} )
 							}
 							help={ __(
-								'Add hotel/accommodation cards below CTA. Use "+" to add Twork Nearby Accommodation Item blocks.',
-								'twork-builder'
+								'Add hotel/accommodation cards below CTA. Use "+" to add Mk Nearby Accommodation Item blocks.',
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Nearby Accommodation', 'twork-builder' ) }
+						title={ __( 'Nearby Accommodation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Section title', 'twork-builder' ) }
+							label={ __( 'Section title', 'mk-builder' ) }
 							value={ nearbyAccommodationTitle || '' }
 							onChange={ ( val ) =>
 								setAttributes( {
@@ -210,17 +210,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Heading shown above the accommodation cards.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Specialists Header', 'twork-builder' ) }
+						title={ __( 'Specialists Header', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'View All Label', 'twork-builder' ) }
+							label={ __( 'View All Label', 'mk-builder' ) }
 							value={ specialistsViewAllText }
 							onChange={ ( val ) =>
 								setAttributes( { specialistsViewAllText: val } )
@@ -228,24 +228,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'View All URL', 'twork-builder' ) }
+							label={ __( 'View All URL', 'mk-builder' ) }
 							value={ specialistsViewAllUrl }
 							onChange={ ( val ) =>
 								setAttributes( { specialistsViewAllUrl: val } )
 							}
 							help={ __(
 								'Use absolute or relative URL.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'CTA Settings', 'twork-builder' ) }
+						title={ __( 'CTA Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Button Text', 'twork-builder' ) }
+							label={ __( 'Button Text', 'mk-builder' ) }
 							value={ ctaButtonText }
 							onChange={ ( val ) =>
 								setAttributes( { ctaButtonText: val } )
@@ -253,7 +253,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ ctaButtonUrl }
 							onChange={ ( val ) =>
 								setAttributes( { ctaButtonUrl: val } )
@@ -271,13 +271,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<div className="sidebar-header">
 									{ __(
 										'Clinical Centres Sidebar',
-										'twork-builder'
+										'mk-builder'
 									) }
 								</div>
 								<p className="sidebar-note">
 									{ __(
 										'This is a visual placeholder. On the real site, the clinical centres sidebar / emergency card will typically come from another block or theme template.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								</p>
 							</div>
@@ -295,7 +295,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Overview title…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -308,7 +308,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Lead text…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -321,7 +321,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Body text…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -332,7 +332,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												src={ overviewImageUrl }
 												alt={ __(
 													'Overview',
-													'twork-builder'
+													'mk-builder'
 												) }
 											/>
 
@@ -348,7 +348,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'Remove image',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</button>
 										</>
@@ -371,7 +371,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Treatments & Services',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -386,7 +386,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Intro text for treatments…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -394,11 +394,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<InnerBlocks
 										__experimentalCaptureId="neuro-treatments"
 										allowedBlocks={ [
-											'twork/neuro-treatment-item',
+											'mk/neuro-treatment-item',
 										] }
 										template={ [
 											[
-												'twork/neuro-treatment-item',
+												'mk/neuro-treatment-item',
 												{
 													title: 'Stroke Management',
 													text: 'Rapid response "Golden Hour" treatment for ischemic and hemorrhagic strokes.',
@@ -407,7 +407,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											],
 
 											[
-												'twork/neuro-treatment-item',
+												'mk/neuro-treatment-item',
 												{
 													title: 'Brain Tumor Surgery',
 													text: 'Precision removal of tumors using neuro-navigation systems to protect healthy tissue.',
@@ -416,7 +416,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											],
 
 											[
-												'twork/neuro-treatment-item',
+												'mk/neuro-treatment-item',
 												{
 													title: 'Spinal Surgery',
 													text: 'Treatments for slipped discs, spinal stenosis, and trauma with minimally invasive techniques.',
@@ -425,7 +425,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											],
 
 											[
-												'twork/neuro-treatment-item',
+												'mk/neuro-treatment-item',
 												{
 													title: 'EEG & EMG Services',
 													text: 'Diagnostic testing for epilepsy, nerve damage, and muscle disorders.',
@@ -439,7 +439,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Add treatment card — use the + button to add, remove, or reorder.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								</div>
@@ -459,7 +459,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Our Neuro Specialists',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 
@@ -492,7 +492,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												}
 												placeholder={ __(
 													'Doctor name…',
-													'twork-builder'
+													'mk-builder'
 												) }
 											/>
 
@@ -506,7 +506,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												}
 												placeholder={ __(
 													'Role…',
-													'twork-builder'
+													'mk-builder'
 												) }
 											/>
 
@@ -517,7 +517,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'View Profile',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</a>
 										</div>
@@ -560,7 +560,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'View Profile',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</a>
 										</div>
@@ -603,7 +603,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'View Profile',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</a>
 										</div>
@@ -622,7 +622,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Common Questions',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -630,11 +630,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<InnerBlocks
 										__experimentalCaptureId="neuro-faq"
 										allowedBlocks={ [
-											'twork/neuro-faq-item',
+											'mk/neuro-faq-item',
 										] }
 										template={ [
 											[
-												'twork/neuro-faq-item',
+												'mk/neuro-faq-item',
 												{
 													question:
 														'What are the signs of a Stroke (FAST)?',
@@ -643,7 +643,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											],
 
 											[
-												'twork/neuro-faq-item',
+												'mk/neuro-faq-item',
 												{
 													question:
 														'When should I see a doctor for a headache?',
@@ -657,7 +657,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Add FAQ item — use the + button to add, remove, or reorder questions.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								</div>
@@ -674,7 +674,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Expert Neurological Care',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -686,7 +686,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'CTA description…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -712,7 +712,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Nearby Accommodation',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -728,11 +728,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								>
 									<InnerBlocks
 										allowedBlocks={ [
-											'twork/nearby-accommodation-item',
+											'mk/nearby-accommodation-item',
 										] }
 										template={ [
 											[
-												'twork/nearby-accommodation-item',
+												'mk/nearby-accommodation-item',
 												{},
 											],
 										] }
@@ -742,7 +742,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Add Nearby Accommodation Item — use the + button to add more hotel/accommodation cards.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								</div>

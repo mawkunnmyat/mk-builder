@@ -13,12 +13,12 @@ export default function save( { attributes } ) {
 	const isVideo = mediaUrl && mediaUrl.match( /\.(mp4|webm)$/i );
 
 	const blockProps = useBlockProps.save( {
-		className: `twork-why-choose__point twork-why-choose__point--${ safeSlot }`,
+		className: `mk-why-choose__point mk-why-choose__point--${ safeSlot }`,
 	} );
 
 	return (
 		<div { ...blockProps }>
-			<div className="twork-why-choose__point-icon">
+			<div className="mk-why-choose__point-icon">
 				{ mediaType === 'media' && mediaUrl ? (
 					isVideo ? (
 						<video src={ mediaUrl } autoPlay loop muted playsInline style={ mediaIconStyle } />
@@ -29,7 +29,7 @@ export default function save( { attributes } ) {
 					badgeText
 				) }
 			</div>
-			<RichText.Content tagName="p" className="twork-why-choose__point-text" value={ pointText } />
+			<RichText.Content tagName="p" className="mk-why-choose__point-text" value={ pointText } />
 		</div>
 	);
 }

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-journey-section",
+	"name": "mk/phy-journey-section",
 	"version": "1.0.0",
 	"title": "Journey Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "schedule",
 	"description": "Patient journey vertical timeline section: header + list of steps, matching physiotherapy-rehab.html.",
-	"keywords": [ "physio", "journey", "timeline", "steps", "twork" ],
+	"keywords": [ "physio", "journey", "timeline", "steps", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -86,28 +86,28 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/phy-journey-step",
+				"name": "mk/phy-journey-step",
 				"attributes": {
 					"title": "1. Initial Assessment",
 					"description": "Comprehensive evaluation of your posture, movement, and pain points by our senior physiotherapists."
 				}
 			},
 			{
-				"name": "twork/phy-journey-step",
+				"name": "mk/phy-journey-step",
 				"attributes": {
 					"title": "2. Treatment Plan",
 					"description": "We design a personalized roadmap combining manual therapy, machines, and exercises."
 				}
 			},
 			{
-				"name": "twork/phy-journey-step",
+				"name": "mk/phy-journey-step",
 				"attributes": {
 					"title": "3. Active Rehab",
 					"description": "Guided sessions in our gym to strengthen muscles and improve flexibility."
 				}
 			},
 			{
-				"name": "twork/phy-journey-step",
+				"name": "mk/phy-journey-step",
 				"attributes": {
 					"title": "4. Maintenance",
 					"description": "Home exercise programs to prevent future injuries and maintain health."
@@ -115,7 +115,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

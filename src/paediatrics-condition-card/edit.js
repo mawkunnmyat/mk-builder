@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -9,7 +9,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'paed-cond-card paed-stagger twork-paed-cond-card-editor',
+				'paed-cond-card paed-stagger mk-paed-cond-card-editor',
 		} ),
 		[]
 	);
@@ -19,13 +19,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Condition card', 'twork-builder' ) }
+						title={ __( 'Condition card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass || '' }
 							onChange={ ( val ) =>
@@ -35,12 +35,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-lungs, fas fa-temperature-high, fas fa-baby',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title || '' }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
@@ -50,7 +50,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Subtitle (examples)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ subtitle || '' }
 							onChange={ ( val ) =>
@@ -58,7 +58,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. Asthma, Pneumonia',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -75,7 +75,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h5"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Condition title…', 'twork-builder' ) }
+					placeholder={ __( 'Condition title…', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -84,7 +84,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) => setAttributes( { subtitle: val } ) }
 					placeholder={ __(
 						'e.g. Asthma, Pneumonia',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 			</div>

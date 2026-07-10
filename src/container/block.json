@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/twork-container",
+	"name": "mk/mk-container",
 	"version": "1.0.0",
 	"title": "Container",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "align-center",
 	"description": "A flexible container block with comprehensive styling options for wrapping content sections.",
-	"keywords": [ "container", "wrapper", "section", "twork" ],
+	"keywords": [ "container", "wrapper", "section", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -190,7 +190,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	RichText,
@@ -47,8 +47,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className: [
-				'twork-gm-split-section',
-				'twork-gm-split-section-editor',
+				'mk-gm-split-section',
+				'mk-gm-split-section-editor',
 				'jivaka-gm-section',
 				imagePosition === 'left'
 					? 'gm-split-image-left'
@@ -106,7 +106,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					}
 					allowedTypes={ [ 'image' ] }
 					multiple={ false }
-					labels={ { title: __( 'Section Image', 'twork-builder' ) } }
+					labels={ { title: __( 'Section Image', 'mk-builder' ) } }
 				/>
 			) : (
 				<>
@@ -129,7 +129,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						style={ { marginTop: 8 } }
 					>
-						{ __( 'Remove Image', 'twork-builder' ) }
+						{ __( 'Remove Image', 'mk-builder' ) }
 					</Button>
 				</>
 			) }
@@ -142,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				tagName="h2"
 				value={ title }
 				onChange={ ( val ) => setAttributes( { title: val } ) }
-				placeholder={ __( 'Why Choose Jivaka?', 'twork-builder' ) }
+				placeholder={ __( 'Why Choose Jivaka?', 'mk-builder' ) }
 				style={ {
 					fontSize: `${ titleFontSize }rem`,
 					marginBottom: 20,
@@ -154,7 +154,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				tagName="p"
 				value={ description }
 				onChange={ ( val ) => setAttributes( { description: val } ) }
-				placeholder={ __( 'Description...', 'twork-builder' ) }
+				placeholder={ __( 'Description...', 'mk-builder' ) }
 				style={ {
 					color: descriptionColor,
 					marginBottom: 24,
@@ -166,9 +166,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				{ ( featureItems || [] ).map( ( item, i ) => (
 					<li key={ i }>
 						<strong>
-							{ item.label || __( 'Label', 'twork-builder' ) }
+							{ item.label || __( 'Label', 'mk-builder' ) }
 						</strong>{ ' ' }
-						{ item.text || __( 'Text', 'twork-builder' ) }
+						{ item.text || __( 'Text', 'mk-builder' ) }
 					</li>
 				) ) }
 			</ul>
@@ -177,7 +177,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="jivaka-gm-btn jivaka-gm-btn-primary"
 					style={ { pointerEvents: 'none', cursor: 'default' } }
 				>
-					{ buttonText || __( 'Contact Us Today', 'twork-builder' ) }
+					{ buttonText || __( 'Contact Us Today', 'mk-builder' ) }
 				</span>
 			) : (
 				<span
@@ -194,7 +194,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				>
 					{ __(
 						'Button hidden (toggle on in sidebar to show)',
-						'twork-builder'
+						'mk-builder'
 					) }
 				</span>
 			) }
@@ -206,27 +206,27 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
 							label={ __(
 								'Image & text layout',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ imagePosition }
 							options={ [
 								{
 									label: __(
 										'Image left, text right',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'left',
 								},
 								{
 									label: __(
 										'Image right, text left',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'right',
 								},
@@ -236,12 +236,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Swap the side of the image and the text content.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Image Alt Text', 'twork-builder' ) }
+							label={ __( 'Image Alt Text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -250,7 +250,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Feature List', 'twork-builder' ) }
+						title={ __( 'Feature List', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ ( featureItems || [] ).map( ( item, i ) => (
@@ -265,7 +265,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ `${ __(
 										'Label',
-										'twork-builder'
+										'mk-builder'
 									) } ${ i + 1 }` }
 									value={ item.label || '' }
 									onChange={ ( v ) =>
@@ -276,7 +276,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ `${ __(
 										'Text',
-										'twork-builder'
+										'mk-builder'
 									) } ${ i + 1 }` }
 									value={ item.text || '' }
 									onChange={ ( v ) =>
@@ -290,28 +290,28 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									onClick={ () => removeFeature( i ) }
 									style={ { marginTop: 4 } }
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button isSecondary onClick={ addFeature }>
-							{ __( 'Add feature item', 'twork-builder' ) }
+							{ __( 'Add feature item', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Button', 'twork-builder' ) }
+						title={ __( 'Button', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
-							label={ __( 'Show CTA button', 'twork-builder' ) }
+							label={ __( 'Show CTA button', 'mk-builder' ) }
 							checked={ showButton !== false }
 							onChange={ ( v ) =>
 								setAttributes( { showButton: v } )
 							}
 							help={ __(
 								'Display the call-to-action button below the feature list. Turn off to hide it.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -321,7 +321,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Button Text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ buttonText }
 									onChange={ ( v ) =>
@@ -329,18 +329,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Contact Us Today',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<BaseControl
 									label={ __(
 										'Button URL',
-										'twork-builder'
+										'mk-builder'
 									) }
 									help={ __(
 										'Link destination when the button is clicked.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								>
 									<URLInput
@@ -355,7 +355,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Open in new tab',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ buttonTarget }
 									onChange={ ( v ) =>
@@ -363,7 +363,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'Add target="_blank" and rel="noopener noreferrer".',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</>
@@ -371,17 +371,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Typography', 'twork-builder' ) }
+						title={ __( 'Typography', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( v ) =>
 										setAttributes( { titleColor: v } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -389,7 +389,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Title Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleFontSize }
 							onChange={ ( v ) =>
@@ -401,7 +401,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Description Color', 'twork-builder' ) }
+							title={ __( 'Description Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: descriptionColor,
@@ -411,7 +411,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Description Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -419,19 +419,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<SelectControl
-							label={ __( 'Image & text side', 'twork-builder' ) }
+							label={ __( 'Image & text side', 'mk-builder' ) }
 							value={ imagePosition }
 							options={ [
 								{
-									label: __( 'Image left', 'twork-builder' ),
+									label: __( 'Image left', 'mk-builder' ),
 									value: 'left',
 								},
 								{
-									label: __( 'Image right', 'twork-builder' ),
+									label: __( 'Image right', 'mk-builder' ),
 									value: 'right',
 								},
 							] }
@@ -440,14 +440,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Choose which side the image appears on.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -461,7 +461,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -475,7 +475,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gap between columns (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ splitGap }
 							onChange={ ( v ) =>
@@ -487,7 +487,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -500,7 +500,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -513,11 +513,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Background', 'twork-builder' ) }
+						title={ __( 'Background', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background Color', 'twork-builder' ) }
+							title={ __( 'Background Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -525,7 +525,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { backgroundColor: v } ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }

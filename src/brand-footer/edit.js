@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -15,13 +15,13 @@ import {
 } from '@wordpress/components';
 
 const ALLOWED_BLOCKS = [
-	'twork/brand-footer-info-card',
-	'twork/brand-footer-column',
+	'mk/brand-footer-info-card',
+	'mk/brand-footer-column',
 ];
 
 const TEMPLATE = [
 	[
-		'twork/brand-footer-info-card',
+		'mk/brand-footer-info-card',
 		{
 			label: 'CUSTOMER HOTLINE',
 			lines: [ '095-2-55122', '095-2-55123', '095-9-200 1227' ],
@@ -29,7 +29,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/brand-footer-info-card',
+		'mk/brand-footer-info-card',
 		{
 			label: 'OFFICE ADDRESS',
 			lines: [
@@ -40,7 +40,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/brand-footer-info-card',
+		'mk/brand-footer-info-card',
 		{
 			label: 'BUSINESS HOURS',
 			lines: [
@@ -51,7 +51,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/brand-footer-column',
+		'mk/brand-footer-column',
 		{
 			title: 'Help & Info',
 			links: [
@@ -67,7 +67,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/brand-footer-column',
+		'mk/brand-footer-column',
 		{
 			title: 'Company',
 			links: [
@@ -101,7 +101,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/brand-footer-column',
+		'mk/brand-footer-column',
 		{
 			title: 'Quick Links',
 			links: [
@@ -135,7 +135,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'twork-brand-footer footer twork-brand-footer-editor',
+				'mk-brand-footer footer mk-brand-footer-editor',
 			style: {
 				backgroundColor: backgroundColor || '#f7fcff',
 			},
@@ -174,18 +174,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Brand', 'twork-builder' ) }
+						title={ __( 'Brand', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Brand Prefix', 'twork-builder' ) }
+							label={ __( 'Brand Prefix', 'mk-builder' ) }
 							value={ brandPrefix }
 							onChange={ ( val ) =>
 								setAttributes( { brandPrefix: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Brand Suffix', 'twork-builder' ) }
+							label={ __( 'Brand Suffix', 'mk-builder' ) }
 							value={ brandSuffix }
 							onChange={ ( val ) =>
 								setAttributes( { brandSuffix: val } )
@@ -193,7 +193,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Pasture Image', 'twork-builder' ) }
+						title={ __( 'Pasture Image', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ ! pastureImageUrl ? (
@@ -211,7 +211,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Pasture Image',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -231,12 +231,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove Image', 'twork-builder' ) }
+									{ __( 'Remove Image', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 						<TextControl
-							label={ __( 'Image Alt', 'twork-builder' ) }
+							label={ __( 'Image Alt', 'mk-builder' ) }
 							value={ pastureImageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { pastureImageAlt: val } )
@@ -244,7 +244,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Social Links', 'twork-builder' ) }
+						title={ __( 'Social Links', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ ( social || [] ).map( ( item, index ) => (
@@ -253,14 +253,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								style={ { marginBottom: 12 } }
 							>
 								<TextControl
-									label={ __( 'Label', 'twork-builder' ) }
+									label={ __( 'Label', 'mk-builder' ) }
 									value={ item.label || '' }
 									onChange={ ( val ) =>
 										updateSocial( index, 'label', val )
 									}
 								/>
 								<TextControl
-									label={ __( 'URL', 'twork-builder' ) }
+									label={ __( 'URL', 'mk-builder' ) }
 									value={ item.href || '' }
 									onChange={ ( val ) =>
 										updateSocial( index, 'href', val )
@@ -271,22 +271,22 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									isSmall
 									onClick={ () => removeSocial( index ) }
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button isSecondary onClick={ addSocial }>
-							{ __( 'Add social link', 'twork-builder' ) }
+							{ __( 'Add social link', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Options', 'twork-builder' ) }
+						title={ __( 'Options', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Show back-to-top button',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showBackToTop !== false }
 							onChange={ ( val ) =>
@@ -294,7 +294,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 						/>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -304,7 +304,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -324,7 +324,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					>
 						{ __(
 							'Info cards (first blocks) render in the top grid on the front end.',
-							'twork-builder'
+							'mk-builder'
 						) }
 					</p>
 					<div
@@ -349,7 +349,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Description…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 						<div className="footer__social">
@@ -376,7 +376,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { copyright: val } )
 						}
-						placeholder={ __( 'Copyright…', 'twork-builder' ) }
+						placeholder={ __( 'Copyright…', 'mk-builder' ) }
 					/>
 				</div>
 				{ pastureImageUrl && (

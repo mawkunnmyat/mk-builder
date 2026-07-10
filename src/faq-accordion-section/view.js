@@ -110,6 +110,6 @@
 	}
 
 	document
-		.querySelectorAll( '.twork-faq-accordion-section' )
+		.querySelectorAll( '.mk-faq-accordion-section' )
 		.forEach( initFaqAccordion );
 } )();

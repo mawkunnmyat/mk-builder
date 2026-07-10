@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/packages-section",
+	"name": "mk/packages-section",
 	"version": "1.0.0",
 	"title": "Packages Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "Health packages / pricing grid with filter tabs and customizable package cards.",
-	"keywords": [ "packages", "pricing", "health", "grid", "filter", "twork" ],
+	"keywords": [ "packages", "pricing", "health", "grid", "filter", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -338,14 +338,14 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/package-item",
+				"name": "mk/package-item",
 				"attributes": {
 					"packageName": "Basic Health",
 					"category": "general"
 				}
 			},
 			{
-				"name": "twork/package-item",
+				"name": "mk/package-item",
 				"attributes": {
 					"packageName": "Executive Checkup",
 					"category": "general",
@@ -353,7 +353,7 @@
 				}
 			},
 			{
-				"name": "twork/package-item",
+				"name": "mk/package-item",
 				"attributes": {
 					"packageName": "Healthy Heart",
 					"category": "heart"
@@ -361,7 +361,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js"

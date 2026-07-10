@@ -28,7 +28,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps( {
-		className: 'twork-contact-card',
+		className: 'mk-contact-card',
 		style: {
 			backgroundColor: cardBgColor,
 		},
@@ -39,7 +39,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Card', 'twork-builder' ) }
+						title={ __( 'Card', 'mk-builder' ) }
 						initialOpen
 					>
 						{ iconUrl && (
@@ -53,24 +53,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove icon', 'twork-builder' ) }
+								{ __( 'Remove icon', 'mk-builder' ) }
 							</Button>
 						) }
 						<SelectControl
-							label={ __( 'Bottom content', 'twork-builder' ) }
+							label={ __( 'Bottom content', 'mk-builder' ) }
 							value={ contentType }
 							options={ [
 								{
 									label: __(
 										'Clickable link (tel, mail, URL)',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'link',
 								},
 								{
 									label: __(
 										'Plain text (e.g. address)',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'text',
 								},
@@ -83,21 +83,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						{ contentType === 'link' && (
 							<>
 								<TextControl
-									label={ __( 'Link URL', 'twork-builder' ) }
+									label={ __( 'Link URL', 'mk-builder' ) }
 									value={ linkUrl }
 									onChange={ ( v ) =>
 										setAttributes( { linkUrl: v } )
 									}
 									help={ __(
 										'Use tel:, mailto:, or https://',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<TextControl
 									label={ __(
 										'Link label',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ linkText }
 									onChange={ ( v ) =>
@@ -110,7 +110,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Address / text',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ plainText }
 								onChange={ ( v ) =>
@@ -119,7 +119,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							/>
 						) }
 						<BaseControl
-							label={ __( 'Card background', 'twork-builder' ) }
+							label={ __( 'Card background', 'mk-builder' ) }
 						>
 							<input
 								type="color"
@@ -132,7 +132,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							/>
 						</BaseControl>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ iconAlt }
 							onChange={ ( v ) =>
 								setAttributes( { iconAlt: v } )
@@ -144,20 +144,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 			<article { ...blockProps }>
 				{ iconUrl ? (
-					<div className="twork-contact-card__icon-wrap">
+					<div className="mk-contact-card__icon-wrap">
 						<img
 							src={ iconUrl }
 							alt={ iconAlt || '' }
-							className="twork-contact-card__icon"
+							className="mk-contact-card__icon"
 							width={ 24 }
 							height={ 24 }
 						/>
 					</div>
 				) : (
-					<div className="twork-contact-card__icon-placeholder">
+					<div className="mk-contact-card__icon-placeholder">
 						<MediaPlaceholder
 							labels={ {
-								title: __( 'Icon image', 'twork-builder' ),
+								title: __( 'Icon image', 'mk-builder' ),
 							} }
 							onSelect={ ( media ) => {
 								setAttributes( {
@@ -174,37 +174,37 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				) }
 				<RichText
 					tagName="h3"
-					className="twork-contact-card__title"
+					className="mk-contact-card__title"
 					value={ title }
 					onChange={ ( v ) => setAttributes( { title: v } ) }
-					placeholder={ __( 'Title', 'twork-builder' ) }
+					placeholder={ __( 'Title', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 
 				<RichText
 					tagName="p"
-					className="twork-contact-card__subtitle"
+					className="mk-contact-card__subtitle"
 					value={ subtitle }
 					onChange={ ( v ) => setAttributes( { subtitle: v } ) }
-					placeholder={ __( 'Subtitle', 'twork-builder' ) }
+					placeholder={ __( 'Subtitle', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 
 				{ contentType === 'link' ? (
-					<p className="twork-contact-card__link-wrap">
-						<span className="twork-contact-card__link twork-contact-card__link--preview">
+					<p className="mk-contact-card__link-wrap">
+						<span className="mk-contact-card__link mk-contact-card__link--preview">
 							{ linkText ||
 								linkUrl ||
-								__( 'Link', 'twork-builder' ) }
+								__( 'Link', 'mk-builder' ) }
 						</span>
 					</p>
 				) : (
 					<RichText
 						tagName="p"
-						className="twork-contact-card__text"
+						className="mk-contact-card__text"
 						value={ plainText }
 						onChange={ ( v ) => setAttributes( { plainText: v } ) }
-						placeholder={ __( 'Plain text', 'twork-builder' ) }
+						placeholder={ __( 'Plain text', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 				) }

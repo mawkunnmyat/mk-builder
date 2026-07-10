@@ -1,35 +1,35 @@
 @use "../scss/typography";
 
 
-.twork-about-section,
-.twork-about-section-editor {
+.mk-about-section,
+.mk-about-section-editor {
     font-family: typography.$font-secondary;
 }
 
-.twork-about {
-    .twork-about__container {
+.mk-about {
+    .mk-about__container {
         box-sizing: border-box;
     }
 
-    .twork-about__header {
+    .mk-about__header {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         gap: 24px;
     }
 
-    .twork-about__label-icon {
+    .mk-about__label-icon {
         line-height: 1;
     }
 
-    .twork-about__features-grid {
+    .mk-about__features-grid {
         margin-top: 34px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
     }
 
-    .twork-about-feature__icon {
+    .mk-about-feature__icon {
         width: 50px;
         height: 50px;
         fill: none;
@@ -43,14 +43,14 @@
         }
     }
 
-    .twork-about-feature__title {
+    .mk-about-feature__title {
         margin: 12px 0 8px;
         font-size: 19px;
         font-weight: 700;
         color: #1d1d1d;
     }
 
-    .twork-about-feature__desc {
+    .mk-about-feature__desc {
         margin: 0;
         color: #6f7277;
         font-size: 15px;
@@ -58,28 +58,28 @@
         max-width: 260px;
     }
 
-    .twork-about__images-grid {
+    .mk-about__images-grid {
         margin-top: 34px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
 
-    .twork-about-card {
+    .mk-about-card {
         position: relative;
         border-radius: 20px;
         overflow: hidden;
         min-height: 348px;
     }
 
-    .twork-about-card img {
+    .mk-about-card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
     }
 
-    .twork-about-card__overlay {
+    .mk-about-card__overlay {
         position: absolute;
         left: 0;
         bottom: 0;
@@ -93,7 +93,7 @@
         box-sizing: border-box;
     }
 
-    .twork-about-card__overlay-text {
+    .mk-about-card__overlay-text {
         margin: 0;
         max-width: 65%;
         color: rgba(255, 255, 255, 0.92);
@@ -101,7 +101,7 @@
         line-height: 1.45;
     }
 
-    .twork-about-card__overlay-btn {
+    .mk-about-card__overlay-btn {
         display: inline-flex;
         align-items: center;
         gap: 6px;
@@ -114,7 +114,7 @@
         white-space: nowrap;
         text-decoration: none;
 
-        .twork-about-card__overlay-btn-icon {
+        .mk-about-card__overlay-btn-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -131,9 +131,9 @@
 }
 
 // Section block only: compound BEM + block class beats theme.json heading/paragraph presets.
-.twork-about.twork-about-section,
-.twork-about.twork-about-section-editor {
-    .twork-about__label {
+.mk-about.mk-about-section,
+.mk-about.mk-about-section-editor {
+    .mk-about__label {
         margin: 0 0 8px;
         display: inline-flex;
         align-items: center;
@@ -147,7 +147,7 @@
         color: inherit;
     }
 
-    .twork-about__title {
+    .mk-about__title {
         margin: 0;
         line-height: 1.12;
         letter-spacing: -0.02em;
@@ -159,40 +159,40 @@
 }
 
 @media (max-width: 1040px) {
-    .twork-about {
-        .twork-about__features-grid {
+    .mk-about {
+        .mk-about__features-grid {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        .twork-about__images-grid {
+        .mk-about__images-grid {
             grid-template-columns: 1fr;
         }
     }
 }
 
 @media (max-width: 700px) {
-    .twork-about {
-        .twork-about__header {
+    .mk-about {
+        .mk-about__header {
             flex-direction: column;
         }
 
-        .twork-about__features-grid {
+        .mk-about__features-grid {
             grid-template-columns: 1fr;
             gap: 1.5rem;
         }
 
-        .twork-about-card__overlay {
+        .mk-about-card__overlay {
             flex-direction: column;
             align-items: flex-start;
         }
 
-        .twork-about-card__overlay-text {
+        .mk-about-card__overlay-text {
             max-width: 100%;
         }
     }
 }
 
-.twork-about-card__overlay-btn:focus-visible {
+.mk-about-card__overlay-btn:focus-visible {
     outline: 3px solid #1d2618;
     outline-offset: 2px;
 }

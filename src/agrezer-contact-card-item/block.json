@@ -1,16 +1,16 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/contact-card",
+	"name": "mk/contact-card",
 	"title": "Contact Card",
 	"parent": [
-		"twork/contact-cards"
+		"mk/contact-cards"
 	],
 	"description": "Single contact card item.",
 	"keywords": [
 		"contact",
 		"card",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"iconUrl": {
@@ -64,6 +64,6 @@
 			"cardBgColor": "#eeebe8"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

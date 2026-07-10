@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	RichText,
@@ -32,7 +32,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-split-promo-section app-promo twork-split-promo-section-editor',
+			className: 'mk-split-promo-section app-promo mk-split-promo-section-editor',
 			style: {
 				backgroundColor: backgroundColor || '#f7fcff',
 				paddingBlock: `${ padding }px`,
@@ -62,7 +62,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ! imageUrl ? (
@@ -77,7 +77,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								allowedTypes={ [ 'image' ] }
 								multiple={ false }
 								labels={ {
-									title: __( 'Promo Image', 'twork-builder' ),
+									title: __( 'Promo Image', 'mk-builder' ),
 								} }
 							/>
 						) : (
@@ -97,12 +97,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									style={ { marginTop: 8 } }
 								>
-									{ __( 'Remove Image', 'twork-builder' ) }
+									{ __( 'Remove Image', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 						<TextControl
-							label={ __( 'Image Alt Text', 'twork-builder' ) }
+							label={ __( 'Image Alt Text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -111,7 +111,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Features', 'twork-builder' ) }
+						title={ __( 'Features', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ ( features || [] ).map( ( feature, index ) => (
@@ -126,7 +126,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ `${ __(
 										'Feature',
-										'twork-builder'
+										'mk-builder'
 									) } ${ index + 1 }` }
 									value={ feature }
 									onChange={ ( val ) =>
@@ -138,28 +138,28 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									isSmall
 									onClick={ () => removeFeature( index ) }
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button isSecondary onClick={ addFeature }>
-							{ __( 'Add feature', 'twork-builder' ) }
+							{ __( 'Add feature', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'CTAs', 'twork-builder' ) }
+						title={ __( 'CTAs', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Primary CTA Label', 'twork-builder' ) }
+							label={ __( 'Primary CTA Label', 'mk-builder' ) }
 							value={ primaryCtaLabel }
 							onChange={ ( val ) =>
 								setAttributes( { primaryCtaLabel: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Primary CTA URL', 'twork-builder' ) }
+							label={ __( 'Primary CTA URL', 'mk-builder' ) }
 							value={ primaryCtaHref }
 							onChange={ ( val ) =>
 								setAttributes( { primaryCtaHref: val } )
@@ -169,7 +169,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Secondary CTA Label',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ secondaryCtaLabel }
 							onChange={ ( val ) =>
@@ -177,7 +177,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 						/>
 						<TextControl
-							label={ __( 'Secondary CTA URL', 'twork-builder' ) }
+							label={ __( 'Secondary CTA URL', 'mk-builder' ) }
 							value={ secondaryCtaHref }
 							onChange={ ( val ) =>
 								setAttributes( { secondaryCtaHref: val } )
@@ -186,11 +186,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -200,13 +200,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 						<RangeControl
-							label={ __( 'Section Padding (px)', 'twork-builder' ) }
+							label={ __( 'Section Padding (px)', 'mk-builder' ) }
 							value={ padding }
 							onChange={ ( val ) =>
 								setAttributes( { padding: val } )
@@ -245,7 +245,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Eyebrow…',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 							<RichText
@@ -255,7 +255,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { title: val } )
 								}
-								placeholder={ __( 'Title…', 'twork-builder' ) }
+								placeholder={ __( 'Title…', 'mk-builder' ) }
 							/>
 							<ul className="app-promo__features">
 								{ ( features || [] ).map( ( feature, index ) => (

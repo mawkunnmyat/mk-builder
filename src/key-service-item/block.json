@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/key-service-item",
+	"name": "mk/key-service-item",
 	"title": "Key Service Item",
-	"parent": [ "twork/key-services-section" ],
+	"parent": [ "mk/key-services-section" ],
 	"attributes": {
 		"displayType": {
 			"type": "string",
@@ -353,7 +353,7 @@
 			"buttonIconPosition": "right"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -34,7 +34,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'em-hero twork-emergency-hero-editor',
+			className: 'em-hero mk-emergency-hero-editor',
 			style: {
 				position: 'relative',
 				height: `${ heroHeight || 600 }px`,
@@ -63,7 +63,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Background', 'twork-builder' ) }
+						title={ __( 'Background', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<MediaUploadCheck>
@@ -102,7 +102,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Replace',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 													<Button
@@ -119,7 +119,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Remove',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												</div>
@@ -133,7 +133,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'Choose image',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										) }
@@ -143,13 +143,13 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						</MediaUploadCheck>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Buttons', 'twork-builder' ) }
+						title={ __( 'Buttons', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Show primary button',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showButton1 !== false }
 							onChange={ ( v ) =>
@@ -162,7 +162,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Primary text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ button1Text }
 									onChange={ ( v ) =>
@@ -173,7 +173,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Primary URL',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ button1Url }
 									onChange={ ( v ) =>
@@ -184,7 +184,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Pulse animation',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ button1Pulse !== false }
 									onChange={ ( v ) =>
@@ -196,7 +196,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show secondary button',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showButton2 !== false }
 							onChange={ ( v ) =>
@@ -209,7 +209,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Secondary text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ button2Text }
 									onChange={ ( v ) =>
@@ -220,7 +220,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Secondary URL',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ button2Url }
 									onChange={ ( v ) =>
@@ -258,7 +258,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							onChange={ ( v ) =>
 								setAttributes( { badgeText: v } )
 							}
-							placeholder={ __( 'Badge…', 'twork-builder' ) }
+							placeholder={ __( 'Badge…', 'mk-builder' ) }
 							className="em-hero-badge"
 						/>
 
@@ -266,7 +266,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							tagName="h1"
 							value={ title }
 							onChange={ ( v ) => setAttributes( { title: v } ) }
-							placeholder={ __( 'Title…', 'twork-builder' ) }
+							placeholder={ __( 'Title…', 'mk-builder' ) }
 							className="em-hero-title"
 						/>
 
@@ -278,7 +278,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Description…',
-								'twork-builder'
+								'mk-builder'
 							) }
 							className="em-hero-desc"
 						/>

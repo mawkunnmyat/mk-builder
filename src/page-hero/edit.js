@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	PanelColorSettings,
@@ -81,7 +81,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `twork-page-hero-editor ${
+			className: `mk-page-hero-editor ${
 				isEmergency ? 'em-hero page-hero-emergency' : ''
 			}`,
 
@@ -113,21 +113,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Hero Style', 'twork-builder' ) }
+						title={ __( 'Hero Style', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Style', 'twork-builder' ) }
+							label={ __( 'Style', 'mk-builder' ) }
 							value={ heroStyle }
 							options={ [
 								{
-									label: __( 'Default', 'twork-builder' ),
+									label: __( 'Default', 'mk-builder' ),
 									value: 'default',
 								},
 								{
 									label: __(
 										'Emergency (24/7)',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'emergency',
 								},
@@ -137,20 +137,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Emergency style shows badge, title, description and two CTA buttons.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					{ isEmergency && (
 						<PanelBody
-							title={ __( 'Buttons', 'twork-builder' ) }
+							title={ __( 'Buttons', 'mk-builder' ) }
 							initialOpen={ true }
 						>
 							<ToggleControl
 								label={ __(
 									'Show primary button',
-									'twork-builder'
+									'mk-builder'
 								) }
 								checked={ showPrimaryButton !== false }
 								onChange={ ( val ) =>
@@ -163,7 +163,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Primary button text',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ primaryButtonText }
 										onChange={ ( val ) =>
@@ -176,7 +176,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Primary button URL',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ primaryButtonUrl }
 										onChange={ ( val ) =>
@@ -186,14 +186,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										help={ __(
 											'e.g. tel:199 or tel:09789101101',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 
 									<ToggleControl
 										label={ __(
 											'Pulse animation',
-											'twork-builder'
+											'mk-builder'
 										) }
 										checked={ primaryButtonPulse !== false }
 										onChange={ ( val ) =>
@@ -208,7 +208,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<ToggleControl
 								label={ __(
 									'Show secondary button',
-									'twork-builder'
+									'mk-builder'
 								) }
 								checked={ showSecondaryButton !== false }
 								onChange={ ( val ) =>
@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Secondary button text',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ secondaryButtonText }
 										onChange={ ( val ) =>
@@ -236,7 +236,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Secondary button URL',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ secondaryButtonUrl }
 										onChange={ ( val ) =>
@@ -251,11 +251,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					) }
 
 					<PanelBody
-						title={ __( 'Background Settings', 'twork-builder' ) }
+						title={ __( 'Background Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Background Image', 'twork-builder' ) }
+							label={ __( 'Background Image', 'mk-builder' ) }
 						>
 							{ ! backgroundImage ? (
 								<MediaPlaceholder
@@ -270,7 +270,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Background Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -298,7 +298,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove Image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>
@@ -311,7 +311,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Image Opacity',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ imageOpacity }
 									onChange={ ( val ) =>
@@ -325,7 +325,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Image Saturation',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ imageSaturation }
 									onChange={ ( val ) =>
@@ -342,7 +342,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Show Overlay',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ backgroundOverlay }
 									onChange={ ( val ) =>
@@ -357,7 +357,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelColorSettings
 											title={ __(
 												'Overlay Color',
-												'twork-builder'
+												'mk-builder'
 											) }
 											colorSettings={ [
 												{
@@ -369,7 +369,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														} ),
 													label: __(
 														'Overlay Color',
-														'twork-builder'
+														'mk-builder'
 													),
 												},
 											] }
@@ -378,7 +378,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<RangeControl
 											label={ __(
 												'Overlay Opacity',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={ backgroundOverlayOpacity }
 											onChange={ ( val ) =>
@@ -398,13 +398,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Height Settings', 'twork-builder' ) }
+						title={ __( 'Height Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Height Desktop (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ heightDesktop }
 							onChange={ ( val ) =>
@@ -418,7 +418,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Height Tablet (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ heightTablet }
 							onChange={ ( val ) =>
@@ -432,7 +432,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Height Mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ heightMobile }
 							onChange={ ( val ) =>
@@ -445,11 +445,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Breadcrumb Settings', 'twork-builder' ) }
+						title={ __( 'Breadcrumb Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show Breadcrumb', 'twork-builder' ) }
+							label={ __( 'Show Breadcrumb', 'mk-builder' ) }
 							checked={ showBreadcrumb }
 							onChange={ ( val ) =>
 								setAttributes( { showBreadcrumb: val } )
@@ -461,7 +461,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Breadcrumb Text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ breadcrumbText }
 									onChange={ ( val ) =>
@@ -472,7 +472,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelColorSettings
 									title={ __(
 										'Breadcrumb Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -483,7 +483,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Breadcrumb Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -492,7 +492,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelColorSettings
 									title={ __(
 										'Breadcrumb Background',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -503,7 +503,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Background Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -512,7 +512,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size Desktop (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ breadcrumbFontSize }
 									onChange={ ( val ) =>
@@ -528,7 +528,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size Tablet (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ breadcrumbFontSizeTablet }
 									onChange={ ( val ) =>
@@ -544,7 +544,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size Mobile (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ breadcrumbFontSizeMobile }
 									onChange={ ( val ) =>
@@ -560,7 +560,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Weight',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ breadcrumbFontWeight }
 									onChange={ ( val ) =>
@@ -576,7 +576,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Padding Vertical (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ breadcrumbPadding }
 									onChange={ ( val ) =>
@@ -592,7 +592,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Padding Horizontal (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ breadcrumbPaddingHorizontal }
 									onChange={ ( val ) =>
@@ -608,7 +608,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Border Radius (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ breadcrumbBorderRadius }
 									onChange={ ( val ) =>
@@ -625,11 +625,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Title Settings', 'twork-builder' ) }
+						title={ __( 'Title Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Title Text', 'twork-builder' ) }
+							label={ __( 'Title Text', 'mk-builder' ) }
 							value={ titleText }
 							onChange={ ( val ) =>
 								setAttributes( { titleText: val } )
@@ -639,7 +639,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Title Highlight Text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleHighlightText }
 							onChange={ ( val ) =>
@@ -647,24 +647,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Text that will be highlighted in the title',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Highlight Color', 'twork-builder' ) }
+							title={ __( 'Highlight Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleHighlightColor,
@@ -674,7 +674,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Highlight Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -685,7 +685,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Font Size Desktop (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
@@ -699,7 +699,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Font Size Tablet (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleFontSizeTablet }
 							onChange={ ( val ) =>
@@ -713,7 +713,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Font Size Mobile (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleFontSizeMobile }
 							onChange={ ( val ) =>
@@ -725,7 +725,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -736,7 +736,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Line Height', 'twork-builder' ) }
+							label={ __( 'Line Height', 'mk-builder' ) }
 							value={ titleLineHeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleLineHeight: val } )
@@ -749,7 +749,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Margin Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleMarginBottom }
 							onChange={ ( val ) =>
@@ -762,11 +762,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Subtitle Settings', 'twork-builder' ) }
+						title={ __( 'Subtitle Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
-							label={ __( 'Show Subtitle', 'twork-builder' ) }
+							label={ __( 'Show Subtitle', 'mk-builder' ) }
 							checked={ showSubtitle }
 							onChange={ ( val ) =>
 								setAttributes( { showSubtitle: val } )
@@ -778,7 +778,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Subtitle Text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ subtitleText }
 									onChange={ ( val ) =>
@@ -786,18 +786,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'e.g. Committed to international standards…',
-										'twork-builder'
+										'mk-builder'
 									) }
 									help={ __(
 										'Optional line below the title. Also editable in the hero preview.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<PanelColorSettings
 									title={ __(
 										'Subtitle Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -808,7 +808,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Subtitle Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -817,7 +817,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size Desktop (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ subtitleFontSize }
 									onChange={ ( val ) =>
@@ -833,7 +833,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size Tablet (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ subtitleFontSizeTablet }
 									onChange={ ( val ) =>
@@ -849,7 +849,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size Mobile (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ subtitleFontSizeMobile }
 									onChange={ ( val ) =>
@@ -865,7 +865,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Weight',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ subtitleFontWeight }
 									onChange={ ( val ) =>
@@ -881,7 +881,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Line Height',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ subtitleLineHeight }
 									onChange={ ( val ) =>
@@ -897,7 +897,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Margin Top (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ subtitleMarginTop }
 									onChange={ ( val ) =>
@@ -913,7 +913,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Max Width (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ subtitleMaxWidth }
 									onChange={ ( val ) =>
@@ -926,7 +926,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									step={ 50 }
 									help={ __(
 										'Max width for subtitle text (centered).',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</>
@@ -934,11 +934,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Container Settings', 'twork-builder' ) }
+						title={ __( 'Container Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Max Width (px)', 'twork-builder' ) }
+							label={ __( 'Max Width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -951,7 +951,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Desktop (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -965,7 +965,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Tablet (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPaddingTablet }
 							onChange={ ( val ) =>
@@ -979,7 +979,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPaddingMobile }
 							onChange={ ( val ) =>
@@ -991,19 +991,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Text Alignment', 'twork-builder' ) }
+							label={ __( 'Text Alignment', 'mk-builder' ) }
 							value={ textAlignment }
 							options={ [
 								{
-									label: __( 'Left', 'twork-builder' ),
+									label: __( 'Left', 'mk-builder' ),
 									value: 'left',
 								},
 								{
-									label: __( 'Center', 'twork-builder' ),
+									label: __( 'Center', 'mk-builder' ),
 									value: 'center',
 								},
 								{
-									label: __( 'Right', 'twork-builder' ),
+									label: __( 'Right', 'mk-builder' ),
 									value: 'right',
 								},
 							] }
@@ -1014,13 +1014,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation Settings', 'twork-builder' ) }
+						title={ __( 'Animation Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable Scroll Animation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -1032,37 +1032,37 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<SelectControl
 								label={ __(
 									'Animation Type',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ animationType }
 								options={ [
 									{
 										label: __(
 											'Fade In Up',
-											'twork-builder'
+											'mk-builder'
 										),
 										value: 'fadeInUp',
 									},
 									{
-										label: __( 'Fade In', 'twork-builder' ),
+										label: __( 'Fade In', 'mk-builder' ),
 										value: 'fadeIn',
 									},
 									{
 										label: __(
 											'Slide In Left',
-											'twork-builder'
+											'mk-builder'
 										),
 										value: 'slideInLeft',
 									},
 									{
 										label: __(
 											'Slide In Right',
-											'twork-builder'
+											'mk-builder'
 										),
 										value: 'slideInRight',
 									},
 									{
-										label: __( 'Zoom In', 'twork-builder' ),
+										label: __( 'Zoom In', 'mk-builder' ),
 										value: 'zoomIn',
 									},
 								] }
@@ -1148,7 +1148,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Badge text…',
-										'twork-builder'
+										'mk-builder'
 									) }
 									className="em-hero-badge"
 								/>
@@ -1161,7 +1161,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Hero title…',
-									'twork-builder'
+									'mk-builder'
 								) }
 								className="em-hero-title"
 							/>
@@ -1175,7 +1175,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Description…',
-										'twork-builder'
+										'mk-builder'
 									) }
 									className="em-hero-desc"
 								/>
@@ -1239,7 +1239,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Breadcrumb text...',
-										'twork-builder'
+										'mk-builder'
 									) }
 									className="hero-breadcrumb"
 									style={ {
@@ -1282,7 +1282,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Title text…',
-											'twork-builder'
+											'mk-builder'
 										) }
 										className="hero-title-main"
 										identifier="hero-title-main"
@@ -1298,7 +1298,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Title highlight text…',
-											'twork-builder'
+											'mk-builder'
 										) }
 										className="hero-title-highlight"
 										identifier="hero-title-highlight"
@@ -1322,7 +1322,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Hero subtitle…',
-										'twork-builder'
+										'mk-builder'
 									) }
 									className="hero-subtitle"
 									style={ {

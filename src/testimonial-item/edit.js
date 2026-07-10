@@ -1,9 +1,9 @@
 /**
- * Twork Testimonial Item – Editor
+ * Mk Testimonial Item – Editor
  * Matches home.html: testimonial-image-wrapper (img + quote-icon), blockquote, p.name, p.procedure.
  */
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -48,7 +48,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-testimonial-item-editor testimonial-card',
+			className: 'mk-testimonial-item-editor testimonial-card',
 			style: {
 				padding: '24px',
 				borderRadius: '8px',
@@ -66,11 +66,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Avatar', 'twork-builder' ) }
+						title={ __( 'Avatar', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Patient Image', 'twork-builder' ) }
+							label={ __( 'Patient Image', 'mk-builder' ) }
 						>
 							{ ! image ? (
 								<MediaPlaceholder
@@ -85,7 +85,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Patient Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -119,13 +119,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} )
 										}
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) }
 						</BaseControl>
 						<TextControl
-							label={ __( 'Alt Text', 'twork-builder' ) }
+							label={ __( 'Alt Text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -133,7 +133,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Image Size (px)', 'twork-builder' ) }
+							label={ __( 'Image Size (px)', 'mk-builder' ) }
 							value={ imageSize }
 							onChange={ ( val ) =>
 								setAttributes( { imageSize: val } )
@@ -144,7 +144,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show Quote Icon', 'twork-builder' ) }
+							label={ __( 'Show Quote Icon', 'mk-builder' ) }
 							checked={ showQuoteIcon }
 							onChange={ ( val ) =>
 								setAttributes( { showQuoteIcon: val } )
@@ -153,7 +153,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Quote', 'twork-builder' ) }
+						title={ __( 'Quote', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RichText
@@ -164,7 +164,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Testimonial quote...',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								fontStyle: quoteFontStyle,
@@ -173,19 +173,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Quote Color', 'twork-builder' ) }
+							title={ __( 'Quote Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: quoteColor,
 									onChange: ( val ) =>
 										setAttributes( { quoteColor: val } ),
-									label: __( 'Color', 'twork-builder' ),
+									label: __( 'Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ quoteFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { quoteFontSize: val } )
@@ -196,7 +196,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Line Height', 'twork-builder' ) }
+							label={ __( 'Line Height', 'mk-builder' ) }
 							value={ quoteLineHeight }
 							onChange={ ( val ) =>
 								setAttributes( { quoteLineHeight: val } )
@@ -208,11 +208,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Name & Procedure', 'twork-builder' ) }
+						title={ __( 'Name & Procedure', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Name', 'twork-builder' ) }
+							label={ __( 'Name', 'mk-builder' ) }
 							value={ name }
 							onChange={ ( val ) =>
 								setAttributes( { name: val } )
@@ -220,13 +220,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Name Color', 'twork-builder' ) }
+							title={ __( 'Name Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: nameColor,
 									onChange: ( val ) =>
 										setAttributes( { nameColor: val } ),
-									label: __( 'Color', 'twork-builder' ),
+									label: __( 'Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -234,7 +234,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Name Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ nameFontSize }
 							onChange={ ( val ) =>
@@ -246,7 +246,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Name Font Weight', 'twork-builder' ) }
+							label={ __( 'Name Font Weight', 'mk-builder' ) }
 							value={ nameFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { nameFontWeight: val } )
@@ -258,21 +258,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<TextControl
-							label={ __( 'Procedure', 'twork-builder' ) }
+							label={ __( 'Procedure', 'mk-builder' ) }
 							value={ procedure || location }
 							onChange={ ( val ) =>
 								setAttributes( { procedure: val } )
 							}
 							help={ __(
 								'e.g. CBR, Valve Prolapse Repair',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
 							label={ __(
 								'Procedure Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ procedureFontSize }
 							onChange={ ( val ) =>
@@ -322,7 +322,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								fontSize: '0.8rem',
 							} }
 						>
-							{ __( 'Avatar', 'twork-builder' ) }
+							{ __( 'Avatar', 'mk-builder' ) }
 						</div>
 					) }
 					{ showQuoteIcon && (
@@ -355,7 +355,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) => setAttributes( { quote: val } ) }
 					placeholder={ __(
 						'Testimonial quote...',
-						'twork-builder'
+						'mk-builder'
 					) }
 					style={ {
 						fontStyle: quoteFontStyle,
@@ -373,7 +373,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="name"
 					value={ name }
 					onChange={ ( val ) => setAttributes( { name: val } ) }
-					placeholder={ __( 'Patient Name', 'twork-builder' ) }
+					placeholder={ __( 'Patient Name', 'mk-builder' ) }
 					style={ {
 						fontWeight: nameFontWeight,
 						fontSize: `${ nameFontSize }rem`,
@@ -389,7 +389,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="procedure"
 					value={ procedure || location }
 					onChange={ ( val ) => setAttributes( { procedure: val } ) }
-					placeholder={ __( 'CBR', 'twork-builder' ) }
+					placeholder={ __( 'CBR', 'mk-builder' ) }
 					style={ {
 						fontSize: `${ procedureFontSize }rem`,
 						margin: '5px 0 0 0',

@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/visitor-guidelines-column",
+	"name": "mk/visitor-guidelines-column",
 	"title": "Visitor Guidelines Column",
-	"parent": [ "twork/visitor-guidelines-section" ],
+	"parent": [ "mk/visitor-guidelines-section" ],
 	"description": "Single column for Do's or Don'ts with title and list items.",
-	"keywords": [ "visitor", "guidelines", "dos", "donts", "column", "twork" ],
+	"keywords": [ "visitor", "guidelines", "dos", "donts", "column", "mk" ],
 	"attributes": {
 		"columnType": {
 			"type": "string",
@@ -121,7 +121,7 @@
 			"columnPaddingMobile": 24
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -12,10 +12,10 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/image-card-slide' ];
+const ALLOWED_BLOCKS = [ 'mk/image-card-slide' ];
 const TEMPLATE = [
 	[
-		'twork/image-card-slide',
+		'mk/image-card-slide',
 		{
 			title: 'Butter & Ghee Production',
 			ctaLabel: 'Learn more',
@@ -26,7 +26,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/image-card-slide',
+		'mk/image-card-slide',
 		{
 			title: 'Quality Control',
 			ctaLabel: 'Learn more',
@@ -37,7 +37,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/image-card-slide',
+		'mk/image-card-slide',
 		{
 			title: 'Nationwide Distribution',
 			ctaLabel: 'Learn more',
@@ -48,7 +48,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/image-card-slide',
+		'mk/image-card-slide',
 		{
 			title: 'Traditional Craft',
 			ctaLabel: 'Learn more',
@@ -73,7 +73,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'image-card-carousel twork-image-card-carousel-editor',
+				'image-card-carousel mk-image-card-carousel-editor',
 			style: {
 				backgroundColor: backgroundColor || '#ffffff',
 				paddingTop: `${ padding }px`,
@@ -94,12 +94,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ PanelColorSettings && (
 							<PanelColorSettings
-								title={ __( 'Background', 'twork-builder' ) }
+								title={ __( 'Background', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: backgroundColor,
@@ -109,14 +109,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Background Color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
 							/>
 						) }
 						<RangeControl
-							label={ __( 'Padding (px)', 'twork-builder' ) }
+							label={ __( 'Padding (px)', 'mk-builder' ) }
 							value={ padding }
 							onChange={ ( val ) =>
 								setAttributes( { padding: val } )
@@ -128,7 +128,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -140,11 +140,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Carousel', 'twork-builder' ) }
+						title={ __( 'Carousel', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Autoplay (ms)', 'twork-builder' ) }
+							label={ __( 'Autoplay (ms)', 'mk-builder' ) }
 							value={ autoplayMs }
 							onChange={ ( val ) =>
 								setAttributes( { autoplayMs: val } )
@@ -154,7 +154,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 500 }
 							help={ __(
 								'Set to 0 to disable autoplay.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -176,7 +176,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section eyebrow…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 						<RichText
@@ -188,7 +188,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section title…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</header>
@@ -196,7 +196,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					<div
 						className="image-card-carousel__stage"
 						role="region"
-						aria-label={ sectionTitle || __( 'Services', 'twork-builder' ) }
+						aria-label={ sectionTitle || __( 'Services', 'mk-builder' ) }
 					>
 						<div
 							className="image-card-carousel__track"

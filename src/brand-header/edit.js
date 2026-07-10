@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -17,16 +17,16 @@ import {
 	ToggleControl,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/brand-nav-item' ];
+const ALLOWED_BLOCKS = [ 'mk/brand-nav-item' ];
 
 const NAV_TEMPLATE = [
-	[ 'twork/brand-nav-item', { label: 'Home', url: '/', hasDropdown: false } ],
-	[ 'twork/brand-nav-item', { label: 'Shop', url: '/shop', hasDropdown: false } ],
-	[ 'twork/brand-nav-item', { label: 'About', url: '/about', hasDropdown: false } ],
-	[ 'twork/brand-nav-item', { label: 'Blog', url: '/blog', hasDropdown: false } ],
-	[ 'twork/brand-nav-item', { label: 'Wholesale', url: '/wholesale', hasDropdown: false } ],
-	[ 'twork/brand-nav-item', { label: 'FAQ', url: '/faq', hasDropdown: false } ],
-	[ 'twork/brand-nav-item', { label: 'Contact', url: '/contact', hasDropdown: false } ],
+	[ 'mk/brand-nav-item', { label: 'Home', url: '/', hasDropdown: false } ],
+	[ 'mk/brand-nav-item', { label: 'Shop', url: '/shop', hasDropdown: false } ],
+	[ 'mk/brand-nav-item', { label: 'About', url: '/about', hasDropdown: false } ],
+	[ 'mk/brand-nav-item', { label: 'Blog', url: '/blog', hasDropdown: false } ],
+	[ 'mk/brand-nav-item', { label: 'Wholesale', url: '/wholesale', hasDropdown: false } ],
+	[ 'mk/brand-nav-item', { label: 'FAQ', url: '/faq', hasDropdown: false } ],
+	[ 'mk/brand-nav-item', { label: 'Contact', url: '/contact', hasDropdown: false } ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -44,11 +44,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `twork-brand-header twork-brand-header--editor${
-				stickyHeader ? ' twork-brand-header--sticky' : ''
+			className: `mk-brand-header mk-brand-header--editor${
+				stickyHeader ? ' mk-brand-header--sticky' : ''
 			}`,
 			style: {
-				'--twork-brand-header-bg': backgroundColor || '#ffffff',
+				'--mk-brand-header-bg': backgroundColor || '#ffffff',
 			},
 		} ),
 		[ backgroundColor, stickyHeader ]
@@ -61,25 +61,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Header Settings', 'twork-builder' ) }
+						title={ __( 'Header Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
-							label={ __( 'Sticky Header', 'twork-builder' ) }
+							label={ __( 'Sticky Header', 'mk-builder' ) }
 							checked={ stickyHeader }
 							onChange={ ( val ) =>
 								setAttributes( { stickyHeader: val } )
 							}
 						/>
 						<ToggleControl
-							label={ __( 'Show Search Icon', 'twork-builder' ) }
+							label={ __( 'Show Search Icon', 'mk-builder' ) }
 							checked={ showSearch }
 							onChange={ ( val ) =>
 								setAttributes( { showSearch: val } )
 							}
 						/>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -89,7 +89,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -97,17 +97,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Brand & Logo', 'twork-builder' ) }
+						title={ __( 'Brand & Logo', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Brand Name', 'twork-builder' ) }
+							label={ __( 'Brand Name', 'mk-builder' ) }
 							value={ brandName }
 							onChange={ ( val ) =>
 								setAttributes( { brandName: val } )
 							}
 						/>
-						<BaseControl label={ __( 'Home URL', 'twork-builder' ) }>
+						<BaseControl label={ __( 'Home URL', 'mk-builder' ) }>
 							<URLInput
 								value={ homeUrl }
 								onChange={ ( val ) =>
@@ -115,7 +115,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 							/>
 						</BaseControl>
-						<BaseControl label={ __( 'Logo Image', 'twork-builder' ) }>
+						<BaseControl label={ __( 'Logo Image', 'mk-builder' ) }>
 							<MediaUploadCheck>
 								<MediaUpload
 									allowedTypes={ [ 'image' ] }
@@ -129,8 +129,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									render={ ( { open } ) => (
 										<Button variant="secondary" onClick={ open }>
 											{ logoImage
-												? __( 'Replace Logo', 'twork-builder' )
-												: __( 'Upload Logo', 'twork-builder' ) }
+												? __( 'Replace Logo', 'mk-builder' )
+												: __( 'Upload Logo', 'mk-builder' ) }
 										</Button>
 									) }
 								/>
@@ -156,7 +156,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} )
 										}
 									>
-										{ __( 'Remove Logo', 'twork-builder' ) }
+										{ __( 'Remove Logo', 'mk-builder' ) }
 									</Button>
 								</>
 							) }
@@ -164,18 +164,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Hotline', 'twork-builder' ) }
+						title={ __( 'Hotline', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Hotline Label', 'twork-builder' ) }
+							label={ __( 'Hotline Label', 'mk-builder' ) }
 							value={ hotlineLabel }
 							onChange={ ( val ) =>
 								setAttributes( { hotlineLabel: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Phone Number', 'twork-builder' ) }
+							label={ __( 'Phone Number', 'mk-builder' ) }
 							value={ phone }
 							onChange={ ( val ) =>
 								setAttributes( { phone: val } )
@@ -185,25 +185,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				</InspectorControls>
 			) }
 
-			<header { ...blockProps } data-block="twork/brand-header">
-				<div className="twork-brand-header__main">
-					<div className="twork-brand-header__inner l-section">
+			<header { ...blockProps } data-block="mk/brand-header">
+				<div className="mk-brand-header__main">
+					<div className="mk-brand-header__inner l-section">
 						<a
-							className="twork-brand-header__brand"
+							className="mk-brand-header__brand"
 							href={ homeUrl || '/' }
 							onClick={ ( e ) => e.preventDefault() }
 							aria-label={ `${ brandName || 'Shwe Myanmar' } home` }
 						>
 							{ logoImage ? (
 								<img
-									className="twork-brand-header__brand-logo"
+									className="mk-brand-header__brand-logo"
 									src={ logoImage }
 									alt={ brandName || 'Shwe Myanmar' }
 									width="560"
 									height="290"
 								/>
 							) : (
-								<span className="twork-brand-header__brand-text">
+								<span className="mk-brand-header__brand-text">
 									{ brandName || 'Shwe Myanmar' }
 								</span>
 							) }
@@ -211,8 +211,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<nav
 							id="header-nav"
-							className="twork-brand-header__nav"
-							aria-label={ __( 'Main navigation', 'twork-builder' ) }
+							className="mk-brand-header__nav"
+							aria-label={ __( 'Main navigation', 'mk-builder' ) }
 						>
 							<InnerBlocks
 								allowedBlocks={ ALLOWED_BLOCKS }
@@ -222,12 +222,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							/>
 						</nav>
 
-						<div className="twork-brand-header__actions">
+						<div className="mk-brand-header__actions">
 							{ showSearch && (
 								<button
 									type="button"
-									className="twork-brand-header__icon-btn"
-									aria-label={ __( 'Search', 'twork-builder' ) }
+									className="mk-brand-header__icon-btn"
+									aria-label={ __( 'Search', 'mk-builder' ) }
 								>
 									<svg
 										width="20"
@@ -244,9 +244,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								</button>
 							) }
 
-							<div className="twork-brand-header__hotline">
+							<div className="mk-brand-header__hotline">
 								<span
-									className="twork-brand-header__hotline-icon"
+									className="mk-brand-header__hotline-icon"
 									aria-hidden="true"
 								>
 									<svg
@@ -261,11 +261,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									</svg>
 								</span>
 								<div>
-									<p className="twork-brand-header__hotline-label">
+									<p className="mk-brand-header__hotline-label">
 										{ hotlineLabel }
 									</p>
 									<a
-										className="twork-brand-header__hotline-phone"
+										className="mk-brand-header__hotline-phone"
 										href={ phoneDigits ? `tel:${ phoneDigits }` : '#' }
 										onClick={ ( e ) => e.preventDefault() }
 									>
@@ -275,17 +275,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							</div>
 
 							<button
-								className="twork-brand-header__toggle"
+								className="mk-brand-header__toggle"
 								type="button"
 								data-action="menu-toggle"
 								aria-expanded="false"
 								aria-controls="header-nav"
 							>
 								<span className="u-hidden">
-									{ __( 'Menu', 'twork-builder' ) }
+									{ __( 'Menu', 'mk-builder' ) }
 								</span>
 								<span
-									className="twork-brand-header__toggle-bar"
+									className="mk-brand-header__toggle-bar"
 									aria-hidden="true"
 								/>
 							</button>

@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/amb-process-section",
+	"name": "mk/amb-process-section",
 	"version": "1.0.0",
 	"title": "Ambulance Process Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "list-view",
 	"description": "Emergency Protocol – numbered steps (Call, Dispatch, Stabilize, etc.).",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"protocol",
 		"steps",
 		"emergency",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundColor": {
@@ -133,28 +133,28 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/amb-process-step",
+				"name": "mk/amb-process-step",
 				"attributes": {
 					"title": "Call 1911",
 					"description": "Our dispatch center gathers location and patient condition."
 				}
 			},
 			{
-				"name": "twork/amb-process-step",
+				"name": "mk/amb-process-step",
 				"attributes": {
 					"title": "Dispatch",
 					"description": "The nearest ALS/BLS unit is deployed immediately."
 				}
 			},
 			{
-				"name": "twork/amb-process-step",
+				"name": "mk/amb-process-step",
 				"attributes": {
 					"title": "Stabilize",
 					"description": "Paramedics begin treatment on-site and en route."
 				}
 			},
 			{
-				"name": "twork/amb-process-step",
+				"name": "mk/amb-process-step",
 				"attributes": {
 					"title": "Hospital Arrival",
 					"description": "ER team is pre-informed and ready for handover."
@@ -162,7 +162,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

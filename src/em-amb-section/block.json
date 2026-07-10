@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/em-amb-section",
+	"name": "mk/em-amb-section",
 	"version": "1.0.0",
 	"title": "Ambulance Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "car",
 	"description": "Mobile ICU / Ambulance split section: image + content with feature list and CTA. Layout and icon/image per feature configurable.",
-	"keywords": [ "emergency", "ambulance", "mobile icu", "split", "twork" ],
+	"keywords": [ "emergency", "ambulance", "mobile icu", "split", "mk" ],
 	"attributes": {
 		"layout": {
 			"type": "string",
@@ -204,7 +204,7 @@
 			"animationType": "fade-up"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/rad-tech-item",
+	"name": "mk/rad-tech-item",
 	"version": "1.0.0",
 	"title": "Tech Item",
-	"parent": [ "twork/rad-tech-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/rad-tech-section" ],
+	"category": "mk-builder",
 	"description": "Single technology feature item (icon, title, description) for the Radiology Tech Section.",
-	"keywords": [ "radiology", "technology", "feature", "twork" ],
+	"keywords": [ "radiology", "technology", "feature", "mk" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",
@@ -32,7 +32,7 @@
 			"description": "Protocols to minimize radiation exposure."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -36,7 +36,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-job-card-item-editor job-card',
+			className: 'mk-job-card-item-editor job-card',
 			style: {
 				padding: `${ cardPadding }px 30px`,
 				background: '#fff',
@@ -56,11 +56,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Job Details', 'twork-builder' ) }
+						title={ __( 'Job Details', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Location', 'twork-builder' ) }
+							label={ __( 'Location', 'mk-builder' ) }
 							value={ location }
 							onChange={ ( val ) =>
 								setAttributes( { location: val } )
@@ -68,31 +68,31 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Employment Type', 'twork-builder' ) }
+							label={ __( 'Employment Type', 'mk-builder' ) }
 							value={ employmentType }
 							onChange={ ( val ) =>
 								setAttributes( { employmentType: val } )
 							}
 							help={ __(
 								'e.g. Full Time, Part Time, Rotational Shift',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Department Icon', 'twork-builder' ) }
+							label={ __( 'Department Icon', 'mk-builder' ) }
 							value={ departmentIcon }
 							onChange={ ( val ) =>
 								setAttributes( { departmentIcon: val } )
 							}
 							help={ __(
 								'Font Awesome class. e.g. fas fa-stethoscope, fas fa-briefcase',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Department', 'twork-builder' ) }
+							label={ __( 'Department', 'mk-builder' ) }
 							value={ department }
 							onChange={ ( val ) =>
 								setAttributes( { department: val } )
@@ -101,23 +101,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Job Title', 'twork-builder' ) }
+						title={ __( 'Job Title', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: jobTitleColor,
 									onChange: ( val ) =>
 										setAttributes( { jobTitleColor: val } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ jobTitleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { jobTitleFontSize: val } )
@@ -128,7 +128,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ jobTitleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { jobTitleFontWeight: val } )
@@ -140,23 +140,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Meta Styling', 'twork-builder' ) }
+						title={ __( 'Meta Styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Meta Colors', 'twork-builder' ) }
+							title={ __( 'Meta Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: metaColor,
 									onChange: ( val ) =>
 										setAttributes( { metaColor: val } ),
-									label: __( 'Text Color', 'twork-builder' ),
+									label: __( 'Text Color', 'mk-builder' ),
 								},
 								{
 									value: metaIconColor,
 									onChange: ( val ) =>
 										setAttributes( { metaIconColor: val } ),
-									label: __( 'Icon Color', 'twork-builder' ),
+									label: __( 'Icon Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -164,7 +164,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Meta Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ metaFontSize }
 							onChange={ ( val ) =>
@@ -177,11 +177,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Apply Button', 'twork-builder' ) }
+						title={ __( 'Apply Button', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Button Text', 'twork-builder' ) }
+							label={ __( 'Button Text', 'mk-builder' ) }
 							value={ applyText }
 							onChange={ ( val ) =>
 								setAttributes( { applyText: val } )
@@ -189,19 +189,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Apply URL', 'twork-builder' ) }
+							label={ __( 'Apply URL', 'mk-builder' ) }
 							value={ applyUrl }
 							onChange={ ( val ) =>
 								setAttributes( { applyUrl: val } )
 							}
 							help={ __(
 								'Link for Apply button (e.g. application form URL)',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<ToggleControl
-							label={ __( 'Open in new tab', 'twork-builder' ) }
+							label={ __( 'Open in new tab', 'mk-builder' ) }
 							checked={ applyTarget }
 							onChange={ ( val ) =>
 								setAttributes( { applyTarget: val } )
@@ -209,20 +209,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Button Style', 'twork-builder' ) }
+							label={ __( 'Button Style', 'mk-builder' ) }
 							value={ applyButtonStyle }
 							options={ [
 								{
 									label: __(
 										'Primary (Orange)',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'primary',
 								},
 								{
 									label: __(
 										'Outline Dark',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'outline',
 								},
@@ -234,11 +234,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Card Layout', 'twork-builder' ) }
+						title={ __( 'Card Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Card Padding (px)', 'twork-builder' ) }
+							label={ __( 'Card Padding (px)', 'mk-builder' ) }
 							value={ cardPadding }
 							onChange={ ( val ) =>
 								setAttributes( { cardPadding: val } )
@@ -259,7 +259,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { jobTitle: val } )
 						}
-						placeholder={ __( 'Job title...', 'twork-builder' ) }
+						placeholder={ __( 'Job title...', 'mk-builder' ) }
 						style={ {
 							margin: '0 0 8px 0',
 							fontSize: `${ jobTitleFontSize }rem`,

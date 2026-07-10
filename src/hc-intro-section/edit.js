@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -17,16 +17,16 @@ import {
 } from '@wordpress/components';
 import { PanelColorSettings } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/hc-intro-list-item' ];
+const ALLOWED_BLOCKS = [ 'mk/hc-intro-list-item' ];
 const TEMPLATE = [
 	[
-		'twork/hc-intro-list-item',
+		'mk/hc-intro-list-item',
 		{ text: 'Licensed & Verified Professionals' },
 	],
 
-	[ 'twork/hc-intro-list-item', { text: 'Personalized Care Plans' } ],
-	[ 'twork/hc-intro-list-item', { text: '24/7 Support & Monitoring' } ],
-	[ 'twork/hc-intro-list-item', { text: 'Latest Medical Equipment' } ],
+	[ 'mk/hc-intro-list-item', { text: 'Personalized Care Plans' } ],
+	[ 'mk/hc-intro-list-item', { text: '24/7 Support & Monitoring' } ],
+	[ 'mk/hc-intro-list-item', { text: 'Latest Medical Equipment' } ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -53,7 +53,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'hc-section twork-hc-intro-section-editor',
+			className: 'hc-section mk-hc-intro-section-editor',
 			style: {
 				backgroundColor: backgroundColor || '#ffffff',
 				paddingTop: `${ paddingTop }px`,
@@ -82,12 +82,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ PanelColorSettings && (
 							<PanelColorSettings
-								title={ __( 'Background', 'twork-builder' ) }
+								title={ __( 'Background', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: backgroundColor,
@@ -97,14 +97,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Background Color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
 							/>
 						) }
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -117,7 +117,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -132,7 +132,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -146,7 +146,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -159,7 +159,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<MediaUploadCheck>
@@ -186,7 +186,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Choose image',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									) }
@@ -233,7 +233,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												>
 													{ __(
 														'Replace',
-														'twork-builder'
+														'mk-builder'
 													) }
 												</Button>
 											) }
@@ -251,7 +251,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								</div>
@@ -261,7 +261,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Image alt text',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ imageAlt }
 								onChange={ ( val ) =>
@@ -272,12 +272,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content styling', 'twork-builder' ) }
+						title={ __( 'Content styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ PanelColorSettings && (
 							<PanelColorSettings
-								title={ __( 'Colors', 'twork-builder' ) }
+								title={ __( 'Colors', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: badgeColor,
@@ -287,7 +287,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Badge color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 									{
@@ -298,7 +298,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Title color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 									{
@@ -309,7 +309,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Description color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 									{
@@ -320,7 +320,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Check icon color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
@@ -329,7 +329,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Title font size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
@@ -342,13 +342,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Animation on scroll',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -360,7 +360,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Animation class',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ animationType }
 								onChange={ ( val ) =>
@@ -370,7 +370,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								help={ __(
 									'e.g. fade-up, fadeInUp',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						) }
@@ -416,7 +416,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							>
 								{ __(
 									'Choose an image in the sidebar',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</div>
 						) }
@@ -431,7 +431,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { badgeText: val } )
 							}
-							placeholder={ __( 'Badge text…', 'twork-builder' ) }
+							placeholder={ __( 'Badge text…', 'mk-builder' ) }
 							style={ {
 								color: badgeColor || 'var(--hc-primary)',
 								textTransform: 'uppercase',
@@ -448,7 +448,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section title…',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								fontSize: `${ titleFontSize }rem`,
@@ -466,7 +466,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Description…',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								marginBottom: 25,

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { MediaPlaceholder, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -34,7 +34,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-affiliation-logo-item-editor partner-logo-wrap',
+			className: 'mk-affiliation-logo-item-editor partner-logo-wrap',
 			style: {
 				display: 'flex',
 				alignItems: 'center',
@@ -54,7 +54,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Logo Image', 'twork-builder' ) }
+						title={ __( 'Logo Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ! logoUrl ? (
@@ -71,7 +71,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Partner Logo',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -89,21 +89,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Alt Text', 'twork-builder' ) }
+									label={ __( 'Alt Text', 'mk-builder' ) }
 									value={ logoAlt }
 									onChange={ ( val ) =>
 										setAttributes( { logoAlt: val } )
 									}
 									help={ __(
 										'For accessibility (e.g., ISO Logo)',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<RangeControl
 									label={ __(
 										'Logo width (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ logoWidth || 0 }
 									onChange={ ( val ) =>
@@ -116,14 +116,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									step={ 5 }
 									help={ __(
 										'0 = use section default',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<RangeControl
 									label={ __(
 										'Logo height (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ logoHeight || 0 }
 									onChange={ ( val ) =>
@@ -136,7 +136,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									step={ 5 }
 									help={ __(
 										'0 = use section default',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -152,18 +152,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									style={ { marginTop: '10px' } }
 								>
-									{ __( 'Replace Logo', 'twork-builder' ) }
+									{ __( 'Replace Logo', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Link', 'twork-builder' ) }
+						title={ __( 'Link', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Link URL', 'twork-builder' ) }
+							label={ __( 'Link URL', 'mk-builder' ) }
 							value={ linkUrl }
 							onChange={ ( val ) =>
 								setAttributes( { linkUrl: val } )
@@ -171,7 +171,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							placeholder="https://"
 							help={ __(
 								'Optional: Link to partner website',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -180,7 +180,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Open in New Tab',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ linkTarget === '_blank' }
 									onChange={ ( val ) =>
@@ -193,14 +193,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Link Rel', 'twork-builder' ) }
+									label={ __( 'Link Rel', 'mk-builder' ) }
 									value={ linkRel }
 									onChange={ ( val ) =>
 										setAttributes( { linkRel: val } )
 									}
 									help={ __(
 										'e.g., noopener noreferrer',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</>
@@ -212,7 +212,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			<div { ...blockProps }>
 				{ ! logoUrl ? (
 					<span style={ { color: '#999', fontSize: '0.9rem' } }>
-						{ __( 'Add logo from sidebar', 'twork-builder' ) }
+						{ __( 'Add logo from sidebar', 'mk-builder' ) }
 					</span>
 				) : linkUrl ? (
 					<a

@@ -1,12 +1,12 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/dept-faq-item' ];
+const ALLOWED_BLOCKS = [ 'mk/dept-faq-item' ];
 const TEMPLATE = [
 	[
-		'twork/dept-faq-item',
+		'mk/dept-faq-item',
 		{
 			question: 'What are the signs of a heart attack?',
 			answer: 'Symptoms include chest pain, shortness of breath, pain in the arm or jaw, and cold sweats. Seek emergency care immediately.',
@@ -14,7 +14,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/dept-faq-item',
+		'mk/dept-faq-item',
 		{
 			question: 'Do I need an appointment for ECG?',
 			answer: 'Routine ECGs require appointments, but emergency ECGs are available 24/7 at our Emergency Department.',
@@ -22,7 +22,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/dept-faq-item',
+		'mk/dept-faq-item',
 		{
 			question: 'Does Jivaka accept international insurance?',
 			answer: 'Yes, we partner with major international insurance providers including Cigna, Aetna, and Allianz.',
@@ -34,7 +34,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { sectionId, title } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'content-section twork-dept-faq-editor',
+			className: 'content-section mk-dept-faq-editor',
 		} ),
 		[]
 	);
@@ -43,9 +43,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Section', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Section', 'mk-builder' ) }>
 						<TextControl
-							label={ __( 'Section ID', 'twork-builder' ) }
+							label={ __( 'Section ID', 'mk-builder' ) }
 							value={ sectionId }
 							onChange={ ( v ) =>
 								setAttributes( { sectionId: v } )
@@ -53,7 +53,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( v ) => setAttributes( { title: v } ) }
 						/>

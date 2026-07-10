@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/paediatrics-conditions-section",
+	"name": "mk/paediatrics-conditions-section",
 	"version": "1.0.0",
 	"title": "Conditions Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "Conditions We Treat section with header and grid of condition cards. Matches paediatrics-centre.html.",
-	"keywords": [ "paediatrics", "conditions", "grid", "twork" ],
+	"keywords": [ "paediatrics", "conditions", "grid", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -96,7 +96,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/paediatrics-condition-card",
+				"name": "mk/paediatrics-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-lungs",
 					"title": "Respiratory Issues",
@@ -104,7 +104,7 @@
 				}
 			},
 			{
-				"name": "twork/paediatrics-condition-card",
+				"name": "mk/paediatrics-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-temperature-high",
 					"title": "Infectious Diseases",
@@ -112,7 +112,7 @@
 				}
 			},
 			{
-				"name": "twork/paediatrics-condition-card",
+				"name": "mk/paediatrics-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-allergies",
 					"title": "Allergies & Skin",
@@ -120,7 +120,7 @@
 				}
 			},
 			{
-				"name": "twork/paediatrics-condition-card",
+				"name": "mk/paediatrics-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-utensils",
 					"title": "Nutritional Health",
@@ -128,7 +128,7 @@
 				}
 			},
 			{
-				"name": "twork/paediatrics-condition-card",
+				"name": "mk/paediatrics-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-brain",
 					"title": "Development",
@@ -136,7 +136,7 @@
 				}
 			},
 			{
-				"name": "twork/paediatrics-condition-card",
+				"name": "mk/paediatrics-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-baby",
 					"title": "Neonatal Care",
@@ -144,7 +144,7 @@
 				}
 			},
 			{
-				"name": "twork/paediatrics-condition-card",
+				"name": "mk/paediatrics-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-heartbeat",
 					"title": "Congenital Heart",
@@ -152,7 +152,7 @@
 				}
 			},
 			{
-				"name": "twork/paediatrics-condition-card",
+				"name": "mk/paediatrics-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-bone",
 					"title": "Orthopaedics",
@@ -161,7 +161,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,10 +1,10 @@
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InnerBlocks } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/agrezer-about-image-card' ];
+const ALLOWED_BLOCKS = [ 'mk/agrezer-about-image-card' ];
 const TEMPLATE = [
 	[
-		'twork/agrezer-about-image-card',
+		'mk/agrezer-about-image-card',
 		{
 			variant: 'simple',
 			image: 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1400&q=80',
@@ -13,7 +13,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-about-image-card',
+		'mk/agrezer-about-image-card',
 		{
 			variant: 'overlay',
 			image: 'https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&w=1400&q=80',
@@ -30,7 +30,7 @@ export default function Edit() {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'agrezer-about__images-grid twork-agrezer-about-images-grid-editor',
+				'agrezer-about__images-grid mk-agrezer-about-images-grid-editor',
 		} ),
 		[]
 	);

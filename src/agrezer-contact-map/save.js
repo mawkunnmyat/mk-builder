@@ -45,16 +45,16 @@ export default function save( { attributes } ) {
 	const iframeSrc = safeIframeSrc( mapEmbedUrl );
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-contact-map',
+		className: 'mk-contact-map',
 		style: {
 			backgroundColor: sectionBackgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-contact-map-container-bg': containerBackgroundColor,
-			'--twork-contact-map-radius': `${ containerBorderRadius }px`,
-			'--twork-map-min-h': `${ mapMinHeightDesktop }px`,
-			'--twork-map-min-h-md': `${ mapMinHeightTablet }px`,
-			'--twork-map-min-h-sm': `${ mapMinHeightMobile }px`,
+			'--mk-contact-map-container-bg': containerBackgroundColor,
+			'--mk-contact-map-radius': `${ containerBorderRadius }px`,
+			'--mk-map-min-h': `${ mapMinHeightDesktop }px`,
+			'--mk-map-min-h-md': `${ mapMinHeightTablet }px`,
+			'--mk-map-min-h-sm': `${ mapMinHeightMobile }px`,
 		},
 	} );
 
@@ -64,19 +64,19 @@ export default function save( { attributes } ) {
 	return (
 		<section { ...blockProps }>
 			<div
-				className="twork-contact-map__container"
+				className="mk-contact-map__container"
 				style={ {
 					maxWidth: `${ containerMaxWidth }px`,
 				} }
 			>
-				<div className="twork-contact-map__form-wrap">
+				<div className="mk-contact-map__form-wrap">
 					<RichText.Content
 						tagName="h2"
-						className="twork-contact-map__title"
+						className="mk-contact-map__title"
 						value={ sectionTitle }
 					/>
 					<form
-						className="twork-contact-map__form"
+						className="mk-contact-map__form"
 						action={ formActionAttr }
 						method={ formMethod === 'get' ? 'get' : 'post' }
 					>
@@ -84,7 +84,7 @@ export default function save( { attributes } ) {
 							type="text"
 							name="name"
 							placeholder={ namePlaceholder }
-							className="twork-contact-map__input"
+							className="mk-contact-map__input"
 							required
 							autoComplete="name"
 							aria-label={ namePlaceholder }
@@ -93,7 +93,7 @@ export default function save( { attributes } ) {
 							type="tel"
 							name="phone"
 							placeholder={ phonePlaceholder }
-							className="twork-contact-map__input"
+							className="mk-contact-map__input"
 							autoComplete="tel"
 							aria-label={ phonePlaceholder }
 						/>
@@ -101,7 +101,7 @@ export default function save( { attributes } ) {
 							type="email"
 							name="email"
 							placeholder={ emailPlaceholder }
-							className="twork-contact-map__input"
+							className="mk-contact-map__input"
 							required
 							autoComplete="email"
 							aria-label={ emailPlaceholder }
@@ -110,32 +110,32 @@ export default function save( { attributes } ) {
 							type="text"
 							name="subject"
 							placeholder={ subjectPlaceholder }
-							className="twork-contact-map__input"
+							className="mk-contact-map__input"
 							required
 							aria-label={ subjectPlaceholder }
 						/>
 						<textarea
 							name="message"
 							placeholder={ messagePlaceholder }
-							className="twork-contact-map__textarea"
+							className="mk-contact-map__textarea"
 							rows={ 5 }
 							aria-label={ messagePlaceholder }
 						/>
 						<button
 							type="submit"
-							className="twork-contact-map__button"
+							className="mk-contact-map__button"
 						>
 							{ submitButtonText }
 						</button>
 					</form>
 				</div>
-				<div className="twork-contact-map__map-wrap">
+				<div className="mk-contact-map__map-wrap">
 					{ iframeSrc ? (
 						<iframe
-							className="twork-contact-map__iframe"
+							className="mk-contact-map__iframe"
 							title={
 								mapIframeTitle ||
-								__( 'Map location', 'twork-builder' )
+								__( 'Map location', 'mk-builder' )
 							}
 							src={ iframeSrc }
 							loading="lazy"
@@ -144,7 +144,7 @@ export default function save( { attributes } ) {
 						/>
 					) : (
 						<div
-							className="twork-contact-map__map-placeholder"
+							className="mk-contact-map__map-placeholder"
 							role="img"
 							aria-hidden="true"
 						/>

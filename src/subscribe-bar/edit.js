@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	RichText,
@@ -14,7 +14,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'twork-subscribe-bar newsletter twork-subscribe-bar-editor',
+				'mk-subscribe-bar newsletter mk-subscribe-bar-editor',
 		} ),
 		[]
 	);
@@ -24,41 +24,41 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Form', 'twork-builder' ) }
+						title={ __( 'Form', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Placeholder', 'twork-builder' ) }
+							label={ __( 'Placeholder', 'mk-builder' ) }
 							value={ placeholder }
 							onChange={ ( val ) =>
 								setAttributes( { placeholder: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Button Label', 'twork-builder' ) }
+							label={ __( 'Button Label', 'mk-builder' ) }
 							value={ buttonLabel }
 							onChange={ ( val ) =>
 								setAttributes( { buttonLabel: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Honeypot Field Name', 'twork-builder' ) }
+							label={ __( 'Honeypot Field Name', 'mk-builder' ) }
 							value={ honeypotName }
 							onChange={ ( val ) =>
 								setAttributes( { honeypotName: val } )
 							}
 							help={ __(
 								'Hidden field name used for spam protection.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Background', 'twork-builder' ) }
+						title={ __( 'Background', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Banner Color', 'twork-builder' ) }
+							title={ __( 'Banner Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -68,7 +68,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -109,7 +109,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { title: val } )
 								}
-								placeholder={ __( 'Title…', 'twork-builder' ) }
+								placeholder={ __( 'Title…', 'mk-builder' ) }
 							/>
 						</div>
 						<div className="newsletter__form">

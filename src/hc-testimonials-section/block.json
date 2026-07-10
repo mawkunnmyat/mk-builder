@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-testimonials-section",
+	"name": "mk/hc-testimonials-section",
 	"version": "1.0.0",
 	"title": "Testimonials Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "format-quote",
 	"description": "What Families Say: header + grid of testimonial cards. Matches home-care.html.",
-	"keywords": [ "home care", "testimonials", "reviews", "quotes", "twork" ],
+	"keywords": [ "home care", "testimonials", "reviews", "quotes", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -86,7 +86,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/hc-testimonial-card",
+				"name": "mk/hc-testimonial-card",
 				"attributes": {
 					"starRating": 5,
 					"review": "\"The home nursing team was incredible. They took care of my father like their own family. Highly recommended!\"",
@@ -95,7 +95,7 @@
 				}
 			},
 			{
-				"name": "twork/hc-testimonial-card",
+				"name": "mk/hc-testimonial-card",
 				"attributes": {
 					"starRating": 5,
 					"review": "\"Very professional physiotherapy service. My recovery after surgery was much faster thanks to their home visits.\"",
@@ -104,7 +104,7 @@
 				}
 			},
 			{
-				"name": "twork/hc-testimonial-card",
+				"name": "mk/hc-testimonial-card",
 				"attributes": {
 					"starRating": 4.5,
 					"review": "\"Convenient and reliable. The doctor arrived on time and was very thorough with the checkup.\"",
@@ -114,7 +114,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -96,17 +96,17 @@ export default function save( { attributes } ) {
 		.join( ' ' );
 
 	const blockProps = useBlockProps.save( {
-		className: [ 'twork-stats__btn-wrap', responsiveClasses ]
+		className: [ 'mk-stats__btn-wrap', responsiveClasses ]
 			.filter( Boolean )
 			.join( ' ' ),
 	} );
 
 	return (
 		<div { ...blockProps }>
-			<a href={ buttonUrl || '#' } className="twork-stats__btn">
+			<a href={ buttonUrl || '#' } className="mk-stats__btn">
 				<RichText.Content tagName="span" value={ buttonText } />
 				{ showButtonIcon && (
-					<span className="twork-stats__btn-icon" aria-hidden="true">
+					<span className="mk-stats__btn-icon" aria-hidden="true">
 						{ actionIcon }
 					</span>
 				) }

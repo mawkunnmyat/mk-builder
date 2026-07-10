@@ -78,7 +78,7 @@ const ICONS = {
 function TaglineIcon() {
 	return (
 		<svg
-			className="twork-hero__tagline-icon"
+			className="mk-hero__tagline-icon"
 			viewBox="0 0 24 24"
 			aria-hidden="true"
 		>
@@ -127,7 +127,7 @@ export default function save( { attributes } ) {
 			: HERO_OVERLAY_TRANSPARENT_GRADIENT;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-hero twork-hero--bg',
+		className: 'mk-hero mk-hero--bg',
 		style: {
 			backgroundImage: backgroundImage
 				? `url(${ backgroundImage })`
@@ -136,51 +136,51 @@ export default function save( { attributes } ) {
 			backgroundPosition: 'center',
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-container-max-width': `${ containerMaxWidth }px`,
-			'--twork-container-padding': `${ containerPadding }px`,
-			'--twork-features-gap': `${ featuresGap }px`,
-			'--twork-hero-btn-bg': buttonBgColor,
-			'--twork-hero-btn-text': buttonTextColor,
-			'--twork-hero-btn-radius': `${ buttonBorderRadius }px`,
-			'--twork-padding-top-mobile': `${ paddingTopMobile }px`,
-			'--twork-padding-bottom-mobile': `${ paddingBottomMobile }px`,
-			'--twork-hero-overlay-gradient': overlayGradientCss,
+			'--mk-container-max-width': `${ containerMaxWidth }px`,
+			'--mk-container-padding': `${ containerPadding }px`,
+			'--mk-features-gap': `${ featuresGap }px`,
+			'--mk-hero-btn-bg': buttonBgColor,
+			'--mk-hero-btn-text': buttonTextColor,
+			'--mk-hero-btn-radius': `${ buttonBorderRadius }px`,
+			'--mk-padding-top-mobile': `${ paddingTopMobile }px`,
+			'--mk-padding-bottom-mobile': `${ paddingBottomMobile }px`,
+			'--mk-hero-overlay-gradient': overlayGradientCss,
 		},
 	} );
 
 	return (
 		<section { ...blockProps }>
 			<div
-				className="twork-hero__overlay"
+				className="mk-hero__overlay"
 				style={ {
-					'--twork-hero-overlay-color': overlayColor,
-					'--twork-hero-overlay-opacity': overlayOpacity,
-					'--twork-hero-overlay-gradient': overlayGradientCss,
+					'--mk-hero-overlay-color': overlayColor,
+					'--mk-hero-overlay-opacity': overlayOpacity,
+					'--mk-hero-overlay-gradient': overlayGradientCss,
 				} }
 			/>
-			<div className="twork-hero__container">
-				<div className="twork-hero__content">
-					<div className="twork-hero__tagline">
+			<div className="mk-hero__container">
+				<div className="mk-hero__content">
+					<div className="mk-hero__tagline">
 						<TaglineIcon />
 						<RichText.Content
 							tagName="span"
-							className="twork-hero__tagline-text"
+							className="mk-hero__tagline-text"
 							value={ taglineText }
 						/>
 					</div>
 					<RichText.Content
 						tagName="h1"
-						className="twork-hero__title twork-hero__title"
+						className="mk-hero__title mk-hero__title"
 						value={ title }
 					/>
 					<RichText.Content
 						tagName="p"
-						className="twork-hero__desc"
+						className="mk-hero__desc"
 						value={ description }
 					/>
 					<a
 						href={ href }
-						className="twork-hero__btn"
+						className="mk-hero__btn"
 						target={ buttonLinkTarget ? '_blank' : undefined }
 						rel={
 							buttonLinkTarget ? 'noopener noreferrer' : undefined
@@ -189,7 +189,7 @@ export default function save( { attributes } ) {
 						<RichText.Content tagName="span" value={ buttonText } />
 						{ ! buttonMediaUrl && showButtonIcon && (
 							<span
-								className="twork-hero__btn-icon"
+								className="mk-hero__btn-icon"
 								aria-hidden="true"
 							>
 								{ buttonIconSvg }
@@ -197,7 +197,7 @@ export default function save( { attributes } ) {
 						) }
 						{ buttonMediaUrl && buttonMediaType === 'video' && (
 							<video
-								className="twork-hero__btn-media"
+								className="mk-hero__btn-media"
 								src={ buttonMediaUrl }
 								autoPlay
 								muted
@@ -208,7 +208,7 @@ export default function save( { attributes } ) {
 						) }
 						{ buttonMediaUrl && buttonMediaType !== 'video' && (
 							<img
-								className="twork-hero__btn-media"
+								className="mk-hero__btn-media"
 								src={ buttonMediaUrl }
 								alt=""
 								aria-hidden="true"
@@ -217,8 +217,8 @@ export default function save( { attributes } ) {
 					</a>
 				</div>
 
-				<div className="twork-hero__features-wrapper">
-					<div className="twork-hero__features-track">
+				<div className="mk-hero__features-wrapper">
+					<div className="mk-hero__features-track">
 						<InnerBlocks.Content />
 					</div>
 				</div>

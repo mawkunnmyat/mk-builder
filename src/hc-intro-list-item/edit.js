@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -23,11 +23,11 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<PanelBody
-				title={ __( 'List Item', 'twork-builder' ) }
+				title={ __( 'List Item', 'mk-builder' ) }
 				initialOpen={ false }
 			>
 				<TextControl
-					label={ __( 'Icon class (Font Awesome)', 'twork-builder' ) }
+					label={ __( 'Icon class (Font Awesome)', 'mk-builder' ) }
 					value={ iconClass || '' }
 					onChange={ ( val ) =>
 						setAttributes( {
@@ -36,7 +36,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					}
 					help={ __(
 						'e.g. fas fa-check-circle, fas fa-check',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 			</PanelBody>
@@ -46,7 +46,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					tagName="span"
 					value={ text }
 					onChange={ ( val ) => setAttributes( { text: val } ) }
-					placeholder={ __( 'List item text…', 'twork-builder' ) }
+					placeholder={ __( 'List item text…', 'mk-builder' ) }
 				/>
 			</li>
 		</>

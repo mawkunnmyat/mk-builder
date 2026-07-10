@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-greener-stats-row",
+	"name": "mk/agrezer-greener-stats-row",
 	"version": "1.0.0",
 	"title": "Agrezer Greener — Stats Row",
-	"category": "twork-builder",
-	"parent": [ "twork/agrezer-greener-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/agrezer-greener-section" ],
 	"icon": "chart-bar",
 	"description": "Two-column stats row for Greener section.",
 	"supports": {
@@ -15,7 +15,7 @@
 	"example": {
 		"innerBlocks": [
 			{
-				"name": "twork/agrezer-greener-stat-item",
+				"name": "mk/agrezer-greener-stat-item",
 				"attributes": {
 					"iconVariant": "growth",
 					"title": "80% Pure Growth",
@@ -23,7 +23,7 @@
 				}
 			},
 			{
-				"name": "twork/agrezer-greener-stat-item",
+				"name": "mk/agrezer-greener-stat-item",
 				"attributes": {
 					"iconVariant": "organic",
 					"title": "95% Organic Roots",
@@ -32,6 +32,6 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

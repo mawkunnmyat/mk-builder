@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/insurance-partners-section",
+	"name": "mk/insurance-partners-section",
 	"title": "Insurance Partners Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Insurance partners grid section with customizable cards for patient guide.",
 	"keywords": [
 		"insurance",
@@ -11,7 +11,7 @@
 		"patient",
 		"guide",
 		"hospital",
-		"twork"
+		"mk"
 	],
 	"icon": "shield",
 	"attributes": {
@@ -170,56 +170,56 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/insurance-partner-item",
+				"name": "mk/insurance-partner-item",
 				"attributes": {
 					"partnerName": "AIA Myanmar",
 					"iconClass": "fas fa-shield-alt"
 				}
 			},
 			{
-				"name": "twork/insurance-partner-item",
+				"name": "mk/insurance-partner-item",
 				"attributes": {
 					"partnerName": "Prudential",
 					"iconClass": "fas fa-umbrella"
 				}
 			},
 			{
-				"name": "twork/insurance-partner-item",
+				"name": "mk/insurance-partner-item",
 				"attributes": {
 					"partnerName": "Manulife",
 					"iconClass": "fas fa-leaf"
 				}
 			},
 			{
-				"name": "twork/insurance-partner-item",
+				"name": "mk/insurance-partner-item",
 				"attributes": {
 					"partnerName": "GGI Insurance",
 					"iconClass": "fas fa-building"
 				}
 			},
 			{
-				"name": "twork/insurance-partner-item",
+				"name": "mk/insurance-partner-item",
 				"attributes": {
 					"partnerName": "IKBZ Insurance",
 					"iconClass": "fas fa-landmark"
 				}
 			},
 			{
-				"name": "twork/insurance-partner-item",
+				"name": "mk/insurance-partner-item",
 				"attributes": {
 					"partnerName": "CB Insurance",
 					"iconClass": "fas fa-hand-holding-heart"
 				}
 			},
 			{
-				"name": "twork/insurance-partner-item",
+				"name": "mk/insurance-partner-item",
 				"attributes": {
 					"partnerName": "MGA Insurance",
 					"iconClass": "fas fa-globe-asia"
 				}
 			},
 			{
-				"name": "twork/insurance-partner-item",
+				"name": "mk/insurance-partner-item",
 				"attributes": {
 					"partnerName": "Others",
 					"iconClass": "fas fa-file-medical"
@@ -227,7 +227,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

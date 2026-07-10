@@ -25,10 +25,10 @@
 		}
 
 		const infoCards = source.querySelectorAll(
-			'.wp-block-twork-brand-footer-info-card, .footer__info-card'
+			'.wp-block-mk-brand-footer-info-card, .footer__info-card'
 		);
 		const columnBlocks = source.querySelectorAll(
-			'.wp-block-twork-brand-footer-column, .footer__column'
+			'.wp-block-mk-brand-footer-column, .footer__column'
 		);
 
 		infoCards.forEach( function ( card ) {
@@ -93,6 +93,6 @@
 	}
 
 	document
-		.querySelectorAll( '.twork-brand-footer' )
+		.querySelectorAll( '.mk-brand-footer' )
 		.forEach( initBrandFooter );
 } )();

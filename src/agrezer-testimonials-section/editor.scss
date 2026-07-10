@@ -1,12 +1,12 @@
-.twork-testimonials-section-editor {
-	.twork-testimonials__slide--editor .twork-testimonials__author-box {
+.mk-testimonials-section-editor {
+	.mk-testimonials__slide--editor .mk-testimonials__author-box {
 		margin-top: 12px;
 		padding-top: 12px;
 		border-top: 1px dashed #e0e0e0;
 	}
 
 	/* Target the new useInnerBlocksProps container directly */
-	.twork-testimonials__slides--editor {
+	.mk-testimonials__slides--editor {
 		display: flex !important;
 		flex-direction: column !important;
 		gap: 1.25rem !important;
@@ -19,11 +19,11 @@
 		}
 	}
 
-	.twork-testimonials__bottom--editor {
+	.mk-testimonials__bottom--editor {
 		flex-wrap: wrap;
 	}
 
-	.twork-testimonials__editor-hint {
+	.mk-testimonials__editor-hint {
 		flex: 1 1 200px;
 		margin: 0;
 		font-size: 0.85rem;

@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/faq-accordion-item",
+	"name": "mk/faq-accordion-item",
 	"title": "FAQ Accordion Item",
-	"parent": [ "twork/faq-accordion-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/faq-accordion-section" ],
+	"category": "mk-builder",
 	"description": "Single FAQ accordion item with question, answer, and optional default open state.",
-	"keywords": [ "faq", "accordion", "question", "twork" ],
+	"keywords": [ "faq", "accordion", "question", "mk" ],
 	"attributes": {
 		"question": {
 			"type": "string",
@@ -31,6 +31,6 @@
 			"isOpenByDefault": true
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

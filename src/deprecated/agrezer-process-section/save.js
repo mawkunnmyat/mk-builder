@@ -26,7 +26,7 @@ export default function save( { attributes } ) {
 		: undefined;
 
 	const blockProps = useBlockProps.save( {
-		className: `agrezer-process twork-agrezer-process-section ${
+		className: `agrezer-process mk-agrezer-process-section ${
 			wreathDecorationUrl ? 'has-process-wreath' : ''
 		}`,
 		style: {

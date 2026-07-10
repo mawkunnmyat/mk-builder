@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -61,10 +61,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		animationDelay,
 	} = attributes;
 
-	const ALLOWED_BLOCKS = [ 'twork/visiting-hours-item' ];
+	const ALLOWED_BLOCKS = [ 'mk/visiting-hours-item' ];
 	const TEMPLATE = [
 		[
-			'twork/visiting-hours-item',
+			'mk/visiting-hours-item',
 			{
 				wardName: 'General Ward',
 				timeSlot: '10:00 AM – 8:00 PM',
@@ -73,7 +73,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		],
 
 		[
-			'twork/visiting-hours-item',
+			'mk/visiting-hours-item',
 			{
 				wardName: 'ICU / CCU',
 				timeSlot: '11:00 AM – 12:00 PM',
@@ -82,7 +82,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		],
 
 		[
-			'twork/visiting-hours-item',
+			'mk/visiting-hours-item',
 			{
 				wardName: 'Private Rooms',
 				timeSlot: '8:00 AM – 9:00 PM',
@@ -91,7 +91,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		],
 
 		[
-			'twork/visiting-hours-item',
+			'mk/visiting-hours-item',
 			{
 				wardName: 'NICU (Parents)',
 				timeSlot: '24 Hours Allowed',
@@ -102,7 +102,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-visiting-info-section-editor',
+			className: 'mk-visiting-info-section-editor',
 			style: {
 				backgroundColor: backgroundImage
 					? 'transparent'
@@ -157,13 +157,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section Content', 'twork-builder' ) }
+						title={ __( 'Section Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Show Section Title',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSectionTitle }
 							onChange={ ( val ) =>
@@ -176,7 +176,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Title Text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitle }
 									onChange={ ( val ) =>
@@ -187,7 +187,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelColorSettings
 									title={ __(
 										'Title Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -198,7 +198,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Title Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -207,7 +207,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitleFontSize }
 									onChange={ ( val ) =>
@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size Mobile (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitleFontSizeMobile }
 									onChange={ ( val ) =>
@@ -239,7 +239,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Weight',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitleFontWeight }
 									onChange={ ( val ) =>
@@ -255,7 +255,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Margin Bottom (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitleMarginBottom }
 									onChange={ ( val ) =>
@@ -273,7 +273,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<ToggleControl
-							label={ __( 'Show Description', 'twork-builder' ) }
+							label={ __( 'Show Description', 'mk-builder' ) }
 							checked={ showSectionDescription }
 							onChange={ ( val ) =>
 								setAttributes( { showSectionDescription: val } )
@@ -285,7 +285,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Description Text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionDescription }
 									onChange={ ( val ) =>
@@ -295,14 +295,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'Intro text above the visiting hours card',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<PanelColorSettings
 									title={ __(
 										'Description Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -314,7 +314,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Description Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -323,7 +323,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionDescriptionFontSize }
 									onChange={ ( val ) =>
@@ -339,7 +339,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Margin Bottom (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionDescriptionMarginBottom }
 									onChange={ ( val ) =>
@@ -356,11 +356,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show Image', 'twork-builder' ) }
+							label={ __( 'Show Image', 'mk-builder' ) }
 							checked={ showImage }
 							onChange={ ( val ) =>
 								setAttributes( { showImage: val } )
@@ -370,7 +370,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						{ showImage && (
 							<>
 								<BaseControl
-									label={ __( 'Image', 'twork-builder' ) }
+									label={ __( 'Image', 'mk-builder' ) }
 								>
 									{ ! imageUrl ? (
 										<MediaPlaceholder
@@ -388,7 +388,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											labels={ {
 												title: __(
 													'Select Image',
-													'twork-builder'
+													'mk-builder'
 												),
 											} }
 										/>
@@ -418,14 +418,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'Remove Image',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										</div>
 									) }
 								</BaseControl>
 								<TextControl
-									label={ __( 'Alt Text', 'twork-builder' ) }
+									label={ __( 'Alt Text', 'mk-builder' ) }
 									value={ imageAlt }
 									onChange={ ( val ) =>
 										setAttributes( { imageAlt: val } )
@@ -435,7 +435,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Border Radius (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ imageBorderRadius }
 									onChange={ ( val ) =>
@@ -451,7 +451,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Enable Box Shadow',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ imageBoxShadow }
 									onChange={ ( val ) =>
@@ -463,11 +463,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Hours Card', 'twork-builder' ) }
+						title={ __( 'Hours Card', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Card Background', 'twork-builder' ) }
+							title={ __( 'Card Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: hoursCardBgColor,
@@ -477,14 +477,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Padding (px)', 'twork-builder' ) }
+							label={ __( 'Padding (px)', 'mk-builder' ) }
 							value={ hoursCardPadding }
 							onChange={ ( val ) =>
 								setAttributes( { hoursCardPadding: val } )
@@ -497,7 +497,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Border Radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ hoursCardBorderRadius }
 							onChange={ ( val ) =>
@@ -509,7 +509,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Enable Box Shadow', 'twork-builder' ) }
+							label={ __( 'Enable Box Shadow', 'mk-builder' ) }
 							checked={ hoursCardBoxShadow }
 							onChange={ ( val ) =>
 								setAttributes( { hoursCardBoxShadow: val } )
@@ -518,11 +518,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Section Background', 'twork-builder' ) }
+						title={ __( 'Section Background', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background Color', 'twork-builder' ) }
+							title={ __( 'Background Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -532,7 +532,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -540,7 +540,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<BaseControl
-							label={ __( 'Background Image', 'twork-builder' ) }
+							label={ __( 'Background Image', 'mk-builder' ) }
 						>
 							{ ! backgroundImage ? (
 								<MediaPlaceholder
@@ -555,7 +555,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Background Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -583,7 +583,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove Image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>
@@ -595,7 +595,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Show Overlay',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ backgroundOverlay }
 									onChange={ ( val ) =>
@@ -610,7 +610,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelColorSettings
 											title={ __(
 												'Overlay Color',
-												'twork-builder'
+												'mk-builder'
 											) }
 											colorSettings={ [
 												{
@@ -622,7 +622,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														} ),
 													label: __(
 														'Overlay Color',
-														'twork-builder'
+														'mk-builder'
 													),
 												},
 											] }
@@ -631,7 +631,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<RangeControl
 											label={ __(
 												'Overlay Opacity',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={ backgroundOverlayOpacity }
 											onChange={ ( val ) =>
@@ -651,13 +651,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -671,7 +671,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -685,7 +685,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gap Between Columns (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ layoutGap }
 							onChange={ ( val ) =>
@@ -697,7 +697,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap Mobile (px)', 'twork-builder' ) }
+							label={ __( 'Gap Mobile (px)', 'mk-builder' ) }
 							value={ layoutGapMobile }
 							onChange={ ( val ) =>
 								setAttributes( { layoutGapMobile: val } )
@@ -710,7 +710,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Image First on Mobile',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ imageFirstOnMobile }
 							onChange={ ( val ) =>
@@ -718,17 +718,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Show image above content on small screens',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Section Padding', 'twork-builder' ) }
+						title={ __( 'Section Padding', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -741,7 +741,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -755,7 +755,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Top Mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingTopMobile }
 							onChange={ ( val ) =>
@@ -769,7 +769,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom Mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottomMobile }
 							onChange={ ( val ) =>
@@ -782,13 +782,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable Scroll Animation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -801,7 +801,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Animation Delay (ms)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ animationDelay }
 									onChange={ ( val ) =>
@@ -856,7 +856,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											}
 											placeholder={ __(
 												'Section Title...',
-												'twork-builder'
+												'mk-builder'
 											) }
 											style={ {
 												fontSize: `${ sectionTitleFontSize }rem`,
@@ -881,7 +881,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											}
 											placeholder={ __(
 												'Description...',
-												'twork-builder'
+												'mk-builder'
 											) }
 											style={ {
 												fontSize: `${ sectionDescriptionFontSize }rem`,
@@ -931,7 +931,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Select Image',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 										className="info-img-placeholder"

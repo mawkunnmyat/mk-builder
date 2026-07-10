@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/rad-stats-section",
+	"name": "mk/rad-stats-section",
 	"version": "1.0.0",
 	"title": "Stats Strip",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "chart-bar",
 	"description": "Radiology & Imaging quick stats strip below the hero section.",
-	"keywords": [ "radiology", "imaging", "stats", "strip", "twork" ],
+	"keywords": [ "radiology", "imaging", "stats", "strip", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -86,28 +86,28 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/rad-stat-item",
+				"name": "mk/rad-stat-item",
 				"attributes": {
 					"statNumber": "24/7",
 					"statLabel": "Operating Hours"
 				}
 			},
 			{
-				"name": "twork/rad-stat-item",
+				"name": "mk/rad-stat-item",
 				"attributes": {
 					"statNumber": "1.5T",
 					"statLabel": "MRI Power"
 				}
 			},
 			{
-				"name": "twork/rad-stat-item",
+				"name": "mk/rad-stat-item",
 				"attributes": {
 					"statNumber": "100%",
 					"statLabel": "Digital Reports"
 				}
 			},
 			{
-				"name": "twork/rad-stat-item",
+				"name": "mk/rad-stat-item",
 				"attributes": {
 					"statNumber": "15+",
 					"statLabel": "Specialists"
@@ -115,7 +115,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

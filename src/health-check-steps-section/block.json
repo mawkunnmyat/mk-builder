@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/health-check-steps-section",
+	"name": "mk/health-check-steps-section",
 	"version": "1.0.0",
 	"title": "Steps Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "list-view",
 	"description": "How to Prepare section: title + grid of steps (icon, title, description). Matches health-check-up.html.",
 	"keywords": [
@@ -14,7 +14,7 @@
 		"prepare",
 		"how to",
 		"chk",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -149,7 +149,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/health-check-step-item",
+				"name": "mk/health-check-step-item",
 				"attributes": {
 					"icon": "fas fa-ban",
 					"title": "1. Fasting",
@@ -157,7 +157,7 @@
 				}
 			},
 			{
-				"name": "twork/health-check-step-item",
+				"name": "mk/health-check-step-item",
 				"attributes": {
 					"icon": "fas fa-calendar-check",
 					"title": "2. Appointment",
@@ -165,7 +165,7 @@
 				}
 			},
 			{
-				"name": "twork/health-check-step-item",
+				"name": "mk/health-check-step-item",
 				"attributes": {
 					"icon": "fas fa-vial",
 					"title": "3. Sample",
@@ -173,7 +173,7 @@
 				}
 			},
 			{
-				"name": "twork/health-check-step-item",
+				"name": "mk/health-check-step-item",
 				"attributes": {
 					"icon": "fas fa-file-medical-alt",
 					"title": "4. Review",
@@ -182,7 +182,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

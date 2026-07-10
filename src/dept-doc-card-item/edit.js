@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, MediaPlaceholder } from '@wordpress/block-editor';
 import { PanelBody, TextControl, Button } from '@wordpress/components';
 
@@ -14,7 +14,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 	} = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'doc-card twork-dept-doc-card-editor',
+			className: 'doc-card mk-dept-doc-card-editor',
 		} ),
 		[]
 	);
@@ -23,7 +23,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Doctor', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Doctor', 'mk-builder' ) }>
 						{ ! imageUrl ? (
 							<MediaPlaceholder
 								onSelect={ ( m ) =>
@@ -37,7 +37,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Doctor Photo',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -62,18 +62,18 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
 						<TextControl
-							label={ __( 'Name', 'twork-builder' ) }
+							label={ __( 'Name', 'mk-builder' ) }
 							value={ name }
 							onChange={ ( v ) => setAttributes( { name: v } ) }
 						/>
 
 						<TextControl
-							label={ __( 'Specialization', 'twork-builder' ) }
+							label={ __( 'Specialization', 'mk-builder' ) }
 							value={ specialization }
 							onChange={ ( v ) =>
 								setAttributes( { specialization: v } )
@@ -81,7 +81,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Qualifications', 'twork-builder' ) }
+							label={ __( 'Qualifications', 'mk-builder' ) }
 							value={ qualifications }
 							onChange={ ( v ) =>
 								setAttributes( { qualifications: v } )
@@ -89,7 +89,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Profile URL', 'twork-builder' ) }
+							label={ __( 'Profile URL', 'mk-builder' ) }
 							value={ profileUrl }
 							onChange={ ( v ) =>
 								setAttributes( { profileUrl: v } )

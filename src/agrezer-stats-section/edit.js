@@ -13,15 +13,15 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/stats-column', 'twork/cta-block' ];
+const ALLOWED_BLOCKS = [ 'mk/stats-column', 'mk/cta-block' ];
 
 const TEMPLATE = [
 	[
-		'twork/stats-column',
+		'mk/stats-column',
 		{},
 		[
 			[
-				'twork/stat-card',
+				'mk/stat-card',
 				{
 					image: 'https://images.unsplash.com/photo-1631368647931-4f3ec6d1df92?auto=format&fit=crop&w=1000&q=80',
 					alt: 'Corn cobs and leaves',
@@ -33,11 +33,11 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/stats-column',
+		'mk/stats-column',
 		{},
 		[
 			[
-				'twork/cta-block',
+				'mk/cta-block',
 				{
 					buttonText: 'Get In Touch',
 					buttonUrl: '#',
@@ -45,7 +45,7 @@ const TEMPLATE = [
 			],
 
 			[
-				'twork/stat-card',
+				'mk/stat-card',
 				{
 					image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=80',
 					alt: 'Scattered corn grains',
@@ -57,11 +57,11 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/stats-column',
+		'mk/stats-column',
 		{},
 		[
 			[
-				'twork/stat-card',
+				'mk/stat-card',
 				{
 					image: 'https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1000&q=80',
 					alt: 'Corn stalk growth',
@@ -101,26 +101,26 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const statsGridGapMobile = `${ gridGapMobile }px`;
 
 	const blockProps = useBlockProps( {
-		className: 'twork-stats twork-stats-section-editor',
+		className: 'mk-stats mk-stats-section-editor',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-stats-grid-gap': statsGridGap,
-			'--twork-stats-grid-gap-tablet': statsGridGapTablet,
-			'--twork-stats-grid-gap-mobile': statsGridGapMobile,
+			'--mk-stats-grid-gap': statsGridGap,
+			'--mk-stats-grid-gap-tablet': statsGridGapTablet,
+			'--mk-stats-grid-gap-mobile': statsGridGapMobile,
 			'--wp--style--block-gap': statsGridGap,
 		},
 	} );
 
 	const innerBlocksProps = useInnerBlocksProps(
 		{
-			className: 'twork-stats__grid twork-stats__grid-editor',
+			className: 'mk-stats__grid mk-stats__grid-editor',
 			style: {
 				gap: statsGridGap,
-				'--twork-stats-grid-gap': statsGridGap,
-				'--twork-stats-grid-gap-tablet': statsGridGapTablet,
-				'--twork-stats-grid-gap-mobile': statsGridGapMobile,
+				'--mk-stats-grid-gap': statsGridGap,
+				'--mk-stats-grid-gap-tablet': statsGridGapTablet,
+				'--mk-stats-grid-gap-mobile': statsGridGapMobile,
 			},
 		},
 		{
@@ -146,13 +146,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Header', 'twork-builder' ) }
+						title={ __( 'Header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Tagline icon (emoji)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ taglineIcon }
 							onChange={ ( val ) =>
@@ -161,7 +161,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Tagline', 'twork-builder' ) }
+							title={ __( 'Tagline', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: taglineColor,
@@ -169,7 +169,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { taglineColor: val } ),
 									label: __(
 										'Tagline text',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -180,7 +180,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Tagline icon',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -188,19 +188,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Title', 'twork-builder' ) }
+							title={ __( 'Title', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title color', 'twork-builder' ),
+									label: __( 'Title color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Title size (rem)', 'twork-builder' ) }
+							label={ __( 'Title size (rem)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -211,7 +211,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Title weight', 'twork-builder' ) }
+							label={ __( 'Title weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Description', 'twork-builder' ) }
+							title={ __( 'Description', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: descColor,
@@ -231,7 +231,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { descColor: val } ),
 									label: __(
 										'Description color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -240,7 +240,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Description size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ descFontSize }
 							onChange={ ( val ) =>
@@ -252,7 +252,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Header border', 'twork-builder' ) }
+							title={ __( 'Header border', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: headerBorderColor,
@@ -262,7 +262,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Border color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -270,11 +270,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -284,14 +284,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Section background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -302,7 +302,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Side gutter (px)', 'twork-builder' ) }
+							label={ __( 'Side gutter (px)', 'mk-builder' ) }
 							value={ containerGutter }
 							onChange={ ( val ) =>
 								setAttributes( { containerGutter: val } )
@@ -313,7 +313,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -326,7 +326,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -338,7 +338,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Grid gap (desktop px)', 'twork-builder' ) }
+							label={ __( 'Grid gap (desktop px)', 'mk-builder' ) }
 							value={ gridGap }
 							onChange={ ( val ) =>
 								setAttributes( { gridGap: val } )
@@ -349,7 +349,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Grid gap (tablet px)', 'twork-builder' ) }
+							label={ __( 'Grid gap (tablet px)', 'mk-builder' ) }
 							value={ gridGapTablet }
 							onChange={ ( val ) =>
 								setAttributes( { gridGapTablet: val } )
@@ -360,7 +360,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Grid gap (mobile px)', 'twork-builder' ) }
+							label={ __( 'Grid gap (mobile px)', 'mk-builder' ) }
 							value={ gridGapMobile }
 							onChange={ ( val ) =>
 								setAttributes( { gridGapMobile: val } )
@@ -373,22 +373,22 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				</InspectorControls>
 			) }
 
-			<section { ...blockProps } aria-labelledby="twork-stats-title">
+			<section { ...blockProps } aria-labelledby="mk-stats-title">
 				<div
-					className="twork-stats__container"
+					className="mk-stats__container"
 					style={ containerStyle }
 				>
 					<div
-						className="twork-stats__header"
+						className="mk-stats__header"
 						style={ headerStyle }
 					>
-						<div className="twork-stats__header-left">
+						<div className="mk-stats__header-left">
 							<p
-								className="twork-stats__tagline"
+								className="mk-stats__tagline"
 								style={ { color: taglineColor } }
 							>
 								<span
-									className="twork-stats__tagline-icon"
+									className="mk-stats__tagline-icon"
 									style={ { color: taglineIconColor } }
 									aria-hidden="true"
 								>
@@ -402,22 +402,22 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Sustainable Farming',
-										'twork-builder'
+										'mk-builder'
 									) }
 									allowedFormats={ [] }
 								/>
 							</p>
 							<RichText
 								tagName="h2"
-								id="twork-stats-title"
-								className="twork-stats__title"
+								id="mk-stats-title"
+								className="mk-stats__title"
 								value={ sectionTitle }
 								onChange={ ( val ) =>
 									setAttributes( { sectionTitle: val } )
 								}
 								placeholder={ __(
 									'Section title…',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									color: titleColor,
@@ -428,14 +428,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</div>
 						<RichText
 							tagName="p"
-							className="twork-stats__desc"
+							className="mk-stats__desc"
 							value={ description }
 							onChange={ ( val ) =>
 								setAttributes( { description: val } )
 							}
 							placeholder={ __(
 								'Description…',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								color: descColor,

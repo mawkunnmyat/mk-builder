@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/contact-layout-section",
+	"name": "mk/contact-layout-section",
 	"version": "1.0.0",
 	"title": "Contact Layout Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "layout",
 	"description": "Contact page section: left column (department hotlines accordion + map), right column (contact form).",
-	"keywords": [ "contact", "accordion", "hotline", "map", "form", "twork" ],
+	"keywords": [ "contact", "accordion", "hotline", "map", "form", "mk" ],
 	"attributes": {
 		"accordionHeading": {
 			"type": "string",
@@ -101,21 +101,21 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/hotline-accordion-item",
+				"name": "mk/hotline-accordion-item",
 				"attributes": {
 					"title": "Heart Centre Hotline",
 					"phoneNumber": "09-111 222 333"
 				}
 			},
 			{
-				"name": "twork/hotline-accordion-item",
+				"name": "mk/hotline-accordion-item",
 				"attributes": {
 					"title": "Neuro Centre Hotline",
 					"phoneNumber": "09-444 555 666"
 				}
 			},
 			{
-				"name": "twork/hotline-accordion-item",
+				"name": "mk/hotline-accordion-item",
 				"attributes": {
 					"title": "Pharmacy & Lab",
 					"phoneNumber": "09-777 888 999"
@@ -123,7 +123,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"editorStyle": "file:./style-index.css"

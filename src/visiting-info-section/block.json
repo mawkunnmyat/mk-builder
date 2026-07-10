@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/visiting-info-section",
+	"name": "mk/visiting-info-section",
 	"title": "Visiting Information Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Visiting hours section with two-column layout (content + image) for patient guide.",
 	"keywords": [
 		"visiting",
@@ -12,7 +12,7 @@
 		"guide",
 		"hospital",
 		"wards",
-		"twork"
+		"mk"
 	],
 	"icon": "clock",
 	"attributes": {
@@ -224,7 +224,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/visiting-hours-item",
+				"name": "mk/visiting-hours-item",
 				"attributes": {
 					"wardName": "General Ward",
 					"timeSlot": "10:00 AM – 8:00 PM",
@@ -232,7 +232,7 @@
 				}
 			},
 			{
-				"name": "twork/visiting-hours-item",
+				"name": "mk/visiting-hours-item",
 				"attributes": {
 					"wardName": "ICU / CCU",
 					"timeSlot": "11:00 AM – 12:00 PM",
@@ -240,7 +240,7 @@
 				}
 			},
 			{
-				"name": "twork/visiting-hours-item",
+				"name": "mk/visiting-hours-item",
 				"attributes": {
 					"wardName": "Private Rooms",
 					"timeSlot": "8:00 AM – 9:00 PM",
@@ -248,7 +248,7 @@
 				}
 			},
 			{
-				"name": "twork/visiting-hours-item",
+				"name": "mk/visiting-hours-item",
 				"attributes": {
 					"wardName": "NICU (Parents)",
 					"timeSlot": "24 Hours Allowed",
@@ -257,7 +257,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

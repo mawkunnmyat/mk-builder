@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/csr-partner-logo-item",
+	"name": "mk/csr-partner-logo-item",
 	"title": "Partner Logo",
-	"parent": [ "twork/csr-partners-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/csr-partners-section" ],
+	"category": "mk-builder",
 	"description": "Single partner logo for In Collaboration With section.",
-	"keywords": [ "csr", "partner", "logo", "collaboration", "twork" ],
+	"keywords": [ "csr", "partner", "logo", "collaboration", "mk" ],
 	"attributes": {
 		"logoUrl": {
 			"type": "string",
@@ -46,7 +46,7 @@
 			"linkRel": "noopener noreferrer"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

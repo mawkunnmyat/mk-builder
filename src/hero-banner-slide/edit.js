@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	MediaUpload,
@@ -41,7 +41,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-hero-banner-carousel__slide twork-hero-banner-slide-editor',
+			className: 'mk-hero-banner-carousel__slide mk-hero-banner-slide-editor',
 			style: {
 				backgroundImage: imageUrl ? `url(${ imageUrl })` : undefined,
 				backgroundPosition: backgroundPosition || 'center right',
@@ -55,10 +55,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Slide Background', 'twork-builder' ) }
+						title={ __( 'Slide Background', 'mk-builder' ) }
 						initialOpen={ true }
 					>
-						<BaseControl label={ __( 'Background Image', 'twork-builder' ) }>
+						<BaseControl label={ __( 'Background Image', 'mk-builder' ) }>
 							<MediaUploadCheck>
 								<MediaUpload
 									allowedTypes={ [ 'image' ] }
@@ -73,8 +73,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									render={ ( { open } ) => (
 										<Button variant="secondary" onClick={ open }>
 											{ imageUrl
-												? __( 'Replace Image', 'twork-builder' )
-												: __( 'Select Image', 'twork-builder' ) }
+												? __( 'Replace Image', 'mk-builder' )
+												: __( 'Select Image', 'mk-builder' ) }
 										</Button>
 									) }
 								/>
@@ -90,19 +90,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove Image', 'twork-builder' ) }
+									{ __( 'Remove Image', 'mk-builder' ) }
 								</Button>
 							) }
 						</BaseControl>
 						<TextControl
-							label={ __( 'Image Alt Text', 'twork-builder' ) }
+							label={ __( 'Image Alt Text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
 							}
 						/>
 						<SelectControl
-							label={ __( 'Background Position', 'twork-builder' ) }
+							label={ __( 'Background Position', 'mk-builder' ) }
 							value={ backgroundPosition || 'center right' }
 							options={ BG_POSITIONS }
 							onChange={ ( val ) =>
@@ -111,19 +111,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Slide Content', 'twork-builder' ) }
+						title={ __( 'Slide Content', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<SelectControl
-							label={ __( 'Title Heading Level', 'twork-builder' ) }
+							label={ __( 'Title Heading Level', 'mk-builder' ) }
 							value={ headingLevel || 'h2' }
 							options={ [
 								{
-									label: __( 'H1 (primary slide only)', 'twork-builder' ),
+									label: __( 'H1 (primary slide only)', 'mk-builder' ),
 									value: 'h1',
 								},
 								{
-									label: __( 'H2', 'twork-builder' ),
+									label: __( 'H2', 'mk-builder' ),
 									value: 'h2',
 								},
 							] }
@@ -132,22 +132,22 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Use H1 on the first slide only for SEO.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Call To Action', 'twork-builder' ) }
+						title={ __( 'Call To Action', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'CTA Label', 'twork-builder' ) }
+							label={ __( 'CTA Label', 'mk-builder' ) }
 							value={ ctaLabel }
 							onChange={ ( val ) =>
 								setAttributes( { ctaLabel: val } )
 							}
 						/>
-						<BaseControl label={ __( 'CTA URL', 'twork-builder' ) }>
+						<BaseControl label={ __( 'CTA URL', 'mk-builder' ) }>
 							<URLInput
 								value={ ctaHref }
 								onChange={ ( val ) =>
@@ -160,45 +160,45 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<article { ...blockProps } data-carousel-slide>
-				<div className="twork-hero-banner-carousel__overlay">
-					<div className="twork-hero-banner-carousel__inner l-section">
-						<div className="twork-hero-banner-carousel__content">
+				<div className="mk-hero-banner-carousel__overlay">
+					<div className="mk-hero-banner-carousel__inner l-section">
+						<div className="mk-hero-banner-carousel__content">
 							<RichText
 								tagName="p"
-								className="twork-hero-banner-carousel__eyebrow"
+								className="mk-hero-banner-carousel__eyebrow"
 								value={ eyebrow }
 								onChange={ ( val ) =>
 									setAttributes( { eyebrow: val } )
 								}
 								placeholder={ __(
 									'Eyebrow text…',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 							<RichText
 								tagName={ TitleTag }
-								className="twork-hero-banner-carousel__title"
+								className="mk-hero-banner-carousel__title"
 								value={ title }
 								onChange={ ( val ) =>
 									setAttributes( { title: val } )
 								}
-								placeholder={ __( 'Slide title…', 'twork-builder' ) }
+								placeholder={ __( 'Slide title…', 'mk-builder' ) }
 							/>
 							<RichText
 								tagName="p"
-								className="twork-hero-banner-carousel__subtitle"
+								className="mk-hero-banner-carousel__subtitle"
 								value={ subtitle }
 								onChange={ ( val ) =>
 									setAttributes( { subtitle: val } )
 								}
 								placeholder={ __(
 									'Slide subtitle…',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 							{ ( ctaLabel || ctaHref ) && (
 								<a
-									className="twork-hero-banner-carousel__cta btn btn--primary"
+									className="mk-hero-banner-carousel__cta btn btn--primary"
 									href={ ctaHref || '#' }
 									onClick={ ( e ) => e.preventDefault() }
 								>
@@ -210,12 +210,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'CTA label…',
-											'twork-builder'
+											'mk-builder'
 										) }
 										allowedFormats={ [] }
 									/>
 									<span
-										className="twork-hero-banner-carousel__cta-icon"
+										className="mk-hero-banner-carousel__cta-icon"
 										aria-hidden="true"
 									>
 										{' '}

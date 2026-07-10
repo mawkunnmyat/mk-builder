@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'phy-faq-item twork-phy-faq-item-editor',
+			className: 'phy-faq-item mk-phy-faq-item-editor',
 		} ),
 		[]
 	);
@@ -18,11 +18,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'FAQ item', 'twork-builder' ) }
+						title={ __( 'FAQ item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Question', 'twork-builder' ) }
+							label={ __( 'Question', 'mk-builder' ) }
 							value={ question || '' }
 							onChange={ ( val ) =>
 								setAttributes( { question: val } )
@@ -30,7 +30,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Answer', 'twork-builder' ) }
+							label={ __( 'Answer', 'mk-builder' ) }
 							value={ answer || '' }
 							onChange={ ( val ) =>
 								setAttributes( { answer: val } )
@@ -50,7 +50,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							"Do I need a doctor's referral?",
-							'twork-builder'
+							'mk-builder'
 						) }
 					/>
 
@@ -61,7 +61,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="p"
 						value={ answer }
 						onChange={ ( val ) => setAttributes( { answer: val } ) }
-						placeholder={ __( 'Answer…', 'twork-builder' ) }
+						placeholder={ __( 'Answer…', 'mk-builder' ) }
 					/>
 				</div>
 			</div>

@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/mission-vision-grid",
+	"name": "mk/mission-vision-grid",
 	"version": "1.0.0",
 	"title": "Mission & Vision Grid",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "screenoptions",
 	"description": "Mission, vision, and values grid aligned with Jivaka design.",
 	"supports": {
@@ -109,7 +109,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/mission-vision-item",
+				"name": "mk/mission-vision-item",
 				"attributes": {
 					"iconType": "dashicon",
 					"iconValue": "dashicons-bullseye",
@@ -117,7 +117,7 @@
 				}
 			},
 			{
-				"name": "twork/mission-vision-item",
+				"name": "mk/mission-vision-item",
 				"attributes": {
 					"iconType": "dashicon",
 					"iconValue": "dashicons-visibility",
@@ -125,7 +125,7 @@
 				}
 			},
 			{
-				"name": "twork/mission-vision-item",
+				"name": "mk/mission-vision-item",
 				"attributes": {
 					"iconType": "dashicon",
 					"iconValue": "dashicons-heart",
@@ -134,7 +134,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"editorStyle": "file:./style-index.css"

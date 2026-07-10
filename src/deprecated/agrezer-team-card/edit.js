@@ -37,23 +37,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Profile link', 'twork-builder' ) }
+						title={ __( 'Profile link', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Profile URL', 'twork-builder' ) }
+							label={ __( 'Profile URL', 'mk-builder' ) }
 							value={ profileUrl }
 							onChange={ ( val ) =>
 								setAttributes( { profileUrl: val } )
 							}
 							help={ __(
 								'Leave empty to show the arrow as non-clickable (decorative).',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<ToggleControl
-							label={ __( 'Open in new tab', 'twork-builder' ) }
+							label={ __( 'Open in new tab', 'mk-builder' ) }
 							checked={ profileOpenInNewTab }
 							onChange={ ( val ) =>
 								setAttributes( { profileOpenInNewTab: val } )
@@ -64,7 +64,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Arrow button label (screen readers)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ actionAriaLabel }
 							onChange={ ( val ) =>
@@ -73,11 +73,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Photo', 'twork-builder' ) }
+						title={ __( 'Photo', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Image alt text', 'twork-builder' ) }
+							label={ __( 'Image alt text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -95,7 +95,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove image', 'twork-builder' ) }
+								{ __( 'Remove image', 'mk-builder' ) }
 							</Button>
 						) }
 					</PanelBody>
@@ -115,7 +115,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						allowedTypes={ [ 'image' ] }
 						labels={ {
-							title: __( 'Team member photo', 'twork-builder' ),
+							title: __( 'Team member photo', 'mk-builder' ),
 						} }
 					/>
 				) : (
@@ -175,7 +175,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						className="agrezer-team-card__name"
 						value={ name }
 						onChange={ ( val ) => setAttributes( { name: val } ) }
-						placeholder={ __( 'Name', 'twork-builder' ) }
+						placeholder={ __( 'Name', 'mk-builder' ) }
 						allowedFormats={ [ 'core/bold', 'core/italic' ] }
 					/>
 
@@ -184,7 +184,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						className="agrezer-team-card__role"
 						value={ role }
 						onChange={ ( val ) => setAttributes( { role: val } ) }
-						placeholder={ __( 'Role', 'twork-builder' ) }
+						placeholder={ __( 'Role', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 				</div>

@@ -26,7 +26,7 @@ export default function save( { attributes } ) {
 		Array.isArray( breadcrumbs ) && breadcrumbs.length ? breadcrumbs : [];
 
 	const blockProps = useBlockProps.save( {
-		className: 'agrezer-page-header twork-agrezer-page-header-section',
+		className: 'agrezer-page-header mk-agrezer-page-header-section',
 		style: {
 			backgroundColor: fallbackBgColor,
 			paddingTop: `${ paddingTop }px`,

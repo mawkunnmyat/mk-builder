@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -40,7 +40,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-nearby-accommodation-item-editor hotel-card',
+			className: 'mk-nearby-accommodation-item-editor hotel-card',
 			style: {
 				position: 'relative',
 				borderRadius: `${ cardBorderRadius }px`,
@@ -68,11 +68,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Hotel Image', 'twork-builder' ) }
+							label={ __( 'Hotel Image', 'mk-builder' ) }
 						>
 							{ ! image ? (
 								<MediaPlaceholder
@@ -87,7 +87,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Hotel Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -116,13 +116,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} )
 										}
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) }
 						</BaseControl>
 						<TextControl
-							label={ __( 'Alt Text', 'twork-builder' ) }
+							label={ __( 'Alt Text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -131,23 +131,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Title', 'twork-builder' ) }
+						title={ __( 'Title', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -158,7 +158,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -170,23 +170,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Subtitle', 'twork-builder' ) }
+						title={ __( 'Subtitle', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Subtitle', 'twork-builder' ) }
+							label={ __( 'Subtitle', 'mk-builder' ) }
 							value={ subtitle }
 							onChange={ ( val ) =>
 								setAttributes( { subtitle: val } )
 							}
 							help={ __(
 								'e.g. 5 Star • 5 mins away',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Subtitle Color', 'twork-builder' ) }
+							title={ __( 'Subtitle Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: subtitleColor,
@@ -194,14 +194,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { subtitleColor: val } ),
 									label: __(
 										'Subtitle Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ subtitleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { subtitleFontSize: val } )
@@ -213,14 +213,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Link', 'twork-builder' ) }
+						title={ __( 'Link', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<BaseControl
-							label={ __( 'Link URL', 'twork-builder' ) }
+							label={ __( 'Link URL', 'mk-builder' ) }
 							help={ __(
 								'Make the whole card clickable. Leave empty for no link.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<URLInput
@@ -234,7 +234,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<ToggleControl
 								label={ __(
 									'Open in new tab',
-									'twork-builder'
+									'mk-builder'
 								) }
 								checked={ linkOpenInNewTab }
 								onChange={ ( val ) =>
@@ -245,11 +245,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Card Layout', 'twork-builder' ) }
+						title={ __( 'Card Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Card Height (px)', 'twork-builder' ) }
+							label={ __( 'Card Height (px)', 'mk-builder' ) }
 							value={ cardHeight }
 							onChange={ ( val ) =>
 								setAttributes( { cardHeight: val } )
@@ -262,7 +262,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Border Radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardBorderRadius }
 							onChange={ ( val ) =>
@@ -276,7 +276,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Overlay Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ overlayPadding }
 							onChange={ ( val ) =>
@@ -318,7 +318,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Hotel name...',
-											'twork-builder'
+											'mk-builder'
 										) }
 										style={ {
 											margin: 0,
@@ -336,7 +336,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'5 Star • 5 mins away',
-											'twork-builder'
+											'mk-builder'
 										) }
 										style={ {
 											margin: '5px 0 0',
@@ -385,7 +385,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image' ] }
 						multiple={ false }
 						labels={ {
-							title: __( 'Hotel Image', 'twork-builder' ),
+							title: __( 'Hotel Image', 'mk-builder' ),
 						} }
 						className="hotel-card-placeholder"
 						style={ { minHeight: `${ cardHeight }px` } }

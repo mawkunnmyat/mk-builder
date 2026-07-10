@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -12,10 +12,10 @@ import {
 	TextControl,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/faq-accordion-item' ];
+const ALLOWED_BLOCKS = [ 'mk/faq-accordion-item' ];
 const TEMPLATE = [
 	[
-		'twork/faq-accordion-item',
+		'mk/faq-accordion-item',
 		{
 			question:
 				'What products does Shwe Myanmar Foodstuff Industry make?',
@@ -24,7 +24,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/faq-accordion-item',
+		'mk/faq-accordion-item',
 		{
 			question: "What does '10 Viss' mean?",
 			answer: 'Viss is a traditional Burmese unit of weight. 10 Viss equals approximately 16.33 kg (36 lbs). Our 10 Viss pack is designed for wholesale, restaurants, and commercial kitchens.',
@@ -32,7 +32,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/faq-accordion-item',
+		'mk/faq-accordion-item',
 		{
 			question: 'How can I place an order?',
 			answer: 'Contact us by phone: 095-2-55122, 095-2-55123, or 095-9-200 1227. Our team in Mandalay will assist with retail and wholesale orders.',
@@ -40,7 +40,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/faq-accordion-item',
+		'mk/faq-accordion-item',
 		{
 			question: 'Where is Shwe Myanmar produced?',
 			answer: 'All Shwe Myanmar butter and ghee products are produced by Shwe Myanmar Foodstuff Industry in Mandalay, Myanmar.',
@@ -48,7 +48,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/faq-accordion-item',
+		'mk/faq-accordion-item',
 		{
 			question: 'How should I store butter and ghee?',
 			answer: 'Store in a cool, dry place away from direct sunlight. Once opened, refrigerate and use within the recommended period printed on the packaging.',
@@ -71,7 +71,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'twork-faq-accordion-section faq twork-faq-accordion-section-editor',
+				'mk-faq-accordion-section faq mk-faq-accordion-section-editor',
 			style: {
 				backgroundColor: backgroundColor || '#ffffff',
 				paddingBlock: `${ padding }px`,
@@ -85,11 +85,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Contact Link', 'twork-builder' ) }
+						title={ __( 'Contact Link', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Contact URL', 'twork-builder' ) }
+							label={ __( 'Contact URL', 'mk-builder' ) }
 							value={ contactHref }
 							onChange={ ( val ) =>
 								setAttributes( { contactHref: val } )
@@ -97,11 +97,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -111,13 +111,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 						<RangeControl
-							label={ __( 'Section Padding (px)', 'twork-builder' ) }
+							label={ __( 'Section Padding (px)', 'mk-builder' ) }
 							value={ padding }
 							onChange={ ( val ) =>
 								setAttributes( { padding: val } )
@@ -140,7 +140,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { eyebrow: val } )
 							}
-							placeholder={ __( 'Eyebrow…', 'twork-builder' ) }
+							placeholder={ __( 'Eyebrow…', 'mk-builder' ) }
 						/>
 						<RichText
 							tagName="h2"
@@ -149,7 +149,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
 							}
-							placeholder={ __( 'Title…', 'twork-builder' ) }
+							placeholder={ __( 'Title…', 'mk-builder' ) }
 						/>
 					</header>
 					<div className="faq__list" data-list="items">
@@ -169,7 +169,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Contact prompt…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>{ ' ' }
 						<RichText
@@ -180,7 +180,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Contact link…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</p>

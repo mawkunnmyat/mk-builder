@@ -2,7 +2,7 @@
  * Agrezer Shop Grid — editor (ServerSideRender + Inspector).
  */
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -48,7 +48,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-agrezer-shop-grid-editor',
+			className: 'mk-agrezer-shop-grid-editor',
 		} ),
 		[]
 	);
@@ -58,13 +58,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Sidebar — WooCommerce', 'twork-builder' ) }
+						title={ __( 'Sidebar — WooCommerce', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Show category list',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showCategoryWidget }
 							onChange={ ( val ) =>
@@ -77,7 +77,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Category widget title',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ categoryTitle }
 									onChange={ ( val ) =>
@@ -88,7 +88,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Hide empty categories',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ categoriesHideEmpty }
 									onChange={ ( val ) =>
@@ -101,7 +101,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Top-level categories only',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ categoriesTopLevelOnly }
 									onChange={ ( val ) =>
@@ -114,7 +114,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Max categories (0 = all)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ categoriesLimit }
 									onChange={ ( val ) =>
@@ -131,7 +131,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show mini products',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showMiniProductsWidget }
 							onChange={ ( val ) =>
@@ -144,7 +144,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Products widget title',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ productsTitle }
 									onChange={ ( val ) =>
@@ -155,7 +155,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Number of mini products',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ miniProductsCount }
 									onChange={ ( val ) =>
@@ -170,49 +170,49 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Mini products source',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ miniProductsSource }
 									options={ [
 										{
 											label: __(
 												'By average rating',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'rating',
 										},
 										{
 											label: __(
 												'Featured products',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'featured',
 										},
 										{
 											label: __(
 												'On sale',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'on_sale',
 										},
 										{
 											label: __(
 												'Popularity (sales)',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'popularity',
 										},
 										{
 											label: __(
 												'Recent',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'recent',
 										},
 										{
 											label: __(
 												'Random',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'rand',
 										},
@@ -229,7 +229,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show contact widget',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showContactWidget }
 							onChange={ ( val ) =>
@@ -242,7 +242,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Contact widget title',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ contactTitle }
 									onChange={ ( val ) =>
@@ -251,7 +251,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Address', 'twork-builder' ) }
+									label={ __( 'Address', 'mk-builder' ) }
 									value={ contactAddress }
 									onChange={ ( val ) =>
 										setAttributes( { contactAddress: val } )
@@ -259,7 +259,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Phone', 'twork-builder' ) }
+									label={ __( 'Phone', 'mk-builder' ) }
 									value={ contactPhone }
 									onChange={ ( val ) =>
 										setAttributes( { contactPhone: val } )
@@ -267,7 +267,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Email', 'twork-builder' ) }
+									label={ __( 'Email', 'mk-builder' ) }
 									value={ contactEmail }
 									onChange={ ( val ) =>
 										setAttributes( { contactEmail: val } )
@@ -280,12 +280,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					<PanelBody
 						title={ __(
 							'Main grid — WooCommerce',
-							'twork-builder'
+							'mk-builder'
 						) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Products per page', 'twork-builder' ) }
+							label={ __( 'Products per page', 'mk-builder' ) }
 							value={ productsPerPage }
 							onChange={ ( val ) =>
 								setAttributes( { productsPerPage: val } )
@@ -297,7 +297,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Filter by category ID (0 = all products)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={
 								mainCategoryId ? String( mainCategoryId ) : ''
@@ -311,50 +311,50 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Restrict the main grid to one WooCommerce product category.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<SelectControl
 							label={ __(
 								'Default sort (frontend can override)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ defaultOrderby }
 							options={ [
 								{
 									label: __(
 										'Default (menu order)',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'default',
 								},
 								{
-									label: __( 'Newest', 'twork-builder' ),
+									label: __( 'Newest', 'mk-builder' ),
 									value: 'date',
 								},
 								{
 									label: __(
 										'Price: low to high',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'price',
 								},
 								{
 									label: __(
 										'Price: high to low',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'price-desc',
 								},
 								{
-									label: __( 'Popularity', 'twork-builder' ),
+									label: __( 'Popularity', 'mk-builder' ),
 									value: 'popularity',
 								},
 								{
 									label: __(
 										'Average rating',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'rating',
 								},
@@ -367,7 +367,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show toolbar (results + sort)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showToolbar }
 							onChange={ ( val ) =>
@@ -376,7 +376,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show pagination', 'twork-builder' ) }
+							label={ __( 'Show pagination', 'mk-builder' ) }
 							checked={ showPagination }
 							onChange={ ( val ) =>
 								setAttributes( { showPagination: val } )
@@ -387,7 +387,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Grid columns (desktop)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gridColumns }
 							onChange={ ( val ) =>
@@ -400,7 +400,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Grid columns (tablet)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gridColumnsTablet }
 							onChange={ ( val ) =>
@@ -413,7 +413,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Grid columns (mobile)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gridColumnsMobile }
 							onChange={ ( val ) =>
@@ -425,11 +425,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout & background', 'twork-builder' ) }
+						title={ __( 'Layout & background', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -442,7 +442,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -456,7 +456,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -470,7 +470,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Horizontal padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -482,7 +482,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<p className="components-base-control__help">
-							{ __( 'Background color:', 'twork-builder' ) }
+							{ __( 'Background color:', 'mk-builder' ) }
 						</p>
 						<input
 							type="color"
@@ -494,7 +494,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							aria-label={ __(
 								'Background color',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>

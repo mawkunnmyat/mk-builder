@@ -1,11 +1,11 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InnerBlocks, RichText } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/news-card' ];
+const ALLOWED_BLOCKS = [ 'mk/news-card' ];
 const TEMPLATE = [
 	[
-		'twork/news-card',
+		'mk/news-card',
 		{
 			author: 'Shwe Myanmar',
 			category: 'Product',
@@ -21,7 +21,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/news-card',
+		'mk/news-card',
 		{
 			author: 'Shwe Myanmar',
 			category: 'Quality',
@@ -37,7 +37,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/news-card',
+		'mk/news-card',
 		{
 			author: 'Shwe Myanmar',
 			category: 'News',
@@ -60,7 +60,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'blog-news twork-news-card-grid twork-news-card-grid-editor',
+				'blog-news mk-news-card-grid mk-news-card-grid-editor',
 		} ),
 		[]
 	);
@@ -74,7 +74,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						className="section-head__eyebrow"
 						value={ eyebrow }
 						onChange={ ( val ) => setAttributes( { eyebrow: val } ) }
-						placeholder={ __( 'NEWS & UPDATES', 'twork-builder' ) }
+						placeholder={ __( 'NEWS & UPDATES', 'mk-builder' ) }
 					/>
 					<RichText
 						tagName="h2"
@@ -83,7 +83,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						onChange={ ( val ) => setAttributes( { title: val } ) }
 						placeholder={ __(
 							'Latest From Shwe Myanmar.',
-							'twork-builder'
+							'mk-builder'
 						) }
 					/>
 				</header>

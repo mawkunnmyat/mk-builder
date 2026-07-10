@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/em-triage-section",
+	"name": "mk/em-triage-section",
 	"version": "1.0.0",
 	"title": "Triage Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "list-view",
 	"description": "When to Visit Emergency? triage section with header and triage cards (icon, title, list).",
-	"keywords": [ "emergency", "triage", "when to visit", "grid", "twork" ],
+	"keywords": [ "emergency", "triage", "when to visit", "grid", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -116,7 +116,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/em-triage-card",
+				"name": "mk/em-triage-card",
 				"attributes": {
 					"iconClass": "fas fa-heartbeat",
 					"cardTitle": "Heart Attack Signs",
@@ -141,7 +141,7 @@
 				}
 			},
 			{
-				"name": "twork/em-triage-card",
+				"name": "mk/em-triage-card",
 				"attributes": {
 					"iconClass": "fas fa-lungs",
 					"cardTitle": "Breathing Issues",
@@ -166,7 +166,7 @@
 				}
 			},
 			{
-				"name": "twork/em-triage-card",
+				"name": "mk/em-triage-card",
 				"attributes": {
 					"iconClass": "fas fa-brain",
 					"cardTitle": "Stroke (F.A.S.T)",
@@ -191,7 +191,7 @@
 				}
 			},
 			{
-				"name": "twork/em-triage-card",
+				"name": "mk/em-triage-card",
 				"attributes": {
 					"iconClass": "fas fa-car-crash",
 					"cardTitle": "Severe Trauma",
@@ -217,7 +217,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

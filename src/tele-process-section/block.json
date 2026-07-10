@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/tele-process-section",
+	"name": "mk/tele-process-section",
 	"version": "1.0.0",
 	"title": "Process Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "list-view",
 	"description": "How It Works process section with step cards (icon, title, description).",
-	"keywords": [ "telemedicine", "process", "how it works", "steps", "twork" ],
+	"keywords": [ "telemedicine", "process", "how it works", "steps", "mk" ],
 	"attributes": {
 		"sectionPaddingTop": {
 			"type": "number",
@@ -111,7 +111,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/tele-process-card",
+				"name": "mk/tele-process-card",
 				"attributes": {
 					"stepNumber": 1,
 					"iconClass": "fas fa-user-md",
@@ -120,7 +120,7 @@
 				}
 			},
 			{
-				"name": "twork/tele-process-card",
+				"name": "mk/tele-process-card",
 				"attributes": {
 					"stepNumber": 2,
 					"iconClass": "fas fa-calendar-check",
@@ -129,7 +129,7 @@
 				}
 			},
 			{
-				"name": "twork/tele-process-card",
+				"name": "mk/tele-process-card",
 				"attributes": {
 					"stepNumber": 3,
 					"iconClass": "fas fa-link",
@@ -138,7 +138,7 @@
 				}
 			},
 			{
-				"name": "twork/tele-process-card",
+				"name": "mk/tele-process-card",
 				"attributes": {
 					"stepNumber": 4,
 					"iconClass": "fas fa-file-prescription",
@@ -148,7 +148,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

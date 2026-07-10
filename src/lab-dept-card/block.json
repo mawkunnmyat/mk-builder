@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/lab-dept-card",
+	"name": "mk/lab-dept-card",
 	"version": "1.0.0",
 	"title": "Department Card",
-	"category": "twork-builder",
-	"parent": [ "twork/lab-depts-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/lab-depts-section" ],
 	"icon": "screenoptions",
 	"description": "Single laboratory department card with hex icon and title (e.g. Biochemistry, Hematology).",
-	"keywords": [ "lab", "department", "hex", "card", "twork" ],
+	"keywords": [ "lab", "department", "hex", "card", "mk" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",
@@ -28,6 +28,6 @@
 			"title": "Biochemistry"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

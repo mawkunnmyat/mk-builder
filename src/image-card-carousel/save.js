@@ -11,13 +11,13 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'image-card-carousel twork-image-card-carousel',
+		className: 'image-card-carousel mk-image-card-carousel',
 		style: {
 			backgroundColor: backgroundColor || '#ffffff',
 			paddingTop: `${ padding }px`,
 			paddingBottom: `${ padding }px`,
 		},
-		'data-block': 'twork/image-card-carousel',
+		'data-block': 'mk/image-card-carousel',
 		'data-autoplay-ms': String( autoplayMs ?? 6000 ),
 	} );
 

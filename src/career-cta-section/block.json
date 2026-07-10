@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/career-cta-section",
+	"name": "mk/career-cta-section",
 	"version": "1.0.0",
 	"title": "Career CTA Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "email-alt",
 	"description": "Don't see the right fit? CV submission CTA for career page with title, description and Email Your CV button.",
-	"keywords": [ "career", "cta", "cv", "email", "job", "twork" ],
+	"keywords": [ "career", "cta", "cv", "email", "job", "mk" ],
 	"attributes": {
 		"ctaTitle": {
 			"type": "string",
@@ -90,7 +90,7 @@
 			"animationOnScroll": true
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

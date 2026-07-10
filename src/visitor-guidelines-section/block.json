@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/visitor-guidelines-section",
+	"name": "mk/visitor-guidelines-section",
 	"title": "Visitor Guidelines Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Visitor guidelines section with Do's and Don'ts columns for patient guide.",
 	"keywords": [
 		"visitor",
@@ -12,7 +12,7 @@
 		"donts",
 		"patient",
 		"guide",
-		"twork"
+		"mk"
 	],
 	"icon": "list-view",
 	"attributes": {
@@ -166,7 +166,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/visitor-guidelines-column",
+				"name": "mk/visitor-guidelines-column",
 				"attributes": {
 					"columnType": "dos",
 					"title": "Do's",
@@ -193,7 +193,7 @@
 				}
 			},
 			{
-				"name": "twork/visitor-guidelines-column",
+				"name": "mk/visitor-guidelines-column",
 				"attributes": {
 					"columnType": "donts",
 					"title": "Don'ts",
@@ -221,7 +221,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

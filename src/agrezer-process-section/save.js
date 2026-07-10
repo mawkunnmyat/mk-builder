@@ -26,15 +26,15 @@ export default function save( { attributes } ) {
 		: undefined;
 
 	const blockProps = useBlockProps.save( {
-		className: `twork-process twork-process-section ${
+		className: `mk-process mk-process-section ${
 			wreathDecorationUrl ? 'has-process-wreath' : ''
 		}`,
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-process-grid-gap': `${ gridGap }px`,
-			...( wreathVar ? { '--twork-process-wreath': wreathVar } : {} ),
+			'--mk-process-grid-gap': `${ gridGap }px`,
+			...( wreathVar ? { '--mk-process-wreath': wreathVar } : {} ),
 		},
 	} );
 
@@ -47,14 +47,14 @@ export default function save( { attributes } ) {
 	};
 
 	return (
-		<section { ...blockProps } aria-labelledby="twork-process-title">
-			<div className="twork-process__header">
+		<section { ...blockProps } aria-labelledby="mk-process-title">
+			<div className="mk-process__header">
 				<p
-					className="twork-process__tagline"
+					className="mk-process__tagline"
 					style={ { color: taglineColor } }
 				>
 					<span
-						className="twork-process__tagline-icon"
+						className="mk-process__tagline-icon"
 						style={ { color: taglineIconColor } }
 						aria-hidden="true"
 					>
@@ -64,8 +64,8 @@ export default function save( { attributes } ) {
 				</p>
 				<RichText.Content
 					tagName="h2"
-					id="twork-process-title"
-					className="twork-process__title"
+					id="mk-process-title"
+					className="mk-process__title"
 					value={ sectionTitle }
 					style={ {
 						color: titleColor,
@@ -76,7 +76,7 @@ export default function save( { attributes } ) {
 			</div>
 
 			<div
-				className="twork-process__container"
+				className="mk-process__container"
 				style={ containerStyle }
 			>
 				<InnerBlocks.Content />

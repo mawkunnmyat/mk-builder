@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { useCallback } from '@wordpress/element';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaUploadCheck,
@@ -149,11 +149,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											{ timelineBg
 												? __(
 														'Change Background Image',
-														'twork-builder'
+														'mk-builder'
 												  )
 												: __(
 														'Upload Background Image',
-														'twork-builder'
+														'mk-builder'
 												  ) }
 										</Button>
 										{ timelineBg && (
@@ -171,7 +171,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'Remove Background',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										) }
@@ -250,7 +250,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											src={ item.imgUrl }
 											alt={ __(
 												'Timeline item image',
-												'twork-builder'
+												'mk-builder'
 											) }
 											style={ {
 												width: '100%',
@@ -282,11 +282,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													{ item.imgUrl
 														? __(
 																'Change Image',
-																'twork-builder'
+																'mk-builder'
 														  )
 														: __(
 																'Upload Image',
-																'twork-builder'
+																'mk-builder'
 														  ) }
 												</Button>
 											) }
@@ -400,7 +400,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														src={ item.imgUrl }
 														alt={ __(
 															'Timeline item image',
-															'twork-builder'
+															'mk-builder'
 														) }
 														style={ {
 															width: '100%',

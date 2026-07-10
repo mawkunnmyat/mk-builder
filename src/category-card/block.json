@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/category-card",
+	"name": "mk/category-card",
 	"title": "Category Card",
-	"parent": [ "twork/category-card-grid" ],
-	"category": "twork-builder",
+	"parent": [ "mk/category-card-grid" ],
+	"category": "mk-builder",
 	"description": "Single product category card with image, title, and count.",
-	"keywords": [ "category", "product", "card", "shop", "twork" ],
+	"keywords": [ "category", "product", "card", "shop", "mk" ],
 	"attributes": {
 		"title": {
 			"type": "string",
@@ -46,6 +46,6 @@
 			"imageAlt": "Shwe Myanmar Butter"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

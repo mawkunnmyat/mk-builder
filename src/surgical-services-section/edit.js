@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -7,10 +7,10 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, TextControl, RangeControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/surgical-service-card' ];
+const ALLOWED_BLOCKS = [ 'mk/surgical-service-card' ];
 const TEMPLATE = [
 	[
-		'twork/surgical-service-card',
+		'mk/surgical-service-card',
 		{
 			title: 'GI Surgery',
 			description:
@@ -21,7 +21,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/surgical-service-card',
+		'mk/surgical-service-card',
 		{
 			title: 'Hernia Repair',
 			description:
@@ -32,7 +32,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/surgical-service-card',
+		'mk/surgical-service-card',
 		{
 			title: 'Trauma & Emergency',
 			description:
@@ -58,7 +58,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-surgical-services-section-editor',
+			className: 'mk-surgical-services-section-editor',
 		} ),
 		[]
 	);
@@ -90,23 +90,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Section ID (anchor)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionId }
 							onChange={ ( v ) =>
 								setAttributes( { sectionId: v || 'services' } )
 							}
-							help={ __( 'e.g. #services', 'twork-builder' ) }
+							help={ __( 'e.g. #services', 'mk-builder' ) }
 						/>
 
 						<TextControl
-							label={ __( 'Section class', 'twork-builder' ) }
+							label={ __( 'Section class', 'mk-builder' ) }
 							value={ sectionClass }
 							onChange={ ( v ) =>
 								setAttributes( {
@@ -116,13 +116,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Grid min card width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gridMinItemWidth }
 							onChange={ ( v ) =>
@@ -134,7 +134,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gap }
 							onChange={ ( v ) => setAttributes( { gap: v } ) }
 							min={ 20 }
@@ -143,11 +143,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Container', 'twork-builder' ) }
+						title={ __( 'Container', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
 								setAttributes( { containerMaxWidth: v } )
@@ -158,7 +158,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding (px)', 'twork-builder' ) }
+							label={ __( 'Padding (px)', 'mk-builder' ) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
 								setAttributes( { containerPadding: v } )
@@ -192,7 +192,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				>
 					{ __(
 						'Surgical Services Section (Editor View)',
-						'twork-builder'
+						'mk-builder'
 					) }
 				</div>
 				<div className="container" style={ containerStyle }>
@@ -203,7 +203,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( v ) => setAttributes( { label: v } ) }
 							placeholder={ __(
 								'Our Expertise',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								color: '#0093E9',
@@ -219,7 +219,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( v ) => setAttributes( { title: v } ) }
 							placeholder={ __(
 								'Surgical Procedures',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								fontSize: '2.5rem',
@@ -236,13 +236,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Comprehensive surgical solutions…',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ { color: '#64748b', margin: 0 } }
 						/>
 					</div>
 					<div
-						className="doc-grid twork-surgical-doc-grid"
+						className="doc-grid mk-surgical-doc-grid"
 						style={ gridStyle }
 						data-min-width={ gridMinItemWidth }
 					>

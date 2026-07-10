@@ -4,10 +4,10 @@ import {
 	InnerBlocks,
 } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/feature-item' ];
+const ALLOWED_BLOCKS = [ 'mk/feature-item' ];
 const TEMPLATE = [
 	[
-		'twork/feature-item',
+		'mk/feature-item',
 		{
 			title: 'Farm Development',
 			description:
@@ -17,7 +17,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/feature-item',
+		'mk/feature-item',
 		{
 			title: 'Crop Management',
 			description:
@@ -27,7 +27,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/feature-item',
+		'mk/feature-item',
 		{
 			title: 'Soil Restoration',
 			description:
@@ -37,7 +37,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/feature-item',
+		'mk/feature-item',
 		{
 			title: 'Organic Cultivation',
 			description:
@@ -50,7 +50,7 @@ const TEMPLATE = [
 export default function Edit() {
 	const blockProps = useBlockProps( {
 		className:
-			'twork-about__features-grid twork-about-features-grid-editor',
+			'mk-about__features-grid mk-about-features-grid-editor',
 	} );
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {
 		allowedBlocks: ALLOWED_BLOCKS,

@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { useEffect, useRef, useMemo, useCallback } from '@wordpress/element';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -52,7 +52,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-split-section-editor',
+			className: 'mk-split-section-editor',
 		} ),
 		[]
 	);
@@ -81,8 +81,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		items.push( {
 			id: String( Date.now() ),
 			iconClass: 'fas fa-check',
-			title: __( 'New item', 'twork-builder' ),
-			subtitle: __( 'Description.', 'twork-builder' ),
+			title: __( 'New item', 'mk-builder' ),
+			subtitle: __( 'Description.', 'mk-builder' ),
 		} );
 		setAttributes( { listItems: items } );
 	}, [ listItems, setAttributes ] );
@@ -129,11 +129,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Section class', 'twork-builder' ) }
+							label={ __( 'Section class', 'mk-builder' ) }
 							value={ sectionClass }
 							onChange={ ( v ) =>
 								setAttributes( {
@@ -144,25 +144,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Button', 'twork-builder' ) }
+						title={ __( 'Button', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Button text', 'twork-builder' ) }
+							label={ __( 'Button text', 'mk-builder' ) }
 							value={ buttonText }
 							onChange={ ( v ) =>
 								setAttributes( { buttonText: v } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ buttonUrl }
 							onChange={ ( v ) =>
 								setAttributes( { buttonUrl: v || '#' } )
 							}
 						/>
 						<ToggleControl
-							label={ __( 'Open in new tab', 'twork-builder' ) }
+							label={ __( 'Open in new tab', 'mk-builder' ) }
 							checked={ !! buttonTarget }
 							onChange={ ( v ) =>
 								setAttributes( { buttonTarget: v } )
@@ -170,11 +170,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Floating badge', 'twork-builder' ) }
+						title={ __( 'Floating badge', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Badge icon class', 'twork-builder' ) }
+							label={ __( 'Badge icon class', 'mk-builder' ) }
 							value={ badgeIcon }
 							onChange={ ( v ) =>
 								setAttributes( {
@@ -183,14 +183,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 						/>
 						<TextControl
-							label={ __( 'Badge title', 'twork-builder' ) }
+							label={ __( 'Badge title', 'mk-builder' ) }
 							value={ badgeTitle }
 							onChange={ ( v ) =>
 								setAttributes( { badgeTitle: v } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Badge subtitle', 'twork-builder' ) }
+							label={ __( 'Badge subtitle', 'mk-builder' ) }
 							value={ badgeSubtitle }
 							onChange={ ( v ) =>
 								setAttributes( { badgeSubtitle: v } )
@@ -198,11 +198,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Grid gap (px)', 'twork-builder' ) }
+							label={ __( 'Grid gap (px)', 'mk-builder' ) }
 							value={ gridGap }
 							onChange={ ( v ) =>
 								setAttributes( { gridGap: v } )
@@ -214,7 +214,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -227,7 +227,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -256,7 +256,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						borderRadius: '4px',
 					} }
 				>
-					{ __( 'Split Section (Editor View)', 'twork-builder' ) }
+					{ __( 'Split Section (Editor View)', 'mk-builder' ) }
 				</div>
 				<div className="container" style={ containerStyle }>
 					<div className="split-grid" style={ gridStyle }>
@@ -269,7 +269,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Minimally Invasive',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									color: '#80D0C7',
@@ -286,7 +286,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Laparoscopic Surgery',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									color: 'white',
@@ -303,7 +303,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Also known as Keyhole Surgery…',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ { color: '#cbd5e1', marginBottom: 30 } }
 							/>
@@ -329,7 +329,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												}
 												placeholder={ __(
 													'Title',
-													'twork-builder'
+													'mk-builder'
 												) }
 												style={ {
 													display: 'block',
@@ -355,7 +355,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												}
 												placeholder={ __(
 													'Subtitle',
-													'twork-builder'
+													'mk-builder'
 												) }
 												style={ {
 													display: 'block',
@@ -378,7 +378,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												removeListItem( item.id )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</li>
 								) ) }
@@ -389,7 +389,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onClick={ addListItem }
 								style={ { marginBottom: 20 } }
 							>
-								{ __( 'Add list item', 'twork-builder' ) }
+								{ __( 'Add list item', 'mk-builder' ) }
 							</Button>
 							<a
 								href={ buttonUrl || '#' }
@@ -418,7 +418,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Right column image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -493,7 +493,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>

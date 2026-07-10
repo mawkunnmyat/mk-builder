@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/lab-step-item",
+	"name": "mk/lab-step-item",
 	"version": "1.0.0",
 	"title": "Step Item",
-	"parent": [ "twork/lab-steps-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/lab-steps-section" ],
+	"category": "mk-builder",
 	"icon": "minus",
 	"description": "Single step row (number + title and description) for Lab How It Works section.",
-	"keywords": [ "lab", "step", "process", "how it works", "twork" ],
+	"keywords": [ "lab", "step", "process", "how it works", "mk" ],
 	"attributes": {
 		"stepNumber": {
 			"type": "string",
@@ -33,7 +33,7 @@
 			"description": "Call us or book online."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

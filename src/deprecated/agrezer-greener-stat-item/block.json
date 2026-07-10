@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-greener-stat-item",
+	"name": "mk/agrezer-greener-stat-item",
 	"version": "1.0.0",
 	"title": "Agrezer Greener Stat",
-	"category": "twork-builder",
-	"parent": [ "twork/agrezer-greener-stats-row" ],
+	"category": "mk-builder",
+	"parent": [ "mk/agrezer-greener-stats-row" ],
 	"icon": "yes",
 	"description": "Stat column with icon, title, and text.",
 	"supports": {
@@ -33,6 +33,6 @@
 			"description": "Measured gains in plant vigor and stand uniformity across pilot fields and demonstration plots."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

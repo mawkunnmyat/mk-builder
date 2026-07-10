@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/gm-testimonials-section",
+	"name": "mk/gm-testimonials-section",
 	"version": "1.0.0",
 	"title": "Patient Stories",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "format-quote",
 	"description": "Patient Stories / testimonials section with optional title, subtitle and a grid of review cards.",
 	"keywords": [
@@ -12,7 +12,7 @@
 		"patient stories",
 		"testimonials",
 		"reviews",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -97,7 +97,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/gm-review-card",
+				"name": "mk/gm-review-card",
 				"attributes": {
 					"reviewText": "\"Dr. Thida Win is incredibly patient and thorough. She explained my condition clearly and the treatment plan has worked wonders for my diabetes management.\"",
 					"reviewerName": "U Kyaw Zin",
@@ -105,7 +105,7 @@
 				}
 			},
 			{
-				"name": "twork/gm-review-card",
+				"name": "mk/gm-review-card",
 				"attributes": {
 					"reviewText": "\"I always come here for my family's check-ups. The nursing staff is friendly, and the doctors are top-notch. Highly recommended for general care.\"",
 					"reviewerName": "Daw Aye Aye",
@@ -113,7 +113,7 @@
 				}
 			},
 			{
-				"name": "twork/gm-review-card",
+				"name": "mk/gm-review-card",
 				"attributes": {
 					"reviewText": "\"The Hypertension clinic helped me get my blood pressure under control. The follow-up system is excellent.\"",
 					"reviewerName": "U Myint Soe",
@@ -122,7 +122,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

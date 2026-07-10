@@ -1,12 +1,12 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, RangeControl, TextControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/feature-card' ];
+const ALLOWED_BLOCKS = [ 'mk/feature-card' ];
 const TEMPLATE = [
 	[
-		'twork/feature-card',
+		'mk/feature-card',
 		{
 			title: 'Advanced Tech',
 			description:
@@ -16,7 +16,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/feature-card',
+		'mk/feature-card',
 		{
 			title: 'Expert Team',
 			description:
@@ -26,7 +26,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/feature-card',
+		'mk/feature-card',
 		{
 			title: 'Patient Centric',
 			description: 'Personalized care plans ensuring comfort and safety.',
@@ -50,7 +50,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `twork-features-section-editor ${ (
+			className: `mk-features-section-editor ${ (
 				containerClass || 'container'
 			).trim() }`.trim(),
 			id: sectionId || undefined,
@@ -78,13 +78,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Section ID (anchor)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionId }
 							onChange={ ( v ) =>
@@ -92,12 +92,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. #about for in-page links',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Container class', 'twork-builder' ) }
+							label={ __( 'Container class', 'mk-builder' ) }
 							value={ containerClass }
 							onChange={ ( v ) =>
 								setAttributes( {
@@ -107,11 +107,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Columns (Desktop)', 'twork-builder' ) }
+							label={ __( 'Columns (Desktop)', 'mk-builder' ) }
 							value={ columns }
 							onChange={ ( v ) =>
 								setAttributes( { columns: v } )
@@ -122,7 +122,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Columns (Tablet)', 'twork-builder' ) }
+							label={ __( 'Columns (Tablet)', 'mk-builder' ) }
 							value={ columnsTablet }
 							onChange={ ( v ) =>
 								setAttributes( { columnsTablet: v } )
@@ -133,7 +133,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Columns (Mobile)', 'twork-builder' ) }
+							label={ __( 'Columns (Mobile)', 'mk-builder' ) }
 							value={ columnsMobile }
 							onChange={ ( v ) =>
 								setAttributes( { columnsMobile: v } )
@@ -144,7 +144,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gap }
 							onChange={ ( v ) => setAttributes( { gap: v } ) }
 							min={ 0 }
@@ -155,7 +155,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Min card width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gridMinItemWidth }
 							onChange={ ( v ) =>
@@ -166,16 +166,16 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 10 }
 							help={ __(
 								'auto-fit minmax value',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Container', 'twork-builder' ) }
+						title={ __( 'Container', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
 								setAttributes( { containerMaxWidth: v } )
@@ -186,7 +186,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding (px)', 'twork-builder' ) }
+							label={ __( 'Padding (px)', 'mk-builder' ) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
 								setAttributes( { containerPadding: v } )
@@ -214,11 +214,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						borderRadius: '4px',
 					} }
 				>
-					{ __( 'Features Section (Editor View)', 'twork-builder' ) }
+					{ __( 'Features Section (Editor View)', 'mk-builder' ) }
 				</div>
 				<div style={ containerStyle }>
 					<div
-						className="twork-features-grid-container features-grid"
+						className="mk-features-grid-container features-grid"
 						style={ gridStyle }
 						data-columns={ columns }
 					>

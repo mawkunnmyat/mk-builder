@@ -1,17 +1,17 @@
 @use "../scss/typography";
 
 
-.twork-why-choose-section,
-.twork-why-choose-section-editor {
+.mk-why-choose-section,
+.mk-why-choose-section-editor {
     font-family: typography.$font-secondary;
 }
 
-.twork-why-choose {
+.mk-why-choose {
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-    background: radial-gradient(circle at 18% 22%, rgba(186, 214, 120, 0.3) 0%, rgba(186, 214, 120, 0) 42%), radial-gradient(circle at 83% 20%, rgba(172, 204, 98, 0.24) 0%, rgba(172, 204, 98, 0) 36%), linear-gradient(180deg, var(--twork-bg-start, #f5f8ee) 0%, #cedea7 36%, #7f9538 70%, var(--twork-bg-end, #3a4d1e) 100%);
-    box-shadow: inset 0 0 0 9999px rgba(16, 34, 13, var(--twork-bg-overlay-opacity, 0));
+    background: radial-gradient(circle at 18% 22%, rgba(186, 214, 120, 0.3) 0%, rgba(186, 214, 120, 0) 42%), radial-gradient(circle at 83% 20%, rgba(172, 204, 98, 0.24) 0%, rgba(172, 204, 98, 0) 36%), linear-gradient(180deg, var(--mk-bg-start, #f5f8ee) 0%, #cedea7 36%, #7f9538 70%, var(--mk-bg-end, #3a4d1e) 100%);
+    box-shadow: inset 0 0 0 9999px rgba(16, 34, 13, var(--mk-bg-overlay-opacity, 0));
 
     &::before {
         content: "";
@@ -22,34 +22,34 @@
         z-index: 0;
     }
 
-    .twork-why-choose__container {
+    .mk-why-choose__container {
         position: relative;
         z-index: 2;
         box-sizing: border-box;
     }
 
-    .twork-why-choose__shape-divider {
+    .mk-why-choose__shape-divider {
         position: absolute;
         left: 0;
         bottom: 0;
         width: 100%;
-        height: var(--twork-wave-h-desk, 124px);
-        background-image: var(--twork-why-choose-shape, none);
+        height: var(--mk-wave-h-desk, 124px);
+        background-image: var(--mk-why-choose-shape, none);
         background-repeat: repeat-x;
         background-size: auto 100%;
         background-position: bottom center;
-        opacity: var(--twork-wave-opacity, 1);
-        transform: scaleX(var(--twork-wave-flip-x, 1)) scaleY(var(--twork-wave-flip-y, 1));
+        opacity: var(--mk-wave-opacity, 1);
+        transform: scaleX(var(--mk-wave-flip-x, 1)) scaleY(var(--mk-wave-flip-y, 1));
         transform-origin: center;
         pointer-events: none;
         z-index: 1;
     }
 
-    &:not(.has-wave-decoration) .twork-why-choose__shape-divider {
+    &:not(.has-wave-decoration) .mk-why-choose__shape-divider {
         display: none;
     }
 
-    .twork-why-choose__header {
+    .mk-why-choose__header {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -57,7 +57,7 @@
         gap: 0.85rem;
     }
 
-    .twork-why-choose__tagline {
+    .mk-why-choose__tagline {
         margin: 0;
         display: inline-flex;
         align-items: center;
@@ -66,19 +66,19 @@
         font-weight: 600;
     }
 
-    .twork-why-choose__tagline-icon {
+    .mk-why-choose__tagline-icon {
         font-size: 1.1rem;
         line-height: 1;
     }
 
-    .twork-why-choose__title {
+    .mk-why-choose__title {
         margin: 0;
         max-width: 760px;
         line-height: 1.1;
         letter-spacing: -0.02em;
     }
 
-    .twork-why-choose__stage {
+    .mk-why-choose__stage {
         position: relative;
         margin-top: 2.2rem;
         min-height: auto !important;
@@ -89,7 +89,7 @@
         gap: 1.4rem;
     }
 
-    .twork-why-choose__center-media-wrapper {
+    .mk-why-choose__center-media-wrapper {
         position: relative;
         bottom: auto;
         left: auto;
@@ -102,61 +102,61 @@
         order: 0;
     }
 
-    .twork-why-choose__center-media {
+    .mk-why-choose__center-media {
         width: 100%;
-        max-width: min(100%, var(--twork-media-max-width-mob, 520px));
+        max-width: min(100%, var(--mk-media-max-width-mob, 520px));
         height: auto;
         object-fit: contain;
         pointer-events: auto;
-        border-radius: var(--twork-media-radius, 0px);
-        filter: brightness(var(--twork-filter-brightness, 100%))
-            contrast(var(--twork-filter-contrast, 100%))
-            grayscale(var(--twork-filter-grayscale, 0%))
-            var(--twork-media-drop-shadow, drop-shadow(0 0 0 rgba(0,0,0,0)));
+        border-radius: var(--mk-media-radius, 0px);
+        filter: brightness(var(--mk-filter-brightness, 100%))
+            contrast(var(--mk-filter-contrast, 100%))
+            grayscale(var(--mk-filter-grayscale, 0%))
+            var(--mk-media-drop-shadow, drop-shadow(0 0 0 rgba(0,0,0,0)));
         transition: transform 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease;
     }
 
-    .twork-why-choose__center-media-wrapper.has-parallax .twork-why-choose__center-media {
-        transform: translateY(var(--twork-parallax-shift, 0px));
+    .mk-why-choose__center-media-wrapper.has-parallax .mk-why-choose__center-media {
+        transform: translateY(var(--mk-parallax-shift, 0px));
     }
 
-    .twork-why-choose__center-media-wrapper.has-animation-float .twork-why-choose__center-media {
-        animation: tworkWhyChooseFloat var(--twork-anim-duration, 2s) ease-in-out var(--twork-anim-delay, 0s) infinite;
+    .mk-why-choose__center-media-wrapper.has-animation-float .mk-why-choose__center-media {
+        animation: mkWhyChooseFloat var(--mk-anim-duration, 2s) ease-in-out var(--mk-anim-delay, 0s) infinite;
     }
 
-    .twork-why-choose__center-media-wrapper.has-animation-pulse .twork-why-choose__center-media {
-        animation: tworkWhyChoosePulse var(--twork-anim-duration, 2s) ease-in-out var(--twork-anim-delay, 0s) infinite;
+    .mk-why-choose__center-media-wrapper.has-animation-pulse .mk-why-choose__center-media {
+        animation: mkWhyChoosePulse var(--mk-anim-duration, 2s) ease-in-out var(--mk-anim-delay, 0s) infinite;
     }
 
-    .twork-why-choose__center-media-wrapper.has-animation-fade-up .twork-why-choose__center-media {
-        animation: tworkWhyChooseFadeUp var(--twork-anim-duration, 2s) ease var(--twork-anim-delay, 0s) both;
+    .mk-why-choose__center-media-wrapper.has-animation-fade-up .mk-why-choose__center-media {
+        animation: mkWhyChooseFadeUp var(--mk-anim-duration, 2s) ease var(--mk-anim-delay, 0s) both;
     }
 
-    .twork-why-choose__center-media-wrapper.has-animation-zoom-in .twork-why-choose__center-media {
-        animation: tworkWhyChooseZoomIn var(--twork-anim-duration, 2s) ease var(--twork-anim-delay, 0s) both;
+    .mk-why-choose__center-media-wrapper.has-animation-zoom-in .mk-why-choose__center-media {
+        animation: mkWhyChooseZoomIn var(--mk-anim-duration, 2s) ease var(--mk-anim-delay, 0s) both;
     }
 
-    .twork-why-choose__center-media-wrapper.has-animation-spin .twork-why-choose__center-media {
-        animation: tworkWhyChooseSpin var(--twork-anim-duration, 2s) linear var(--twork-anim-delay, 0s) infinite;
+    .mk-why-choose__center-media-wrapper.has-animation-spin .mk-why-choose__center-media {
+        animation: mkWhyChooseSpin var(--mk-anim-duration, 2s) linear var(--mk-anim-delay, 0s) infinite;
     }
 
-    .twork-why-choose__center-media-wrapper.has-animation-bounce .twork-why-choose__center-media {
-        animation: tworkWhyChooseBounce var(--twork-anim-duration, 2s) ease var(--twork-anim-delay, 0s) infinite;
+    .mk-why-choose__center-media-wrapper.has-animation-bounce .mk-why-choose__center-media {
+        animation: mkWhyChooseBounce var(--mk-anim-duration, 2s) ease var(--mk-anim-delay, 0s) infinite;
     }
 
-    .twork-why-choose__center-media-wrapper[data-hover-type="lift"]:hover .twork-why-choose__center-media {
+    .mk-why-choose__center-media-wrapper[data-hover-type="lift"]:hover .mk-why-choose__center-media {
         transform: translateY(-10px);
     }
 
-    .twork-why-choose__center-media-wrapper[data-hover-type="scale-up"]:hover .twork-why-choose__center-media {
+    .mk-why-choose__center-media-wrapper[data-hover-type="scale-up"]:hover .mk-why-choose__center-media {
         transform: scale(1.04);
     }
 
-    .twork-why-choose__center-media-wrapper[data-hover-type="glow"]:hover .twork-why-choose__center-media {
+    .mk-why-choose__center-media-wrapper[data-hover-type="glow"]:hover .mk-why-choose__center-media {
         box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.24), 0 0 26px rgba(210, 233, 125, 0.48);
     }
 
-    .twork-why-choose__point {
+    .mk-why-choose__point {
         position: static;
         z-index: 10;
         width: min(100%, 240px);
@@ -165,7 +165,7 @@
         order: 1;
     }
 
-    .twork-why-choose__point-icon {
+    .mk-why-choose__point-icon {
         position: relative;
         width: 56px;
         height: 56px;
@@ -179,7 +179,7 @@
         place-items: center;
     }
 
-    .twork-why-choose__point-icon::before {
+    .mk-why-choose__point-icon::before {
         content: "";
         position: absolute;
         inset: -12px;
@@ -188,7 +188,7 @@
         opacity: 0.8;
     }
 
-    .twork-why-choose__point-icon::after {
+    .mk-why-choose__point-icon::after {
         content: "";
         position: absolute;
         inset: -22px;
@@ -199,7 +199,7 @@
         opacity: 0.66;
     }
 
-    .twork-why-choose__point-text {
+    .mk-why-choose__point-text {
         margin: 0;
         color: #fff;
         font-size: clamp(1rem, 4.1vw, 1.2rem);
@@ -208,7 +208,7 @@
         text-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
-    .twork-why-choose__point--3 {
+    .mk-why-choose__point--3 {
         /*
          * Legacy mobile override (kept for rollback/debugging):
          * order: -1;
@@ -218,8 +218,8 @@
 }
 
 @media (min-width: 861px) and (max-width: 1199px) {
-    .twork-why-choose {
-        .twork-why-choose__stage {
+    .mk-why-choose {
+        .mk-why-choose__stage {
             margin-top: 2.6rem;
             padding-bottom: 120px;
             display: grid;
@@ -233,18 +233,18 @@
             gap: 1.25rem 1rem;
         }
 
-        .twork-why-choose__point {
+        .mk-why-choose__point {
             width: min(100%, 260px);
             max-width: 260px;
         }
 
-        .twork-why-choose__point--1 { grid-area: point1; }
-        .twork-why-choose__point--2 { grid-area: point2; }
-        .twork-why-choose__point--3 { grid-area: point3; order: 0; }
-        .twork-why-choose__point--4 { grid-area: point4; }
-        .twork-why-choose__point--5 { grid-area: point5; }
+        .mk-why-choose__point--1 { grid-area: point1; }
+        .mk-why-choose__point--2 { grid-area: point2; }
+        .mk-why-choose__point--3 { grid-area: point3; order: 0; }
+        .mk-why-choose__point--4 { grid-area: point4; }
+        .mk-why-choose__point--5 { grid-area: point5; }
 
-        .twork-why-choose__center-media-wrapper {
+        .mk-why-choose__center-media-wrapper {
             grid-column: 1 / -1;
             grid-row: 2 / 3;
             align-self: center;
@@ -253,21 +253,21 @@
             z-index: 1;
         }
 
-        .twork-why-choose__center-media {
-            max-width: min(72vw, var(--twork-media-max-width-desk, 550px));
+        .mk-why-choose__center-media {
+            max-width: min(72vw, var(--mk-media-max-width-desk, 550px));
         }
 
-        .twork-why-choose__point-text {
+        .mk-why-choose__point-text {
             font-size: 1.2rem;
         }
     }
 }
 
-.twork-why-choose-section-editor .twork-why-choose__center-media {
+.mk-why-choose-section-editor .mk-why-choose__center-media {
     animation: none !important;
 }
 
-@keyframes tworkWhyChooseFloat {
+@keyframes mkWhyChooseFloat {
     0%,
     100% {
         transform: translateY(0);
@@ -277,7 +277,7 @@
     }
 }
 
-@keyframes tworkWhyChoosePulse {
+@keyframes mkWhyChoosePulse {
     0%,
     100% {
         transform: scale(1);
@@ -287,7 +287,7 @@
     }
 }
 
-@keyframes tworkWhyChooseFadeUp {
+@keyframes mkWhyChooseFadeUp {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -298,7 +298,7 @@
     }
 }
 
-@keyframes tworkWhyChooseZoomIn {
+@keyframes mkWhyChooseZoomIn {
     from {
         opacity: 0;
         transform: scale(0.92);
@@ -309,12 +309,12 @@
     }
 }
 
-@keyframes tworkWhyChooseSpin {
+@keyframes mkWhyChooseSpin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-@keyframes tworkWhyChooseBounce {
+@keyframes mkWhyChooseBounce {
     0%,
     100% {
         transform: translateY(0);
@@ -328,35 +328,35 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .twork-why-choose .twork-why-choose__center-media {
+    .mk-why-choose .mk-why-choose__center-media {
         animation: none !important;
         transform: none !important;
         transition: none !important;
     }
 
-    .twork-why-choose .twork-why-choose__center-media-wrapper[data-hover-type]:hover .twork-why-choose__center-media {
+    .mk-why-choose .mk-why-choose__center-media-wrapper[data-hover-type]:hover .mk-why-choose__center-media {
         transform: none !important;
         box-shadow: none !important;
     }
 }
 
 @media (min-width: 1200px) {
-    .twork-why-choose {
-        .twork-why-choose__stage {
+    .mk-why-choose {
+        .mk-why-choose__stage {
             margin-top: 2.2rem;
             padding-bottom: 0;
             display: block;
         }
 
-        .twork-why-choose__point {
+        .mk-why-choose__point {
             position: absolute;
             width: clamp(140px, 15vw, 180px);
             transform: translateX(-50%);
         }
 
-        .twork-why-choose__center-media-wrapper {
+        .mk-why-choose__center-media-wrapper {
             position: absolute;
-            bottom: var(--twork-image-bottom, 30px);
+            bottom: var(--mk-image-bottom, 30px);
             left: 0;
             width: 100%;
             pointer-events: none;
@@ -364,40 +364,40 @@
             order: unset;
         }
 
-        .twork-why-choose__center-media {
-            max-width: var(--twork-media-max-width-desk, 550px);
+        .mk-why-choose__center-media {
+            max-width: var(--mk-media-max-width-desk, 550px);
         }
 
-        .twork-why-choose__point-text {
+        .mk-why-choose__point-text {
             font-size: clamp(1.1rem, 1.3vw, 1.65rem);
         }
 
-        .twork-why-choose__shape-divider {
-            height: var(--twork-wave-h-desk, 124px);
+        .mk-why-choose__shape-divider {
+            height: var(--mk-wave-h-desk, 124px);
             background-size: auto 100%;
         }
 
-        .twork-why-choose__point--1 {
+        .mk-why-choose__point--1 {
             left: 15%;
             top: 55%;
         }
 
-        .twork-why-choose__point--2 {
+        .mk-why-choose__point--2 {
             left: 30%;
             top: 25%;
         }
 
-        .twork-why-choose__point--3 {
+        .mk-why-choose__point--3 {
             left: 50%;
             top: 10%;
         }
 
-        .twork-why-choose__point--4 {
+        .mk-why-choose__point--4 {
             left: 70%;
             top: 25%;
         }
 
-        .twork-why-choose__point--5 {
+        .mk-why-choose__point--5 {
             left: 85%;
             top: 55%;
         }
@@ -405,12 +405,12 @@
 }
 
 @media (max-width: 860px) {
-    .twork-why-choose {
-        padding-top: var(--twork-padding-top-mobile, 67px);
-        padding-bottom: var(--twork-padding-bottom-mobile, 0px);
+    .mk-why-choose {
+        padding-top: var(--mk-padding-top-mobile, 67px);
+        padding-bottom: var(--mk-padding-bottom-mobile, 0px);
 
-        .twork-why-choose__shape-divider {
-            height: var(--twork-wave-h-mob, 86px);
+        .mk-why-choose__shape-divider {
+            height: var(--mk-wave-h-mob, 86px);
             background-size: 100% auto;
         }
     }
@@ -420,20 +420,20 @@
  * Legacy reference (absolute-first responsive logic).
  * Kept for rollback/debugging during QA; do not remove until layout is signed off.
  *
- * .twork-why-choose__point--1 { left: 15%; top: 55%; }
- * .twork-why-choose__point--2 { left: 30%; top: 25%; }
- * .twork-why-choose__point--3 { left: 50%; top: 10%; }
- * .twork-why-choose__point--4 { left: 70%; top: 25%; }
- * .twork-why-choose__point--5 { left: 85%; top: 55%; }
+ * .mk-why-choose__point--1 { left: 15%; top: 55%; }
+ * .mk-why-choose__point--2 { left: 30%; top: 25%; }
+ * .mk-why-choose__point--3 { left: 50%; top: 10%; }
+ * .mk-why-choose__point--4 { left: 70%; top: 25%; }
+ * .mk-why-choose__point--5 { left: 85%; top: 55%; }
  *
  * @media (max-width: 1100px) {
- *   .twork-why-choose__point { width: 170px; }
- *   .twork-why-choose__point-text { font-size: 1.2rem; }
+ *   .mk-why-choose__point { width: 170px; }
+ *   .mk-why-choose__point-text { font-size: 1.2rem; }
  * }
  *
  * @media (max-width: 860px) {
- *   .twork-why-choose__stage { display:flex; flex-direction:column; }
- *   .twork-why-choose__point { position:static; }
- *   .twork-why-choose__center-media-wrapper { position:relative; }
+ *   .mk-why-choose__stage { display:flex; flex-direction:column; }
+ *   .mk-why-choose__point { position:static; }
+ *   .mk-why-choose__center-media-wrapper { position:relative; }
  * }
  */

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/banner-shape",
+	"name": "mk/banner-shape",
 	"version": "1.0.0",
 	"title": "Banner Shape",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "cover-image",
 	"description": "Professional banner with customizable background, overlay, and shape decoration using Jivaka theme colors.",
-	"keywords": [ "banner", "hero", "header", "shape", "twork" ],
+	"keywords": [ "banner", "hero", "header", "shape", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -181,7 +181,7 @@
 			"shapeBackgroundSize": "cover"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

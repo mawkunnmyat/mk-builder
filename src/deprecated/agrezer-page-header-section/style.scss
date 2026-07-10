@@ -2,8 +2,8 @@
  * Agrezer inner page header — from my-avocado _page-header.scss
  */
 
-.agrezer-page-header.twork-agrezer-page-header-section,
-.wp-block-twork-agrezer-page-header-section.agrezer-page-header {
+.agrezer-page-header.mk-agrezer-page-header-section,
+.wp-block-mk-agrezer-page-header-section.agrezer-page-header {
 	position: relative;
 	color: #fff;
 	z-index: 1;
@@ -161,7 +161,7 @@
 		display: none;
 	}
 
-	.twork-agrezer-page-header-section-editor .agrezer-page-header__graphic {
+	.mk-agrezer-page-header-section-editor .agrezer-page-header__graphic {
 		display: block;
 		position: relative;
 		bottom: auto;
@@ -178,21 +178,21 @@
 }
 
 /* Editor */
-.twork-agrezer-page-header-section-editor {
+.mk-agrezer-page-header-section-editor {
 	min-height: 200px;
 }
 
-.twork-agrezer-page-header-section-editor .agrezer-page-header__content {
+.mk-agrezer-page-header-section-editor .agrezer-page-header__content {
 	position: relative;
 	z-index: 3;
 }
 
-.twork-agrezer-page-header-section-editor .agrezer-page-header__title {
+.mk-agrezer-page-header-section-editor .agrezer-page-header__title {
 	cursor: text;
 	min-height: 1em;
 }
 
-.twork-agrezer-page-header-section-editor .agrezer-page-header__graphic--placeholder {
+.mk-agrezer-page-header-section-editor .agrezer-page-header__graphic--placeholder {
 	position: relative;
 	bottom: auto;
 	left: auto;
@@ -201,6 +201,6 @@
 	pointer-events: auto;
 }
 
-.twork-agrezer-page-header-section-editor .agrezer-page-header__graphic--placeholder .components-placeholder {
+.mk-agrezer-page-header-section-editor .agrezer-page-header__graphic--placeholder .components-placeholder {
 	min-height: 120px;
 }

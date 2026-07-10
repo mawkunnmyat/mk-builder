@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/split-section",
+	"name": "mk/split-section",
 	"version": "1.0.0",
 	"title": "Split Section (Laparoscopy / Keyhole)",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "layout",
 	"description": "Two-column split: left (label, title, description, list, CTA button), right (image + floating badge). Matches general-surgery laparoscopic block.",
-	"keywords": [ "split", "laparoscopy", "keyhole", "two-column", "twork" ],
+	"keywords": [ "split", "laparoscopy", "keyhole", "two-column", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -103,7 +103,7 @@
 			"gridGap": 60
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

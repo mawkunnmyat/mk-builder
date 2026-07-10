@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, ToggleControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `faq__item twork-faq-accordion-item-editor${
+			className: `faq__item mk-faq-accordion-item-editor${
 				isOpenByDefault ? ' is-open' : ''
 			}`,
 		} ),
@@ -20,13 +20,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'FAQ Item', 'twork-builder' ) }
+						title={ __( 'FAQ Item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Open by default',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ !! isOpenByDefault }
 							onChange={ ( val ) =>
@@ -46,7 +46,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { question: val } )
 						}
-						placeholder={ __( 'Question…', 'twork-builder' ) }
+						placeholder={ __( 'Question…', 'mk-builder' ) }
 					/>
 					<span className="faq__icon" aria-hidden="true" />
 				</div>
@@ -55,7 +55,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="p"
 						value={ answer }
 						onChange={ ( val ) => setAttributes( { answer: val } ) }
-						placeholder={ __( 'Answer…', 'twork-builder' ) }
+						placeholder={ __( 'Answer…', 'mk-builder' ) }
 					/>
 				</div>
 			</div>

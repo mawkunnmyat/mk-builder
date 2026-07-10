@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork-builder/team-intro",
+	"name": "mk-builder/team-intro",
 	"title": "Team Intro",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "groups",
 	"description": "Team introduction section with background image and feature highlights matching the original design",
 	"keywords": [ "team", "intro", "about", "passion", "healing" ],
@@ -42,7 +42,7 @@
 			]
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

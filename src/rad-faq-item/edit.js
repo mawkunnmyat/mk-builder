@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'rad-faq-item twork-rad-faq-item-editor',
+			className: 'rad-faq-item mk-rad-faq-item-editor',
 		} ),
 		[]
 	);
@@ -18,11 +18,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'FAQ Item', 'twork-builder' ) }
+						title={ __( 'FAQ Item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Question', 'twork-builder' ) }
+							label={ __( 'Question', 'mk-builder' ) }
 							value={ question }
 							onChange={ ( v ) =>
 								setAttributes( { question: v } )
@@ -30,7 +30,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Answer', 'twork-builder' ) }
+							label={ __( 'Answer', 'mk-builder' ) }
 							value={ answer }
 							onChange={ ( v ) => setAttributes( { answer: v } ) }
 							multiline
@@ -45,7 +45,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="span"
 						value={ question }
 						onChange={ ( v ) => setAttributes( { question: v } ) }
-						placeholder={ __( 'FAQ question…', 'twork-builder' ) }
+						placeholder={ __( 'FAQ question…', 'mk-builder' ) }
 						withoutInteractiveFormatting
 					/>
 
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="div"
 						value={ answer }
 						onChange={ ( v ) => setAttributes( { answer: v } ) }
-						placeholder={ __( 'FAQ answer…', 'twork-builder' ) }
+						placeholder={ __( 'FAQ answer…', 'mk-builder' ) }
 						multiline
 					/>
 				</div>

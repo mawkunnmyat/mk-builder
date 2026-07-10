@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/news-card-grid",
+	"name": "mk/news-card-grid",
 	"version": "1.0.0",
 	"title": "News Card Grid",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "admin-post",
 	"description": "Blog news section with header and card grid. Ports shweghee blog-news component.",
-	"keywords": [ "blog", "news", "posts", "grid", "twork" ],
+	"keywords": [ "blog", "news", "posts", "grid", "mk" ],
 	"attributes": {
 		"eyebrow": {
 			"type": "string",
@@ -31,7 +31,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/news-card",
+				"name": "mk/news-card",
 				"attributes": {
 					"author": "Shwe Myanmar",
 					"category": "Product",
@@ -46,7 +46,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

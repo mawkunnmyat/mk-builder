@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/health-check-package-card",
+	"name": "mk/health-check-package-card",
 	"version": "1.0.0",
 	"title": "Package Card",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "list-view",
 	"description": "Single package card (title, price, list, CTA) for Health Check Packages section. Use category to assign to a tab.",
-	"keywords": [ "health", "checkup", "package", "card", "chk", "twork" ],
-	"parent": [ "twork/health-check-packages-section" ],
+	"keywords": [ "health", "checkup", "package", "card", "chk", "mk" ],
+	"parent": [ "mk/health-check-packages-section" ],
 	"attributes": {
 		"category": {
 			"type": "string",
@@ -58,7 +58,7 @@
 			"isPopular": false
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

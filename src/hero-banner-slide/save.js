@@ -41,7 +41,7 @@ export default function save( { attributes } ) {
 	};
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-hero-banner-carousel__slide',
+		className: 'mk-hero-banner-carousel__slide',
 		style: slideStyle,
 		'data-carousel-slide': true,
 		'aria-hidden': 'true',
@@ -50,38 +50,38 @@ export default function save( { attributes } ) {
 
 	return (
 		<article { ...blockProps }>
-			<div className="twork-hero-banner-carousel__overlay">
-				<div className="twork-hero-banner-carousel__inner l-section">
-					<div className="twork-hero-banner-carousel__content">
+			<div className="mk-hero-banner-carousel__overlay">
+				<div className="mk-hero-banner-carousel__inner l-section">
+					<div className="mk-hero-banner-carousel__content">
 						{ eyebrow && (
 							<RichText.Content
 								tagName="p"
-								className="twork-hero-banner-carousel__eyebrow"
+								className="mk-hero-banner-carousel__eyebrow"
 								value={ eyebrow }
 							/>
 						) }
 						{ title && (
 							<RichText.Content
 								tagName={ TitleTag }
-								className="twork-hero-banner-carousel__title"
+								className="mk-hero-banner-carousel__title"
 								value={ title }
 							/>
 						) }
 						{ subtitle && (
 							<RichText.Content
 								tagName="p"
-								className="twork-hero-banner-carousel__subtitle"
+								className="mk-hero-banner-carousel__subtitle"
 								value={ subtitle }
 							/>
 						) }
 						{ ctaLabel && (
 							<a
-								className="twork-hero-banner-carousel__cta btn btn--primary"
+								className="mk-hero-banner-carousel__cta btn btn--primary"
 								href={ ctaHref || '#' }
 							>
 								<RichText.Content tagName="span" value={ ctaLabel } />
 								<span
-									className="twork-hero-banner-carousel__cta-icon"
+									className="mk-hero-banner-carousel__cta-icon"
 									aria-hidden="true"
 								>
 									{' '}

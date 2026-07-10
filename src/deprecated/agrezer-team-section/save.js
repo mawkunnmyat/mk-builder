@@ -19,7 +19,7 @@ export default function save( { attributes } ) {
 	const cols = Math.min( 4, Math.max( 1, parseInt( columns, 10 ) || 3 ) );
 
 	const blockProps = useBlockProps.save( {
-		className: 'agrezer-team-section twork-agrezer-team-section',
+		className: 'agrezer-team-section mk-agrezer-team-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,

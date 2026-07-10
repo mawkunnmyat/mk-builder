@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -15,11 +15,11 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/rad-faq-item' ];
+const ALLOWED_BLOCKS = [ 'mk/rad-faq-item' ];
 
 const TEMPLATE = [
 	[
-		'twork/rad-faq-item',
+		'mk/rad-faq-item',
 		{
 			question: 'Do I need to fast before a CT Scan?',
 			answer: 'Yes, usually 4-6 hours of fasting is required for abdominal CT scans, especially if contrast dye is used.',
@@ -27,7 +27,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/rad-faq-item',
+		'mk/rad-faq-item',
 		{
 			question: 'Is MRI safe for everyone?',
 			answer: 'MRI uses magnets, not radiation. However, it is NOT safe if you have metal implants, pacemakers, or older surgical clips.',
@@ -35,7 +35,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/rad-faq-item',
+		'mk/rad-faq-item',
 		{
 			question: 'How long does a report take?',
 			answer: 'Emergency X-rays are reported instantly. CT/MRI reports are typically ready within 2-4 hours.',
@@ -43,7 +43,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/rad-faq-item',
+		'mk/rad-faq-item',
 		{
 			question: 'What should I wear?',
 			answer: 'Wear loose, comfortable clothing without zippers or metal buttons. We will provide a hospital gown if needed.',
@@ -76,7 +76,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-rad-prep-faq-section-editor rad-section',
+			className: 'mk-rad-prep-faq-section-editor rad-section',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
@@ -103,11 +103,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section Background', 'twork-builder' ) }
+						title={ __( 'Section Background', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
-							title={ __( 'Background Color', 'twork-builder' ) }
+							title={ __( 'Background Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -117,7 +117,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -126,7 +126,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -139,7 +139,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -152,13 +152,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Section Content', 'twork-builder' ) }
+						title={ __( 'Section Content', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Show Section Title',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSectionTitle }
 							onChange={ ( val ) =>
@@ -169,7 +169,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						{ showSectionTitle && (
 							<>
 								<TextControl
-									label={ __( 'Title', 'twork-builder' ) }
+									label={ __( 'Title', 'mk-builder' ) }
 									value={ sectionTitle }
 									onChange={ ( val ) =>
 										setAttributes( { sectionTitle: val } )
@@ -179,7 +179,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelColorSettings
 									title={ __(
 										'Title Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -190,7 +190,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Title Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -199,7 +199,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Title Font Size (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionTitleFontSize }
 									onChange={ ( val ) =>
@@ -217,7 +217,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<ToggleControl
-							label={ __( 'Show Subtitle', 'twork-builder' ) }
+							label={ __( 'Show Subtitle', 'mk-builder' ) }
 							checked={ showSectionSubtitle }
 							onChange={ ( val ) =>
 								setAttributes( { showSectionSubtitle: val } )
@@ -227,7 +227,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						{ showSectionSubtitle && (
 							<>
 								<TextControl
-									label={ __( 'Subtitle', 'twork-builder' ) }
+									label={ __( 'Subtitle', 'mk-builder' ) }
 									value={ sectionSubtitle }
 									onChange={ ( val ) =>
 										setAttributes( {
@@ -239,7 +239,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelColorSettings
 									title={ __(
 										'Subtitle Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -250,7 +250,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Subtitle Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -259,7 +259,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Subtitle Font Size (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionSubtitleFontSize }
 									onChange={ ( val ) =>
@@ -276,7 +276,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ imageUrl ? (
@@ -292,7 +292,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Alt Text', 'twork-builder' ) }
+									label={ __( 'Alt Text', 'mk-builder' ) }
 									value={ imageAlt }
 									onChange={ ( val ) =>
 										setAttributes( { imageAlt: val } )
@@ -310,7 +310,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove Image', 'twork-builder' ) }
+									{ __( 'Remove Image', 'mk-builder' ) }
 								</button>
 							</>
 						) : (
@@ -335,7 +335,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Preparation Image',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -343,11 +343,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Container', 'twork-builder' ) }
+						title={ __( 'Container', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Max Width (px)', 'twork-builder' ) }
+							label={ __( 'Max Width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -360,7 +360,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Horizontal Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -373,13 +373,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable Scroll Animation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -392,11 +392,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Animation Type CSS Class',
-										'twork-builder'
+										'mk-builder'
 									) }
 									help={ __(
 										'e.g. fade-up, fadeInUp',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ animationType }
 									onChange={ ( val ) =>
@@ -407,7 +407,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Animation Delay (ms)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ animationDelay }
 									onChange={ ( val ) =>
@@ -440,7 +440,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											}
 											placeholder={ __(
 												'Patient Preparation Guide',
-												'twork-builder'
+												'mk-builder'
 											) }
 											style={ {
 												marginBottom: '20px',
@@ -460,7 +460,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											}
 											placeholder={ __(
 												'Proper preparation ensures the best image quality…',
-												'twork-builder'
+												'mk-builder'
 											) }
 											style={ {
 												color: sectionSubtitleColor,

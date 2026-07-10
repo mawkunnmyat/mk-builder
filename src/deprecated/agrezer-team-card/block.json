@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-team-card",
+	"name": "mk/agrezer-team-card",
 	"version": "1.0.0",
 	"title": "Agrezer Team Card",
-	"category": "twork-builder",
-	"parent": [ "twork/agrezer-team-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/agrezer-team-section" ],
 	"icon": "admin-users",
 	"description": "Team member photo, name, role, and profile link.",
 	"supports": {
@@ -56,7 +56,7 @@
 			"actionAriaLabel": "View profile"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css"
 }

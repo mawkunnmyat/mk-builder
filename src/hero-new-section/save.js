@@ -71,7 +71,7 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'hero-new wp-block-twork-hero-new-section',
+		className: 'hero-new wp-block-mk-hero-new-section',
 		style: {
 			'--hero-new-min-height': `${ minHeight }px`,
 			'--hero-new-min-height-tablet': `${ minHeightTablet }px`,

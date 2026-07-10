@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/amb-fleet-card-item",
+	"name": "mk/amb-fleet-card-item",
 	"title": "Ambulance Fleet Card",
-	"parent": [ "twork/amb-fleet-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/amb-fleet-section" ],
+	"category": "mk-builder",
 	"description": "Single fleet card with badge, image, title, description and feature list.",
-	"keywords": [ "ambulance", "fleet", "card", "ALS", "BLS", "twork" ],
+	"keywords": [ "ambulance", "fleet", "card", "ALS", "BLS", "mk" ],
 	"attributes": {
 		"badgeText": {
 			"type": "string",
@@ -148,6 +148,6 @@
 			"infoPadding": 40
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

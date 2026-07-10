@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, MediaPlaceholder } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -10,27 +10,27 @@ import {
 } from '@wordpress/components';
 
 const MEDIA_TYPE_OPTIONS = [
-	{ value: 'image', label: __( 'Image / GIF', 'twork-builder' ) },
-	{ value: 'video', label: __( 'Video', 'twork-builder' ) },
+	{ value: 'image', label: __( 'Image / GIF', 'mk-builder' ) },
+	{ value: 'video', label: __( 'Video', 'mk-builder' ) },
 	{
 		value: 'dashicon',
-		label: __( 'WordPress (Dashicons)', 'twork-builder' ),
+		label: __( 'WordPress (Dashicons)', 'mk-builder' ),
 	},
-	{ value: 'fontawesome', label: __( 'Font Awesome', 'twork-builder' ) },
+	{ value: 'fontawesome', label: __( 'Font Awesome', 'mk-builder' ) },
 ];
 
 const DASHICON_OPTIONS = [
 	{
 		value: 'dashicons-admin-generic',
-		label: __( 'Cog / Generic', 'twork-builder' ),
+		label: __( 'Cog / Generic', 'mk-builder' ),
 	},
 	{
 		value: 'dashicons-performance',
-		label: __( 'Performance', 'twork-builder' ),
+		label: __( 'Performance', 'mk-builder' ),
 	},
-	{ value: 'dashicons-camera', label: __( 'Camera', 'twork-builder' ) },
-	{ value: 'dashicons-heart', label: __( 'Heart', 'twork-builder' ) },
-	{ value: 'dashicons-awards', label: __( 'Awards', 'twork-builder' ) },
+	{ value: 'dashicons-camera', label: __( 'Camera', 'mk-builder' ) },
+	{ value: 'dashicons-heart', label: __( 'Heart', 'mk-builder' ) },
+	{ value: 'dashicons-awards', label: __( 'Awards', 'mk-builder' ) },
 ];
 
 function TechItemMediaRender( {
@@ -122,7 +122,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	} = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'tech-item twork-centre-technology-item-editor',
+			className: 'tech-item mk-centre-technology-item-editor',
 		} ),
 		[]
 	);
@@ -132,18 +132,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Media / Icon', 'twork-builder' ) }
+						title={ __( 'Media / Icon', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Media type', 'twork-builder' ) }
+							label={ __( 'Media type', 'mk-builder' ) }
 							help={ __(
 								'Image, video, or WordPress/FA icon.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<SelectControl
-								label={ __( 'Type', 'twork-builder' ) }
+								label={ __( 'Type', 'mk-builder' ) }
 								value={ mediaType || 'image' }
 								options={ MEDIA_TYPE_OPTIONS }
 								onChange={ ( v ) =>
@@ -166,7 +166,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Technology image / GIF',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -185,7 +185,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<TextControl
 											label={ __(
 												'Alt text',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={ imageAlt }
 											onChange={ ( v ) =>
@@ -204,7 +204,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }
@@ -222,7 +222,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Technology video',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -250,7 +250,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }
@@ -258,7 +258,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Font Awesome class',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ iconClass || 'fas fa-microscope' }
 									onChange={ ( v ) =>
@@ -268,7 +268,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'e.g. fas fa-microscope',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							) }
@@ -276,7 +276,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'WordPress Dashicon',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={
 										dashicon || 'dashicons-admin-generic'
@@ -289,14 +289,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							) }
 						</BaseControl>
 						<TextControl
-							label={ __( 'Caption', 'twork-builder' ) }
+							label={ __( 'Caption', 'mk-builder' ) }
 							value={ caption }
 							onChange={ ( v ) =>
 								setAttributes( { caption: v } )
 							}
 							help={ __(
 								'Shown over the image/video or below icon.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>

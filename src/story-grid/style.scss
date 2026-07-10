@@ -14,13 +14,13 @@
 
 // === EDITOR STYLES ===
 // Global block appender styling for story-grid block - Small and in corner
-.editor-styles-wrapper .wp-block-twork-story-grid ~ .block-list-appender,
-.block-editor-block-list__layout .wp-block-twork-story-grid ~ .block-list-appender,
-.block-editor-block-list__block[data-type="twork/story-grid"] ~ .block-list-appender,
-.block-editor-block-list__block[data-type="twork/story-grid"] + .block-list-appender,
-.wp-block-twork-story-grid + .block-list-appender,
-[data-type="twork/story-grid"] + .block-list-appender,
-[data-type="twork/story-grid"] ~ .block-list-appender {
+.editor-styles-wrapper .wp-block-mk-story-grid ~ .block-list-appender,
+.block-editor-block-list__layout .wp-block-mk-story-grid ~ .block-list-appender,
+.block-editor-block-list__block[data-type="mk/story-grid"] ~ .block-list-appender,
+.block-editor-block-list__block[data-type="mk/story-grid"] + .block-list-appender,
+.wp-block-mk-story-grid + .block-list-appender,
+[data-type="mk/story-grid"] + .block-list-appender,
+[data-type="mk/story-grid"] ~ .block-list-appender {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -91,8 +91,8 @@
 
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-story-grid {
-    .twork-story-grid-editor {
+.wp-block-mk-story-grid {
+    .mk-story-grid-editor {
         position: relative !important; // CRITICAL: Must be relative for absolute child positioning
         min-height: 400px;
         // Ensure CSS variables are available in editor
@@ -115,7 +115,7 @@
             }
         }
 
-        .twork-story-grid-container {
+        .mk-story-grid-container {
             display: grid !important;
             grid-template-columns: 1fr !important;
             gap: var(--story-grid-gap, 60px) !important;
@@ -231,8 +231,8 @@
 
                     // Style individual story items in the editor
                     > .wp-block,
-                    > [data-type="twork/story-item"],
-                    > .wp-block-twork-story-item {
+                    > [data-type="mk/story-item"],
+                    > .wp-block-mk-story-item {
                         grid-column: 1 / -1 !important;
                         display: flex !important;
                         flex-direction: row !important;
@@ -322,7 +322,7 @@
 }
 
 // === FRONTEND STYLES ===
-.twork-story-section {
+.mk-story-section {
     font-family: $font-primary;
     position: relative;
     overflow: hidden;
@@ -488,7 +488,7 @@
 
 // === RESPONSIVE STYLES ===
 @media (max-width: 992px) {
-    .twork-story-section {
+    .mk-story-section {
         .jivaka-container.story-grid {
             gap: var(--story-grid-gap-tablet, 40px) !important;
         }
@@ -501,14 +501,14 @@
     // Editor responsive
     .editor-styles-wrapper,
     .block-editor-block-list__layout {
-        .twork-story-grid-container {
+        .mk-story-grid-container {
             gap: var(--story-grid-gap-tablet, 40px) !important;
 
             > .block-editor-inner-blocks {
                 > .block-editor-block-list__layout {
                     > .wp-block,
-                    > [data-type="twork/story-item"],
-                    > .wp-block-twork-story-item {
+                    > [data-type="mk/story-item"],
+                    > .wp-block-mk-story-item {
                         gap: var(--story-grid-gap-tablet, 40px) !important;
                     }
                 }
@@ -518,7 +518,7 @@
 }
 
 @media (max-width: 768px) {
-    .twork-story-section {
+    .mk-story-section {
         padding: 60px 0;
 
         .jivaka-container.story-grid {
@@ -562,15 +562,15 @@
 
     // Editor responsive
     .editor-styles-wrapper {
-        .twork-story-grid-container {
+        .mk-story-grid-container {
             grid-template-columns: 1fr !important;
             gap: var(--story-grid-gap-mobile, 30px) !important;
 
             > .block-editor-inner-blocks {
                 > .block-editor-block-list__layout {
                     > .wp-block,
-                    > [data-type="twork/story-item"],
-                    > .wp-block-twork-story-item {
+                    > [data-type="mk/story-item"],
+                    > .wp-block-mk-story-item {
                         flex-direction: column !important;
                         gap: var(--story-grid-gap-mobile, 30px) !important;
 
@@ -589,7 +589,7 @@
 // Ensure items are always visible when JavaScript is disabled
 .no-js,
 noscript {
-    .twork-story-section {
+    .mk-story-section {
         .story-item {
             opacity: 1 !important;
             transform: none !important;
@@ -607,7 +607,7 @@ noscript {
 
 // === PRINT STYLES ===
 @media print {
-    .twork-story-section {
+    .mk-story-section {
         .story-item {
             page-break-inside: avoid;
             break-inside: avoid;
@@ -617,7 +617,7 @@ noscript {
 
 // === DARK MODE SUPPORT ===
 @media (prefers-color-scheme: dark) {
-    .twork-story-section {
+    .mk-story-section {
         .story-item {
             .story-content {
                 color: #e0e0e0;

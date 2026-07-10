@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-greener-card-item",
+	"name": "mk/agrezer-greener-card-item",
 	"version": "1.0.0",
 	"title": "Agrezer Greener Card",
-	"category": "twork-builder",
-	"parent": [ "twork/agrezer-greener-cards-row" ],
+	"category": "mk-builder",
+	"parent": [ "mk/agrezer-greener-cards-row" ],
 	"icon": "index-card",
 	"description": "Image card with title and read-more link.",
 	"supports": {
@@ -46,6 +46,6 @@
 			"linkUrl": "#"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

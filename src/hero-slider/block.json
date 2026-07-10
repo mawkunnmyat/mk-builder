@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hero-slider",
+	"name": "mk/hero-slider",
 	"title": "Hero Slider",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "slides",
 	"description": "Hero slider with fade, slide, and cube effects; autoplay, pagination, and navigation.",
 	"keywords": [ "hero", "slider", "banner", "carousel" ],
@@ -65,7 +65,7 @@
 			"effect": "fade"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js",

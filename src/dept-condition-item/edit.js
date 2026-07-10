@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
 
@@ -16,7 +16,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 	const { icon = 'fa-heart-broken', title = '' } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'condition-card twork-dept-condition-editor',
+			className: 'condition-card mk-dept-condition-editor',
 		} ),
 		[]
 	);
@@ -25,16 +25,16 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Condition', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Condition', 'mk-builder' ) }>
 						<SelectControl
-							label={ __( 'Icon', 'twork-builder' ) }
+							label={ __( 'Icon', 'mk-builder' ) }
 							value={ icon }
 							options={ ICONS }
 							onChange={ ( v ) => setAttributes( { icon: v } ) }
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( v ) => setAttributes( { title: v } ) }
 						/>

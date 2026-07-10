@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'rad-safety-card twork-rad-safety-card-editor',
+			className: 'rad-safety-card mk-rad-safety-card-editor',
 		} ),
 		[]
 	);
@@ -25,13 +25,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Safety Card', 'twork-builder' ) }
+						title={ __( 'Safety Card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon Class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass }
 							onChange={ ( val ) =>
@@ -41,7 +41,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-shield-alt, fas fa-child, fas fa-pump-medical',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -59,7 +59,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="h4"
 						value={ title }
 						onChange={ ( val ) => setAttributes( { title: val } ) }
-						placeholder={ __( 'Dose Management', 'twork-builder' ) }
+						placeholder={ __( 'Dose Management', 'mk-builder' ) }
 					/>
 
 					<RichText
@@ -70,7 +70,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'Automated dose tracking for every patient to prevent overexposure.',
-							'twork-builder'
+							'mk-builder'
 						) }
 					/>
 				</div>

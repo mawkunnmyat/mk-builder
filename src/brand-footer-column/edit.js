@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -14,7 +14,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'footer__column twork-brand-footer-column-editor',
+			className: 'footer__column mk-brand-footer-column-editor',
 		} ),
 		[]
 	);
@@ -51,7 +51,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Links', 'twork-builder' ) }
+						title={ __( 'Links', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ( links || [] ).map( ( link, index ) => (
@@ -66,7 +66,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ `${ __(
 										'Label',
-										'twork-builder'
+										'mk-builder'
 									) } ${ index + 1 }` }
 									value={ link.label || '' }
 									onChange={ ( val ) =>
@@ -74,7 +74,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 								/>
 								<TextControl
-									label={ __( 'URL', 'twork-builder' ) }
+									label={ __( 'URL', 'mk-builder' ) }
 									value={ link.href || '' }
 									onChange={ ( val ) =>
 										updateLink( index, 'href', val )
@@ -85,12 +85,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									isSmall
 									onClick={ () => removeLink( index ) }
 								>
-									{ __( 'Remove link', 'twork-builder' ) }
+									{ __( 'Remove link', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button isSecondary onClick={ addLink }>
-							{ __( 'Add link', 'twork-builder' ) }
+							{ __( 'Add link', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 				</InspectorControls>
@@ -102,12 +102,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="footer__column-title"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Column title…', 'twork-builder' ) }
+					placeholder={ __( 'Column title…', 'mk-builder' ) }
 				/>
 				<nav className="footer__links">
 					{ ( links || [] ).map( ( link, index ) => (
 						<span key={ link.id || index } className="footer__link">
-							{ link.label || __( 'Link', 'twork-builder' ) }
+							{ link.label || __( 'Link', 'mk-builder' ) }
 						</span>
 					) ) }
 				</nav>

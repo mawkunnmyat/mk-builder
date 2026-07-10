@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-voices-slide",
+	"name": "mk/agrezer-voices-slide",
 	"version": "1.0.0",
 	"title": "Agrezer Voices Slide",
-	"category": "twork-builder",
-	"parent": [ "twork/agrezer-voices-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/agrezer-voices-section" ],
 	"icon": "format-quote",
 	"description": "One testimonial quote with author for the voices slider.",
 	"supports": {
@@ -51,6 +51,6 @@
 			"quoteMark": "❝"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

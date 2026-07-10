@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/centre-technology-item",
+	"name": "mk/centre-technology-item",
 	"version": "1.0.0",
 	"title": "Technology Item",
-	"category": "twork-builder",
-	"parent": [ "twork/centre-technology-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/centre-technology-section" ],
 	"description": "Single technology/facility card: image, video, or icon with caption.",
 	"attributes": {
 		"mediaType": {

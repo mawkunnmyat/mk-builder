@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/surgical-services-section",
+	"name": "mk/surgical-services-section",
 	"version": "1.0.0",
 	"title": "Surgical Services Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "Section with header (label, title, description) and grid of surgical service cards. Matches general-surgery #services block.",
-	"keywords": [ "surgical", "services", "procedures", "doc-grid", "twork" ],
+	"keywords": [ "surgical", "services", "procedures", "doc-grid", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -66,7 +66,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/surgical-service-card",
+				"name": "mk/surgical-service-card",
 				"attributes": {
 					"title": "GI Surgery",
 					"description": "Advanced treatment for stomach, liver, and colorectal conditions using modern protocols.",
@@ -75,7 +75,7 @@
 				}
 			},
 			{
-				"name": "twork/surgical-service-card",
+				"name": "mk/surgical-service-card",
 				"attributes": {
 					"title": "Hernia Repair",
 					"description": "Minimally invasive mesh repair for inguinal, umbilical, and incisional hernias.",
@@ -84,7 +84,7 @@
 				}
 			},
 			{
-				"name": "twork/surgical-service-card",
+				"name": "mk/surgical-service-card",
 				"attributes": {
 					"title": "Trauma & Emergency",
 					"description": "24/7 readiness for accident victims and acute surgical emergencies.",
@@ -94,7 +94,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

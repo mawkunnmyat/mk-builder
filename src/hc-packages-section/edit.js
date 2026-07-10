@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -14,10 +14,10 @@ import {
 } from '@wordpress/components';
 import { PanelColorSettings } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/hc-package-card' ];
+const ALLOWED_BLOCKS = [ 'mk/hc-package-card' ];
 const TEMPLATE = [
 	[
-		'twork/hc-package-card',
+		'mk/hc-package-card',
 		{
 			title: 'Nursing (Short Term)',
 			price: '30,000',
@@ -36,7 +36,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/hc-package-card',
+		'mk/hc-package-card',
 		{
 			title: 'Physio Recovery',
 			price: '25,000',
@@ -56,7 +56,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/hc-package-card',
+		'mk/hc-package-card',
 		{
 			title: 'Doctor Visit',
 			price: '40,000',
@@ -94,7 +94,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'hc-section twork-hc-packages-section-editor',
+			className: 'hc-section mk-hc-packages-section-editor',
 			style: {
 				backgroundColor: backgroundColor || '#ffffff',
 				paddingTop: `${ paddingTop }px`,
@@ -121,12 +121,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ PanelColorSettings && (
 							<PanelColorSettings
-								title={ __( 'Background', 'twork-builder' ) }
+								title={ __( 'Background', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: backgroundColor,
@@ -136,14 +136,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Background Color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
 							/>
 						) }
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -156,7 +156,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -171,7 +171,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -185,7 +185,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -197,13 +197,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Header', 'twork-builder' ) }
+						title={ __( 'Header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Show section title',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSectionTitle }
 							onChange={ ( val ) =>
@@ -213,7 +213,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ showSectionTitle && PanelColorSettings && (
 							<PanelColorSettings
-								title={ __( 'Header colors', 'twork-builder' ) }
+								title={ __( 'Header colors', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: sectionTitleColor,
@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Title color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 									{
@@ -234,7 +234,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Subtitle color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
@@ -242,11 +242,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) }
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Grid', 'twork-builder' ) }
+						title={ __( 'Grid', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gap }
 							onChange={ ( val ) =>
 								setAttributes( { gap: val } )
@@ -257,13 +257,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Animation on scroll',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -275,7 +275,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Animation class',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ animationType }
 								onChange={ ( val ) =>
@@ -310,7 +310,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Care Packages',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									color: sectionTitleColor || '#212121',
@@ -326,7 +326,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Affordable plans for long-term recovery.',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									color: sectionSubtitleColor || '#555',

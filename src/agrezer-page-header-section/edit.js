@@ -88,7 +88,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const addCrumb = () => {
 		setAttributes( {
-			breadcrumbs: [ ...crumbs, { label: __( 'New item', 'twork-builder' ), url: '' } ],
+			breadcrumbs: [ ...crumbs, { label: __( 'New item', 'mk-builder' ), url: '' } ],
 		} );
 	};
 
@@ -137,7 +137,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	] );
 
 	const blockProps = useBlockProps( {
-		className: 'twork-page-header twork-page-header-section twork-page-header-section-editor',
+		className: 'mk-page-header mk-page-header-section mk-page-header-section-editor',
 		style: {
 			'--tw-bg-color': backgroundColor,
 			'--tw-overlay-opacity': `${ overlayOpacity / 100 }`,
@@ -147,9 +147,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			'--tw-crumb-active-color': breadcrumbActiveColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-page-header-max': `${ containerMaxWidth }px`,
-			'--twork-page-header-width-pct': `${ containerWidthPct }%`,
-			'--twork-page-header-min-h': `${ containerMinHeight }px`,
+			'--mk-page-header-max': `${ containerMaxWidth }px`,
+			'--mk-page-header-width-pct': `${ containerWidthPct }%`,
+			'--mk-page-header-min-h': `${ containerMinHeight }px`,
 		},
 		'data-tractor-anim': enableTractorAnimation ? 'true' : 'false',
 	} );
@@ -158,14 +158,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Background Settings', 'twork-builder' ) } initialOpen={ true }>
+					<PanelBody title={ __( 'Background Settings', 'mk-builder' ) } initialOpen={ true }>
 						<SelectControl
-							label={ __( 'Background type', 'twork-builder' ) }
+							label={ __( 'Background type', 'mk-builder' ) }
 							value={ backgroundType }
 							options={ [
-								{ label: __( 'Image', 'twork-builder' ), value: 'image' },
-								{ label: __( 'Video', 'twork-builder' ), value: 'video' },
-								{ label: __( 'Color', 'twork-builder' ), value: 'color' },
+								{ label: __( 'Image', 'mk-builder' ), value: 'image' },
+								{ label: __( 'Video', 'mk-builder' ), value: 'video' },
+								{ label: __( 'Color', 'mk-builder' ), value: 'color' },
 							] }
 							onChange={ ( value ) => setAttributes( { backgroundType: value } ) }
 						/>
@@ -178,25 +178,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										onSelect={ ( media ) => setAttributes( { backgroundImage: media.url, backgroundImageId: media.id } ) }
 										allowedTypes={ [ 'image' ] }
 										multiple={ false }
-										labels={ { title: __( 'Header background image', 'twork-builder' ) } }
+										labels={ { title: __( 'Header background image', 'mk-builder' ) } }
 									/>
 								) : (
 									<>
 										<img src={ backgroundImage } alt="" style={ { width: '100%', maxHeight: 140, objectFit: 'cover', borderRadius: 6 } } />
 										<Button isSecondary isSmall onClick={ () => setAttributes( { backgroundImage: '', backgroundImageId: null } ) }>
-											{ __( 'Remove image', 'twork-builder' ) }
+											{ __( 'Remove image', 'mk-builder' ) }
 										</Button>
 									</>
 								) }
 								<SelectControl
-									label={ __( 'Background position', 'twork-builder' ) }
+									label={ __( 'Background position', 'mk-builder' ) }
 									value={ backgroundPosition }
 									options={ [
-										{ label: __( 'Center', 'twork-builder' ), value: 'center center' },
-										{ label: __( 'Top', 'twork-builder' ), value: 'center top' },
-										{ label: __( 'Bottom', 'twork-builder' ), value: 'center bottom' },
-										{ label: __( 'Left', 'twork-builder' ), value: 'left center' },
-										{ label: __( 'Right', 'twork-builder' ), value: 'right center' },
+										{ label: __( 'Center', 'mk-builder' ), value: 'center center' },
+										{ label: __( 'Top', 'mk-builder' ), value: 'center top' },
+										{ label: __( 'Bottom', 'mk-builder' ), value: 'center bottom' },
+										{ label: __( 'Left', 'mk-builder' ), value: 'left center' },
+										{ label: __( 'Right', 'mk-builder' ), value: 'right center' },
 									] }
 									onChange={ ( value ) => setAttributes( { backgroundPosition: value } ) }
 								/>
@@ -211,20 +211,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										onSelect={ ( media ) => setAttributes( { backgroundVideo: media.url } ) }
 										allowedTypes={ [ 'video' ] }
 										multiple={ false }
-										labels={ { title: __( 'Background video', 'twork-builder' ) } }
+										labels={ { title: __( 'Background video', 'mk-builder' ) } }
 									/>
 								) : (
 									<>
 										<video src={ backgroundVideo } style={ { width: '100%', maxHeight: 180, borderRadius: 6 } } muted playsInline />
 										<Button isSecondary isSmall onClick={ () => setAttributes( { backgroundVideo: '' } ) }>
-											{ __( 'Remove video', 'twork-builder' ) }
+											{ __( 'Remove video', 'mk-builder' ) }
 										</Button>
 									</>
 								) }
 							</>
 						) }
 
-						<BaseControl label={ __( 'Background color', 'twork-builder' ) }>
+						<BaseControl label={ __( 'Background color', 'mk-builder' ) }>
 							<ColorPalette
 								colors={ THEME_COLORS }
 								value={ backgroundColor }
@@ -233,7 +233,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</BaseControl>
 
 						<RangeControl
-							label={ __( 'Overlay opacity (%)', 'twork-builder' ) }
+							label={ __( 'Overlay opacity (%)', 'mk-builder' ) }
 							value={ overlayOpacity }
 							onChange={ ( value ) => setAttributes( { overlayOpacity: value || 0 } ) }
 							min={ 0 }
@@ -241,102 +241,102 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 
-					<PanelBody title={ __( 'Title Settings', 'twork-builder' ) } initialOpen={ false }>
-						<TextControl label={ __( 'Page title', 'twork-builder' ) } value={ title } onChange={ ( value ) => setAttributes( { title: value } ) } />
+					<PanelBody title={ __( 'Title Settings', 'mk-builder' ) } initialOpen={ false }>
+						<TextControl label={ __( 'Page title', 'mk-builder' ) } value={ title } onChange={ ( value ) => setAttributes( { title: value } ) } />
 						<RangeControl
-							label={ __( 'Title size (px)', 'twork-builder' ) }
+							label={ __( 'Title size (px)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( value ) => setAttributes( { titleFontSize: value || 0 } ) }
 							min={ 24 }
 							max={ 120 }
 						/>
-						<BaseControl label={ __( 'Title color', 'twork-builder' ) }>
+						<BaseControl label={ __( 'Title color', 'mk-builder' ) }>
 							<ColorPalette colors={ THEME_COLORS } value={ titleColor } onChange={ ( value ) => setAttributes( { titleColor: value || '#ffffff' } ) } />
 						</BaseControl>
 					</PanelBody>
 
-					<PanelBody title={ __( 'Breadcrumb Settings', 'twork-builder' ) } initialOpen={ false }>
-						<TextControl label={ __( 'Separator', 'twork-builder' ) } value={ separatorChar } onChange={ ( value ) => setAttributes( { separatorChar: value } ) } />
-						<BaseControl label={ __( 'Breadcrumb text color', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Breadcrumb Settings', 'mk-builder' ) } initialOpen={ false }>
+						<TextControl label={ __( 'Separator', 'mk-builder' ) } value={ separatorChar } onChange={ ( value ) => setAttributes( { separatorChar: value } ) } />
+						<BaseControl label={ __( 'Breadcrumb text color', 'mk-builder' ) }>
 							<ColorPalette colors={ THEME_COLORS } value={ breadcrumbColor } onChange={ ( value ) => setAttributes( { breadcrumbColor: value || '#ffffff' } ) } />
 						</BaseControl>
-						<BaseControl label={ __( 'Active breadcrumb color', 'twork-builder' ) }>
+						<BaseControl label={ __( 'Active breadcrumb color', 'mk-builder' ) }>
 							<ColorPalette colors={ THEME_COLORS } value={ breadcrumbActiveColor } onChange={ ( value ) => setAttributes( { breadcrumbActiveColor: value || '#8bc34a' } ) } />
 						</BaseControl>
 						{ crumbs.map( ( crumb, index ) => (
 							<div key={ index } style={ { marginBottom: 12, paddingBottom: 12, borderBottom: '1px solid #ddd' } }>
-								<TextControl label={ __( 'Label', 'twork-builder' ) } value={ crumb.label } onChange={ ( value ) => updateCrumb( index, 'label', value ) } />
-								<TextControl label={ __( 'URL (empty = current)', 'twork-builder' ) } value={ crumb.url } onChange={ ( value ) => updateCrumb( index, 'url', value ) } placeholder="/" />
+								<TextControl label={ __( 'Label', 'mk-builder' ) } value={ crumb.label } onChange={ ( value ) => updateCrumb( index, 'label', value ) } />
+								<TextControl label={ __( 'URL (empty = current)', 'mk-builder' ) } value={ crumb.url } onChange={ ( value ) => updateCrumb( index, 'url', value ) } placeholder="/" />
 								<Button isDestructive isSmall disabled={ crumbs.length < 2 } onClick={ () => removeCrumb( index ) }>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button isSecondary onClick={ addCrumb }>
-							{ __( 'Add crumb', 'twork-builder' ) }
+							{ __( 'Add crumb', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 
-					<PanelBody title={ __( 'Graphic Settings', 'twork-builder' ) } initialOpen={ false }>
-						<TextControl label={ __( 'Image alt text', 'twork-builder' ) } value={ graphicAlt } onChange={ ( value ) => setAttributes( { graphicAlt: value } ) } />
+					<PanelBody title={ __( 'Graphic Settings', 'mk-builder' ) } initialOpen={ false }>
+						<TextControl label={ __( 'Image alt text', 'mk-builder' ) } value={ graphicAlt } onChange={ ( value ) => setAttributes( { graphicAlt: value } ) } />
 						{ ! graphicImage ? (
 							<MediaPlaceholder
 								icon="format-image"
 								onSelect={ ( media ) => setAttributes( { graphicImage: media.url, graphicImageId: media.id, graphicAlt: media.alt || graphicAlt } ) }
 								allowedTypes={ [ 'image' ] }
 								multiple={ false }
-								labels={ { title: __( 'Side graphic (PNG/SVG)', 'twork-builder' ) } }
+								labels={ { title: __( 'Side graphic (PNG/SVG)', 'mk-builder' ) } }
 							/>
 						) : (
 							<>
 								<img src={ graphicImage } alt="" style={ { maxWidth: graphicMaxWidth, height: 'auto' } } />
 								<Button isSecondary isSmall onClick={ () => setAttributes( { graphicImage: '', graphicImageId: null } ) }>
-									{ __( 'Remove graphic', 'twork-builder' ) }
+									{ __( 'Remove graphic', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
-						<RangeControl label={ __( 'Max width (px)', 'twork-builder' ) } value={ graphicMaxWidth } onChange={ ( value ) => setAttributes( { graphicMaxWidth: value } ) } min={ 200 } max={ 640 } step={ 10 } />
-						<ToggleControl label={ __( 'Slide-in animation', 'twork-builder' ) } checked={ enableTractorAnimation } onChange={ ( value ) => setAttributes( { enableTractorAnimation: value } ) } />
+						<RangeControl label={ __( 'Max width (px)', 'mk-builder' ) } value={ graphicMaxWidth } onChange={ ( value ) => setAttributes( { graphicMaxWidth: value } ) } min={ 200 } max={ 640 } step={ 10 } />
+						<ToggleControl label={ __( 'Slide-in animation', 'mk-builder' ) } checked={ enableTractorAnimation } onChange={ ( value ) => setAttributes( { enableTractorAnimation: value } ) } />
 					</PanelBody>
 
-					<PanelBody title={ __( 'Layout Settings', 'twork-builder' ) } initialOpen={ false }>
-						<RangeControl label={ __( 'Container max width (px)', 'twork-builder' ) } value={ containerMaxWidth } onChange={ ( value ) => setAttributes( { containerMaxWidth: value } ) } min={ 600 } max={ 1600 } step={ 10 } />
-						<RangeControl label={ __( 'Container width (%)', 'twork-builder' ) } value={ containerWidthPct } onChange={ ( value ) => setAttributes( { containerWidthPct: value } ) } min={ 70 } max={ 100 } />
-						<RangeControl label={ __( 'Padding top (px)', 'twork-builder' ) } value={ paddingTop } onChange={ ( value ) => setAttributes( { paddingTop: value } ) } min={ 60 } max={ 280 } step={ 4 } />
-						<RangeControl label={ __( 'Padding bottom (px)', 'twork-builder' ) } value={ paddingBottom } onChange={ ( value ) => setAttributes( { paddingBottom: value } ) } min={ 40 } max={ 200 } step={ 4 } />
-						<RangeControl label={ __( 'Content row min height (px)', 'twork-builder' ) } value={ containerMinHeight } onChange={ ( value ) => setAttributes( { containerMinHeight: value } ) } min={ 120 } max={ 400 } step={ 10 } />
+					<PanelBody title={ __( 'Layout Settings', 'mk-builder' ) } initialOpen={ false }>
+						<RangeControl label={ __( 'Container max width (px)', 'mk-builder' ) } value={ containerMaxWidth } onChange={ ( value ) => setAttributes( { containerMaxWidth: value } ) } min={ 600 } max={ 1600 } step={ 10 } />
+						<RangeControl label={ __( 'Container width (%)', 'mk-builder' ) } value={ containerWidthPct } onChange={ ( value ) => setAttributes( { containerWidthPct: value } ) } min={ 70 } max={ 100 } />
+						<RangeControl label={ __( 'Padding top (px)', 'mk-builder' ) } value={ paddingTop } onChange={ ( value ) => setAttributes( { paddingTop: value } ) } min={ 60 } max={ 280 } step={ 4 } />
+						<RangeControl label={ __( 'Padding bottom (px)', 'mk-builder' ) } value={ paddingBottom } onChange={ ( value ) => setAttributes( { paddingBottom: value } ) } min={ 40 } max={ 200 } step={ 4 } />
+						<RangeControl label={ __( 'Content row min height (px)', 'mk-builder' ) } value={ containerMinHeight } onChange={ ( value ) => setAttributes( { containerMinHeight: value } ) } min={ 120 } max={ 400 } step={ 10 } />
 					</PanelBody>
 				</InspectorControls>
 			) }
 
 			<section { ...blockProps }>
 				{ backgroundType === 'video' && backgroundVideo && (
-					<div className="twork-page-header__video-layer" aria-hidden="true">
+					<div className="mk-page-header__video-layer" aria-hidden="true">
 						<video src={ backgroundVideo } autoPlay muted loop playsInline />
 					</div>
 				) }
 				{ backgroundType === 'image' && backgroundImage && (
-					<div className="twork-page-header__image-layer" style={ { backgroundImage: `url(${ backgroundImage })`, backgroundPosition } } aria-hidden="true" />
+					<div className="mk-page-header__image-layer" style={ { backgroundImage: `url(${ backgroundImage })`, backgroundPosition } } aria-hidden="true" />
 				) }
-				<div className="twork-page-header__bg-overlay" aria-hidden="true" />
+				<div className="mk-page-header__bg-overlay" aria-hidden="true" />
 
-				<div className="twork-page-header__container">
-					<div className="twork-page-header__content">
+				<div className="mk-page-header__container">
+					<div className="mk-page-header__content">
 						<RichText
 							tagName="h1"
-							className="twork-page-header__title"
+							className="mk-page-header__title"
 							value={ title }
 							onChange={ ( value ) => setAttributes( { title: value } ) }
-							placeholder={ __( 'Page title', 'twork-builder' ) }
+							placeholder={ __( 'Page title', 'mk-builder' ) }
 							allowedFormats={ [ 'core/bold', 'core/italic' ] }
 						/>
 
 						{ crumbs.length > 0 && (
 							<nav
-								className="twork-page-header__breadcrumb-nav"
+								className="mk-page-header__breadcrumb-nav"
 								aria-label="Breadcrumb"
 							>
-								<ul className="twork-page-header__breadcrumb">
+								<ul className="mk-page-header__breadcrumb">
 									{ crumbs.map( ( crumb, index ) => {
 										const label = crumb?.label ?? '';
 										const url = crumb?.url ?? '';
@@ -387,7 +387,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</div>
 
 					{ graphicImage ? (
-						<div className="twork-page-header__graphic">
+						<div className="mk-page-header__graphic">
 							<MediaUpload
 								onSelect={ ( media ) =>
 									setAttributes( {
@@ -402,7 +402,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<img
 										src={ graphicImage }
 										alt={ graphicAlt || '' }
-										className="twork-page-header__img"
+										className="mk-page-header__img"
 										style={ { maxWidth: `${ graphicMaxWidth }px` } }
 										onClick={ open }
 										role="button"
@@ -418,13 +418,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							/>
 						</div>
 					) : (
-						<div className="twork-page-header__graphic twork-page-header__graphic--placeholder">
+						<div className="mk-page-header__graphic mk-page-header__graphic--placeholder">
 							<MediaPlaceholder
 								icon="format-image"
 								onSelect={ ( media ) => setAttributes( { graphicImage: media.url, graphicImageId: media.id, graphicAlt: media.alt || graphicAlt } ) }
 								allowedTypes={ [ 'image' ] }
 								multiple={ false }
-								labels={ { title: __( 'Graphic', 'twork-builder' ) } }
+								labels={ { title: __( 'Graphic', 'mk-builder' ) } }
 							/>
 						</div>
 					) }

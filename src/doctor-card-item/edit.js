@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -19,18 +19,18 @@ import {
 const Divider = StableDivider || ExperimentalDivider;
 
 const DEPARTMENT_OPTIONS = [
-	{ label: __( 'Heart Centre', 'twork-builder' ), value: 'heart' },
-	{ label: __( 'Neuro Centre', 'twork-builder' ), value: 'neuro' },
-	{ label: __( 'Cancer Centre', 'twork-builder' ), value: 'cancer' },
-	{ label: __( 'Paediatrics', 'twork-builder' ), value: 'peds' },
-	{ label: __( 'General Medicine', 'twork-builder' ), value: 'general' },
-	{ label: __( 'ENT', 'twork-builder' ), value: 'ent' },
-	{ label: __( 'Dental', 'twork-builder' ), value: 'dental' },
+	{ label: __( 'Heart Centre', 'mk-builder' ), value: 'heart' },
+	{ label: __( 'Neuro Centre', 'mk-builder' ), value: 'neuro' },
+	{ label: __( 'Cancer Centre', 'mk-builder' ), value: 'cancer' },
+	{ label: __( 'Paediatrics', 'mk-builder' ), value: 'peds' },
+	{ label: __( 'General Medicine', 'mk-builder' ), value: 'general' },
+	{ label: __( 'ENT', 'mk-builder' ), value: 'ent' },
+	{ label: __( 'Dental', 'mk-builder' ), value: 'dental' },
 ];
 
 const GENDER_OPTIONS = [
-	{ label: __( 'Male', 'twork-builder' ), value: 'male' },
-	{ label: __( 'Female', 'twork-builder' ), value: 'female' },
+	{ label: __( 'Male', 'mk-builder' ), value: 'male' },
+	{ label: __( 'Female', 'mk-builder' ), value: 'female' },
 ];
 
 const getDepartmentLabel = ( slug ) => {
@@ -62,7 +62,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-doctor-card-item-editor',
+			className: 'mk-doctor-card-item-editor',
 			style: {
 				borderRadius: '10px',
 				overflow: 'hidden',
@@ -81,7 +81,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Doctor Image', 'twork-builder' ) }
+						title={ __( 'Doctor Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ! doctorImage ? (
@@ -97,7 +97,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Doctor Photo',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -124,13 +124,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove Image', 'twork-builder' ) }
+									{ __( 'Remove Image', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
 						<Divider />
 						<BaseControl
-							label={ __( 'Image Height (px)', 'twork-builder' ) }
+							label={ __( 'Image Height (px)', 'mk-builder' ) }
 						>
 							<input
 								type="number"
@@ -149,19 +149,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							/>
 						</BaseControl>
 						<SelectControl
-							label={ __( 'Object Fit', 'twork-builder' ) }
+							label={ __( 'Object Fit', 'mk-builder' ) }
 							value={ imageObjectFit }
 							options={ [
 								{
-									label: __( 'Cover', 'twork-builder' ),
+									label: __( 'Cover', 'mk-builder' ),
 									value: 'cover',
 								},
 								{
-									label: __( 'Contain', 'twork-builder' ),
+									label: __( 'Contain', 'mk-builder' ),
 									value: 'contain',
 								},
 								{
-									label: __( 'Fill', 'twork-builder' ),
+									label: __( 'Fill', 'mk-builder' ),
 									value: 'fill',
 								},
 							] }
@@ -171,23 +171,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Object Position', 'twork-builder' ) }
+							label={ __( 'Object Position', 'mk-builder' ) }
 							value={ imageObjectPosition }
 							options={ [
 								{
-									label: __( 'Top Center', 'twork-builder' ),
+									label: __( 'Top Center', 'mk-builder' ),
 									value: 'top center',
 								},
 								{
-									label: __( 'Center', 'twork-builder' ),
+									label: __( 'Center', 'mk-builder' ),
 									value: 'center',
 								},
 								{
-									label: __( 'Top', 'twork-builder' ),
+									label: __( 'Top', 'mk-builder' ),
 									value: 'top',
 								},
 								{
-									label: __( 'Bottom', 'twork-builder' ),
+									label: __( 'Bottom', 'mk-builder' ),
 									value: 'bottom',
 								},
 							] }
@@ -198,11 +198,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Availability Badge', 'twork-builder' ) }
+						title={ __( 'Availability Badge', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show Badge', 'twork-builder' ) }
+							label={ __( 'Show Badge', 'mk-builder' ) }
 							checked={ showBadge }
 							onChange={ ( val ) =>
 								setAttributes( { showBadge: val } )
@@ -211,7 +211,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ showBadge && (
 							<TextControl
-								label={ __( 'Badge Text', 'twork-builder' ) }
+								label={ __( 'Badge Text', 'mk-builder' ) }
 								value={ badgeText }
 								onChange={ ( val ) =>
 									setAttributes( { badgeText: val } )
@@ -223,12 +223,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					<PanelBody
 						title={ __(
 							'Department & Gender (for filtering)',
-							'twork-builder'
+							'mk-builder'
 						) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Department (slug)', 'twork-builder' ) }
+							label={ __( 'Department (slug)', 'mk-builder' ) }
 							value={ departmentSlug }
 							options={ DEPARTMENT_OPTIONS }
 							onChange={ ( val ) =>
@@ -239,14 +239,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Used for filter; also sets label if not custom.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
 							label={ __(
 								'Department Label (display)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ departmentLabel }
 							onChange={ ( val ) =>
@@ -254,39 +254,39 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Override display text, e.g. "Heart Centre".',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<SelectControl
-							label={ __( 'Gender', 'twork-builder' ) }
+							label={ __( 'Gender', 'mk-builder' ) }
 							value={ gender }
 							options={ GENDER_OPTIONS }
 							onChange={ ( val ) =>
 								setAttributes( { gender: val } )
 							}
-							help={ __( 'Used for filter.', 'twork-builder' ) }
+							help={ __( 'Used for filter.', 'mk-builder' ) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Doctor Info', 'twork-builder' ) }
+						title={ __( 'Doctor Info', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Doctor Name', 'twork-builder' ) }
+							label={ __( 'Doctor Name', 'mk-builder' ) }
 							value={ doctorName }
 							onChange={ ( val ) =>
 								setAttributes( { doctorName: val } )
 							}
 							help={ __(
 								'Used for search filter and card title.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Qualifications', 'twork-builder' ) }
+							label={ __( 'Qualifications', 'mk-builder' ) }
 							value={ qualifications }
 							onChange={ ( val ) =>
 								setAttributes( { qualifications: val } )
@@ -295,11 +295,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Links', 'twork-builder' ) }
+						title={ __( 'Links', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Profile URL', 'twork-builder' ) }
+							label={ __( 'Profile URL', 'mk-builder' ) }
 							value={ profileUrl }
 							onChange={ ( val ) =>
 								setAttributes( { profileUrl: val } )
@@ -310,7 +310,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Profile: Open in new tab',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ profileOpenInNewTab }
 							onChange={ ( val ) =>
@@ -321,7 +321,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Profile Button Text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ profileButtonText }
 							onChange={ ( val ) =>
@@ -331,7 +331,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<TextControl
-							label={ __( 'Book URL', 'twork-builder' ) }
+							label={ __( 'Book URL', 'mk-builder' ) }
 							value={ bookUrl }
 							onChange={ ( val ) =>
 								setAttributes( { bookUrl: val } )
@@ -342,7 +342,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Book: Open in new tab',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ bookOpenInNewTab }
 							onChange={ ( val ) =>
@@ -351,7 +351,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Book Button Text', 'twork-builder' ) }
+							label={ __( 'Book Button Text', 'mk-builder' ) }
 							value={ bookButtonText }
 							onChange={ ( val ) =>
 								setAttributes( { bookButtonText: val } )
@@ -416,7 +416,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							fontSize: '14px',
 						} }
 					>
-						{ __( 'Doctor photo', 'twork-builder' ) }
+						{ __( 'Doctor photo', 'mk-builder' ) }
 					</div>
 				) }
 
@@ -443,7 +443,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { doctorName: val } )
 						}
-						placeholder={ __( 'Doctor name…', 'twork-builder' ) }
+						placeholder={ __( 'Doctor name…', 'mk-builder' ) }
 						className="doc-name"
 						style={ {
 							fontSize: '1.1rem',
@@ -459,7 +459,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { qualifications: val } )
 						}
-						placeholder={ __( 'Qualifications…', 'twork-builder' ) }
+						placeholder={ __( 'Qualifications…', 'mk-builder' ) }
 						className="doc-qual"
 						style={ {
 							fontSize: '0.8rem',

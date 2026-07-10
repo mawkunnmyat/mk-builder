@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	PanelColorSettings,
@@ -77,7 +77,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'lab-hero twork-lab-hero-section-editor',
+			className: 'lab-hero mk-lab-hero-section-editor',
 			style: {
 				minHeight: `${ Number( minHeight ) }px`,
 				display: 'flex',
@@ -119,8 +119,8 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 			stats: [
 				...( stats || [] ),
 				{
-					value: __( '100+', 'twork-builder' ),
-					label: __( 'New stat', 'twork-builder' ),
+					value: __( '100+', 'mk-builder' ),
+					label: __( 'New stat', 'mk-builder' ),
 				},
 			],
 		} );
@@ -137,11 +137,11 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Hero background', 'twork-builder' ) }
+						title={ __( 'Hero background', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Background image', 'twork-builder' ) }
+							label={ __( 'Background image', 'mk-builder' ) }
 						>
 							{ ! backgroundImageUrl ? (
 								<MediaPlaceholder
@@ -156,7 +156,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Hero background',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -184,7 +184,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>
@@ -194,7 +194,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<Divider />
 
 						<PanelColorSettings
-							title={ __( 'Overlay', 'twork-builder' ) }
+							title={ __( 'Overlay', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundOverlayColor,
@@ -204,14 +204,14 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Overlay color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Overlay opacity', 'twork-builder' ) }
+							label={ __( 'Overlay opacity', 'mk-builder' ) }
 							value={ backgroundOverlayOpacity }
 							onChange={ ( val ) =>
 								setAttributes( {
@@ -224,7 +224,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Min height (px)', 'twork-builder' ) }
+							label={ __( 'Min height (px)', 'mk-builder' ) }
 							value={ minHeight }
 							onChange={ ( val ) =>
 								setAttributes( { minHeight: val } )
@@ -236,13 +236,13 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -256,7 +256,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Horizontal padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -269,13 +269,13 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Buttons', 'twork-builder' ) }
+						title={ __( 'Buttons', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
 							label={ __(
 								'Primary button URL',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ primaryButtonUrl }
 							onChange={ ( val ) =>
@@ -286,7 +286,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Secondary button URL',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ secondaryButtonUrl }
 							onChange={ ( val ) =>
@@ -296,7 +296,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Stats bubbles', 'twork-builder' ) }
+						title={ __( 'Stats bubbles', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ ( stats || [] ).map( ( item, index ) => (
@@ -309,7 +309,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								} }
 							>
 								<TextControl
-									label={ __( 'Value', 'twork-builder' ) }
+									label={ __( 'Value', 'mk-builder' ) }
 									value={ item?.value || '' }
 									onChange={ ( val ) =>
 										updateStat( index, 'value', val )
@@ -317,7 +317,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Label', 'twork-builder' ) }
+									label={ __( 'Label', 'mk-builder' ) }
 									value={ item?.label || '' }
 									onChange={ ( val ) =>
 										updateStat( index, 'label', val )
@@ -326,7 +326,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 
 								<Button
 									icon="no-alt"
-									label={ __( 'Remove', 'twork-builder' ) }
+									label={ __( 'Remove', 'mk-builder' ) }
 									isDestructive
 									isSmall
 									onClick={ () => removeStat( index ) }
@@ -334,18 +334,18 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							</div>
 						) ) }
 						<Button variant="secondary" isSmall onClick={ addStat }>
-							{ __( 'Add stat bubble', 'twork-builder' ) }
+							{ __( 'Add stat bubble', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable fade-up classes',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -353,7 +353,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Adds fade-up class to content and stats for GSAP/ScrollTrigger.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -389,7 +389,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'ISO 15189 Certified',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -402,7 +402,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							multiline="br"
 							placeholder={ __(
 								'Precision Science, Accurate Diagnosis.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -414,7 +414,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Advanced pathology services using world-class analyzers. Trusted by thousands for accurate and timely results.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -428,7 +428,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Check Prices',
-									'twork-builder'
+									'mk-builder'
 								) }
 								href={ primaryButtonUrl || undefined }
 							/>
@@ -444,7 +444,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Home Visit',
-									'twork-builder'
+									'mk-builder'
 								) }
 								href={ secondaryButtonUrl || undefined }
 							/>

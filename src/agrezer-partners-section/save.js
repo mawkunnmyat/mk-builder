@@ -15,14 +15,14 @@ export default function save( { attributes } ) {
 	const gapHalf = `${ trackGap / 2 }px`;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-partners twork-partners-section',
+		className: 'mk-partners mk-partners-section',
 		style: {
 			backgroundColor,
-			'--twork-partners-py': `${ marqueePaddingY }px`,
-			'--twork-partners-border': borderColor,
-			'--twork-partners-gap': `${ trackGap }px`,
-			'--twork-partners-gap-half': gapHalf,
-			'--twork-partners-duration': `${ animationDuration }s`,
+			'--mk-partners-py': `${ marqueePaddingY }px`,
+			'--mk-partners-border': borderColor,
+			'--mk-partners-gap': `${ trackGap }px`,
+			'--mk-partners-gap-half': gapHalf,
+			'--mk-partners-duration': `${ animationDuration }s`,
 		},
 		'data-marquee': enableMarquee ? 'true' : 'false',
 		'data-pause-hover': pauseOnHover ? 'true' : 'false',
@@ -31,8 +31,8 @@ export default function save( { attributes } ) {
 
 	return (
 		<section { ...blockProps }>
-			<div className="twork-partners__marquee">
-				<div className="twork-partners__track">
+			<div className="mk-partners__marquee">
+				<div className="mk-partners__track">
 					<InnerBlocks.Content />
 				</div>
 			</div>

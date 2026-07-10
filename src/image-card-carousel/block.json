@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/image-card-carousel",
+	"name": "mk/image-card-carousel",
 	"version": "1.0.0",
 	"title": "Image Card Carousel",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "images-alt2",
 	"description": "Services carousel with image cards, section header, and dot navigation.",
-	"keywords": [ "carousel", "services", "slider", "cards", "twork" ],
+	"keywords": [ "carousel", "services", "slider", "cards", "mk" ],
 	"attributes": {
 		"sectionEyebrow": {
 			"type": "string",
@@ -51,7 +51,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/image-card-slide",
+				"name": "mk/image-card-slide",
 				"attributes": {
 					"title": "Butter & Ghee Production",
 					"ctaLabel": "Learn more",
@@ -61,7 +61,7 @@
 				}
 			},
 			{
-				"name": "twork/image-card-slide",
+				"name": "mk/image-card-slide",
 				"attributes": {
 					"title": "Quality Control",
 					"ctaLabel": "Learn more",
@@ -71,7 +71,7 @@
 				}
 			},
 			{
-				"name": "twork/image-card-slide",
+				"name": "mk/image-card-slide",
 				"attributes": {
 					"title": "Nationwide Distribution",
 					"ctaLabel": "Learn more",
@@ -81,7 +81,7 @@
 				}
 			},
 			{
-				"name": "twork/image-card-slide",
+				"name": "mk/image-card-slide",
 				"attributes": {
 					"title": "Traditional Craft",
 					"ctaLabel": "Learn more",
@@ -92,7 +92,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./view.js",
 	"style": "file:./style-index.css"

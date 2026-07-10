@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	PanelColorSettings,
@@ -86,7 +86,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 	);
 
 	const categoryOptions = [
-		{ label: __( 'All categories', 'twork-builder' ), value: 0 },
+		{ label: __( 'All categories', 'mk-builder' ), value: 0 },
 		...( categories || [] ).map( ( cat ) => ( {
 			label: cat.name,
 			value: cat.id,
@@ -95,7 +95,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'phy-section twork-phy-facilities-section-editor',
+			className: 'phy-section mk-phy-facilities-section-editor',
 			style: {
 				backgroundColor,
 				paddingTop: `${ Number( paddingTop ) }px`,
@@ -111,7 +111,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Posts source', 'twork-builder' ) }
+						title={ __( 'Posts source', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<p
@@ -123,23 +123,23 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						>
 							{ __(
 								'Facility cards are loaded from WordPress Posts. Set Featured Image, Title and Excerpt on each post.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						</p>
 
 						<SelectControl
-							label={ __( 'Source', 'twork-builder' ) }
+							label={ __( 'Source', 'mk-builder' ) }
 							value={ source }
 							options={ [
 								{
 									label: __(
 										'Latest posts',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'recent',
 								},
 								{
-									label: __( 'By category', 'twork-builder' ),
+									label: __( 'By category', 'mk-builder' ),
 									value: 'category',
 								},
 							] }
@@ -150,7 +150,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 
 						{ source === 'category' && (
 							<SelectControl
-								label={ __( 'Category', 'twork-builder' ) }
+								label={ __( 'Category', 'mk-builder' ) }
 								value={ categoryId || 0 }
 								options={ categoryOptions }
 								onChange={ ( val ) =>
@@ -164,7 +164,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Number of facilities',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ numberOfItems }
 							onChange={ ( val ) =>
@@ -176,19 +176,19 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Order by', 'twork-builder' ) }
+							label={ __( 'Order by', 'mk-builder' ) }
 							value={ orderBy }
 							options={ [
 								{
-									label: __( 'Date', 'twork-builder' ),
+									label: __( 'Date', 'mk-builder' ),
 									value: 'date',
 								},
 								{
-									label: __( 'Title', 'twork-builder' ),
+									label: __( 'Title', 'mk-builder' ),
 									value: 'title',
 								},
 								{
-									label: __( 'Random', 'twork-builder' ),
+									label: __( 'Random', 'mk-builder' ),
 									value: 'rand',
 								},
 							] }
@@ -198,20 +198,20 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Order', 'twork-builder' ) }
+							label={ __( 'Order', 'mk-builder' ) }
 							value={ order }
 							options={ [
 								{
 									label: __(
 										'Newest first',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'DESC',
 								},
 								{
 									label: __(
 										'Oldest first',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'ASC',
 								},
@@ -223,11 +223,11 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Section layout', 'twork-builder' ) }
+						title={ __( 'Section layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -237,14 +237,14 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -257,7 +257,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -271,7 +271,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -285,7 +285,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Horizontal padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -298,11 +298,11 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Header', 'twork-builder' ) }
+						title={ __( 'Header', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show header', 'twork-builder' ) }
+							label={ __( 'Show header', 'mk-builder' ) }
 							checked={ showSectionHeader }
 							onChange={ ( val ) =>
 								setAttributes( { showSectionHeader: val } )
@@ -310,7 +310,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ headerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { headerMaxWidth: val } )
@@ -321,19 +321,19 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Alignment', 'twork-builder' ) }
+							label={ __( 'Alignment', 'mk-builder' ) }
 							value={ headerAlign }
 							options={ [
 								{
-									label: __( 'Left', 'twork-builder' ),
+									label: __( 'Left', 'mk-builder' ),
 									value: 'left',
 								},
 								{
-									label: __( 'Center', 'twork-builder' ),
+									label: __( 'Center', 'mk-builder' ),
 									value: 'center',
 								},
 								{
-									label: __( 'Right', 'twork-builder' ),
+									label: __( 'Right', 'mk-builder' ),
 									value: 'right',
 								},
 							] }
@@ -344,11 +344,11 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Slider cards', 'twork-builder' ) }
+						title={ __( 'Slider cards', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Card width (px)', 'twork-builder' ) }
+							label={ __( 'Card width (px)', 'mk-builder' ) }
 							value={ cardWidth }
 							onChange={ ( val ) =>
 								setAttributes( { cardWidth: val } )
@@ -359,7 +359,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Image height (px)', 'twork-builder' ) }
+							label={ __( 'Image height (px)', 'mk-builder' ) }
 							value={ imageHeight }
 							onChange={ ( val ) =>
 								setAttributes( { imageHeight: val } )
@@ -370,7 +370,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gap }
 							onChange={ ( val ) =>
 								setAttributes( { gap: val } )
@@ -382,13 +382,13 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable fade-up classes',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -427,7 +427,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Our Facilities',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 
@@ -439,20 +439,20 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Fully equipped gym and therapy rooms.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</div>
 					) }
 
 					<div
-						className="phy-facility-slider twork-phy-facility-slider-preview"
+						className="phy-facility-slider mk-phy-facility-slider-preview"
 						style={ {
 							display: 'block',
 						} }
 					>
 						<ServerSideRender
-							block="twork/phy-facilities-section"
+							block="mk/phy-facilities-section"
 							attributes={ attributes }
 						/>
 					</div>

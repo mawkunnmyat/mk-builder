@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-area-section",
+	"name": "mk/hc-area-section",
 	"version": "1.0.0",
 	"title": "Area Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "location-alt",
 	"description": "Service Coverage Areas: dark section with title, subtitle and flex grid of area tags. Matches home-care.html.",
-	"keywords": [ "home care", "coverage", "area", "townships", "twork" ],
+	"keywords": [ "home care", "coverage", "area", "townships", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -81,50 +81,50 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/hc-area-tag",
+				"name": "mk/hc-area-tag",
 				"attributes": {
 					"label": "Chanayethazan"
 				}
 			},
 			{
-				"name": "twork/hc-area-tag",
+				"name": "mk/hc-area-tag",
 				"attributes": {
 					"label": "Chanmyathazi"
 				}
 			},
 			{
-				"name": "twork/hc-area-tag",
+				"name": "mk/hc-area-tag",
 				"attributes": {
 					"label": "Maha Aungmye"
 				}
 			},
 			{
-				"name": "twork/hc-area-tag",
+				"name": "mk/hc-area-tag",
 				"attributes": {
 					"label": "Aungmyethazan"
 				}
 			},
 			{
-				"name": "twork/hc-area-tag",
+				"name": "mk/hc-area-tag",
 				"attributes": {
 					"label": "Pyigyidagun"
 				}
 			},
 			{
-				"name": "twork/hc-area-tag",
+				"name": "mk/hc-area-tag",
 				"attributes": {
 					"label": "Amarapura"
 				}
 			},
 			{
-				"name": "twork/hc-area-tag",
+				"name": "mk/hc-area-tag",
 				"attributes": {
 					"label": "Patheingyi"
 				}
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/tele-specialty-section",
+	"name": "mk/tele-specialty-section",
 	"version": "1.0.0",
 	"title": "Specialty Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "Available for Tele-Consultation section with title, description and specialty grid.",
 	"keywords": [
@@ -12,7 +12,7 @@
 		"specialty",
 		"consultation",
 		"grid",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"sectionPaddingTop": {
@@ -107,56 +107,56 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/tele-specialty-item",
+				"name": "mk/tele-specialty-item",
 				"attributes": {
 					"iconClass": "fas fa-stethoscope",
 					"title": "General Medicine"
 				}
 			},
 			{
-				"name": "twork/tele-specialty-item",
+				"name": "mk/tele-specialty-item",
 				"attributes": {
 					"iconClass": "fas fa-allergies",
 					"title": "Dermatology"
 				}
 			},
 			{
-				"name": "twork/tele-specialty-item",
+				"name": "mk/tele-specialty-item",
 				"attributes": {
 					"iconClass": "fas fa-baby",
 					"title": "Pediatrics"
 				}
 			},
 			{
-				"name": "twork/tele-specialty-item",
+				"name": "mk/tele-specialty-item",
 				"attributes": {
 					"iconClass": "fas fa-brain",
 					"title": "Psychology"
 				}
 			},
 			{
-				"name": "twork/tele-specialty-item",
+				"name": "mk/tele-specialty-item",
 				"attributes": {
 					"iconClass": "fas fa-female",
 					"title": "Gynecology"
 				}
 			},
 			{
-				"name": "twork/tele-specialty-item",
+				"name": "mk/tele-specialty-item",
 				"attributes": {
 					"iconClass": "fas fa-carrot",
 					"title": "Nutrition / Diet"
 				}
 			},
 			{
-				"name": "twork/tele-specialty-item",
+				"name": "mk/tele-specialty-item",
 				"attributes": {
 					"iconClass": "fas fa-heartbeat",
 					"title": "Cardiology Follow-up"
 				}
 			},
 			{
-				"name": "twork/tele-specialty-item",
+				"name": "mk/tele-specialty-item",
 				"attributes": {
 					"iconClass": "fas fa-notes-medical",
 					"title": "Report Review"
@@ -164,7 +164,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

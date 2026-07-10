@@ -15,10 +15,10 @@ import {
 	Button,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/agrezer-team-card' ];
+const ALLOWED_BLOCKS = [ 'mk/agrezer-team-card' ];
 const TEMPLATE = [
 	[
-		'twork/agrezer-team-card',
+		'mk/agrezer-team-card',
 		{
 			name: 'Harry Black',
 			role: 'Chief Executive Officer',
@@ -26,7 +26,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-team-card',
+		'mk/agrezer-team-card',
 		{
 			name: 'Marry Olson',
 			role: 'Shop Keeper',
@@ -34,7 +34,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-team-card',
+		'mk/agrezer-team-card',
 		{
 			name: 'Arun Patel',
 			role: 'Chief Agronomist',
@@ -60,7 +60,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps( {
-		className: 'agrezer-team-section twork-agrezer-team-section-editor',
+		className: 'agrezer-team-section mk-agrezer-team-section-editor',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
@@ -80,11 +80,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Tagline icon', 'twork-builder' ) }
+						title={ __( 'Tagline icon', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ tagIconAlt }
 							onChange={ ( val ) =>
 								setAttributes( { tagIconAlt: val } )
@@ -105,7 +105,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Small tagline icon',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -127,20 +127,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove icon', 'twork-builder' ) }
+									{ __( 'Remove icon', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Grid', 'twork-builder' ) }
+						title={ __( 'Grid', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Columns (large screens)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ columns }
 							onChange={ ( val ) =>
@@ -151,7 +151,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gridGap }
 							onChange={ ( val ) =>
 								setAttributes( { gridGap: val } )
@@ -163,7 +163,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Space below heading (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ headerMarginBottom }
 							onChange={ ( val ) =>
@@ -175,13 +175,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -195,7 +195,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container width (%)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerWidthPct }
 							onChange={ ( val ) =>
@@ -206,7 +206,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -219,7 +219,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -232,7 +232,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						colorSettings={ [
 							{
 								value: backgroundColor,
@@ -240,7 +240,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									setAttributes( { backgroundColor: val } ),
 								label: __(
 									'Section background',
-									'twork-builder'
+									'mk-builder'
 								),
 							},
 						] }
@@ -292,7 +292,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { tagline: val } )
 								}
-								placeholder={ __( 'Tagline', 'twork-builder' ) }
+								placeholder={ __( 'Tagline', 'mk-builder' ) }
 								allowedFormats={ [
 									'core/bold',
 									'core/italic',
@@ -308,7 +308,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section title',
-								'twork-builder'
+								'mk-builder'
 							) }
 							allowedFormats={ [
 								'core/bold',

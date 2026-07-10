@@ -2,30 +2,30 @@
 
 // Shweghee Brand Header – ported from shweghee/src/components/header/header.css
 
-.twork-brand-header {
-	--twork-brand-color: #00ccff;
-	--twork-brand-primary: #ff7f00;
-	--twork-brand-primary-dark: #e06800;
-	--twork-brand-text: #1a1a1a;
-	--twork-brand-text-muted: #666666;
-	--twork-brand-bg: var(--twork-brand-header-bg, #ffffff);
-	--twork-brand-border: #e8e8e8;
-	--twork-brand-header-height: 88px;
-	--twork-brand-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-	--twork-brand-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
-	--twork-brand-space-2: 0.5rem;
-	--twork-brand-space-3: 0.75rem;
-	--twork-brand-space-4: 1rem;
-	--twork-brand-space-5: 1.5rem;
-	--twork-brand-font-sm: 0.875rem;
-	--twork-brand-font-xs: 0.75rem;
-	--twork-brand-radius-sm: 4px;
-	--twork-brand-z-header: 200;
+.mk-brand-header {
+	--mk-brand-color: #00ccff;
+	--mk-brand-primary: #ff7f00;
+	--mk-brand-primary-dark: #e06800;
+	--mk-brand-text: #1a1a1a;
+	--mk-brand-text-muted: #666666;
+	--mk-brand-bg: var(--mk-brand-header-bg, #ffffff);
+	--mk-brand-border: #e8e8e8;
+	--mk-brand-header-height: 88px;
+	--mk-brand-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+	--mk-brand-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
+	--mk-brand-space-2: 0.5rem;
+	--mk-brand-space-3: 0.75rem;
+	--mk-brand-space-4: 1rem;
+	--mk-brand-space-5: 1.5rem;
+	--mk-brand-font-sm: 0.875rem;
+	--mk-brand-font-xs: 0.75rem;
+	--mk-brand-radius-sm: 4px;
+	--mk-brand-z-header: 200;
 
 	position: relative;
 	top: 0;
-	z-index: var(--twork-brand-z-header);
-	background: var(--twork-brand-bg);
+	z-index: var(--mk-brand-z-header);
+	background: var(--mk-brand-bg);
 	transition: box-shadow 0.2s;
 	font-family: $font-primary;
 
@@ -41,19 +41,19 @@
 	}
 
 	&--scrolled {
-		box-shadow: var(--twork-brand-shadow-sm);
+		box-shadow: var(--mk-brand-shadow-sm);
 	}
 
 	&__inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: var(--twork-brand-space-4);
-		min-height: var(--twork-brand-header-height);
-		padding-block: var(--twork-brand-space-3);
+		gap: var(--mk-brand-space-4);
+		min-height: var(--mk-brand-header-height);
+		padding-block: var(--mk-brand-space-3);
 		max-width: 1200px;
 		margin-inline: auto;
-		padding-inline: var(--twork-brand-space-4);
+		padding-inline: var(--mk-brand-space-4);
 	}
 
 	&__brand {
@@ -82,7 +82,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		gap: var(--twork-brand-space-5);
+		gap: var(--mk-brand-space-5);
 		flex: 1;
 
 		> .block-editor-inner-blocks,
@@ -92,43 +92,43 @@
 	}
 
 	&__nav-link {
-		color: var(--twork-brand-text);
+		color: var(--mk-brand-text);
 		text-decoration: none;
-		font-size: var(--twork-brand-font-sm);
+		font-size: var(--mk-brand-font-sm);
 		font-weight: 500;
 
 		&:hover,
 		&:focus-visible {
-			color: var(--twork-brand-primary);
+			color: var(--mk-brand-primary);
 		}
 	}
 
 	&__actions {
 		display: flex;
 		align-items: center;
-		gap: var(--twork-brand-space-4);
+		gap: var(--mk-brand-space-4);
 		flex-shrink: 0;
 	}
 
 	&__icon-btn {
 		border: 0;
 		background: transparent;
-		padding: var(--twork-brand-space-2);
+		padding: var(--mk-brand-space-2);
 		cursor: pointer;
-		color: var(--twork-brand-text);
+		color: var(--mk-brand-text);
 	}
 
 	&__hotline {
 		display: flex;
 		align-items: center;
-		gap: var(--twork-brand-space-2);
+		gap: var(--mk-brand-space-2);
 	}
 
 	&__hotline-label {
 		font-size: 0.65rem;
 		font-weight: 600;
 		letter-spacing: 0.06em;
-		color: var(--twork-brand-color);
+		color: var(--mk-brand-color);
 		text-transform: uppercase;
 		margin: 0;
 	}
@@ -136,8 +136,8 @@
 	&__hotline-phone {
 		display: block;
 		font-weight: 700;
-		font-size: var(--twork-brand-font-sm);
-		color: var(--twork-brand-text);
+		font-size: var(--mk-brand-font-sm);
+		color: var(--mk-brand-text);
 		text-decoration: none;
 	}
 
@@ -147,9 +147,9 @@
 		justify-content: center;
 		width: 44px;
 		height: 44px;
-		border: 1px solid var(--twork-brand-border);
+		border: 1px solid var(--mk-brand-border);
 		background: #fff;
-		border-radius: var(--twork-brand-radius-sm);
+		border-radius: var(--mk-brand-radius-sm);
 		cursor: pointer;
 	}
 
@@ -159,7 +159,7 @@
 		display: block;
 		width: 20px;
 		height: 2px;
-		background: var(--twork-brand-text);
+		background: var(--mk-brand-text);
 		margin-inline: auto;
 		position: relative;
 	}
@@ -222,8 +222,8 @@
 			right: 0;
 			flex-direction: column;
 			background: #fff;
-			padding: var(--twork-brand-space-4);
-			box-shadow: var(--twork-brand-shadow-md);
+			padding: var(--mk-brand-space-4);
+			box-shadow: var(--mk-brand-shadow-md);
 			align-items: flex-start;
 		}
 
@@ -244,20 +244,20 @@ body.nav-open {
 // Editor layout helpers
 .editor-styles-wrapper,
 .block-editor-block-list__layout {
-	.twork-brand-header--editor {
-		.twork-brand-header__nav {
+	.mk-brand-header--editor {
+		.mk-brand-header__nav {
 			.block-editor-inner-blocks,
 			.block-editor-block-list__layout {
 				display: flex;
 				flex-wrap: wrap;
 				align-items: center;
 				justify-content: center;
-				gap: var(--twork-brand-space-5);
+				gap: var(--mk-brand-space-5);
 				width: 100%;
 			}
 		}
 
-		.twork-brand-nav-item {
+		.mk-brand-nav-item {
 			display: inline-flex;
 		}
 	}

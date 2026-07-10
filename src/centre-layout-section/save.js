@@ -87,7 +87,7 @@ export default function save( { attributes } ) {
 		: undefined;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-centre-layout-section section-padding',
+		className: 'mk-centre-layout-section section-padding',
 		style: {
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,

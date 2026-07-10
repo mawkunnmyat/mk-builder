@@ -59,6 +59,6 @@
 	}
 
 	document
-		.querySelectorAll( '.twork-subscribe-bar' )
+		.querySelectorAll( '.mk-subscribe-bar' )
 		.forEach( initSubscribeBar );
 } )();

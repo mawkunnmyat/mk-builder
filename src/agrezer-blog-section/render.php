@@ -1,15 +1,15 @@
 <?php
 /**
- * Dynamic render for twork/posts-grid.
+ * Dynamic render for mk/posts-grid.
  *
  * Attribute names MUST match src/agrezer-blog-section/block.json (e.g. categoryIds, excludeIds).
  *
- * @package TworkBuilder
+ * @package MkBuilder
  */
 
 defined('ABSPATH') || exit;
 
-if (!function_exists('twork_posts_grid_icon_svg')) {
+if (!function_exists('mk_posts_grid_icon_svg')) {
     /**
      * Inline SVG for posts grid CTA icons (parity with agrezer-team-card ICONS).
      *
@@ -17,7 +17,7 @@ if (!function_exists('twork_posts_grid_icon_svg')) {
      * @param string $fallback Used when $type is unknown.
      * @return string
      */
-    function twork_posts_grid_icon_svg($type, $fallback = 'diagonal-arrow')
+    function mk_posts_grid_icon_svg($type, $fallback = 'diagonal-arrow')
     {
         $icons = array(
             'diagonal-arrow' => '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>',
@@ -125,7 +125,7 @@ $defaults = array(
 
 $atts = wp_parse_args($attributes, $defaults);
 
-$twork_hex_to_rgba = static function ($color, $opacity) {
+$mk_hex_to_rgba = static function ($color, $opacity) {
     $color = is_string($color) ? trim($color) : '';
     if (!preg_match('/^#([a-f0-9]{3}|[a-f0-9]{6})$/i', $color)) {
         $color = '#000000';
@@ -155,7 +155,7 @@ foreach (array('categoryIds', 'excludeIds') as $list_key) {
  * @param mixed $raw Array, comma-separated string, single scalar, or empty.
  * @return int[]
  */
-$twork_normalize_post_grid_ids = static function ($raw) {
+$mk_normalize_post_grid_ids = static function ($raw) {
     if (is_array($raw)) {
         $out = array_map('absint', $raw);
     } elseif (is_string($raw) && $raw !== '') {
@@ -174,8 +174,8 @@ $twork_normalize_post_grid_ids = static function ($raw) {
     return array_values(array_unique($out));
 };
 
-$category_ids = $twork_normalize_post_grid_ids($atts['categoryIds']);
-$exclude_ids  = $twork_normalize_post_grid_ids($atts['excludeIds']);
+$category_ids = $mk_normalize_post_grid_ids($atts['categoryIds']);
+$exclude_ids  = $mk_normalize_post_grid_ids($atts['excludeIds']);
 
 $posts_to_show = isset($atts['postsToShow']) ? (int) $atts['postsToShow'] : 3;
 $posts_to_show = max(1, min(12, $posts_to_show));
@@ -233,19 +233,19 @@ if (function_exists('get_block_wrapper_attributes')) {
     $overlay_css = (string) $atts['imageOverlayGradient'];
     $overlay_hover_css = (string) $atts['imageOverlayHoverGradient'];
     if ($overlay_css === '') {
-        $overlay_css = $twork_hex_to_rgba((string) $atts['imageOverlayColor'], $overlay_opacity);
+        $overlay_css = $mk_hex_to_rgba((string) $atts['imageOverlayColor'], $overlay_opacity);
     }
     if ($overlay_hover_css === '') {
-        $overlay_hover_css = $twork_hex_to_rgba((string) $atts['imageOverlayHoverColor'], $overlay_hover_opacity);
+        $overlay_hover_css = $mk_hex_to_rgba((string) $atts['imageOverlayHoverColor'], $overlay_hover_opacity);
     }
     $image_aspect = (string) $atts['imageAspectRatio'];
     if (!in_array($image_aspect, array('16/9', '4/3', '1/1', 'auto'), true)) {
         $image_aspect = '16/9';
     }
     $extra = array(
-        'class' => 'twork-blog',
+        'class' => 'mk-blog',
         'style' => sprintf(
-            'background-color:%s;padding-top:%dpx;padding-bottom:%dpx;--twork-blog-cols:%d;--twork-blog-max:%dpx;--twork-blog-width:%d%%;--twork-title-color:%s;--twork-title-size:%dpx;--twork-title-weight:%s;--twork-tagline-color:%s;--twork-tagline-bg:%s;--twork-tagline-size:%dpx;--twork-tagline-weight:%s;--twork-more-text:%s;--twork-more-bg:%s;--twork-more-text-hover:%s;--twork-more-bg-hover:%s;--twork-card-title-color:%s;--twork-card-title-hover:%s;--twork-card-title-size:%dpx;--twork-card-title-weight:%s;--twork-meta-color:%s;--twork-meta-icon-color:%s;--twork-meta-size:%dpx;--twork-meta-weight:%s;--twork-date-bg:%s;--twork-date-text:%s;--twork-date-radius:%dpx;--twork-read-text:%s;--twork-read-bg:%s;--twork-read-text-hover:%s;--twork-read-bg-hover:%s;--twork-read-icon:%s;--twork-read-icon-bg:%s;--twork-read-icon-hover:%s;--twork-read-icon-bg-hover:%s;--twork-card-bg:%s;--twork-card-radius:%dpx;--twork-card-border:%s;--twork-card-border-width:%dpx;--twork-card-shadow:%s;--twork-card-shadow-hover:%s;--twork-card-lift:%dpx;--twork-img-height:%dpx;--twork-img-fit:%s;--twork-img-radius:%dpx;--twork-img-aspect:%s;--twork-img-overlay:%s;--twork-img-overlay-hover:%s;',
+            'background-color:%s;padding-top:%dpx;padding-bottom:%dpx;--mk-blog-cols:%d;--mk-blog-max:%dpx;--mk-blog-width:%d%%;--mk-title-color:%s;--mk-title-size:%dpx;--mk-title-weight:%s;--mk-tagline-color:%s;--mk-tagline-bg:%s;--mk-tagline-size:%dpx;--mk-tagline-weight:%s;--mk-more-text:%s;--mk-more-bg:%s;--mk-more-text-hover:%s;--mk-more-bg-hover:%s;--mk-card-title-color:%s;--mk-card-title-hover:%s;--mk-card-title-size:%dpx;--mk-card-title-weight:%s;--mk-meta-color:%s;--mk-meta-icon-color:%s;--mk-meta-size:%dpx;--mk-meta-weight:%s;--mk-date-bg:%s;--mk-date-text:%s;--mk-date-radius:%dpx;--mk-read-text:%s;--mk-read-bg:%s;--mk-read-text-hover:%s;--mk-read-bg-hover:%s;--mk-read-icon:%s;--mk-read-icon-bg:%s;--mk-read-icon-hover:%s;--mk-read-icon-bg-hover:%s;--mk-card-bg:%s;--mk-card-radius:%dpx;--mk-card-border:%s;--mk-card-border-width:%dpx;--mk-card-shadow:%s;--mk-card-shadow-hover:%s;--mk-card-lift:%dpx;--mk-img-height:%dpx;--mk-img-fit:%s;--mk-img-radius:%dpx;--mk-img-aspect:%s;--mk-img-overlay:%s;--mk-img-overlay-hover:%s;',
             esc_attr((string) $atts['backgroundColor']),
             (int) $atts['paddingTop'],
             (int) $atts['paddingBottom'],
@@ -312,16 +312,16 @@ $tag_icon_is_video = (strpos($tag_icon_mime, 'video') === 0) || preg_match('/\.(
 ob_start();
 ?>
 <section <?php echo $wrapper_attributes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-    <div class="twork-blog__container">
-        <div class="twork-blog__header-row">
-            <div class="twork-blog__header-left">
+    <div class="mk-blog__container">
+        <div class="mk-blog__header-row">
+            <div class="mk-blog__header-left">
                 <?php if (!empty($atts['tagline']) || !empty($atts['tagIcon'])) : ?>
-                    <div class="twork-blog__tagline">
+                    <div class="mk-blog__tagline">
                         <?php if (!empty($atts['tagIcon'])) : ?>
                             <?php if ($tag_icon_is_video) : ?>
                                 <video
                                     src="<?php echo esc_url($tag_icon_url); ?>"
-                                    class="twork-blog__tag-icon twork-blog__tag-icon--media"
+                                    class="mk-blog__tag-icon mk-blog__tag-icon--media"
                                     autoplay
                                     loop
                                     muted
@@ -331,7 +331,7 @@ ob_start();
                                 <img
                                     src="<?php echo esc_url($tag_icon_url); ?>"
                                     alt="<?php echo esc_attr((string) $atts['tagIconAlt']); ?>"
-                                    class="twork-blog__tag-icon"
+                                    class="mk-blog__tag-icon"
                                     width="20"
                                     height="20"
                                     loading="lazy"
@@ -346,25 +346,25 @@ ob_start();
                 <?php endif; ?>
 
                 <?php if (!empty($atts['sectionTitle'])) : ?>
-                    <h2 class="twork-blog__title"><?php echo wp_kses_post((string) $atts['sectionTitle']); ?></h2>
+                    <h2 class="mk-blog__title"><?php echo wp_kses_post((string) $atts['sectionTitle']); ?></h2>
                 <?php endif; ?>
             </div>
 
-            <div class="twork-blog__header-right">
+            <div class="mk-blog__header-right">
                 <a
                     href="<?php echo esc_url($more_url); ?>"
-                    class="twork-blog__more-btn"
+                    class="mk-blog__more-btn"
                     <?php echo $more_target ? 'target="_blank" rel="noopener noreferrer"' : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                 >
-                    <span class="twork-blog__more-btn-label"><?php echo esc_html((string) $atts['moreButtonText']); ?></span>
+                    <span class="mk-blog__more-btn-label"><?php echo esc_html((string) $atts['moreButtonText']); ?></span>
                     <?php if (!empty($atts['showMoreButtonIcon'])) : ?>
-                        <span class="twork-blog__more-btn-icon" aria-hidden="true"><?php echo twork_posts_grid_icon_svg((string) $atts['moreButtonIconType'], 'diagonal-arrow'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+                        <span class="mk-blog__more-btn-icon" aria-hidden="true"><?php echo mk_posts_grid_icon_svg((string) $atts['moreButtonIconType'], 'diagonal-arrow'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
                     <?php endif; ?>
                 </a>
             </div>
         </div>
 
-        <div class="twork-blog__grid">
+        <div class="mk-blog__grid">
             <?php
             if ($q->have_posts()) :
                 while ($q->have_posts()) :
@@ -392,42 +392,42 @@ ob_start();
                     $author_id = (int) get_post_field('post_author', $post_id);
                     $author    = $author_id ? get_the_author_meta('display_name', $author_id) : '';
                     ?>
-                    <article class="twork-blog-card">
-                        <div class="twork-blog-card__img-box">
+                    <article class="mk-blog-card">
+                        <div class="mk-blog-card__img-box">
                             <?php if ($img_url) : ?>
-                                <a href="<?php echo esc_url($permalink); ?>" class="twork-blog-card__img-link">
+                                <a href="<?php echo esc_url($permalink); ?>" class="mk-blog-card__img-link">
                                     <img
                                         src="<?php echo esc_url($img_url); ?>"
-                                        class="twork-blog-card__img"
+                                        class="mk-blog-card__img"
                                         alt="<?php echo esc_attr($title); ?>"
                                         loading="lazy"
                                         decoding="async"
                                     />
-                                    <span class="twork-blog-card__img-overlay" aria-hidden="true"></span>
+                                    <span class="mk-blog-card__img-overlay" aria-hidden="true"></span>
                                 </a>
                             <?php else : ?>
                                 <a
                                     href="<?php echo esc_url($permalink); ?>"
-                                    class="twork-blog-card__img-link twork-blog-card__img-link--placeholder"
+                                    class="mk-blog-card__img-link mk-blog-card__img-link--placeholder"
                                     aria-hidden="true"
                                     tabindex="-1"
                                 >
-                                    <span class="twork-blog-card__img-placeholder"></span>
+                                    <span class="mk-blog-card__img-placeholder"></span>
                                 </a>
                             <?php endif; ?>
 
-                            <div class="twork-blog-card__date" aria-hidden="true">
-                                <span class="twork-blog-card__date-day"><?php echo esc_html($day); ?></span>
-                                <span class="twork-blog-card__date-month"><?php echo esc_html($month); ?></span>
+                            <div class="mk-blog-card__date" aria-hidden="true">
+                                <span class="mk-blog-card__date-day"><?php echo esc_html($day); ?></span>
+                                <span class="mk-blog-card__date-month"><?php echo esc_html($month); ?></span>
                             </div>
                         </div>
 
-                        <div class="twork-blog-card__content">
+                        <div class="mk-blog-card__content">
                             <?php if (!empty($atts['showAuthorMeta']) || !empty($atts['showCommentsMeta'])) : ?>
-                                <div class="twork-blog-card__meta">
+                                <div class="mk-blog-card__meta">
                                     <?php if (!empty($atts['showAuthorMeta'])) : ?>
                                         <span>
-                                            <span class="twork-blog-card__meta-icon" aria-hidden="true">●</span>
+                                            <span class="mk-blog-card__meta-icon" aria-hidden="true">●</span>
                                             <?php
                                             if ((string) $atts['authorPrefix'] !== '') {
                                                 echo wp_kses_post((string) $atts['authorPrefix']);
@@ -439,7 +439,7 @@ ob_start();
 
                                     <?php if (!empty($atts['showCommentsMeta'])) : ?>
                                         <span>
-                                            <span class="twork-blog-card__meta-icon" aria-hidden="true">●</span>
+                                            <span class="mk-blog-card__meta-icon" aria-hidden="true">●</span>
                                             <?php
                                             if ((string) $atts['commentPrefix'] !== '') {
                                                 echo wp_kses_post((string) $atts['commentPrefix']);
@@ -447,7 +447,7 @@ ob_start();
                                             echo esc_html(
                                                 sprintf(
                                                     /* translators: %d: number of comments */
-                                                    _n('%d Comment', '%d Comments', $comments, 'twork-builder'),
+                                                    _n('%d Comment', '%d Comments', $comments, 'mk-builder'),
                                                     $comments
                                                 )
                                             );
@@ -457,15 +457,15 @@ ob_start();
                                 </div>
                             <?php endif; ?>
 
-                            <h3 class="twork-blog-card__title">
+                            <h3 class="mk-blog-card__title">
                                 <a href="<?php echo esc_url($permalink); ?>"><?php echo esc_html($title); ?></a>
                             </h3>
 
-                            <div class="twork-blog-card__footer">
-                                <a href="<?php echo esc_url($permalink); ?>" class="twork-blog-card__read-btn">
+                            <div class="mk-blog-card__footer">
+                                <a href="<?php echo esc_url($permalink); ?>" class="mk-blog-card__read-btn">
                                     <?php echo esc_html((string) $atts['readMoreText']); ?>
                                     <?php if (!empty($atts['showReadMoreIcon'])) : ?>
-                                        <span class="icon-circle" aria-hidden="true"><?php echo twork_posts_grid_icon_svg((string) $atts['readMoreIconType'], 'arrow-right'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+                                        <span class="icon-circle" aria-hidden="true"><?php echo mk_posts_grid_icon_svg((string) $atts['readMoreIconType'], 'arrow-right'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
                                     <?php endif; ?>
                                 </a>
                             </div>
@@ -483,9 +483,9 @@ ob_start();
                     'offset'       => $offset,
                 );
                 // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Debug JSON inside HTML comment only.
-                echo "\n<!-- twork/posts-grid: no posts matched query. " . esc_html(wp_json_encode($debug_payload)) . " -->\n";
+                echo "\n<!-- mk/posts-grid: no posts matched query. " . esc_html(wp_json_encode($debug_payload)) . " -->\n";
                 ?>
-                <p class="twork-blog__empty"><?php esc_html_e('No posts found.', 'twork-builder'); ?></p>
+                <p class="mk-blog__empty"><?php esc_html_e('No posts found.', 'mk-builder'); ?></p>
                 <?php
             endif;
             ?>

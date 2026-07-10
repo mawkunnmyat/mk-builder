@@ -1,5 +1,5 @@
 import { __, sprintf } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -32,7 +32,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-ph-upload-section',
+			className: 'mk-ph-upload-section',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingY }px`,
@@ -71,13 +71,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
 							label={ __(
 								'Vertical padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingY }
 							onChange={ ( val ) =>
@@ -89,7 +89,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -102,7 +102,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Horizontal padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -115,7 +115,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RichText
@@ -126,7 +126,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								"Have a Doctor's Prescription?",
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -138,7 +138,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Skip the search. Simply upload your prescription photo…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -147,7 +147,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show checklist items',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showChecklist }
 							onChange={ ( val ) =>
@@ -174,7 +174,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												/* translators: %d: item index */
 												__(
 													'Item %d',
-													'twork-builder'
+													'mk-builder'
 												),
 												index + 1
 											) }
@@ -194,7 +194,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												removeChecklistItem( index )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</button>
 									</div>
 								) ) }
@@ -203,18 +203,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									className="components-button is-secondary is-small"
 									onClick={ addChecklistItem }
 								>
-									{ __( 'Add item', 'twork-builder' ) }
+									{ __( 'Add item', 'mk-builder' ) }
 								</button>
 							</>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Button', 'twork-builder' ) }
+						title={ __( 'Button', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Button label', 'twork-builder' ) }
+							label={ __( 'Button label', 'mk-builder' ) }
 							value={ buttonLabel }
 							onChange={ ( val ) =>
 								setAttributes( { buttonLabel: val } )
@@ -224,11 +224,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Button URL (optional)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							help={ __(
 								'Optional link for the button. Leave empty to handle via JS.',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ buttonUrl }
 							onChange={ ( val ) =>
@@ -238,7 +238,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Right-side image', 'twork-builder' ) }
+						title={ __( 'Right-side image', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ imageUrl ? (
@@ -254,7 +254,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Alt text', 'twork-builder' ) }
+									label={ __( 'Alt text', 'mk-builder' ) }
 									value={ imageAlt }
 									onChange={ ( val ) =>
 										setAttributes( { imageAlt: val } )
@@ -272,7 +272,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove image', 'twork-builder' ) }
+									{ __( 'Remove image', 'mk-builder' ) }
 								</button>
 							</>
 						) : (
@@ -297,7 +297,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Prescription image',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -326,7 +326,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										"Have a Doctor's Prescription?",
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ {
 										color: '#fff',
@@ -343,7 +343,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Skip the search. Simply upload your prescription photo, and our pharmacists will prepare your cart for you.',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ {
 										fontSize: '1.1rem',

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, RichText } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -10,24 +10,24 @@ import {
 
 const ICON_OPTIONS = [
 	{
-		label: __( 'User MD (Choose Doctor)', 'twork-builder' ),
+		label: __( 'User MD (Choose Doctor)', 'mk-builder' ),
 		value: 'fas fa-user-md',
 	},
 	{
-		label: __( 'Calendar Check (Book Slot)', 'twork-builder' ),
+		label: __( 'Calendar Check (Book Slot)', 'mk-builder' ),
 		value: 'fas fa-calendar-check',
 	},
-	{ label: __( 'Link (Get Link)', 'twork-builder' ), value: 'fas fa-link' },
+	{ label: __( 'Link (Get Link)', 'mk-builder' ), value: 'fas fa-link' },
 	{
-		label: __( 'File Prescription (Consultation)', 'twork-builder' ),
+		label: __( 'File Prescription (Consultation)', 'mk-builder' ),
 		value: 'fas fa-file-prescription',
 	},
 	{
-		label: __( 'Stethoscope', 'twork-builder' ),
+		label: __( 'Stethoscope', 'mk-builder' ),
 		value: 'fas fa-stethoscope',
 	},
-	{ label: __( 'Video', 'twork-builder' ), value: 'fas fa-video' },
-	{ label: __( 'Comments', 'twork-builder' ), value: 'fas fa-comments' },
+	{ label: __( 'Video', 'mk-builder' ), value: 'fas fa-video' },
+	{ label: __( 'Comments', 'mk-builder' ), value: 'fas fa-comments' },
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -36,7 +36,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'twork-tele-process-card-editor process-card stagger-card',
+				'mk-tele-process-card-editor process-card stagger-card',
 		} ),
 		[]
 	);
@@ -49,7 +49,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Process Card', 'twork-builder' ) }
+						title={ __( 'Process Card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<p
@@ -61,11 +61,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						>
 							{ __(
 								'Click the title or description in the card to edit directly.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						</p>
 						<RangeControl
-							label={ __( 'Step number', 'twork-builder' ) }
+							label={ __( 'Step number', 'mk-builder' ) }
 							value={ stepNumber ?? 1 }
 							onChange={ ( val ) =>
 								setAttributes( { stepNumber: val } )
@@ -75,12 +75,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 1 }
 							help={ __(
 								'Shown in badge on icon (data-step).',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<SelectControl
-							label={ __( 'Icon', 'twork-builder' ) }
+							label={ __( 'Icon', 'mk-builder' ) }
 							value={ iconClass ?? 'fas fa-user-md' }
 							options={ ICON_OPTIONS }
 							onChange={ ( val ) =>
@@ -91,7 +91,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Icon Class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass ?? '' }
 							onChange={ ( val ) =>
@@ -101,26 +101,26 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Override: e.g. fas fa-user-md',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
 							label={ __(
 								'Title (or edit in card)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleValue }
 							onChange={ ( val ) =>
 								setAttributes( { title: val ?? '' } )
 							}
-							placeholder={ __( 'Step title…', 'twork-builder' ) }
+							placeholder={ __( 'Step title…', 'mk-builder' ) }
 						/>
 
 						<TextControl
 							label={ __(
 								'Description (or edit in card)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ descriptionValue }
 							onChange={ ( val ) =>
@@ -128,7 +128,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Step description…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -151,7 +151,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { title: val ?? '' } )
 					}
-					placeholder={ __( 'Step title…', 'twork-builder' ) }
+					placeholder={ __( 'Step title…', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 
@@ -161,7 +161,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { description: val ?? '' } )
 					}
-					placeholder={ __( 'Step description…', 'twork-builder' ) }
+					placeholder={ __( 'Step description…', 'mk-builder' ) }
 					allowedFormats={ [ 'core/bold', 'core/italic' ] }
 				/>
 			</div>

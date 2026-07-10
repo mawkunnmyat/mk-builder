@@ -22,7 +22,7 @@ export default function saveDeprecated( { attributes } ) {
 	const hasLink = url !== '';
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-team-card',
+		className: 'mk-team-card',
 	} );
 
 	const actionInner = <span aria-hidden="true">↗</span>;
@@ -33,7 +33,7 @@ export default function saveDeprecated( { attributes } ) {
 				<img
 					src={ image }
 					alt={ imageAlt || '' }
-					className="twork-team-card__img"
+					className="mk-team-card__img"
 					loading="lazy"
 					decoding="async"
 				/>
@@ -41,7 +41,7 @@ export default function saveDeprecated( { attributes } ) {
 			{ hasLink ? (
 				<a
 					href={ url }
-					className="twork-team-card__action"
+					className="mk-team-card__action"
 					aria-label={ actionAriaLabel || 'View profile' }
 					{ ...( profileOpenInNewTab
 						? { target: '_blank', rel: 'noopener noreferrer' }
@@ -51,24 +51,24 @@ export default function saveDeprecated( { attributes } ) {
 				</a>
 			) : (
 				<span
-					className="twork-team-card__action twork-team-card__action--static"
+					className="mk-team-card__action mk-team-card__action--static"
 					aria-hidden="true"
 				>
 					{ actionInner }
 				</span>
 			) }
-			<div className="twork-team-card__content">
+			<div className="mk-team-card__content">
 				{ name && (
 					<RichText.Content
 						tagName="h3"
-						className="twork-team-card__name"
+						className="mk-team-card__name"
 						value={ name }
 					/>
 				) }
 				{ role && (
 					<RichText.Content
 						tagName="p"
-						className="twork-team-card__role"
+						className="mk-team-card__role"
 						value={ role }
 					/>
 				) }

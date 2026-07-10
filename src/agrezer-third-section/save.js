@@ -37,17 +37,17 @@ export default function save( { attributes } ) {
 		: 0;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-third-section',
+		className: 'mk-third-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-third-max': `${ containerMaxWidth }px`,
-			'--twork-third-width-pct': `${ containerWidthPct }%`,
-			'--twork-third-top-gap': `${ topGridGap }px`,
-			'--twork-third-top-mb': `${ topMarginBottom }px`,
-			'--twork-third-cards-gap': `${ cardsGap }px`,
-			'--twork-third-cards-mt': `${ cardsMarginTop }px`,
+			'--mk-third-max': `${ containerMaxWidth }px`,
+			'--mk-third-width-pct': `${ containerWidthPct }%`,
+			'--mk-third-top-gap': `${ topGridGap }px`,
+			'--mk-third-top-mb': `${ topMarginBottom }px`,
+			'--mk-third-cards-gap': `${ cardsGap }px`,
+			'--mk-third-cards-mt': `${ cardsMarginTop }px`,
 			'--tw-third-title-color': titleColor,
 			'--tw-third-title-size': `${ titleFontSize }px`,
 			'--tw-third-sub-color': subtitleColor,
@@ -71,16 +71,16 @@ export default function save( { attributes } ) {
 
 	return (
 		<section { ...blockProps }>
-			<div className="twork-third-section__container">
-				<div className="twork-third-section__top">
-					<div className="twork-third-section__intro">
+			<div className="mk-third-section__container">
+				<div className="mk-third-section__top">
+					<div className="mk-third-section__intro">
 						{ ( tagline || tagIcon ) && (
-							<div className="twork-third-section__tagline">
+							<div className="mk-third-section__tagline">
 								{ tagIcon && (
 									<img
 										src={ tagIcon }
 										alt={ tagIconAlt || '' }
-										className="twork-third-section__tag-icon"
+										className="mk-third-section__tag-icon"
 										width="20"
 										height="20"
 										loading="lazy"
@@ -90,7 +90,7 @@ export default function save( { attributes } ) {
 								{ tagline && (
 									<RichText.Content
 										tagName="span"
-										className="twork-third-section__subtitle"
+										className="mk-third-section__subtitle"
 										value={ tagline }
 									/>
 								) }
@@ -99,17 +99,17 @@ export default function save( { attributes } ) {
 						{ title && (
 							<RichText.Content
 								tagName="h2"
-								className="twork-third-section__title"
+								className="mk-third-section__title"
 								value={ title }
 							/>
 						) }
 					</div>
 
-					<div className="twork-third-section__side">
+					<div className="mk-third-section__side">
 						{ description && (
 							<RichText.Content
 								tagName="p"
-								className="twork-third-section__desc"
+								className="mk-third-section__desc"
 								value={ description }
 							/>
 						) }
@@ -118,7 +118,7 @@ export default function save( { attributes } ) {
 								{ hasLink ? (
 									<a
 										href={ url }
-										className="twork-third-section__cta"
+										className="mk-third-section__cta"
 										{ ...( ctaOpenInNewTab
 											? {
 													target: '_blank',
@@ -129,7 +129,7 @@ export default function save( { attributes } ) {
 										{ ctaInner }
 									</a>
 								) : (
-									<span className="twork-third-section__cta twork-third-section__cta--static">
+									<span className="mk-third-section__cta mk-third-section__cta--static">
 										{ ctaInner }
 									</span>
 								) }
@@ -138,7 +138,7 @@ export default function save( { attributes } ) {
 					</div>
 				</div>
 
-				<div className="twork-third-section__cards">
+				<div className="mk-third-section__cards">
 					<InnerBlocks.Content />
 				</div>
 			</div>

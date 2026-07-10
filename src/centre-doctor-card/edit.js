@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, MediaPlaceholder } from '@wordpress/block-editor';
 import { PanelBody, TextControl, Button } from '@wordpress/components';
 
@@ -16,7 +16,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'doctor-card-mini stagger-doc twork-centre-doctor-card-editor',
+				'doctor-card-mini stagger-doc mk-centre-doctor-card-editor',
 		} ),
 		[]
 	);
@@ -26,7 +26,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Doctor', 'twork-builder' ) }
+						title={ __( 'Doctor', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ! imageUrl ? (
@@ -43,7 +43,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Doctor photo',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -61,7 +61,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Image alt text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ imageAlt }
 									onChange={ ( v ) =>
@@ -69,7 +69,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'Accessibility; e.g. doctor name',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -84,18 +84,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove image', 'twork-builder' ) }
+									{ __( 'Remove image', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
 						<TextControl
-							label={ __( 'Name', 'twork-builder' ) }
+							label={ __( 'Name', 'mk-builder' ) }
 							value={ name }
 							onChange={ ( v ) => setAttributes( { name: v } ) }
 						/>
 
 						<TextControl
-							label={ __( 'Specialization', 'twork-builder' ) }
+							label={ __( 'Specialization', 'mk-builder' ) }
 							value={ specialization }
 							onChange={ ( v ) =>
 								setAttributes( { specialization: v } )
@@ -103,7 +103,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Profile URL', 'twork-builder' ) }
+							label={ __( 'Profile URL', 'mk-builder' ) }
 							value={ profileUrl }
 							onChange={ ( v ) =>
 								setAttributes( { profileUrl: v || '#' } )
@@ -111,7 +111,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button text', 'twork-builder' ) }
+							label={ __( 'Button text', 'mk-builder' ) }
 							value={ profileLinkText }
 							onChange={ ( v ) =>
 								setAttributes( { profileLinkText: v } )
@@ -143,11 +143,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						aria-label={
 							profileLinkText
 								? undefined
-								: __( 'View profile', 'twork-builder' )
+								: __( 'View profile', 'mk-builder' )
 						}
 					>
 						{ profileLinkText ||
-							__( 'View Profile', 'twork-builder' ) }
+							__( 'View Profile', 'mk-builder' ) }
 					</a>
 				</div>
 			</div>

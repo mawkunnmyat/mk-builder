@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -7,10 +7,10 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/centre-treatment-card' ];
+const ALLOWED_BLOCKS = [ 'mk/centre-treatment-card' ];
 const TEMPLATE = [
 	[
-		'twork/centre-treatment-card',
+		'mk/centre-treatment-card',
 		{
 			iconClass: 'fas fa-brain',
 			title: 'Stroke Management',
@@ -20,7 +20,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/centre-treatment-card',
+		'mk/centre-treatment-card',
 		{
 			iconClass: 'fas fa-microscope',
 			title: 'Brain Tumor Surgery',
@@ -30,7 +30,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/centre-treatment-card',
+		'mk/centre-treatment-card',
 		{
 			iconClass: 'fas fa-bone',
 			title: 'Spinal Surgery',
@@ -40,7 +40,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/centre-treatment-card',
+		'mk/centre-treatment-card',
 		{
 			iconClass: 'fas fa-wave-square',
 			title: 'EEG & EMG Services',
@@ -54,7 +54,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { sectionId, title, subtitle } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'content-section fade-up twork-centre-treatments-editor',
+			className: 'content-section fade-up mk-centre-treatments-editor',
 		} ),
 		[]
 	);
@@ -63,9 +63,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Section', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Section', 'mk-builder' ) }>
 						<TextControl
-							label={ __( 'Section ID', 'twork-builder' ) }
+							label={ __( 'Section ID', 'mk-builder' ) }
 							value={ sectionId }
 							onChange={ ( v ) =>
 								setAttributes( { sectionId: v } )
@@ -79,7 +79,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h2"
 					value={ title }
 					onChange={ ( v ) => setAttributes( { title: v } ) }
-					placeholder={ __( 'Section title...', 'twork-builder' ) }
+					placeholder={ __( 'Section title...', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -87,7 +87,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					value={ subtitle }
 					onChange={ ( v ) => setAttributes( { subtitle: v } ) }
 					className="body-text"
-					placeholder={ __( 'Subtitle...', 'twork-builder' ) }
+					placeholder={ __( 'Subtitle...', 'mk-builder' ) }
 				/>
 
 				<div className="treatment-grid">

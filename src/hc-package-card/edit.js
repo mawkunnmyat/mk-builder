@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -23,7 +23,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'hc-pkg-card twork-hc-package-card-editor',
+			className: 'hc-pkg-card mk-hc-package-card-editor',
 		} ),
 		[]
 	);
@@ -32,7 +32,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		setAttributes( {
 			features: [
 				...( features || [] ),
-				__( 'New feature', 'twork-builder' ),
+				__( 'New feature', 'mk-builder' ),
 			],
 		} );
 	const removeFeature = ( index ) =>
@@ -49,13 +49,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Package', 'twork-builder' ) }
+						title={ __( 'Package', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Price (e.g. 30,000)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ price || '' }
 							onChange={ ( val ) =>
@@ -66,7 +66,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Price unit (e.g. MMK / Day)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ priceUnit || '' }
 							onChange={ ( val ) =>
@@ -76,7 +76,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<TextControl
-							label={ __( 'Button text', 'twork-builder' ) }
+							label={ __( 'Button text', 'mk-builder' ) }
 							value={ buttonText || '' }
 							onChange={ ( val ) =>
 								setAttributes( {
@@ -86,7 +86,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ buttonUrl || '' }
 							onChange={ ( val ) =>
 								setAttributes( { buttonUrl: val || '#' } )
@@ -97,7 +97,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<span
 								style={ { display: 'block', marginBottom: 8 } }
 							>
-								{ __( 'Button style', 'twork-builder' ) }
+								{ __( 'Button style', 'mk-builder' ) }
 							</span>
 							<div style={ { display: 'flex', gap: 8 } }>
 								<Button
@@ -113,7 +113,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Outline', 'twork-builder' ) }
+									{ __( 'Outline', 'mk-builder' ) }
 								</Button>
 								<Button
 									variant={
@@ -128,7 +128,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Primary', 'twork-builder' ) }
+									{ __( 'Primary', 'mk-builder' ) }
 								</Button>
 							</div>
 						</div>
@@ -136,7 +136,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<PanelColorSettings
 								title={ __(
 									'Head background',
-									'twork-builder'
+									'mk-builder'
 								) }
 								colorSettings={ [
 									{
@@ -147,7 +147,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Card head background (optional)',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
@@ -155,7 +155,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) }
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Features list', 'twork-builder' ) }
+						title={ __( 'Features list', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ( features || [] ).map( ( feature, index ) => (
@@ -175,14 +175,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Feature…',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ { flex: 1 } }
 								/>
 
 								<Button
 									icon="no-alt"
-									label={ __( 'Remove', 'twork-builder' ) }
+									label={ __( 'Remove', 'mk-builder' ) }
 									isDestructive
 									isSmall
 									onClick={ () => removeFeature( index ) }
@@ -195,7 +195,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onClick={ addFeature }
 							style={ { marginTop: 8 } }
 						>
-							{ __( 'Add feature', 'twork-builder' ) }
+							{ __( 'Add feature', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 				</InspectorControls>
@@ -214,7 +214,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="h4"
 						value={ title }
 						onChange={ ( val ) => setAttributes( { title: val } ) }
-						placeholder={ __( 'Package title…', 'twork-builder' ) }
+						placeholder={ __( 'Package title…', 'mk-builder' ) }
 					/>
 
 					<div className="hc-price">

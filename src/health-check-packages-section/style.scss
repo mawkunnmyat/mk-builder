@@ -1,7 +1,7 @@
 @import "../scss/typography";
 
 // Health Check Packages Section – matches health-check-up.html
-.twork-health-check-packages-section.chk-section {
+.mk-health-check-packages-section.chk-section {
     --chk-primary: #f48b2a;
     --chk-secondary: #005f73;
     --chk-radius: 20px;
@@ -203,13 +203,13 @@
 }
 
 // === EDITOR STYLES (prevent cut-off / clipping) ===
-.editor-styles-wrapper .wp-block-twork-health-check-packages-section,
-.block-editor-block-list__layout .wp-block-twork-health-check-packages-section {
+.editor-styles-wrapper .wp-block-mk-health-check-packages-section,
+.block-editor-block-list__layout .wp-block-mk-health-check-packages-section {
     overflow: visible !important;
 }
 
-.editor-styles-wrapper .twork-health-check-packages-section-editor,
-.wp-block-twork-health-check-packages-section .twork-health-check-packages-section-editor {
+.editor-styles-wrapper .mk-health-check-packages-section-editor,
+.wp-block-mk-health-check-packages-section .mk-health-check-packages-section-editor {
     overflow: visible !important;
     min-height: 400px;
     width: 100%;
@@ -219,7 +219,7 @@
         overflow: visible;
     }
 
-    .twork-chk-pkg-grid-editor {
+    .mk-chk-pkg-grid-editor {
         overflow: visible;
         min-height: 320px;
 
@@ -232,7 +232,7 @@
 
         // Prevent package cards from being clipped in editor
         > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block,
-        > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="twork/health-check-package-card"] {
+        > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="mk/health-check-package-card"] {
             overflow: visible !important;
             min-height: 280px;
         }
@@ -240,7 +240,7 @@
 }
 
 @media (max-width: 768px) {
-    .twork-health-check-packages-section.chk-section {
+    .mk-health-check-packages-section.chk-section {
         .chk-header h2 {
             font-size: 2rem;
         }

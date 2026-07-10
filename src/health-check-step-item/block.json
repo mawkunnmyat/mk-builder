@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/health-check-step-item",
+	"name": "mk/health-check-step-item",
 	"version": "1.0.0",
 	"title": "Step Item",
-	"parent": [ "twork/health-check-steps-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/health-check-steps-section" ],
+	"category": "mk-builder",
 	"icon": "minus",
 	"description": "Single step (icon, title, description) for Health Check How to Prepare section.",
-	"keywords": [ "health", "check", "step", "prepare", "chk", "twork" ],
+	"keywords": [ "health", "check", "step", "prepare", "chk", "mk" ],
 	"attributes": {
 		"icon": {
 			"type": "string",
@@ -33,7 +33,7 @@
 			"description": "Do not eat for 8-10 hours before the test. Water is allowed."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

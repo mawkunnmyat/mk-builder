@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'hc-faq-item twork-hc-faq-item-editor',
+			className: 'hc-faq-item mk-hc-faq-item-editor',
 		} ),
 		[]
 	);
@@ -18,13 +18,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'FAQ Item', 'twork-builder' ) }
+						title={ __( 'FAQ Item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<p style={ { margin: 0, color: '#666', fontSize: 12 } }>
 							{ __(
 								'Edit the question and answer in the canvas.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						</p>
 					</PanelBody>
@@ -46,7 +46,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { question: val } )
 						}
-						placeholder={ __( 'Question…', 'twork-builder' ) }
+						placeholder={ __( 'Question…', 'mk-builder' ) }
 					/>
 
 					<i
@@ -60,7 +60,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="hc-faq-a"
 					value={ answer }
 					onChange={ ( val ) => setAttributes( { answer: val } ) }
-					placeholder={ __( 'Answer…', 'twork-builder' ) }
+					placeholder={ __( 'Answer…', 'mk-builder' ) }
 					style={ {
 						paddingBottom: 12,
 						color: '#666',

@@ -14,16 +14,16 @@ export default function save( { attributes } ) {
 	const r = Math.min( 5, Math.max( 1, Math.round( Number( rating ) || 5 ) ) );
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-testimonials__slide',
+		className: 'mk-testimonials__slide',
 		'data-rating': String( r ),
 	} );
 
 	return (
 		<div { ...blockProps }>
-			<div className="twork-testimonials__quote-block">
-				<div className="twork-testimonials__content">
+			<div className="mk-testimonials__quote-block">
+				<div className="mk-testimonials__content">
 					<div
-						className="twork-testimonials__quote-icon"
+						className="mk-testimonials__quote-icon"
 						aria-hidden="true"
 					>
 						&ldquo;
@@ -31,30 +31,30 @@ export default function save( { attributes } ) {
 					{ quote && (
 						<RichText.Content
 							tagName="p"
-							className="twork-testimonials__text"
+							className="mk-testimonials__text"
 							value={ quote }
 						/>
 					) }
 				</div>
 			</div>
-			<template className="twork-testimonials__author-template">
-				<div className="twork-testimonials__author-box">
+			<template className="mk-testimonials__author-template">
+				<div className="mk-testimonials__author-box">
 					{ authorName && (
 						<RichText.Content
 							tagName="h4"
-							className="twork-testimonials__author-name"
+							className="mk-testimonials__author-name"
 							value={ authorName }
 						/>
 					) }
 					{ authorRole && (
 						<RichText.Content
 							tagName="span"
-							className="twork-testimonials__author-role"
+							className="mk-testimonials__author-role"
 							value={ authorRole }
 						/>
 					) }
 					<div
-						className="twork-testimonials__stars"
+						className="mk-testimonials__stars"
 						aria-label={ `${ r } out of 5 stars` }
 					>
 						{ renderStars( r ) }

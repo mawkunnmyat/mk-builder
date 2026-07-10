@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'em-stat-item twork-em-stat-item-editor',
+			className: 'em-stat-item mk-em-stat-item-editor',
 			style: {
 				display: 'flex',
 				flexDirection: 'column',
@@ -33,13 +33,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Stat Item', 'twork-builder' ) }
+						title={ __( 'Stat Item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass || '' }
 							onChange={ ( val ) =>
@@ -49,7 +49,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-clock, fas fa-user-md, fas fa-ambulance, fas fa-bed',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -72,7 +72,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h3"
 					value={ statValue }
 					onChange={ ( val ) => setAttributes( { statValue: val } ) }
-					placeholder={ __( '24/7', 'twork-builder' ) }
+					placeholder={ __( '24/7', 'mk-builder' ) }
 					style={ {
 						fontSize: '1.5rem',
 						margin: 0,
@@ -86,7 +86,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="p"
 					value={ statLabel }
 					onChange={ ( val ) => setAttributes( { statLabel: val } ) }
-					placeholder={ __( 'Open All Day', 'twork-builder' ) }
+					placeholder={ __( 'Open All Day', 'mk-builder' ) }
 					style={ {
 						fontSize: '1rem',
 						margin: '5px 0 0 0',

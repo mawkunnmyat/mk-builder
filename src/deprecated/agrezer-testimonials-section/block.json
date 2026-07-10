@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-testimonials-section",
+	"name": "mk/agrezer-testimonials-section",
 	"version": "1.0.0",
 	"title": "Agrezer Testimonials",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "format-quote",
 	"description": "Two-column testimonials with image, badge, and carousel slides.",
-	"keywords": [ "testimonial", "review", "carousel", "agrezer", "twork" ],
+	"keywords": [ "testimonial", "review", "carousel", "agrezer", "mk" ],
 	"supports": {
 		"html": false,
 		"align": [ "wide", "full" ]
@@ -114,7 +114,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/agrezer-testimonial-slide",
+				"name": "mk/agrezer-testimonial-slide",
 				"attributes": {
 					"quote": "Agrezer helped us cut input waste while improving tonnage—clear reporting and a team that actually picks up the phone.",
 					"authorName": "Alex Robin",
@@ -123,7 +123,7 @@
 				}
 			},
 			{
-				"name": "twork/agrezer-testimonial-slide",
+				"name": "mk/agrezer-testimonial-slide",
 				"attributes": {
 					"quote": "We saw measurable growth after switching to their organic program—great communication and real field results.",
 					"authorName": "Jordan Lee",
@@ -132,7 +132,7 @@
 				}
 			},
 			{
-				"name": "twork/agrezer-testimonial-slide",
+				"name": "mk/agrezer-testimonial-slide",
 				"attributes": {
 					"quote": "Reliable partners who understand both sustainability and scale. Recommended for any grower network.",
 					"authorName": "Sam Rivera",
@@ -142,7 +142,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js"

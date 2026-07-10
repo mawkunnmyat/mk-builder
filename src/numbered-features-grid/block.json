@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/numbered-features-grid",
+	"name": "mk/numbered-features-grid",
 	"version": "1.0.0",
 	"title": "Numbered Features Grid",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "Why choose us grid with numbered feature items and icons.",
-	"keywords": [ "features", "why choose", "grid", "numbered", "twork" ],
+	"keywords": [ "features", "why choose", "grid", "numbered", "mk" ],
 	"attributes": {
 		"sectionEyebrow": {
 			"type": "string",
@@ -51,7 +51,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/numbered-feature-item",
+				"name": "mk/numbered-feature-item",
 				"attributes": {
 					"number": "01",
 					"title": "Natural Ingredients",
@@ -60,7 +60,7 @@
 				}
 			},
 			{
-				"name": "twork/numbered-feature-item",
+				"name": "mk/numbered-feature-item",
 				"attributes": {
 					"number": "02",
 					"title": "Consistent Quality",
@@ -69,7 +69,7 @@
 				}
 			},
 			{
-				"name": "twork/numbered-feature-item",
+				"name": "mk/numbered-feature-item",
 				"attributes": {
 					"number": "03",
 					"title": "Trusted Brand",
@@ -79,7 +79,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

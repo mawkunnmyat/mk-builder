@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/journey-step-item",
+	"name": "mk/journey-step-item",
 	"title": "Journey Step Item",
-	"parent": [ "twork/journey-steps-section", "twork/how-it-works-section" ],
+	"parent": [ "mk/journey-steps-section", "mk/how-it-works-section" ],
 	"description": "Single step card for the journey section (e.g. Inquiry & Estimate, Travel & Visa).",
 	"keywords": [
 		"journey",
@@ -11,7 +11,7 @@
 		"card",
 		"international",
 		"patient",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"stepNumber": {
@@ -84,7 +84,7 @@
 			"cardPaddingMobile": 24
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

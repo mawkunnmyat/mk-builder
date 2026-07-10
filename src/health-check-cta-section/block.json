@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/health-check-cta-section",
+	"name": "mk/health-check-cta-section",
 	"version": "1.0.0",
 	"title": "CTA Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "calendar-alt",
 	"description": "Book Your Slot Today CTA: title, subtitle and button inside a styled box. Matches health-check-up.html.",
 	"keywords": [
@@ -15,7 +15,7 @@
 		"slot",
 		"appointment",
 		"chk",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -127,7 +127,7 @@
 			"animationOnScroll": true
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -9,13 +9,13 @@
 // === EDITOR STYLES ===
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-affiliations-section,
-[data-type="twork/affiliations-section"] {
-    .twork-affiliations-section-editor {
+.wp-block-mk-affiliations-section,
+[data-type="mk/affiliations-section"] {
+    .mk-affiliations-section-editor {
         position: relative;
         min-height: 120px;
 
-        .twork-affiliations-grid {
+        .mk-affiliations-grid {
             width: 100%;
             min-height: 100px;
 
@@ -26,7 +26,7 @@
                     display: contents !important;
 
                     > .wp-block,
-                    > [data-type="twork/affiliation-logo-item"] {
+                    > [data-type="mk/affiliation-logo-item"] {
                         justify-self: center;
                         align-self: center;
                     }
@@ -36,7 +36,7 @@
 
         // Slider layout in editor: horizontal row, scrollable
         .affiliations-slider,
-        .twork-affiliations-slider-editor {
+        .mk-affiliations-slider-editor {
             width: 100% !important;
             min-height: 140px !important;
             position: relative;
@@ -70,7 +70,7 @@
                 }
 
                 > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block,
-                > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="twork/affiliation-logo-item"] {
+                > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="mk/affiliation-logo-item"] {
                     flex: 0 0 auto !important;
                     min-width: 120px !important;
                     max-width: 180px;
@@ -89,7 +89,7 @@
 }
 
 // === FRONTEND STYLES ===
-.twork-affiliations-section {
+.mk-affiliations-section {
     font-family: $font-primary;
     position: relative;
 
@@ -151,7 +151,7 @@
 // Logo styling uses CSS variables from parent .logo-grid (set in save.js)
 
 // === SLIDER (Pure CSS layout; JS drives transform in view.js) ===
-.twork-affiliations-section .affiliations-slider {
+.mk-affiliations-section .affiliations-slider {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -296,7 +296,7 @@
 
 // === RESPONSIVE ===
 @media (max-width: 768px) {
-    .twork-affiliations-section {
+    .mk-affiliations-section {
         .affiliations-title {
             font-size: 0.95rem !important;
         }

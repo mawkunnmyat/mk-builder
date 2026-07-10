@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/brand-footer-info-card",
+	"name": "mk/brand-footer-info-card",
 	"title": "Footer Info Card",
-	"parent": [ "twork/brand-footer" ],
-	"category": "twork-builder",
+	"parent": [ "mk/brand-footer" ],
+	"category": "mk-builder",
 	"description": "Footer info card with label, lines, and icon.",
 	"attributes": {
 		"label": {
@@ -31,6 +31,6 @@
 			"icon": "phone"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

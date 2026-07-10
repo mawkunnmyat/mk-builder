@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -71,7 +71,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-doctor-search-filter-editor',
+			className: 'mk-doctor-search-filter-editor',
 			style: {
 				marginTop: `${ sectionMarginTop }px`,
 				marginBottom: `${ sectionMarginBottom }px`,
@@ -122,11 +122,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Labels & Placeholder', 'twork-builder' ) }
+						title={ __( 'Labels & Placeholder', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Name field label', 'twork-builder' ) }
+							label={ __( 'Name field label', 'mk-builder' ) }
 							value={ attrs.nameLabel }
 							onChange={ ( val ) =>
 								setAttributes( { nameLabel: val } )
@@ -136,7 +136,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Search placeholder',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ attrs.searchPlaceholder }
 							onChange={ ( val ) =>
@@ -145,7 +145,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Department label', 'twork-builder' ) }
+							label={ __( 'Department label', 'mk-builder' ) }
 							value={ attrs.departmentLabel }
 							onChange={ ( val ) =>
 								setAttributes( { departmentLabel: val } )
@@ -155,7 +155,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Department "All" option',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ attrs.departmentAllLabel }
 							onChange={ ( val ) =>
@@ -164,7 +164,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Gender label', 'twork-builder' ) }
+							label={ __( 'Gender label', 'mk-builder' ) }
 							value={ attrs.genderLabel }
 							onChange={ ( val ) =>
 								setAttributes( { genderLabel: val } )
@@ -174,7 +174,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Gender "All" option',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ attrs.genderAllLabel }
 							onChange={ ( val ) =>
@@ -183,7 +183,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Reset button text', 'twork-builder' ) }
+							label={ __( 'Reset button text', 'mk-builder' ) }
 							value={ attrs.resetButtonText }
 							onChange={ ( val ) =>
 								setAttributes( { resetButtonText: val } )
@@ -192,11 +192,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Container', 'twork-builder' ) }
+						title={ __( 'Container', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ attrs.containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -209,7 +209,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ attrs.containerPadding }
 							onChange={ ( val ) =>
@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Section margin top (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ attrs.sectionMarginTop }
 							onChange={ ( val ) =>
@@ -234,14 +234,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 5 }
 							help={ __(
 								'Negative values pull the filter up over the hero. Default -80.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
 							label={ __(
 								'Section margin bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ attrs.sectionMarginBottom }
 							onChange={ ( val ) =>
@@ -254,11 +254,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Search box styling', 'twork-builder' ) }
+						title={ __( 'Search box styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Box padding (px)', 'twork-builder' ) }
+							label={ __( 'Box padding (px)', 'mk-builder' ) }
 							value={ attrs.boxPadding }
 							onChange={ ( val ) =>
 								setAttributes( { boxPadding: val } )
@@ -271,7 +271,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Border radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ attrs.boxBorderRadius }
 							onChange={ ( val ) =>
@@ -285,7 +285,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Top border width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ attrs.boxBorderTopWidth }
 							onChange={ ( val ) =>
@@ -297,7 +297,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Box colors', 'twork-builder' ) }
+							title={ __( 'Box colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: attrs.boxBackgroundColor,
@@ -305,7 +305,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											boxBackgroundColor: val,
 										} ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 								{
 									value: attrs.boxBorderTopColor,
@@ -313,30 +313,30 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											boxBorderTopColor: val,
 										} ),
-									label: __( 'Top border', 'twork-builder' ),
+									label: __( 'Top border', 'mk-builder' ),
 								},
 							] }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Labels & inputs', 'twork-builder' ) }
+						title={ __( 'Labels & inputs', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Label color', 'twork-builder' ) }
+							title={ __( 'Label color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: attrs.labelColor,
 									onChange: ( val ) =>
 										setAttributes( { labelColor: val } ),
-									label: __( 'Label color', 'twork-builder' ),
+									label: __( 'Label color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Input border', 'twork-builder' ) }
+							title={ __( 'Input border', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: attrs.inputBorderColor,
@@ -344,7 +344,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											inputBorderColor: val,
 										} ),
-									label: __( 'Border', 'twork-builder' ),
+									label: __( 'Border', 'mk-builder' ),
 								},
 								{
 									value: attrs.inputFocusBorderColor,
@@ -354,7 +354,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Focus border',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -362,17 +362,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Reset button', 'twork-builder' ) }
+						title={ __( 'Reset button', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Button colors', 'twork-builder' ) }
+							title={ __( 'Button colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: attrs.resetButtonBg,
 									onChange: ( val ) =>
 										setAttributes( { resetButtonBg: val } ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 								{
 									value: attrs.resetButtonColor,
@@ -380,7 +380,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											resetButtonColor: val,
 										} ),
-									label: __( 'Text', 'twork-builder' ),
+									label: __( 'Text', 'mk-builder' ),
 								},
 								{
 									value: attrs.resetButtonHoverBg,
@@ -390,7 +390,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Hover background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -399,20 +399,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											resetButtonHoverColor: val,
 										} ),
-									label: __( 'Hover text', 'twork-builder' ),
+									label: __( 'Hover text', 'mk-builder' ),
 								},
 							] }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Add animate-hero class',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ attrs.addAnimationClass }
 							onChange={ ( val ) =>
@@ -420,7 +420,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Adds class for hero entrance animation if your theme uses it.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>

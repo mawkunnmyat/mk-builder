@@ -15,8 +15,8 @@
 // === EDITOR STYLES ===
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-timeline-wrapper {
-    .twork-timeline-wrapper-editor {
+.wp-block-mk-timeline-wrapper {
+    .mk-timeline-wrapper-editor {
         position: relative;
         min-height: 400px;
 
@@ -36,7 +36,7 @@
         }
 
         .timeline-wrapper,
-        .twork-timeline-wrapper {
+        .mk-timeline-wrapper {
             position: relative;
             padding: 40px 0;
             min-height: 300px;
@@ -62,7 +62,7 @@
 
                     // Style individual timeline items in the editor - matching frontend exactly
                     > .wp-block,
-                    > [data-type="twork/timeline-item"] {
+                    > [data-type="mk/timeline-item"] {
                         background: #fafafa;
                         border: 2px dashed #e0e0e0;
                         border-radius: 8px;
@@ -185,14 +185,14 @@
 
 // === FRONTEND STYLES ===
 // GLOBAL RESET: Remove all borders from timeline blocks (must be outside wrapper for maximum specificity)
-.wp-block-twork-timeline-item,
-[class*="wp-block-twork-timeline-item"],
-[data-type="twork/timeline-item"],
-.wp-block[data-type="twork/timeline-item"],
-.block-editor-block-list__block[data-type="twork/timeline-item"],
-.twork-timeline-wrapper-section .wp-block-twork-timeline-item,
-.twork-timeline-wrapper-section [class*="wp-block-twork-timeline-item"],
-.twork-timeline-wrapper-section [data-type="twork/timeline-item"] {
+.wp-block-mk-timeline-item,
+[class*="wp-block-mk-timeline-item"],
+[data-type="mk/timeline-item"],
+.wp-block[data-type="mk/timeline-item"],
+.block-editor-block-list__block[data-type="mk/timeline-item"],
+.mk-timeline-wrapper-section .wp-block-mk-timeline-item,
+.mk-timeline-wrapper-section [class*="wp-block-mk-timeline-item"],
+.mk-timeline-wrapper-section [data-type="mk/timeline-item"] {
     border: none !important;
     border-width: 0 !important;
     border-style: none !important;
@@ -210,7 +210,7 @@
     margin: 0 !important;
 }
 
-.twork-timeline-wrapper-section {
+.mk-timeline-wrapper-section {
     font-family: $font-primary;
     position: relative;
     overflow: hidden;
@@ -230,11 +230,11 @@
     
     // CRITICAL: Override WordPress block editor default styles globally
     // Target all possible WordPress block classes and attributes
-    .wp-block-twork-timeline-item,
-    [class*="wp-block-twork-timeline-item"],
-    [data-type="twork/timeline-item"],
-    .wp-block[data-type="twork/timeline-item"],
-    .block-editor-block-list__block[data-type="twork/timeline-item"] {
+    .wp-block-mk-timeline-item,
+    [class*="wp-block-mk-timeline-item"],
+    [data-type="mk/timeline-item"],
+    .wp-block[data-type="mk/timeline-item"],
+    .block-editor-block-list__block[data-type="mk/timeline-item"] {
         border: none !important;
         border-width: 0 !important;
         border-style: none !important;
@@ -293,7 +293,7 @@
     }
 
     .timeline-wrapper,
-    .twork-timeline-wrapper {
+    .mk-timeline-wrapper {
         position: relative;
         padding: 40px 0;
         // Prevent global `.timeline-wrapper { border: ... }` collisions (common in themes/plugins)
@@ -381,10 +381,10 @@
             }
             
             // Override WordPress block styles with maximum specificity
-            &.wp-block-twork-timeline-item,
+            &.wp-block-mk-timeline-item,
             &[class*="wp-block"],
-            &[data-type="twork/timeline-item"],
-            &.wp-block[data-type="twork/timeline-item"] {
+            &[data-type="mk/timeline-item"],
+            &.wp-block[data-type="mk/timeline-item"] {
                 border: none !important;
                 border-width: 0 !important;
                 border-style: none !important;
@@ -524,8 +524,8 @@
 
     // Scroll animations (progressive enhancement)
     // - Timeline items are visible by default (no-JS safe)
-    // - JS adds `.twork-animation-ready` to enable these states
-    &.twork-animation-ready[data-animation="true"] {
+    // - JS adds `.mk-animation-ready` to enable these states
+    &.mk-animation-ready[data-animation="true"] {
         .timeline-item {
             opacity: 0;
             transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
@@ -583,7 +583,7 @@
     }
     
     // Additional global reset for any WordPress block wrapper
-    *[class*="wp-block-twork-timeline"] {
+    *[class*="wp-block-mk-timeline"] {
         &[style*="border"] {
             border: none !important;
             border-width: 0 !important;
@@ -594,9 +594,9 @@
 // === RESPONSIVE STYLES ===
 // Matching about.html breakpoint at 992px
 @media (max-width: 992px) {
-    .twork-timeline-wrapper-section {
+    .mk-timeline-wrapper-section {
         .timeline-wrapper,
-        .twork-timeline-wrapper {
+        .mk-timeline-wrapper {
             .timeline-line {
                 // Override any legacy inline styles saved in post content
                 left: 20px !important;
@@ -623,10 +623,10 @@
                 }
 
                 // CRITICAL: Override wp-block selectors with maximum specificity in responsive
-                &.wp-block-twork-timeline-item,
+                &.wp-block-mk-timeline-item,
                 &[class*="wp-block"],
-                &[data-type="twork/timeline-item"],
-                &.wp-block[data-type="twork/timeline-item"] {
+                &[data-type="mk/timeline-item"],
+                &.wp-block[data-type="mk/timeline-item"] {
                     margin-bottom: 80px !important;
                     
                     &:not(:last-child) {
@@ -692,7 +692,7 @@
         .timeline-wrapper {
             > .block-editor-inner-blocks > .block-editor-block-list__layout {
                 > .wp-block,
-                > [data-type="twork/timeline-item"] {
+                > [data-type="mk/timeline-item"] {
                     flex-direction: column !important;
                     align-items: flex-end !important;
 
@@ -714,7 +714,7 @@
 }
 
 @media (max-width: 768px) {
-    .twork-timeline-wrapper-section {
+    .mk-timeline-wrapper-section {
         padding: 60px 0;
 
         .section-header {
@@ -730,7 +730,7 @@
         }
 
         .timeline-wrapper,
-        .twork-timeline-wrapper {
+        .mk-timeline-wrapper {
             padding: 30px 0;
 
             .timeline-line {
@@ -757,10 +757,10 @@
                 }
 
                 // CRITICAL: Override wp-block selectors with maximum specificity in responsive
-                &.wp-block-twork-timeline-item,
+                &.wp-block-mk-timeline-item,
                 &[class*="wp-block"],
-                &[data-type="twork/timeline-item"],
-                &.wp-block[data-type="twork/timeline-item"] {
+                &[data-type="mk/timeline-item"],
+                &.wp-block[data-type="mk/timeline-item"] {
                     margin-bottom: 60px !important;
                     
                     &:not(:last-child) {
@@ -833,7 +833,7 @@
         .timeline-wrapper {
             > .block-editor-inner-blocks > .block-editor-block-list__layout {
                 > .wp-block,
-                > [data-type="twork/timeline-item"] {
+                > [data-type="mk/timeline-item"] {
                     flex-direction: column !important;
                     align-items: flex-end !important;
 
@@ -856,9 +856,9 @@
 
 // Additional breakpoint for very small mobile devices
 @media (max-width: 480px) {
-    .twork-timeline-wrapper-section {
+    .mk-timeline-wrapper-section {
         .timeline-wrapper,
-        .twork-timeline-wrapper {
+        .mk-timeline-wrapper {
             .timeline-item {
                 // Reduced spacing for very small screens to prevent cramped layout
                 margin-bottom: 40px !important;
@@ -868,10 +868,10 @@
                 }
 
                 // CRITICAL: Override wp-block selectors with maximum specificity
-                &.wp-block-twork-timeline-item,
+                &.wp-block-mk-timeline-item,
                 &[class*="wp-block"],
-                &[data-type="twork/timeline-item"],
-                &.wp-block[data-type="twork/timeline-item"] {
+                &[data-type="mk/timeline-item"],
+                &.wp-block[data-type="mk/timeline-item"] {
                     margin-bottom: 40px !important;
                     
                     &:not(:last-child) {
@@ -904,7 +904,7 @@
 // Progressive Enhancement: Works without JavaScript
 .no-js,
 noscript {
-    .twork-timeline-wrapper-section {
+    .mk-timeline-wrapper-section {
         .timeline-item {
             opacity: 1 !important;
             transform: none !important;
@@ -920,7 +920,7 @@ noscript {
 
 // Reduced motion support for accessibility
 @media (prefers-reduced-motion: reduce) {
-    .twork-timeline-wrapper-section {
+    .mk-timeline-wrapper-section {
         .timeline-item {
             transition: none !important;
             animation: none !important;
@@ -930,7 +930,7 @@ noscript {
             transition: none !important;
         }
 
-        &.twork-animation-ready[data-animation="true"] .timeline-item {
+        &.mk-animation-ready[data-animation="true"] .timeline-item {
             opacity: 1 !important;
             transform: none !important;
         }
@@ -938,19 +938,19 @@ noscript {
 }
 
 // === ACCESSIBILITY ===
-.twork-timeline-wrapper-section .timeline-item:focus-visible {
+.mk-timeline-wrapper-section .timeline-item:focus-visible {
     outline: 3px solid var(--primary-orange);
     outline-offset: 2px;
 }
 
-.twork-timeline-wrapper-section .timeline-content:focus-visible {
+.mk-timeline-wrapper-section .timeline-content:focus-visible {
     outline: 3px solid var(--primary-orange);
     outline-offset: 2px;
 }
 
 // === PRINT STYLES ===
 @media print {
-    .twork-timeline-wrapper-section {
+    .mk-timeline-wrapper-section {
         .timeline-wrapper {
             .timeline-line,
             .timeline-progress {
@@ -983,7 +983,7 @@ noscript {
 
 // === DARK MODE SUPPORT ===
 @media (prefers-color-scheme: dark) {
-    .twork-timeline-wrapper-section {
+    .mk-timeline-wrapper-section {
         .timeline-wrapper {
             .timeline-item {
                 .timeline-content {
@@ -1016,7 +1016,7 @@ noscript {
 }
 
 // === UTILITY CLASSES ===
-.twork-timeline-wrapper-section .timeline-item {
+.mk-timeline-wrapper-section .timeline-item {
     // Border utilities
     &.has-border {
         .timeline-content {

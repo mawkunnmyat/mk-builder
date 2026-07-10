@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/tele-download-section",
+	"name": "mk/tele-download-section",
 	"version": "1.0.0",
 	"title": "Telemedicine Download Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "download",
 	"description": "Download Jivaka Health App CTA section with title, description, and app store buttons.",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"app",
 		"jivaka",
 		"store",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"sectionPaddingTop": {
@@ -138,26 +138,26 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/tele-store-btn",
+				"name": "mk/tele-store-btn",
 				"attributes": {
 					"url": "https://jivakahospital.com/download-detail/"
 				}
 			},
 			{
-				"name": "twork/tele-store-btn",
+				"name": "mk/tele-store-btn",
 				"attributes": {
 					"url": "https://play.google.com/store/apps/details?id=com.jivaka.user"
 				}
 			},
 			{
-				"name": "twork/tele-store-btn",
+				"name": "mk/tele-store-btn",
 				"attributes": {
 					"url": "https://jivaka.advent-soft.com/download/jivaka-care.apk"
 				}
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

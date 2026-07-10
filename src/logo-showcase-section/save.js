@@ -11,7 +11,7 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'partners twork-logo-showcase-section',
+		className: 'partners mk-logo-showcase-section',
 	} );
 
 	return (

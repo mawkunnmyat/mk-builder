@@ -1,17 +1,17 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/info-section",
+	"name": "mk/info-section",
 	"version": "1.0.0",
 	"title": "Info Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "info-outline",
 	"description": "Section with heading and nested content blocks.",
 	"keywords": [
 		"about",
 		"agriculture",
 		"features",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -93,10 +93,10 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/features-grid",
+				"name": "mk/features-grid",
 				"innerBlocks": [
 					{
-						"name": "twork/feature-item",
+						"name": "mk/feature-item",
 						"attributes": {
 							"title": "Farm Development",
 							"description": "End-to-end planning for irrigation, drainage, and field layout tailored to your soil profile.",
@@ -104,7 +104,7 @@
 						}
 					},
 					{
-						"name": "twork/feature-item",
+						"name": "mk/feature-item",
 						"attributes": {
 							"title": "Crop Management",
 							"description": "Seasonal scouting, integrated pest management, and data-backed input recommendations.",
@@ -112,7 +112,7 @@
 						}
 					},
 					{
-						"name": "twork/feature-item",
+						"name": "mk/feature-item",
 						"attributes": {
 							"title": "Soil Restoration",
 							"description": "Cover crops, compost programs, and carbon-smart practices that rebuild organic matter.",
@@ -120,7 +120,7 @@
 						}
 					},
 					{
-						"name": "twork/feature-item",
+						"name": "mk/feature-item",
 						"attributes": {
 							"title": "Organic Cultivation",
 							"description": "Certification-ready workflows from seed selection through harvest and cold storage.",
@@ -130,10 +130,10 @@
 				]
 			},
 			{
-				"name": "twork/images-grid",
+				"name": "mk/images-grid",
 				"innerBlocks": [
 					{
-						"name": "twork/image-card",
+						"name": "mk/image-card",
 						"attributes": {
 							"variant": "simple",
 							"image": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1400&q=80",
@@ -141,7 +141,7 @@
 						}
 					},
 					{
-						"name": "twork/image-card",
+						"name": "mk/image-card",
 						"attributes": {
 							"variant": "overlay",
 							"image": "https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&w=1400&q=80",
@@ -155,7 +155,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

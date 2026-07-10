@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, MediaPlaceholder } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -10,29 +10,29 @@ import {
 } from '@wordpress/components';
 
 const ICON_TYPE_OPTIONS = [
-	{ value: 'fontawesome', label: __( 'Font Awesome', 'twork-builder' ) },
+	{ value: 'fontawesome', label: __( 'Font Awesome', 'mk-builder' ) },
 	{
 		value: 'dashicon',
-		label: __( 'WordPress (Dashicons)', 'twork-builder' ),
+		label: __( 'WordPress (Dashicons)', 'mk-builder' ),
 	},
-	{ value: 'image', label: __( 'Image / GIF', 'twork-builder' ) },
-	{ value: 'video', label: __( 'Video', 'twork-builder' ) },
+	{ value: 'image', label: __( 'Image / GIF', 'mk-builder' ) },
+	{ value: 'video', label: __( 'Video', 'mk-builder' ) },
 ];
 
 const DASHICON_OPTIONS = [
 	{
 		value: 'dashicons-arrow-down-alt2',
-		label: __( 'Arrow down', 'twork-builder' ),
+		label: __( 'Arrow down', 'mk-builder' ),
 	},
 	{
 		value: 'dashicons-arrow-down',
-		label: __( 'Arrow down (alt)', 'twork-builder' ),
+		label: __( 'Arrow down (alt)', 'mk-builder' ),
 	},
 	{
 		value: 'dashicons-arrow-right-alt2',
-		label: __( 'Arrow right', 'twork-builder' ),
+		label: __( 'Arrow right', 'mk-builder' ),
 	},
-	{ value: 'dashicons-plus-alt', label: __( 'Plus', 'twork-builder' ) },
+	{ value: 'dashicons-plus-alt', label: __( 'Plus', 'mk-builder' ) },
 ];
 
 function FaqAccordionIconRender( {
@@ -87,7 +87,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 	} = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'faq-item twork-centre-faq-item-editor',
+			className: 'faq-item mk-centre-faq-item-editor',
 		} ),
 		[]
 	);
@@ -96,9 +96,9 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'FAQ', 'twork-builder' ) }>
+					<PanelBody title={ __( 'FAQ', 'mk-builder' ) }>
 						<TextControl
-							label={ __( 'Question', 'twork-builder' ) }
+							label={ __( 'Question', 'mk-builder' ) }
 							value={ question }
 							onChange={ ( v ) =>
 								setAttributes( { question: v } )
@@ -106,21 +106,21 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Answer', 'twork-builder' ) }
+							label={ __( 'Answer', 'mk-builder' ) }
 							value={ answer }
 							onChange={ ( v ) => setAttributes( { answer: v } ) }
 							multiline
 						/>
 
 						<BaseControl
-							label={ __( 'Accordion icon', 'twork-builder' ) }
+							label={ __( 'Accordion icon', 'mk-builder' ) }
 							help={ __(
 								'Icon shown next to the question (e.g. chevron).',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<SelectControl
-								label={ __( 'Icon type', 'twork-builder' ) }
+								label={ __( 'Icon type', 'mk-builder' ) }
 								value={ accordionIconType || 'fontawesome' }
 								options={ ICON_TYPE_OPTIONS }
 								onChange={ ( v ) =>
@@ -133,7 +133,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Font Awesome class',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={
 										accordionIcon || 'fas fa-chevron-down'
@@ -149,7 +149,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							{ ( accordionIconType || 'fontawesome' ) ===
 								'dashicon' && (
 								<SelectControl
-									label={ __( 'Dashicon', 'twork-builder' ) }
+									label={ __( 'Dashicon', 'mk-builder' ) }
 									value={
 										accordionDashicon ||
 										'dashicons-arrow-down-alt2'
@@ -178,7 +178,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Icon image / GIF',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -204,7 +204,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }
@@ -224,7 +224,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Icon video',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -253,7 +253,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }

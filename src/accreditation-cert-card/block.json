@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/accreditation-cert-card",
+	"name": "mk/accreditation-cert-card",
 	"title": "Accreditation Cert Card",
-	"parent": [ "twork/accreditation-section" ],
+	"parent": [ "mk/accreditation-section" ],
 	"description": "Single accreditation/certification card with icon, title, badge, and description.",
 	"keywords": [
 		"accreditation",
@@ -11,7 +11,7 @@
 		"ISO",
 		"JCI",
 		"card",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"iconClass": {
@@ -149,7 +149,7 @@
 			"topBarColor": "#f48b2a"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

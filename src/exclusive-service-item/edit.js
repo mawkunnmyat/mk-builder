@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -31,7 +31,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-exclusive-service-item-editor svc-card',
+			className: 'mk-exclusive-service-item-editor svc-card',
 			style: {
 				display: 'flex',
 				alignItems: 'flex-start',
@@ -51,35 +51,35 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Icon Settings', 'twork-builder' ) }
+						title={ __( 'Icon Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Icon Class', 'twork-builder' ) }
+							label={ __( 'Icon Class', 'mk-builder' ) }
 							value={ icon }
 							onChange={ ( val ) =>
 								setAttributes( { icon: val } )
 							}
 							help={ __(
 								'Font Awesome icon class. e.g. fas fa-language, fas fa-plane-arrival',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Icon Color', 'twork-builder' ) }
+							title={ __( 'Icon Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: iconColor,
 									onChange: ( val ) =>
 										setAttributes( { iconColor: val } ),
-									label: __( 'Icon Color', 'twork-builder' ),
+									label: __( 'Icon Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Icon Size (rem)', 'twork-builder' ) }
+							label={ __( 'Icon Size (rem)', 'mk-builder' ) }
 							value={ iconSize }
 							onChange={ ( val ) =>
 								setAttributes( { iconSize: val } )
@@ -91,23 +91,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Title', 'twork-builder' ) }
+						title={ __( 'Title', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -118,7 +118,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -130,11 +130,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Description', 'twork-builder' ) }
+						title={ __( 'Description', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Description Color', 'twork-builder' ) }
+							title={ __( 'Description Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: descriptionColor,
@@ -144,14 +144,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Description Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ descriptionFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { descriptionFontSize: val } )
@@ -163,13 +163,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Card Layout', 'twork-builder' ) }
+						title={ __( 'Card Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Card Padding - Desktop (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardPadding }
 							onChange={ ( val ) =>
@@ -183,7 +183,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Card Padding - Mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardPaddingMobile }
 							onChange={ ( val ) =>
@@ -197,7 +197,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gap Between Icon & Content (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardGap }
 							onChange={ ( val ) =>
@@ -231,7 +231,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) => setAttributes( { title: val } ) }
 						placeholder={ __(
 							'Service title...',
-							'twork-builder'
+							'mk-builder'
 						) }
 						style={ {
 							fontSize: `${ titleFontSize }rem`,
@@ -249,7 +249,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'Service description...',
-							'twork-builder'
+							'mk-builder'
 						) }
 						style={ {
 							fontSize: `${ descriptionFontSize }rem`,

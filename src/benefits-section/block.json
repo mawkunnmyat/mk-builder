@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/benefits-section",
+	"name": "mk/benefits-section",
 	"version": "1.0.0",
 	"title": "Benefits Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "awards",
 	"description": "Why Choose section with benefit cards (icon, title, description) for career/benefits.",
-	"keywords": [ "benefits", "career", "why choose", "icon", "card", "twork" ],
+	"keywords": [ "benefits", "career", "why choose", "icon", "card", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -151,7 +151,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/benefit-item",
+				"name": "mk/benefit-item",
 				"attributes": {
 					"icon": "fas fa-user-md",
 					"title": "Professional Growth",
@@ -159,7 +159,7 @@
 				}
 			},
 			{
-				"name": "twork/benefit-item",
+				"name": "mk/benefit-item",
 				"attributes": {
 					"icon": "fas fa-heartbeat",
 					"title": "Work-Life Balance",
@@ -167,7 +167,7 @@
 				}
 			},
 			{
-				"name": "twork/benefit-item",
+				"name": "mk/benefit-item",
 				"attributes": {
 					"icon": "fas fa-users",
 					"title": "Inclusive Culture",
@@ -175,7 +175,7 @@
 				}
 			},
 			{
-				"name": "twork/benefit-item",
+				"name": "mk/benefit-item",
 				"attributes": {
 					"icon": "fas fa-briefcase-medical",
 					"title": "Modern Facilities",
@@ -183,7 +183,7 @@
 				}
 			},
 			{
-				"name": "twork/benefit-item",
+				"name": "mk/benefit-item",
 				"attributes": {
 					"icon": "fas fa-hand-holding-usd",
 					"title": "Competitive Benefits",
@@ -191,7 +191,7 @@
 				}
 			},
 			{
-				"name": "twork/benefit-item",
+				"name": "mk/benefit-item",
 				"attributes": {
 					"icon": "fas fa-globe-asia",
 					"title": "Community Impact",
@@ -200,7 +200,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

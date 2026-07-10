@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -7,17 +7,17 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/centre-technology-item' ];
+const ALLOWED_BLOCKS = [ 'mk/centre-technology-item' ];
 const TEMPLATE = [
-	[ 'twork/centre-technology-item', { caption: 'Philips Azurion Cath Lab' } ],
-	[ 'twork/centre-technology-item', { caption: 'Modular Cardiac OT' } ],
+	[ 'mk/centre-technology-item', { caption: 'Philips Azurion Cath Lab' } ],
+	[ 'mk/centre-technology-item', { caption: 'Modular Cardiac OT' } ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { sectionId, title, introText, showSection } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'content-section fade-up twork-centre-technology-editor',
+			className: 'content-section fade-up mk-centre-technology-editor',
 			id: sectionId,
 		} ),
 		[ sectionId ]
@@ -31,19 +31,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<PanelBody
 							title={ __(
 								'Technology Section',
-								'twork-builder'
+								'mk-builder'
 							) }
 							initialOpen={ true }
 						>
 							<ToggleControl
-								label={ __( 'Show section', 'twork-builder' ) }
+								label={ __( 'Show section', 'mk-builder' ) }
 								checked={ false }
 								onChange={ ( v ) =>
 									setAttributes( { showSection: v } )
 								}
 								help={ __(
 									'Display this section on the page. When off, hidden in Editor, Front-end, and Responsive.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</PanelBody>
@@ -78,7 +78,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					>
 						{ __(
 							'Technology & Facilities (Hidden)',
-							'twork-builder'
+							'mk-builder'
 						) }
 					</div>
 					<p
@@ -91,7 +91,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					>
 						{ __(
 							'Section is turned off. Turn "Show section" on in the block settings (right panel) to display it on the page.',
-							'twork-builder'
+							'mk-builder'
 						) }
 					</p>
 				</div>
@@ -104,25 +104,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Technology Section', 'twork-builder' ) }
+						title={ __( 'Technology Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
-							label={ __( 'Show section', 'twork-builder' ) }
+							label={ __( 'Show section', 'mk-builder' ) }
 							checked={ showSection !== false }
 							onChange={ ( v ) =>
 								setAttributes( { showSection: v } )
 							}
 							help={ __(
 								'Display this section on the page. When off, hidden in Editor, Front-end, and Responsive.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
 							label={ __(
 								'Section ID (anchor)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionId }
 							onChange={ ( v ) =>
@@ -132,18 +132,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. #technology for sidebar links',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Section title', 'twork-builder' ) }
+							label={ __( 'Section title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( v ) => setAttributes( { title: v } ) }
 						/>
 
 						<TextControl
-							label={ __( 'Intro text', 'twork-builder' ) }
+							label={ __( 'Intro text', 'mk-builder' ) }
 							value={ introText }
 							onChange={ ( v ) =>
 								setAttributes( { introText: v } )
@@ -160,7 +160,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( v ) => setAttributes( { title: v } ) }
 					placeholder={ __(
 						'Technology & Facilities',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 
@@ -170,7 +170,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( v ) => setAttributes( { introText: v } ) }
 					placeholder={ __(
 						'We utilize the latest medical technology...',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 

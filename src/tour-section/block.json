@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/tour-section",
+	"name": "mk/tour-section",
 	"version": "1.0.0",
 	"title": "Virtual Tour Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Virtual tour CTA section with background image, overlay, icon, title, subtitle and button. Matches facilities page tour section.",
 	"keywords": [
 		"tour",
@@ -13,7 +13,7 @@
 		"cta",
 		"facilities",
 		"jivaka",
-		"twork"
+		"mk"
 	],
 	"icon": "video-alt3",
 	"attributes": {
@@ -246,7 +246,7 @@
 			"containerPadding": 20
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

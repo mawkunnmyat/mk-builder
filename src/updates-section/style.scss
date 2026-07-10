@@ -1,7 +1,7 @@
 @import "../scss/typography";
 
 /**
- * Twork Updates Section – Hospital News & Updates
+ * Mk Updates Section – Hospital News & Updates
  * Follows services-grid and jivaka-section standards.
  * Pure CSS – no external libraries.
  */
@@ -20,9 +20,9 @@
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
 .block-editor-block-list__block,
-.wp-block-twork-updates-section,
-[data-type="twork/updates-section"] {
-    .twork-updates-section-editor,
+.wp-block-mk-updates-section,
+[data-type="mk/updates-section"] {
+    .mk-updates-section-editor,
     .updates-section {
         font-family: $font-primary;
         position: relative;
@@ -89,8 +89,8 @@
 
 // === FRONTEND STYLES ===
 .updates-section,
-.twork-updates-section,
-.wp-block-twork-updates-section {
+.mk-updates-section,
+.wp-block-mk-updates-section {
     font-family: $font-primary !important;
     position: relative !important;
     overflow: hidden !important;
@@ -264,8 +264,8 @@
 // === RESPONSIVE ===
 @media (max-width: 992px) {
     .updates-section,
-    .twork-updates-section,
-    .wp-block-twork-updates-section {
+    .mk-updates-section,
+    .wp-block-mk-updates-section {
         .updates-grid {
             grid-template-columns: repeat(var(--updates-columns-tablet, 2), 1fr);
         }
@@ -274,8 +274,8 @@
 
 @media (max-width: 768px) {
     .updates-section,
-    .twork-updates-section,
-    .wp-block-twork-updates-section {
+    .mk-updates-section,
+    .wp-block-mk-updates-section {
         .jivaka-section-title {
             margin-bottom: 40px;
 

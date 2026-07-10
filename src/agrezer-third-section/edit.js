@@ -18,10 +18,10 @@ import {
 } from '@wordpress/components';
 
 // Must match the actual child block name (see src/agrezer-third-section-card/block.json).
-const ALLOWED_BLOCKS = [ 'twork/stat-image-card' ];
+const ALLOWED_BLOCKS = [ 'mk/stat-image-card' ];
 const TEMPLATE = [
 	[
-		'twork/stat-image-card',
+		'mk/stat-image-card',
 		{
 			cardAlign: 'left',
 			stat: '80%',
@@ -30,7 +30,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/stat-image-card',
+		'mk/stat-image-card',
 		{
 			cardAlign: 'center',
 			stat: '98%',
@@ -39,7 +39,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/stat-image-card',
+		'mk/stat-image-card',
 		{
 			cardAlign: 'right',
 			stat: '50%',
@@ -89,19 +89,19 @@ export default function Edit( {
 	const overlayAlpha = Number.isFinite( overlayRaw )
 		? Math.min( 1, Math.max( 0, overlayRaw / 100 ) )
 		: 0;
-	const uniqueClass = `twork-third-${ clientId }`;
+	const uniqueClass = `mk-third-${ clientId }`;
 
 	const dynamicStyles = `
     .${ uniqueClass } {
         background-color: ${ backgroundColor } !important;
         padding-top: ${ paddingTop }px !important;
         padding-bottom: ${ paddingBottom }px !important;
-        --twork-third-max: ${ containerMaxWidth }px;
-        --twork-third-width-pct: ${ containerWidthPct }%;
-        --twork-third-top-gap: ${ topGridGap }px;
-        --twork-third-top-mb: ${ topMarginBottom }px;
-        --twork-third-cards-gap: ${ cardsGap }px;
-        --twork-third-cards-mt: ${ cardsMarginTop }px;
+        --mk-third-max: ${ containerMaxWidth }px;
+        --mk-third-width-pct: ${ containerWidthPct }%;
+        --mk-third-top-gap: ${ topGridGap }px;
+        --mk-third-top-mb: ${ topMarginBottom }px;
+        --mk-third-cards-gap: ${ cardsGap }px;
+        --mk-third-cards-mt: ${ cardsMarginTop }px;
         --tw-third-title-color: ${ titleColor };
         --tw-third-title-size: ${ titleFontSize }px;
         --tw-third-sub-color: ${ subtitleColor };
@@ -115,12 +115,12 @@ export default function Edit( {
 `;
 
 	const blockProps = useBlockProps( {
-		className: `twork-third-section twork-third-section-editor ${ uniqueClass }`,
+		className: `mk-third-section mk-third-section-editor ${ uniqueClass }`,
 	} );
 
 	const innerBlocksProps = useInnerBlocksProps(
 		{
-			className: 'twork-third-section__cards',
+			className: 'mk-third-section__cards',
 		},
 		{
 			allowedBlocks: ALLOWED_BLOCKS,
@@ -138,11 +138,11 @@ export default function Edit( {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Typography', 'twork-builder' ) }
+						title={ __( 'Typography', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Title font size (px)', 'twork-builder' ) }
+							label={ __( 'Title font size (px)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -154,7 +154,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Subtitle font size (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ subtitleFontSize }
 							onChange={ ( val ) =>
@@ -167,7 +167,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Description font size (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ descriptionFontSize }
 							onChange={ ( val ) =>
@@ -182,19 +182,19 @@ export default function Edit( {
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						colorSettings={ [
 							{
 								value: titleColor,
 								onChange: ( val ) =>
 									setAttributes( { titleColor: val } ),
-								label: __( 'Title', 'twork-builder' ),
+								label: __( 'Title', 'mk-builder' ),
 							},
 							{
 								value: subtitleColor,
 								onChange: ( val ) =>
 									setAttributes( { subtitleColor: val } ),
-								label: __( 'Subtitle', 'twork-builder' ),
+								label: __( 'Subtitle', 'mk-builder' ),
 							},
 							{
 								value: descriptionColor,
@@ -202,7 +202,7 @@ export default function Edit( {
 									setAttributes( {
 										descriptionColor: val,
 									} ),
-								label: __( 'Description', 'twork-builder' ),
+								label: __( 'Description', 'mk-builder' ),
 							},
 							{
 								value: backgroundColor,
@@ -210,20 +210,20 @@ export default function Edit( {
 									setAttributes( { backgroundColor: val } ),
 								label: __(
 									'Section background',
-									'twork-builder'
+									'mk-builder'
 								),
 							},
 						] }
 					/>
 
 					<PanelBody
-						title={ __( 'Overlay', 'twork-builder' ) }
+						title={ __( 'Overlay', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Dark overlay opacity (%)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ overlayOpacity }
 							onChange={ ( val ) =>
@@ -234,17 +234,17 @@ export default function Edit( {
 							step={ 1 }
 							help={ __(
 								'Adds a subtle dark layer over the section background.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Spacing', 'twork-builder' ) }
+						title={ __( 'Spacing', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -256,7 +256,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -269,7 +269,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Top row column gap (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ topGridGap }
 							onChange={ ( val ) =>
@@ -281,7 +281,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Space below top row (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ topMarginBottom }
 							onChange={ ( val ) =>
@@ -291,7 +291,7 @@ export default function Edit( {
 							max={ 80 }
 						/>
 						<RangeControl
-							label={ __( 'Cards gap (px)', 'twork-builder' ) }
+							label={ __( 'Cards gap (px)', 'mk-builder' ) }
 							value={ cardsGap }
 							onChange={ ( val ) =>
 								setAttributes( { cardsGap: val } )
@@ -302,7 +302,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Cards top margin (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardsMarginTop }
 							onChange={ ( val ) =>
@@ -314,13 +314,13 @@ export default function Edit( {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -333,7 +333,7 @@ export default function Edit( {
 						<RangeControl
 							label={ __(
 								'Container width (%)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerWidthPct }
 							onChange={ ( val ) =>
@@ -345,11 +345,11 @@ export default function Edit( {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Call to action', 'twork-builder' ) }
+						title={ __( 'Call to action', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Button colors', 'twork-builder' ) }
+							title={ __( 'Button colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: ctaBgColor,
@@ -357,7 +357,7 @@ export default function Edit( {
 										setAttributes( {
 											ctaBgColor: val,
 										} ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 								{
 									value: ctaTextColor,
@@ -365,13 +365,13 @@ export default function Edit( {
 										setAttributes( {
 											ctaTextColor: val,
 										} ),
-									label: __( 'Text', 'twork-builder' ),
+									label: __( 'Text', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<ToggleControl
-							label={ __( 'Show CTA', 'twork-builder' ) }
+							label={ __( 'Show CTA', 'mk-builder' ) }
 							checked={ showCta }
 							onChange={ ( val ) =>
 								setAttributes( { showCta: val } )
@@ -383,7 +383,7 @@ export default function Edit( {
 								<TextControl
 									label={ __(
 										'Button text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ ctaText }
 									onChange={ ( val ) =>
@@ -392,21 +392,21 @@ export default function Edit( {
 								/>
 
 								<TextControl
-									label={ __( 'URL', 'twork-builder' ) }
+									label={ __( 'URL', 'mk-builder' ) }
 									value={ ctaUrl }
 									onChange={ ( val ) =>
 										setAttributes( { ctaUrl: val } )
 									}
 									help={ __(
 										'Leave empty for a non-clickable button. Any URL (including #) becomes a link.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<ToggleControl
 									label={ __(
 										'Open in new tab',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ ctaOpenInNewTab }
 									onChange={ ( val ) =>
@@ -421,11 +421,11 @@ export default function Edit( {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Tagline icon', 'twork-builder' ) }
+						title={ __( 'Tagline icon', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ tagIconAlt }
 							onChange={ ( val ) =>
 								setAttributes( { tagIconAlt: val } )
@@ -446,7 +446,7 @@ export default function Edit( {
 								labels={ {
 									title: __(
 										'Tagline icon',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -455,7 +455,7 @@ export default function Edit( {
 								<img
 									src={ tagIcon }
 									alt=""
-									className="twork-third-section__tag-icon"
+									className="mk-third-section__tag-icon"
 								/>
 
 								<Button
@@ -468,7 +468,7 @@ export default function Edit( {
 										} )
 									}
 								>
-									{ __( 'Remove icon', 'twork-builder' ) }
+									{ __( 'Remove icon', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
@@ -481,10 +481,10 @@ export default function Edit( {
 				dangerouslySetInnerHTML={ { __html: dynamicStyles } }
 			/>
 			<section { ...blockProps }>
-				<div className="twork-third-section__container">
-					<div className="twork-third-section__top">
-						<div className="twork-third-section__intro">
-							<div className="twork-third-section__tagline">
+				<div className="mk-third-section__container">
+					<div className="mk-third-section__top">
+						<div className="mk-third-section__intro">
+							<div className="mk-third-section__tagline">
 								{ tagIcon && (
 									<MediaUpload
 										onSelect={ ( media ) =>
@@ -501,7 +501,7 @@ export default function Edit( {
 											<img
 												src={ tagIcon }
 												alt={ tagIconAlt || '' }
-												className="twork-third-section__tag-icon"
+												className="mk-third-section__tag-icon"
 												onClick={ open }
 												role="button"
 												tabIndex={ 0 }
@@ -521,14 +521,14 @@ export default function Edit( {
 								) }
 								<RichText
 									tagName="span"
-									className="twork-third-section__subtitle"
+									className="mk-third-section__subtitle"
 									value={ tagline }
 									onChange={ ( val ) =>
 										setAttributes( { tagline: val } )
 									}
 									placeholder={ __(
 										'Subtitle',
-										'twork-builder'
+										'mk-builder'
 									) }
 									allowedFormats={ [
 										'core/bold',
@@ -538,12 +538,12 @@ export default function Edit( {
 							</div>
 							<RichText
 								tagName="h2"
-								className="twork-third-section__title"
+								className="mk-third-section__title"
 								value={ title }
 								onChange={ ( val ) =>
 									setAttributes( { title: val } )
 								}
-								placeholder={ __( 'Heading', 'twork-builder' ) }
+								placeholder={ __( 'Heading', 'mk-builder' ) }
 								allowedFormats={ [
 									'core/bold',
 									'core/italic',
@@ -552,17 +552,17 @@ export default function Edit( {
 							/>
 						</div>
 
-						<div className="twork-third-section__side">
+						<div className="mk-third-section__side">
 							<RichText
 								tagName="p"
-								className="twork-third-section__desc"
+								className="mk-third-section__desc"
 								value={ description }
 								onChange={ ( val ) =>
 									setAttributes( { description: val } )
 								}
 								placeholder={ __(
 									'Description…',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 
@@ -571,7 +571,7 @@ export default function Edit( {
 									{ isRealLink ? (
 										<a
 											href={ urlTrim }
-											className="twork-third-section__cta"
+											className="mk-third-section__cta"
 											onClick={ ( e ) =>
 												e.preventDefault()
 											}
@@ -580,7 +580,7 @@ export default function Edit( {
 											<span aria-hidden="true">↗</span>
 										</a>
 									) : (
-										<span className="twork-third-section__cta twork-third-section__cta--static">
+										<span className="mk-third-section__cta mk-third-section__cta--static">
 											<span>{ ctaText }</span>
 											<span aria-hidden="true">↗</span>
 										</span>

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -15,45 +15,45 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/tele-specialty-item' ];
+const ALLOWED_BLOCKS = [ 'mk/tele-specialty-item' ];
 const TEMPLATE = [
 	[
-		'twork/tele-specialty-item',
+		'mk/tele-specialty-item',
 		{ iconClass: 'fas fa-stethoscope', title: 'General Medicine' },
 	],
 
 	[
-		'twork/tele-specialty-item',
+		'mk/tele-specialty-item',
 		{ iconClass: 'fas fa-allergies', title: 'Dermatology' },
 	],
 
 	[
-		'twork/tele-specialty-item',
+		'mk/tele-specialty-item',
 		{ iconClass: 'fas fa-baby', title: 'Pediatrics' },
 	],
 
 	[
-		'twork/tele-specialty-item',
+		'mk/tele-specialty-item',
 		{ iconClass: 'fas fa-brain', title: 'Psychology' },
 	],
 
 	[
-		'twork/tele-specialty-item',
+		'mk/tele-specialty-item',
 		{ iconClass: 'fas fa-female', title: 'Gynecology' },
 	],
 
 	[
-		'twork/tele-specialty-item',
+		'mk/tele-specialty-item',
 		{ iconClass: 'fas fa-carrot', title: 'Nutrition / Diet' },
 	],
 
 	[
-		'twork/tele-specialty-item',
+		'mk/tele-specialty-item',
 		{ iconClass: 'fas fa-heartbeat', title: 'Cardiology Follow-up' },
 	],
 
 	[
-		'twork/tele-specialty-item',
+		'mk/tele-specialty-item',
 		{ iconClass: 'fas fa-notes-medical', title: 'Report Review' },
 	],
 ];
@@ -80,7 +80,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-tele-specialty-section-editor',
+			className: 'mk-tele-specialty-section-editor',
 			style: {
 				paddingTop: `${ sectionPaddingTop }px`,
 				paddingBottom: `${ sectionPaddingBottom }px`,
@@ -115,13 +115,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Show Section Title',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSectionTitle }
 							onChange={ ( val ) =>
@@ -132,7 +132,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						{ showSectionTitle && (
 							<>
 								<TextControl
-									label={ __( 'Title', 'twork-builder' ) }
+									label={ __( 'Title', 'mk-builder' ) }
 									value={ sectionTitle }
 									onChange={ ( val ) =>
 										setAttributes( { sectionTitle: val } )
@@ -142,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Description',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ sectionSubtitle }
 									onChange={ ( val ) =>
@@ -153,27 +153,27 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<SelectControl
-									label={ __( 'Alignment', 'twork-builder' ) }
+									label={ __( 'Alignment', 'mk-builder' ) }
 									value={ sectionTitleAlignment }
 									options={ [
 										{
 											label: __(
 												'Left',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'left',
 										},
 										{
 											label: __(
 												'Center',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'center',
 										},
 										{
 											label: __(
 												'Right',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'right',
 										},
@@ -190,7 +190,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Add fade-up class (section header)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ useFadeUp }
 							onChange={ ( val ) =>
@@ -199,11 +199,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Title & Description', 'twork-builder' ) }
+						title={ __( 'Title & Description', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: sectionTitleColor,
@@ -211,7 +211,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											sectionTitleColor: val,
 										} ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -219,7 +219,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Title Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionTitleFontSize }
 							onChange={ ( val ) =>
@@ -232,7 +232,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Description Color', 'twork-builder' ) }
+							title={ __( 'Description Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: sectionSubtitleColor,
@@ -242,7 +242,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Description Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -251,7 +251,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Description Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionSubtitleFontSize }
 							onChange={ ( val ) =>
@@ -267,7 +267,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Header Margin Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionHeaderMarginBottom }
 							onChange={ ( val ) =>
@@ -281,13 +281,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Grid', 'twork-builder' ) }
+						title={ __( 'Grid', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Gap Between Items (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gridGap }
 							onChange={ ( val ) =>
@@ -301,7 +301,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Min Item Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ minItemWidth }
 							onChange={ ( val ) =>
@@ -312,18 +312,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 10 }
 							help={ __(
 								'Used for auto-fill grid: minmax(minItemWidth, 1fr)',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Section & Container', 'twork-builder' ) }
+						title={ __( 'Section & Container', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Section Padding Top (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionPaddingTop }
 							onChange={ ( val ) =>
@@ -337,7 +337,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Section Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionPaddingBottom }
 							onChange={ ( val ) =>
@@ -351,7 +351,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -365,7 +365,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -397,7 +397,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Available for Tele-Consultation',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ {
 										fontSize: `${ sectionTitleFontSize }rem`,
@@ -417,7 +417,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Not all conditions require…',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ {
 										fontSize: `${ sectionSubtitleFontSize }rem`,

@@ -2,7 +2,7 @@
 	'use strict';
 
 	const HEADER_SELECTOR =
-		'.wp-block-twork-brand-header.twork-brand-header, [data-block="twork/brand-header"]';
+		'.wp-block-mk-brand-header.mk-brand-header, [data-block="mk/brand-header"]';
 
 	function debounce( fn, wait ) {
 		let timerId;
@@ -19,7 +19,7 @@
 
 		const onScroll = debounce( () => {
 			rootEl.classList.toggle(
-				'twork-brand-header--scrolled',
+				'mk-brand-header--scrolled',
 				window.scrollY > 20
 			);
 		}, 80 );
@@ -29,11 +29,11 @@
 	}
 
 	function initHeader( rootEl ) {
-		if ( rootEl.dataset.tworkBrandHeaderInit === 'true' ) {
+		if ( rootEl.dataset.mkBrandHeaderInit === 'true' ) {
 			return;
 		}
 
-		rootEl.dataset.tworkBrandHeaderInit = 'true';
+		rootEl.dataset.mkBrandHeaderInit = 'true';
 
 		const toggle = rootEl.querySelector( "[data-action='menu-toggle']" );
 
@@ -42,7 +42,7 @@
 				const expanded = toggle.getAttribute( 'aria-expanded' ) === 'true';
 				const next = ! expanded;
 				toggle.setAttribute( 'aria-expanded', String( next ) );
-				rootEl.classList.toggle( 'twork-brand-header--open', next );
+				rootEl.classList.toggle( 'mk-brand-header--open', next );
 				document.body.classList.toggle( 'nav-open', next );
 			} );
 		}
@@ -50,11 +50,11 @@
 		document.addEventListener( 'keydown', ( event ) => {
 			if (
 				event.key === 'Escape' &&
-				rootEl.classList.contains( 'twork-brand-header--open' )
+				rootEl.classList.contains( 'mk-brand-header--open' )
 			) {
 				const btn = rootEl.querySelector( "[data-action='menu-toggle']" );
 				btn?.setAttribute( 'aria-expanded', 'false' );
-				rootEl.classList.remove( 'twork-brand-header--open' );
+				rootEl.classList.remove( 'mk-brand-header--open' );
 				document.body.classList.remove( 'nav-open' );
 				btn?.focus();
 			}

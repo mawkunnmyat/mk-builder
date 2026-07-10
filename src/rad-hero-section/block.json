@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/rad-hero-section",
+	"name": "mk/rad-hero-section",
 	"version": "1.0.0",
 	"title": "Hero Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "format-image",
 	"description": "Radiology & Imaging hero section with slanted background, background image, headline, description, and CTA button.",
-	"keywords": [ "radiology", "imaging", "hero", "header", "twork" ],
+	"keywords": [ "radiology", "imaging", "hero", "header", "mk" ],
 	"attributes": {
 		"backgroundImage": {
 			"type": "string",
@@ -58,7 +58,7 @@
 			"minHeight": 600
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

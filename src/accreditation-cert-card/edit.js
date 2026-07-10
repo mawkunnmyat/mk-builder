@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -16,21 +16,21 @@ import {
 
 const ICON_OPTIONS = [
 	{
-		label: __( 'Certificate', 'twork-builder' ),
+		label: __( 'Certificate', 'mk-builder' ),
 		value: 'fas fa-certificate',
 	},
-	{ label: __( 'Globe', 'twork-builder' ), value: 'fas fa-globe' },
-	{ label: __( 'Shield Alt', 'twork-builder' ), value: 'fas fa-shield-alt' },
-	{ label: __( 'Award', 'twork-builder' ), value: 'fas fa-award' },
-	{ label: __( 'Medal', 'twork-builder' ), value: 'fas fa-medal' },
-	{ label: __( 'Star', 'twork-builder' ), value: 'fas fa-star' },
+	{ label: __( 'Globe', 'mk-builder' ), value: 'fas fa-globe' },
+	{ label: __( 'Shield Alt', 'mk-builder' ), value: 'fas fa-shield-alt' },
+	{ label: __( 'Award', 'mk-builder' ), value: 'fas fa-award' },
+	{ label: __( 'Medal', 'mk-builder' ), value: 'fas fa-medal' },
+	{ label: __( 'Star', 'mk-builder' ), value: 'fas fa-star' },
 	{
-		label: __( 'Check Circle', 'twork-builder' ),
+		label: __( 'Check Circle', 'mk-builder' ),
 		value: 'fas fa-check-circle',
 	},
-	{ label: __( 'Hospital', 'twork-builder' ), value: 'fas fa-hospital' },
-	{ label: __( 'Heartbeat', 'twork-builder' ), value: 'fas fa-heartbeat' },
-	{ label: __( 'Ribbon', 'twork-builder' ), value: 'fas fa-ribbon' },
+	{ label: __( 'Hospital', 'mk-builder' ), value: 'fas fa-hospital' },
+	{ label: __( 'Heartbeat', 'mk-builder' ), value: 'fas fa-heartbeat' },
+	{ label: __( 'Ribbon', 'mk-builder' ), value: 'fas fa-ribbon' },
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -66,7 +66,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'twork-accreditation-cert-card-editor cert-card stagger-up',
+				'mk-accreditation-cert-card-editor cert-card stagger-up',
 			style: {
 				padding: `${ cardPadding }px ${ cardPaddingHorizontal }px`,
 				borderRadius: `${ cardBorderRadius }px`,
@@ -83,11 +83,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon', 'twork-builder' ) }
+							label={ __( 'Icon', 'mk-builder' ) }
 							value={ iconClass }
 							options={ ICON_OPTIONS }
 							onChange={ ( val ) =>
@@ -98,7 +98,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Certification Title',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ certTitle }
 							onChange={ ( val ) =>
@@ -106,47 +106,47 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g., ISO 9001:2015, JCI Accreditation',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Badge Text', 'twork-builder' ) }
+							label={ __( 'Badge Text', 'mk-builder' ) }
 							value={ certBadge }
 							onChange={ ( val ) =>
 								setAttributes( { certBadge: val } )
 							}
 							help={ __(
 								'e.g., Certified Since 2018, Gold Seal of Approval',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Description', 'twork-builder' ) }
+							label={ __( 'Description', 'mk-builder' ) }
 							value={ certDescription }
 							onChange={ ( val ) =>
 								setAttributes( { certDescription: val } )
 							}
 							help={ __(
 								'Short description of the certification',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Icon Styling', 'twork-builder' ) }
+						title={ __( 'Icon Styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Icon Colors', 'twork-builder' ) }
+							title={ __( 'Icon Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: iconColor,
 									onChange: ( val ) =>
 										setAttributes( { iconColor: val } ),
-									label: __( 'Icon Color', 'twork-builder' ),
+									label: __( 'Icon Color', 'mk-builder' ),
 								},
 								{
 									value: iconBgColor,
@@ -154,14 +154,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { iconBgColor: val } ),
 									label: __(
 										'Icon Background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Icon Size (rem)', 'twork-builder' ) }
+							label={ __( 'Icon Size (rem)', 'mk-builder' ) }
 							value={ iconSize }
 							onChange={ ( val ) =>
 								setAttributes( { iconSize: val } )
@@ -173,17 +173,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Title Styling', 'twork-builder' ) }
+						title={ __( 'Title Styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -191,7 +191,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Title Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
@@ -203,7 +203,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Title Font Weight', 'twork-builder' ) }
+							label={ __( 'Title Font Weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -215,11 +215,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Badge Styling', 'twork-builder' ) }
+						title={ __( 'Badge Styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Badge Colors', 'twork-builder' ) }
+							title={ __( 'Badge Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: badgeBgColor,
@@ -227,7 +227,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { badgeBgColor: val } ),
 									label: __(
 										'Badge Background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -236,7 +236,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											badgeTextColor: val,
 										} ),
-									label: __( 'Badge Text', 'twork-builder' ),
+									label: __( 'Badge Text', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -244,7 +244,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Badge Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ badgeFontSize }
 							onChange={ ( val ) =>
@@ -256,7 +256,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Badge Font Weight', 'twork-builder' ) }
+							label={ __( 'Badge Font Weight', 'mk-builder' ) }
 							value={ badgeFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { badgeFontWeight: val } )
@@ -269,7 +269,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Badge Border Radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ badgeBorderRadius }
 							onChange={ ( val ) =>
@@ -282,11 +282,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Description Styling', 'twork-builder' ) }
+						title={ __( 'Description Styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Description Color', 'twork-builder' ) }
+							title={ __( 'Description Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: descriptionColor,
@@ -296,7 +296,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Description Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -305,7 +305,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Description Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ descriptionFontSize }
 							onChange={ ( val ) =>
@@ -317,7 +317,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Line Height', 'twork-builder' ) }
+							label={ __( 'Line Height', 'mk-builder' ) }
 							value={ descriptionLineHeight }
 							onChange={ ( val ) =>
 								setAttributes( { descriptionLineHeight: val } )
@@ -329,17 +329,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Card Styling', 'twork-builder' ) }
+						title={ __( 'Card Styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Card Colors', 'twork-builder' ) }
+							title={ __( 'Card Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: cardBgColor,
 									onChange: ( val ) =>
 										setAttributes( { cardBgColor: val } ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 								{
 									value: cardBorderColor,
@@ -347,7 +347,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											cardBorderColor: val,
 										} ),
-									label: __( 'Border', 'twork-builder' ),
+									label: __( 'Border', 'mk-builder' ),
 								},
 								{
 									value: topBarColor,
@@ -355,7 +355,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { topBarColor: val } ),
 									label: __(
 										'Hover Top Bar',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -364,7 +364,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show Top Bar on Hover',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showTopBarOnHover }
 							onChange={ ( val ) =>
@@ -375,7 +375,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Card Border Radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardBorderRadius }
 							onChange={ ( val ) =>
@@ -389,7 +389,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Card Border Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardBorderWidth }
 							onChange={ ( val ) =>
@@ -403,7 +403,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Vertical (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardPadding }
 							onChange={ ( val ) =>
@@ -417,7 +417,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Horizontal (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardPaddingHorizontal }
 							onChange={ ( val ) =>
@@ -455,7 +455,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) => setAttributes( { certTitle: val } ) }
 					placeholder={ __(
 						'Certification title...',
-						'twork-builder'
+						'mk-builder'
 					) }
 					style={ {
 						margin: '0 0 10px',
@@ -469,7 +469,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="span"
 					value={ certBadge }
 					onChange={ ( val ) => setAttributes( { certBadge: val } ) }
-					placeholder={ __( 'Badge text...', 'twork-builder' ) }
+					placeholder={ __( 'Badge text...', 'mk-builder' ) }
 					style={ {
 						display: 'inline-block',
 						background: badgeBgColor,
@@ -488,7 +488,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { certDescription: val } )
 					}
-					placeholder={ __( 'Description...', 'twork-builder' ) }
+					placeholder={ __( 'Description...', 'mk-builder' ) }
 					style={ {
 						margin: 0,
 						fontSize: `${ descriptionFontSize }rem`,

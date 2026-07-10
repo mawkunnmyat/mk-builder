@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/ph-shop-category-section",
+	"name": "mk/ph-shop-category-section",
 	"version": "1.0.0",
 	"title": "Shop by Category",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "Shop by Category section for the pharmacy page, displaying WooCommerce product categories in a bento grid.",
-	"keywords": [ "pharmacy", "shop", "category", "woocommerce", "twork" ],
+	"keywords": [ "pharmacy", "shop", "category", "woocommerce", "mk" ],
 	"attributes": {
 		"source": {
 			"type": "string",
@@ -90,7 +90,7 @@
 			"animationType": "fade-up"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

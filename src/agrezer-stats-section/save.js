@@ -28,14 +28,14 @@ export default function save( { attributes } ) {
 	const statsGridGapMobile = `${ gridGapMobile }px`;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-stats twork-stats-section',
+		className: 'mk-stats mk-stats-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-stats-grid-gap': statsGridGap,
-			'--twork-stats-grid-gap-tablet': statsGridGapTablet,
-			'--twork-stats-grid-gap-mobile': statsGridGapMobile,
+			'--mk-stats-grid-gap': statsGridGap,
+			'--mk-stats-grid-gap-tablet': statsGridGapTablet,
+			'--mk-stats-grid-gap-mobile': statsGridGapMobile,
 			'--wp--style--block-gap': statsGridGap,
 		},
 	} );
@@ -52,16 +52,16 @@ export default function save( { attributes } ) {
 	};
 
 	return (
-		<section { ...blockProps } aria-labelledby="twork-stats-title">
-			<div className="twork-stats__container" style={ containerStyle }>
-				<div className="twork-stats__header" style={ headerStyle }>
-					<div className="twork-stats__header-left">
+		<section { ...blockProps } aria-labelledby="mk-stats-title">
+			<div className="mk-stats__container" style={ containerStyle }>
+				<div className="mk-stats__header" style={ headerStyle }>
+					<div className="mk-stats__header-left">
 						<p
-							className="twork-stats__tagline"
+							className="mk-stats__tagline"
 							style={ { color: taglineColor } }
 						>
 							<span
-								className="twork-stats__tagline-icon"
+								className="mk-stats__tagline-icon"
 								style={ { color: taglineIconColor } }
 								aria-hidden="true"
 							>
@@ -74,8 +74,8 @@ export default function save( { attributes } ) {
 						</p>
 						<RichText.Content
 							tagName="h2"
-							id="twork-stats-title"
-							className="twork-stats__title"
+							id="mk-stats-title"
+							className="mk-stats__title"
 							value={ sectionTitle }
 							style={ {
 								color: titleColor,
@@ -86,7 +86,7 @@ export default function save( { attributes } ) {
 					</div>
 					<RichText.Content
 						tagName="p"
-						className="twork-stats__desc"
+						className="mk-stats__desc"
 						value={ description }
 						style={ {
 							color: descColor,
@@ -96,12 +96,12 @@ export default function save( { attributes } ) {
 				</div>
 
 				<div
-					className="twork-stats__grid"
+					className="mk-stats__grid"
 					style={ {
 						gap: statsGridGap,
-						'--twork-stats-grid-gap': statsGridGap,
-						'--twork-stats-grid-gap-tablet': statsGridGapTablet,
-						'--twork-stats-grid-gap-mobile': statsGridGapMobile,
+						'--mk-stats-grid-gap': statsGridGap,
+						'--mk-stats-grid-gap-tablet': statsGridGapTablet,
+						'--mk-stats-grid-gap-mobile': statsGridGapMobile,
 					} }
 				>
 					<InnerBlocks.Content />

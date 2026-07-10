@@ -135,7 +135,7 @@ export default function save( { attributes } ) {
 							className="agrezer-contact-map__iframe"
 							title={
 								mapIframeTitle ||
-								__( 'Map location', 'twork-builder' )
+								__( 'Map location', 'mk-builder' )
 							}
 							src={ iframeSrc }
 							loading="lazy"

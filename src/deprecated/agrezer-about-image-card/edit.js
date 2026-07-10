@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	RichText,
@@ -37,21 +37,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Card', 'twork-builder' ) }
+						title={ __( 'Card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Layout', 'twork-builder' ) }
+							label={ __( 'Layout', 'mk-builder' ) }
 							value={ variant }
 							options={ [
 								{
-									label: __( 'Image only', 'twork-builder' ),
+									label: __( 'Image only', 'mk-builder' ),
 									value: 'simple',
 								},
 								{
 									label: __(
 										'Image with overlay',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'overlay',
 								},
@@ -62,7 +62,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Image alt text', 'twork-builder' ) }
+							label={ __( 'Image alt text', 'mk-builder' ) }
 							value={ alt }
 							onChange={ ( val ) =>
 								setAttributes( { alt: val } )
@@ -71,7 +71,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ variant === 'overlay' && (
 							<TextControl
-								label={ __( 'Button URL', 'twork-builder' ) }
+								label={ __( 'Button URL', 'mk-builder' ) }
 								value={ overlayButtonUrl }
 								onChange={ ( val ) =>
 									setAttributes( { overlayButtonUrl: val } )
@@ -95,7 +95,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image' ] }
 						multiple={ false }
 						labels={ {
-							title: __( 'Card image', 'twork-builder' ),
+							title: __( 'Card image', 'mk-builder' ),
 						} }
 						className="agrezer-about-card__placeholder"
 					/>
@@ -113,7 +113,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove image', 'twork-builder' ) }
+								{ __( 'Remove image', 'mk-builder' ) }
 							</Button>
 						</div>
 						{ variant === 'overlay' && (
@@ -127,7 +127,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Overlay text…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -142,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Button',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 

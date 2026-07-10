@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-banner-shape-editor',
+			className: 'mk-banner-shape-editor',
 			style: {
 				position: 'relative',
 				minHeight: `${ minHeight }px`,
@@ -90,11 +90,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Background Settings', 'twork-builder' ) }
+						title={ __( 'Background Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Background Image', 'twork-builder' ) }
+							label={ __( 'Background Image', 'mk-builder' ) }
 						>
 							{ ! backgroundImage ? (
 								<MediaPlaceholder
@@ -109,7 +109,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Background Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -137,7 +137,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove Image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>
@@ -151,35 +151,35 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Background Size',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ backgroundSize }
 									options={ [
 										{
 											label: __(
 												'Cover',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'cover',
 										},
 										{
 											label: __(
 												'Contain',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'contain',
 										},
 										{
 											label: __(
 												'Auto',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'auto',
 										},
 										{
 											label: __(
 												'100%',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: '100%',
 										},
@@ -192,7 +192,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Background Position X (%)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ backgroundPositionX }
 									onChange={ ( val ) =>
@@ -205,14 +205,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									step={ 1 }
 									help={ __(
 										'Horizontal position of the background image',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<RangeControl
 									label={ __(
 										'Background Position Y (%)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ backgroundPositionY }
 									onChange={ ( val ) =>
@@ -225,7 +225,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									step={ 1 }
 									help={ __(
 										'Vertical position of the background image',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</>
@@ -236,7 +236,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Min Height - Desktop (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ minHeight }
 							onChange={ ( val ) =>
@@ -247,14 +247,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 10 }
 							help={ __(
 								'Minimum height on desktop screens',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
 							label={ __(
 								'Min Height - Mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ minHeightMobile }
 							onChange={ ( val ) =>
@@ -265,17 +265,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 10 }
 							help={ __(
 								'Minimum height on mobile screens',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Overlay Settings', 'twork-builder' ) }
+						title={ __( 'Overlay Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show Overlay', 'twork-builder' ) }
+							label={ __( 'Show Overlay', 'mk-builder' ) }
 							checked={ showOverlay }
 							onChange={ ( val ) =>
 								setAttributes( { showOverlay: val } )
@@ -287,7 +287,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelColorSettings
 									title={ __(
 										'Overlay Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -298,7 +298,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Overlay Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -307,7 +307,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Overlay Opacity',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ overlayOpacity }
 									onChange={ ( val ) =>
@@ -321,7 +321,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Gradient Overlay',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ overlayGradient }
 									onChange={ ( val ) =>
@@ -331,7 +331,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'Apply gradient effect to overlay',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</>
@@ -339,11 +339,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Heading Settings', 'twork-builder' ) }
+						title={ __( 'Heading Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Heading Color', 'twork-builder' ) }
+							title={ __( 'Heading Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: headingColor,
@@ -351,7 +351,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { headingColor: val } ),
 									label: __(
 										'Heading Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -360,7 +360,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Font Size - Desktop (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ headingFontSize }
 							onChange={ ( val ) =>
@@ -374,7 +374,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Font Size - Mobile (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ headingFontSizeMobile }
 							onChange={ ( val ) =>
@@ -386,7 +386,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ headingFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { headingFontWeight: val } )
@@ -397,24 +397,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Text Shadow', 'twork-builder' ) }
+							label={ __( 'Text Shadow', 'mk-builder' ) }
 							checked={ headingTextShadow }
 							onChange={ ( val ) =>
 								setAttributes( { headingTextShadow: val } )
 							}
 							help={ __(
 								'Add shadow effect to heading text',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Description Settings', 'twork-builder' ) }
+						title={ __( 'Description Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Description Color', 'twork-builder' ) }
+							title={ __( 'Description Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: descriptionColor,
@@ -424,7 +424,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Description Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -433,7 +433,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Font Size - Desktop (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ descriptionFontSize }
 							onChange={ ( val ) =>
@@ -447,7 +447,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Font Size - Mobile (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ descriptionFontSizeMobile }
 							onChange={ ( val ) =>
@@ -461,7 +461,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Line Height', 'twork-builder' ) }
+							label={ __( 'Line Height', 'mk-builder' ) }
 							value={ descriptionLineHeight }
 							onChange={ ( val ) =>
 								setAttributes( { descriptionLineHeight: val } )
@@ -473,13 +473,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content Layout', 'twork-builder' ) }
+						title={ __( 'Content Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Content Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ contentMaxWidth }
 							onChange={ ( val ) =>
@@ -490,14 +490,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 50 }
 							help={ __(
 								'Maximum width of the content container',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
 							label={ __(
 								'Content Padding - Desktop (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ contentPadding }
 							onChange={ ( val ) =>
@@ -511,7 +511,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Content Padding - Mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ contentPaddingMobile }
 							onChange={ ( val ) =>
@@ -523,19 +523,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Text Alignment', 'twork-builder' ) }
+							label={ __( 'Text Alignment', 'mk-builder' ) }
 							value={ contentAlignment }
 							options={ [
 								{
-									label: __( 'Center', 'twork-builder' ),
+									label: __( 'Center', 'mk-builder' ),
 									value: 'center',
 								},
 								{
-									label: __( 'Left', 'twork-builder' ),
+									label: __( 'Left', 'mk-builder' ),
 									value: 'left',
 								},
 								{
-									label: __( 'Right', 'twork-builder' ),
+									label: __( 'Right', 'mk-builder' ),
 									value: 'right',
 								},
 							] }
@@ -546,11 +546,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Shape Decoration', 'twork-builder' ) }
+						title={ __( 'Shape Decoration', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show Shape', 'twork-builder' ) }
+							label={ __( 'Show Shape', 'mk-builder' ) }
 							checked={ showShape }
 							onChange={ ( val ) =>
 								setAttributes( { showShape: val } )
@@ -562,7 +562,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<BaseControl
 									label={ __(
 										'Shape Image',
-										'twork-builder'
+										'mk-builder'
 									) }
 								>
 									{ ! shapeImage ? (
@@ -578,7 +578,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											labels={ {
 												title: __(
 													'Shape Image',
-													'twork-builder'
+													'mk-builder'
 												),
 											} }
 										/>
@@ -606,7 +606,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'Remove Shape',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										</div>
@@ -618,19 +618,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Shape Position',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ shapePosition }
 									options={ [
 										{
 											label: __(
 												'Bottom',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'bottom',
 										},
 										{
-											label: __( 'Top', 'twork-builder' ),
+											label: __( 'Top', 'mk-builder' ),
 											value: 'top',
 										},
 									] }
@@ -642,28 +642,28 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Shape Background Size',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ shapeBackgroundSize }
 									options={ [
 										{
 											label: __(
 												'Cover',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'cover',
 										},
 										{
 											label: __(
 												'Contain',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'contain',
 										},
 										{
 											label: __(
 												'100%',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: '100%',
 										},
@@ -678,7 +678,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Shape Height - Desktop (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ shapeHeight }
 									onChange={ ( val ) =>
@@ -692,7 +692,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Shape Height - Mobile (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ shapeHeightMobile }
 									onChange={ ( val ) =>
@@ -745,7 +745,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Enter banner heading...',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								color: headingColor,
@@ -770,7 +770,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Enter banner description...',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									color: descriptionColor,

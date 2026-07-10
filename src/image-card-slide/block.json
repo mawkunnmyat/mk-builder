@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/image-card-slide",
+	"name": "mk/image-card-slide",
 	"title": "Image Card Slide",
-	"parent": [ "twork/image-card-carousel" ],
-	"category": "twork-builder",
+	"parent": [ "mk/image-card-carousel" ],
+	"category": "mk-builder",
 	"description": "Single image card slide for the Image Card Carousel.",
-	"keywords": [ "carousel", "slide", "service", "card", "twork" ],
+	"keywords": [ "carousel", "slide", "service", "card", "mk" ],
 	"attributes": {
 		"title": {
 			"type": "string",
@@ -46,6 +46,6 @@
 			"imageAlt": "Premium butter production"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

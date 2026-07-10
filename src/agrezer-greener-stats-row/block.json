@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/stats-row",
+	"name": "mk/stats-row",
 	"version": "1.0.0",
 	"title": "Stats Row",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/highlights-section"
+		"mk/highlights-section"
 	],
 	"icon": "chart-bar",
 	"description": "Row/grid container for stat items.",
@@ -17,7 +17,7 @@
 	"example": {
 		"innerBlocks": [
 			{
-				"name": "twork/stat-item",
+				"name": "mk/stat-item",
 				"attributes": {
 					"iconVariant": "growth",
 					"title": "80% Pure Growth",
@@ -31,7 +31,7 @@
 				}
 			},
 			{
-				"name": "twork/stat-item",
+				"name": "mk/stat-item",
 				"attributes": {
 					"iconVariant": "organic",
 					"title": "95% Organic Roots",
@@ -46,6 +46,6 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

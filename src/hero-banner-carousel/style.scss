@@ -2,27 +2,27 @@
 
 // Shweghee Hero Banner Carousel – ported from shweghee hero.css + utilities.css
 
-.twork-hero-banner-carousel {
-	--twork-hero-brand: #00ccff;
-	--twork-hero-primary: #ff7f00;
-	--twork-hero-primary-dark: #e06800;
-	--twork-hero-text: #1a1a1a;
-	--twork-hero-text-muted: #666666;
-	--twork-hero-bg-alt: #f7fcff;
-	--twork-hero-border: #e8e8e8;
-	--twork-hero-space-2: 0.5rem;
-	--twork-hero-space-3: 0.75rem;
-	--twork-hero-space-4: 1rem;
-	--twork-hero-space-5: 1.5rem;
-	--twork-hero-space-6: 2rem;
-	--twork-hero-space-7: 3rem;
-	--twork-hero-space-8: 4rem;
-	--twork-hero-font-xs: 0.75rem;
-	--twork-hero-font-sm: 0.875rem;
-	--twork-hero-font-hero: clamp(2rem, 4.2vw, 3.25rem);
-	--twork-hero-radius-sm: 4px;
-	--twork-hero-radius-md: 8px;
-	--twork-hero-radius-pill: 999px;
+.mk-hero-banner-carousel {
+	--mk-hero-brand: #00ccff;
+	--mk-hero-primary: #ff7f00;
+	--mk-hero-primary-dark: #e06800;
+	--mk-hero-text: #1a1a1a;
+	--mk-hero-text-muted: #666666;
+	--mk-hero-bg-alt: #f7fcff;
+	--mk-hero-border: #e8e8e8;
+	--mk-hero-space-2: 0.5rem;
+	--mk-hero-space-3: 0.75rem;
+	--mk-hero-space-4: 1rem;
+	--mk-hero-space-5: 1.5rem;
+	--mk-hero-space-6: 2rem;
+	--mk-hero-space-7: 3rem;
+	--mk-hero-space-8: 4rem;
+	--mk-hero-font-xs: 0.75rem;
+	--mk-hero-font-sm: 0.875rem;
+	--mk-hero-font-hero: clamp(2rem, 4.2vw, 3.25rem);
+	--mk-hero-radius-sm: 4px;
+	--mk-hero-radius-md: 8px;
+	--mk-hero-radius-pill: 999px;
 
 	padding: 0;
 	font-family: $font-primary;
@@ -31,7 +31,7 @@
 		position: relative;
 		min-height: clamp(440px, 58vh, 640px);
 		overflow: hidden;
-		background: var(--twork-hero-bg-alt);
+		background: var(--mk-hero-bg-alt);
 	}
 
 	&__track {
@@ -47,7 +47,7 @@
 	&__slide {
 		position: absolute;
 		inset: 0;
-		background-color: var(--twork-hero-bg-alt);
+		background-color: var(--mk-hero-bg-alt);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center right;
@@ -68,14 +68,14 @@
 		align-items: center;
 		width: 100%;
 		min-height: inherit;
-		padding-block: var(--twork-hero-space-8);
+		padding-block: var(--mk-hero-space-8);
 	}
 
 	&__inner {
 		width: 100%;
 		max-width: 1200px;
 		margin-inline: auto;
-		padding-inline: var(--twork-hero-space-4);
+		padding-inline: var(--mk-hero-space-4);
 	}
 
 	&__content {
@@ -87,8 +87,8 @@
 	}
 
 	&__eyebrow {
-		color: var(--twork-hero-brand);
-		font-size: var(--twork-hero-font-xs);
+		color: var(--mk-hero-brand);
+		font-size: var(--mk-hero-font-xs);
 		font-weight: 600;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
@@ -97,20 +97,20 @@
 	}
 
 	&__title {
-		margin-top: var(--twork-hero-space-3);
-		font-size: var(--twork-hero-font-hero);
+		margin-top: var(--mk-hero-space-3);
+		font-size: var(--mk-hero-font-hero);
 		font-weight: 700;
 		line-height: 1.12;
-		color: var(--twork-hero-text);
+		color: var(--mk-hero-text);
 		overflow-wrap: break-word;
 		text-shadow: var(--hero-text-halo), var(--hero-text-depth);
 		margin-bottom: 0;
 	}
 
 	&__subtitle {
-		margin-top: var(--twork-hero-space-4);
-		color: var(--twork-hero-text-muted);
-		font-size: var(--twork-hero-font-sm);
+		margin-top: var(--mk-hero-space-4);
+		color: var(--mk-hero-text-muted);
+		font-size: var(--mk-hero-font-sm);
 		line-height: 1.65;
 		max-width: 500px;
 		text-shadow: var(--hero-text-halo), 0 1px 3px rgba(0, 0, 0, 0.22);
@@ -122,15 +122,15 @@
 		align-items: center;
 		justify-content: center;
 		min-height: 44px;
-		margin-top: var(--twork-hero-space-5);
-		gap: var(--twork-hero-space-2);
+		margin-top: var(--mk-hero-space-5);
+		gap: var(--mk-hero-space-2);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
-		padding-inline: var(--twork-hero-space-6);
-		border-radius: var(--twork-hero-radius-md);
-		font-size: var(--twork-hero-font-xs);
+		padding-inline: var(--mk-hero-space-6);
+		border-radius: var(--mk-hero-radius-md);
+		font-size: var(--mk-hero-font-xs);
 		border: 0;
-		background: var(--twork-hero-primary);
+		background: var(--mk-hero-primary);
 		color: #fff;
 		font-weight: 600;
 		text-decoration: none;
@@ -138,7 +138,7 @@
 		transition: background 0.2s;
 
 		&:hover {
-			background: var(--twork-hero-primary-dark);
+			background: var(--mk-hero-primary-dark);
 		}
 	}
 
@@ -158,35 +158,35 @@
 		border-radius: 50%;
 		border: 0;
 		background: rgba(255, 255, 255, 0.85);
-		color: var(--twork-hero-text-muted);
+		color: var(--mk-hero-text-muted);
 		font-size: 1.75rem;
 		cursor: pointer;
 		z-index: 2;
 		line-height: 1;
 
 		&:focus-visible {
-			outline: 2px solid var(--twork-hero-brand);
+			outline: 2px solid var(--mk-hero-brand);
 			outline-offset: 2px;
 		}
 
 		&--prev {
-			left: var(--twork-hero-space-4);
+			left: var(--mk-hero-space-4);
 		}
 
 		&--next {
-			right: var(--twork-hero-space-4);
+			right: var(--mk-hero-space-4);
 		}
 	}
 
 	&__dots {
 		position: absolute;
-		bottom: var(--twork-hero-space-5);
+		bottom: var(--mk-hero-space-5);
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 2;
 		display: flex;
 		align-items: center;
-		gap: var(--twork-hero-space-2);
+		gap: var(--mk-hero-space-2);
 
 		.carousel-dots__dot {
 			width: 8px;
@@ -194,17 +194,17 @@
 			padding: 0;
 			border: 0;
 			border-radius: 50%;
-			background: var(--twork-hero-border);
+			background: var(--mk-hero-border);
 			cursor: pointer;
 
 			&.is-active {
 				width: 28px;
-				border-radius: var(--twork-hero-radius-pill);
-				background: var(--twork-hero-primary);
+				border-radius: var(--mk-hero-radius-pill);
+				background: var(--mk-hero-primary);
 			}
 
 			&:focus-visible {
-				outline: 2px solid var(--twork-hero-brand);
+				outline: 2px solid var(--mk-hero-brand);
 				outline-offset: 2px;
 			}
 		}
@@ -220,7 +220,7 @@
 		}
 
 		&__overlay {
-			padding-block: var(--twork-hero-space-6);
+			padding-block: var(--mk-hero-space-6);
 		}
 
 		&__content {
@@ -239,11 +239,11 @@
 			font-size: 1.5rem;
 
 			&--prev {
-				left: var(--twork-hero-space-2);
+				left: var(--mk-hero-space-2);
 			}
 
 			&--next {
-				right: var(--twork-hero-space-2);
+				right: var(--mk-hero-space-2);
 			}
 		}
 	}
@@ -255,9 +255,9 @@
 
 		&__overlay {
 			align-items: flex-end;
-			padding-block: var(--twork-hero-space-6) var(--twork-hero-space-5);
+			padding-block: var(--mk-hero-space-6) var(--mk-hero-space-5);
 			padding-bottom: calc(
-				var(--twork-hero-space-7) + var(--twork-hero-space-6) +
+				var(--mk-hero-space-7) + var(--mk-hero-space-6) +
 					env(safe-area-inset-bottom, 0px)
 			);
 			padding-inline: max(0px, env(safe-area-inset-left, 0px))
@@ -286,7 +286,7 @@
 
 		&__dots {
 			bottom: calc(
-				var(--twork-hero-space-5) + env(safe-area-inset-bottom, 0px)
+				var(--mk-hero-space-5) + env(safe-area-inset-bottom, 0px)
 			);
 		}
 	}
@@ -298,9 +298,9 @@
 
 		&__overlay {
 			align-items: center;
-			padding-block: var(--twork-hero-space-5);
+			padding-block: var(--mk-hero-space-5);
 			padding-bottom: calc(
-				var(--twork-hero-space-6) + var(--twork-hero-space-5) +
+				var(--mk-hero-space-6) + var(--mk-hero-space-5) +
 					env(safe-area-inset-bottom, 0px)
 			);
 		}
@@ -310,20 +310,20 @@
 		}
 
 		&__subtitle {
-			margin-top: var(--twork-hero-space-3);
-			font-size: var(--twork-hero-font-xs);
+			margin-top: var(--mk-hero-space-3);
+			font-size: var(--mk-hero-font-xs);
 			line-height: 1.5;
 		}
 
 		&__cta {
-			margin-top: var(--twork-hero-space-4);
+			margin-top: var(--mk-hero-space-4);
 		}
 	}
 
 	@media (prefers-contrast: more) {
 		&__content {
-			padding: var(--twork-hero-space-4) var(--twork-hero-space-5);
-			border-radius: var(--twork-hero-radius-md);
+			padding: var(--mk-hero-space-4) var(--mk-hero-space-5);
+			border-radius: var(--mk-hero-radius-md);
 			background: rgba(255, 255, 255, 0.88);
 			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 		}
@@ -343,16 +343,16 @@
 }
 
 // Editor: stack slides for editing
-.twork-hero-banner-carousel--editor {
-	.twork-hero-banner-carousel__track {
+.mk-hero-banner-carousel--editor {
+	.mk-hero-banner-carousel__track {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 		min-height: auto;
 	}
 
-	.twork-hero-banner-carousel__slide,
-	.twork-hero-banner-slide-editor {
+	.mk-hero-banner-carousel__slide,
+	.mk-hero-banner-slide-editor {
 		position: relative;
 		inset: auto;
 		opacity: 1 !important;
@@ -365,8 +365,8 @@
 		}
 	}
 
-	.twork-hero-banner-carousel__arrow,
-	.twork-hero-banner-carousel__dots {
+	.mk-hero-banner-carousel__arrow,
+	.mk-hero-banner-carousel__dots {
 		display: none;
 	}
 }

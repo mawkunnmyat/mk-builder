@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -12,7 +12,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'content-section fade-up twork-centre-overview-editor',
+			className: 'content-section fade-up mk-centre-overview-editor',
 		} ),
 		[]
 	);
@@ -21,11 +21,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Section', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Section', 'mk-builder' ) }>
 						<TextControl
 							label={ __(
 								'Section ID (anchor)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionId }
 							onChange={ ( v ) =>
@@ -33,11 +33,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Used for sidebar links, e.g. #overview',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
-					<PanelBody title={ __( 'Image', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Image', 'mk-builder' ) }>
 						{ ! imageUrl ? (
 							<MediaPlaceholder
 								onSelect={ ( m ) =>
@@ -61,7 +61,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Alt text', 'twork-builder' ) }
+									label={ __( 'Alt text', 'mk-builder' ) }
 									value={ imageAlt }
 									onChange={ ( v ) =>
 										setAttributes( { imageAlt: v } )
@@ -79,7 +79,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
@@ -91,7 +91,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h2"
 					value={ title }
 					onChange={ ( v ) => setAttributes( { title: v } ) }
-					placeholder={ __( 'Title...', 'twork-builder' ) }
+					placeholder={ __( 'Title...', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -99,7 +99,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					value={ leadText }
 					onChange={ ( v ) => setAttributes( { leadText: v } ) }
 					className="lead-text"
-					placeholder={ __( 'Lead text...', 'twork-builder' ) }
+					placeholder={ __( 'Lead text...', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -107,7 +107,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					value={ content }
 					onChange={ ( v ) => setAttributes( { content: v } ) }
 					className="body-text"
-					placeholder={ __( 'Content...', 'twork-builder' ) }
+					placeholder={ __( 'Content...', 'mk-builder' ) }
 				/>
 
 				{ imageUrl && (

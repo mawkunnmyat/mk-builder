@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-facilities-section",
+	"name": "mk/phy-facilities-section",
 	"version": "1.0.0",
 	"title": "Facilities Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "images-alt2",
 	"description": "Physiotherapy facilities slider – cards loaded from WordPress posts (featured image, title, excerpt). Matches physiotherapy-rehab.html facilities section.",
-	"keywords": [ "physio", "facilities", "slider", "gym", "twork" ],
+	"keywords": [ "physio", "facilities", "slider", "gym", "mk" ],
 	"attributes": {
 		"source": {
 			"type": "string",
@@ -120,7 +120,7 @@
 			"staggerClass": "stagger-up"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

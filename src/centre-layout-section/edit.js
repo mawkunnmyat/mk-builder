@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -18,34 +18,34 @@ import {
 
 /** Icon type options: Image/GIF, Video, WordPress Dashicons, or Font Awesome */
 const ICON_TYPE_OPTIONS = [
-	{ value: 'fontawesome', label: __( 'Font Awesome', 'twork-builder' ) },
+	{ value: 'fontawesome', label: __( 'Font Awesome', 'mk-builder' ) },
 	{
 		value: 'dashicon',
-		label: __( 'WordPress (Dashicons)', 'twork-builder' ),
+		label: __( 'WordPress (Dashicons)', 'mk-builder' ),
 	},
-	{ value: 'image', label: __( 'Image / GIF', 'twork-builder' ) },
-	{ value: 'video', label: __( 'Video', 'twork-builder' ) },
+	{ value: 'image', label: __( 'Image / GIF', 'mk-builder' ) },
+	{ value: 'video', label: __( 'Video', 'mk-builder' ) },
 ];
 
 /** Dashicons suitable for contact/phone/nav */
 const DASHICON_OPTIONS = [
-	{ value: 'dashicons-phone', label: __( 'Phone', 'twork-builder' ) },
-	{ value: 'dashicons-email', label: __( 'Email', 'twork-builder' ) },
-	{ value: 'dashicons-headset', label: __( 'Headset', 'twork-builder' ) },
-	{ value: 'dashicons-location', label: __( 'Location', 'twork-builder' ) },
-	{ value: 'dashicons-clock', label: __( 'Clock', 'twork-builder' ) },
-	{ value: 'dashicons-heart', label: __( 'Heart', 'twork-builder' ) },
-	{ value: 'dashicons-editor-help', label: __( 'Help', 'twork-builder' ) },
+	{ value: 'dashicons-phone', label: __( 'Phone', 'mk-builder' ) },
+	{ value: 'dashicons-email', label: __( 'Email', 'mk-builder' ) },
+	{ value: 'dashicons-headset', label: __( 'Headset', 'mk-builder' ) },
+	{ value: 'dashicons-location', label: __( 'Location', 'mk-builder' ) },
+	{ value: 'dashicons-clock', label: __( 'Clock', 'mk-builder' ) },
+	{ value: 'dashicons-heart', label: __( 'Heart', 'mk-builder' ) },
+	{ value: 'dashicons-editor-help', label: __( 'Help', 'mk-builder' ) },
 	{
 		value: 'dashicons-arrow-right-alt2',
-		label: __( 'Arrow right', 'twork-builder' ),
+		label: __( 'Arrow right', 'mk-builder' ),
 	},
 	{
 		value: 'dashicons-arrow-right',
-		label: __( 'Arrow (alt)', 'twork-builder' ),
+		label: __( 'Arrow (alt)', 'mk-builder' ),
 	},
-	{ value: 'dashicons-admin-generic', label: __( 'Cog', 'twork-builder' ) },
-	{ value: 'dashicons-yes', label: __( 'Check', 'twork-builder' ) },
+	{ value: 'dashicons-admin-generic', label: __( 'Cog', 'mk-builder' ) },
+	{ value: 'dashicons-yes', label: __( 'Check', 'mk-builder' ) },
 ];
 
 /** Renders one icon by type (editor + save). className/style apply to wrapper for image/video. */
@@ -96,25 +96,25 @@ function CentreIconRender( {
 }
 
 const ALLOWED_BLOCKS = [
-	'twork/centre-overview-section',
-	'twork/centre-treatments-section',
-	'twork/centre-conditions-section',
-	'twork/centre-doctors-section',
-	'twork/centre-specialists-section',
-	'twork/centre-technology-section',
-	'twork/centre-faq-section',
-	'twork/centre-cta-section',
+	'mk/centre-overview-section',
+	'mk/centre-treatments-section',
+	'mk/centre-conditions-section',
+	'mk/centre-doctors-section',
+	'mk/centre-specialists-section',
+	'mk/centre-technology-section',
+	'mk/centre-faq-section',
+	'mk/centre-cta-section',
 ];
 
 const TEMPLATE = [
-	[ 'twork/centre-overview-section', {} ],
-	[ 'twork/centre-treatments-section', {} ],
-	[ 'twork/centre-conditions-section', {} ],
-	[ 'twork/centre-doctors-section', {} ],
-	[ 'twork/centre-specialists-section', {} ],
-	[ 'twork/centre-technology-section', {} ],
-	[ 'twork/centre-faq-section', {} ],
-	[ 'twork/centre-cta-section', {} ],
+	[ 'mk/centre-overview-section', {} ],
+	[ 'mk/centre-treatments-section', {} ],
+	[ 'mk/centre-conditions-section', {} ],
+	[ 'mk/centre-doctors-section', {} ],
+	[ 'mk/centre-specialists-section', {} ],
+	[ 'mk/centre-technology-section', {} ],
+	[ 'mk/centre-faq-section', {} ],
+	[ 'mk/centre-cta-section', {} ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -159,7 +159,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-centre-layout-section twork-centre-layout-editor',
+			className: 'mk-centre-layout-section mk-centre-layout-editor',
 			style: {
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
@@ -202,11 +202,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Sidebar Menu', 'twork-builder' ) }
+						title={ __( 'Sidebar Menu', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Sidebar Header', 'twork-builder' ) }
+							label={ __( 'Sidebar Header', 'mk-builder' ) }
 							value={ sidebarHeader }
 							onChange={ ( v ) =>
 								setAttributes( {
@@ -215,7 +215,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. Clinical Centres',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -232,10 +232,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ `${ __(
 										'Link',
-										'twork-builder'
+										'mk-builder'
 									) } ${ i + 1 } ${ __(
 										'Label',
-										'twork-builder'
+										'mk-builder'
 									) }` }
 									value={ item?.label || '' }
 									onChange={ ( v ) =>
@@ -246,10 +246,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ `${ __(
 										'Link',
-										'twork-builder'
+										'mk-builder'
 									) } ${ i + 1 } ${ __(
 										'URL',
-										'twork-builder'
+										'mk-builder'
 									) }` }
 									value={ item?.href || '#' }
 									onChange={ ( v ) =>
@@ -260,7 +260,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Current page (active)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ !! item?.active }
 									onChange={ ( v ) =>
@@ -268,7 +268,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'Highlight this link as the current page',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -278,26 +278,26 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									onClick={ () => removeNavItem( i ) }
 									style={ { marginTop: 8 } }
 								>
-									{ __( 'Remove link', 'twork-builder' ) }
+									{ __( 'Remove link', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button isSecondary isSmall onClick={ addNavItem }>
-							{ __( 'Add link', 'twork-builder' ) }
+							{ __( 'Add link', 'mk-builder' ) }
 						</Button>
 						<Divider />
 						<BaseControl
 							label={ __(
 								'Nav link arrow icon',
-								'twork-builder'
+								'mk-builder'
 							) }
 							help={ __(
 								'Icon shown after each menu link.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<SelectControl
-								label={ __( 'Icon type', 'twork-builder' ) }
+								label={ __( 'Icon type', 'mk-builder' ) }
 								value={ navArrowIconType || 'fontawesome' }
 								options={ ICON_TYPE_OPTIONS }
 								onChange={ ( v ) =>
@@ -310,7 +310,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Font Awesome class',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={
 										navArrowIcon || 'fas fa-chevron-right'
@@ -323,14 +323,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'e.g. fas fa-chevron-right',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							) }
 							{ ( navArrowIconType || 'fontawesome' ) ===
 								'dashicon' && (
 								<SelectControl
-									label={ __( 'Dashicon', 'twork-builder' ) }
+									label={ __( 'Dashicon', 'mk-builder' ) }
 									value={
 										navArrowDashicon ||
 										'dashicons-arrow-right-alt2'
@@ -357,7 +357,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											labels={ {
 												title: __(
 													'Arrow icon (image/GIF)',
-													'twork-builder'
+													'mk-builder'
 												),
 											} }
 										/>
@@ -386,7 +386,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'Remove',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										</div>
@@ -409,7 +409,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											labels={ {
 												title: __(
 													'Arrow icon (video)',
-													'twork-builder'
+													'mk-builder'
 												),
 											} }
 										/>
@@ -440,7 +440,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'Remove',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										</div>
@@ -453,14 +453,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					<PanelBody
 						title={ __(
 							'Sidebar Contact Widget',
-							'twork-builder'
+							'mk-builder'
 						) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Show contact widget',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSidebarContact !== false }
 							onChange={ ( v ) =>
@@ -468,7 +468,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Display the emergency/contact box in sidebar and on mobile.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -478,11 +478,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<BaseControl
 									label={ __(
 										'Background image',
-										'twork-builder'
+										'mk-builder'
 									) }
 									help={ __(
 										'Optional. Leave empty to use default background.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								>
 									{ ! contactBackgroundImage ? (
@@ -500,7 +500,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											labels={ {
 												title: __(
 													'Contact widget background',
-													'twork-builder'
+													'mk-builder'
 												),
 											} }
 										/>
@@ -530,7 +530,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											>
 												{ __(
 													'Remove image',
-													'twork-builder'
+													'mk-builder'
 												) }
 											</Button>
 										</div>
@@ -540,17 +540,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<BaseControl
 									label={ __(
 										'Contact widget icon (main)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									help={ __(
 										'Large icon above the title.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								>
 									<SelectControl
 										label={ __(
 											'Icon type',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={
 											contactIconType || 'fontawesome'
@@ -568,7 +568,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<TextControl
 											label={ __(
 												'Font Awesome class',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={
 												contactIcon || 'fas fa-headset'
@@ -581,7 +581,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											}
 											help={ __(
 												'e.g. fas fa-headset',
-												'twork-builder'
+												'mk-builder'
 											) }
 										/>
 									) }
@@ -590,7 +590,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<SelectControl
 											label={ __(
 												'WordPress Dashicon',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={
 												contactDashicon ||
@@ -622,7 +622,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													labels={ {
 														title: __(
 															'Icon image / GIF',
-															'twork-builder'
+															'mk-builder'
 														),
 													} }
 												/>
@@ -654,7 +654,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Remove',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												</div>
@@ -679,7 +679,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													labels={ {
 														title: __(
 															'Icon video',
-															'twork-builder'
+															'mk-builder'
 														),
 													} }
 												/>
@@ -713,7 +713,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Remove',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												</div>
@@ -725,17 +725,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<BaseControl
 									label={ __(
 										'Phone button icon',
-										'twork-builder'
+										'mk-builder'
 									) }
 									help={ __(
 										'Icon inside the call button.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								>
 									<SelectControl
 										label={ __(
 											'Icon type',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={
 											contactPhoneIconType ||
@@ -754,7 +754,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<TextControl
 											label={ __(
 												'Font Awesome class',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={
 												contactPhoneIcon ||
@@ -768,7 +768,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											}
 											help={ __(
 												'e.g. fas fa-phone',
-												'twork-builder'
+												'mk-builder'
 											) }
 										/>
 									) }
@@ -777,7 +777,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<SelectControl
 											label={ __(
 												'WordPress Dashicon',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={
 												contactPhoneDashicon ||
@@ -809,7 +809,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													labels={ {
 														title: __(
 															'Button icon (image/GIF)',
-															'twork-builder'
+															'mk-builder'
 														),
 													} }
 												/>
@@ -841,7 +841,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Remove',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												</div>
@@ -866,7 +866,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													labels={ {
 														title: __(
 															'Button icon (video)',
-															'twork-builder'
+															'mk-builder'
 														),
 													} }
 												/>
@@ -900,7 +900,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Remove',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												</div>
@@ -910,7 +910,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								</BaseControl>
 								<Divider />
 								<TextControl
-									label={ __( 'Title', 'twork-builder' ) }
+									label={ __( 'Title', 'mk-builder' ) }
 									value={ contactTitle }
 									onChange={ ( v ) =>
 										setAttributes( { contactTitle: v } )
@@ -920,7 +920,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Description',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ contactText }
 									onChange={ ( v ) =>
@@ -932,7 +932,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Phone number (display)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ contactPhone }
 									onChange={ ( v ) =>
@@ -941,7 +941,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Phone URL', 'twork-builder' ) }
+									label={ __( 'Phone URL', 'mk-builder' ) }
 									value={ contactPhoneUrl }
 									onChange={ ( v ) =>
 										setAttributes( {
@@ -950,7 +950,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'e.g. tel:09789101101',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</>
@@ -958,13 +958,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -978,7 +978,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -992,7 +992,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Sidebar width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sidebarWidth }
 							onChange={ ( v ) =>
@@ -1004,7 +1004,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gap }
 							onChange={ ( v ) => setAttributes( { gap: v } ) }
 							min={ 20 }
@@ -1013,7 +1013,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -1026,7 +1026,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -1052,13 +1052,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							className="sidebar-wrapper"
 							aria-label={ __(
 								'Centre sidebar',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<div className="centre-editor-sidebar-label">
 								{ __(
 									'Sidebar – edit in block settings (right panel)',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</div>
 							<div className="sidebar animate-sidebar">
@@ -1069,7 +1069,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									className="sidebar-menu"
 									aria-label={ __(
 										'Clinical centres',
-										'twork-builder'
+										'mk-builder'
 									) }
 								>
 									{ ( navItems || [] ).map( ( item, i ) => (
@@ -1146,7 +1146,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												? undefined
 												: __(
 														'Emergency phone – set in block settings',
-														'twork-builder'
+														'mk-builder'
 												  )
 										}
 									>
@@ -1171,7 +1171,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										{ contactPhone ||
 											__(
 												'Phone number',
-												'twork-builder'
+												'mk-builder'
 											) }
 									</a>
 								</div>
@@ -1182,7 +1182,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								>
 									{ __(
 										'Contact widget hidden (enable in Sidebar Contact Widget settings)',
-										'twork-builder'
+										'mk-builder'
 									) }
 								</div>
 							) }
@@ -1191,7 +1191,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<div className="centre-editor-label">
 								{ __(
 									'Content sections – add, remove, or reorder below',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</div>
 							<InnerBlocks

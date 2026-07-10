@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-faq-section",
+	"name": "mk/hc-faq-section",
 	"version": "1.0.0",
 	"title": "FAQ Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "editor-help",
 	"description": "Frequently Asked Questions: header + accordion list. Matches home-care.html.",
-	"keywords": [ "home care", "faq", "accordion", "questions", "twork" ],
+	"keywords": [ "home care", "faq", "accordion", "questions", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -76,21 +76,21 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/hc-faq-item",
+				"name": "mk/hc-faq-item",
 				"attributes": {
 					"question": "Is the service available 24/7?",
 					"answer": "Yes, our nursing and doctor visit services can be arranged for any time of the day, depending on availability."
 				}
 			},
 			{
-				"name": "twork/hc-faq-item",
+				"name": "mk/hc-faq-item",
 				"attributes": {
 					"question": "Do you bring your own equipment?",
 					"answer": "Yes, our team comes equipped with basic diagnostic tools (BP machine, Oximeter, etc.). For specialized equipment like Oxygen concentrators, we offer rental services."
 				}
 			},
 			{
-				"name": "twork/hc-faq-item",
+				"name": "mk/hc-faq-item",
 				"attributes": {
 					"question": "How do I pay?",
 					"answer": "We accept cash, KPay, WavePay, and major credit cards upon completion of the service or via advance booking."
@@ -98,7 +98,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./view.js",
 	"style": "file:./style-index.css"

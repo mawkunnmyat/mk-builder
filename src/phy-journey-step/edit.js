@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'phy-journey-item twork-phy-journey-step-editor',
+			className: 'phy-journey-item mk-phy-journey-step-editor',
 		} ),
 		[]
 	);
@@ -18,13 +18,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Journey step', 'twork-builder' ) }
+						title={ __( 'Journey step', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Title (with step number)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ title || '' }
 							onChange={ ( val ) =>
@@ -32,12 +32,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. "1. Initial Assessment"',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Short description', 'twork-builder' ) }
+							label={ __( 'Short description', 'mk-builder' ) }
 							value={ description || '' }
 							onChange={ ( val ) =>
 								setAttributes( { description: val } )
@@ -54,7 +54,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) => setAttributes( { title: val } ) }
 					placeholder={ __(
 						'1. Initial Assessment',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 
@@ -64,7 +64,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { description: val } )
 					}
-					placeholder={ __( 'Step description…', 'twork-builder' ) }
+					placeholder={ __( 'Step description…', 'mk-builder' ) }
 				/>
 			</div>
 		</>

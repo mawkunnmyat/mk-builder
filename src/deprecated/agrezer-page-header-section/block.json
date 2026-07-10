@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-page-header-section",
+	"name": "mk/agrezer-page-header-section",
 	"version": "1.0.0",
 	"title": "Agrezer Page Header",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "heading",
 	"description": "Inner page hero with background, title, breadcrumb trail, and optional graphic.",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"banner",
 		"agrezer",
 		"title",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -120,7 +120,7 @@
 			"fallbackBgColor": "#0c2614"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

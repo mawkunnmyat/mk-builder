@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -31,21 +31,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Step', 'twork-builder' ) }
+						title={ __( 'Step', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Column alignment', 'twork-builder' ) }
+							label={ __( 'Column alignment', 'mk-builder' ) }
 							value={ position }
 							options={ [
 								{
-									label: __( 'Left column', 'twork-builder' ),
+									label: __( 'Left column', 'mk-builder' ),
 									value: 'left',
 								},
 								{
 									label: __(
 										'Right column',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'right',
 								},
@@ -55,12 +55,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Should match block order: left step, center, right step.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Badge number', 'twork-builder' ) }
+							label={ __( 'Badge number', 'mk-builder' ) }
 							value={ badgeNum }
 							onChange={ ( val ) =>
 								setAttributes( { badgeNum: val } )
@@ -68,7 +68,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show CTA button', 'twork-builder' ) }
+							label={ __( 'Show CTA button', 'mk-builder' ) }
 							checked={ showCta }
 							onChange={ ( val ) =>
 								setAttributes( { showCta: val } )
@@ -80,7 +80,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Button URL',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ ctaUrl }
 									onChange={ ( val ) =>
@@ -106,7 +106,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-process__step-title"
 					value={ stepTitle }
 					onChange={ ( val ) => setAttributes( { stepTitle: val } ) }
-					placeholder={ __( 'Step title', 'twork-builder' ) }
+					placeholder={ __( 'Step title', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -114,7 +114,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-process__step-text"
 					value={ stepText }
 					onChange={ ( val ) => setAttributes( { stepText: val } ) }
-					placeholder={ __( 'Description…', 'twork-builder' ) }
+					placeholder={ __( 'Description…', 'mk-builder' ) }
 				/>
 
 				{ showCta && (
@@ -127,7 +127,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'More Details',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 

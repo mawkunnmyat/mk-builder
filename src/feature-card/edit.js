@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -18,7 +18,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { iconClass, title, description } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'feature-card twork-feature-card-editor stagger-up',
+			className: 'feature-card mk-feature-card-editor stagger-up',
 		} ),
 		[]
 	);
@@ -28,13 +28,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Feature Card', 'twork-builder' ) }
+						title={ __( 'Feature Card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass || 'fas fa-microscope' }
 							onChange={ ( v ) =>
@@ -44,7 +44,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-microscope, fas fa-user-md',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -55,7 +55,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								marginTop: 4,
 							} }
 						>
-							{ __( 'Suggestions:', 'twork-builder' ) }{ ' ' }
+							{ __( 'Suggestions:', 'mk-builder' ) }{ ' ' }
 							{ ICON_SUGGESTIONS.join( ', ' ) }
 						</p>
 					</PanelBody>
@@ -69,7 +69,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h4"
 					value={ title }
 					onChange={ ( v ) => setAttributes( { title: v } ) }
-					placeholder={ __( 'Feature title…', 'twork-builder' ) }
+					placeholder={ __( 'Feature title…', 'mk-builder' ) }
 					className="feature-card-title"
 				/>
 
@@ -79,7 +79,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( v ) => setAttributes( { description: v } ) }
 					placeholder={ __(
 						'Feature description…',
-						'twork-builder'
+						'mk-builder'
 					) }
 					className="feature-card-description"
 					style={ { color: '#64748b', fontSize: '0.95rem' } }

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -9,19 +9,19 @@ import {
 } from '@wordpress/components';
 
 const ALLOWED_BLOCKS = [
-	'twork/dept-overview-section',
-	'twork/dept-conditions-section',
-	'twork/dept-specialists-section',
-	'twork/dept-technology-section',
-	'twork/dept-faq-section',
+	'mk/dept-overview-section',
+	'mk/dept-conditions-section',
+	'mk/dept-specialists-section',
+	'mk/dept-technology-section',
+	'mk/dept-faq-section',
 ];
 
 const TEMPLATE = [
-	[ 'twork/dept-overview-section', {} ],
-	[ 'twork/dept-conditions-section', {} ],
-	[ 'twork/dept-specialists-section', {} ],
-	[ 'twork/dept-technology-section', {} ],
-	[ 'twork/dept-faq-section', {} ],
+	[ 'mk/dept-overview-section', {} ],
+	[ 'mk/dept-conditions-section', {} ],
+	[ 'mk/dept-specialists-section', {} ],
+	[ 'mk/dept-technology-section', {} ],
+	[ 'mk/dept-faq-section', {} ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -42,7 +42,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-dept-layout-section twork-dept-layout-editor',
+			className: 'mk-dept-layout-section mk-dept-layout-editor',
 			style: {
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
@@ -73,7 +73,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Sidebar Nav', 'twork-builder' ) }
+						title={ __( 'Sidebar Nav', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ( navItems || [] ).map( ( item, i ) => (
@@ -88,10 +88,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ `${ __(
 										'Link',
-										'twork-builder'
+										'mk-builder'
 									) } ${ i + 1 } ${ __(
 										'Label',
-										'twork-builder'
+										'mk-builder'
 									) }` }
 									value={ item?.label || '' }
 									onChange={ ( v ) =>
@@ -102,10 +102,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ `${ __(
 										'Link',
-										'twork-builder'
+										'mk-builder'
 									) } ${ i + 1 } ${ __(
 										'URL',
-										'twork-builder'
+										'mk-builder'
 									) }` }
 									value={ item?.href || '#' }
 									onChange={ ( v ) =>
@@ -117,11 +117,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Sidebar Widget', 'twork-builder' ) }
+						title={ __( 'Sidebar Widget', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ sidebarTitle }
 							onChange={ ( v ) =>
 								setAttributes( { sidebarTitle: v } )
@@ -129,7 +129,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Description', 'twork-builder' ) }
+							label={ __( 'Description', 'mk-builder' ) }
 							value={ sidebarDesc }
 							onChange={ ( v ) =>
 								setAttributes( { sidebarDesc: v } )
@@ -138,7 +138,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button Text', 'twork-builder' ) }
+							label={ __( 'Button Text', 'mk-builder' ) }
 							value={ sidebarButtonText }
 							onChange={ ( v ) =>
 								setAttributes( { sidebarButtonText: v } )
@@ -146,7 +146,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ sidebarButtonUrl }
 							onChange={ ( v ) =>
 								setAttributes( { sidebarButtonUrl: v } )
@@ -154,7 +154,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Phone', 'twork-builder' ) }
+							label={ __( 'Phone', 'mk-builder' ) }
 							value={ sidebarPhone }
 							onChange={ ( v ) =>
 								setAttributes( { sidebarPhone: v } )
@@ -163,13 +163,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -183,7 +183,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -197,7 +197,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Sidebar Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sidebarWidth }
 							onChange={ ( v ) =>
@@ -209,7 +209,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gap }
 							onChange={ ( v ) => setAttributes( { gap: v } ) }
 							min={ 20 }
@@ -218,7 +218,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -231,7 +231,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -256,7 +256,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								className="sidebar-nav"
 								aria-label={ __(
 									'Section navigation',
-									'twork-builder'
+									'mk-builder'
 								) }
 							>
 								{ ( navItems || [] ).map( ( item, i ) => (
@@ -286,7 +286,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</aside>
 						<div className="content-area dept-content-area-editor">
 							<div className="dept-editor-label">
-								{ __( 'Content Sections', 'twork-builder' ) }
+								{ __( 'Content Sections', 'mk-builder' ) }
 							</div>
 							<InnerBlocks
 								allowedBlocks={ ALLOWED_BLOCKS }

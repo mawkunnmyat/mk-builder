@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/centre-conditions-section",
+	"name": "mk/centre-conditions-section",
 	"version": "1.0.0",
 	"title": "Conditions Section",
-	"category": "twork-builder",
-	"parent": [ "twork/centre-layout-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/centre-layout-section" ],
 	"description": "Conditions we treat grid with icon + title cards. Toggle section visibility on/off.",
 	"attributes": {
 		"sectionId": {
@@ -31,42 +31,42 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/centre-condition-card",
+				"name": "mk/centre-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-heart-broken",
 					"title": "Coronary Artery Disease"
 				}
 			},
 			{
-				"name": "twork/centre-condition-card",
+				"name": "mk/centre-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-bolt",
 					"title": "Arrhythmia"
 				}
 			},
 			{
-				"name": "twork/centre-condition-card",
+				"name": "mk/centre-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-heartbeat",
 					"title": "Heart Failure"
 				}
 			},
 			{
-				"name": "twork/centre-condition-card",
+				"name": "mk/centre-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-child",
 					"title": "Congenital Defects"
 				}
 			},
 			{
-				"name": "twork/centre-condition-card",
+				"name": "mk/centre-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-procedures",
 					"title": "Valvular Disease"
 				}
 			},
 			{
-				"name": "twork/centre-condition-card",
+				"name": "mk/centre-condition-card",
 				"attributes": {
 					"iconClass": "fas fa-user-md",
 					"title": "Hypertension"

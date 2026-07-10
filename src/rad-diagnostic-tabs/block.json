@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/rad-diagnostic-tabs",
+	"name": "mk/rad-diagnostic-tabs",
 	"version": "1.0.0",
 	"title": "Diagnostic Tabs",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "index-card",
 	"description": "Radiology diagnostic services section with tabbed content for different modalities.",
-	"keywords": [ "radiology", "diagnostic", "tabs", "services", "twork" ],
+	"keywords": [ "radiology", "diagnostic", "tabs", "services", "mk" ],
 	"attributes": {
 		"sectionBackground": {
 			"type": "string",
@@ -207,7 +207,7 @@
 			]
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js"

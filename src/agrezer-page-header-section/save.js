@@ -32,7 +32,7 @@ export default function save( { attributes } ) {
 		Array.isArray( breadcrumbs ) && breadcrumbs.length ? breadcrumbs : [];
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-page-header twork-page-header-section',
+		className: 'mk-page-header mk-page-header-section',
 		style: {
 			'--tw-bg-color': backgroundColor,
 			'--tw-overlay-opacity': `${ overlayOpacity / 100 }`,
@@ -42,9 +42,9 @@ export default function save( { attributes } ) {
 			'--tw-crumb-active-color': breadcrumbActiveColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-page-header-max': `${ containerMaxWidth }px`,
-			'--twork-page-header-width-pct': `${ containerWidthPct }%`,
-			'--twork-page-header-min-h': `${ containerMinHeight }px`,
+			'--mk-page-header-max': `${ containerMaxWidth }px`,
+			'--mk-page-header-width-pct': `${ containerWidthPct }%`,
+			'--mk-page-header-min-h': `${ containerMinHeight }px`,
 		},
 		'data-tractor-anim': enableTractorAnimation ? 'true' : 'false',
 	} );
@@ -54,13 +54,13 @@ export default function save( { attributes } ) {
 	return (
 		<section { ...blockProps } aria-labelledby={ titleId || undefined }>
 			{ backgroundType === 'video' && backgroundVideo && (
-				<div className="twork-page-header__video-layer" aria-hidden="true">
+				<div className="mk-page-header__video-layer" aria-hidden="true">
 					<video src={ backgroundVideo } autoPlay muted loop playsInline />
 				</div>
 			) }
 			{ backgroundType === 'image' && backgroundImage && (
 				<div
-					className="twork-page-header__image-layer"
+					className="mk-page-header__image-layer"
 					style={ {
 						backgroundImage: `url(${ backgroundImage })`,
 						backgroundPosition,
@@ -68,23 +68,23 @@ export default function save( { attributes } ) {
 					aria-hidden="true"
 				/>
 			) }
-			<div className="twork-page-header__bg-overlay" aria-hidden="true" />
+			<div className="mk-page-header__bg-overlay" aria-hidden="true" />
 
-			<div className="twork-page-header__container">
-				<div className="twork-page-header__content">
+			<div className="mk-page-header__container">
+				<div className="mk-page-header__content">
 					<RichText.Content
 						tagName="h1"
 						id={ titleId }
-						className="twork-page-header__title"
+						className="mk-page-header__title"
 						value={ title }
 					/>
 
 					{ crumbs.length > 0 && (
 						<nav
-							className="twork-page-header__breadcrumb-nav"
+							className="mk-page-header__breadcrumb-nav"
 							aria-label="Breadcrumb"
 						>
-							<ul className="twork-page-header__breadcrumb">
+							<ul className="mk-page-header__breadcrumb">
 								{ crumbs.map( ( crumb, index ) => {
 									const label = crumb?.label ?? '';
 									const url = crumb?.url ?? '';
@@ -129,13 +129,13 @@ export default function save( { attributes } ) {
 
 				{ graphicImage && (
 					<div
-						className="twork-page-header__graphic"
+						className="mk-page-header__graphic"
 						aria-hidden="true"
 					>
 						<img
 							src={ graphicImage }
 							alt={ graphicAlt || '' }
-							className="twork-page-header__img"
+							className="mk-page-header__img"
 							style={ { maxWidth: `${ graphicMaxWidth }px` } }
 							loading="lazy"
 							decoding="async"

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -15,7 +15,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'testimonials__card twork-review-card-editor',
+				'testimonials__card mk-review-card-editor',
 		} ),
 		[]
 	);
@@ -25,18 +25,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Customer', 'twork-builder' ) }
+						title={ __( 'Customer', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Location', 'twork-builder' ) }
+							label={ __( 'Location', 'mk-builder' ) }
 							value={ location || '' }
 							onChange={ ( val ) =>
 								setAttributes( { location: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Avatar alt text', 'twork-builder' ) }
+							label={ __( 'Avatar alt text', 'mk-builder' ) }
 							value={ avatarAlt || '' }
 							onChange={ ( val ) =>
 								setAttributes( { avatarAlt: val } )
@@ -68,7 +68,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Choose avatar',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									) }
@@ -106,7 +106,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												>
 													{ __(
 														'Replace',
-														'twork-builder'
+														'mk-builder'
 													) }
 												</Button>
 											) }
@@ -123,7 +123,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								</div>
@@ -142,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="testimonials__text"
 					value={ text }
 					onChange={ ( val ) => setAttributes( { text: val } ) }
-					placeholder={ __( 'Review text…', 'twork-builder' ) }
+					placeholder={ __( 'Review text…', 'mk-builder' ) }
 				/>
 				<footer className="testimonials__footer">
 					{ avatarUrl && (
@@ -162,7 +162,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { name: val } )
 							}
-							placeholder={ __( 'Name', 'twork-builder' ) }
+							placeholder={ __( 'Name', 'mk-builder' ) }
 							allowedFormats={ [] }
 						/>
 						<RichText
@@ -172,7 +172,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { location: val } )
 							}
-							placeholder={ __( 'Location', 'twork-builder' ) }
+							placeholder={ __( 'Location', 'mk-builder' ) }
 							allowedFormats={ [] }
 						/>
 					</div>

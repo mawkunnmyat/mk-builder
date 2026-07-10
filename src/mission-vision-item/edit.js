@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -31,7 +31,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-mv-item-editor',
+			className: 'mk-mv-item-editor',
 		} ),
 		[]
 	);
@@ -89,32 +89,32 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Card Content', 'twork-builder' ) }
+						title={ __( 'Card Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon / media', 'twork-builder' ) }
+							label={ __( 'Icon / media', 'mk-builder' ) }
 							value={ iconType || 'legacy' }
 							options={ [
 								{
 									label: __(
 										'WordPress icon (Dashicons)',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'dashicon',
 								},
 								{
-									label: __( 'Image / GIF', 'twork-builder' ),
+									label: __( 'Image / GIF', 'mk-builder' ),
 									value: 'image',
 								},
 								{
-									label: __( 'Video', 'twork-builder' ),
+									label: __( 'Video', 'mk-builder' ),
 									value: 'video',
 								},
 								{
 									label: __(
 										'Custom class (e.g. Font Awesome)',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'legacy',
 								},
@@ -139,7 +139,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Dashicon class',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ iconValue }
 								onChange={ ( val ) =>
@@ -147,14 +147,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								help={ __(
 									'e.g. dashicons-bullseye, dashicons-visibility, dashicons-heart',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						) }
 
 						{ iconType === 'image' && (
 							<BaseControl
-								label={ __( 'Image / GIF', 'twork-builder' ) }
+								label={ __( 'Image / GIF', 'mk-builder' ) }
 							>
 								<MediaUploadCheck>
 									<MediaUpload
@@ -199,7 +199,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 															>
 																{ __(
 																	'Replace',
-																	'twork-builder'
+																	'mk-builder'
 																) }
 															</Button>
 															<Button
@@ -218,7 +218,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 															>
 																{ __(
 																	'Remove',
-																	'twork-builder'
+																	'mk-builder'
 																) }
 															</Button>
 														</div>
@@ -233,7 +233,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Choose image or GIF',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												) }
@@ -246,7 +246,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ iconType === 'video' && (
 							<BaseControl
-								label={ __( 'Video', 'twork-builder' ) }
+								label={ __( 'Video', 'mk-builder' ) }
 							>
 								<MediaUploadCheck>
 									<MediaUpload
@@ -293,7 +293,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 															>
 																{ __(
 																	'Replace',
-																	'twork-builder'
+																	'mk-builder'
 																) }
 															</Button>
 															<Button
@@ -314,7 +314,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 															>
 																{ __(
 																	'Remove',
-																	'twork-builder'
+																	'mk-builder'
 																) }
 															</Button>
 														</div>
@@ -329,7 +329,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Choose video',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												) }
@@ -344,11 +344,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Icon class (e.g. Font Awesome)',
-									'twork-builder'
+									'mk-builder'
 								) }
 								help={ __(
 									'Example: fas fa-bullseye, fas fa-eye, fas fa-heart',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ iconClass }
 								onChange={ ( val ) =>
@@ -358,7 +358,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) }
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
@@ -366,7 +366,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextareaControl
-							label={ __( 'Description', 'twork-builder' ) }
+							label={ __( 'Description', 'mk-builder' ) }
 							value={ description }
 							onChange={ ( val ) =>
 								setAttributes( { description: val } )
@@ -384,7 +384,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="mv-title"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Card title…', 'twork-builder' ) }
+					placeholder={ __( 'Card title…', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -394,7 +394,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { description: val } )
 					}
-					placeholder={ __( 'Card description…', 'twork-builder' ) }
+					placeholder={ __( 'Card description…', 'mk-builder' ) }
 				/>
 			</div>
 		</div>

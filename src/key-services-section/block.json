@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/key-services-section",
+	"name": "mk/key-services-section",
 	"version": "1.0.0",
 	"title": "Key Services Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "star-filled",
 	"description": "A professional key services section with icon-based service items and comprehensive customization options.",
-	"keywords": [ "services", "key", "features", "icons", "grid", "twork" ],
+	"keywords": [ "services", "key", "features", "icons", "grid", "mk" ],
 	"supports": {
 		"html": false,
 		"align": [ "full", "wide" ],
@@ -324,20 +324,20 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/key-service-item",
+				"name": "mk/key-service-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/key-service-item",
+				"name": "mk/key-service-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/key-service-item",
+				"name": "mk/key-service-item",
 				"attributes": {}
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./view.js",
 	"style": "file:./style-index.css"

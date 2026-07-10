@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-intro-list-item",
+	"name": "mk/hc-intro-list-item",
 	"title": "Intro List Item",
-	"parent": [ "twork/hc-intro-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/hc-intro-section" ],
+	"category": "mk-builder",
 	"description": "Single checklist item (icon + text) for the Home Care Intro section.",
-	"keywords": [ "home care", "intro", "list", "checklist", "twork" ],
+	"keywords": [ "home care", "intro", "list", "checklist", "mk" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",
@@ -26,6 +26,6 @@
 			"text": "List item"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

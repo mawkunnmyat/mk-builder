@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/cta-block",
+	"name": "mk/cta-block",
 	"version": "1.0.0",
 	"title": "CTA Block",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/stats-column"
+		"mk/stats-column"
 	],
 	"icon": "external",
 	"description": "Call-to-action block.",
@@ -65,6 +65,6 @@
 			"buttonIconType": "diagonal-arrow"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

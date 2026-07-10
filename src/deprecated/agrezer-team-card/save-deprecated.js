@@ -1,7 +1,7 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
- * Previous save markup for twork/agrezer-team-card (conditional rich text nodes).
+ * Previous save markup for mk/agrezer-team-card (conditional rich text nodes).
  *
  * @param {Object} props            Props passed to the deprecated save.
  * @param {Object} props.attributes Block attributes.

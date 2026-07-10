@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-faq-item",
+	"name": "mk/phy-faq-item",
 	"version": "1.0.0",
 	"title": "FAQ Item",
-	"category": "twork-builder",
-	"parent": [ "twork/phy-faq-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/phy-faq-section" ],
 	"icon": "editor-help",
 	"description": "Single FAQ item (question + answer) for the Physio FAQ section.",
-	"keywords": [ "physio", "faq", "question", "answer", "accordion", "twork" ],
+	"keywords": [ "physio", "faq", "question", "answer", "accordion", "mk" ],
 	"attributes": {
 		"question": {
 			"type": "string",
@@ -28,6 +28,6 @@
 			"answer": "While a referral is helpful, you can also book a direct consultation with our physiotherapists for assessment."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

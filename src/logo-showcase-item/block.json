@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/logo-showcase-item",
+	"name": "mk/logo-showcase-item",
 	"title": "Logo Showcase Item",
-	"parent": [ "twork/logo-showcase-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/logo-showcase-section" ],
+	"category": "mk-builder",
 	"description": "Single logo cell for the logo showcase grid.",
-	"keywords": [ "logo", "partner", "region", "twork" ],
+	"keywords": [ "logo", "partner", "region", "mk" ],
 	"attributes": {
 		"name": {
 			"type": "string",
@@ -36,7 +36,7 @@
 			"imageAlt": "Mandalay Region — Shwe Myanmar"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

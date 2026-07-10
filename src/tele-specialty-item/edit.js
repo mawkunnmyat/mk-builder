@@ -1,40 +1,40 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, RichText } from '@wordpress/block-editor';
 import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
 
 const ICON_OPTIONS = [
 	{
-		label: __( 'Stethoscope (General Medicine)', 'twork-builder' ),
+		label: __( 'Stethoscope (General Medicine)', 'mk-builder' ),
 		value: 'fas fa-stethoscope',
 	},
 	{
-		label: __( 'Allergies (Dermatology)', 'twork-builder' ),
+		label: __( 'Allergies (Dermatology)', 'mk-builder' ),
 		value: 'fas fa-allergies',
 	},
-	{ label: __( 'Baby (Pediatrics)', 'twork-builder' ), value: 'fas fa-baby' },
+	{ label: __( 'Baby (Pediatrics)', 'mk-builder' ), value: 'fas fa-baby' },
 	{
-		label: __( 'Brain (Psychology)', 'twork-builder' ),
+		label: __( 'Brain (Psychology)', 'mk-builder' ),
 		value: 'fas fa-brain',
 	},
 	{
-		label: __( 'Female (Gynecology)', 'twork-builder' ),
+		label: __( 'Female (Gynecology)', 'mk-builder' ),
 		value: 'fas fa-female',
 	},
 	{
-		label: __( 'Carrot (Nutrition)', 'twork-builder' ),
+		label: __( 'Carrot (Nutrition)', 'mk-builder' ),
 		value: 'fas fa-carrot',
 	},
 	{
-		label: __( 'Heartbeat (Cardiology)', 'twork-builder' ),
+		label: __( 'Heartbeat (Cardiology)', 'mk-builder' ),
 		value: 'fas fa-heartbeat',
 	},
 	{
-		label: __( 'Notes Medical (Report Review)', 'twork-builder' ),
+		label: __( 'Notes Medical (Report Review)', 'mk-builder' ),
 		value: 'fas fa-notes-medical',
 	},
-	{ label: __( 'User MD', 'twork-builder' ), value: 'fas fa-user-md' },
-	{ label: __( 'Lungs', 'twork-builder' ), value: 'fas fa-lungs' },
+	{ label: __( 'User MD', 'mk-builder' ), value: 'fas fa-user-md' },
+	{ label: __( 'Lungs', 'mk-builder' ), value: 'fas fa-lungs' },
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -42,7 +42,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-tele-specialty-item-editor',
+			className: 'mk-tele-specialty-item-editor',
 		} ),
 		[]
 	);
@@ -52,11 +52,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Specialty Item', 'twork-builder' ) }
+						title={ __( 'Specialty Item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon', 'twork-builder' ) }
+							label={ __( 'Icon', 'mk-builder' ) }
 							value={ iconClass }
 							options={ ICON_OPTIONS }
 							onChange={ ( val ) =>
@@ -67,7 +67,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Icon Class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass }
 							onChange={ ( val ) =>
@@ -75,12 +75,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Override: e.g. fas fa-stethoscope',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
@@ -101,7 +101,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h5"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Specialty title…', 'twork-builder' ) }
+					placeholder={ __( 'Specialty title…', 'mk-builder' ) }
 				/>
 			</div>
 		</>

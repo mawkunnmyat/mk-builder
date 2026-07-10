@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/em-process-section",
+	"name": "mk/em-process-section",
 	"version": "1.0.0",
 	"title": "Process Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "randomize",
 	"description": "Our Emergency Process – header plus a process steps grid with numbered circles.",
-	"keywords": [ "emergency", "process", "steps", "timeline", "twork" ],
+	"keywords": [ "emergency", "process", "steps", "timeline", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -121,7 +121,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/em-process-step",
+				"name": "mk/em-process-step",
 				"attributes": {
 					"stepNumber": "1",
 					"title": "Arrival",
@@ -129,7 +129,7 @@
 				}
 			},
 			{
-				"name": "twork/em-process-step",
+				"name": "mk/em-process-step",
 				"attributes": {
 					"stepNumber": "2",
 					"title": "Triage",
@@ -137,7 +137,7 @@
 				}
 			},
 			{
-				"name": "twork/em-process-step",
+				"name": "mk/em-process-step",
 				"attributes": {
 					"stepNumber": "3",
 					"title": "Diagnosis",
@@ -145,7 +145,7 @@
 				}
 			},
 			{
-				"name": "twork/em-process-step",
+				"name": "mk/em-process-step",
 				"attributes": {
 					"stepNumber": "4",
 					"title": "Treatment",
@@ -154,7 +154,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

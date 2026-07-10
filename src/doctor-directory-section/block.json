@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/doctor-directory-section",
+	"name": "mk/doctor-directory-section",
 	"version": "1.0.0",
 	"title": "Doctor Directory Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "Doctor directory section with filterable doctor cards grid. Add Doctor Card items as children.",
-	"keywords": [ "doctor", "directory", "grid", "find a doctor", "twork" ],
+	"keywords": [ "doctor", "directory", "grid", "find a doctor", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -76,24 +76,24 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/doctor-card-item",
+				"name": "mk/doctor-card-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/doctor-card-item",
+				"name": "mk/doctor-card-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/doctor-card-item",
+				"name": "mk/doctor-card-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/doctor-card-item",
+				"name": "mk/doctor-card-item",
 				"attributes": {}
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./view.js",
 	"style": "file:./style-index.css"

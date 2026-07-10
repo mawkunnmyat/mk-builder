@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -35,16 +35,16 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-contact-map-editor',
+			className: 'mk-contact-map-editor',
 			style: {
 				backgroundColor: sectionBackgroundColor,
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
-				'--twork-contact-map-container-bg': containerBackgroundColor,
-				'--twork-contact-map-radius': `${ containerBorderRadius }px`,
-				'--twork-map-min-h': `${ mapMinHeightDesktop }px`,
-				'--twork-map-min-h-md': `${ mapMinHeightTablet }px`,
-				'--twork-map-min-h-sm': `${ mapMinHeightMobile }px`,
+				'--mk-contact-map-container-bg': containerBackgroundColor,
+				'--mk-contact-map-radius': `${ containerBorderRadius }px`,
+				'--mk-map-min-h': `${ mapMinHeightDesktop }px`,
+				'--mk-map-min-h-md': `${ mapMinHeightTablet }px`,
+				'--mk-map-min-h-sm': `${ mapMinHeightMobile }px`,
 			},
 		} ),
 		[
@@ -69,23 +69,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Form', 'twork-builder' ) }
+						title={ __( 'Form', 'mk-builder' ) }
 						initialOpen
 					>
 						<TextControl
-							label={ __( 'Form action URL', 'twork-builder' ) }
+							label={ __( 'Form action URL', 'mk-builder' ) }
 							value={ formAction }
 							onChange={ ( v ) =>
 								setAttributes( { formAction: v } )
 							}
 							help={ __(
 								'Endpoint to receive submissions (e.g. Contact Form 7, admin-ajax, or custom REST). Leave empty to use #.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<SelectControl
-							label={ __( 'HTTP method', 'twork-builder' ) }
+							label={ __( 'HTTP method', 'mk-builder' ) }
 							value={ formMethod }
 							options={ [
 								{ label: 'POST', value: 'post' },
@@ -99,7 +99,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Name field placeholder',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ namePlaceholder }
 							onChange={ ( v ) =>
@@ -108,7 +108,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Phone placeholder', 'twork-builder' ) }
+							label={ __( 'Phone placeholder', 'mk-builder' ) }
 							value={ phonePlaceholder }
 							onChange={ ( v ) =>
 								setAttributes( { phonePlaceholder: v } )
@@ -116,7 +116,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Email placeholder', 'twork-builder' ) }
+							label={ __( 'Email placeholder', 'mk-builder' ) }
 							value={ emailPlaceholder }
 							onChange={ ( v ) =>
 								setAttributes( { emailPlaceholder: v } )
@@ -126,7 +126,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Subject placeholder',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ subjectPlaceholder }
 							onChange={ ( v ) =>
@@ -137,7 +137,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Message placeholder',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ messagePlaceholder }
 							onChange={ ( v ) =>
@@ -148,7 +148,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Submit button text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ submitButtonText }
 							onChange={ ( v ) =>
@@ -156,23 +156,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 						/>
 					</PanelBody>
-					<PanelBody title={ __( 'Map', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Map', 'mk-builder' ) }>
 						<TextControl
-							label={ __( 'Embed URL (https)', 'twork-builder' ) }
+							label={ __( 'Embed URL (https)', 'mk-builder' ) }
 							value={ mapEmbedUrl }
 							onChange={ ( v ) =>
 								setAttributes( { mapEmbedUrl: v } )
 							}
 							help={ __(
 								'Google Maps embed or any https iframe URL.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
 							label={ __(
 								'Iframe title (accessibility)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mapIframeTitle }
 							onChange={ ( v ) =>
@@ -181,10 +181,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout & colors', 'twork-builder' ) }
+						title={ __( 'Layout & colors', 'mk-builder' ) }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -196,7 +196,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -209,7 +209,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container corner radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerBorderRadius }
 							onChange={ ( v ) =>
@@ -236,7 +236,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<BaseControl
 							label={ __(
 								'Section background',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<input
@@ -252,7 +252,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<BaseControl
 							label={ __(
 								'Card / form area background',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<input
@@ -269,7 +269,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Map min height — desktop (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mapMinHeightDesktop }
 							onChange={ ( v ) =>
@@ -282,7 +282,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Map min height — tablet (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mapMinHeightTablet }
 							onChange={ ( v ) =>
@@ -295,7 +295,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Map min height — mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mapMinHeightMobile }
 							onChange={ ( v ) =>
@@ -310,33 +310,33 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 			<section { ...blockProps }>
 				<div
-					className="twork-contact-map__container"
+					className="mk-contact-map__container"
 					style={ containerStyle }
 				>
-					<div className="twork-contact-map__form-wrap">
+					<div className="mk-contact-map__form-wrap">
 						<RichText
 							tagName="h2"
-							className="twork-contact-map__title"
+							className="mk-contact-map__title"
 							value={ sectionTitle }
 							onChange={ ( v ) =>
 								setAttributes( { sectionTitle: v } )
 							}
 							placeholder={ __(
 								'Section heading…',
-								'twork-builder'
+								'mk-builder'
 							) }
 							allowedFormats={ [ 'core/bold', 'core/italic' ] }
 						/>
 
 						<form
-							className="twork-contact-map__form"
+							className="mk-contact-map__form"
 							onSubmit={ ( e ) => e.preventDefault() }
 						>
 							<input
 								type="text"
 								name="name"
 								placeholder={ namePlaceholder }
-								className="twork-contact-map__input"
+								className="mk-contact-map__input"
 								readOnly
 								tabIndex={ -1 }
 								aria-hidden="true"
@@ -346,7 +346,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								type="tel"
 								name="phone"
 								placeholder={ phonePlaceholder }
-								className="twork-contact-map__input"
+								className="mk-contact-map__input"
 								readOnly
 								tabIndex={ -1 }
 								aria-hidden="true"
@@ -356,7 +356,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								type="email"
 								name="email"
 								placeholder={ emailPlaceholder }
-								className="twork-contact-map__input"
+								className="mk-contact-map__input"
 								readOnly
 								tabIndex={ -1 }
 								aria-hidden="true"
@@ -366,7 +366,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								type="text"
 								name="subject"
 								placeholder={ subjectPlaceholder }
-								className="twork-contact-map__input"
+								className="mk-contact-map__input"
 								readOnly
 								tabIndex={ -1 }
 								aria-hidden="true"
@@ -375,7 +375,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<textarea
 								name="message"
 								placeholder={ messagePlaceholder }
-								className="twork-contact-map__textarea"
+								className="mk-contact-map__textarea"
 								rows={ 5 }
 								readOnly
 								tabIndex={ -1 }
@@ -384,31 +384,31 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 							<button
 								type="button"
-								className="twork-contact-map__button"
+								className="mk-contact-map__button"
 							>
 								{ submitButtonText }
 							</button>
 						</form>
 					</div>
-					<div className="twork-contact-map__map-wrap">
+					<div className="mk-contact-map__map-wrap">
 						{ mapEmbedUrl &&
 						/^https?:\/\//i.test( mapEmbedUrl.trim() ) ? (
 							<iframe
-								className="twork-contact-map__iframe"
+								className="mk-contact-map__iframe"
 								title={
 									mapIframeTitle ||
-									__( 'Map', 'twork-builder' )
+									__( 'Map', 'mk-builder' )
 								}
 								src={ mapEmbedUrl.trim() }
 								loading="lazy"
 								referrerPolicy="no-referrer-when-downgrade"
 							/>
 						) : (
-							<div className="twork-contact-map__map-placeholder twork-contact-map__map-placeholder--editor">
+							<div className="mk-contact-map__map-placeholder mk-contact-map__map-placeholder--editor">
 								<p>
 									{ __(
 										'Add a map embed URL in the sidebar.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								</p>
 							</div>

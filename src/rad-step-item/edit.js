@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'rad-step twork-rad-step-item-editor',
+			className: 'rad-step mk-rad-step-item-editor',
 		} ),
 		[]
 	);
@@ -25,13 +25,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Process Step', 'twork-builder' ) }
+						title={ __( 'Process Step', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon Class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass }
 							onChange={ ( val ) =>
@@ -41,7 +41,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. far fa-calendar-check, fas fa-user-nurse, fas fa-radiation, fas fa-file-medical-alt',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h3"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Book', 'twork-builder' ) }
+					placeholder={ __( 'Book', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -67,7 +67,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					}
 					placeholder={ __(
 						'Schedule via phone or app.',
-						'twork-builder'
+						'mk-builder'
 					) }
 					style={ {
 						fontSize: '0.9rem',

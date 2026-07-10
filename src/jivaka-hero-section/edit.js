@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -18,11 +18,11 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/jivaka-badge-item' ];
+const ALLOWED_BLOCKS = [ 'mk/jivaka-badge-item' ];
 const TEMPLATE = [
-	[ 'twork/jivaka-badge-item', {} ],
-	[ 'twork/jivaka-badge-item', {} ],
-	[ 'twork/jivaka-badge-item', {} ],
+	[ 'mk/jivaka-badge-item', {} ],
+	[ 'mk/jivaka-badge-item', {} ],
+	[ 'mk/jivaka-badge-item', {} ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -54,7 +54,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-jivaka-hero-section-editor',
+			className: 'mk-jivaka-hero-section-editor',
 			style: {
 				background: `linear-gradient(${ gradientAngle }deg, ${ gradientStart }, ${ gradientEnd })`,
 				paddingTop: `${ paddingTop }px`,
@@ -115,11 +115,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
@@ -127,7 +127,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Subtitle', 'twork-builder' ) }
+							label={ __( 'Subtitle', 'mk-builder' ) }
 							value={ subtitle }
 							onChange={ ( val ) =>
 								setAttributes( { subtitle: val } )
@@ -135,19 +135,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Text Alignment', 'twork-builder' ) }
+							label={ __( 'Text Alignment', 'mk-builder' ) }
 							value={ textAlignment }
 							options={ [
 								{
-									label: __( 'Left', 'twork-builder' ),
+									label: __( 'Left', 'mk-builder' ),
 									value: 'left',
 								},
 								{
-									label: __( 'Center', 'twork-builder' ),
+									label: __( 'Center', 'mk-builder' ),
 									value: 'center',
 								},
 								{
-									label: __( 'Right', 'twork-builder' ),
+									label: __( 'Right', 'mk-builder' ),
 									value: 'right',
 								},
 							] }
@@ -160,18 +160,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					<PanelBody
 						title={ __(
 							'Title & Subtitle Styling',
-							'twork-builder'
+							'mk-builder'
 						) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -179,7 +179,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Title Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
@@ -191,7 +191,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Title Font Weight', 'twork-builder' ) }
+							label={ __( 'Title Font Weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -203,7 +203,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Subtitle Color', 'twork-builder' ) }
+							title={ __( 'Subtitle Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: subtitleColor,
@@ -211,7 +211,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { subtitleColor: val } ),
 									label: __(
 										'Subtitle Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -220,7 +220,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Subtitle Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ subtitleFontSize }
 							onChange={ ( val ) =>
@@ -234,7 +234,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Subtitle Margin Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ subtitleMarginBottom }
 							onChange={ ( val ) =>
@@ -247,29 +247,29 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Background Gradient', 'twork-builder' ) }
+						title={ __( 'Background Gradient', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Gradient Start', 'twork-builder' ) }
+							title={ __( 'Gradient Start', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: gradientStart,
 									onChange: ( val ) =>
 										setAttributes( { gradientStart: val } ),
-									label: __( 'Start Color', 'twork-builder' ),
+									label: __( 'Start Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Gradient End', 'twork-builder' ) }
+							title={ __( 'Gradient End', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: gradientEnd,
 									onChange: ( val ) =>
 										setAttributes( { gradientEnd: val } ),
-									label: __( 'End Color', 'twork-builder' ),
+									label: __( 'End Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -277,7 +277,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gradient Angle (deg)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gradientAngle }
 							onChange={ ( val ) =>
@@ -290,13 +290,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Phone Mockup', 'twork-builder' ) }
+						title={ __( 'Phone Mockup', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<BaseControl
 							label={ __(
 								'Phone Mockup Image',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							{ ! phoneMockupImage ? (
@@ -312,7 +312,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Phone Mockup Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -340,7 +340,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove Image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>
@@ -349,7 +349,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Phone Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ phoneMockupMaxWidth }
 							onChange={ ( val ) =>
@@ -363,7 +363,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Enable Float Animation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ enablePhoneFloatAnimation }
 							onChange={ ( val ) =>
@@ -375,13 +375,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Badge Settings', 'twork-builder' ) }
+						title={ __( 'Badge Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Gap Between Badges (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ badgeGap }
 							onChange={ ( val ) =>
@@ -395,7 +395,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Badge Image Height (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ badgeHeight }
 							onChange={ ( val ) =>
@@ -408,13 +408,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout & Spacing', 'twork-builder' ) }
+						title={ __( 'Layout & Spacing', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -428,7 +428,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -441,7 +441,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -454,7 +454,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -480,7 +480,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
 							}
-							placeholder={ __( 'Jivaka Care', 'twork-builder' ) }
+							placeholder={ __( 'Jivaka Care', 'mk-builder' ) }
 							style={ {
 								fontSize: `${ titleFontSize }rem`,
 								fontWeight: titleFontWeight,
@@ -498,7 +498,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Caring with Compassion',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								fontSize: `${ subtitleFontSize }rem`,
@@ -531,7 +531,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								src={ phoneMockupImage }
 								alt={ __(
 									'Jivaka App Screenshot',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									width: '100%',
@@ -557,7 +557,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							>
 								{ __(
 									'Add phone mockup image in sidebar',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</div>
 						) }

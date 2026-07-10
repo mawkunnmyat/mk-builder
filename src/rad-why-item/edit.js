@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -18,18 +18,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Icon & Content', 'twork-builder' ) }
+						title={ __( 'Icon & Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Icon Class', 'twork-builder' ) }
+							label={ __( 'Icon Class', 'mk-builder' ) }
 							value={ iconClass }
 							onChange={ ( val ) =>
 								setAttributes( { iconClass: val } )
 							}
 							help={ __(
 								'Font Awesome class, e.g. "fas fa-bolt"',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -46,7 +46,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h4"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Card title...', 'twork-builder' ) }
+					placeholder={ __( 'Card title...', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -58,7 +58,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					}
 					placeholder={ __(
 						'Short description...',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 			</div>

@@ -4,7 +4,7 @@ export default function save( { attributes } ) {
 	const { image, alt, maxWidth } = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-process__center',
+		className: 'mk-process__center',
 	} );
 
 	return (
@@ -12,7 +12,7 @@ export default function save( { attributes } ) {
 			{ image && (
 				<img
 					src={ image }
-					className="twork-process__img"
+					className="mk-process__img"
 					alt={ alt || '' }
 					style={ { maxWidth: `${ maxWidth }px` } }
 				/>

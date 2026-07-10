@@ -2,7 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import Edit from './edit';
 import save from './save';
 
-registerBlockType( 'twork/split-section', {
+registerBlockType( 'mk/split-section', {
 	edit: Edit,
 	save,
 } );

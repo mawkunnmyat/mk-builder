@@ -7,12 +7,12 @@
  */
 
 // Fallbacks (section sets --lab-* from Colors panel)
-.twork-lab-steps-section,
-.wp-block-twork-lab-steps-section.twork-lab-steps-section,
-.lab-section.twork-lab-steps-section,
-.lab-section.twork-lab-steps-section-editor,
+.mk-lab-steps-section,
+.wp-block-mk-lab-steps-section.mk-lab-steps-section,
+.lab-section.mk-lab-steps-section,
+.lab-section.mk-lab-steps-section-editor,
 .lab-section.lab-steps-section-editor,
-.wp-block-twork-lab-steps-section.twork-lab-steps-section-editor {
+.wp-block-mk-lab-steps-section.mk-lab-steps-section-editor {
     --lab-primary: #f48b2a;
     --lab-step-num-text: #ffffff;
     --lab-step-content-bg: #ffffff;
@@ -23,12 +23,12 @@
     --lab-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.twork-lab-steps-section,
-.wp-block-twork-lab-steps-section.twork-lab-steps-section,
-.lab-section.twork-lab-steps-section,
-.lab-section.twork-lab-steps-section-editor,
+.mk-lab-steps-section,
+.wp-block-mk-lab-steps-section.mk-lab-steps-section,
+.lab-section.mk-lab-steps-section,
+.lab-section.mk-lab-steps-section-editor,
 .lab-section.lab-steps-section-editor,
-.wp-block-twork-lab-steps-section.twork-lab-steps-section-editor {
+.wp-block-mk-lab-steps-section.mk-lab-steps-section-editor {
     position: relative;
     width: 100%;
     box-sizing: border-box;
@@ -141,10 +141,10 @@
 }
 
 // Editor: layout + collapse InnerBlocks so .lab-step-row is direct flex child
-.editor-styles-wrapper .wp-block-twork-lab-steps-section,
-.wp-block-twork-lab-steps-section {
+.editor-styles-wrapper .wp-block-mk-lab-steps-section,
+.wp-block-mk-lab-steps-section {
     .lab-steps-section-editor,
-    .twork-lab-steps-section-editor {
+    .mk-lab-steps-section-editor {
         width: 100%;
         min-width: 0;
         box-sizing: border-box;
@@ -166,8 +166,8 @@
             .block-editor-block-list__layout {
                 display: contents !important;
             }
-            .wp-block-twork-lab-step-item,
-            [data-type="twork/lab-step-item"] {
+            .wp-block-mk-lab-step-item,
+            [data-type="mk/lab-step-item"] {
                 display: contents !important;
             }
         }
@@ -184,12 +184,12 @@
 
 // Responsive (match laboratory-services.html)
 @media (max-width: 992px) {
-    .twork-lab-steps-section,
-    .wp-block-twork-lab-steps-section.twork-lab-steps-section,
-    .lab-section.twork-lab-steps-section,
-    .lab-section.twork-lab-steps-section-editor,
+    .mk-lab-steps-section,
+    .wp-block-mk-lab-steps-section.mk-lab-steps-section,
+    .lab-section.mk-lab-steps-section,
+    .lab-section.mk-lab-steps-section-editor,
     .lab-section.lab-steps-section-editor,
-    .wp-block-twork-lab-steps-section.twork-lab-steps-section-editor {
+    .wp-block-mk-lab-steps-section.mk-lab-steps-section-editor {
         .lab-steps-container::before {
             left: 20px;
             transform: none;
@@ -212,12 +212,12 @@
 }
 
 @media (max-width: 768px) {
-    .twork-lab-steps-section,
-    .wp-block-twork-lab-steps-section.twork-lab-steps-section,
-    .lab-section.twork-lab-steps-section,
-    .lab-section.twork-lab-steps-section-editor,
+    .mk-lab-steps-section,
+    .wp-block-mk-lab-steps-section.mk-lab-steps-section,
+    .lab-section.mk-lab-steps-section,
+    .lab-section.mk-lab-steps-section-editor,
     .lab-section.lab-steps-section-editor,
-    .wp-block-twork-lab-steps-section.twork-lab-steps-section-editor {
+    .wp-block-mk-lab-steps-section.mk-lab-steps-section-editor {
         .lab-container {
             padding-left: 16px;
             padding-right: 16px;

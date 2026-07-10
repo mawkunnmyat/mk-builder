@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/process-step",
+	"name": "mk/process-step",
 	"version": "1.0.0",
 	"title": "Process Step",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/process"
+		"mk/process"
 	],
 	"icon": "editor-ol",
 	"description": "Process step item.",
@@ -73,6 +73,6 @@
 			"buttonIconType": "diagonal-arrow"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

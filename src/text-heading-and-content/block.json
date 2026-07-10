@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork-builder/text-heading-and-content",
+	"name": "mk-builder/text-heading-and-content",
 	"version": "0.1.0",
-	"title": "TWork Text Heading And Content",
-	"category": "twork-builder",
+	"title": "MK Text Heading And Content",
+	"category": "mk-builder",
 	"icon": "list-view",
 	"description": "Professional text heading and content section with responsive controls.",
 	"example": {},
@@ -94,7 +94,7 @@
 			"default": 900
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",

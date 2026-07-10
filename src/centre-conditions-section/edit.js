@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -7,35 +7,35 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/centre-condition-card' ];
+const ALLOWED_BLOCKS = [ 'mk/centre-condition-card' ];
 const TEMPLATE = [
 	[
-		'twork/centre-condition-card',
+		'mk/centre-condition-card',
 		{ iconClass: 'fas fa-heart-broken', title: 'Coronary Artery Disease' },
 	],
 
 	[
-		'twork/centre-condition-card',
+		'mk/centre-condition-card',
 		{ iconClass: 'fas fa-bolt', title: 'Arrhythmia' },
 	],
 
 	[
-		'twork/centre-condition-card',
+		'mk/centre-condition-card',
 		{ iconClass: 'fas fa-heartbeat', title: 'Heart Failure' },
 	],
 
 	[
-		'twork/centre-condition-card',
+		'mk/centre-condition-card',
 		{ iconClass: 'fas fa-child', title: 'Congenital Defects' },
 	],
 
 	[
-		'twork/centre-condition-card',
+		'mk/centre-condition-card',
 		{ iconClass: 'fas fa-procedures', title: 'Valvular Disease' },
 	],
 
 	[
-		'twork/centre-condition-card',
+		'mk/centre-condition-card',
 		{ iconClass: 'fas fa-user-md', title: 'Hypertension' },
 	],
 ];
@@ -44,7 +44,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { sectionId, title, showSection } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'content-section fade-up twork-centre-conditions-editor',
+			className: 'content-section fade-up mk-centre-conditions-editor',
 			id: sectionId,
 		} ),
 		[ sectionId ]
@@ -58,19 +58,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<PanelBody
 							title={ __(
 								'Conditions Section',
-								'twork-builder'
+								'mk-builder'
 							) }
 							initialOpen={ true }
 						>
 							<ToggleControl
-								label={ __( 'Show section', 'twork-builder' ) }
+								label={ __( 'Show section', 'mk-builder' ) }
 								checked={ false }
 								onChange={ ( v ) =>
 									setAttributes( { showSection: v } )
 								}
 								help={ __(
 									'Display this section on the page. When off, hidden in Editor, Front-end, and Responsive.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</PanelBody>
@@ -105,7 +105,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					>
 						{ __(
 							'Conditions We Treat (Hidden)',
-							'twork-builder'
+							'mk-builder'
 						) }
 					</div>
 					<p
@@ -118,7 +118,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					>
 						{ __(
 							'Conditions section is hidden. Turn “Show section” on in block settings to display it.',
-							'twork-builder'
+							'mk-builder'
 						) }
 					</p>
 				</div>
@@ -131,25 +131,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Conditions Section', 'twork-builder' ) }
+						title={ __( 'Conditions Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
-							label={ __( 'Show section', 'twork-builder' ) }
+							label={ __( 'Show section', 'mk-builder' ) }
 							checked={ showSection !== false }
 							onChange={ ( v ) =>
 								setAttributes( { showSection: v } )
 							}
 							help={ __(
 								'Display this section on the page. When off, hidden in Editor, Front-end, and Responsive.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
 							label={ __(
 								'Section ID (anchor)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionId }
 							onChange={ ( v ) =>
@@ -159,12 +159,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. #conditions for sidebar links',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Section title', 'twork-builder' ) }
+							label={ __( 'Section title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( v ) => setAttributes( { title: v } ) }
 						/>
@@ -176,7 +176,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h2"
 					value={ title }
 					onChange={ ( v ) => setAttributes( { title: v } ) }
-					placeholder={ __( 'Conditions We Treat', 'twork-builder' ) }
+					placeholder={ __( 'Conditions We Treat', 'mk-builder' ) }
 				/>
 
 				<div className="conditions-grid">

@@ -1,16 +1,16 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
 } from '@wordpress/block-editor';
 import { PanelBody, RangeControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/hero-banner-slide' ];
+const ALLOWED_BLOCKS = [ 'mk/hero-banner-slide' ];
 
 const SLIDE_TEMPLATE = [
 	[
-		'twork/hero-banner-slide',
+		'mk/hero-banner-slide',
 		{
 			eyebrow: 'SHWE MYANMAR FOODSTUFF INDUSTRY',
 			title: 'သဘာဝ အနံ့ သဘာဝ အရသာ...',
@@ -26,7 +26,7 @@ const SLIDE_TEMPLATE = [
 		},
 	],
 	[
-		'twork/hero-banner-slide',
+		'mk/hero-banner-slide',
 		{
 			eyebrow: 'PREMIUM BUTTER & GHEE',
 			title: 'ရွှေမြန်မာ ထောပတ် — Trusted Across Myanmar.',
@@ -41,7 +41,7 @@ const SLIDE_TEMPLATE = [
 		},
 	],
 	[
-		'twork/hero-banner-slide',
+		'mk/hero-banner-slide',
 		{
 			eyebrow: 'MANDALAY HERITAGE',
 			title: 'Quality You Can Taste Every Day.',
@@ -62,7 +62,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-hero-banner-carousel twork-hero-banner-carousel--editor',
+			className: 'mk-hero-banner-carousel mk-hero-banner-carousel--editor',
 			style: {
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
@@ -76,11 +76,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Carousel Settings', 'twork-builder' ) }
+						title={ __( 'Carousel Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Autoplay (ms)', 'twork-builder' ) }
+							label={ __( 'Autoplay (ms)', 'mk-builder' ) }
 							value={ autoplayMs }
 							onChange={ ( val ) =>
 								setAttributes( { autoplayMs: val } )
@@ -90,11 +90,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 500 }
 							help={ __(
 								'Set to 0 to disable autoplay.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -106,7 +106,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -122,13 +122,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 			<section { ...blockProps }>
 				<div
-					className="twork-hero-banner-carousel__wrap"
+					className="mk-hero-banner-carousel__wrap"
 					role="region"
 					aria-roledescription="carousel"
-					aria-label={ __( 'Hero', 'twork-builder' ) }
+					aria-label={ __( 'Hero', 'mk-builder' ) }
 				>
 					<div
-						className="twork-hero-banner-carousel__track"
+						className="mk-hero-banner-carousel__track"
 						data-list="slides"
 					>
 						<InnerBlocks
@@ -140,22 +140,22 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</div>
 					<button
 						type="button"
-						className="twork-hero-banner-carousel__arrow twork-hero-banner-carousel__arrow--prev"
+						className="mk-hero-banner-carousel__arrow mk-hero-banner-carousel__arrow--prev"
 						data-action="carousel-prev"
-						aria-label={ __( 'Previous slide', 'twork-builder' ) }
+						aria-label={ __( 'Previous slide', 'mk-builder' ) }
 					>
 						‹
 					</button>
 					<button
 						type="button"
-						className="twork-hero-banner-carousel__arrow twork-hero-banner-carousel__arrow--next"
+						className="mk-hero-banner-carousel__arrow mk-hero-banner-carousel__arrow--next"
 						data-action="carousel-next"
-						aria-label={ __( 'Next slide', 'twork-builder' ) }
+						aria-label={ __( 'Next slide', 'mk-builder' ) }
 					>
 						›
 					</button>
 					<div
-						className="twork-hero-banner-carousel__dots carousel-dots"
+						className="mk-hero-banner-carousel__dots carousel-dots"
 						role="tablist"
 						aria-hidden="true"
 					/>

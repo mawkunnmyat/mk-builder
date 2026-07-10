@@ -5,13 +5,13 @@
  * single entry bundle.
  *
  * Maintainer note:
- * Runtime block registration still happens in twork-builder.php
- * (see twork_builder_init_blocks), which scans build/* and calls
+ * Runtime block registration still happens in mk-builder.php
+ * (see mk_builder_init_blocks), which scans build/* and calls
  * register_block_type() from block metadata.
  */
 
-import './twork-header';
-import './twork-nav-item';
+import './mk-header';
+import './mk-nav-item';
 
 // Brand home page blocks (industry-agnostic naming)
 import './brand-header';

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/em-stat-item",
+	"name": "mk/em-stat-item",
 	"version": "1.0.0",
 	"title": "Stat Item",
-	"parent": [ "twork/em-stats-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/em-stats-section" ],
+	"category": "mk-builder",
 	"description": "Single stat item (icon, value, label) for Emergency Stats Section.",
-	"keywords": [ "emergency", "stat", "icon", "twork" ],
+	"keywords": [ "emergency", "stat", "icon", "mk" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",
@@ -32,6 +32,6 @@
 			"statLabel": "Open All Day"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

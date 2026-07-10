@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hero-banner-carousel",
+	"name": "mk/hero-banner-carousel",
 	"version": "1.0.0",
 	"title": "Hero Banner Carousel",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "slides",
 	"description": "Shweghee hero carousel with fade slides, autoplay, arrows, and dots.",
-	"keywords": [ "hero", "banner", "carousel", "slider", "shweghee", "twork" ],
+	"keywords": [ "hero", "banner", "carousel", "slider", "shweghee", "mk" ],
 	"attributes": {
 		"autoplayMs": {
 			"type": "number",
@@ -35,7 +35,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/hero-banner-slide",
+				"name": "mk/hero-banner-slide",
 				"attributes": {
 					"eyebrow": "SHWE MYANMAR FOODSTUFF INDUSTRY",
 					"title": "သဘာဝ အနံ့ သဘာဝ အရသာ...",
@@ -49,7 +49,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js"

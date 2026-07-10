@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -12,13 +12,13 @@ import {
 	ToggleControl,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/partner-item' ];
+const ALLOWED_BLOCKS = [ 'mk/partner-item' ];
 const TEMPLATE = [
-	[ 'twork/partner-item', { name: 'NatureNest' } ],
-	[ 'twork/partner-item', { name: 'Farming Co' } ],
-	[ 'twork/partner-item', { name: 'GreenLeaf' } ],
-	[ 'twork/partner-item', { name: 'PureHarvest' } ],
-	[ 'twork/partner-item', { name: 'AgroNova' } ],
+	[ 'mk/partner-item', { name: 'NatureNest' } ],
+	[ 'mk/partner-item', { name: 'Farming Co' } ],
+	[ 'mk/partner-item', { name: 'GreenLeaf' } ],
+	[ 'mk/partner-item', { name: 'PureHarvest' } ],
+	[ 'mk/partner-item', { name: 'AgroNova' } ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -35,17 +35,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-partners twork-partners-section-editor',
+			className: 'mk-partners mk-partners-section-editor',
 			style: {
 				backgroundColor,
-				'--twork-partners-py': `${ marqueePaddingY }px`,
-				'--twork-partners-border': borderColor,
-				'--twork-partners-gap': `${ trackGap }px`,
-				'--twork-partners-duration': `${ animationDuration }s`,
+				'--mk-partners-py': `${ marqueePaddingY }px`,
+				'--mk-partners-border': borderColor,
+				'--mk-partners-gap': `${ trackGap }px`,
+				'--mk-partners-duration': `${ animationDuration }s`,
 			},
 			'data-marquee': enableMarquee ? 'true' : 'false',
 			'data-pause-hover': pauseOnHover ? 'true' : 'false',
-			'aria-label': ariaLabel || __( 'Client logos', 'twork-builder' ),
+			'aria-label': ariaLabel || __( 'Client logos', 'mk-builder' ),
 		} ),
 		[
 			animationDuration,
@@ -64,13 +64,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Accessibility', 'twork-builder' ) }
+						title={ __( 'Accessibility', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Section label (aria-label)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ ariaLabel }
 							onChange={ ( val ) =>
@@ -78,19 +78,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Describes the logo strip for screen readers.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Marquee', 'twork-builder' ) }
+						title={ __( 'Marquee', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable infinite scroll',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ enableMarquee }
 							onChange={ ( val ) =>
@@ -98,12 +98,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Off: static single row. Respects prefers-reduced-motion when on.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<ToggleControl
-							label={ __( 'Pause on hover', 'twork-builder' ) }
+							label={ __( 'Pause on hover', 'mk-builder' ) }
 							checked={ pauseOnHover }
 							onChange={ ( val ) =>
 								setAttributes( { pauseOnHover: val } )
@@ -113,7 +113,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Animation duration (seconds)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ animationDuration }
 							onChange={ ( val ) =>
@@ -128,7 +128,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gap between logos (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ trackGap }
 							onChange={ ( val ) =>
@@ -141,11 +141,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Style', 'twork-builder' ) }
+						title={ __( 'Style', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -153,13 +153,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											backgroundColor: val,
 										} ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Borders', 'twork-builder' ) }
+							title={ __( 'Borders', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: borderColor,
@@ -167,7 +167,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { borderColor: val } ),
 									label: __(
 										'Top / bottom border',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -176,7 +176,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Vertical padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ marqueePaddingY }
 							onChange={ ( val ) =>
@@ -191,9 +191,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<section { ...blockProps }>
-				<div className="twork-partners__marquee">
+				<div className="mk-partners__marquee">
 					<div
-						className="twork-partners__track twork-partners__track-editor"
+						className="mk-partners__track mk-partners__track-editor"
 						style={ {
 							gap: `${ trackGap }px`,
 						} }

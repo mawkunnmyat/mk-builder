@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -14,20 +14,20 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/hotline-accordion-item' ];
+const ALLOWED_BLOCKS = [ 'mk/hotline-accordion-item' ];
 const TEMPLATE = [
 	[
-		'twork/hotline-accordion-item',
+		'mk/hotline-accordion-item',
 		{ title: 'Heart Centre Hotline', phoneNumber: '09-111 222 333' },
 	],
 
 	[
-		'twork/hotline-accordion-item',
+		'mk/hotline-accordion-item',
 		{ title: 'Neuro Centre Hotline', phoneNumber: '09-444 555 666' },
 	],
 
 	[
-		'twork/hotline-accordion-item',
+		'mk/hotline-accordion-item',
 		{ title: 'Pharmacy & Lab', phoneNumber: '09-777 888 999' },
 	],
 ];
@@ -54,7 +54,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-contact-layout-section-editor',
+			className: 'mk-contact-layout-section-editor',
 			style: {
 				paddingBottom: `${ paddingBottom }px`,
 				'--contact-primary': primaryColor,
@@ -77,13 +77,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
 							label={ __(
 								'Gap between columns (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ layoutGap }
 							onChange={ ( val ) =>
@@ -97,7 +97,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -111,7 +111,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -125,7 +125,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Section padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -140,7 +140,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'"Our Location" heading margin top (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ locationHeadingMarginTop }
 							onChange={ ( val ) =>
@@ -155,11 +155,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Map', 'twork-builder' ) }
+						title={ __( 'Map', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Map height (px)', 'twork-builder' ) }
+							label={ __( 'Map height (px)', 'mk-builder' ) }
 							value={ mapHeight }
 							onChange={ ( val ) =>
 								setAttributes( { mapHeight: val } )
@@ -176,7 +176,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<label className="components-base-control__label">
 								{ __(
 									'Google Maps embed URL',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</label>
 							<URLInput
@@ -186,7 +186,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Paste iframe embed URL…',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ { marginTop: 4 } }
 							/>
@@ -194,11 +194,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Form labels', 'twork-builder' ) }
+						title={ __( 'Form labels', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Name field label', 'twork-builder' ) }
+							label={ __( 'Name field label', 'mk-builder' ) }
 							value={ formNameLabel }
 							onChange={ ( val ) =>
 								setAttributes( { formNameLabel: val } )
@@ -206,7 +206,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Phone field label', 'twork-builder' ) }
+							label={ __( 'Phone field label', 'mk-builder' ) }
 							value={ formPhoneLabel }
 							onChange={ ( val ) =>
 								setAttributes( { formPhoneLabel: val } )
@@ -216,7 +216,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Message field label',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ formMessageLabel }
 							onChange={ ( val ) =>
@@ -227,7 +227,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Submit button text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ buttonText }
 							onChange={ ( val ) =>
@@ -236,24 +236,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Form ID (for JS)', 'twork-builder' ) }
+							label={ __( 'Form ID (for JS)', 'mk-builder' ) }
 							value={ formId }
 							onChange={ ( val ) =>
 								setAttributes( { formId: val } )
 							}
 							help={ __(
 								'Used as id attribute on the form element.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Primary / accent', 'twork-builder' ) }
+							title={ __( 'Primary / accent', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: primaryColor,
@@ -261,7 +261,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { primaryColor: val } ),
 									label: __(
 										'Primary color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -284,7 +284,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Direct Department Lines',
-								'twork-builder'
+								'mk-builder'
 							) }
 							className="contact-details-heading"
 						/>
@@ -306,7 +306,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Our Location',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								marginTop: `${ locationHeadingMarginTop }px`,
@@ -320,7 +320,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							{ mapEmbedUrl ? (
 								<iframe
 									src={ mapEmbedUrl }
-									title={ __( 'Map', 'twork-builder' ) }
+									title={ __( 'Map', 'mk-builder' ) }
 									allowFullScreen
 									loading="lazy"
 									style={ {
@@ -344,7 +344,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								>
 									{ __(
 										'Add map embed URL in block settings (Map panel)',
-										'twork-builder'
+										'mk-builder'
 									) }
 								</div>
 							) }
@@ -360,7 +360,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Send us a Message',
-								'twork-builder'
+								'mk-builder'
 							) }
 							className="form-title"
 						/>

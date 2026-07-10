@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-condition-col",
+	"name": "mk/phy-condition-col",
 	"version": "1.0.0",
 	"title": "Condition Column",
-	"category": "twork-builder",
-	"parent": [ "twork/phy-conditions-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/phy-conditions-section" ],
 	"icon": "list-view",
 	"description": "Single condition column (icon + heading + list of conditions) for the Physio Conditions section.",
-	"keywords": [ "physio", "condition", "list", "treat", "twork" ],
+	"keywords": [ "physio", "condition", "list", "treat", "mk" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",
@@ -43,6 +43,6 @@
 			]
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

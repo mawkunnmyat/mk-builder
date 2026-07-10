@@ -15,7 +15,7 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-partners__item',
+		className: 'mk-partners__item',
 	} );
 
 	return (
@@ -23,7 +23,7 @@ export default function save( { attributes } ) {
 			{ image && (
 				<img
 					src={ image }
-					className="twork-partners__icon"
+					className="mk-partners__icon"
 					alt={ imageAlt || '' }
 					style={ {
 						width: `${ imageWidth }px`,
@@ -35,7 +35,7 @@ export default function save( { attributes } ) {
 			{ showName && (
 				<RichText.Content
 					tagName="span"
-					className="twork-partners__name"
+					className="mk-partners__name"
 					value={ name }
 					style={ {
 						color: nameColor,

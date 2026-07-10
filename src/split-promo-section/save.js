@@ -16,7 +16,7 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-split-promo-section app-promo',
+		className: 'mk-split-promo-section app-promo',
 		style: {
 			backgroundColor: backgroundColor || '#f7fcff',
 			paddingBlock: `${ padding }px`,

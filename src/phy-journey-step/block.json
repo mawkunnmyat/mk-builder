@@ -1,14 +1,14 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-journey-step",
+	"name": "mk/phy-journey-step",
 	"version": "1.0.0",
 	"title": "Journey Step",
-	"category": "twork-builder",
-	"parent": [ "twork/phy-journey-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/phy-journey-section" ],
 	"icon": "excerpt-view",
 	"description": "Single journey item (step) for the Physio Journey section.",
-	"keywords": [ "physio", "journey", "step", "timeline", "twork" ],
+	"keywords": [ "physio", "journey", "step", "timeline", "mk" ],
 	"attributes": {
 		"title": {
 			"type": "string",
@@ -28,6 +28,6 @@
 			"description": "Comprehensive evaluation of your posture, movement, and pain points by our senior physiotherapists."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

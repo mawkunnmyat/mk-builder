@@ -105,7 +105,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	// Use native useBlockProps directly so Gutenberg spacing supports
 	// (margin/padding from block.json) are applied to the wrapper in editor.
 	const blockProps = useBlockProps( {
-		className: [ 'twork-stats__btn-wrap', responsiveClasses ]
+		className: [ 'mk-stats__btn-wrap', responsiveClasses ]
 			.filter( Boolean )
 			.join( ' ' ),
 	} );
@@ -115,11 +115,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Button', 'twork-builder' ) }
+						title={ __( 'Button', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'URL', 'twork-builder' ) }
+							label={ __( 'URL', 'mk-builder' ) }
 							value={ buttonUrl }
 							onChange={ ( val ) =>
 								setAttributes( { buttonUrl: val } )
@@ -127,7 +127,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show button icon', 'twork-builder' ) }
+							label={ __( 'Show button icon', 'mk-builder' ) }
 							checked={ showButtonIcon }
 							onChange={ ( val ) =>
 								setAttributes( { showButtonIcon: val } )
@@ -135,29 +135,29 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Button icon type', 'twork-builder' ) }
+							label={ __( 'Button icon type', 'mk-builder' ) }
 							value={ buttonIconType }
 							options={ [
 								{
 									label: __(
 										'Diagonal arrow',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'diagonal-arrow',
 								},
 								{
-									label: __( 'Arrow right', 'twork-builder' ),
+									label: __( 'Arrow right', 'mk-builder' ),
 									value: 'arrow-right',
 								},
 								{
 									label: __(
 										'External link',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'external',
 								},
 								{
-									label: __( 'Plus', 'twork-builder' ),
+									label: __( 'Plus', 'mk-builder' ),
 									value: 'plus',
 								},
 							] }
@@ -168,23 +168,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Responsive Settings', 'twork-builder' ) }
+						title={ __( 'Responsive Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<SelectControl
-							label={ __( 'Mobile Order', 'twork-builder' ) }
+							label={ __( 'Mobile Order', 'mk-builder' ) }
 							value={ responsiveOrder }
 							options={ [
 								{
-									label: __( 'Default', 'twork-builder' ),
+									label: __( 'Default', 'mk-builder' ),
 									value: 'default',
 								},
 								{
-									label: __( 'Move to Top', 'twork-builder' ),
+									label: __( 'Move to Top', 'mk-builder' ),
 									value: 'first',
 								},
 								{
-									label: __( 'Move to Bottom', 'twork-builder' ),
+									label: __( 'Move to Bottom', 'mk-builder' ),
 									value: 'last',
 								},
 							] }
@@ -193,30 +193,30 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 						/>
 						<ToggleControl
-							label={ __( 'Hide on Mobile', 'twork-builder' ) }
+							label={ __( 'Hide on Mobile', 'mk-builder' ) }
 							checked={ hideOnMobile }
 							onChange={ ( val ) =>
 								setAttributes( { hideOnMobile: val } )
 							}
 						/>
 						<SelectControl
-							label={ __( 'Mobile Alignment', 'twork-builder' ) }
+							label={ __( 'Mobile Alignment', 'mk-builder' ) }
 							value={ mobileAlign }
 							options={ [
 								{
-									label: __( 'Default', 'twork-builder' ),
+									label: __( 'Default', 'mk-builder' ),
 									value: '',
 								},
 								{
-									label: __( 'Left', 'twork-builder' ),
+									label: __( 'Left', 'mk-builder' ),
 									value: 'left',
 								},
 								{
-									label: __( 'Center', 'twork-builder' ),
+									label: __( 'Center', 'mk-builder' ),
 									value: 'center',
 								},
 								{
-									label: __( 'Right', 'twork-builder' ),
+									label: __( 'Right', 'mk-builder' ),
 									value: 'right',
 								},
 							] }
@@ -229,19 +229,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<div { ...blockProps }>
-				<span className="twork-stats__btn twork-stats__btn--editor">
+				<span className="mk-stats__btn mk-stats__btn--editor">
 					<RichText
 						tagName="span"
 						value={ buttonText }
 						onChange={ ( val ) =>
 							setAttributes( { buttonText: val } )
 						}
-						placeholder={ __( 'Get In Touch', 'twork-builder' ) }
+						placeholder={ __( 'Get In Touch', 'mk-builder' ) }
 					/>
 
 					{ showButtonIcon && (
 						<span
-							className="twork-stats__btn-icon"
+							className="mk-stats__btn-icon"
 							aria-hidden="true"
 						>
 							{ actionIcon }

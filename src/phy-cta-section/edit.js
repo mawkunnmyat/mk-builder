@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	PanelColorSettings,
@@ -89,7 +89,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-phy-cta-section-editor',
+			className: 'mk-phy-cta-section-editor',
 			style: {
 				marginBottom: `${ Number( marginBottom ) }px`,
 			},
@@ -129,15 +129,15 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 	const renderBackgroundControls = () => (
 		<>
 			<SelectControl
-				label={ __( 'Background type', 'twork-builder' ) }
+				label={ __( 'Background type', 'mk-builder' ) }
 				value={ backgroundMode }
 				options={ [
-					{ value: 'color', label: __( 'Color', 'twork-builder' ) },
+					{ value: 'color', label: __( 'Color', 'mk-builder' ) },
 					{
 						value: 'image',
-						label: __( 'Image / GIF', 'twork-builder' ),
+						label: __( 'Image / GIF', 'mk-builder' ),
 					},
-					{ value: 'video', label: __( 'Video', 'twork-builder' ) },
+					{ value: 'video', label: __( 'Video', 'mk-builder' ) },
 				] }
 				onChange={ ( val ) =>
 					setAttributes( { backgroundMode: val || 'color' } )
@@ -146,13 +146,13 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 
 			{ backgroundMode === 'color' && (
 				<PanelColorSettings
-					title={ __( 'Background color', 'twork-builder' ) }
+					title={ __( 'Background color', 'mk-builder' ) }
 					colorSettings={ [
 						{
 							value: backgroundColor,
 							onChange: ( val ) =>
 								setAttributes( { backgroundColor: val } ),
-							label: __( 'Background color', 'twork-builder' ),
+							label: __( 'Background color', 'mk-builder' ),
 						},
 					] }
 				/>
@@ -160,7 +160,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 
 			{ backgroundMode === 'image' && (
 				<BaseControl
-					label={ __( 'Background image / GIF', 'twork-builder' ) }
+					label={ __( 'Background image / GIF', 'mk-builder' ) }
 				>
 					{ ! backgroundImageUrl ? (
 						<MediaPlaceholder
@@ -175,7 +175,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							labels={ {
 								title: __(
 									'Select image or GIF',
-									'twork-builder'
+									'mk-builder'
 								),
 							} }
 						/>
@@ -201,7 +201,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove image', 'twork-builder' ) }
+								{ __( 'Remove image', 'mk-builder' ) }
 							</Button>
 						</div>
 					) }
@@ -211,7 +211,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 			{ backgroundMode === 'video' && (
 				<>
 					<BaseControl
-						label={ __( 'Background video', 'twork-builder' ) }
+						label={ __( 'Background video', 'mk-builder' ) }
 					>
 						{ ! backgroundVideoUrl ? (
 							<MediaPlaceholder
@@ -226,7 +226,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Select video',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -254,7 +254,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove video', 'twork-builder' ) }
+									{ __( 'Remove video', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
@@ -263,7 +263,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					<TextControl
 						label={ __(
 							'Fallback poster image URL (optional)',
-							'twork-builder'
+							'mk-builder'
 						) }
 						value={ backgroundVideoPoster }
 						onChange={ ( val ) =>
@@ -271,7 +271,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						}
 						help={ __(
 							'Shown as a fallback background and in some browsers before video loads.',
-							'twork-builder'
+							'mk-builder'
 						) }
 					/>
 				</>
@@ -281,7 +281,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 				<>
 					<Divider />
 					<ToggleControl
-						label={ __( 'Enable overlay', 'twork-builder' ) }
+						label={ __( 'Enable overlay', 'mk-builder' ) }
 						checked={ !! backgroundOverlayOpacity }
 						onChange={ ( val ) =>
 							setAttributes( {
@@ -295,7 +295,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					{ backgroundOverlayOpacity > 0 && (
 						<>
 							<PanelColorSettings
-								title={ __( 'Overlay color', 'twork-builder' ) }
+								title={ __( 'Overlay color', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: backgroundOverlayColor,
@@ -305,7 +305,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Overlay color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
@@ -314,7 +314,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							<RangeControl
 								label={ __(
 									'Overlay opacity',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ backgroundOverlayOpacity }
 								onChange={ ( val ) =>
@@ -338,18 +338,18 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Background', 'twork-builder' ) }
+						title={ __( 'Background', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ renderBackgroundControls() }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout & text', 'twork-builder' ) }
+						title={ __( 'Layout & text', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Padding (px)', 'twork-builder' ) }
+							label={ __( 'Padding (px)', 'mk-builder' ) }
 							value={ padding }
 							onChange={ ( val ) =>
 								setAttributes( { padding: val } )
@@ -362,7 +362,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Border radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ borderRadius }
 							onChange={ ( val ) =>
@@ -376,7 +376,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Section bottom margin (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ marginBottom }
 							onChange={ ( val ) =>
@@ -390,7 +390,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -404,7 +404,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Horizontal padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -416,13 +416,13 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Text color', 'twork-builder' ) }
+							title={ __( 'Text color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: textColor,
 									onChange: ( val ) =>
 										setAttributes( { textColor: val } ),
-									label: __( 'Text color', 'twork-builder' ),
+									label: __( 'Text color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -430,7 +430,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Center align content',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ centerAlign }
 							onChange={ ( val ) =>
@@ -440,23 +440,23 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ buttonUrl }
 							onChange={ ( val ) =>
 								setAttributes( { buttonUrl: val } )
 							}
 							help={ __(
 								'For phone, use tel:0912345678',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Button aria label', 'twork-builder' ) }
+							label={ __( 'Button aria label', 'mk-builder' ) }
 							value={ buttonAriaLabel }
 							onChange={ ( val ) =>
 								setAttributes( { buttonAriaLabel: val } )
@@ -464,7 +464,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show subtitle', 'twork-builder' ) }
+							label={ __( 'Show subtitle', 'mk-builder' ) }
 							checked={ showSubtitle }
 							onChange={ ( val ) =>
 								setAttributes( { showSubtitle: val } )
@@ -473,13 +473,13 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable scroll animation class',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -492,7 +492,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Animation type class',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ animationType }
 									options={ [
@@ -500,14 +500,14 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 											value: 'fade-up',
 											label: __(
 												'Fade up',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 										{
 											value: 'fade-in',
 											label: __(
 												'Fade in',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -519,7 +519,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Animation delay (ms)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ animationDelay }
 									onChange={ ( val ) =>
@@ -579,7 +579,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Start Your Recovery Journey Today',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 
@@ -592,7 +592,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										"Don't let pain hold you back.",
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ { opacity: 0.8, marginBottom: 30 } }
 								/>
@@ -606,7 +606,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Book Appointment Now',
-									'twork-builder'
+									'mk-builder'
 								) }
 								href={ buttonUrl || undefined }
 								aria-label={ buttonAriaLabel || undefined }

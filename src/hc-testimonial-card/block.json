@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-testimonial-card",
+	"name": "mk/hc-testimonial-card",
 	"title": "Testimonial Card",
-	"parent": [ "twork/hc-testimonials-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/hc-testimonials-section" ],
+	"category": "mk-builder",
 	"description": "Single testimonial card: stars, quote, client photo, name and location.",
-	"keywords": [ "home care", "testimonial", "review", "quote", "twork" ],
+	"keywords": [ "home care", "testimonial", "review", "quote", "mk" ],
 	"attributes": {
 		"starRating": {
 			"type": "number",
@@ -51,6 +51,6 @@
 			"clientLocation": "Mandalay"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

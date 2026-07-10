@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -15,10 +15,10 @@ import {
 	Button,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/voice' ];
+const ALLOWED_BLOCKS = [ 'mk/voice' ];
 const TEMPLATE = [
 	[
-		'twork/voice',
+		'mk/voice',
 		{
 			quote: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown..",
 			authorName: 'Jesonal Jelins',
@@ -27,7 +27,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/voice',
+		'mk/voice',
 		{
 			quote: 'Working with Agrezer has improved our seasonal planning and crop quality. Their team communicates clearly and always delivers dependable support.',
 			authorName: 'Marry Olson',
@@ -36,7 +36,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/voice',
+		'mk/voice',
 		{
 			quote: 'The product consistency is excellent, and the service team responds quickly. We trust them as a long-term partner for our farming business.',
 			authorName: 'Arun Patel',
@@ -73,14 +73,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'twork-voices-section twork-voices-section-editor',
+				'mk-voices-section mk-voices-section-editor',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
-				'--twork-voices-max': `${ containerMaxWidth }px`,
-				'--twork-voices-width-pct': `${ containerWidthPct }%`,
-				'--twork-voices-col-gap': `${ gridColumnGap }px`,
+				'--mk-voices-max': `${ containerMaxWidth }px`,
+				'--mk-voices-width-pct': `${ containerWidthPct }%`,
+				'--mk-voices-col-gap': `${ gridColumnGap }px`,
 			},
 		} ),
 		[
@@ -98,13 +98,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Slider', 'twork-builder' ) }
+						title={ __( 'Slider', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
 							label={ __(
 								'Autoplay testimonials',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ enableAutoplay }
 							onChange={ ( val ) =>
@@ -112,14 +112,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Paused on hover; disabled when “reduce motion” is on.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
 							label={ __(
 								'Autoplay interval (ms)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ autoplayInterval }
 							onChange={ ( val ) =>
@@ -133,13 +133,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Left column', 'twork-builder' ) }
+						title={ __( 'Left column', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
 							label={ __(
 								'Wheat / decorative image alt',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ wheatImageAlt }
 							onChange={ ( val ) =>
@@ -162,7 +162,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Wheat / decorative image',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -171,7 +171,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<img
 									src={ wheatImage }
 									alt=""
-									className="twork-voices-section__wheat"
+									className="mk-voices-section__wheat"
 									style={ { maxWidth: 280 } }
 								/>
 
@@ -185,18 +185,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove image', 'twork-builder' ) }
+									{ __( 'Remove image', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Tagline icon', 'twork-builder' ) }
+						title={ __( 'Tagline icon', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Icon alt', 'twork-builder' ) }
+							label={ __( 'Icon alt', 'mk-builder' ) }
 							value={ tagIconAlt }
 							onChange={ ( val ) =>
 								setAttributes( { tagIconAlt: val } )
@@ -217,7 +217,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Tagline icon',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -226,7 +226,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<img
 									src={ tagIcon }
 									alt=""
-									className="twork-voices-section__tag-icon"
+									className="mk-voices-section__tag-icon"
 								/>
 
 								<Button
@@ -239,18 +239,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Support card icon', 'twork-builder' ) }
+						title={ __( 'Support card icon', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Icon alt', 'twork-builder' ) }
+							label={ __( 'Icon alt', 'mk-builder' ) }
 							value={ supportIconAlt }
 							onChange={ ( val ) =>
 								setAttributes( { supportIconAlt: val } )
@@ -272,7 +272,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Large support icon',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -281,7 +281,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<img
 									src={ supportIcon }
 									alt=""
-									className="twork-voices-card__support-icon"
+									className="mk-voices-card__support-icon"
 								/>
 
 								<Button
@@ -294,20 +294,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Support badge', 'twork-builder' ) }
+						title={ __( 'Support badge', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
 							label={ __(
 								'Main value (e.g. 100%)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ supportBadgeValue }
 							onChange={ ( val ) =>
@@ -318,7 +318,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Sub label (second line)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ supportBadgeLabel }
 							onChange={ ( val ) =>
@@ -328,13 +328,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -348,7 +348,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container width (%)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerWidthPct }
 							onChange={ ( val ) =>
@@ -359,7 +359,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Column gap (px)', 'twork-builder' ) }
+							label={ __( 'Column gap (px)', 'mk-builder' ) }
 							value={ gridColumnGap }
 							onChange={ ( val ) =>
 								setAttributes( { gridColumnGap: val } )
@@ -369,7 +369,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -382,7 +382,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -395,7 +395,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						colorSettings={ [
 							{
 								value: backgroundColor,
@@ -403,7 +403,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									setAttributes( { backgroundColor: val } ),
 								label: __(
 									'Section background',
-									'twork-builder'
+									'mk-builder'
 								),
 							},
 						] }
@@ -412,14 +412,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<section { ...blockProps }>
-				<div className="twork-voices-section__container">
-					<div className="twork-voices-section__left">
-						<div className="twork-voices-section__tagline">
+				<div className="mk-voices-section__container">
+					<div className="mk-voices-section__left">
+						<div className="mk-voices-section__tagline">
 							{ tagIcon && (
 								<img
 									src={ tagIcon }
 									alt=""
-									className="twork-voices-section__tag-icon"
+									className="mk-voices-section__tag-icon"
 								/>
 							) }
 							<RichText
@@ -428,7 +428,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { tagline: val } )
 								}
-								placeholder={ __( 'Tagline', 'twork-builder' ) }
+								placeholder={ __( 'Tagline', 'mk-builder' ) }
 								allowedFormats={ [
 									'core/bold',
 									'core/italic',
@@ -437,12 +437,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</div>
 						<RichText
 							tagName="h2"
-							className="twork-voices-section__title"
+							className="mk-voices-section__title"
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
 							}
-							placeholder={ __( 'Title', 'twork-builder' ) }
+							placeholder={ __( 'Title', 'mk-builder' ) }
 							allowedFormats={ [ 'core/bold', 'core/italic' ] }
 							multiline="br"
 						/>
@@ -451,52 +451,52 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<img
 								src={ wheatImage }
 								alt=""
-								className="twork-voices-section__wheat"
+								className="mk-voices-section__wheat"
 							/>
 						) : null }
 					</div>
 
-					<div className="twork-voices-section__right">
-						<div className="twork-voices-section__top-cards">
-							<article className="twork-voices-card twork-voices-card--rating">
+					<div className="mk-voices-section__right">
+						<div className="mk-voices-section__top-cards">
+							<article className="mk-voices-card mk-voices-card--rating">
 								<RichText
 									tagName="h3"
-									className="twork-voices-card__heading"
+									className="mk-voices-card__heading"
 									value={ ratingHeading }
 									onChange={ ( val ) =>
 										setAttributes( { ratingHeading: val } )
 									}
 									placeholder={ __(
 										'Rating title',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<RichText
 									tagName="p"
-									className="twork-voices-card__desc"
+									className="mk-voices-card__desc"
 									value={ ratingDesc }
 									onChange={ ( val ) =>
 										setAttributes( { ratingDesc: val } )
 									}
 									placeholder={ __(
 										'Description…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</article>
 
-							<article className="twork-voices-card twork-voices-card--support">
+							<article className="mk-voices-card mk-voices-card--support">
 								<RichText
 									tagName="h3"
-									className="twork-voices-card__heading"
+									className="mk-voices-card__heading"
 									value={ supportHeading }
 									onChange={ ( val ) =>
 										setAttributes( { supportHeading: val } )
 									}
 									placeholder={ __(
 										'Support title',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -504,10 +504,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<img
 										src={ supportIcon }
 										alt=""
-										className="twork-voices-card__support-icon"
+										className="mk-voices-card__support-icon"
 									/>
 								) }
-								<div className="twork-voices-card__support-badge">
+								<div className="mk-voices-card__support-badge">
 									{ supportBadgeValue }
 									{ supportBadgeLabel && (
 										<span>{ supportBadgeLabel }</span>
@@ -517,7 +517,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</div>
 
 						<div
-							className="twork-voices-section__testimonial"
+							className="mk-voices-section__testimonial"
 							data-voices-slider=""
 						>
 							<p
@@ -526,10 +526,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							>
 								{ __(
 									'Slides rotate on the front. Edit each slide below.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</p>
-							<div className="twork-voices-section__slides">
+							<div className="mk-voices-section__slides">
 								<InnerBlocks
 									allowedBlocks={ ALLOWED_BLOCKS }
 									template={ TEMPLATE }

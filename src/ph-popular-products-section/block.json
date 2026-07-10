@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/ph-popular-products-section",
+	"name": "mk/ph-popular-products-section",
 	"version": "1.0.0",
 	"title": "Popular Products",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "products",
 	"description": "Popular products slider/grid for the pharmacy page, powered by WooCommerce products.",
-	"keywords": [ "pharmacy", "products", "woocommerce", "popular", "twork" ],
+	"keywords": [ "pharmacy", "products", "woocommerce", "popular", "mk" ],
 	"attributes": {
 		"source": {
 			"type": "string",
@@ -95,7 +95,7 @@
 			"animationType": "stagger-up"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

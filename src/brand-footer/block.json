@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/brand-footer",
+	"name": "mk/brand-footer",
 	"version": "1.0.0",
 	"title": "Brand Footer",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "admin-site-alt3",
 	"description": "Shwe Myanmar footer with info cards, brand column, link columns, and pasture image.",
-	"keywords": [ "footer", "brand", "shwe", "twork" ],
+	"keywords": [ "footer", "brand", "shwe", "mk" ],
 	"supports": {
 		"html": false,
 		"align": [ "wide", "full" ]
@@ -72,7 +72,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/brand-footer-info-card",
+				"name": "mk/brand-footer-info-card",
 				"attributes": {
 					"label": "CUSTOMER HOTLINE",
 					"lines": [ "095-2-55122", "095-2-55123", "095-9-200 1227" ],
@@ -80,7 +80,7 @@
 				}
 			},
 			{
-				"name": "twork/brand-footer-info-card",
+				"name": "mk/brand-footer-info-card",
 				"attributes": {
 					"label": "OFFICE ADDRESS",
 					"lines": [
@@ -91,7 +91,7 @@
 				}
 			},
 			{
-				"name": "twork/brand-footer-info-card",
+				"name": "mk/brand-footer-info-card",
 				"attributes": {
 					"label": "BUSINESS HOURS",
 					"lines": [
@@ -102,7 +102,7 @@
 				}
 			},
 			{
-				"name": "twork/brand-footer-column",
+				"name": "mk/brand-footer-column",
 				"attributes": {
 					"title": "Help & Info",
 					"links": [
@@ -113,7 +113,7 @@
 				}
 			},
 			{
-				"name": "twork/brand-footer-column",
+				"name": "mk/brand-footer-column",
 				"attributes": {
 					"title": "Company",
 					"links": [
@@ -131,7 +131,7 @@
 				}
 			},
 			{
-				"name": "twork/brand-footer-column",
+				"name": "mk/brand-footer-column",
 				"attributes": {
 					"title": "Quick Links",
 					"links": [
@@ -146,7 +146,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./view.js",
 	"style": "file:./style-index.css"

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-contact-cards",
+	"name": "mk/agrezer-contact-cards",
 	"version": "1.0.0",
 	"title": "Agrezer Contact Cards",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "phone",
 	"description": "Three-column contact info cards with icon, title, subtitle, and link or plain text (Agrezer UI).",
-	"keywords": [ "contact", "phone", "email", "address", "agrezer", "twork" ],
+	"keywords": [ "contact", "phone", "email", "address", "agrezer", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -61,7 +61,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/agrezer-contact-card-item",
+				"name": "mk/agrezer-contact-card-item",
 				"attributes": {
 					"title": "Mobile",
 					"subtitle": "Free Dial Number",
@@ -73,7 +73,7 @@
 				}
 			},
 			{
-				"name": "twork/agrezer-contact-card-item",
+				"name": "mk/agrezer-contact-card-item",
 				"attributes": {
 					"title": "Email",
 					"subtitle": "Feel Free to Mail",
@@ -85,7 +85,7 @@
 				}
 			},
 			{
-				"name": "twork/agrezer-contact-card-item",
+				"name": "mk/agrezer-contact-card-item",
 				"attributes": {
 					"title": "Address",
 					"subtitle": "Our Farm Address",
@@ -103,7 +103,7 @@
 		"anchor": true,
 		"align": [ "wide", "full" ]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

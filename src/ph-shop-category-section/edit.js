@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -35,7 +35,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-ph-shop-category-section ph-section',
+			className: 'mk-ph-shop-category-section ph-section',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
@@ -58,7 +58,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const parentOptions = useMemo( () => {
 		const opts = [
-			{ label: __( '— Any Parent —', 'twork-builder' ), value: 0 },
+			{ label: __( '— Any Parent —', 'mk-builder' ), value: 0 },
 		];
 
 		if ( productCategories && productCategories.length ) {
@@ -105,11 +105,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section Layout', 'twork-builder' ) }
+						title={ __( 'Section Layout', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -122,7 +122,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -134,7 +134,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Max Width (px)', 'twork-builder' ) }
+							label={ __( 'Max Width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -147,7 +147,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Horizontal Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -160,13 +160,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Section Header', 'twork-builder' ) }
+						title={ __( 'Section Header', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Show Section Header',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSectionHeader }
 							onChange={ ( val ) =>
@@ -177,7 +177,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						{ showSectionHeader && (
 							<>
 								<TextControl
-									label={ __( 'Title', 'twork-builder' ) }
+									label={ __( 'Title', 'mk-builder' ) }
 									value={ sectionTitle }
 									onChange={ ( val ) =>
 										setAttributes( { sectionTitle: val } )
@@ -185,7 +185,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Subtitle', 'twork-builder' ) }
+									label={ __( 'Subtitle', 'mk-builder' ) }
 									value={ sectionSubtitle }
 									onChange={ ( val ) =>
 										setAttributes( {
@@ -198,31 +198,31 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Category Source', 'twork-builder' ) }
+						title={ __( 'Category Source', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<SelectControl
-							label={ __( 'Source', 'twork-builder' ) }
+							label={ __( 'Source', 'mk-builder' ) }
 							value={ source }
 							options={ [
 								{
 									label: __(
 										'Top-level categories',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'top',
 								},
 								{
 									label: __(
 										'Children of a parent',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'children',
 								},
 								{
 									label: __(
 										'Select specific categories',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'selected',
 								},
@@ -238,7 +238,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<SelectControl
 										label={ __(
 											'Parent category',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ parentCategoryId }
 										options={ parentOptions }
@@ -253,7 +253,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Number of categories',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ numberOfItems }
 									onChange={ ( val ) =>
@@ -270,11 +270,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<BaseControl
 								label={ __(
 									'Select categories to display',
-									'twork-builder'
+									'mk-builder'
 								) }
 								help={ __(
 									'Tick the WooCommerce product categories you want to show.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							>
 								{ selectableCategories &&
@@ -311,7 +311,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'No product categories found. Make sure WooCommerce is active.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</p>
 								) }
@@ -320,13 +320,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable scroll animation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -338,11 +338,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Animation type CSS class',
-									'twork-builder'
+									'mk-builder'
 								) }
 								help={ __(
 									'e.g. fade-up, fadeInUp',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ animationType }
 								onChange={ ( val ) =>
@@ -364,7 +364,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					} }
 				>
 					<ServerSideRender
-						block="twork/ph-shop-category-section"
+						block="mk/ph-shop-category-section"
 						attributes={ attributes }
 					/>
 				</div>

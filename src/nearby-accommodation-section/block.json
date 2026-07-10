@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/nearby-accommodation-section",
+	"name": "mk/nearby-accommodation-section",
 	"version": "1.0.0",
 	"title": "Nearby Locations / Cards Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "building",
 	"description": "Nearby accommodation / hotel section with image cards and overlay for international patients.",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"nearby",
 		"international",
 		"patient",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundColor": {
@@ -186,7 +186,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/nearby-accommodation-item",
+				"name": "mk/nearby-accommodation-item",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
 					"title": "Mandalay Hill Resort",
@@ -194,7 +194,7 @@
 				}
 			},
 			{
-				"name": "twork/nearby-accommodation-item",
+				"name": "mk/nearby-accommodation-item",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80",
 					"title": "Mercure Mandalay",
@@ -202,7 +202,7 @@
 				}
 			},
 			{
-				"name": "twork/nearby-accommodation-item",
+				"name": "mk/nearby-accommodation-item",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=600&q=80",
 					"title": "Sedona Hotel",
@@ -210,7 +210,7 @@
 				}
 			},
 			{
-				"name": "twork/nearby-accommodation-item",
+				"name": "mk/nearby-accommodation-item",
 				"attributes": {
 					"image": "https://images.unsplash.com/photo-1596436889106-be35e843f974?auto=format&fit=crop&w=600&q=80",
 					"title": "Eastern Palace",
@@ -219,7 +219,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

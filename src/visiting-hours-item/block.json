@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/visiting-hours-item",
+	"name": "mk/visiting-hours-item",
 	"title": "Visiting Hours Row",
-	"parent": [ "twork/visiting-info-section" ],
+	"parent": [ "mk/visiting-info-section" ],
 	"description": "Single row for visiting hours (ward name + icon + time slot).",
-	"keywords": [ "visiting", "hours", "ward", "time", "twork" ],
+	"keywords": [ "visiting", "hours", "ward", "time", "mk" ],
 	"attributes": {
 		"wardName": {
 			"type": "string",
@@ -67,7 +67,7 @@
 			"rowPaddingVertical": 15
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

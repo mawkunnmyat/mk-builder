@@ -1,16 +1,16 @@
-.wp-block-twork-about-image-card {
+.wp-block-mk-about-image-card {
 	min-width: 0;
 
-	&.twork-about-card {
+	&.mk-about-card {
 		position: relative;
 		overflow: hidden;
 	}
 
-	.twork-about-card__placeholder {
+	.mk-about-card__placeholder {
 		min-height: clamp(260px, 35vw, 460px);
 	}
 
-	.twork-about-card__color-bg {
+	.mk-about-card__color-bg {
 		min-height: clamp(260px, 35vw, 460px);
 		width: 100%;
 	}

@@ -21,7 +21,7 @@
  */
 
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	MediaUpload,
@@ -44,7 +44,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { slides, autoplayDelay, effect } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-hero-slider-editor hero-section hero-slider',
+			className: 'mk-hero-slider-editor hero-section hero-slider',
 		} ),
 		[]
 	);
@@ -123,11 +123,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Slider Settings', 'twork-builder' ) }
+						title={ __( 'Slider Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<SelectControl
-							label={ __( 'Transition Effect', 'twork-builder' ) }
+							label={ __( 'Transition Effect', 'mk-builder' ) }
 							value={ effect }
 							options={ [
 								{ label: 'Fade', value: 'fade' },
@@ -139,12 +139,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Choose the transition effect between slides. Fade provides a smooth crossfade effect.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
-							label={ __( 'Autoplay Delay', 'twork-builder' ) }
+							label={ __( 'Autoplay Delay', 'mk-builder' ) }
 							value={ autoplayDelay }
 							onChange={ ( value ) =>
 								setAttributes( { autoplayDelay: value } )
@@ -154,20 +154,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 500 }
 							help={ __(
 								'Time in milliseconds before automatically advancing to the next slide. Recommended: 4000-5000ms.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Slides', 'twork-builder' ) }
+						title={ __( 'Slides', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ slides.map( ( slide, index ) => (
 							<PanelBody
 								key={ `slide-${ index }` }
 								title={
-									__( 'Slide', 'twork-builder' ) +
+									__( 'Slide', 'mk-builder' ) +
 									' ' +
 									( index + 1 )
 								}
@@ -175,13 +175,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							>
 								{ /* Content */ }
 								<PanelBody
-									title={ __( 'Content', 'twork-builder' ) }
+									title={ __( 'Content', 'mk-builder' ) }
 									initialOpen={ true }
 								>
 									<TextControl
 										label={ __(
 											'Meta Title',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ slide.metaTitle || '' }
 										onChange={ ( value ) =>
@@ -193,15 +193,15 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										help={ __(
 											'Small uppercase text above the main title',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 
 									<BaseControl
-										label={ __( 'Title', 'twork-builder' ) }
+										label={ __( 'Title', 'mk-builder' ) }
 										help={ __(
 											'Main heading for the slide. Use &lt;br&gt; for line breaks. Example: "Caring with&lt;br&gt;Compassion"',
-											'twork-builder'
+											'mk-builder'
 										) }
 									>
 										<TextareaControl
@@ -216,14 +216,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											rows={ 3 }
 											placeholder={ __(
 												'Enter title (use &lt;br&gt; for line breaks)',
-												'twork-builder'
+												'mk-builder'
 											) }
 										/>
 									</BaseControl>
 									<TextareaControl
 										label={ __(
 											'Description',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ slide.description || '' }
 										onChange={ ( value ) =>
@@ -236,23 +236,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										rows={ 3 }
 										placeholder={ __(
 											'Enter a compelling description for your slide',
-											'twork-builder'
+											'mk-builder'
 										) }
 										help={ __(
 											'Supporting text that appears below the title. Keep it concise and engaging.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 
 									<BaseControl
 										label={ __(
 											'Background Image',
-											'twork-builder'
+											'mk-builder'
 										) }
 										className="hero-slider-image-control"
 										help={ __(
 											'Upload a high-quality background image. Recommended size: 1920x700px or larger. A dark overlay will be automatically applied.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									>
 										<MediaUploadCheck>
@@ -310,11 +310,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 																{ slide.backgroundImage
 																	? __(
 																			'Change Image',
-																			'twork-builder'
+																			'mk-builder'
 																	  )
 																	: __(
 																			'Select Image',
-																			'twork-builder'
+																			'mk-builder'
 																	  ) }
 															</Button>
 															{ slide.backgroundImage && (
@@ -331,7 +331,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 																>
 																	{ __(
 																		'Remove',
-																		'twork-builder'
+																		'mk-builder'
 																	) }
 																</Button>
 															) }
@@ -347,14 +347,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelBody
 									title={ __(
 										'Separator Bar',
-										'twork-builder'
+										'mk-builder'
 									) }
 									initialOpen={ false }
 								>
 									<ToggleControl
 										label={ __(
 											'Show Separator',
-											'twork-builder'
+											'mk-builder'
 										) }
 										checked={
 											slide.showSeparator !== false
@@ -373,18 +373,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											<PanelBody
 												title={ __(
 													'Color',
-													'twork-builder'
+													'mk-builder'
 												) }
 												initialOpen={ true }
 											>
 												<BaseControl
 													label={ __(
 														'Color',
-														'twork-builder'
+														'mk-builder'
 													) }
 													help={ __(
 														'Select a color from the palette or enter a custom hex code',
-														'twork-builder'
+														'mk-builder'
 													) }
 												>
 													<ColorPalette
@@ -450,7 +450,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											<PanelBody
 												title={ __(
 													'Size',
-													'twork-builder'
+													'mk-builder'
 												) }
 												initialOpen={ true }
 											>
@@ -466,7 +466,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														<UnitControl
 															label={ __(
 																'Width',
-																'twork-builder'
+																'mk-builder'
 															) }
 															value={
 																slide.separatorWidth ||
@@ -498,7 +498,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														<UnitControl
 															label={ __(
 																'Height',
-																'twork-builder'
+																'mk-builder'
 															) }
 															value={
 																slide.separatorHeight ||
@@ -531,7 +531,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Border Radius',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.separatorBorderRadius ||
@@ -561,20 +561,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											<PanelBody
 												title={ __(
 													'Appearance',
-													'twork-builder'
+													'mk-builder'
 												) }
 												initialOpen={ false }
 											>
 												<BaseControl
 													help={ __(
 														'Control the transparency of the separator bar',
-														'twork-builder'
+														'mk-builder'
 													) }
 												>
 													<RangeControl
 														label={ __(
 															'Opacity',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={ parseFloat(
 															slide.separatorOpacity ||
@@ -595,13 +595,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												<BaseControl
 													help={ __(
 														'Horizontal alignment of the separator bar',
-														'twork-builder'
+														'mk-builder'
 													) }
 												>
 													<SelectControl
 														label={ __(
 															'Alignment',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.separatorAlignment ||
@@ -635,7 +635,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											<PanelBody
 												title={ __(
 													'Spacing',
-													'twork-builder'
+													'mk-builder'
 												) }
 												initialOpen={ false }
 											>
@@ -651,7 +651,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														<UnitControl
 															label={ __(
 																'Margin Top',
-																'twork-builder'
+																'mk-builder'
 															) }
 															value={
 																slide.separatorMarginTop ||
@@ -683,7 +683,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														<UnitControl
 															label={ __(
 																'Margin Bottom',
-																'twork-builder'
+																'mk-builder'
 															) }
 															value={
 																slide.separatorMarginBottom ||
@@ -717,7 +717,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											<PanelBody
 												title={ __(
 													'Mobile Settings',
-													'twork-builder'
+													'mk-builder'
 												) }
 												initialOpen={ false }
 											>
@@ -733,7 +733,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														<UnitControl
 															label={ __(
 																'Width',
-																'twork-builder'
+																'mk-builder'
 															) }
 															value={
 																slide.separatorWidthMobile ||
@@ -765,7 +765,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														<UnitControl
 															label={ __(
 																'Height',
-																'twork-builder'
+																'mk-builder'
 															) }
 															value={
 																slide.separatorHeightMobile ||
@@ -798,7 +798,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Margin Bottom',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.separatorMarginBottomMobile ||
@@ -832,32 +832,32 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelBody
 									title={ __(
 										'Typography',
-										'twork-builder'
+										'mk-builder'
 									) }
 									initialOpen={ false }
 								>
 									<PanelBody
 										title={ __(
 											'Meta Title',
-											'twork-builder'
+											'mk-builder'
 										) }
 										initialOpen={ false }
 									>
 										<PanelBody
 											title={ __(
 												'Color',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
 											<BaseControl
 												label={ __(
 													'Color',
-													'twork-builder'
+													'mk-builder'
 												) }
 												help={ __(
 													'Color value (rgba or hex, e.g., rgba(255, 255, 255, 0.9) or #ffffff)',
-													'twork-builder'
+													'mk-builder'
 												) }
 											>
 												<TextControl
@@ -879,7 +879,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Typography',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
@@ -895,7 +895,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Font Size',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.metaTitleFontSize ||
@@ -925,7 +925,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Letter Spacing',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.metaTitleLetterSpacing ||
@@ -951,7 +951,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Mobile Settings',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ false }
 										>
@@ -967,7 +967,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Font Size',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.metaTitleFontSizeMobile ||
@@ -997,7 +997,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Letter Spacing',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.metaTitleLetterSpacingMobile ||
@@ -1023,24 +1023,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									</PanelBody>
 
 									<PanelBody
-										title={ __( 'Title', 'twork-builder' ) }
+										title={ __( 'Title', 'mk-builder' ) }
 										initialOpen={ false }
 									>
 										<PanelBody
 											title={ __(
 												'Colors',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
 											<BaseControl
 												label={ __(
 													'Part 1 Color (First Line)',
-													'twork-builder'
+													'mk-builder'
 												) }
 												help={ __(
 													'Color for the first line of the title',
-													'twork-builder'
+													'mk-builder'
 												) }
 											>
 												<ColorPalette
@@ -1104,11 +1104,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											<BaseControl
 												label={ __(
 													'Part 2 Color (Second Line)',
-													'twork-builder'
+													'mk-builder'
 												) }
 												help={ __(
 													'Color for the second line of the title',
-													'twork-builder'
+													'mk-builder'
 												) }
 											>
 												<ColorPalette
@@ -1173,7 +1173,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Typography',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
@@ -1181,7 +1181,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												<UnitControl
 													label={ __(
 														'Font Size',
-														'twork-builder'
+														'mk-builder'
 													) }
 													value={
 														slide.titleFontSize ||
@@ -1218,7 +1218,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Line Height',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.titleLineHeight ||
@@ -1243,7 +1243,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<RangeControl
 														label={ __(
 															'Font Weight',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={ parseInt(
 															slide.titleFontWeight ||
@@ -1266,20 +1266,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Responsive Settings',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ false }
 										>
 											<BaseControl
 												help={ __(
 													'Font size for tablet devices (≤1200px)',
-													'twork-builder'
+													'mk-builder'
 												) }
 											>
 												<UnitControl
 													label={ __(
 														'Tablet Font Size',
-														'twork-builder'
+														'mk-builder'
 													) }
 													value={
 														slide.titleFontSizeTablet ||
@@ -1307,13 +1307,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											<BaseControl
 												help={ __(
 													'Font size for mobile devices (≤768px)',
-													'twork-builder'
+													'mk-builder'
 												) }
 											>
 												<UnitControl
 													label={ __(
 														'Mobile Font Size',
-														'twork-builder'
+														'mk-builder'
 													) }
 													value={
 														slide.titleFontSizeMobile ||
@@ -1344,25 +1344,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<PanelBody
 										title={ __(
 											'Description',
-											'twork-builder'
+											'mk-builder'
 										) }
 										initialOpen={ false }
 									>
 										<PanelBody
 											title={ __(
 												'Color',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
 											<BaseControl
 												label={ __(
 													'Color',
-													'twork-builder'
+													'mk-builder'
 												) }
 												help={ __(
 													'Color value (rgba or hex, e.g., rgba(255, 255, 255, 0.95) or #ffffff)',
-													'twork-builder'
+													'mk-builder'
 												) }
 											>
 												<TextControl
@@ -1384,7 +1384,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Typography',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
@@ -1400,7 +1400,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Font Size',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.descriptionFontSize ||
@@ -1430,7 +1430,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Line Height',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.descriptionLineHeight ||
@@ -1456,20 +1456,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Responsive Settings',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ false }
 										>
 											<BaseControl
 												help={ __(
 													'Font size for tablet devices (≤1200px)',
-													'twork-builder'
+													'mk-builder'
 												) }
 											>
 												<UnitControl
 													label={ __(
 														'Tablet Font Size',
-														'twork-builder'
+														'mk-builder'
 													) }
 													value={
 														slide.descriptionFontSizeTablet ||
@@ -1506,7 +1506,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Mobile Font Size',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.descriptionFontSizeMobile ||
@@ -1536,7 +1536,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Mobile Line Height',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.descriptionLineHeightMobile ||
@@ -1564,13 +1564,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 								{ /* Buttons */ }
 								<PanelBody
-									title={ __( 'Buttons', 'twork-builder' ) }
+									title={ __( 'Buttons', 'mk-builder' ) }
 									initialOpen={ false }
 								>
 									<PanelBody
 										title={ __(
 											'Primary Button',
-											'twork-builder'
+											'mk-builder'
 										) }
 										initialOpen={ false }
 										className="hero-slider-button-panel"
@@ -1578,7 +1578,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Content',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
@@ -1586,7 +1586,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												<TextControl
 													label={ __(
 														'Button Text',
-														'twork-builder'
+														'mk-builder'
 													) }
 													value={
 														slide.primaryButtonText ||
@@ -1605,7 +1605,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												<TextControl
 													label={ __(
 														'Button Link',
-														'twork-builder'
+														'mk-builder'
 													) }
 													value={
 														slide.primaryButtonLink ||
@@ -1620,7 +1620,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													}
 													help={ __(
 														'URL for the button link',
-														'twork-builder'
+														'mk-builder'
 													) }
 												/>
 											</BaseControl>
@@ -1628,7 +1628,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Typography & Spacing',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
@@ -1644,7 +1644,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Font Size',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.primaryButtonFontSize ||
@@ -1674,7 +1674,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<TextControl
 														label={ __(
 															'Padding',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.primaryButtonPadding ||
@@ -1695,7 +1695,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Mobile Settings',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ false }
 										>
@@ -1711,7 +1711,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Font Size',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.primaryButtonFontSizeMobile ||
@@ -1741,7 +1741,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<TextControl
 														label={ __(
 															'Padding',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.primaryButtonPaddingMobile ||
@@ -1764,7 +1764,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<PanelBody
 										title={ __(
 											'Secondary Button',
-											'twork-builder'
+											'mk-builder'
 										) }
 										initialOpen={ false }
 										className="hero-slider-button-panel"
@@ -1772,7 +1772,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Content',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
@@ -1780,7 +1780,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												<TextControl
 													label={ __(
 														'Button Text',
-														'twork-builder'
+														'mk-builder'
 													) }
 													value={
 														slide.secondaryButtonText ||
@@ -1799,7 +1799,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												<TextControl
 													label={ __(
 														'Button Link',
-														'twork-builder'
+														'mk-builder'
 													) }
 													value={
 														slide.secondaryButtonLink ||
@@ -1814,7 +1814,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													}
 													help={ __(
 														'URL for the button link',
-														'twork-builder'
+														'mk-builder'
 													) }
 												/>
 											</BaseControl>
@@ -1822,7 +1822,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Typography & Spacing',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ true }
 										>
@@ -1838,7 +1838,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Font Size',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.secondaryButtonFontSize ||
@@ -1868,7 +1868,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<TextControl
 														label={ __(
 															'Padding',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.secondaryButtonPadding ||
@@ -1889,7 +1889,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<PanelBody
 											title={ __(
 												'Mobile Settings',
-												'twork-builder'
+												'mk-builder'
 											) }
 											initialOpen={ false }
 										>
@@ -1905,7 +1905,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<UnitControl
 														label={ __(
 															'Font Size',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.secondaryButtonFontSizeMobile ||
@@ -1935,7 +1935,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													<TextControl
 														label={ __(
 															'Padding',
-															'twork-builder'
+															'mk-builder'
 														) }
 														value={
 															slide.secondaryButtonPaddingMobile ||
@@ -1964,14 +1964,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove Slide',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								) }
 							</PanelBody>
 						) ) }
 						<Button isPrimary onClick={ addSlide }>
-							{ __( 'Add Slide', 'twork-builder' ) }
+							{ __( 'Add Slide', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 				</InspectorControls>

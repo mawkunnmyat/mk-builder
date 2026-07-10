@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/insurance-partner-item",
+	"name": "mk/insurance-partner-item",
 	"title": "Insurance Partner Item",
-	"parent": [ "twork/insurance-partners-section" ],
+	"parent": [ "mk/insurance-partners-section" ],
 	"description": "Single insurance partner card (icon + name) for the insurance partners section.",
 	"keywords": [
 		"insurance",
@@ -11,7 +11,7 @@
 		"card",
 		"hospital",
 		"patient",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"partnerName": {
@@ -104,7 +104,7 @@
 			"hoverIconColor": "#d96f2d"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

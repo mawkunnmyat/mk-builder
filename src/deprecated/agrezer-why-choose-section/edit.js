@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -16,11 +16,11 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/agrezer-why-choose-point-item' ];
+const ALLOWED_BLOCKS = [ 'mk/agrezer-why-choose-point-item' ];
 
 const POINT_TEMPLATE = [
 	[
-		'twork/agrezer-why-choose-point-item',
+		'mk/agrezer-why-choose-point-item',
 		{
 			slot: 1,
 			badgeText: '01',
@@ -29,7 +29,7 @@ const POINT_TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-why-choose-point-item',
+		'mk/agrezer-why-choose-point-item',
 		{
 			slot: 2,
 			badgeText: '02',
@@ -38,7 +38,7 @@ const POINT_TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-why-choose-point-item',
+		'mk/agrezer-why-choose-point-item',
 		{
 			slot: 3,
 			badgeText: '03',
@@ -47,7 +47,7 @@ const POINT_TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-why-choose-point-item',
+		'mk/agrezer-why-choose-point-item',
 		{
 			slot: 4,
 			badgeText: '04',
@@ -56,7 +56,7 @@ const POINT_TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-why-choose-point-item',
+		'mk/agrezer-why-choose-point-item',
 		{
 			slot: 5,
 			badgeText: '05',
@@ -94,7 +94,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `agrezer-why-choose twork-agrezer-why-choose-section-editor ${
+			className: `agrezer-why-choose mk-agrezer-why-choose-section-editor ${
 				waveDecorationUrl ? 'has-wave-decoration' : ''
 			}`,
 
@@ -125,13 +125,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Header', 'twork-builder' ) }
+						title={ __( 'Header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Tagline icon (emoji)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ taglineIcon }
 							onChange={ ( val ) =>
@@ -140,13 +140,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Tagline', 'twork-builder' ) }
+							title={ __( 'Tagline', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: taglineColor,
 									onChange: ( val ) =>
 										setAttributes( { taglineColor: val } ),
-									label: __( 'Text', 'twork-builder' ),
+									label: __( 'Text', 'mk-builder' ),
 								},
 								{
 									value: taglineIconColor,
@@ -154,26 +154,26 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											taglineIconColor: val,
 										} ),
-									label: __( 'Icon tint', 'twork-builder' ),
+									label: __( 'Icon tint', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Title', 'twork-builder' ) }
+							title={ __( 'Title', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Color', 'twork-builder' ),
+									label: __( 'Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Title size (rem)', 'twork-builder' ) }
+							label={ __( 'Title size (rem)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -184,7 +184,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Title weight', 'twork-builder' ) }
+							label={ __( 'Title weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -196,11 +196,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Tractor image', 'twork-builder' ) }
+						title={ __( 'Tractor image', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Alt text', 'twork-builder' ) }
+							label={ __( 'Alt text', 'mk-builder' ) }
 							value={ tractorAlt }
 							onChange={ ( val ) =>
 								setAttributes( { tractorAlt: val } )
@@ -208,7 +208,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ tractorMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { tractorMaxWidth: val } )
@@ -220,11 +220,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Stage', 'twork-builder' ) }
+						title={ __( 'Stage', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Min height (px)', 'twork-builder' ) }
+							label={ __( 'Min height (px)', 'mk-builder' ) }
 							value={ stageMinHeight }
 							onChange={ ( val ) =>
 								setAttributes( { stageMinHeight: val } )
@@ -235,7 +235,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -248,7 +248,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -262,7 +262,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Content max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -274,7 +274,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Side gutter (px)', 'twork-builder' ) }
+							label={ __( 'Side gutter (px)', 'mk-builder' ) }
 							value={ containerGutter }
 							onChange={ ( val ) =>
 								setAttributes( { containerGutter: val } )
@@ -286,17 +286,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Bottom decoration', 'twork-builder' ) }
+						title={ __( 'Bottom decoration', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<BaseControl
 							label={ __(
 								'Wave / shape image (optional)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							help={ __(
 								'Uses theme asset e.g. shape-12.webp, or upload any wide strip.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							{ ! waveDecorationUrl ? (
@@ -312,7 +312,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Decoration image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -338,7 +338,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} )
 										}
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) }
@@ -375,7 +375,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Why Choose Our Farm',
-									'twork-builder'
+									'mk-builder'
 								) }
 								allowedFormats={ [] }
 							/>
@@ -388,7 +388,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { sectionTitle: val } )
 							}
-							placeholder={ __( 'Title…', 'twork-builder' ) }
+							placeholder={ __( 'Title…', 'mk-builder' ) }
 							style={ {
 								color: titleColor,
 								fontSize: `${ titleFontSize }rem`,
@@ -398,7 +398,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</div>
 
 					<div
-						className="agrezer-why-choose__stage twork-agrezer-why-choose__stage-editor"
+						className="agrezer-why-choose__stage mk-agrezer-why-choose__stage-editor"
 						style={ stageStyle }
 					>
 						<div className="agrezer-why-choose__tractor-wrapper">
@@ -415,7 +415,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Tractor image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>

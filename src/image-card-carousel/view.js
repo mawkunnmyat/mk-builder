@@ -1,16 +1,16 @@
 /**
  * Image Card Carousel – dot navigation and autoplay.
  *
- * @package twork-builder
+ * @package mk-builder
  */
 
 ( function () {
 	'use strict';
 
 	const SECTION_SELECTOR =
-		'.twork-image-card-carousel, .wp-block-twork-image-card-carousel';
+		'.mk-image-card-carousel, .wp-block-mk-image-card-carousel';
 	const SLIDE_SELECTOR =
-		'.image-card-carousel__card, .wp-block-twork-image-card-slide';
+		'.image-card-carousel__card, .wp-block-mk-image-card-slide';
 	const DOTS_SELECTOR = '[data-carousel-dots]';
 
 	function getVisibleCount() {
@@ -170,7 +170,7 @@
 
 	window.addEventListener( 'load', init );
 
-	if ( typeof window.TworkImageCardCarousel === 'undefined' ) {
-		window.TworkImageCardCarousel = { init: init, version: '1.0.0' };
+	if ( typeof window.MkImageCardCarousel === 'undefined' ) {
+		window.MkImageCardCarousel = { init: init, version: '1.0.0' };
 	}
 } )();

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -14,7 +14,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'product-categories__card twork-category-card-editor',
+				'product-categories__card mk-category-card-editor',
 		} ),
 		[]
 	);
@@ -24,11 +24,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Link', 'twork-builder' ) }
+						title={ __( 'Link', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'URL', 'twork-builder' ) }
+							label={ __( 'URL', 'mk-builder' ) }
 							value={ href || '' }
 							onChange={ ( val ) =>
 								setAttributes( { href: val } )
@@ -36,7 +36,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<MediaUploadCheck>
@@ -60,7 +60,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Choose image',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									) }
@@ -105,7 +105,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												>
 													{ __(
 														'Replace',
-														'twork-builder'
+														'mk-builder'
 													) }
 												</Button>
 											) }
@@ -122,13 +122,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 									<TextControl
 										label={ __(
 											'Alt text',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ imageAlt || '' }
 										onChange={ ( val ) =>
@@ -155,7 +155,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { title: val } )
 						}
-						placeholder={ __( 'Category name…', 'twork-builder' ) }
+						placeholder={ __( 'Category name…', 'mk-builder' ) }
 					/>
 					<RichText
 						tagName="p"
@@ -164,7 +164,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { count: val } )
 						}
-						placeholder={ __( 'Item count…', 'twork-builder' ) }
+						placeholder={ __( 'Item count…', 'mk-builder' ) }
 					/>
 					<span
 						className="product-categories__arrow"

@@ -17,7 +17,7 @@ export default function save( { attributes } ) {
 		mediaType,
 	} = attributes;
 	const blockProps = useBlockProps.save( {
-		className: 'twork-about-feature',
+		className: 'mk-about-feature',
 	} );
 
 	const renderIcon = () => {
@@ -25,7 +25,7 @@ export default function save( { attributes } ) {
 			if ( mediaType === 'video' ) {
 				return (
 					<video
-						className="twork-about-feature__icon"
+						className="mk-about-feature__icon"
 						src={ mediaUrl }
 						autoPlay
 						loop
@@ -37,7 +37,7 @@ export default function save( { attributes } ) {
 			}
 			return (
 				<img
-					className="twork-about-feature__icon"
+					className="mk-about-feature__icon"
 					src={ mediaUrl }
 					alt=""
 					style={ mediaIconStyle }
@@ -49,15 +49,15 @@ export default function save( { attributes } ) {
 
 	return (
 		<article { ...blockProps }>
-			<div className="twork-about-feature__icon-wrap">{ renderIcon() }</div>
+			<div className="mk-about-feature__icon-wrap">{ renderIcon() }</div>
 			<RichText.Content
 				tagName="h3"
-				className="twork-about-feature__title"
+				className="mk-about-feature__title"
 				value={ title }
 			/>
 			<RichText.Content
 				tagName="p"
-				className="twork-about-feature__desc"
+				className="mk-about-feature__desc"
 				value={ description }
 			/>
 		</article>

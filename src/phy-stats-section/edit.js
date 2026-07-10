@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -7,16 +7,16 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, RangeControl, ToggleControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/phy-stat-card' ];
+const ALLOWED_BLOCKS = [ 'mk/phy-stat-card' ];
 const TEMPLATE = [
-	[ 'twork/phy-stat-card', { statNumber: '5k+', label: 'Happy Patients' } ],
+	[ 'mk/phy-stat-card', { statNumber: '5k+', label: 'Happy Patients' } ],
 	[
-		'twork/phy-stat-card',
+		'mk/phy-stat-card',
 		{ statNumber: '10+', label: 'Expert Therapists' },
 	],
 
-	[ 'twork/phy-stat-card', { statNumber: '98%', label: 'Recovery Rate' } ],
-	[ 'twork/phy-stat-card', { statNumber: '15', label: 'Years Experience' } ],
+	[ 'mk/phy-stat-card', { statNumber: '98%', label: 'Recovery Rate' } ],
+	[ 'mk/phy-stat-card', { statNumber: '15', label: 'Years Experience' } ],
 ];
 
 const DEFAULT_ATTS = {
@@ -57,7 +57,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-phy-stats-section-editor',
+			className: 'mk-phy-stats-section-editor',
 			style: {
 				backgroundColor: backgroundColor || 'transparent',
 				paddingTop: `${ Number( paddingTop ) }px`,
@@ -102,11 +102,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -116,14 +116,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -136,7 +136,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -148,7 +148,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Margin top (px)', 'twork-builder' ) }
+							label={ __( 'Margin top (px)', 'mk-builder' ) }
 							value={ marginTop }
 							onChange={ ( val ) =>
 								setAttributes( { marginTop: val } )
@@ -158,17 +158,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 5 }
 							help={ __(
 								'Negative values pull the stats up (e.g. over hero). Default -50.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Container', 'twork-builder' ) }
+						title={ __( 'Container', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -181,7 +181,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -194,11 +194,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Grid', 'twork-builder' ) }
+						title={ __( 'Grid', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Columns', 'twork-builder' ) }
+							label={ __( 'Columns', 'mk-builder' ) }
 							value={ columns }
 							onChange={ ( val ) =>
 								setAttributes( { columns: val } )
@@ -209,7 +209,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'twork-builder' ) }
+							label={ __( 'Gap (px)', 'mk-builder' ) }
 							value={ gap }
 							onChange={ ( val ) =>
 								setAttributes( { gap: val } )
@@ -221,13 +221,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Card style', 'twork-builder' ) }
+						title={ __( 'Card style', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
 							title={ __(
 								'Accent (number & border)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							colorSettings={ [
 								{
@@ -236,14 +236,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { primaryColor: val } ),
 									label: __(
 										'Primary color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Card padding (px)', 'twork-builder' ) }
+							label={ __( 'Card padding (px)', 'mk-builder' ) }
 							value={ cardPadding }
 							onChange={ ( val ) =>
 								setAttributes( { cardPadding: val } )
@@ -256,7 +256,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Border radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardBorderRadius }
 							onChange={ ( val ) =>
@@ -270,7 +270,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Bottom border width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardBorderBottomWidth }
 							onChange={ ( val ) =>
@@ -283,13 +283,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Stagger animation on scroll',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -297,7 +297,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Adds stagger-up class for scroll-triggered animation.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>

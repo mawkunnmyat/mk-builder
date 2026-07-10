@@ -11,14 +11,14 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'why-choose-us twork-numbered-features-grid',
+		className: 'why-choose-us mk-numbered-features-grid',
 		style: {
 			backgroundColor: backgroundColor || '#ffffff',
 			paddingTop: `${ padding }px`,
 			paddingBottom: `${ padding }px`,
 			'--why-choose-columns': columns,
 		},
-		'data-block': 'twork/numbered-features-grid',
+		'data-block': 'mk/numbered-features-grid',
 	} );
 
 	const containerStyle = {

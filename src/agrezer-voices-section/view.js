@@ -1,7 +1,7 @@
 /**
  * Agrezer voices: testimonial slide rotation (matches about.html behavior).
  *
- * @package twork-builder
+ * @package mk-builder
  */
 
 ( function () {
@@ -23,12 +23,12 @@
 			return;
 		}
 
-		var section = slider.closest( '.twork-voices-section' );
+		var section = slider.closest( '.mk-voices-section' );
 		if ( ! section ) {
 			return;
 		}
 
-		var slides = qsa( slider, '.twork-voices-section__slide' );
+		var slides = qsa( slider, '.mk-voices-section__slide' );
 		if ( slides.length === 0 ) {
 			return;
 		}
@@ -100,7 +100,7 @@
 	function init() {
 		document
 			.querySelectorAll(
-				'.twork-voices-section .twork-voices-section__testimonial[data-voices-slider]'
+				'.mk-voices-section .mk-voices-section__testimonial[data-voices-slider]'
 			)
 			.forEach( initSlider );
 	}

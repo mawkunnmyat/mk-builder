@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/team-members-grid",
+	"name": "mk/team-members-grid",
 	"title": "Team Members Grid",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Professional team members grid with comprehensive customization options",
-	"keywords": [ "team", "members", "staff", "doctors", "grid", "twork" ],
+	"keywords": [ "team", "members", "staff", "doctors", "grid", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -209,19 +209,19 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/team-member-item",
+				"name": "mk/team-member-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/team-member-item",
+				"name": "mk/team-member-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/team-member-item",
+				"name": "mk/team-member-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/team-member-item",
+				"name": "mk/team-member-item",
 				"attributes": {}
 			}
 		]

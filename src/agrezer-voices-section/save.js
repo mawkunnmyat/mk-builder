@@ -26,14 +26,14 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-voices-section twork-voices-section',
+		className: 'mk-voices-section mk-voices-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-voices-max': `${ containerMaxWidth }px`,
-			'--twork-voices-width-pct': `${ containerWidthPct }%`,
-			'--twork-voices-col-gap': `${ gridColumnGap }px`,
+			'--mk-voices-max': `${ containerMaxWidth }px`,
+			'--mk-voices-width-pct': `${ containerWidthPct }%`,
+			'--mk-voices-col-gap': `${ gridColumnGap }px`,
 		},
 		'data-autoplay': enableAutoplay ? 'true' : 'false',
 		'data-autoplay-ms': String( autoplayInterval || 4500 ),
@@ -41,15 +41,15 @@ export default function save( { attributes } ) {
 
 	return (
 		<section { ...blockProps }>
-			<div className="twork-voices-section__container">
-				<div className="twork-voices-section__left">
+			<div className="mk-voices-section__container">
+				<div className="mk-voices-section__left">
 					{ ( tagline || tagIcon ) && (
-						<div className="twork-voices-section__tagline">
+						<div className="mk-voices-section__tagline">
 							{ tagIcon && (
 								<img
 									src={ tagIcon }
 									alt={ tagIconAlt || '' }
-									className="twork-voices-section__tag-icon"
+									className="mk-voices-section__tag-icon"
 									width="20"
 									height="20"
 									loading="lazy"
@@ -67,7 +67,7 @@ export default function save( { attributes } ) {
 					{ title && (
 						<RichText.Content
 							tagName="h2"
-							className="twork-voices-section__title"
+							className="mk-voices-section__title"
 							value={ title }
 						/>
 					) }
@@ -75,37 +75,37 @@ export default function save( { attributes } ) {
 						<img
 							src={ wheatImage }
 							alt={ wheatImageAlt || '' }
-							className="twork-voices-section__wheat"
+							className="mk-voices-section__wheat"
 							loading="lazy"
 							decoding="async"
 						/>
 					) }
 				</div>
 
-				<div className="twork-voices-section__right">
-					<div className="twork-voices-section__top-cards">
-						<article className="twork-voices-card twork-voices-card--rating">
+				<div className="mk-voices-section__right">
+					<div className="mk-voices-section__top-cards">
+						<article className="mk-voices-card mk-voices-card--rating">
 							{ ratingHeading && (
 								<RichText.Content
 									tagName="h3"
-									className="twork-voices-card__heading"
+									className="mk-voices-card__heading"
 									value={ ratingHeading }
 								/>
 							) }
 							{ ratingDesc && (
 								<RichText.Content
 									tagName="p"
-									className="twork-voices-card__desc"
+									className="mk-voices-card__desc"
 									value={ ratingDesc }
 								/>
 							) }
 						</article>
 
-						<article className="twork-voices-card twork-voices-card--support">
+						<article className="mk-voices-card mk-voices-card--support">
 							{ supportHeading && (
 								<RichText.Content
 									tagName="h3"
-									className="twork-voices-card__heading"
+									className="mk-voices-card__heading"
 									value={ supportHeading }
 								/>
 							) }
@@ -113,13 +113,13 @@ export default function save( { attributes } ) {
 								<img
 									src={ supportIcon }
 									alt={ supportIconAlt || '' }
-									className="twork-voices-card__support-icon"
+									className="mk-voices-card__support-icon"
 									loading="lazy"
 									decoding="async"
 								/>
 							) }
 							{ ( supportBadgeValue || supportBadgeLabel ) && (
-								<div className="twork-voices-card__support-badge">
+								<div className="mk-voices-card__support-badge">
 									{ supportBadgeValue }
 									{ supportBadgeLabel && (
 										<span>{ supportBadgeLabel }</span>
@@ -130,14 +130,14 @@ export default function save( { attributes } ) {
 					</div>
 
 					<div
-						className="twork-voices-section__testimonial"
+						className="mk-voices-section__testimonial"
 						data-voices-slider=""
 						role="region"
 						aria-roledescription="carousel"
 						aria-label="Customer voices"
 						tabIndex={ 0 }
 					>
-						<div className="twork-voices-section__slides">
+						<div className="mk-voices-section__slides">
 							<InnerBlocks.Content />
 						</div>
 					</div>

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/csr-stats-section",
+	"name": "mk/csr-stats-section",
 	"version": "1.0.0",
 	"title": "Stats Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "chart-bar",
 	"description": "CSR impact stats section with configurable stat items (number + label grid).",
-	"keywords": [ "csr", "stats", "impact", "grid", "twork" ],
+	"keywords": [ "csr", "stats", "impact", "grid", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -131,28 +131,28 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/stat-item",
+				"name": "mk/stat-item",
 				"attributes": {
 					"statNumber": "50+",
 					"statLabel": "Rural Medical Camps"
 				}
 			},
 			{
-				"name": "twork/stat-item",
+				"name": "mk/stat-item",
 				"attributes": {
 					"statNumber": "10k+",
 					"statLabel": "Patients Screened"
 				}
 			},
 			{
-				"name": "twork/stat-item",
+				"name": "mk/stat-item",
 				"attributes": {
 					"statNumber": "200+",
 					"statLabel": "Free Surgeries"
 				}
 			},
 			{
-				"name": "twork/stat-item",
+				"name": "mk/stat-item",
 				"attributes": {
 					"statNumber": "1.5k",
 					"statLabel": "Units of Blood Donated"
@@ -160,7 +160,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -27,7 +27,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		mediaType,
 	} = attributes;
 	const blockProps = useStableBlockProps(
-		() => ( { className: 'twork-about-feature' } ),
+		() => ( { className: 'mk-about-feature' } ),
 		[]
 	);
 
@@ -57,7 +57,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		if ( mediaType === 'video' ) {
 			return (
 				<video
-					className="twork-about-feature__icon"
+					className="mk-about-feature__icon"
 					src={ mediaUrl }
 					autoPlay
 					loop
@@ -69,7 +69,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		}
 		return (
 			<img
-				className="twork-about-feature__icon"
+				className="mk-about-feature__icon"
 				src={ mediaUrl }
 				alt=""
 				style={ mediaIconStyle }
@@ -82,24 +82,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Icon & media', 'twork-builder' ) }
+						title={ __( 'Icon & media', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon source', 'twork-builder' ) }
+							label={ __( 'Icon source', 'mk-builder' ) }
 							value={ iconType }
 							options={ [
 								{
 									label: __(
 										'Predefined SVG',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'svg',
 								},
 								{
 									label: __(
 										'Custom media',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'media',
 								},
@@ -111,31 +111,31 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ iconType === 'svg' && (
 							<SelectControl
-								label={ __( 'Icon style', 'twork-builder' ) }
+								label={ __( 'Icon style', 'mk-builder' ) }
 								value={ iconVariant }
 								options={ [
 									{
 										label: __(
 											'Growth / arrow',
-											'twork-builder'
+											'mk-builder'
 										),
 										value: 'growth',
 									},
 									{
-										label: __( 'Barn', 'twork-builder' ),
+										label: __( 'Barn', 'mk-builder' ),
 										value: 'barn',
 									},
 									{
 										label: __(
 											'Soil / tools',
-											'twork-builder'
+											'mk-builder'
 										),
 										value: 'soil',
 									},
 									{
 										label: __(
 											'Organic plant',
-											'twork-builder'
+											'mk-builder'
 										),
 										value: 'organic',
 									},
@@ -154,11 +154,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Feature icon media',
-												'twork-builder'
+												'mk-builder'
 											),
 											instructions: __(
 												'Upload an image, GIF, or short video.',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 										onSelect={ onSelectMedia }
@@ -185,7 +185,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Replace media',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												) }
@@ -198,7 +198,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Remove media',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									</>
@@ -210,25 +210,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<article { ...blockProps }>
-				<div className="twork-about-feature__icon-wrap">
+				<div className="mk-about-feature__icon-wrap">
 					{ renderIconPreview() }
 				</div>
 				<RichText
 					tagName="h3"
-					className="twork-about-feature__title"
+					className="mk-about-feature__title"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Title', 'twork-builder' ) }
+					placeholder={ __( 'Title', 'mk-builder' ) }
 				/>
 
 				<RichText
 					tagName="p"
-					className="twork-about-feature__desc"
+					className="mk-about-feature__desc"
 					value={ description }
 					onChange={ ( val ) =>
 						setAttributes( { description: val } )
 					}
-					placeholder={ __( 'Description', 'twork-builder' ) }
+					placeholder={ __( 'Description', 'mk-builder' ) }
 				/>
 			</article>
 		</>

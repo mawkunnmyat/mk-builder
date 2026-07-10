@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/split-promo-section",
+	"name": "mk/split-promo-section",
 	"version": "1.0.0",
 	"title": "Split Promo Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "smartphone",
 	"description": "Split layout promo: image, eyebrow, title, feature list, and dual CTAs. Ports shweghee app-promo.",
-	"keywords": [ "promo", "app", "split", "cta", "shwe", "twork" ],
+	"keywords": [ "promo", "app", "split", "cta", "shwe", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -88,7 +88,7 @@
 			"padding": 80
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

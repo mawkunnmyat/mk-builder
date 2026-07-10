@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -15,26 +15,26 @@ import {
 } from '@wordpress/components';
 
 const ICON_TYPE_OPTIONS = [
-	{ value: 'fontawesome', label: __( 'Font Awesome', 'twork-builder' ) },
+	{ value: 'fontawesome', label: __( 'Font Awesome', 'mk-builder' ) },
 	{
 		value: 'dashicon',
-		label: __( 'WordPress (Dashicons)', 'twork-builder' ),
+		label: __( 'WordPress (Dashicons)', 'mk-builder' ),
 	},
-	{ value: 'image', label: __( 'Image / GIF', 'twork-builder' ) },
-	{ value: 'video', label: __( 'Video', 'twork-builder' ) },
+	{ value: 'image', label: __( 'Image / GIF', 'mk-builder' ) },
+	{ value: 'video', label: __( 'Video', 'mk-builder' ) },
 ];
 
 const DASHICON_OPTIONS = [
 	{
 		value: 'dashicons-arrow-right-alt2',
-		label: __( 'Arrow right', 'twork-builder' ),
+		label: __( 'Arrow right', 'mk-builder' ),
 	},
 	{
 		value: 'dashicons-arrow-right',
-		label: __( 'Arrow (alt)', 'twork-builder' ),
+		label: __( 'Arrow (alt)', 'mk-builder' ),
 	},
-	{ value: 'dashicons-external', label: __( 'External', 'twork-builder' ) },
-	{ value: 'dashicons-admin-links', label: __( 'Link', 'twork-builder' ) },
+	{ value: 'dashicons-external', label: __( 'External', 'mk-builder' ) },
+	{ value: 'dashicons-admin-links', label: __( 'Link', 'mk-builder' ) },
 ];
 
 function ViewAllIconRender( {
@@ -75,20 +75,20 @@ function ViewAllIconRender( {
 	return null;
 }
 
-const ALLOWED_BLOCKS = [ 'twork/centre-doctor-card' ];
+const ALLOWED_BLOCKS = [ 'mk/centre-doctor-card' ];
 const TEMPLATE = [
 	[
-		'twork/centre-doctor-card',
+		'mk/centre-doctor-card',
 		{ name: 'Dr. Susan May', specialization: 'Neurosurgeon' },
 	],
 
 	[
-		'twork/centre-doctor-card',
+		'mk/centre-doctor-card',
 		{ name: 'Dr. Nilar', specialization: 'Neurologist' },
 	],
 
 	[
-		'twork/centre-doctor-card',
+		'mk/centre-doctor-card',
 		{ name: 'Dr. Zaw Win', specialization: 'Spine Surgeon' },
 	],
 ];
@@ -109,7 +109,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	} = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'content-section fade-up twork-centre-doctors-editor',
+			className: 'content-section fade-up mk-centre-doctors-editor',
 			id: sectionId,
 		} ),
 		[ sectionId ]
@@ -120,13 +120,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Section ID (anchor)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionId }
 							onChange={ ( v ) =>
@@ -136,14 +136,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. #specialists for anchor links',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
 							label={ __(
 								'View All link text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ viewAllText }
 							onChange={ ( v ) =>
@@ -152,7 +152,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'View All URL', 'twork-builder' ) }
+							label={ __( 'View All URL', 'mk-builder' ) }
 							value={ viewAllUrl }
 							onChange={ ( v ) =>
 								setAttributes( { viewAllUrl: v || '#' } )
@@ -162,15 +162,15 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<BaseControl
 							label={ __(
 								'View All link icon',
-								'twork-builder'
+								'mk-builder'
 							) }
 							help={ __(
 								'Icon shown after the link text.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<SelectControl
-								label={ __( 'Icon type', 'twork-builder' ) }
+								label={ __( 'Icon type', 'mk-builder' ) }
 								value={ viewAllIconType || 'fontawesome' }
 								options={ ICON_TYPE_OPTIONS }
 								onChange={ ( v ) =>
@@ -183,7 +183,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Font Awesome class',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={
 										viewAllIcon || 'fas fa-arrow-right'
@@ -199,7 +199,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							{ ( viewAllIconType || 'fontawesome' ) ===
 								'dashicon' && (
 								<SelectControl
-									label={ __( 'Dashicon', 'twork-builder' ) }
+									label={ __( 'Dashicon', 'mk-builder' ) }
 									value={
 										viewAllDashicon ||
 										'dashicons-arrow-right-alt2'
@@ -225,7 +225,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Icon image / GIF',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -251,7 +251,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }
@@ -270,7 +270,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Icon video',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -299,7 +299,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }
@@ -315,7 +315,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( v ) => setAttributes( { title: v } ) }
 						placeholder={ __(
 							'Our Neuro Specialists',
-							'twork-builder'
+							'mk-builder'
 						) }
 						className="centre-doctors-title"
 					/>
@@ -328,10 +328,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						aria-label={
 							viewAllText
 								? undefined
-								: __( 'View all specialists', 'twork-builder' )
+								: __( 'View all specialists', 'mk-builder' )
 						}
 					>
-						{ viewAllText || __( 'View All', 'twork-builder' ) }{ ' ' }
+						{ viewAllText || __( 'View All', 'mk-builder' ) }{ ' ' }
 						<ViewAllIconRender
 							iconType={ viewAllIconType || 'fontawesome' }
 							faClass={ viewAllIcon || 'fas fa-arrow-right' }

@@ -16,13 +16,13 @@
 // === EDITOR STYLES ===
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-csr-stats-section {
-    .twork-csr-stats-section-editor {
+.wp-block-mk-csr-stats-section {
+    .mk-csr-stats-section-editor {
         position: relative;
         min-height: 80px;
 
         .stats-section {
-            .twork-csr-stats-grid-container {
+            .mk-csr-stats-grid-container {
                 display: block;
                 width: 100%;
             }
@@ -38,7 +38,7 @@
                         display: contents !important;
 
                         > .wp-block,
-                        > [data-type="twork/stat-item"] {
+                        > [data-type="mk/stat-item"] {
                             display: flex !important;
                             flex-direction: column !important;
                             align-items: center !important;
@@ -68,7 +68,7 @@
 }
 
 // === FRONTEND STYLES ===
-.twork-csr-stats-section {
+.mk-csr-stats-section {
     font-family: $font-primary;
     position: relative;
 
@@ -133,7 +133,7 @@
 
 // === RESPONSIVE STYLES ===
 @media (max-width: 992px) {
-    .twork-csr-stats-section {
+    .mk-csr-stats-section {
         .stats-section {
             margin-top: 0 !important;
             border-radius: 0;
@@ -155,7 +155,7 @@
 }
 
 @media (max-width: 768px) {
-    .twork-csr-stats-section {
+    .mk-csr-stats-section {
         .stats-section {
             padding: 40px 20px !important;
         }
@@ -176,7 +176,7 @@
 }
 
 // === ACCESSIBILITY ===
-.twork-csr-stats-section .stat-item {
+.mk-csr-stats-section .stat-item {
     &:focus-visible {
         outline: 2px solid var(--primary-orange);
         outline-offset: 2px;
@@ -185,7 +185,7 @@
 
 // === PRINT STYLES ===
 @media print {
-    .twork-csr-stats-section {
+    .mk-csr-stats-section {
         .stats-section {
             box-shadow: none;
             border: 1px solid var(--border-color);

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/jivaka-badge-item",
+	"name": "mk/jivaka-badge-item",
 	"title": "Badge Item",
-	"parent": [ "twork/jivaka-hero-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/jivaka-hero-section" ],
+	"category": "mk-builder",
 	"icon": "download",
 	"description": "Single app store badge (image + link) for Jivaka Hero section.",
-	"keywords": [ "jivaka", "badge", "app", "store", "twork" ],
+	"keywords": [ "jivaka", "badge", "app", "store", "mk" ],
 	"attributes": {
 		"image": {
 			"type": "string",
@@ -46,7 +46,7 @@
 			"alt": ""
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

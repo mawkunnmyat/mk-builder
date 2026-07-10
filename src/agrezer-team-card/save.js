@@ -99,7 +99,7 @@ export default function save( { attributes } ) {
 	}
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-team-card',
+		className: 'mk-team-card',
 		style: blockStyle,
 	} );
 
@@ -111,7 +111,7 @@ export default function save( { attributes } ) {
 				<img
 					src={ image }
 					alt={ imageAlt || '' }
-					className="twork-team-card__img"
+					className="mk-team-card__img"
 					loading="lazy"
 					decoding="async"
 				/>
@@ -120,7 +120,7 @@ export default function save( { attributes } ) {
 				( hasLink ? (
 					<a
 						href={ url }
-						className="twork-team-card__action"
+						className="mk-team-card__action"
 						aria-label={ actionAriaLabel || 'View profile' }
 						{ ...( profileOpenInNewTab
 							? { target: '_blank', rel: 'noopener noreferrer' }
@@ -130,21 +130,21 @@ export default function save( { attributes } ) {
 					</a>
 				) : (
 					<span
-						className="twork-team-card__action twork-team-card__action--static"
+						className="mk-team-card__action mk-team-card__action--static"
 						aria-hidden="true"
 					>
 						{ actionIcon }
 					</span>
 				) ) }
-			<div className="twork-team-card__content">
+			<div className="mk-team-card__content">
 				<RichText.Content
 					tagName="h3"
-					className="twork-team-card__name"
+					className="mk-team-card__name"
 					value={ name }
 				/>
 				<RichText.Content
 					tagName="p"
-					className="twork-team-card__role"
+					className="mk-team-card__role"
 					value={ role }
 				/>
 			</div>

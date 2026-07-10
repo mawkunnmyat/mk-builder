@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/admission-process-section",
+	"name": "mk/admission-process-section",
 	"title": "Admission Process Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Admission process section with step cards (Registration, During Stay, Discharge) for patient guide.",
 	"keywords": [
 		"admission",
@@ -11,7 +11,7 @@
 		"patient",
 		"guide",
 		"hospital",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundColor": {
@@ -239,7 +239,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/admission-process-item",
+				"name": "mk/admission-process-item",
 				"attributes": {
 					"stepNumber": 1,
 					"title": "Registration",
@@ -265,7 +265,7 @@
 				}
 			},
 			{
-				"name": "twork/admission-process-item",
+				"name": "mk/admission-process-item",
 				"attributes": {
 					"stepNumber": 2,
 					"title": "During Stay",
@@ -291,7 +291,7 @@
 				}
 			},
 			{
-				"name": "twork/admission-process-item",
+				"name": "mk/admission-process-item",
 				"attributes": {
 					"stepNumber": 3,
 					"title": "Discharge",
@@ -318,7 +318,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

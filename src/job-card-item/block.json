@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/job-card-item",
+	"name": "mk/job-card-item",
 	"title": "Job Card Item",
-	"parent": [ "twork/job-category-item" ],
+	"parent": [ "mk/job-category-item" ],
 	"description": "Single job listing card with title, meta (location, type, department) and Apply button.",
-	"keywords": [ "job", "career", "listing", "apply", "twork" ],
+	"keywords": [ "job", "career", "listing", "apply", "mk" ],
 	"attributes": {
 		"jobTitle": {
 			"type": "string",
@@ -97,6 +97,6 @@
 			"cardPaddingMobile": 20
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

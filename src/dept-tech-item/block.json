@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/dept-tech-item",
+	"name": "mk/dept-tech-item",
 	"title": "Tech Item",
-	"category": "twork-builder",
-	"parent": [ "twork/dept-technology-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/dept-technology-section" ],
 	"attributes": {
 		"imageUrl": {
 			"type": "string",

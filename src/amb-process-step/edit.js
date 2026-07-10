@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -22,7 +22,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-amb-process-step-editor amb-step',
+			className: 'mk-amb-process-step-editor amb-step',
 			style: {
 				position: 'relative',
 				padding: `${ stepPadding }px`,
@@ -37,23 +37,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Title', 'twork-builder' ) }
+						title={ __( 'Title', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Color', 'twork-builder' ),
+									label: __( 'Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -64,7 +64,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -77,7 +77,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Margin Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ titleMarginBottom }
 							onChange={ ( val ) =>
@@ -90,11 +90,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Description', 'twork-builder' ) }
+						title={ __( 'Description', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Description Color', 'twork-builder' ) }
+							title={ __( 'Description Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: descriptionColor,
@@ -102,13 +102,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											descriptionColor: val,
 										} ),
-									label: __( 'Color', 'twork-builder' ),
+									label: __( 'Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ descriptionFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { descriptionFontSize: val } )
@@ -120,11 +120,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Step Padding (px)', 'twork-builder' ) }
+							label={ __( 'Step Padding (px)', 'mk-builder' ) }
 							value={ stepPadding }
 							onChange={ ( val ) =>
 								setAttributes( { stepPadding: val } )
@@ -142,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h4"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Step title...', 'twork-builder' ) }
+					placeholder={ __( 'Step title...', 'mk-builder' ) }
 					style={ {
 						color: titleColor,
 						fontSize: `${ titleFontSize }rem`,
@@ -158,7 +158,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { description: val } )
 					}
-					placeholder={ __( 'Step description...', 'twork-builder' ) }
+					placeholder={ __( 'Step description...', 'mk-builder' ) }
 					style={ {
 						color: descriptionColor,
 						fontSize: `${ descriptionFontSize }rem`,

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/tele-specialty-item",
+	"name": "mk/tele-specialty-item",
 	"title": "Specialty Item",
-	"parent": [ "twork/tele-specialty-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/tele-specialty-section" ],
+	"category": "mk-builder",
 	"icon": "admin-generic",
 	"description": "Single specialty card (icon + title) for Tele Specialty section.",
-	"keywords": [ "specialty", "telemedicine", "card", "icon", "twork" ],
+	"keywords": [ "specialty", "telemedicine", "card", "icon", "mk" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",
@@ -28,7 +28,7 @@
 			"title": "General Medicine"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

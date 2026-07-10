@@ -119,16 +119,16 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Background', 'twork-builder' ) }
+						title={ __( 'Background', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Background Type', 'twork-builder' ) }
+							label={ __( 'Background Type', 'mk-builder' ) }
 							value={ bgType }
 							options={ [
-								{ label: __( 'Color', 'twork-builder' ), value: 'color' },
-								{ label: __( 'Image/GIF', 'twork-builder' ), value: 'image' },
-								{ label: __( 'Video', 'twork-builder' ), value: 'video' },
+								{ label: __( 'Color', 'mk-builder' ), value: 'color' },
+								{ label: __( 'Image/GIF', 'mk-builder' ), value: 'image' },
+								{ label: __( 'Video', 'mk-builder' ), value: 'video' },
 							] }
 							onChange={ ( val ) =>
 								setAttributes( { bgType: val, bgMediaUrl: '' } )
@@ -142,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										value: bgColor,
 										onChange: ( val ) =>
 											setAttributes( { bgColor: val } ),
-										label: __( 'Background color', 'twork-builder' ),
+										label: __( 'Background color', 'mk-builder' ),
 									},
 								] }
 							/>
@@ -160,8 +160,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title:
 												bgType === 'video'
-													? __( 'Background video', 'twork-builder' )
-													: __( 'Background image/GIF', 'twork-builder' ),
+													? __( 'Background video', 'mk-builder' )
+													: __( 'Background image/GIF', 'mk-builder' ),
 										} }
 									/>
 								) : (
@@ -178,7 +178,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											allowedTypes={ mediaTypes }
 											render={ ( { open } ) => (
 												<Button isSecondary onClick={ open }>
-													{ __( 'Replace media', 'twork-builder' ) }
+													{ __( 'Replace media', 'mk-builder' ) }
 												</Button>
 											) }
 										/>
@@ -188,7 +188,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												setAttributes( { bgMediaUrl: '' } )
 											}
 										>
-											{ __( 'Remove media', 'twork-builder' ) }
+											{ __( 'Remove media', 'mk-builder' ) }
 										</Button>
 									</>
 								) }
@@ -198,7 +198,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											value: bgOverlay,
 											onChange: ( val ) =>
 												setAttributes( { bgOverlay: val } ),
-											label: __( 'Overlay color', 'twork-builder' ),
+											label: __( 'Overlay color', 'mk-builder' ),
 										},
 									] }
 								/>
@@ -207,11 +207,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Columns', 'twork-builder' ) }
+							label={ __( 'Columns', 'mk-builder' ) }
 							value={ columnCount }
 							onChange={ ( val ) =>
 								setAttributes( { columnCount: val } )
@@ -222,18 +222,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Newsletter', 'twork-builder' ) }
+						title={ __( 'Newsletter', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show newsletter form', 'twork-builder' ) }
+							label={ __( 'Show newsletter form', 'mk-builder' ) }
 							checked={ showNewsletter }
 							onChange={ ( val ) =>
 								setAttributes( { showNewsletter: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Newsletter action URL', 'twork-builder' ) }
+							label={ __( 'Newsletter action URL', 'mk-builder' ) }
 							value={ newsletterActionUrl }
 							onChange={ ( val ) =>
 								setAttributes( { newsletterActionUrl: val } )
@@ -242,21 +242,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Social Links', 'twork-builder' ) }
+						title={ __( 'Social Links', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ normalizedSocialLinks.map( ( item, index ) => (
 							<div key={ index } style={ { marginBottom: '16px' } }>
 								<SelectControl
-									label={ __( 'Icon Type', 'twork-builder' ) }
+									label={ __( 'Icon Type', 'mk-builder' ) }
 									value={ item.type }
 									options={ [
 										{
-											label: __( 'Icon Class', 'twork-builder' ),
+											label: __( 'Icon Class', 'mk-builder' ),
 											value: 'icon',
 										},
 										{
-											label: __( 'Image', 'twork-builder' ),
+											label: __( 'Image', 'mk-builder' ),
 											value: 'image',
 										},
 									] }
@@ -267,14 +267,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 								{ item.type === 'icon' && (
 									<TextControl
-										label={ __( 'Icon Class', 'twork-builder' ) }
+										label={ __( 'Icon Class', 'mk-builder' ) }
 										value={ item.iconClass }
 										onChange={ ( val ) =>
 											updateSocialItem( index, { iconClass: val } )
 										}
 										help={ __(
 											'Example: fab fa-facebook or dashicons dashicons-twitter',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								) }
@@ -291,7 +291,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												allowedTypes={ [ 'image' ] }
 												multiple={ false }
 												labels={ {
-													title: __( 'Social image', 'twork-builder' ),
+													title: __( 'Social image', 'mk-builder' ),
 												} }
 											/>
 										) : (
@@ -310,7 +310,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													allowedTypes={ [ 'image' ] }
 													render={ ( { open } ) => (
 														<Button isSecondary onClick={ open }>
-															{ __( 'Replace image', 'twork-builder' ) }
+															{ __( 'Replace image', 'mk-builder' ) }
 														</Button>
 													) }
 												/>
@@ -320,7 +320,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														updateSocialItem( index, { imageUrl: '' } )
 													}
 												>
-													{ __( 'Remove Image', 'twork-builder' ) }
+													{ __( 'Remove Image', 'mk-builder' ) }
 												</Button>
 											</>
 										) }
@@ -328,7 +328,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								) }
 
 								<TextControl
-									label={ __( 'URL', 'twork-builder' ) }
+									label={ __( 'URL', 'mk-builder' ) }
 									value={ item.url }
 									onChange={ ( val ) =>
 										updateSocialItem( index, { url: val } )
@@ -336,12 +336,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<Button isDestructive onClick={ () => removeSocialItem( index ) }>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button variant="primary" onClick={ addSocialItem }>
-							{ __( 'Add social item', 'twork-builder' ) }
+							{ __( 'Add social item', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 				</InspectorControls>
@@ -431,7 +431,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<input
 										type="email"
 										className="avocado-footer__input"
-										placeholder={ __( 'Email Address', 'twork-builder' ) }
+										placeholder={ __( 'Email Address', 'mk-builder' ) }
 										disabled
 									/>
 									<span

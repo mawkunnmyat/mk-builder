@@ -1,15 +1,15 @@
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InnerBlocks } from '@wordpress/block-editor';
 
 const ALLOWED_BLOCKS = [
-	'twork/agrezer-stats-cta',
-	'twork/agrezer-stats-card',
+	'mk/agrezer-stats-cta',
+	'mk/agrezer-stats-card',
 ];
 
 export default function Edit() {
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'agrezer-stats__col twork-agrezer-stats-column-editor',
+			className: 'agrezer-stats__col mk-agrezer-stats-column-editor',
 		} ),
 		[]
 	);

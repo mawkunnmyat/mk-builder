@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -27,7 +27,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'rad-hero twork-rad-hero-section',
+			className: 'rad-hero mk-rad-hero-section',
 			style: {
 				minHeight: `${ minHeight }px`,
 			},
@@ -40,7 +40,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Background image', 'twork-builder' ) }
+						title={ __( 'Background image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ! backgroundImage ? (
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Background image',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -82,25 +82,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove image', 'twork-builder' ) }
+									{ __( 'Remove image', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Badge text', 'twork-builder' ) }
+							label={ __( 'Badge text', 'mk-builder' ) }
 							value={ badgeText }
 							onChange={ ( val ) =>
 								setAttributes( { badgeText: val } )
 							}
 							placeholder={ __(
 								'Advanced Diagnostics',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -108,7 +108,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Minimum height (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ minHeight }
 							onChange={ ( val ) =>
@@ -121,23 +121,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Button', 'twork-builder' ) }
+						title={ __( 'Button', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Button text', 'twork-builder' ) }
+							label={ __( 'Button text', 'mk-builder' ) }
 							value={ buttonText }
 							onChange={ ( val ) =>
 								setAttributes( { buttonText: val } )
 							}
 							placeholder={ __(
 								'Book an Appointment',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ buttonUrl }
 							onChange={ ( val ) =>
 								setAttributes( { buttonUrl: val } )
@@ -179,7 +179,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Precision Imaging,\nAccurate Results.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 
@@ -191,7 +191,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'State-of-the-art Radiology centre equipped with 1.5T MRI and 64-Slice CT Scanners for crystal clear diagnosis.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 

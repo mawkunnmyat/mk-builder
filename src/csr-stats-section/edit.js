@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -37,32 +37,32 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		animationDelay,
 	} = attributes;
 
-	const ALLOWED_BLOCKS = [ 'twork/stat-item' ];
+	const ALLOWED_BLOCKS = [ 'mk/stat-item' ];
 	const TEMPLATE = [
 		[
-			'twork/stat-item',
+			'mk/stat-item',
 			{ statNumber: '50+', statLabel: 'Rural Medical Camps' },
 		],
 
 		[
-			'twork/stat-item',
+			'mk/stat-item',
 			{ statNumber: '10k+', statLabel: 'Patients Screened' },
 		],
 
 		[
-			'twork/stat-item',
+			'mk/stat-item',
 			{ statNumber: '200+', statLabel: 'Free Surgeries' },
 		],
 
 		[
-			'twork/stat-item',
+			'mk/stat-item',
 			{ statNumber: '1.5k', statLabel: 'Units of Blood Donated' },
 		],
 	];
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-csr-stats-section-editor',
+			className: 'mk-csr-stats-section-editor',
 			style: {
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
@@ -107,11 +107,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section Appearance', 'twork-builder' ) }
+						title={ __( 'Section Appearance', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
-							title={ __( 'Background Color', 'twork-builder' ) }
+							title={ __( 'Background Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -121,7 +121,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -130,7 +130,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -143,7 +143,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -157,7 +157,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Horizontal (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingHorizontal }
 							onChange={ ( val ) =>
@@ -173,7 +173,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Section Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionMaxWidth }
 							onChange={ ( val ) =>
@@ -184,12 +184,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 10 }
 							help={ __(
 								'Max width of the stats card',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
-							label={ __( 'Margin Top (px)', 'twork-builder' ) }
+							label={ __( 'Margin Top (px)', 'mk-builder' ) }
 							value={ marginTop }
 							onChange={ ( val ) =>
 								setAttributes( { marginTop: val } )
@@ -199,14 +199,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 5 }
 							help={ __(
 								'Negative value overlaps hero (e.g. -60)',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
 							label={ __(
 								'Border Radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ borderRadius }
 							onChange={ ( val ) =>
@@ -219,11 +219,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout Settings', 'twork-builder' ) }
+						title={ __( 'Layout Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Columns (Desktop)', 'twork-builder' ) }
+							label={ __( 'Columns (Desktop)', 'mk-builder' ) }
 							value={ columns }
 							onChange={ ( val ) =>
 								setAttributes( { columns: val } )
@@ -233,7 +233,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 1 }
 							help={ __(
 								'Number of stat columns on desktop',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -242,7 +242,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gap Between Items (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gap }
 							onChange={ ( val ) =>
@@ -255,13 +255,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Container Settings', 'twork-builder' ) }
+						title={ __( 'Container Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -275,7 +275,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -288,11 +288,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Box Shadow', 'twork-builder' ) }
+						title={ __( 'Box Shadow', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Enable Box Shadow', 'twork-builder' ) }
+							label={ __( 'Enable Box Shadow', 'mk-builder' ) }
 							checked={ boxShadow }
 							onChange={ ( val ) =>
 								setAttributes( { boxShadow: val } )
@@ -304,7 +304,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<PanelColorSettings
 									title={ __(
 										'Shadow Color',
-										'twork-builder'
+										'mk-builder'
 									) }
 									colorSettings={ [
 										{
@@ -315,14 +315,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Shadow Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
 								/>
 
 								<RangeControl
-									label={ __( 'Blur (px)', 'twork-builder' ) }
+									label={ __( 'Blur (px)', 'mk-builder' ) }
 									value={ boxShadowBlur }
 									onChange={ ( val ) =>
 										setAttributes( { boxShadowBlur: val } )
@@ -335,7 +335,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Spread (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ boxShadowSpread }
 									onChange={ ( val ) =>
@@ -351,7 +351,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Offset X (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ boxShadowOffsetX }
 									onChange={ ( val ) =>
@@ -367,7 +367,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Offset Y (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ boxShadowOffsetY }
 									onChange={ ( val ) =>
@@ -384,13 +384,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation Settings', 'twork-builder' ) }
+						title={ __( 'Animation Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable Scroll Animation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -403,42 +403,42 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Animation Type',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ animationType }
 									options={ [
 										{
 											label: __(
 												'Fade In Up',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'fadeInUp',
 										},
 										{
 											label: __(
 												'Fade In',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'fadeIn',
 										},
 										{
 											label: __(
 												'Slide In Left',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'slideInLeft',
 										},
 										{
 											label: __(
 												'Slide In Right',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'slideInRight',
 										},
 										{
 											label: __(
 												'Zoom In',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'zoomIn',
 										},
@@ -451,7 +451,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Animation Delay (ms)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ animationDelay }
 									onChange={ ( val ) =>
@@ -470,7 +470,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			<div { ...blockProps }>
 				<div style={ containerStyle }>
 					<div
-						className="stats-section twork-csr-stats-grid-container"
+						className="stats-section mk-csr-stats-grid-container"
 						style={ sectionStyle }
 						data-columns={ columns }
 					>

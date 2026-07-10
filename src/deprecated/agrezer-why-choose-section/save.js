@@ -28,7 +28,7 @@ export default function save( { attributes } ) {
 		: undefined;
 
 	const blockProps = useBlockProps.save( {
-		className: `agrezer-why-choose twork-agrezer-why-choose-section ${
+		className: `agrezer-why-choose mk-agrezer-why-choose-section ${
 			waveDecorationUrl ? 'has-wave-decoration' : ''
 		}`,
 		style: {

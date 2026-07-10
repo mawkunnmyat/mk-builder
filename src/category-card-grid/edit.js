@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -13,10 +13,10 @@ import {
 	TextControl,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/category-card' ];
+const ALLOWED_BLOCKS = [ 'mk/category-card' ];
 const TEMPLATE = [
 	[
-		'twork/category-card',
+		'mk/category-card',
 		{
 			title: 'Butter',
 			count: '3 Sizes',
@@ -27,7 +27,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/category-card',
+		'mk/category-card',
 		{
 			title: 'Ghee',
 			count: '2 Sizes',
@@ -38,7 +38,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/category-card',
+		'mk/category-card',
 		{
 			title: 'Bulk (10 Viss)',
 			count: '1 Item',
@@ -49,7 +49,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/category-card',
+		'mk/category-card',
 		{
 			title: 'Retail Packs',
 			count: '2 Items',
@@ -60,7 +60,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/category-card',
+		'mk/category-card',
 		{
 			title: 'Cooking Essentials',
 			count: '4 Items',
@@ -71,7 +71,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/category-card',
+		'mk/category-card',
 		{
 			title: 'Dairy Products',
 			count: '3 Items',
@@ -82,7 +82,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/category-card',
+		'mk/category-card',
 		{
 			title: 'Gift Sets',
 			count: '2 Items',
@@ -93,7 +93,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/category-card',
+		'mk/category-card',
 		{
 			title: 'Wholesale',
 			count: 'Contact Us',
@@ -121,7 +121,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'product-categories twork-category-card-grid-editor',
+				'product-categories mk-category-card-grid-editor',
 			style: {
 				backgroundColor: backgroundColor || '#ffffff',
 				paddingTop: `${ padding }px`,
@@ -147,12 +147,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ PanelColorSettings && (
 							<PanelColorSettings
-								title={ __( 'Background', 'twork-builder' ) }
+								title={ __( 'Background', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: backgroundColor,
@@ -162,14 +162,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Background Color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
 							/>
 						) }
 						<RangeControl
-							label={ __( 'Padding (px)', 'twork-builder' ) }
+							label={ __( 'Padding (px)', 'mk-builder' ) }
 							value={ padding }
 							onChange={ ( val ) =>
 								setAttributes( { padding: val } )
@@ -181,7 +181,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -193,11 +193,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Grid', 'twork-builder' ) }
+						title={ __( 'Grid', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Columns', 'twork-builder' ) }
+							label={ __( 'Columns', 'mk-builder' ) }
 							value={ columns }
 							onChange={ ( val ) =>
 								setAttributes( { columns: val } )
@@ -208,13 +208,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'CTA Card', 'twork-builder' ) }
+						title={ __( 'CTA Card', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Show CTA card',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showCtaCard }
 							onChange={ ( val ) =>
@@ -226,7 +226,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'CTA label',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ ctaLabel || '' }
 									onChange={ ( val ) =>
@@ -234,7 +234,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 								/>
 								<TextControl
-									label={ __( 'CTA URL', 'twork-builder' ) }
+									label={ __( 'CTA URL', 'mk-builder' ) }
 									value={ ctaHref || '' }
 									onChange={ ( val ) =>
 										setAttributes( { ctaHref: val } )
@@ -261,7 +261,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section eyebrow…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 						<RichText
@@ -273,7 +273,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section title…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</header>

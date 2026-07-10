@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	MediaPlaceholder,
 	RichText,
@@ -25,7 +25,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'em-doc-card twork-em-doc-card-editor',
+			className: 'em-doc-card mk-em-doc-card-editor',
 		} ),
 		[]
 	);
@@ -35,7 +35,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Doctor image', 'twork-builder' ) }
+						title={ __( 'Doctor image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ! imageUrl ? (
@@ -52,7 +52,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Doctor image',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -82,12 +82,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove image', 'twork-builder' ) }
+									{ __( 'Remove image', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
 						<TextControl
-							label={ __( 'Alt text', 'twork-builder' ) }
+							label={ __( 'Alt text', 'mk-builder' ) }
 							value={ imageAlt || '' }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -96,18 +96,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show description', 'twork-builder' ) }
+							label={ __( 'Show description', 'mk-builder' ) }
 							checked={ showSpecialty }
 							onChange={ ( val ) =>
 								setAttributes( { showSpecialty: val } )
 							}
 							help={ __(
 								'Toggle the doctor specialty/description text.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -129,7 +129,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) => setAttributes( { role: val } ) }
 					placeholder={ __(
 						'Role (e.g. Head of Emergency)',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 
@@ -137,7 +137,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h4"
 					value={ name }
 					onChange={ ( val ) => setAttributes( { name: val } ) }
-					placeholder={ __( 'Doctor name', 'twork-builder' ) }
+					placeholder={ __( 'Doctor name', 'mk-builder' ) }
 				/>
 
 				{ showSpecialty && (
@@ -149,7 +149,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'Specialty / description',
-							'twork-builder'
+							'mk-builder'
 						) }
 					/>
 				) }

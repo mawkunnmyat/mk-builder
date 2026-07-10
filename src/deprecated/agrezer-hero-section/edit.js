@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { memo, useMemo, useCallback } from '@wordpress/element';
 import {
 	InspectorControls,
@@ -18,18 +18,18 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/agrezer-hero-feature-item' ];
+const ALLOWED_BLOCKS = [ 'mk/agrezer-hero-feature-item' ];
 const TEMPLATE = [
 	[
-		'twork/agrezer-hero-feature-item',
+		'mk/agrezer-hero-feature-item',
 		{ title: 'Healthy Soil<br />Solutions', iconVariant: 'leaf' },
 	],
 	[
-		'twork/agrezer-hero-feature-item',
+		'mk/agrezer-hero-feature-item',
 		{ title: 'Pure Organic<br />Growth', iconVariant: 'drop' },
 	],
 	[
-		'twork/agrezer-hero-feature-item',
+		'mk/agrezer-hero-feature-item',
 		{ title: 'Nature-Driven<br />Innovation', iconVariant: 'sprout' },
 	],
 ];
@@ -91,7 +91,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'agrezer-hero agrezer-hero--bg twork-agrezer-hero-section-editor',
+				'agrezer-hero agrezer-hero--bg mk-agrezer-hero-section-editor',
 			style: sectionStyle,
 		} ),
 		[ sectionStyle ]
@@ -165,44 +165,44 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Hero Content', 'twork-builder' ) }
+						title={ __( 'Hero Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Tagline text', 'twork-builder' ) }
+							label={ __( 'Tagline text', 'mk-builder' ) }
 							value={ taglineText }
 							onChange={ onTagline }
 						/>
 
 						<TextControl
-							label={ __( 'Button text', 'twork-builder' ) }
+							label={ __( 'Button text', 'mk-builder' ) }
 							value={ buttonText }
 							onChange={ onButtonText }
 						/>
 
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ buttonUrl }
 							onChange={ onButtonUrl }
 							help={ __(
 								'Link for the primary CTA button.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<ToggleControl
-							label={ __( 'Open button link in new tab', 'twork-builder' ) }
+							label={ __( 'Open button link in new tab', 'mk-builder' ) }
 							checked={ buttonLinkTarget }
 							onChange={ onButtonTarget }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Background', 'twork-builder' ) }
+						title={ __( 'Background', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<BaseControl
-							label={ __( 'Background image', 'twork-builder' ) }
+							label={ __( 'Background image', 'mk-builder' ) }
 						>
 							{ ! backgroundImage ? (
 								<MediaPlaceholder
@@ -212,7 +212,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Background Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -234,21 +234,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>
 							) }
 						</BaseControl>
 						<PanelColorSettings
-							title={ __( 'Overlay Color', 'twork-builder' ) }
+							title={ __( 'Overlay Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: overlayColor,
 									onChange: onOverlayColor,
 									label: __(
 										'Overlay Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -256,13 +256,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ onMaxW }
@@ -274,7 +274,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ onPad }
@@ -284,7 +284,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Top padding (px)', 'twork-builder' ) }
+							label={ __( 'Top padding (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ onPadTop }
 							min={ 0 }
@@ -295,7 +295,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Bottom padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ onPadBottom }
@@ -306,7 +306,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<RangeControl
-							label={ __( 'Features gap (px)', 'twork-builder' ) }
+							label={ __( 'Features gap (px)', 'mk-builder' ) }
 							value={ featuresGap }
 							onChange={ onFeaturesGap }
 							min={ 0 }
@@ -334,7 +334,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ onTagline }
 								placeholder={ __(
 									'Agriculture & Organic Farms',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</div>
@@ -346,7 +346,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ onTitle }
 							placeholder={ __(
 								'Rooted in Nature,<br />Growing the Future',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -357,7 +357,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ onDescription }
 							placeholder={ __(
 								'Hero description...',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -378,7 +378,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ onButtonText }
 								placeholder={ __(
 									'Explore More',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 							<span aria-hidden="true">&#x2197;</span>

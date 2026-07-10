@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	RichText,
@@ -64,7 +64,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-inquiry-form-section-editor',
+			className: 'mk-inquiry-form-section-editor',
 			style: {
 				paddingTop: `${ sectionPaddingTop }px`,
 				paddingBottom: `${ sectionPaddingBottom }px`,
@@ -111,11 +111,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section Padding', 'twork-builder' ) }
+						title={ __( 'Section Padding', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ sectionPaddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { sectionPaddingTop: val } )
@@ -128,7 +128,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionPaddingBottom }
 							onChange={ ( val ) =>
@@ -143,12 +143,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					<PanelBody
 						title={ __(
 							'Left Panel - Background',
-							'twork-builder'
+							'mk-builder'
 						) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Background Image', 'twork-builder' ) }
+							label={ __( 'Background Image', 'mk-builder' ) }
 						>
 							{ ! leftBackgroundImage ? (
 								<MediaPlaceholder
@@ -163,7 +163,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Background Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -192,13 +192,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} )
 										}
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) }
 						</BaseControl>
 						<TextControl
-							label={ __( 'Overlay Color', 'twork-builder' ) }
+							label={ __( 'Overlay Color', 'mk-builder' ) }
 							value={ leftOverlayColor }
 							onChange={ ( val ) =>
 								setAttributes( { leftOverlayColor: val } )
@@ -206,7 +206,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Overlay Opacity', 'twork-builder' ) }
+							label={ __( 'Overlay Opacity', 'mk-builder' ) }
 							value={ leftOverlayOpacity }
 							onChange={ ( val ) =>
 								setAttributes( { leftOverlayOpacity: val } )
@@ -218,11 +218,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Left Panel - Content', 'twork-builder' ) }
+						title={ __( 'Left Panel - Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ leftTitle }
 							onChange={ ( val ) =>
 								setAttributes( { leftTitle: val } )
@@ -230,7 +230,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Description', 'twork-builder' ) }
+							label={ __( 'Description', 'mk-builder' ) }
 							value={ leftDescription }
 							onChange={ ( val ) =>
 								setAttributes( { leftDescription: val } )
@@ -238,7 +238,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Phone', 'twork-builder' ) }
+							label={ __( 'Phone', 'mk-builder' ) }
 							value={ leftPhone }
 							onChange={ ( val ) =>
 								setAttributes( { leftPhone: val } )
@@ -246,7 +246,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Email', 'twork-builder' ) }
+							label={ __( 'Email', 'mk-builder' ) }
 							value={ leftEmail }
 							onChange={ ( val ) =>
 								setAttributes( { leftEmail: val } )
@@ -255,23 +255,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Form Settings', 'twork-builder' ) }
+						title={ __( 'Form Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Form Action URL', 'twork-builder' ) }
+							label={ __( 'Form Action URL', 'mk-builder' ) }
 							value={ formAction }
 							onChange={ ( val ) =>
 								setAttributes( { formAction: val } )
 							}
 							help={ __(
 								'Leave empty for same page. Use admin-ajax.php or Contact Form 7 endpoint for handling.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Full Name Label', 'twork-builder' ) }
+							label={ __( 'Full Name Label', 'mk-builder' ) }
 							value={ fullNameLabel }
 							onChange={ ( val ) =>
 								setAttributes( { fullNameLabel: val } )
@@ -279,7 +279,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Country Label', 'twork-builder' ) }
+							label={ __( 'Country Label', 'mk-builder' ) }
 							value={ countryLabel }
 							onChange={ ( val ) =>
 								setAttributes( { countryLabel: val } )
@@ -287,7 +287,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Phone Label', 'twork-builder' ) }
+							label={ __( 'Phone Label', 'mk-builder' ) }
 							value={ phoneLabel }
 							onChange={ ( val ) =>
 								setAttributes( { phoneLabel: val } )
@@ -295,7 +295,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Email Label', 'twork-builder' ) }
+							label={ __( 'Email Label', 'mk-builder' ) }
 							value={ emailLabel }
 							onChange={ ( val ) =>
 								setAttributes( { emailLabel: val } )
@@ -303,7 +303,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Specialty Label', 'twork-builder' ) }
+							label={ __( 'Specialty Label', 'mk-builder' ) }
 							value={ specialtyLabel }
 							onChange={ ( val ) =>
 								setAttributes( { specialtyLabel: val } )
@@ -313,7 +313,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Specialty Options (one per line)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ specialtyOptions }
 							onChange={ ( val ) =>
@@ -321,12 +321,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'First line = placeholder. One option per line.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Message Label', 'twork-builder' ) }
+							label={ __( 'Message Label', 'mk-builder' ) }
 							value={ messageLabel }
 							onChange={ ( val ) =>
 								setAttributes( { messageLabel: val } )
@@ -336,7 +336,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Submit Button Text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ submitButtonText }
 							onChange={ ( val ) =>
@@ -346,13 +346,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Enable Scroll Animation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -402,7 +402,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Title...',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ {
 										fontSize: `${ leftTitleFontSize }rem`,
@@ -421,7 +421,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Description...',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ {
 										fontSize: `${ leftDescriptionFontSize }rem`,

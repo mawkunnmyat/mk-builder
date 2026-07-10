@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/emergency-hero",
+	"name": "mk/emergency-hero",
 	"title": "Hero",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "emergency",
 	"description": "24/7 Emergency hero section with background image, badge, title, description and two CTA buttons (toggle on/off).",
-	"keywords": [ "emergency", "hero", "24/7", "twork" ],
+	"keywords": [ "emergency", "hero", "24/7", "mk" ],
 	"attributes": {
 		"backgroundImage": {
 			"type": "string",
@@ -92,7 +92,7 @@
 			"heroHeight": 600
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

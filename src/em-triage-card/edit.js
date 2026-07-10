@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -14,7 +14,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'em-triage-card twork-em-triage-card-editor',
+			className: 'em-triage-card mk-em-triage-card-editor',
 			style: {
 				background: '#fff',
 				border: '1px solid #eee',
@@ -40,7 +40,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		setAttributes( {
 			listItems: [
 				...( listItems || [] ),
-				{ id, text: __( 'New sign or symptom', 'twork-builder' ) },
+				{ id, text: __( 'New sign or symptom', 'mk-builder' ) },
 			],
 		} );
 	};
@@ -65,13 +65,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Triage Card', 'twork-builder' ) }
+						title={ __( 'Triage Card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass || '' }
 							onChange={ ( val ) =>
@@ -81,17 +81,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-heartbeat, fas fa-lungs, fas fa-brain',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'List Items', 'twork-builder' ) }
+						title={ __( 'List Items', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Signs / symptoms', 'twork-builder' ) }
+							label={ __( 'Signs / symptoms', 'mk-builder' ) }
 						>
 							{ items.map( ( item ) => (
 								<div
@@ -115,12 +115,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										isSmall
 										onClick={ () => removeItem( item.id ) }
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) ) }
 							<Button isPrimary isSmall onClick={ addItem }>
-								{ __( 'Add item', 'twork-builder' ) }
+								{ __( 'Add item', 'mk-builder' ) }
 							</Button>
 						</BaseControl>
 					</PanelBody>
@@ -160,7 +160,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { cardTitle: val } )
 						}
-						placeholder={ __( 'Card title...', 'twork-builder' ) }
+						placeholder={ __( 'Card title...', 'mk-builder' ) }
 						style={ {
 							fontSize: '1.1rem',
 							margin: 0,

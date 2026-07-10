@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/journey-steps-section",
+	"name": "mk/journey-steps-section",
 	"version": "1.0.0",
 	"title": "Journey Steps Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "randomize",
 	"description": "Journey steps section with numbered step cards for international patients (e.g. Your Journey With Us).",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"international",
 		"patient",
 		"process",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundColor": {
@@ -281,7 +281,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/journey-step-item",
+				"name": "mk/journey-step-item",
 				"attributes": {
 					"stepNumber": 1,
 					"title": "Inquiry & Estimate",
@@ -289,7 +289,7 @@
 				}
 			},
 			{
-				"name": "twork/journey-step-item",
+				"name": "mk/journey-step-item",
 				"attributes": {
 					"stepNumber": 2,
 					"title": "Travel & Visa",
@@ -297,7 +297,7 @@
 				}
 			},
 			{
-				"name": "twork/journey-step-item",
+				"name": "mk/journey-step-item",
 				"attributes": {
 					"stepNumber": 3,
 					"title": "Arrival & Care",
@@ -305,7 +305,7 @@
 				}
 			},
 			{
-				"name": "twork/journey-step-item",
+				"name": "mk/journey-step-item",
 				"attributes": {
 					"stepNumber": 4,
 					"title": "Post-Care Follow-up",
@@ -314,7 +314,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

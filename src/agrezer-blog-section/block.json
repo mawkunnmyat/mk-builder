@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/posts-grid",
+	"name": "mk/posts-grid",
 	"version": "1.1.0",
 	"title": "Posts Grid",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "admin-post",
 	"description": "Dynamic posts grid with advanced design controls.",
-	"keywords": [ "blog", "posts", "news", "grid", "twork" ],
+	"keywords": [ "blog", "posts", "news", "grid", "mk" ],
 	"attributes": {
 		"sectionTitle": { "type": "string", "default": "Explore Our Latest<br>News &amp; Blog" },
 		"tagline": { "type": "string", "default": "Read Our Blog" },
@@ -108,7 +108,7 @@
 		"align": [ "wide", "full" ],
 		"anchor": true
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"editorStyle": "file:./style-index.css"

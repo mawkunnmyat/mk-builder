@@ -3,8 +3,8 @@
 // Editor: force 3 columns in a row (same selector pattern as before-you-come-section so styles apply in all editor contexts)
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-gm-testimonials-section {
-    .twork-gm-testimonials-section-editor {
+.wp-block-mk-gm-testimonials-section {
+    .mk-gm-testimonials-section-editor {
         .jivaka-gm-testimonials {
             display: grid !important;
             grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -19,7 +19,7 @@
             }
 
             > .block-editor-inner-blocks > .block-editor-block-list__layout > .wp-block,
-            > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="twork/gm-review-card"],
+            > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="mk/gm-review-card"],
             > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
                 min-width: 0 !important;
             }
@@ -27,7 +27,7 @@
     }
 }
 
-.twork-gm-testimonials-section {
+.mk-gm-testimonials-section {
     --gm-orange: #f48b2a;
     --gm-dark: #212121;
     --gm-grey: #555555;
@@ -103,7 +103,7 @@
 }
 
 @media (max-width: 768px) {
-    .twork-gm-testimonials-section {
+    .mk-gm-testimonials-section {
         .jivaka-gm-header-center {
             margin-bottom: 40px;
         }

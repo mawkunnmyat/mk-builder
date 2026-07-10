@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hero-feature",
+	"name": "mk/hero-feature",
 	"version": "1.0.0",
 	"title": "Hero Feature",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/hero-section"
+		"mk/hero-section"
 	],
 	"icon": "star-filled",
 	"description": "Hero feature item.",
@@ -69,7 +69,7 @@
 			"enableHoverAnimation": false
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

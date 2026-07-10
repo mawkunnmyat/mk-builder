@@ -14,12 +14,12 @@
 // === EDITOR STYLES ===
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-doctor-directory-section {
-    .twork-doctor-directory-section-editor {
+.wp-block-mk-doctor-directory-section {
+    .mk-doctor-directory-section-editor {
         position: relative;
         min-height: 200px;
 
-        .twork-doctor-directory-grid-container {
+        .mk-doctor-directory-grid-container {
             display: grid !important;
             grid-template-columns: repeat(var(--grid-columns, 4), 1fr) !important;
             gap: var(--grid-gap, 30px) !important;
@@ -32,7 +32,7 @@
                     display: contents !important;
 
                     > .wp-block,
-                    > [data-type="twork/doctor-card-item"] {
+                    > [data-type="mk/doctor-card-item"] {
                         display: flex !important;
                         flex-direction: column !important;
                         transition: all 0.3s ease;
@@ -44,7 +44,7 @@
 }
 
 // === FRONTEND STYLES ===
-.doctor-directory.twork-doctor-directory-section {
+.doctor-directory.mk-doctor-directory-section {
     font-family: $font-primary;
     position: relative;
     overflow: hidden;
@@ -182,13 +182,13 @@
 
 // === RESPONSIVE ===
 @media (max-width: 992px) {
-    .doctor-directory.twork-doctor-directory-section .doctors-grid {
+    .doctor-directory.mk-doctor-directory-section .doctors-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
 @media (max-width: 768px) {
-    .doctor-directory.twork-doctor-directory-section {
+    .doctor-directory.mk-doctor-directory-section {
         padding-top: 40px !important;
         padding-bottom: 60px !important;
 

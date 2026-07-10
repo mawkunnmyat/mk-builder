@@ -104,20 +104,20 @@ export default function save( { attributes } ) {
 	const showCustomImage = iconVariant === 'image' && urlTrim !== '';
 
 	const blockProps = useBlockProps.save( {
-		className: `twork-hero-feature${
+		className: `mk-hero-feature${
 			enableHoverAnimation ? ' is-hover-anim-enabled' : ''
 		}`,
 		style: {
-			'--twork-icon-x': `${ iconOffsetX }px`,
-			'--twork-icon-y': `${ iconOffsetY }px`,
+			'--mk-icon-x': `${ iconOffsetX }px`,
+			'--mk-icon-y': `${ iconOffsetY }px`,
 		},
 	} );
 
 	return (
 		<article { ...blockProps }>
-			<div className="twork-hero-feature__badge" aria-hidden="true">
+			<div className="mk-hero-feature__badge" aria-hidden="true">
 				<svg
-					className="twork-hero-feature__badge-svg"
+					className="mk-hero-feature__badge-svg"
 					viewBox="0 0 100 100"
 					xmlns="http://www.w3.org/2000/svg"
 				>
@@ -126,7 +126,7 @@ export default function save( { attributes } ) {
 						fill={ badgeColor }
 					/>
 				</svg>
-				<span className="twork-hero-feature__icon-wrap">
+				<span className="mk-hero-feature__icon-wrap">
 					{ showCustomImage && customIconType === 'video' && (
 						<video
 							src={ urlTrim }
@@ -162,7 +162,7 @@ export default function save( { attributes } ) {
 			</div>
 			<RichText.Content
 				tagName="h3"
-				className="twork-hero-feature__title"
+				className="mk-hero-feature__title"
 				value={ title }
 			/>
 		</article>

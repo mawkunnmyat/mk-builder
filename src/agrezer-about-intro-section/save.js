@@ -34,26 +34,26 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-about-intro twork-about-intro-section',
+		className: 'mk-about-intro mk-about-intro-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-about-intro-max': `${ containerMaxWidth }px`,
-			'--twork-about-intro-width-pct': `${ containerWidthPct }%`,
-			'--twork-about-intro-gap': `${ columnGap }px`,
+			'--mk-about-intro-max': `${ containerMaxWidth }px`,
+			'--mk-about-intro-width-pct': `${ containerWidthPct }%`,
+			'--mk-about-intro-gap': `${ columnGap }px`,
 		},
 		'data-badge-spin': enableBadgeSpin ? 'true' : 'false',
 	} );
 
 	return (
 		<section { ...blockProps }>
-			<div className="twork-about-intro__container">
-				<div className="twork-about-intro__left">
-					<div className="twork-about-intro__images-wrapper">
+			<div className="mk-about-intro__container">
+				<div className="mk-about-intro__left">
+					<div className="mk-about-intro__images-wrapper">
 						{ showShape && (
 							<div
-								className="twork-about-intro__shape"
+								className="mk-about-intro__shape"
 								style={ { backgroundColor: shapeColor } }
 								aria-hidden="true"
 							/>
@@ -62,7 +62,7 @@ export default function save( { attributes } ) {
 							<img
 								src={ mainImage }
 								alt={ mainImageAlt || '' }
-								className="twork-about-intro__img-main"
+								className="mk-about-intro__img-main"
 								loading="lazy"
 								decoding="async"
 							/>
@@ -71,17 +71,17 @@ export default function save( { attributes } ) {
 							<img
 								src={ subImage }
 								alt={ subImageAlt || '' }
-								className="twork-about-intro__img-sub"
+								className="mk-about-intro__img-sub"
 								loading="lazy"
 								decoding="async"
 							/>
 						) }
 						{ showBadge && badgeImage && (
-							<div className="twork-about-intro__badge">
+							<div className="mk-about-intro__badge">
 								<img
 									src={ badgeImage }
 									alt={ badgeImageAlt || '' }
-									className="twork-about-intro__badge-img"
+									className="mk-about-intro__badge-img"
 									loading="lazy"
 									decoding="async"
 								/>
@@ -90,14 +90,14 @@ export default function save( { attributes } ) {
 					</div>
 				</div>
 
-				<div className="twork-about-intro__right">
+				<div className="mk-about-intro__right">
 					{ ( tagline || tagIcon ) && (
-						<div className="twork-about-intro__tagline">
+						<div className="mk-about-intro__tagline">
 							{ tagIcon && (
 								<img
 									src={ tagIcon }
 									alt={ tagIconAlt || '' }
-									className="twork-about-intro__tag-icon"
+									className="mk-about-intro__tag-icon"
 									width="20"
 									height="20"
 									loading="lazy"
@@ -116,45 +116,45 @@ export default function save( { attributes } ) {
 					{ title && (
 						<RichText.Content
 							tagName="h2"
-							className="twork-about-intro__title"
+							className="mk-about-intro__title"
 							value={ title }
 						/>
 					) }
 					{ description && (
 						<RichText.Content
 							tagName="p"
-							className="twork-about-intro__desc"
+							className="mk-about-intro__desc"
 							value={ description }
 						/>
 					) }
 
-					<div className="twork-about-intro__features">
+					<div className="mk-about-intro__features">
 						<InnerBlocks.Content />
 					</div>
 
-					<div className="twork-about-intro__author-row">
-						<div className="twork-about-intro__author-info">
+					<div className="mk-about-intro__author-row">
+						<div className="mk-about-intro__author-info">
 							{ authorImage && (
 								<img
 									src={ authorImage }
 									alt={ authorImageAlt || '' }
-									className="twork-about-intro__author-img"
+									className="mk-about-intro__author-img"
 									loading="lazy"
 									decoding="async"
 								/>
 							) }
-							<div className="twork-about-intro__author-text">
+							<div className="mk-about-intro__author-text">
 								{ authorName && (
 									<RichText.Content
 										tagName="h4"
-										className="twork-about-intro__author-name"
+										className="mk-about-intro__author-name"
 										value={ authorName }
 									/>
 								) }
 								{ authorRole && (
 									<RichText.Content
 										tagName="span"
-										className="twork-about-intro__author-role"
+										className="mk-about-intro__author-role"
 										value={ authorRole }
 									/>
 								) }
@@ -163,7 +163,7 @@ export default function save( { attributes } ) {
 
 						{ signatureText && (
 							<div
-								className="twork-about-intro__signature"
+								className="mk-about-intro__signature"
 								style={ {
 									fontFamily: signatureFontFamily,
 									fontSize: `${ signatureFontSize }rem`,

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/blog-section",
+	"name": "mk/blog-section",
 	"version": "1.0.0",
 	"title": "Blog Posts Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "admin-post",
 	"description": "Blog layout with featured post, post grid, sidebar widgets, and pagination. Uses WordPress posts, categories, tags, and search.",
-	"keywords": [ "blog", "posts", "news", "layout", "twork" ],
+	"keywords": [ "blog", "posts", "news", "layout", "mk" ],
 	"attributes": {
 		"postsPerPage": {
 			"type": "number",
@@ -165,7 +165,7 @@
 			"readMoreLabel": "Read More"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"editorStyle": "file:./style-index.css"

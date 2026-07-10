@@ -3,8 +3,8 @@
 // === EDITOR ===
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-review-carousel {
-	.twork-review-carousel-editor {
+.wp-block-mk-review-carousel {
+	.mk-review-carousel-editor {
 		.testimonials__track {
 			display: flex !important;
 			gap: 1.5rem;
@@ -28,7 +28,7 @@
 }
 
 // === FRONTEND ===
-.twork-review-carousel {
+.mk-review-carousel {
 	--color-primary: #ff7f00;
 	--color-text-muted: #666666;
 	--color-text-light: #999999;

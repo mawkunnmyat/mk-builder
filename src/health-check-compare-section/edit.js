@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	RichText,
@@ -34,7 +34,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'chk-section chk-compare-section twork-health-check-compare-editor',
+				'chk-section chk-compare-section mk-health-check-compare-editor',
 			style: {
 				backgroundColor: backgroundColor || '#f4f8fb',
 				paddingTop: `${ paddingTop }px`,
@@ -65,7 +65,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const valueCount = Math.max( 0, cols.length - 1 );
 
 	const addColumn = () => {
-		const newHeader = __( 'New', 'twork-builder' );
+		const newHeader = __( 'New', 'mk-builder' );
 		setAttributes( {
 			columnHeaders: [ ...cols, newHeader ],
 			rows: dataRows.map( ( r ) => ( {
@@ -99,7 +99,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			rows: [
 				...dataRows,
 				{
-					feature: __( 'New feature', 'twork-builder' ),
+					feature: __( 'New feature', 'mk-builder' ),
 					values: Array( valueCount ).fill( false ),
 				},
 			],
@@ -131,7 +131,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section header', 'twork-builder' ) }
+						title={ __( 'Section header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
@@ -142,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											sectionTitleColor: v ?? undefined,
 										} ),
-									label: __( 'Title color', 'twork-builder' ),
+									label: __( 'Title color', 'mk-builder' ),
 								},
 								{
 									value: sectionSubtitleColor,
@@ -153,14 +153,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Subtitle color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Table columns', 'twork-builder' ) }
+						title={ __( 'Table columns', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ cols.map( ( h, i ) => (
@@ -180,9 +180,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										i === 0
 											? __(
 													'Test / Service',
-													'twork-builder'
+													'mk-builder'
 											  )
-											: __( 'Column', 'twork-builder' )
+											: __( 'Column', 'mk-builder' )
 									}
 									style={ { flex: 1 } }
 								/>
@@ -195,18 +195,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										icon="no-alt"
 										aria-label={ __(
 											'Remove column',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								) }
 							</div>
 						) ) }
 						<Button isSecondary isSmall onClick={ addColumn }>
-							{ __( 'Add column', 'twork-builder' ) }
+							{ __( 'Add column', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Table rows', 'twork-builder' ) }
+						title={ __( 'Table rows', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ dataRows.map( ( row, rowIndex ) => (
@@ -222,7 +222,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Feature name',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ row.feature || '' }
 									onChange={ ( v ) =>
@@ -264,16 +264,16 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									onClick={ () => removeRow( rowIndex ) }
 									style={ { marginTop: 8 } }
 								>
-									{ __( 'Remove row', 'twork-builder' ) }
+									{ __( 'Remove row', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button isSecondary isSmall onClick={ addRow }>
-							{ __( 'Add row', 'twork-builder' ) }
+							{ __( 'Add row', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
@@ -286,7 +286,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Section background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -295,7 +295,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											secondaryColor: v ?? undefined,
 										} ),
-									label: __( 'Header text', 'twork-builder' ),
+									label: __( 'Header text', 'mk-builder' ),
 								},
 								{
 									value: checkColor,
@@ -303,7 +303,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											checkColor: v ?? undefined,
 										} ),
-									label: __( 'Check icon', 'twork-builder' ),
+									label: __( 'Check icon', 'mk-builder' ),
 								},
 								{
 									value: crossColor,
@@ -311,17 +311,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											crossColor: v ?? undefined,
 										} ),
-									label: __( 'Cross icon', 'twork-builder' ),
+									label: __( 'Cross icon', 'mk-builder' ),
 								},
 							] }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -334,7 +334,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -348,7 +348,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -362,7 +362,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -387,7 +387,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Package Comparison',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								color: sectionTitleColor,
@@ -415,11 +415,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												( i === 0
 													? __(
 															'Test / Service',
-															'twork-builder'
+															'mk-builder'
 													  )
 													: __(
 															'Column',
-															'twork-builder'
+															'mk-builder'
 													  ) ) }
 										</th>
 									) ) }

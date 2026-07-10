@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'rad-tech-item twork-rad-tech-item-editor',
+			className: 'rad-tech-item mk-rad-tech-item-editor',
 		} ),
 		[]
 	);
@@ -25,13 +25,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Tech Item', 'twork-builder' ) }
+						title={ __( 'Tech Item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon Class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass }
 							onChange={ ( val ) =>
@@ -41,7 +41,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-bolt, fas fa-tachometer-alt, fas fa-wifi, fas fa-desktop',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -57,7 +57,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="span"
 						value={ title }
 						onChange={ ( val ) => setAttributes( { title: val } ) }
-						placeholder={ __( 'Low Dose', 'twork-builder' ) }
+						placeholder={ __( 'Low Dose', 'mk-builder' ) }
 					/>
 				</h4>
 				<RichText
@@ -68,7 +68,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					}
 					placeholder={ __(
 						'Protocols to minimize radiation exposure.',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 			</div>

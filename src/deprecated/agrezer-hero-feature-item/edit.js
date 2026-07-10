@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 
@@ -107,23 +107,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Feature Settings', 'twork-builder' ) }
+						title={ __( 'Feature Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon Variant', 'twork-builder' ) }
+							label={ __( 'Icon Variant', 'mk-builder' ) }
 							value={ iconVariant }
 							options={ [
 								{
-									label: __( 'Leaf', 'twork-builder' ),
+									label: __( 'Leaf', 'mk-builder' ),
 									value: 'leaf',
 								},
 								{
-									label: __( 'Drop', 'twork-builder' ),
+									label: __( 'Drop', 'mk-builder' ),
 									value: 'drop',
 								},
 								{
-									label: __( 'Sprout', 'twork-builder' ),
+									label: __( 'Sprout', 'mk-builder' ),
 									value: 'sprout',
 								},
 							] }
@@ -144,7 +144,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-hero-feature__title"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Feature title...', 'twork-builder' ) }
+					placeholder={ __( 'Feature title...', 'mk-builder' ) }
 				/>
 			</article>
 		</>

@@ -4,7 +4,7 @@ export default function save( { attributes } ) {
 	const { label, url, hasDropdown } = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-brand-header__nav-link twork-brand-nav-item',
+		className: 'mk-brand-header__nav-link mk-brand-nav-item',
 	} );
 
 	return (

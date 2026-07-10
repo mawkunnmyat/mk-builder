@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -29,11 +29,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Author photo', 'twork-builder' ) }
+						title={ __( 'Author photo', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Image alt text', 'twork-builder' ) }
+							label={ __( 'Image alt text', 'mk-builder' ) }
 							value={ authorImageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { authorImageAlt: val } )
@@ -51,18 +51,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove photo', 'twork-builder' ) }
+								{ __( 'Remove photo', 'mk-builder' ) }
 							</Button>
 						) }
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Quote mark', 'twork-builder' ) }
+						title={ __( 'Quote mark', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
 							label={ __(
 								'Character (decorative)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ quoteMark }
 							onChange={ ( val ) =>
@@ -79,7 +79,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-voices-section__quote"
 					value={ quote }
 					onChange={ ( val ) => setAttributes( { quote: val } ) }
-					placeholder={ __( 'Quote…', 'twork-builder' ) }
+					placeholder={ __( 'Quote…', 'mk-builder' ) }
 				/>
 
 				<div className="agrezer-voices-section__author-row">
@@ -97,7 +97,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								allowedTypes={ [ 'image' ] }
 								labels={ {
-									title: __( 'Author', 'twork-builder' ),
+									title: __( 'Author', 'mk-builder' ),
 								} }
 							/>
 						) : (
@@ -115,7 +115,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { authorName: val } )
 								}
-								placeholder={ __( 'Name', 'twork-builder' ) }
+								placeholder={ __( 'Name', 'mk-builder' ) }
 								allowedFormats={ [] }
 							/>
 
@@ -126,7 +126,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { authorRole: val } )
 								}
-								placeholder={ __( 'Role', 'twork-builder' ) }
+								placeholder={ __( 'Role', 'mk-builder' ) }
 								allowedFormats={ [] }
 							/>
 						</div>

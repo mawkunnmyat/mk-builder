@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hero-banner-slide",
+	"name": "mk/hero-banner-slide",
 	"version": "1.0.0",
 	"title": "Hero Banner Slide",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "format-image",
 	"description": "Single hero slide for the Hero Banner Carousel block.",
-	"parent": [ "twork/hero-banner-carousel" ],
+	"parent": [ "mk/hero-banner-carousel" ],
 	"supports": {
 		"html": false,
 		"reusable": false
@@ -66,6 +66,6 @@
 			"backgroundPosition": "right center"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

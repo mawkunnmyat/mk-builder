@@ -1,5 +1,5 @@
 /**
- * Shared editor performance helpers for Twork blocks.
+ * Shared editor performance helpers for Mk blocks.
  *
  * Patterns for hundreds of blocks on one canvas:
  * - useStableBlockProps: avoid new object identity to useBlockProps every render.
@@ -7,7 +7,7 @@
  * - useAttributeSetter: stable onChange for Inspector controls.
  * - memo: wrap pure child components that receive stable props.
  *
- * Import: import { ... } from '@twork-builder/editor-utils';
+ * Import: import { ... } from '@mk-builder/editor-utils';
  */
 
 import {

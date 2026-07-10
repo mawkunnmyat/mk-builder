@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/lab-tech-section",
+	"name": "mk/lab-tech-section",
 	"version": "1.0.0",
 	"title": "Technology Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "flask",
 	"description": "Highlight cutting-edge lab or surgical technology with rich text and feature rows.",
-	"keywords": [ "lab", "technology", "equipment", "section", "twork" ],
+	"keywords": [ "lab", "technology", "equipment", "section", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -148,14 +148,14 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/lab-tech-item",
+				"name": "mk/lab-tech-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/lab-tech-item",
+				"name": "mk/lab-tech-item",
 				"attributes": {}
 			}
 		]
 	},
-	"textdomain": "twork-builder"
+	"textdomain": "mk-builder"
 }

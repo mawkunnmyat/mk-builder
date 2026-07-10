@@ -1,42 +1,42 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, RichText } from '@wordpress/block-editor';
 import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
 
 const ICON_OPTIONS = [
 	{
-		label: __( 'Thermometer (Acute Illnesses)', 'twork-builder' ),
+		label: __( 'Thermometer (Acute Illnesses)', 'mk-builder' ),
 		value: 'fas fa-thermometer-half',
 	},
 	{
-		label: __( 'Heartbeat (Chronic)', 'twork-builder' ),
+		label: __( 'Heartbeat (Chronic)', 'mk-builder' ),
 		value: 'fas fa-heartbeat',
 	},
 	{
-		label: __( 'Shield (Preventative)', 'twork-builder' ),
+		label: __( 'Shield (Preventative)', 'mk-builder' ),
 		value: 'fas fa-user-shield',
 	},
 	{
-		label: __( 'Lungs (Respiratory)', 'twork-builder' ),
+		label: __( 'Lungs (Respiratory)', 'mk-builder' ),
 		value: 'fas fa-lungs',
 	},
 	{
-		label: __( 'Capsules (GI Health)', 'twork-builder' ),
+		label: __( 'Capsules (GI Health)', 'mk-builder' ),
 		value: 'fas fa-capsules',
 	},
 	{
-		label: __( 'Virus (Infectious)', 'twork-builder' ),
+		label: __( 'Virus (Infectious)', 'mk-builder' ),
 		value: 'fas fa-virus',
 	},
 	{
-		label: __( 'Band Aid (Procedures)', 'twork-builder' ),
+		label: __( 'Band Aid (Procedures)', 'mk-builder' ),
 		value: 'fas fa-band-aid',
 	},
 	{
-		label: __( 'Syringe (Vaccinations)', 'twork-builder' ),
+		label: __( 'Syringe (Vaccinations)', 'mk-builder' ),
 		value: 'fas fa-syringe',
 	},
-	{ label: __( 'Allergies', 'twork-builder' ), value: 'fas fa-allergies' },
+	{ label: __( 'Allergies', 'mk-builder' ), value: 'fas fa-allergies' },
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -44,7 +44,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'jivaka-gm-service-card twork-gm-service-item-editor',
+			className: 'jivaka-gm-service-card mk-gm-service-item-editor',
 		} ),
 		[]
 	);
@@ -54,11 +54,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Service Item', 'twork-builder' ) }
+						title={ __( 'Service Item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon Preset', 'twork-builder' ) }
+							label={ __( 'Icon Preset', 'mk-builder' ) }
 							value={ icon }
 							options={ ICON_OPTIONS }
 							onChange={ ( val ) =>
@@ -69,7 +69,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Icon Class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ icon }
 							onChange={ ( val ) =>
@@ -77,12 +77,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Example: fas fa-heartbeat',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
@@ -100,7 +100,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h3"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Service title...', 'twork-builder' ) }
+					placeholder={ __( 'Service title...', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -111,7 +111,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					}
 					placeholder={ __(
 						'Service description...',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 			</div>

@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-third-section-card",
+	"name": "mk/agrezer-third-section-card",
 	"version": "1.0.0",
 	"title": "Agrezer Third Section Card",
-	"category": "twork-builder",
-	"parent": [ "twork/agrezer-third-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/agrezer-third-section" ],
 	"icon": "chart-bar",
 	"description": "Image card with large stat and label overlay.",
 	"supports": {
@@ -46,6 +46,6 @@
 			"cardAlign": "left"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

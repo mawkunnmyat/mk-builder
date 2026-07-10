@@ -2,7 +2,7 @@
  * Review carousel: horizontal scroll + prev/next + dots.
  * Ports shweghee testimonials view behavior.
  *
- * @package twork-builder
+ * @package mk-builder
  */
 
 ( function () {
@@ -138,7 +138,7 @@
 
 	function init() {
 		document
-			.querySelectorAll( '.twork-review-carousel.testimonials' )
+			.querySelectorAll( '.mk-review-carousel.testimonials' )
 			.forEach( initCarousel );
 	}
 

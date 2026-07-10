@@ -2,7 +2,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save() {
 	const blockProps = useBlockProps.save( {
-		className: 'twork-about__features-grid',
+		className: 'mk-about__features-grid',
 	} );
 
 	return (

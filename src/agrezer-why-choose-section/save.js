@@ -56,36 +56,36 @@ export default function save( { attributes } ) {
 		: undefined;
 
 	const blockProps = useBlockProps.save( {
-		className: `twork-why-choose twork-why-choose-section ${
+		className: `mk-why-choose mk-why-choose-section ${
 			waveDecorationUrl ? 'has-wave-decoration' : ''
 		}`,
 		style: {
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-padding-top-mobile': `${ paddingTopMobile }px`,
-			'--twork-padding-bottom-mobile': `${ paddingBottomMobile }px`,
-			'--twork-anim-duration': `${ imageAnimationDuration }s`,
-			'--twork-anim-delay': `${ imageAnimationDelay }s`,
-			'--twork-image-bottom': `${ imageVerticalOffset }px`,
-			'--twork-bg-overlay-opacity': backgroundOverlayOpacity,
-			'--twork-parallax-shift': enableParallax ? '-12px' : '0px',
-			'--twork-media-radius': `${ mediaBorderRadius }px`,
-			'--twork-filter-brightness': `${ filterBrightness }%`,
-			'--twork-filter-contrast': `${ filterContrast }%`,
-			'--twork-filter-grayscale': `${ filterGrayscale }%`,
-			'--twork-media-max-width-desk': `${ mediaMaxWidthDesktop }px`,
-			'--twork-media-max-width-mob': `${ mediaMaxWidthMobile }px`,
-			'--twork-bg-start': bgGradientStartColor,
-			'--twork-bg-end': bgGradientEndColor,
-			'--twork-wave-h-desk': `${ waveHeightDesktop }px`,
-			'--twork-wave-h-mob': `${ waveHeightMobile }px`,
-			'--twork-wave-opacity': waveOpacity,
-			'--twork-wave-flip-x': waveFlipHorizontal ? -1 : 1,
-			'--twork-wave-flip-y': waveFlipVertical ? -1 : 1,
-			'--twork-media-drop-shadow': mediaDropShadow
+			'--mk-padding-top-mobile': `${ paddingTopMobile }px`,
+			'--mk-padding-bottom-mobile': `${ paddingBottomMobile }px`,
+			'--mk-anim-duration': `${ imageAnimationDuration }s`,
+			'--mk-anim-delay': `${ imageAnimationDelay }s`,
+			'--mk-image-bottom': `${ imageVerticalOffset }px`,
+			'--mk-bg-overlay-opacity': backgroundOverlayOpacity,
+			'--mk-parallax-shift': enableParallax ? '-12px' : '0px',
+			'--mk-media-radius': `${ mediaBorderRadius }px`,
+			'--mk-filter-brightness': `${ filterBrightness }%`,
+			'--mk-filter-contrast': `${ filterContrast }%`,
+			'--mk-filter-grayscale': `${ filterGrayscale }%`,
+			'--mk-media-max-width-desk': `${ mediaMaxWidthDesktop }px`,
+			'--mk-media-max-width-mob': `${ mediaMaxWidthMobile }px`,
+			'--mk-bg-start': bgGradientStartColor,
+			'--mk-bg-end': bgGradientEndColor,
+			'--mk-wave-h-desk': `${ waveHeightDesktop }px`,
+			'--mk-wave-h-mob': `${ waveHeightMobile }px`,
+			'--mk-wave-opacity': waveOpacity,
+			'--mk-wave-flip-x': waveFlipHorizontal ? -1 : 1,
+			'--mk-wave-flip-y': waveFlipVertical ? -1 : 1,
+			'--mk-media-drop-shadow': mediaDropShadow
 				? 'drop-shadow(0 16px 28px rgba(0, 0, 0, 0.28))'
 				: 'drop-shadow(0 0 0 rgba(0,0,0,0))',
-			...( shapeVar ? { '--twork-why-choose-shape': shapeVar } : {} ),
+			...( shapeVar ? { '--mk-why-choose-shape': shapeVar } : {} ),
 		},
 	} );
 
@@ -101,18 +101,18 @@ export default function save( { attributes } ) {
 	};
 
 	return (
-		<section { ...blockProps } aria-labelledby="twork-why-choose-title">
+		<section { ...blockProps } aria-labelledby="mk-why-choose-title">
 			<div
-				className="twork-why-choose__container"
+				className="mk-why-choose__container"
 				style={ containerStyle }
 			>
-				<div className="twork-why-choose__header">
+				<div className="mk-why-choose__header">
 					<p
-						className="twork-why-choose__tagline"
+						className="mk-why-choose__tagline"
 						style={ { color: taglineColor, letterSpacing: taglineLetterSpacing } }
 					>
 						<span
-							className="twork-why-choose__tagline-icon"
+							className="mk-why-choose__tagline-icon"
 							style={ { color: taglineIconColor } }
 							aria-hidden="true"
 						>
@@ -125,8 +125,8 @@ export default function save( { attributes } ) {
 					</p>
 					<RichText.Content
 						tagName="h2"
-						id="twork-why-choose-title"
-						className="twork-why-choose__title"
+						id="mk-why-choose-title"
+						className="mk-why-choose__title"
 						value={ sectionTitle }
 						style={ {
 							color: titleColor,
@@ -137,9 +137,9 @@ export default function save( { attributes } ) {
 					/>
 				</div>
 
-				<div className="twork-why-choose__stage" style={ stageStyle }>
+				<div className="mk-why-choose__stage" style={ stageStyle }>
 					<div
-						className={ `twork-why-choose__center-media-wrapper has-animation-${ imageAnimationType }${
+						className={ `mk-why-choose__center-media-wrapper has-animation-${ imageAnimationType }${
 							enableParallax ? ' has-parallax' : ''
 						}` }
 						data-anim-type={ imageAnimationType || 'none' }
@@ -149,7 +149,7 @@ export default function save( { attributes } ) {
 							( centerMediaType === 'video' ? (
 								<video
 									src={ centerMediaUrl }
-									className="twork-why-choose__center-media"
+									className="mk-why-choose__center-media"
 									autoPlay={ !! videoAutoplay }
 									loop={ !! videoLoop }
 									muted={ !! videoMuted }
@@ -158,7 +158,7 @@ export default function save( { attributes } ) {
 							) : (
 								<img
 									src={ centerMediaUrl }
-									className="twork-why-choose__center-media"
+									className="mk-why-choose__center-media"
 									alt={ centerMediaAlt || '' }
 								/>
 							) ) }
@@ -167,7 +167,7 @@ export default function save( { attributes } ) {
 				</div>
 			</div>
 				<div
-					className="twork-why-choose__shape-divider"
+					className="mk-why-choose__shape-divider"
 					aria-hidden="true"
 				></div>
 		</section>

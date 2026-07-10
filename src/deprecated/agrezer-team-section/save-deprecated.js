@@ -1,7 +1,7 @@
 import { useBlockProps, InnerBlocks, RichText } from '@wordpress/block-editor';
 
 /**
- * Previous save markup for twork/agrezer-team-section (conditional tagline/title).
+ * Previous save markup for mk/agrezer-team-section (conditional tagline/title).
  * Kept so existing content validates after save.js is aligned with edit.js.
  *
  * @param {Object} props            Props passed to the deprecated save.
@@ -26,7 +26,7 @@ export default function saveDeprecated( { attributes } ) {
 	const cols = Math.min( 4, Math.max( 1, parseInt( columns, 10 ) || 3 ) );
 
 	const blockProps = useBlockProps.save( {
-		className: 'agrezer-team-section twork-agrezer-team-section',
+		className: 'agrezer-team-section mk-agrezer-team-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,

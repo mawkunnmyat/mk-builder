@@ -1,7 +1,7 @@
 /**
  * Agrezer testimonials carousel (vanilla JS).
  *
- * @package twork-builder
+ * @package mk-builder
  */
 
 ( function () {
@@ -33,7 +33,7 @@
 		if ( mount ) {
 			clearMount( mount );
 			var tmpl = slides[ i ].querySelector(
-				'template.twork-testimonials__author-template'
+				'template.mk-testimonials__author-template'
 			);
 			if ( tmpl && tmpl.content ) {
 				mount.appendChild( tmpl.content.cloneNode( true ) );
@@ -41,10 +41,10 @@
 		}
 
 		var prev = section.querySelector(
-			'.twork-testimonials__control-btn--prev'
+			'.mk-testimonials__control-btn--prev'
 		);
 		var next = section.querySelector(
-			'.twork-testimonials__control-btn--next'
+			'.mk-testimonials__control-btn--next'
 		);
 		if ( prev && next && ! loop ) {
 			prev.disabled = i === 0;
@@ -59,21 +59,21 @@
 		if ( section.getAttribute( 'data-carousel-init' ) === '1' ) {
 			return;
 		}
-		var track = section.querySelector( '.twork-testimonials__slides' );
+		var track = section.querySelector( '.mk-testimonials__slides' );
 		if ( ! track ) {
 			return;
 		}
 
 		var slides = qsa(
 			track,
-			'.wp-block-twork-testimonial-slide, .twork-testimonials__slide'
+			'.wp-block-mk-testimonial-slide, .mk-testimonials__slide'
 		);
 		if ( slides.length === 0 ) {
 			return;
 		}
 
 		var mount = section.querySelector(
-			'.twork-testimonials__author-mount'
+			'.mk-testimonials__author-mount'
 		);
 		var loop = section.getAttribute( 'data-carousel-loop' ) !== 'false';
 		var index = 0;
@@ -84,10 +84,10 @@
 		activate( section, slides, index, mount, loop );
 
 		var prevBtn = section.querySelector(
-			'.twork-testimonials__control-btn--prev'
+			'.mk-testimonials__control-btn--prev'
 		);
 		var nextBtn = section.querySelector(
-			'.twork-testimonials__control-btn--next'
+			'.mk-testimonials__control-btn--next'
 		);
 
 		function go( delta ) {
@@ -129,7 +129,7 @@
 	function init() {
 		document
 			.querySelectorAll(
-				'.twork-testimonials-section.twork-testimonials'
+				'.mk-testimonials-section.mk-testimonials'
 			)
 			.forEach( initSection );
 	}

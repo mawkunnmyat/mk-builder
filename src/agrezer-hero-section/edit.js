@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 // eslint-disable-next-line import/no-unresolved -- workspace alias via webpack
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { memo, useMemo, useCallback } from '@wordpress/element';
 import {
 	InspectorControls,
@@ -43,37 +43,37 @@ const HERO_OVERLAY_GRADIENT_PRESET_NONE = 'none';
 const HERO_OVERLAY_GRADIENT_PRESETS = [
 	{
 		slug: 'meadow-dawn',
-		label: __( 'Meadow dawn (organic sage)', 'twork-builder' ),
+		label: __( 'Meadow dawn (organic sage)', 'mk-builder' ),
 		gradient:
 			'linear-gradient(135deg, rgba(143, 189, 69, 0.24) 0%, rgba(22, 46, 22, 0.1) 100%)',
 	},
 	{
 		slug: 'deep-canopy',
-		label: __( 'Deep canopy (dark forest)', 'twork-builder' ),
+		label: __( 'Deep canopy (dark forest)', 'mk-builder' ),
 		gradient:
 			'linear-gradient(165deg, rgba(8, 26, 12, 0.78) 0%, rgba(4, 14, 6, 0.42) 52%, rgba(143, 189, 69, 0.06) 100%)',
 	},
 	{
 		slug: 'golden-hour',
-		label: __( 'Golden hour harvest', 'twork-builder' ),
+		label: __( 'Golden hour harvest', 'mk-builder' ),
 		gradient:
 			'linear-gradient(118deg, rgba(232, 196, 96, 0.26) 0%, rgba(72, 48, 18, 0.42) 100%)',
 	},
 	{
 		slug: 'morning-mist',
-		label: __( 'Morning mist over fields', 'twork-builder' ),
+		label: __( 'Morning mist over fields', 'mk-builder' ),
 		gradient:
 			'linear-gradient(180deg, rgba(200, 224, 232, 0.2) 0%, rgba(38, 66, 52, 0.32) 100%)',
 	},
 	{
 		slug: 'rich-earth',
-		label: __( 'Rich earth (soil tones)', 'twork-builder' ),
+		label: __( 'Rich earth (soil tones)', 'mk-builder' ),
 		gradient:
 			'linear-gradient(145deg, rgba(62, 44, 28, 0.48) 0%, rgba(22, 36, 24, 0.55) 100%)',
 	},
 	{
 		slug: HERO_OVERLAY_GRADIENT_PRESET_NONE,
-		label: __( 'No gradient layer', 'twork-builder' ),
+		label: __( 'No gradient layer', 'mk-builder' ),
 		gradient:
 			'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%)',
 	},
@@ -98,18 +98,18 @@ function getHeroOverlayPresetSlugFromGradient( gradient ) {
 	return hit ? hit.slug : HERO_OVERLAY_GRADIENT_PRESET_CUSTOM;
 }
 
-const ALLOWED_BLOCKS = [ 'twork/hero-feature' ];
+const ALLOWED_BLOCKS = [ 'mk/hero-feature' ];
 const TEMPLATE = [
 	[
-		'twork/hero-feature',
+		'mk/hero-feature',
 		{ title: 'Healthy Soil<br />Solutions', iconVariant: 'leaf' },
 	],
 	[
-		'twork/hero-feature',
+		'mk/hero-feature',
 		{ title: 'Pure Organic<br />Growth', iconVariant: 'drop' },
 	],
 	[
-		'twork/hero-feature',
+		'mk/hero-feature',
 		{ title: 'Nature-Driven<br />Innovation', iconVariant: 'sprout' },
 	],
 ];
@@ -117,7 +117,7 @@ const TEMPLATE = [
 const TaglineIcon = memo( function TaglineIcon() {
 	return (
 		<svg
-			className="twork-hero__tagline-icon"
+			className="mk-hero__tagline-icon"
 			viewBox="0 0 24 24"
 			aria-hidden="true"
 		>
@@ -256,7 +256,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				value: p.slug,
 			} ) ),
 			{
-				label: __( 'Custom gradient…', 'twork-builder' ),
+				label: __( 'Custom gradient…', 'mk-builder' ),
 				value: HERO_OVERLAY_GRADIENT_PRESET_CUSTOM,
 			},
 		],
@@ -272,15 +272,15 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			backgroundPosition: 'center',
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-container-max-width': `${ containerMaxWidth }px`,
-			'--twork-container-padding': `${ containerPadding }px`,
-			'--twork-features-gap': `${ featuresGap }px`,
-			'--twork-hero-btn-bg': buttonBgColor,
-			'--twork-hero-btn-text': buttonTextColor,
-			'--twork-hero-btn-radius': `${ buttonBorderRadius }px`,
-			'--twork-padding-top-mobile': `${ paddingTopMobile }px`,
-			'--twork-padding-bottom-mobile': `${ paddingBottomMobile }px`,
-			'--twork-hero-overlay-gradient': overlayGradientCss,
+			'--mk-container-max-width': `${ containerMaxWidth }px`,
+			'--mk-container-padding': `${ containerPadding }px`,
+			'--mk-features-gap': `${ featuresGap }px`,
+			'--mk-hero-btn-bg': buttonBgColor,
+			'--mk-hero-btn-text': buttonTextColor,
+			'--mk-hero-btn-radius': `${ buttonBorderRadius }px`,
+			'--mk-padding-top-mobile': `${ paddingTopMobile }px`,
+			'--mk-padding-bottom-mobile': `${ paddingBottomMobile }px`,
+			'--mk-hero-overlay-gradient': overlayGradientCss,
 		} ),
 		[
 			backgroundImage,
@@ -300,7 +300,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-hero twork-hero--bg twork-hero--editor',
+			className: 'mk-hero mk-hero--bg mk-hero--editor',
 			style: sectionStyle,
 		} ),
 		[ sectionStyle ]
@@ -452,35 +452,35 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Hero Content', 'twork-builder' ) }
+						title={ __( 'Hero Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Tagline text', 'twork-builder' ) }
+							label={ __( 'Tagline text', 'mk-builder' ) }
 							value={ taglineText }
 							onChange={ onTagline }
 						/>
 
 						<TextControl
-							label={ __( 'Button text', 'twork-builder' ) }
+							label={ __( 'Button text', 'mk-builder' ) }
 							value={ buttonText }
 							onChange={ onButtonText }
 						/>
 
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ buttonUrl }
 							onChange={ onButtonUrl }
 							help={ __(
 								'Link for the primary CTA button.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<ToggleControl
 							label={ __(
 								'Open button link in new tab',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ buttonLinkTarget }
 							onChange={ onButtonTarget }
@@ -489,7 +489,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Show button icon (when no media)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showButtonIcon }
 							onChange={ ( val ) =>
@@ -497,34 +497,34 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Hidden when custom image or video is set on the button.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<SelectControl
-							label={ __( 'Button icon type', 'twork-builder' ) }
+							label={ __( 'Button icon type', 'mk-builder' ) }
 							value={ buttonIconType }
 							options={ [
 								{
 									label: __(
 										'Diagonal arrow',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'diagonal-arrow',
 								},
 								{
-									label: __( 'Arrow right', 'twork-builder' ),
+									label: __( 'Arrow right', 'mk-builder' ),
 									value: 'arrow-right',
 								},
 								{
 									label: __(
 										'External link',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'external',
 								},
 								{
-									label: __( 'Plus', 'twork-builder' ),
+									label: __( 'Plus', 'mk-builder' ),
 									value: 'plus',
 								},
 							] }
@@ -536,12 +536,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Background', 'twork-builder' ) }
+						title={ __( 'Background', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<BaseControl
-							id="twork-hero-background-image"
-							label={ __( 'Background image', 'twork-builder' ) }
+							id="mk-hero-background-image"
+							label={ __( 'Background image', 'mk-builder' ) }
 						>
 							{ ! backgroundImage ? (
 								<MediaPlaceholder
@@ -551,7 +551,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Background Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -573,27 +573,27 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>
 							) }
 						</BaseControl>
 						<PanelColorSettings
-							title={ __( 'Overlay Color', 'twork-builder' ) }
+							title={ __( 'Overlay Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: overlayColor,
 									onChange: onOverlayColor,
 									label: __(
 										'Overlay Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 						<RangeControl
-							label={ __( 'Overlay opacity', 'twork-builder' ) }
+							label={ __( 'Overlay opacity', 'mk-builder' ) }
 							value={ overlayOpacity }
 							onChange={ ( val ) =>
 								setAttributes( { overlayOpacity: val } )
@@ -603,17 +603,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 0.05 }
 							help={ __(
 								'Fades the entire overlay (color + gradient layers) together.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 						<SelectControl
-							label={ __( 'Overlay gradient', 'twork-builder' ) }
+							label={ __( 'Overlay gradient', 'mk-builder' ) }
 							value={ resolvedOverlayPreset }
 							options={ overlayPresetSelectOptions }
 							onChange={ onOverlayGradientPresetChange }
 							help={ __(
 								'Adds a nature-themed wash between the photo and the solid overlay color.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 						{ resolvedOverlayPreset ===
@@ -621,9 +621,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<BaseControl
 								label={ __(
 									'Custom gradient',
-									'twork-builder'
+									'mk-builder'
 								) }
-								id="twork-hero-overlay-gradient-picker"
+								id="mk-hero-overlay-gradient-picker"
 							>
 								<GradientPicker
 									__experimentalIsRenderedInSidebar
@@ -636,19 +636,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Overlay gradient (CSS, advanced)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ overlayGradient }
 							onChange={ onOverlayGradientTextChange }
 							help={ __(
 								'Optional: paste any valid CSS gradient. Shown when you need pixel-perfect control beyond the picker.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Button Media', 'twork-builder' ) }
+						title={ __( 'Button Media', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<MediaUploadCheck>
@@ -661,11 +661,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										{ buttonMediaUrl
 											? __(
 													'Replace button media',
-													'twork-builder'
+													'mk-builder'
 											  )
 											: __(
 													'Select button media',
-													'twork-builder'
+													'mk-builder'
 											  ) }
 									</Button>
 								) }
@@ -677,17 +677,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								isSmall
 								onClick={ onRemoveButtonMedia }
 							>
-								{ __( 'Remove media', 'twork-builder' ) }
+								{ __( 'Remove media', 'mk-builder' ) }
 							</Button>
 						) }
 						<PanelColorSettings
-							title={ __( 'Button Colors', 'twork-builder' ) }
+							title={ __( 'Button Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: buttonBgColor,
 									onChange: ( val ) =>
 										setAttributes( { buttonBgColor: val } ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 								{
 									value: buttonTextColor,
@@ -695,14 +695,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											buttonTextColor: val,
 										} ),
-									label: __( 'Text', 'twork-builder' ),
+									label: __( 'Text', 'mk-builder' ),
 								},
 							] }
 						/>
 						<RangeControl
 							label={ __(
 								'Button border radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ buttonBorderRadius }
 							onChange={ ( val ) =>
@@ -715,13 +715,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ onMaxW }
@@ -733,7 +733,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ onPad }
@@ -743,7 +743,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Top padding (px)', 'twork-builder' ) }
+							label={ __( 'Top padding (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ onPadTop }
 							min={ 0 }
@@ -754,7 +754,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Bottom padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ onPadBottom }
@@ -765,7 +765,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Top padding mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingTopMobile }
 							onChange={ ( val ) =>
@@ -778,7 +778,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Bottom padding mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottomMobile }
 							onChange={ ( val ) =>
@@ -791,7 +791,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<RangeControl
-							label={ __( 'Features gap (px)', 'twork-builder' ) }
+							label={ __( 'Features gap (px)', 'mk-builder' ) }
 							value={ featuresGap }
 							onChange={ onFeaturesGap }
 							min={ 0 }
@@ -804,54 +804,54 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 			<section { ...blockProps }>
 				<div
-					className="twork-hero__overlay"
+					className="mk-hero__overlay"
 					style={ {
-						'--twork-hero-overlay-color': overlayColor,
-						'--twork-hero-overlay-opacity': overlayOpacity,
-						'--twork-hero-overlay-gradient': overlayGradientCss,
+						'--mk-hero-overlay-color': overlayColor,
+						'--mk-hero-overlay-opacity': overlayOpacity,
+						'--mk-hero-overlay-gradient': overlayGradientCss,
 					} }
 				/>
 
-				<div className="twork-hero__container">
-					<div className="twork-hero__content">
-						<div className="twork-hero__tagline">
+				<div className="mk-hero__container">
+					<div className="mk-hero__content">
+						<div className="mk-hero__tagline">
 							<TaglineIcon />
 							<RichText
 								tagName="span"
-								className="twork-hero__tagline-text"
+								className="mk-hero__tagline-text"
 								value={ taglineText }
 								onChange={ onTagline }
 								placeholder={ __(
 									'Agriculture & Organic Farms',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</div>
 						<RichText
 							tagName="h1"
-							className="twork-hero__title twork-hero__title"
+							className="mk-hero__title mk-hero__title"
 							value={ title }
 							onChange={ onTitle }
 							placeholder={ __(
 								'Rooted in Nature, Growing the Future',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RichText
 							tagName="p"
-							className="twork-hero__desc"
+							className="mk-hero__desc"
 							value={ description }
 							onChange={ onDescription }
 							placeholder={ __(
 								'Hero description…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<a
 							href={ href }
-							className="twork-hero__btn"
+							className="mk-hero__btn"
 							target={ buttonLinkTarget ? '_blank' : undefined }
 							rel={
 								buttonLinkTarget
@@ -866,12 +866,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ onButtonText }
 								placeholder={ __(
 									'Explore More',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 							{ ! buttonMediaUrl && showButtonIcon && (
 								<span
-									className="twork-hero__btn-icon"
+									className="mk-hero__btn-icon"
 									aria-hidden="true"
 								>
 									{ buttonIconSvg }
@@ -879,7 +879,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							) }
 							{ buttonMediaUrl && buttonMediaType === 'video' && (
 								<video
-									className="twork-hero__btn-media"
+									className="mk-hero__btn-media"
 									src={ buttonMediaUrl }
 									autoPlay
 									muted
@@ -890,7 +890,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							) }
 							{ buttonMediaUrl && buttonMediaType !== 'video' && (
 								<img
-									className="twork-hero__btn-media"
+									className="mk-hero__btn-media"
 									src={ buttonMediaUrl }
 									alt=""
 									aria-hidden="true"
@@ -899,8 +899,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</a>
 					</div>
 
-					<div className="twork-hero__features-wrapper">
-						<div className="twork-hero__features-track">
+					<div className="mk-hero__features-wrapper">
+						<div className="mk-hero__features-track">
 							<InnerBlocks
 								allowedBlocks={ ALLOWED_BLOCKS }
 								template={ TEMPLATE }

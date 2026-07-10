@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/csr-initiative-item",
+	"name": "mk/csr-initiative-item",
 	"title": "Initiative Item",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Single initiative card - image, icon, title, description. Use standalone or the CSR Initiatives Section block for dynamic posts.",
-	"keywords": [ "csr", "initiative", "card", "charity", "twork" ],
+	"keywords": [ "csr", "initiative", "card", "charity", "mk" ],
 	"attributes": {
 		"image": {
 			"type": "string",
@@ -100,7 +100,7 @@
 			"contentPadding": 30
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/cta-cards-section",
+	"name": "mk/cta-cards-section",
 	"version": "1.0.0",
 	"title": "CTA + Cards Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "layout",
 	"description": "Intro row with optional CTA and stat-image cards.",
 	"keywords": [
@@ -12,7 +12,7 @@
 		"cards",
 		"cta",
 		"farm",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -166,7 +166,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/stat-image-card",
+				"name": "mk/stat-image-card",
 				"attributes": {
 					"cardAlign": "left",
 					"image": "https://images.unsplash.com/photo-1631368647931-4f3ec6d1df92?auto=format&fit=crop&w=1000&q=80",
@@ -176,7 +176,7 @@
 				}
 			},
 			{
-				"name": "twork/stat-image-card",
+				"name": "mk/stat-image-card",
 				"attributes": {
 					"cardAlign": "center",
 					"image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=80",
@@ -186,7 +186,7 @@
 				}
 			},
 			{
-				"name": "twork/stat-image-card",
+				"name": "mk/stat-image-card",
 				"attributes": {
 					"cardAlign": "right",
 					"image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1000&q=80",
@@ -197,7 +197,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

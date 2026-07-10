@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -38,51 +38,51 @@ const DEFAULT_ATTRS = {
 
 /** Curated WordPress Dashicons for contact/info cards */
 const DASHICON_OPTIONS = [
-	{ value: 'dashicons-phone', label: __( 'Phone', 'twork-builder' ) },
-	{ value: 'dashicons-email', label: __( 'Email', 'twork-builder' ) },
-	{ value: 'dashicons-location', label: __( 'Location', 'twork-builder' ) },
+	{ value: 'dashicons-phone', label: __( 'Phone', 'mk-builder' ) },
+	{ value: 'dashicons-email', label: __( 'Email', 'mk-builder' ) },
+	{ value: 'dashicons-location', label: __( 'Location', 'mk-builder' ) },
 	{
 		value: 'dashicons-location-alt',
-		label: __( 'Location (alt)', 'twork-builder' ),
+		label: __( 'Location (alt)', 'mk-builder' ),
 	},
-	{ value: 'dashicons-clock', label: __( 'Clock', 'twork-builder' ) },
-	{ value: 'dashicons-calendar', label: __( 'Calendar', 'twork-builder' ) },
+	{ value: 'dashicons-clock', label: __( 'Clock', 'mk-builder' ) },
+	{ value: 'dashicons-calendar', label: __( 'Calendar', 'mk-builder' ) },
 	{
 		value: 'dashicons-calendar-alt',
-		label: __( 'Calendar (alt)', 'twork-builder' ),
+		label: __( 'Calendar (alt)', 'mk-builder' ),
 	},
-	{ value: 'dashicons-heart', label: __( 'Heart', 'twork-builder' ) },
-	{ value: 'dashicons-star-filled', label: __( 'Star', 'twork-builder' ) },
-	{ value: 'dashicons-awards', label: __( 'Awards', 'twork-builder' ) },
-	{ value: 'dashicons-megaphone', label: __( 'Megaphone', 'twork-builder' ) },
-	{ value: 'dashicons-groups', label: __( 'Groups', 'twork-builder' ) },
-	{ value: 'dashicons-admin-users', label: __( 'Users', 'twork-builder' ) },
-	{ value: 'dashicons-building', label: __( 'Building', 'twork-builder' ) },
-	{ value: 'dashicons-car', label: __( 'Car', 'twork-builder' ) },
-	{ value: 'dashicons-cart', label: __( 'Cart', 'twork-builder' ) },
+	{ value: 'dashicons-heart', label: __( 'Heart', 'mk-builder' ) },
+	{ value: 'dashicons-star-filled', label: __( 'Star', 'mk-builder' ) },
+	{ value: 'dashicons-awards', label: __( 'Awards', 'mk-builder' ) },
+	{ value: 'dashicons-megaphone', label: __( 'Megaphone', 'mk-builder' ) },
+	{ value: 'dashicons-groups', label: __( 'Groups', 'mk-builder' ) },
+	{ value: 'dashicons-admin-users', label: __( 'Users', 'mk-builder' ) },
+	{ value: 'dashicons-building', label: __( 'Building', 'mk-builder' ) },
+	{ value: 'dashicons-car', label: __( 'Car', 'mk-builder' ) },
+	{ value: 'dashicons-cart', label: __( 'Cart', 'mk-builder' ) },
 	{
 		value: 'dashicons-admin-generic',
-		label: __( 'Generic / Cog', 'twork-builder' ),
+		label: __( 'Generic / Cog', 'mk-builder' ),
 	},
-	{ value: 'dashicons-yes', label: __( 'Check / Yes', 'twork-builder' ) },
-	{ value: 'dashicons-plus-alt', label: __( 'Plus', 'twork-builder' ) },
-	{ value: 'dashicons-share', label: __( 'Share', 'twork-builder' ) },
-	{ value: 'dashicons-facebook', label: __( 'Facebook', 'twork-builder' ) },
-	{ value: 'dashicons-twitter', label: __( 'Twitter', 'twork-builder' ) },
+	{ value: 'dashicons-yes', label: __( 'Check / Yes', 'mk-builder' ) },
+	{ value: 'dashicons-plus-alt', label: __( 'Plus', 'mk-builder' ) },
+	{ value: 'dashicons-share', label: __( 'Share', 'mk-builder' ) },
+	{ value: 'dashicons-facebook', label: __( 'Facebook', 'mk-builder' ) },
+	{ value: 'dashicons-twitter', label: __( 'Twitter', 'mk-builder' ) },
 	{
 		value: 'dashicons-format-status',
-		label: __( 'Chat / Status', 'twork-builder' ),
+		label: __( 'Chat / Status', 'mk-builder' ),
 	},
-	{ value: 'dashicons-editor-help', label: __( 'Help', 'twork-builder' ) },
+	{ value: 'dashicons-editor-help', label: __( 'Help', 'mk-builder' ) },
 ];
 
 const ICON_TYPE_OPTIONS = [
-	{ value: 'fontawesome', label: __( 'Font Awesome', 'twork-builder' ) },
+	{ value: 'fontawesome', label: __( 'Font Awesome', 'mk-builder' ) },
 	{
 		value: 'dashicon',
-		label: __( 'WordPress (Dashicons)', 'twork-builder' ),
+		label: __( 'WordPress (Dashicons)', 'mk-builder' ),
 	},
-	{ value: 'image', label: __( 'Image', 'twork-builder' ) },
+	{ value: 'image', label: __( 'Image', 'mk-builder' ) },
 ];
 
 function IconPreview( { iconType, iconClass, dashicon, iconImageUrl } ) {
@@ -153,11 +153,11 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Title & Description', 'twork-builder' ) }
+						title={ __( 'Title & Description', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
-							label={ __( 'Show Title', 'twork-builder' ) }
+							label={ __( 'Show Title', 'mk-builder' ) }
 							checked={ showTitle }
 							onChange={ ( val ) =>
 								setAttributes( { showTitle: val } )
@@ -165,7 +165,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show Description', 'twork-builder' ) }
+							label={ __( 'Show Description', 'mk-builder' ) }
 							checked={ showDescription }
 							onChange={ ( val ) =>
 								setAttributes( { showDescription: val } )
@@ -174,11 +174,11 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Icon', 'twork-builder' ) }
+						title={ __( 'Icon', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon type', 'twork-builder' ) }
+							label={ __( 'Icon type', 'mk-builder' ) }
 							value={ iconType }
 							options={ ICON_TYPE_OPTIONS }
 							onChange={ ( val ) =>
@@ -190,7 +190,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Font Awesome class',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ iconClass }
 								onChange={ ( val ) =>
@@ -198,7 +198,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								}
 								help={ __(
 									'e.g. fas fa-phone-volume, fas fa-envelope-open-text',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						) }
@@ -207,7 +207,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 							<SelectControl
 								label={ __(
 									'WordPress icon (Dashicon)',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ dashicon }
 								options={ DASHICON_OPTIONS }
@@ -268,7 +268,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 															>
 																{ __(
 																	'Replace image',
-																	'twork-builder'
+																	'mk-builder'
 																) }
 															</Button>
 															<Button
@@ -286,7 +286,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 															>
 																{ __(
 																	'Remove',
-																	'twork-builder'
+																	'mk-builder'
 																) }
 															</Button>
 														</div>
@@ -301,7 +301,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Choose image',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												) }
@@ -314,13 +314,13 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Show Secondary Line',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showSecondary }
 							onChange={ ( val ) =>
@@ -330,11 +330,11 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'CTA', 'twork-builder' ) }
+						title={ __( 'CTA', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show CTA link', 'twork-builder' ) }
+							label={ __( 'Show CTA link', 'mk-builder' ) }
 							checked={ showCTA }
 							onChange={ ( val ) =>
 								setAttributes( { showCTA: val } )
@@ -344,7 +344,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						{ showCTA && (
 							<>
 								<TextControl
-									label={ __( 'CTA Text', 'twork-builder' ) }
+									label={ __( 'CTA Text', 'mk-builder' ) }
 									value={ ctaText }
 									onChange={ ( val ) =>
 										setAttributes( { ctaText: val } )
@@ -352,7 +352,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'CTA URL', 'twork-builder' ) }
+									label={ __( 'CTA URL', 'mk-builder' ) }
 									value={ ctaUrl }
 									onChange={ ( val ) =>
 										setAttributes( { ctaUrl: val } )
@@ -363,7 +363,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Open in new tab',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ openInNewTab }
 									onChange={ ( val ) =>
@@ -376,7 +376,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 
 					{ PanelColorSettings && (
 						<PanelColorSettings
-							title={ __( 'Icon & CTA Colors', 'twork-builder' ) }
+							title={ __( 'Icon & CTA Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: iconColor || undefined,
@@ -386,7 +386,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Icon Color (override)',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -397,7 +397,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Icon Background (override)',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -406,7 +406,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										setAttributes( { ctaColor: val } ),
 									label: __(
 										'CTA Link Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -430,7 +430,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						tagName="h3"
 						value={ title }
 						onChange={ ( val ) => setAttributes( { title: val } ) }
-						placeholder={ __( 'Add title…', 'twork-builder' ) }
+						placeholder={ __( 'Add title…', 'mk-builder' ) }
 					/>
 				) }
 
@@ -441,7 +441,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { subtitle: val } )
 						}
-						placeholder={ __( 'Primary line…', 'twork-builder' ) }
+						placeholder={ __( 'Primary line…', 'mk-builder' ) }
 					/>
 				) }
 
@@ -452,7 +452,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { secondaryText: val } )
 						}
-						placeholder={ __( 'Secondary line…', 'twork-builder' ) }
+						placeholder={ __( 'Secondary line…', 'mk-builder' ) }
 					/>
 				) }
 

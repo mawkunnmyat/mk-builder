@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/good-news-section",
+	"name": "mk/good-news-section",
 	"title": "Good News Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Professional newsletter subscription section with split layout and comprehensive customization options",
 	"keywords": [
 		"newsletter",
@@ -11,7 +11,7 @@
 		"email",
 		"form",
 		"good news",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundColor": {
@@ -1659,7 +1659,7 @@
 			"animationDelay": 100
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./view.js",
 	"style": "file:./style-index.css"

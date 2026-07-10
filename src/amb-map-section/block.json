@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/amb-map-section",
+	"name": "mk/amb-map-section",
 	"version": "1.0.0",
 	"title": "Ambulance Map Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "location-alt",
 	"description": "Coverage section with icon, title, description and township/location tags.",
-	"keywords": [ "ambulance", "map", "coverage", "townships", "twork" ],
+	"keywords": [ "ambulance", "map", "coverage", "townships", "mk" ],
 	"attributes": {
 		"sectionPaddingTop": {
 			"type": "number",
@@ -251,7 +251,7 @@
 			"animationOnScroll": true
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

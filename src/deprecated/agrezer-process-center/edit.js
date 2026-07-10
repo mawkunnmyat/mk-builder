@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, MediaPlaceholder } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -23,11 +23,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Alt text', 'twork-builder' ) }
+							label={ __( 'Alt text', 'mk-builder' ) }
 							value={ alt }
 							onChange={ ( val ) =>
 								setAttributes( { alt: val } )
@@ -35,7 +35,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ maxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { maxWidth: val } )
@@ -63,7 +63,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						labels={ {
 							title: __(
 								'Process wheel / diagram',
-								'twork-builder'
+								'mk-builder'
 							),
 						} }
 					/>
@@ -83,7 +83,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								setAttributes( { image: '', imageId: null } )
 							}
 						>
-							{ __( 'Replace image', 'twork-builder' ) }
+							{ __( 'Replace image', 'mk-builder' ) }
 						</Button>
 					</>
 				) }

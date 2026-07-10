@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-faq-section",
+	"name": "mk/phy-faq-section",
 	"version": "1.0.0",
 	"title": "FAQ Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "editor-help",
 	"description": "Common Questions section with accordion items, matching physiotherapy-rehab.html.",
-	"keywords": [ "physio", "faq", "questions", "accordion", "twork" ],
+	"keywords": [ "physio", "faq", "questions", "accordion", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -81,21 +81,21 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/phy-faq-item",
+				"name": "mk/phy-faq-item",
 				"attributes": {
 					"question": "Do I need a doctor's referral?",
 					"answer": "While a referral is helpful, you can also book a direct consultation with our physiotherapists for assessment."
 				}
 			},
 			{
-				"name": "twork/phy-faq-item",
+				"name": "mk/phy-faq-item",
 				"attributes": {
 					"question": "How long is a session?",
 					"answer": "A typical session lasts between 45 to 60 minutes, depending on the treatment plan."
 				}
 			},
 			{
-				"name": "twork/phy-faq-item",
+				"name": "mk/phy-faq-item",
 				"attributes": {
 					"question": "What should I wear?",
 					"answer": "Please wear loose, comfortable clothing that allows easy movement and access to the injured area."
@@ -103,7 +103,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

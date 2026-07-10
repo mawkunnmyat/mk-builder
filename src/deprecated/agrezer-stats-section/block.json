@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-stats-section",
+	"name": "mk/agrezer-stats-section",
 	"version": "1.0.0",
 	"title": "Agrezer Stats Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "chart-line",
 	"description": "Stats showcase with image cards and optional CTA column (Agrezer layout).",
-	"keywords": [ "stats", "metrics", "agriculture", "agrezer", "twork" ],
+	"keywords": [ "stats", "metrics", "agriculture", "agrezer", "mk" ],
 	"supports": {
 		"html": false,
 		"align": [ "wide", "full" ]
@@ -110,10 +110,10 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/agrezer-stats-column",
+				"name": "mk/agrezer-stats-column",
 				"innerBlocks": [
 					{
-						"name": "twork/agrezer-stats-card",
+						"name": "mk/agrezer-stats-card",
 						"attributes": {
 							"image": "https://images.unsplash.com/photo-1631368647931-4f3ec6d1df92?auto=format&fit=crop&w=1000&q=80",
 							"alt": "Golden corn harvest",
@@ -124,17 +124,17 @@
 				]
 			},
 			{
-				"name": "twork/agrezer-stats-column",
+				"name": "mk/agrezer-stats-column",
 				"innerBlocks": [
 					{
-						"name": "twork/agrezer-stats-cta",
+						"name": "mk/agrezer-stats-cta",
 						"attributes": {
 							"buttonText": "Get In Touch",
 							"buttonUrl": "#"
 						}
 					},
 					{
-						"name": "twork/agrezer-stats-card",
+						"name": "mk/agrezer-stats-card",
 						"attributes": {
 							"image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=80",
 							"alt": "Corn kernels",
@@ -145,10 +145,10 @@
 				]
 			},
 			{
-				"name": "twork/agrezer-stats-column",
+				"name": "mk/agrezer-stats-column",
 				"innerBlocks": [
 					{
-						"name": "twork/agrezer-stats-card",
+						"name": "mk/agrezer-stats-card",
 						"attributes": {
 							"image": "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1000&q=80",
 							"alt": "Corn stalks in sunlight",
@@ -160,7 +160,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

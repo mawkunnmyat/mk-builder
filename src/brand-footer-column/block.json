@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/brand-footer-column",
+	"name": "mk/brand-footer-column",
 	"title": "Footer Column",
-	"parent": [ "twork/brand-footer" ],
-	"category": "twork-builder",
+	"parent": [ "mk/brand-footer" ],
+	"category": "mk-builder",
 	"description": "Footer link column with title and links repeater.",
 	"attributes": {
 		"title": {
@@ -37,6 +37,6 @@
 			]
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

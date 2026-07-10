@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/csr-initiatives-section",
+	"name": "mk/csr-initiatives-section",
 	"version": "1.0.0",
 	"title": "Initiatives Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "heart",
 	"description": "Our Core Initiatives section - displays posts from WordPress. Select by category or pick specific posts. Use csr_icon_class meta for Font Awesome icon.",
-	"keywords": [ "csr", "initiatives", "core", "charity", "grid", "twork" ],
+	"keywords": [ "csr", "initiatives", "core", "charity", "grid", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -268,7 +268,7 @@
 			"readMoreLabel": "View Detail"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -30,34 +30,34 @@ export default function saveDeprecated( { attributes } ) {
 	const cols = Math.min( 4, Math.max( 1, parseInt( columns, 10 ) || 3 ) );
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-team-section',
+		className: 'mk-team-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-team-max': `${ containerMaxWidth }px`,
-			'--twork-team-width-pct': `${ containerWidthPct }%`,
-			'--twork-team-gap': `${ gridGap }px`,
-			'--twork-team-cols': String( cols ),
-			'--twork-team-header-mb': `${ headerMarginBottom }px`,
+			'--mk-team-max': `${ containerMaxWidth }px`,
+			'--mk-team-width-pct': `${ containerWidthPct }%`,
+			'--mk-team-gap': `${ gridGap }px`,
+			'--mk-team-cols': String( cols ),
+			'--mk-team-header-mb': `${ headerMarginBottom }px`,
 		},
 	} );
 
 	const innerBlocksProps = useInnerBlocksProps.save( {
-		className: 'twork-team-section__grid',
+		className: 'mk-team-section__grid',
 	} );
 
 	return (
 		<section { ...blockProps }>
-			<div className="twork-team-section__container">
-				<div className="twork-team-section__header">
+			<div className="mk-team-section__container">
+				<div className="mk-team-section__header">
 					{ ( tagline || tagIcon ) && (
-						<div className="twork-team-section__tagline">
+						<div className="mk-team-section__tagline">
 							{ tagIcon && (
 								<img
 									src={ tagIcon }
 									alt={ tagIconAlt || '' }
-									className="twork-team-section__tag-icon"
+									className="mk-team-section__tag-icon"
 									width="20"
 									height="20"
 									loading="lazy"
@@ -75,7 +75,7 @@ export default function saveDeprecated( { attributes } ) {
 					{ title && (
 						<RichText.Content
 							tagName="h2"
-							className="twork-team-section__title"
+							className="mk-team-section__title"
 							value={ title }
 						/>
 					) }

@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/rad-why-item",
+	"name": "mk/rad-why-item",
 	"title": "Why Choose Item",
-	"parent": [ "twork/rad-why-section" ],
+	"parent": [ "mk/rad-why-section" ],
 	"description": "Single icon card for the Radiology Why Choose grid.",
 	"attributes": {
 		"iconClass": {
@@ -26,7 +26,7 @@
 			"description": "Short supporting description for this benefit."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

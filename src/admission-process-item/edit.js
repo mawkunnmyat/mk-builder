@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -37,7 +37,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-admission-process-item-editor process-card',
+			className: 'mk-admission-process-item-editor process-card',
 			style: {
 				padding: `${ cardPadding }px 30px`,
 				borderRadius: '12px',
@@ -54,7 +54,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			id: listItems.length
 				? Math.max( ...listItems.map( ( i ) => i.id ) ) + 1
 				: 1,
-			text: __( 'New item', 'twork-builder' ),
+			text: __( 'New item', 'mk-builder' ),
 		};
 		setAttributes( { listItems: [ ...listItems, newItem ] } );
 	};
@@ -77,11 +77,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Step Number', 'twork-builder' ) }
+						title={ __( 'Step Number', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Step Number', 'twork-builder' ) }
+							label={ __( 'Step Number', 'mk-builder' ) }
 							value={ stepNumber }
 							onChange={ ( val ) =>
 								setAttributes( { stepNumber: val } )
@@ -92,7 +92,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Step Badge Colors', 'twork-builder' ) }
+							title={ __( 'Step Badge Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: stepNumberBgColor,
@@ -100,7 +100,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											stepNumberBgColor: val,
 										} ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 								{
 									value: stepNumberTextColor,
@@ -108,13 +108,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											stepNumberTextColor: val,
 										} ),
-									label: __( 'Text', 'twork-builder' ),
+									label: __( 'Text', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Badge Size (px)', 'twork-builder' ) }
+							label={ __( 'Badge Size (px)', 'mk-builder' ) }
 							value={ stepNumberSize }
 							onChange={ ( val ) =>
 								setAttributes( { stepNumberSize: val } )
@@ -126,23 +126,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Title', 'twork-builder' ) }
+						title={ __( 'Title', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -153,7 +153,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -165,11 +165,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Description', 'twork-builder' ) }
+						title={ __( 'Description', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Description Color', 'twork-builder' ) }
+							title={ __( 'Description Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: descriptionColor,
@@ -179,14 +179,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Description Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ descriptionFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { descriptionFontSize: val } )
@@ -198,11 +198,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Checklist Items', 'twork-builder' ) }
+						title={ __( 'Checklist Items', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<BaseControl
-							label={ __( 'List Items', 'twork-builder' ) }
+							label={ __( 'List Items', 'mk-builder' ) }
 						>
 							{ listItems.map( ( item ) => (
 								<div
@@ -229,29 +229,29 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											removeListItem( item.id )
 										}
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) ) }
 							<Button isPrimary isSmall onClick={ addListItem }>
-								{ __( 'Add Item', 'twork-builder' ) }
+								{ __( 'Add Item', 'mk-builder' ) }
 							</Button>
 						</BaseControl>
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'List Text & Icon', 'twork-builder' ) }
+							title={ __( 'List Text & Icon', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: listItemColor,
 									onChange: ( val ) =>
 										setAttributes( { listItemColor: val } ),
-									label: __( 'Text Color', 'twork-builder' ),
+									label: __( 'Text Color', 'mk-builder' ),
 								},
 								{
 									value: iconColor,
 									onChange: ( val ) =>
 										setAttributes( { iconColor: val } ),
-									label: __( 'Icon Color', 'twork-builder' ),
+									label: __( 'Icon Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -259,7 +259,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'List Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ listItemFontSize }
 							onChange={ ( val ) =>
@@ -272,13 +272,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Card Padding', 'twork-builder' ) }
+						title={ __( 'Card Padding', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Padding Desktop (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardPadding }
 							onChange={ ( val ) =>
@@ -292,7 +292,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Mobile (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardPaddingMobile }
 							onChange={ ( val ) =>
@@ -330,7 +330,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h3"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Step title...', 'twork-builder' ) }
+					placeholder={ __( 'Step title...', 'mk-builder' ) }
 					style={ {
 						fontSize: `${ titleFontSize }rem`,
 						fontWeight: titleFontWeight,
@@ -347,7 +347,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					}
 					placeholder={ __(
 						'Short description...',
-						'twork-builder'
+						'mk-builder'
 					) }
 					style={ {
 						fontSize: `${ descriptionFontSize }rem`,

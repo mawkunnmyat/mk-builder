@@ -35,8 +35,8 @@ h2 .highlight-red {
 // === EDITOR STYLES ===
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-good-news-section {
-    .twork-good-news-section-editor {
+.wp-block-mk-good-news-section {
+    .mk-good-news-section-editor {
         position: relative;
         min-height: 500px;
         font-family: $font-primary;
@@ -318,7 +318,7 @@ h2 .highlight-red {
 
         // Responsive Editor Styles
         @media (max-width: 992px) {
-            .twork-good-news-section-editor {
+            .mk-good-news-section-editor {
                 padding-top: var(--padding-top-tablet, 0) !important;
                 padding-bottom: var(--padding-bottom-tablet, 0) !important;
             }
@@ -455,7 +455,7 @@ h2 .highlight-red {
         }
 
         @media (max-width: 768px) {
-            .twork-good-news-section-editor {
+            .mk-good-news-section-editor {
                 padding-top: var(--padding-top-mobile, var(--padding-top-tablet, 0)) !important;
                 padding-bottom: var(--padding-bottom-mobile, var(--padding-bottom-tablet, 0)) !important;
             }
@@ -589,7 +589,7 @@ h2 .highlight-red {
 // === FRONTEND STYLES ===
 .good-news-section,
 section.good-news-section,
-.wp-block-twork-good-news-section {
+.wp-block-mk-good-news-section {
     font-family: $font-primary !important;
     padding: 0 !important;
     padding-top: var(--padding-top, 0) !important;
@@ -1052,7 +1052,7 @@ section.good-news-section,
 @media (max-width: 992px) {
     .good-news-section,
     section.good-news-section,
-    .wp-block-twork-good-news-section {
+    .wp-block-mk-good-news-section {
         padding-top: var(--padding-top-tablet, var(--padding-top, 0)) !important;
         padding-bottom: var(--padding-bottom-tablet, var(--padding-bottom, 0)) !important;
 
@@ -1243,7 +1243,7 @@ section.good-news-section,
 @media (max-width: 768px) {
     .good-news-section,
     section.good-news-section,
-    .wp-block-twork-good-news-section {
+    .wp-block-mk-good-news-section {
         padding-top: var(--padding-top-mobile, var(--padding-top-tablet, var(--padding-top, 0))) !important;
         padding-bottom: var(--padding-bottom-mobile, var(--padding-bottom-tablet, var(--padding-bottom, 0))) !important;
 
@@ -1482,7 +1482,7 @@ section.good-news-section,
 @media (max-width: 480px) {
     .good-news-section,
     section.good-news-section,
-    .wp-block-twork-good-news-section {
+    .wp-block-mk-good-news-section {
         padding-top: var(--padding-top-mobile, var(--padding-top-tablet, var(--padding-top, 0))) !important;
         padding-bottom: var(--padding-bottom-mobile, var(--padding-bottom-tablet, var(--padding-bottom, 0))) !important;
 
@@ -1589,7 +1589,7 @@ section.good-news-section,
 @media (min-width: 1400px) {
     .good-news-section,
     section.good-news-section,
-    .wp-block-twork-good-news-section {
+    .wp-block-mk-good-news-section {
         .good-news-grid {
             .good-news-image-bg {
                 min-height: 600px !important;

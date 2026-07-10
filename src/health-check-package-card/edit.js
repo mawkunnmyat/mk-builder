@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -23,7 +23,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `chk-pkg-card stagger-up twork-chk-pkg-card-editor ${
+			className: `chk-pkg-card stagger-up mk-chk-pkg-card-editor ${
 				isPopular ? 'popular' : ''
 			}`,
 
@@ -36,7 +36,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		setAttributes( {
 			listItems: [
 				...( listItems || [] ),
-				__( 'New item', 'twork-builder' ),
+				__( 'New item', 'mk-builder' ),
 			],
 		} );
 	};
@@ -55,9 +55,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const items = Array.isArray( listItems ) ? listItems : [];
 	const categoryOptions = [
-		{ label: __( 'General Wellness', 'twork-builder' ), value: 'basic' },
-		{ label: __( 'Specialized', 'twork-builder' ), value: 'special' },
-		{ label: __( 'Men & Women', 'twork-builder' ), value: 'gender' },
+		{ label: __( 'General Wellness', 'mk-builder' ), value: 'basic' },
+		{ label: __( 'Specialized', 'mk-builder' ), value: 'special' },
+		{ label: __( 'Men & Women', 'mk-builder' ), value: 'gender' },
 	];
 
 	return (
@@ -65,11 +65,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Package card', 'twork-builder' ) }
+						title={ __( 'Package card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Tab / Category', 'twork-builder' ) }
+							label={ __( 'Tab / Category', 'mk-builder' ) }
 							value={ category || 'basic' }
 							options={ categoryOptions }
 							onChange={ ( v ) =>
@@ -78,20 +78,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title || '' }
 							onChange={ ( v ) => setAttributes( { title: v } ) }
 						/>
 
 						<TextControl
-							label={ __( 'Price', 'twork-builder' ) }
+							label={ __( 'Price', 'mk-builder' ) }
 							value={ price || '' }
 							onChange={ ( v ) => setAttributes( { price: v } ) }
-							help={ __( 'e.g. 45,000', 'twork-builder' ) }
+							help={ __( 'e.g. 45,000', 'mk-builder' ) }
 						/>
 
 						<TextControl
-							label={ __( 'Currency', 'twork-builder' ) }
+							label={ __( 'Currency', 'mk-builder' ) }
 							value={ currency || '' }
 							onChange={ ( v ) =>
 								setAttributes( { currency: v } )
@@ -101,7 +101,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Popular / Recommended',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ !! isPopular }
 							onChange={ ( v ) =>
@@ -110,7 +110,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button text', 'twork-builder' ) }
+							label={ __( 'Button text', 'mk-builder' ) }
 							value={ buttonText || '' }
 							onChange={ ( v ) =>
 								setAttributes( { buttonText: v } )
@@ -118,7 +118,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ buttonUrl || '' }
 							onChange={ ( v ) =>
 								setAttributes( { buttonUrl: v } )
@@ -126,7 +126,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'List items', 'twork-builder' ) }
+						title={ __( 'List items', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ items.map( ( item, index ) => (
@@ -152,13 +152,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									icon="no-alt"
 									aria-label={ __(
 										'Remove',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</div>
 						) ) }
 						<Button isSecondary isSmall onClick={ addItem }>
-							{ __( 'Add item', 'twork-builder' ) }
+							{ __( 'Add item', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 				</InspectorControls>
@@ -169,7 +169,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h3"
 					value={ title }
 					onChange={ ( v ) => setAttributes( { title: v } ) }
-					placeholder={ __( 'Package name', 'twork-builder' ) }
+					placeholder={ __( 'Package name', 'mk-builder' ) }
 				/>
 
 				<div className="chk-price">

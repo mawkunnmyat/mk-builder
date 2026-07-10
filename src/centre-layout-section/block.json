@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/centre-layout-section",
+	"name": "mk/centre-layout-section",
 	"version": "1.0.0",
 	"title": "Layout Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "layout",
 	"description": "Reusable clinical centre page layout: sidebar (centre menu + contact widget) and main content. Add, remove, or reorder Overview, Treatments, Specialists, FAQ, and CTA sections.",
 	"keywords": [
@@ -16,7 +16,7 @@
 		"neuro",
 		"heart",
 		"department",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"sidebarHeader": {
@@ -257,40 +257,40 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/centre-overview-section",
+				"name": "mk/centre-overview-section",
 				"attributes": {}
 			},
 			{
-				"name": "twork/centre-treatments-section",
+				"name": "mk/centre-treatments-section",
 				"attributes": {}
 			},
 			{
-				"name": "twork/centre-conditions-section",
+				"name": "mk/centre-conditions-section",
 				"attributes": {}
 			},
 			{
-				"name": "twork/centre-doctors-section",
+				"name": "mk/centre-doctors-section",
 				"attributes": {}
 			},
 			{
-				"name": "twork/centre-specialists-section",
+				"name": "mk/centre-specialists-section",
 				"attributes": {}
 			},
 			{
-				"name": "twork/centre-technology-section",
+				"name": "mk/centre-technology-section",
 				"attributes": {}
 			},
 			{
-				"name": "twork/centre-faq-section",
+				"name": "mk/centre-faq-section",
 				"attributes": {}
 			},
 			{
-				"name": "twork/centre-cta-section",
+				"name": "mk/centre-cta-section",
 				"attributes": {}
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

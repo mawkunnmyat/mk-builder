@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -21,7 +21,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'image-card-carousel__card twork-image-card-slide-editor',
+				'image-card-carousel__card mk-image-card-slide-editor',
 		} ),
 		[]
 	);
@@ -31,18 +31,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Link', 'twork-builder' ) }
+						title={ __( 'Link', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'URL', 'twork-builder' ) }
+							label={ __( 'URL', 'mk-builder' ) }
 							value={ href || '' }
 							onChange={ ( val ) =>
 								setAttributes( { href: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'CTA label', 'twork-builder' ) }
+							label={ __( 'CTA label', 'mk-builder' ) }
 							value={ ctaLabel || '' }
 							onChange={ ( val ) =>
 								setAttributes( { ctaLabel: val } )
@@ -50,7 +50,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<MediaUploadCheck>
@@ -74,7 +74,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Choose image',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									) }
@@ -118,7 +118,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												>
 													{ __(
 														'Replace',
-														'twork-builder'
+														'mk-builder'
 													) }
 												</Button>
 											) }
@@ -135,13 +135,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 									<TextControl
 										label={ __(
 											'Alt text',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ imageAlt || '' }
 										onChange={ ( val ) =>
@@ -171,7 +171,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { title: val } )
 						}
-						placeholder={ __( 'Card title…', 'twork-builder' ) }
+						placeholder={ __( 'Card title…', 'mk-builder' ) }
 					/>
 					<a
 						className="image-card-carousel__link"
@@ -184,7 +184,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { ctaLabel: val } )
 							}
-							placeholder={ __( 'Learn more', 'twork-builder' ) }
+							placeholder={ __( 'Learn more', 'mk-builder' ) }
 							allowedFormats={ [] }
 						/>
 					</a>

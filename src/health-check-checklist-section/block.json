@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/health-check-checklist-section",
+	"name": "mk/health-check-checklist-section",
 	"version": "1.0.0",
 	"title": "Checklist Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "yes-alt",
 	"description": "Two-column section: 'Are You Due for a Checkup?' checklist and image. Matches health-check-up.html.",
-	"keywords": [ "health", "checkup", "checklist", "chk", "twork" ],
+	"keywords": [ "health", "checkup", "checklist", "chk", "mk" ],
 	"attributes": {
 		"showSectionTitle": {
 			"type": "boolean",
@@ -198,7 +198,7 @@
 			"animationType": "fadeInUp"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

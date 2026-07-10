@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { useState } from '@wordpress/element';
 import { InspectorControls } from '@wordpress/block-editor';
 import {
@@ -57,7 +57,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-profile-tabs-section-editor',
+			className: 'mk-profile-tabs-section-editor',
 			style: {
 				paddingBottom: `${ sectionPaddingBottom }px`,
 				marginTop: `${ sectionMarginTop }px`,
@@ -93,8 +93,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				...scheduleRows,
 				{
 					id: newId,
-					day: __( 'Day', 'twork-builder' ),
-					time: __( 'Time', 'twork-builder' ),
+					day: __( 'Day', 'mk-builder' ),
+					time: __( 'Time', 'mk-builder' ),
 					showAvailableTag: false,
 					availableTagText: '',
 				},
@@ -125,8 +125,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				...experienceItems,
 				{
 					id: newId,
-					year: __( 'Year', 'twork-builder' ),
-					description: __( 'Description', 'twork-builder' ),
+					year: __( 'Year', 'mk-builder' ),
+					description: __( 'Description', 'mk-builder' ),
 				},
 			],
 		} );
@@ -159,13 +159,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionPaddingBottom }
 							onChange={ ( val ) =>
@@ -177,7 +177,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Margin Top (px)', 'twork-builder' ) }
+							label={ __( 'Margin Top (px)', 'mk-builder' ) }
 							value={ sectionMarginTop }
 							onChange={ ( val ) =>
 								setAttributes( { sectionMarginTop: val } )
@@ -190,7 +190,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Margin Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionMarginBottom }
 							onChange={ ( val ) =>
@@ -204,7 +204,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -218,7 +218,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -231,23 +231,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Tab Labels', 'twork-builder' ) }
+						title={ __( 'Tab Labels', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Tab 1 ID', 'twork-builder' ) }
+							label={ __( 'Tab 1 ID', 'mk-builder' ) }
 							value={ tab1Id }
 							onChange={ ( val ) =>
 								setAttributes( { tab1Id: val } )
 							}
 							help={ __(
 								'Used for tab panel id',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Tab 1 Label', 'twork-builder' ) }
+							label={ __( 'Tab 1 Label', 'mk-builder' ) }
 							value={ tab1Label }
 							onChange={ ( val ) =>
 								setAttributes( { tab1Label: val } )
@@ -255,7 +255,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Tab 2 ID', 'twork-builder' ) }
+							label={ __( 'Tab 2 ID', 'mk-builder' ) }
 							value={ tab2Id }
 							onChange={ ( val ) =>
 								setAttributes( { tab2Id: val } )
@@ -263,7 +263,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Tab 2 Label', 'twork-builder' ) }
+							label={ __( 'Tab 2 Label', 'mk-builder' ) }
 							value={ tab2Label }
 							onChange={ ( val ) =>
 								setAttributes( { tab2Label: val } )
@@ -272,11 +272,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Schedule Table', 'twork-builder' ) }
+						title={ __( 'Schedule Table', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Schedule Title', 'twork-builder' ) }
+							label={ __( 'Schedule Title', 'mk-builder' ) }
 							value={ scheduleTitle }
 							onChange={ ( val ) =>
 								setAttributes( { scheduleTitle: val } )
@@ -284,7 +284,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<BaseControl
-							label={ __( 'Schedule Rows', 'twork-builder' ) }
+							label={ __( 'Schedule Rows', 'mk-builder' ) }
 						>
 							{ scheduleRows.map( ( row ) => (
 								<div
@@ -298,7 +298,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} }
 								>
 									<TextControl
-										label={ __( 'Day', 'twork-builder' ) }
+										label={ __( 'Day', 'mk-builder' ) }
 										value={ row.day }
 										onChange={ ( val ) =>
 											updateScheduleRow(
@@ -310,7 +310,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									/>
 
 									<TextControl
-										label={ __( 'Time', 'twork-builder' ) }
+										label={ __( 'Time', 'mk-builder' ) }
 										value={ row.time }
 										onChange={ ( val ) =>
 											updateScheduleRow(
@@ -324,7 +324,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<ToggleControl
 										label={ __(
 											'Show available tag',
-											'twork-builder'
+											'mk-builder'
 										) }
 										checked={ row.showAvailableTag }
 										onChange={ ( val ) =>
@@ -341,7 +341,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<TextControl
 											label={ __(
 												'Available tag text',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={ row.availableTagText }
 											onChange={ ( val ) =>
@@ -361,7 +361,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										style={ { marginTop: 8 } }
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) ) }
@@ -370,7 +370,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								isSmall
 								onClick={ addScheduleRow }
 							>
-								{ __( 'Add Row', 'twork-builder' ) }
+								{ __( 'Add Row', 'mk-builder' ) }
 							</Button>
 						</BaseControl>
 					</PanelBody>
@@ -378,12 +378,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					<PanelBody
 						title={ __(
 							'Experience / Education',
-							'twork-builder'
+							'mk-builder'
 						) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Experience Title', 'twork-builder' ) }
+							label={ __( 'Experience Title', 'mk-builder' ) }
 							value={ experienceTitle }
 							onChange={ ( val ) =>
 								setAttributes( { experienceTitle: val } )
@@ -391,7 +391,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<BaseControl
-							label={ __( 'Experience Items', 'twork-builder' ) }
+							label={ __( 'Experience Items', 'mk-builder' ) }
 						>
 							{ experienceItems.map( ( item ) => (
 								<div
@@ -405,7 +405,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} }
 								>
 									<TextControl
-										label={ __( 'Year', 'twork-builder' ) }
+										label={ __( 'Year', 'mk-builder' ) }
 										value={ item.year }
 										onChange={ ( val ) =>
 											updateExperienceItem(
@@ -419,7 +419,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Description',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ item.description }
 										onChange={ ( val ) =>
@@ -439,7 +439,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										style={ { marginTop: 8 } }
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) ) }
@@ -448,19 +448,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								isSmall
 								onClick={ addExperienceItem }
 							>
-								{ __( 'Add Item', 'twork-builder' ) }
+								{ __( 'Add Item', 'mk-builder' ) }
 							</Button>
 						</BaseControl>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Booking Sidebar', 'twork-builder' ) }
+						title={ __( 'Booking Sidebar', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
 							label={ __(
 								'Sidebar ID (anchor)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ bookingSidebarId }
 							onChange={ ( val ) =>
@@ -468,12 +468,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. #book for Book Appointment link',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Booking Title', 'twork-builder' ) }
+							label={ __( 'Booking Title', 'mk-builder' ) }
 							value={ bookingTitle }
 							onChange={ ( val ) =>
 								setAttributes( { bookingTitle: val } )
@@ -483,7 +483,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Consultation Fee Label',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ consultationFeeLabel }
 							onChange={ ( val ) =>
@@ -494,7 +494,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Consultation Fee Amount',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ consultationFeeAmount }
 							onChange={ ( val ) =>
@@ -504,7 +504,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ Divider && <Divider /> }
 						<TextControl
-							label={ __( 'Date Label', 'twork-builder' ) }
+							label={ __( 'Date Label', 'mk-builder' ) }
 							value={ formDateLabel }
 							onChange={ ( val ) =>
 								setAttributes( { formDateLabel: val } )
@@ -512,7 +512,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Name Label', 'twork-builder' ) }
+							label={ __( 'Name Label', 'mk-builder' ) }
 							value={ formNameLabel }
 							onChange={ ( val ) =>
 								setAttributes( { formNameLabel: val } )
@@ -520,7 +520,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Name Placeholder', 'twork-builder' ) }
+							label={ __( 'Name Placeholder', 'mk-builder' ) }
 							value={ formNamePlaceholder }
 							onChange={ ( val ) =>
 								setAttributes( { formNamePlaceholder: val } )
@@ -528,7 +528,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button Text', 'twork-builder' ) }
+							label={ __( 'Button Text', 'mk-builder' ) }
 							value={ formButtonText }
 							onChange={ ( val ) =>
 								setAttributes( { formButtonText: val } )
@@ -536,7 +536,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Hotline Text', 'twork-builder' ) }
+							label={ __( 'Hotline Text', 'mk-builder' ) }
 							value={ hotlineText }
 							onChange={ ( val ) =>
 								setAttributes( { hotlineText: val } )

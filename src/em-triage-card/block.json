@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/em-triage-card",
+	"name": "mk/em-triage-card",
 	"version": "1.0.0",
 	"title": "Triage Card",
-	"parent": [ "twork/em-triage-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/em-triage-section" ],
+	"category": "mk-builder",
 	"description": "Single triage card with icon, title and bullet list for Emergency Triage Section.",
-	"keywords": [ "emergency", "triage", "card", "list", "twork" ],
+	"keywords": [ "emergency", "triage", "card", "list", "mk" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",
@@ -43,6 +43,6 @@
 			"listItems": []
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -14,15 +14,15 @@ import {
 } from '@wordpress/components';
 import { PanelColorSettings } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/hc-area-tag' ];
+const ALLOWED_BLOCKS = [ 'mk/hc-area-tag' ];
 const TEMPLATE = [
-	[ 'twork/hc-area-tag', { label: 'Chanayethazan' } ],
-	[ 'twork/hc-area-tag', { label: 'Chanmyathazi' } ],
-	[ 'twork/hc-area-tag', { label: 'Maha Aungmye' } ],
-	[ 'twork/hc-area-tag', { label: 'Aungmyethazan' } ],
-	[ 'twork/hc-area-tag', { label: 'Pyigyidagun' } ],
-	[ 'twork/hc-area-tag', { label: 'Amarapura' } ],
-	[ 'twork/hc-area-tag', { label: 'Patheingyi' } ],
+	[ 'mk/hc-area-tag', { label: 'Chanayethazan' } ],
+	[ 'mk/hc-area-tag', { label: 'Chanmyathazi' } ],
+	[ 'mk/hc-area-tag', { label: 'Maha Aungmye' } ],
+	[ 'mk/hc-area-tag', { label: 'Aungmyethazan' } ],
+	[ 'mk/hc-area-tag', { label: 'Pyigyidagun' } ],
+	[ 'mk/hc-area-tag', { label: 'Amarapura' } ],
+	[ 'mk/hc-area-tag', { label: 'Patheingyi' } ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -44,7 +44,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'hc-section hc-area-section twork-hc-area-section-editor',
+				'hc-section hc-area-section mk-hc-area-section-editor',
 			style: {
 				backgroundColor: backgroundColor || '#212121',
 				color: '#fff',
@@ -75,12 +75,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section', 'twork-builder' ) }
+						title={ __( 'Section', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ PanelColorSettings && (
 							<PanelColorSettings
-								title={ __( 'Background', 'twork-builder' ) }
+								title={ __( 'Background', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: backgroundColor,
@@ -90,14 +90,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Background Color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
 							/>
 						) }
 						<RangeControl
-							label={ __( 'Padding Top (px)', 'twork-builder' ) }
+							label={ __( 'Padding Top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -110,7 +110,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -125,7 +125,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Max Width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -139,7 +139,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container Padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -151,12 +151,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Header', 'twork-builder' ) }
+						title={ __( 'Header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ PanelColorSettings && (
 							<PanelColorSettings
-								title={ __( 'Text colors', 'twork-builder' ) }
+								title={ __( 'Text colors', 'mk-builder' ) }
 								colorSettings={ [
 									{
 										value: titleColor,
@@ -166,7 +166,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Title color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 									{
@@ -177,7 +177,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} ),
 										label: __(
 											'Subtitle color',
-											'twork-builder'
+											'mk-builder'
 										),
 									},
 								] }
@@ -185,13 +185,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) }
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Grid', 'twork-builder' ) }
+						title={ __( 'Grid', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Gap between tags (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gap }
 							onChange={ ( val ) =>
@@ -203,13 +203,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Animation', 'twork-builder' ) }
+						title={ __( 'Animation', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Animation on scroll',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ animationOnScroll }
 							onChange={ ( val ) =>
@@ -221,7 +221,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Animation class',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ animationType }
 								onChange={ ( val ) =>
@@ -250,7 +250,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'Service Coverage Areas',
-							'twork-builder'
+							'mk-builder'
 						) }
 						style={ {
 							color: titleColor || '#fff',
@@ -266,7 +266,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'We currently provide home care services in the following townships:',
-							'twork-builder'
+							'mk-builder'
 						) }
 						style={ {
 							opacity: 0.8,

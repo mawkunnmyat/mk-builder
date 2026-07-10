@@ -1,10 +1,10 @@
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { useInnerBlocksProps, InnerBlocks } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/image-link-card' ];
+const ALLOWED_BLOCKS = [ 'mk/image-link-card' ];
 const TEMPLATE = [
 	[
-		'twork/image-link-card',
+		'mk/image-link-card',
 		{
 			title: 'Organic Farm Solutions',
 			linkText: 'Read More',
@@ -14,7 +14,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/image-link-card',
+		'mk/image-link-card',
 		{
 			title: 'The Eco-Friendly Farming',
 			linkText: 'Read More',
@@ -24,7 +24,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/image-link-card',
+		'mk/image-link-card',
 		{
 			title: 'Organic Produce Supply',
 			linkText: 'Read More',
@@ -37,7 +37,7 @@ const TEMPLATE = [
 
 export default function Edit() {
 	const blockProps = useStableBlockProps(
-		() => ( { className: 'twork-greener__cards twork-greener-cards-row-editor' } ),
+		() => ( { className: 'mk-greener__cards mk-greener-cards-row-editor' } ),
 		[]
 	);
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {

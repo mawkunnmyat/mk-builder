@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-intro-section",
+	"name": "mk/hc-intro-section",
 	"version": "1.0.0",
 	"title": "Intro Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "editor-alignleft",
 	"description": "Two-column intro section: image left, content right with badge, title, description and checklist. Matches home-care.html “Why Jivaka Home Care?”.",
-	"keywords": [ "home care", "intro", "why", "two column", "twork" ],
+	"keywords": [ "home care", "intro", "why", "two column", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -111,32 +111,32 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/hc-intro-list-item",
+				"name": "mk/hc-intro-list-item",
 				"attributes": {
 					"text": "Licensed & Verified Professionals"
 				}
 			},
 			{
-				"name": "twork/hc-intro-list-item",
+				"name": "mk/hc-intro-list-item",
 				"attributes": {
 					"text": "Personalized Care Plans"
 				}
 			},
 			{
-				"name": "twork/hc-intro-list-item",
+				"name": "mk/hc-intro-list-item",
 				"attributes": {
 					"text": "24/7 Support & Monitoring"
 				}
 			},
 			{
-				"name": "twork/hc-intro-list-item",
+				"name": "mk/hc-intro-list-item",
 				"attributes": {
 					"text": "Latest Medical Equipment"
 				}
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

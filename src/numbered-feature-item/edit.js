@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, SelectControl } from '@wordpress/components';
 import { FeatureIcon, ICON_OPTIONS } from './icons';
@@ -10,7 +10,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'why-choose-us__item twork-numbered-feature-item-editor',
+				'why-choose-us__item mk-numbered-feature-item-editor',
 		} ),
 		[]
 	);
@@ -20,18 +20,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Feature', 'twork-builder' ) }
+						title={ __( 'Feature', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Number', 'twork-builder' ) }
+							label={ __( 'Number', 'mk-builder' ) }
 							value={ number || '' }
 							onChange={ ( val ) =>
 								setAttributes( { number: val } )
 							}
 						/>
 						<SelectControl
-							label={ __( 'Icon', 'twork-builder' ) }
+							label={ __( 'Icon', 'mk-builder' ) }
 							value={ iconKey || 'cube' }
 							options={ ICON_OPTIONS }
 							onChange={ ( val ) =>
@@ -55,7 +55,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="why-choose-us__title"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Feature title…', 'twork-builder' ) }
+					placeholder={ __( 'Feature title…', 'mk-builder' ) }
 				/>
 				<RichText
 					tagName="p"
@@ -64,7 +64,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) => setAttributes( { text: val } ) }
 					placeholder={ __(
 						'Feature description…',
-						'twork-builder'
+						'mk-builder'
 					) }
 				/>
 			</article>

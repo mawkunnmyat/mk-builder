@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -13,9 +13,9 @@ import {
 import { INFO_ICONS } from './icons';
 
 const ICON_OPTIONS = [
-	{ label: __( 'Phone', 'twork-builder' ), value: 'phone' },
-	{ label: __( 'Location', 'twork-builder' ), value: 'pin' },
-	{ label: __( 'Clock', 'twork-builder' ), value: 'clock' },
+	{ label: __( 'Phone', 'mk-builder' ), value: 'phone' },
+	{ label: __( 'Location', 'mk-builder' ), value: 'pin' },
+	{ label: __( 'Clock', 'mk-builder' ), value: 'clock' },
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -24,7 +24,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'footer__info-card twork-brand-footer-info-card-editor',
+				'footer__info-card mk-brand-footer-info-card-editor',
 		} ),
 		[]
 	);
@@ -50,11 +50,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Info Card', 'twork-builder' ) }
+						title={ __( 'Info Card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon', 'twork-builder' ) }
+							label={ __( 'Icon', 'mk-builder' ) }
 							value={ icon || 'phone' }
 							options={ ICON_OPTIONS }
 							onChange={ ( val ) =>
@@ -66,7 +66,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ `${ __(
 										'Line',
-										'twork-builder'
+										'mk-builder'
 									) } ${ index + 1 }` }
 									value={ line }
 									onChange={ ( val ) =>
@@ -78,12 +78,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									isSmall
 									onClick={ () => removeLine( index ) }
 								>
-									{ __( 'Remove line', 'twork-builder' ) }
+									{ __( 'Remove line', 'mk-builder' ) }
 								</Button>
 							</div>
 						) ) }
 						<Button isSecondary onClick={ addLine }>
-							{ __( 'Add line', 'twork-builder' ) }
+							{ __( 'Add line', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 				</InspectorControls>
@@ -98,7 +98,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { label: val } )
 						}
-						placeholder={ __( 'Label…', 'twork-builder' ) }
+						placeholder={ __( 'Label…', 'mk-builder' ) }
 					/>
 					<div className="footer__info-lines">
 						{ ( lines || [] ).map( ( line, index ) => (

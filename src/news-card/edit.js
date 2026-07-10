@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -24,7 +24,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'blog-news__card twork-news-card-editor',
+			className: 'blog-news__card mk-news-card-editor',
 		} ),
 		[]
 	);
@@ -34,43 +34,43 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Post meta', 'twork-builder' ) }
+						title={ __( 'Post meta', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Author', 'twork-builder' ) }
+							label={ __( 'Author', 'mk-builder' ) }
 							value={ author || '' }
 							onChange={ ( val ) =>
 								setAttributes( { author: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Category', 'twork-builder' ) }
+							label={ __( 'Category', 'mk-builder' ) }
 							value={ category || '' }
 							onChange={ ( val ) =>
 								setAttributes( { category: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Date (display)', 'twork-builder' ) }
+							label={ __( 'Date (display)', 'mk-builder' ) }
 							value={ date || '' }
 							onChange={ ( val ) =>
 								setAttributes( { date: val } )
 							}
 						/>
 						<TextControl
-							label={ __( 'Date (ISO)', 'twork-builder' ) }
+							label={ __( 'Date (ISO)', 'mk-builder' ) }
 							value={ dateIso || '' }
 							onChange={ ( val ) =>
 								setAttributes( { dateIso: val } )
 							}
 							help={ __(
 								'Used for the <time datetime> attribute.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 						<TextControl
-							label={ __( 'Link URL', 'twork-builder' ) }
+							label={ __( 'Link URL', 'mk-builder' ) }
 							value={ href || '' }
 							onChange={ ( val ) =>
 								setAttributes( { href: val } )
@@ -78,11 +78,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Featured image', 'twork-builder' ) }
+						title={ __( 'Featured image', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Alt text', 'twork-builder' ) }
+							label={ __( 'Alt text', 'mk-builder' ) }
 							value={ imageAlt || '' }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -111,7 +111,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Choose image',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									) }
@@ -149,7 +149,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												>
 													{ __(
 														'Replace',
-														'twork-builder'
+														'mk-builder'
 													) }
 												</Button>
 											) }
@@ -166,7 +166,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								</div>
@@ -209,7 +209,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
 							}
-							placeholder={ __( 'Post title', 'twork-builder' ) }
+							placeholder={ __( 'Post title', 'mk-builder' ) }
 							allowedFormats={ [] }
 						/>
 					</a>
@@ -219,7 +219,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="blog-news__excerpt"
 					value={ excerpt }
 					onChange={ ( val ) => setAttributes( { excerpt: val } ) }
-					placeholder={ __( 'Excerpt…', 'twork-builder' ) }
+					placeholder={ __( 'Excerpt…', 'mk-builder' ) }
 				/>
 			</article>
 		</>

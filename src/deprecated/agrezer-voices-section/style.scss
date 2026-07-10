@@ -2,8 +2,8 @@
  * Agrezer voices section — from my-avocado _voices-section.scss
  */
 
-.agrezer-voices-section.twork-agrezer-voices-section,
-.wp-block-twork-agrezer-voices-section.agrezer-voices-section {
+.agrezer-voices-section.mk-agrezer-voices-section,
+.wp-block-mk-agrezer-voices-section.agrezer-voices-section {
 	overflow: hidden;
 }
 
@@ -154,13 +154,13 @@
 }
 
 /* Before JS: show first slide */
-.twork-agrezer-voices-section:not(.is-initialized) .agrezer-voices-section__slide:first-child {
+.mk-agrezer-voices-section:not(.is-initialized) .agrezer-voices-section__slide:first-child {
 	opacity: 1;
 	pointer-events: auto;
 	transform: translateX(0);
 }
 
-.twork-agrezer-voices-section:not(.is-initialized) .agrezer-voices-section__slide:not(:first-child) {
+.mk-agrezer-voices-section:not(.is-initialized) .agrezer-voices-section__slide:not(:first-child) {
 	opacity: 0;
 }
 

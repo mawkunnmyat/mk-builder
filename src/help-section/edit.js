@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -16,7 +16,7 @@ import {
 
 const DEFAULT_OPTION = {
 	value: '',
-	label: __( 'Select Department', 'twork-builder' ),
+	label: __( 'Select Department', 'mk-builder' ),
 };
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -49,7 +49,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-help-section-editor help-section jivaka-section',
+			className: 'mk-help-section-editor help-section jivaka-section',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
@@ -101,7 +101,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		const next = [ ...( selectOptions || [] ) ];
 		next.push( {
 			value: `opt-${ Date.now() }`,
-			label: __( 'New option', 'twork-builder' ),
+			label: __( 'New option', 'mk-builder' ),
 		} );
 		setAttributes( { selectOptions: next } );
 	};
@@ -130,11 +130,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Left column (Intro)', 'twork-builder' ) }
+						title={ __( 'Left column (Intro)', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Meta title', 'twork-builder' ) }
+							label={ __( 'Meta title', 'mk-builder' ) }
 							value={ metaTitle }
 							onChange={ ( v ) =>
 								setAttributes( { metaTitle: v } )
@@ -142,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Title line 1', 'twork-builder' ) }
+							label={ __( 'Title line 1', 'mk-builder' ) }
 							value={ mainTitleLine1 }
 							onChange={ ( v ) =>
 								setAttributes( { mainTitleLine1: v } )
@@ -152,7 +152,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Title highlight word',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mainTitleHighlight }
 							onChange={ ( v ) =>
@@ -161,7 +161,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Title line 2', 'twork-builder' ) }
+							label={ __( 'Title line 2', 'mk-builder' ) }
 							value={ mainTitleLine2 }
 							onChange={ ( v ) =>
 								setAttributes( { mainTitleLine2: v } )
@@ -169,7 +169,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Main description', 'twork-builder' ) }
+							label={ __( 'Main description', 'mk-builder' ) }
 							value={ mainDescription }
 							onChange={ ( v ) =>
 								setAttributes( { mainDescription: v } )
@@ -181,7 +181,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Sub text (with icon)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ subText }
 							onChange={ ( v ) =>
@@ -192,7 +192,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Icon class (e.g. fas fa-mobile-alt)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass }
 							onChange={ ( v ) =>
@@ -202,11 +202,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Booking card', 'twork-builder' ) }
+						title={ __( 'Booking card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Card meta title', 'twork-builder' ) }
+							label={ __( 'Card meta title', 'mk-builder' ) }
 							value={ bookingMetaTitle }
 							onChange={ ( v ) =>
 								setAttributes( { bookingMetaTitle: v } )
@@ -214,7 +214,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Card title', 'twork-builder' ) }
+							label={ __( 'Card title', 'mk-builder' ) }
 							value={ bookingTitle }
 							onChange={ ( v ) =>
 								setAttributes( { bookingTitle: v } )
@@ -222,7 +222,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Card description', 'twork-builder' ) }
+							label={ __( 'Card description', 'mk-builder' ) }
 							value={ bookingDescription }
 							onChange={ ( v ) =>
 								setAttributes( { bookingDescription: v } )
@@ -235,11 +235,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<BaseControl
 							label={ __(
 								'Select dropdown options',
-								'twork-builder'
+								'mk-builder'
 							) }
 							help={ __(
 								'First option is used as placeholder. Value is submitted; label is shown.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							{ ( options || [] ).map( ( opt, i ) => (
@@ -264,7 +264,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<TextControl
 											label={ __(
 												'Value',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={ opt?.value ?? '' }
 											onChange={ ( v ) =>
@@ -287,12 +287,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											icon="no-alt"
 											label={ __(
 												'Remove option',
-												'twork-builder'
+												'mk-builder'
 											) }
 										/>
 									</div>
 									<TextControl
-										label={ __( 'Label', 'twork-builder' ) }
+										label={ __( 'Label', 'mk-builder' ) }
 										value={ opt?.label ?? '' }
 										onChange={ ( v ) =>
 											updateSelectOption( i, 'label', v )
@@ -306,14 +306,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onClick={ addSelectOption }
 								style={ { marginTop: 8 } }
 							>
-								{ __( 'Add option', 'twork-builder' ) }
+								{ __( 'Add option', 'mk-builder' ) }
 							</Button>
 						</BaseControl>
 						<Divider />
 						<TextControl
 							label={ __(
 								'Select name attribute',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ selectName }
 							onChange={ ( v ) =>
@@ -322,7 +322,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Select aria-label', 'twork-builder' ) }
+							label={ __( 'Select aria-label', 'mk-builder' ) }
 							value={ selectAriaLabel }
 							onChange={ ( v ) =>
 								setAttributes( { selectAriaLabel: v } )
@@ -330,7 +330,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Card title color', 'twork-builder' ) }
+							title={ __( 'Card title color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: bookingTitleColor,
@@ -340,7 +340,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Booking card title',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -348,13 +348,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Section layout', 'twork-builder' ) }
+						title={ __( 'Section layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
 							title={ __(
 								'Section background',
-								'twork-builder'
+								'mk-builder'
 							) }
 							colorSettings={ [
 								{
@@ -363,13 +363,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											backgroundColor: val,
 										} ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -382,7 +382,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -396,7 +396,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -410,7 +410,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -424,7 +424,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Gap between columns (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ gridGap }
 							onChange={ ( v ) =>
@@ -437,11 +437,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Card styling', 'twork-builder' ) }
+						title={ __( 'Card styling', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Card & highlight', 'twork-builder' ) }
+							title={ __( 'Card & highlight', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: highlightColor,
@@ -451,7 +451,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Highlight word color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -460,7 +460,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { cardBgColor: val } ),
 									label: __(
 										'Card background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -469,13 +469,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											cardBorderColor: val,
 										} ),
-									label: __( 'Card border', 'twork-builder' ),
+									label: __( 'Card border', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Card padding (px)', 'twork-builder' ) }
+							label={ __( 'Card padding (px)', 'mk-builder' ) }
 							value={ cardPadding }
 							onChange={ ( v ) =>
 								setAttributes( { cardPadding: v } )
@@ -504,7 +504,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Meta title…',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 
@@ -525,7 +525,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Line 1',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 								<br />
@@ -540,7 +540,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Highlight',
-										'twork-builder'
+										'mk-builder'
 									) }
 									style={ {
 										color: highlightColor,
@@ -555,7 +555,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Line 2',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</h2>
@@ -567,7 +567,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Main description…',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 
@@ -585,7 +585,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Sub text…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</p>
@@ -604,7 +604,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Card meta title…',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 
@@ -616,7 +616,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Book an Appointment',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									color: bookingTitleColor,
@@ -633,7 +633,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Card description…',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ { marginBottom: 30 } }
 							/>

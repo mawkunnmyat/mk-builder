@@ -3,8 +3,8 @@
 // === EDITOR ===
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-logo-showcase-section {
-	.twork-logo-showcase-section-editor {
+.wp-block-mk-logo-showcase-section {
+	.mk-logo-showcase-section-editor {
 		.partners__logos {
 			display: grid !important;
 			grid-template-columns: repeat(5, 1fr) !important;
@@ -22,7 +22,7 @@
 }
 
 // === FRONTEND ===
-.twork-logo-showcase-section {
+.mk-logo-showcase-section {
 	--color-primary: #ff7f00;
 	--color-text-muted: #666666;
 	--color-text-primary: #1a1a1a;

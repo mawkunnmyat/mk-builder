@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/lab-tech-item",
+	"name": "mk/lab-tech-item",
 	"version": "1.0.0",
 	"title": "Technology Item",
-	"category": "twork-builder",
-	"parent": [ "twork/lab-tech-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/lab-tech-section" ],
 	"description": "Single technology feature row with image, tag, title, description and bullet list.",
-	"keywords": [ "lab", "technology", "equipment", "feature", "twork" ],
+	"keywords": [ "lab", "technology", "equipment", "feature", "mk" ],
 	"attributes": {
 		"imageUrl": {
 			"type": "string",
@@ -50,7 +50,7 @@
 			"bullets": [ "99.9% Accuracy Rate", "Rapid Turnaround Time" ]
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

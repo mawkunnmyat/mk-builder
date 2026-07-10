@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/features-section",
+	"name": "mk/features-section",
 	"version": "1.0.0",
 	"title": "Features Section (About)",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "About section with a grid of feature cards (icon, title, description). Matches general-surgery about block.",
-	"keywords": [ "features", "about", "grid", "twork" ],
+	"keywords": [ "features", "about", "grid", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -66,7 +66,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/feature-card",
+				"name": "mk/feature-card",
 				"attributes": {
 					"title": "Advanced Tech",
 					"description": "4K Laparoscopy towers and modern modular operation theaters.",
@@ -74,7 +74,7 @@
 				}
 			},
 			{
-				"name": "twork/feature-card",
+				"name": "mk/feature-card",
 				"attributes": {
 					"title": "Expert Team",
 					"description": "Senior consultants with over 20 years of surgical experience.",
@@ -82,7 +82,7 @@
 				}
 			},
 			{
-				"name": "twork/feature-card",
+				"name": "mk/feature-card",
 				"attributes": {
 					"title": "Patient Centric",
 					"description": "Personalized care plans ensuring comfort and safety.",
@@ -91,7 +91,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

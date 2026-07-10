@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/lab-hero-section",
+	"name": "mk/lab-hero-section",
 	"version": "1.0.0",
 	"title": "Hero Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "welcome-widgets-menus",
 	"description": "Glass-morphism laboratory hero with badge, title, buttons and floating stats bubbles. Matches laboratory-services.html lab-hero.",
-	"keywords": [ "lab", "hero", "header", "jivaka", "twork" ],
+	"keywords": [ "lab", "hero", "header", "jivaka", "mk" ],
 	"attributes": {
 		"backgroundImageUrl": {
 			"type": "string",
@@ -116,7 +116,7 @@
 			"animationOnScroll": true
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

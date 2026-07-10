@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, Button } from '@wordpress/components';
 
@@ -9,7 +9,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'paed-service-card paed-stagger twork-paed-service-card-editor',
+				'paed-service-card paed-stagger mk-paed-service-card-editor',
 		} ),
 		[]
 	);
@@ -18,7 +18,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		setAttributes( {
 			listItems: [
 				...( listItems || [] ),
-				__( 'New item', 'twork-builder' ),
+				__( 'New item', 'mk-builder' ),
 			],
 		} );
 	};
@@ -41,13 +41,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Service card', 'twork-builder' ) }
+						title={ __( 'Service card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Icon class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass || '' }
 							onChange={ ( val ) =>
@@ -57,12 +57,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-baby-carriage, fas fa-syringe, fas fa-heartbeat',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title || '' }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
@@ -70,19 +70,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Description', 'twork-builder' ) }
+							label={ __( 'Description', 'mk-builder' ) }
 							value={ description || '' }
 							onChange={ ( val ) =>
 								setAttributes( { description: val } )
 							}
 							help={ __(
 								'Short paragraph below the title',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<PanelBody
-							title={ __( 'List items', 'twork-builder' ) }
+							title={ __( 'List items', 'mk-builder' ) }
 							initialOpen={ true }
 						>
 							{ items.map( ( item, index ) => (
@@ -102,7 +102,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'List item',
-											'twork-builder'
+											'mk-builder'
 										) }
 										style={ { flex: 1 } }
 									/>
@@ -116,13 +116,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										icon="no-alt"
 										aria-label={ __(
 											'Remove item',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								</div>
 							) ) }
 							<Button isSecondary isSmall onClick={ addListItem }>
-								{ __( 'Add item', 'twork-builder' ) }
+								{ __( 'Add item', 'mk-builder' ) }
 							</Button>
 						</PanelBody>
 					</PanelBody>
@@ -139,7 +139,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="h3"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Service title…', 'twork-builder' ) }
+					placeholder={ __( 'Service title…', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -148,7 +148,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { description: val } )
 					}
-					placeholder={ __( 'Description…', 'twork-builder' ) }
+					placeholder={ __( 'Description…', 'mk-builder' ) }
 				/>
 
 				{ items.length > 0 && (

@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/centre-cta-section",
+	"name": "mk/centre-cta-section",
 	"version": "1.0.0",
 	"title": "CTA Section",
-	"category": "twork-builder",
-	"parent": [ "twork/centre-layout-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/centre-layout-section" ],
 	"description": "Call-to-action box with gradient background, title, text, and button for centre pages.",
 	"attributes": {
 		"title": {

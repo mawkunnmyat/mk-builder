@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/centre-treatment-card",
+	"name": "mk/centre-treatment-card",
 	"version": "1.0.0",
 	"title": "Treatment Card",
-	"category": "twork-builder",
-	"parent": [ "twork/centre-treatments-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/centre-treatments-section" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",

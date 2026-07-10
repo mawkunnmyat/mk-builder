@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/agrezer-hero-section",
+	"name": "mk/agrezer-hero-section",
 	"version": "1.0.0",
 	"title": "Agrezer Hero Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "cover-image",
 	"description": "Agrezer-style agriculture hero section with feature cards.",
-	"keywords": [ "hero", "agriculture", "organic", "banner", "twork" ],
+	"keywords": [ "hero", "agriculture", "organic", "banner", "mk" ],
 	"supports": {
 		"html": false,
 		"align": [ "wide", "full" ]
@@ -88,21 +88,21 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/agrezer-hero-feature-item",
+				"name": "mk/agrezer-hero-feature-item",
 				"attributes": {
 					"title": "Healthy Soil<br />Solutions",
 					"iconVariant": "leaf"
 				}
 			},
 			{
-				"name": "twork/agrezer-hero-feature-item",
+				"name": "mk/agrezer-hero-feature-item",
 				"attributes": {
 					"title": "Pure Organic<br />Growth",
 					"iconVariant": "drop"
 				}
 			},
 			{
-				"name": "twork/agrezer-hero-feature-item",
+				"name": "mk/agrezer-hero-feature-item",
 				"attributes": {
 					"title": "Nature-Driven<br />Innovation",
 					"iconVariant": "sprout"
@@ -110,7 +110,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,16 +1,16 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/mission-vision-item",
+	"name": "mk/mission-vision-item",
 	"version": "1.0.0",
 	"title": "Mission / Vision Card",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "heart",
 	"description": "Single mission / vision / values card with icon, title and text.",
 	"supports": {
 		"html": false
 	},
-	"parent": [ "twork/mission-vision-grid" ],
+	"parent": [ "mk/mission-vision-grid" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",
@@ -63,7 +63,7 @@
 			"description": "Describe your mission, vision or values here."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"editorStyle": "file:./style-index.css"

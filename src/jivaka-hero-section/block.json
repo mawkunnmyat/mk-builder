@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/jivaka-hero-section",
+	"name": "mk/jivaka-hero-section",
 	"version": "1.0.0",
 	"title": "App Hero",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "smartphone",
 	"description": "Jivaka Care app hero section with title, subtitle, app store badges, and phone mockup.",
-	"keywords": [ "jivaka", "hero", "app", "mobile", "twork" ],
+	"keywords": [ "jivaka", "hero", "app", "mobile", "mk" ],
 	"attributes": {
 		"title": {
 			"type": "string",
@@ -134,20 +134,20 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/jivaka-badge-item",
+				"name": "mk/jivaka-badge-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/jivaka-badge-item",
+				"name": "mk/jivaka-badge-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/jivaka-badge-item",
+				"name": "mk/jivaka-badge-item",
 				"attributes": {}
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

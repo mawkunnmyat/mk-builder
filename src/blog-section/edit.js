@@ -1,10 +1,10 @@
 /**
- * Twork Blog Section – Editor
+ * Mk Blog Section – Editor
  * Blog layout with featured post, grid, sidebar widgets, and pagination.
  * Uses dynamic PHP render (ServerSideRender), similar to updates-section.
  */
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -52,7 +52,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-blog-section-editor',
+			className: 'mk-blog-section-editor',
 		} ),
 		[]
 	);
@@ -62,13 +62,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Query Settings', 'twork-builder' ) }
+						title={ __( 'Query Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
 							label={ __(
 								'Posts per page (grid)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ postsPerPage }
 							onChange={ ( val ) =>
@@ -79,21 +79,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Order by', 'twork-builder' ) }
+							label={ __( 'Order by', 'mk-builder' ) }
 							value={ orderBy }
 							options={ [
 								{
-									label: __( 'Date', 'twork-builder' ),
+									label: __( 'Date', 'mk-builder' ),
 									value: 'date',
 								},
 								{
-									label: __( 'Title', 'twork-builder' ),
+									label: __( 'Title', 'mk-builder' ),
 									value: 'title',
 								},
 								{
 									label: __(
 										'Comment count',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'comment_count',
 								},
@@ -104,15 +104,15 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Order', 'twork-builder' ) }
+							label={ __( 'Order', 'mk-builder' ) }
 							value={ order }
 							options={ [
 								{
-									label: __( 'Descending', 'twork-builder' ),
+									label: __( 'Descending', 'mk-builder' ),
 									value: 'DESC',
 								},
 								{
-									label: __( 'Ascending', 'twork-builder' ),
+									label: __( 'Ascending', 'mk-builder' ),
 									value: 'ASC',
 								},
 							] }
@@ -124,7 +124,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Featured post ID (optional)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={
 								featuredPostId ? String( featuredPostId ) : ''
@@ -138,14 +138,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Leave empty to use the latest post as featured.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
 							label={ __(
 								'Excerpt length (words)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ excerptLength }
 							onChange={ ( val ) =>
@@ -157,7 +157,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Read more label', 'twork-builder' ) }
+							label={ __( 'Read more label', 'mk-builder' ) }
 							value={ readMoreLabel }
 							onChange={ ( val ) =>
 								setAttributes( { readMoreLabel: val } )
@@ -166,13 +166,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
 							label={ __(
 								'Show featured post',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showFeatured }
 							onChange={ ( val ) =>
@@ -181,7 +181,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show post grid', 'twork-builder' ) }
+							label={ __( 'Show post grid', 'mk-builder' ) }
 							checked={ showGrid }
 							onChange={ ( val ) =>
 								setAttributes( { showGrid: val } )
@@ -189,7 +189,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show sidebar', 'twork-builder' ) }
+							label={ __( 'Show sidebar', 'mk-builder' ) }
 							checked={ showSidebar }
 							onChange={ ( val ) =>
 								setAttributes( { showSidebar: val } )
@@ -197,7 +197,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<ToggleControl
-							label={ __( 'Show pagination', 'twork-builder' ) }
+							label={ __( 'Show pagination', 'mk-builder' ) }
 							checked={ showPagination }
 							onChange={ ( val ) =>
 								setAttributes( { showPagination: val } )
@@ -206,7 +206,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<Divider />
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -219,7 +219,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( val ) =>
@@ -231,7 +231,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -244,7 +244,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -257,11 +257,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Sidebar Widgets', 'twork-builder' ) }
+						title={ __( 'Sidebar Widgets', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show search', 'twork-builder' ) }
+							label={ __( 'Show search', 'mk-builder' ) }
 							checked={ showSearchWidget }
 							onChange={ ( val ) =>
 								setAttributes( { showSearchWidget: val } )
@@ -270,7 +270,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ showSearchWidget && (
 							<TextControl
-								label={ __( 'Search title', 'twork-builder' ) }
+								label={ __( 'Search title', 'mk-builder' ) }
 								value={ searchTitle }
 								onChange={ ( val ) =>
 									setAttributes( { searchTitle: val } )
@@ -281,7 +281,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<ToggleControl
-							label={ __( 'Show categories', 'twork-builder' ) }
+							label={ __( 'Show categories', 'mk-builder' ) }
 							checked={ showCategoriesWidget }
 							onChange={ ( val ) =>
 								setAttributes( { showCategoriesWidget: val } )
@@ -292,7 +292,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Categories title',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ categoriesTitle }
 								onChange={ ( val ) =>
@@ -300,7 +300,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								help={ __(
 									'Heading for the categories widget.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						) }
@@ -308,7 +308,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Limit categories (IDs, comma separated)',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ categoriesInclude }
 								onChange={ ( val ) =>
@@ -316,7 +316,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								help={ __(
 									'Optional: show only these category IDs. Leave empty for all.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						) }
@@ -324,7 +324,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<ToggleControl
-							label={ __( 'Show recent posts', 'twork-builder' ) }
+							label={ __( 'Show recent posts', 'mk-builder' ) }
 							checked={ showRecentWidget }
 							onChange={ ( val ) =>
 								setAttributes( { showRecentWidget: val } )
@@ -336,7 +336,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Recent posts title',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ recentTitle }
 									onChange={ ( val ) =>
@@ -347,28 +347,28 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Recent posts source',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ recentSource }
 									options={ [
 										{
 											label: __(
 												'Latest posts',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'latest',
 										},
 										{
 											label: __(
 												'By category',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'category',
 										},
 										{
 											label: __(
 												'Specific posts (IDs)',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'ids',
 										},
@@ -382,7 +382,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<RangeControl
 										label={ __(
 											'Number of recent posts',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ recentItems }
 										onChange={ ( val ) =>
@@ -398,7 +398,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Recent category ID',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={
 											recentCategoryId
@@ -414,7 +414,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										help={ __(
 											'Filter recent posts widget by a single category ID.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								) }
@@ -422,7 +422,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Recent post IDs (comma separated)',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ recentPostIds }
 										onChange={ ( val ) =>
@@ -432,7 +432,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										help={ __(
 											'Specify exact posts for the recent widget. Ignores count above.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								) }
@@ -442,7 +442,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<ToggleControl
-							label={ __( 'Show tags cloud', 'twork-builder' ) }
+							label={ __( 'Show tags cloud', 'mk-builder' ) }
 							checked={ showTagsWidget }
 							onChange={ ( val ) =>
 								setAttributes( { showTagsWidget: val } )
@@ -451,14 +451,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ showTagsWidget && (
 							<TextControl
-								label={ __( 'Tags title', 'twork-builder' ) }
+								label={ __( 'Tags title', 'mk-builder' ) }
 								value={ tagsTitle }
 								onChange={ ( val ) =>
 									setAttributes( { tagsTitle: val } )
 								}
 								help={ __(
 									'Heading for the tags widget.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						) }
@@ -466,7 +466,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Limit tags (IDs or slugs, comma separated)',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ tagsInclude }
 								onChange={ ( val ) =>
@@ -474,14 +474,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								help={ __(
 									'Optional: show only these tags. Leave empty for popular tags by count.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Background', 'twork-builder' ) }
+						title={ __( 'Background', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<input
@@ -494,7 +494,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							aria-label={ __(
 								'Background color',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>

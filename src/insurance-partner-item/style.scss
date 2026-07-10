@@ -2,7 +2,7 @@
 // Primary styles come from insurance-partners-section
 
 .editor-styles-wrapper {
-    .twork-insurance-partner-item-editor {
+    .mk-insurance-partner-item-editor {
         .partner-logo {
             span,
             [contenteditable="true"] {
@@ -16,7 +16,7 @@
 }
 
 // Frontend: insurance-card inherits from parent
-.wp-block-twork-insurance-partners-section {
+.wp-block-mk-insurance-partners-section {
     .insurance-card {
         .partner-logo {
             color: var(--partner-name-color, #212121);

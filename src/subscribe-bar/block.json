@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/subscribe-bar",
+	"name": "mk/subscribe-bar",
 	"version": "1.0.0",
 	"title": "Subscribe Bar",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "email",
 	"description": "Newsletter subscribe banner with honeypot field and client-side validation.",
-	"keywords": [ "newsletter", "subscribe", "email", "shwe", "twork" ],
+	"keywords": [ "newsletter", "subscribe", "email", "shwe", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -45,7 +45,7 @@
 			"backgroundColor": "#ffff00"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./view.js",
 	"style": "file:./style-index.css"

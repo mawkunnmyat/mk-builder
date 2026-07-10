@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/contact-cards",
+	"name": "mk/contact-cards",
 	"version": "1.0.0",
 	"title": "Contact Cards",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "phone",
 	"description": "Grid of contact card items.",
 	"keywords": [
@@ -12,7 +12,7 @@
 		"phone",
 		"email",
 		"address",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundColor": {
@@ -67,7 +67,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/contact-card",
+				"name": "mk/contact-card",
 				"attributes": {
 					"title": "Mobile",
 					"subtitle": "Free Dial Number",
@@ -79,7 +79,7 @@
 				}
 			},
 			{
-				"name": "twork/contact-card",
+				"name": "mk/contact-card",
 				"attributes": {
 					"title": "Email",
 					"subtitle": "Feel Free to Mail",
@@ -91,7 +91,7 @@
 				}
 			},
 			{
-				"name": "twork/contact-card",
+				"name": "mk/contact-card",
 				"attributes": {
 					"title": "Address",
 					"subtitle": "Our Farm Address",
@@ -112,7 +112,7 @@
 			"full"
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

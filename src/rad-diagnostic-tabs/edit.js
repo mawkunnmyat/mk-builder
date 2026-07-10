@@ -1,5 +1,5 @@
 import { __, sprintf } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	MediaPlaceholder,
@@ -28,7 +28,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'rad-section twork-rad-diagnostic-tabs',
+			className: 'rad-section mk-rad-diagnostic-tabs',
 			style: {
 				background: sectionBackground,
 				paddingTop,
@@ -83,12 +83,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 		const newTab = {
 			id: newId,
-			label: __( 'New Tab', 'twork-builder' ),
+			label: __( 'New Tab', 'mk-builder' ),
 			iconClass: 'fas fa-chevron-right',
 			imageUrl: '',
 			imageId: 0,
 			imageAlt: '',
-			paneTitle: __( 'New Modality', 'twork-builder' ),
+			paneTitle: __( 'New Modality', 'mk-builder' ),
 			description: '',
 			features: [ ...DEFAULT_FEATURES ],
 		};
@@ -135,14 +135,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section Settings', 'twork-builder' ) }
+						title={ __( 'Section Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Background Color', 'twork-builder' ) }
+							label={ __( 'Background Color', 'mk-builder' ) }
 							help={ __(
 								'CSS color value. Example: #fafafa or rgba(0,0,0,0.05).',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ sectionBackground }
 							onChange={ ( val ) =>
@@ -151,7 +151,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Padding Top', 'twork-builder' ) }
+							label={ __( 'Padding Top', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -159,7 +159,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Padding Bottom', 'twork-builder' ) }
+							label={ __( 'Padding Bottom', 'mk-builder' ) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
 								setAttributes( { paddingBottom: val } )
@@ -168,7 +168,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Tabs Configuration', 'twork-builder' ) }
+						title={ __( 'Tabs Configuration', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ tabs && tabs.length > 0 ? (
@@ -177,19 +177,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									key={ tab.id || index }
 									label={ sprintf(
 										/* translators: %d: Tab index */
-										__( 'Tab %d', 'twork-builder' ),
+										__( 'Tab %d', 'mk-builder' ),
 										index + 1
 									) }
-									className="twork-rad-tabs-tab-panel"
+									className="mk-rad-tabs-tab-panel"
 								>
 									<TextControl
 										label={ __(
 											'Tab ID (slug)',
-											'twork-builder'
+											'mk-builder'
 										) }
 										help={ __(
 											'Used for linking button to content. Keep unique and lowercase.',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ tab.id }
 										onChange={ ( val ) =>
@@ -204,7 +204,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Button Label',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ tab.label }
 										onChange={ ( val ) =>
@@ -219,11 +219,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Button Icon Class',
-											'twork-builder'
+											'mk-builder'
 										) }
 										help={ __(
 											'Font Awesome class, e.g. "fas fa-chevron-right".',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ tab.iconClass }
 										onChange={ ( val ) =>
@@ -238,7 +238,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Pane Title',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ tab.paneTitle }
 										onChange={ ( val ) =>
@@ -253,7 +253,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Short Description',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ tab.description }
 										onChange={ ( val ) =>
@@ -268,11 +268,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<BaseControl
 										label={ __(
 											'Pane Image',
-											'twork-builder'
+											'mk-builder'
 										) }
 										help={ __(
 											'Upload or select an image for this modality.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									>
 										<MediaPlaceholder
@@ -310,7 +310,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											labels={ {
 												title: __(
 													'Select or upload tab image',
-													'twork-builder'
+													'mk-builder'
 												),
 											} }
 										/>
@@ -319,11 +319,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<BaseControl
 										label={ __(
 											'Feature List Items',
-											'twork-builder'
+											'mk-builder'
 										) }
 										help={ __(
 											'Up to 3 bullet points shown below the description.',
-											'twork-builder'
+											'mk-builder'
 										) }
 									>
 										{ ( tab.features && tab.features.length
@@ -336,7 +336,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													/* translators: %d: Feature index */
 													__(
 														'Feature %d',
-														'twork-builder'
+														'mk-builder'
 													),
 													featureIndex + 1
 												) }
@@ -360,7 +360,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Remove this tab',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									</div>
@@ -370,13 +370,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<p>
 								{ __(
 									'No tabs configured yet. Use "Add Tab" below to create one.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</p>
 						) }
 
 						<Button variant="primary" onClick={ addTab }>
-							{ __( 'Add Tab', 'twork-builder' ) }
+							{ __( 'Add Tab', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 				</InspectorControls>
@@ -393,7 +393,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Diagnostic Services',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -405,7 +405,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Select a modality to learn more about our capabilities.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</div>

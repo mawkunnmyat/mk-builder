@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { GreenerStatIcon } from './icons';
@@ -16,24 +16,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Icon', 'twork-builder' ) }
+						title={ __( 'Icon', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon style', 'twork-builder' ) }
+							label={ __( 'Icon style', 'mk-builder' ) }
 							value={ iconVariant }
 							options={ [
 								{
 									label: __(
 										'Growth / leaf',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'growth',
 								},
 								{
 									label: __(
 										'Organic globe',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'organic',
 								},
@@ -53,7 +53,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-greener-stat__title"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Stat title', 'twork-builder' ) }
+					placeholder={ __( 'Stat title', 'mk-builder' ) }
 				/>
 
 				<RichText
@@ -63,7 +63,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { description: val } )
 					}
-					placeholder={ __( 'Description…', 'twork-builder' ) }
+					placeholder={ __( 'Description…', 'mk-builder' ) }
 				/>
 			</article>
 		</>

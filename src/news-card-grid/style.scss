@@ -3,8 +3,8 @@
 // === EDITOR ===
 .editor-styles-wrapper,
 .block-editor-block-list__layout,
-.wp-block-twork-news-card-grid {
-	.twork-news-card-grid-editor {
+.wp-block-mk-news-card-grid {
+	.mk-news-card-grid-editor {
 		.blog-news__grid {
 			display: grid !important;
 			grid-template-columns: repeat(3, 1fr) !important;
@@ -22,7 +22,7 @@
 }
 
 // === FRONTEND ===
-.twork-news-card-grid {
+.mk-news-card-grid {
 	--color-primary: #ff7f00;
 	--color-brand-cyan-dark: #0099cc;
 	--color-text-muted: #666666;

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -31,7 +31,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-partners__item',
+			className: 'mk-partners__item',
 		} ),
 		[]
 	);
@@ -41,11 +41,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Image width (px)', 'twork-builder' ) }
+							label={ __( 'Image width (px)', 'mk-builder' ) }
 							value={ imageWidth }
 							onChange={ ( val ) => setAttributes( { imageWidth: val } ) }
 							min={ 50 }
@@ -53,7 +53,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 1 }
 						/>
 						<RangeControl
-							label={ __( 'Image height (px, 0 = auto)', 'twork-builder' ) }
+							label={ __( 'Image height (px, 0 = auto)', 'mk-builder' ) }
 							value={ imageHeight }
 							onChange={ ( val ) => setAttributes( { imageHeight: val } ) }
 							min={ 0 }
@@ -61,31 +61,31 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 1 }
 						/>
 						<SelectControl
-							label={ __( 'Image object fit', 'twork-builder' ) }
+							label={ __( 'Image object fit', 'mk-builder' ) }
 							value={ imageObjectFit }
 							options={ [
-								{ label: __( 'Contain', 'twork-builder' ), value: 'contain' },
-								{ label: __( 'Cover', 'twork-builder' ), value: 'cover' },
-								{ label: __( 'Fill', 'twork-builder' ), value: 'fill' },
+								{ label: __( 'Contain', 'mk-builder' ), value: 'contain' },
+								{ label: __( 'Cover', 'mk-builder' ), value: 'cover' },
+								{ label: __( 'Fill', 'mk-builder' ), value: 'fill' },
 							] }
 							onChange={ ( val ) => setAttributes( { imageObjectFit: val } ) }
 						/>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
 							}
 						/>
 					</PanelBody>
-					<PanelBody title={ __( 'Name', 'twork-builder' ) } initialOpen={ false }>
+					<PanelBody title={ __( 'Name', 'mk-builder' ) } initialOpen={ false }>
 						<ToggleControl
-							label={ __( 'Show partner name', 'twork-builder' ) }
+							label={ __( 'Show partner name', 'mk-builder' ) }
 							checked={ !! showName }
 							onChange={ ( val ) => setAttributes( { showName: val } ) }
 						/>
 						<RangeControl
-							label={ __( 'Name font size (rem x100)', 'twork-builder' ) }
+							label={ __( 'Name font size (rem x100)', 'mk-builder' ) }
 							value={ Math.round( ( nameFontSize || 1.25 ) * 100 ) }
 							onChange={ ( val ) =>
 								setAttributes( { nameFontSize: ( val || 125 ) / 100 } )
@@ -95,7 +95,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 5 }
 						/>
 						<RangeControl
-							label={ __( 'Name font weight', 'twork-builder' ) }
+							label={ __( 'Name font weight', 'mk-builder' ) }
 							value={ nameFontWeight }
 							onChange={ ( val ) => setAttributes( { nameFontWeight: val } ) }
 							min={ 300 }
@@ -104,12 +104,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelColorSettings
-						title={ __( 'Name color', 'twork-builder' ) }
+						title={ __( 'Name color', 'mk-builder' ) }
 						colorSettings={ [
 							{
 								value: nameColor,
 								onChange: ( val ) => setAttributes( { nameColor: val } ),
-								label: __( 'Text color', 'twork-builder' ),
+								label: __( 'Text color', 'mk-builder' ),
 							},
 						] }
 					/>
@@ -130,14 +130,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image' ] }
 						multiple={ false }
 						labels={ {
-							title: __( 'Partner icon', 'twork-builder' ),
+							title: __( 'Partner icon', 'mk-builder' ),
 						} }
 					/>
 				) : (
-					<div className="twork-partners__item-media">
+					<div className="mk-partners__item-media">
 						<img
 							src={ image }
-							className="twork-partners__icon"
+							className="mk-partners__icon"
 							alt=""
 							style={ {
 								width: `${ imageWidth }px`,
@@ -153,17 +153,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								setAttributes( { image: '', imageId: null } )
 							}
 						>
-							{ __( 'Replace', 'twork-builder' ) }
+							{ __( 'Replace', 'mk-builder' ) }
 						</Button>
 					</div>
 				) }
 				{ showName && (
 					<RichText
 						tagName="span"
-						className="twork-partners__name"
+						className="mk-partners__name"
 						value={ name }
 						onChange={ ( val ) => setAttributes( { name: val } ) }
-						placeholder={ __( 'Partner name', 'twork-builder' ) }
+						placeholder={ __( 'Partner name', 'mk-builder' ) }
 						allowedFormats={ [] }
 						style={ {
 							color: nameColor,

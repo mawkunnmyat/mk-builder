@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/affiliations-section",
+	"name": "mk/affiliations-section",
 	"title": "Logo Grid / Slider Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Display partner/affiliation logos in a clean grid with customizable title and styling.",
-	"keywords": [ "affiliations", "partners", "logos", "grid", "twork" ],
+	"keywords": [ "affiliations", "partners", "logos", "grid", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -187,19 +187,19 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/affiliation-logo-item",
+				"name": "mk/affiliation-logo-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/affiliation-logo-item",
+				"name": "mk/affiliation-logo-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/affiliation-logo-item",
+				"name": "mk/affiliation-logo-item",
 				"attributes": {}
 			},
 			{
-				"name": "twork/affiliation-logo-item",
+				"name": "mk/affiliation-logo-item",
 				"attributes": {}
 			}
 		]

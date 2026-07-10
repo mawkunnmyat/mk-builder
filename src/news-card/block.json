@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/news-card",
+	"name": "mk/news-card",
 	"title": "News Card",
-	"parent": [ "twork/news-card-grid" ],
-	"category": "twork-builder",
+	"parent": [ "mk/news-card-grid" ],
+	"category": "mk-builder",
 	"description": "Single blog news card with image, meta, title, and excerpt.",
-	"keywords": [ "blog", "news", "post", "card", "twork" ],
+	"keywords": [ "blog", "news", "post", "card", "mk" ],
 	"attributes": {
 		"author": {
 			"type": "string",
@@ -66,7 +66,7 @@
 			"imageAlt": "10 Viss Shwe Myanmar butter pack"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

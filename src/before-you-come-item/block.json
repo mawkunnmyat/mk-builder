@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/before-you-come-item",
+	"name": "mk/before-you-come-item",
 	"title": "Before You Come Item",
-	"parent": [ "twork/before-you-come-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/before-you-come-section" ],
+	"category": "mk-builder",
 	"description": "Single tip card (icon + title + description) for the Before You Come section.",
 	"attributes": {
 		"icon": {

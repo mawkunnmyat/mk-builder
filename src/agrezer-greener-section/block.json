@@ -1,17 +1,17 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/highlights-section",
+	"name": "mk/highlights-section",
 	"version": "1.0.0",
 	"title": "Highlights Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "palmtree",
 	"description": "Highlights section with stats row and cards row.",
 	"keywords": [
 		"greener",
 		"farming",
 		"organic",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -111,10 +111,10 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/stats-row",
+				"name": "mk/stats-row",
 				"innerBlocks": [
 					{
-						"name": "twork/stat-item",
+						"name": "mk/stat-item",
 						"attributes": {
 							"iconVariant": "growth",
 							"title": "80% Pure Growth",
@@ -128,7 +128,7 @@
 						}
 					},
 					{
-						"name": "twork/stat-item",
+						"name": "mk/stat-item",
 						"attributes": {
 							"iconVariant": "organic",
 							"title": "95% Organic Roots",
@@ -144,10 +144,10 @@
 				]
 			},
 			{
-				"name": "twork/cards-row",
+				"name": "mk/cards-row",
 				"innerBlocks": [
 					{
-						"name": "twork/image-link-card",
+						"name": "mk/image-link-card",
 						"attributes": {
 							"title": "Organic Farm Solutions",
 							"linkText": "Read More",
@@ -157,7 +157,7 @@
 						}
 					},
 					{
-						"name": "twork/image-link-card",
+						"name": "mk/image-link-card",
 						"attributes": {
 							"title": "Eco-Friendly Farming",
 							"linkText": "Read More",
@@ -167,7 +167,7 @@
 						}
 					},
 					{
-						"name": "twork/image-link-card",
+						"name": "mk/image-link-card",
 						"attributes": {
 							"title": "Organic Produce Supply",
 							"linkText": "Read More",
@@ -180,7 +180,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

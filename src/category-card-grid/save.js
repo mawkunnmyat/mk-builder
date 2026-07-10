@@ -14,14 +14,14 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'product-categories twork-category-card-grid',
+		className: 'product-categories mk-category-card-grid',
 		style: {
 			backgroundColor: backgroundColor || '#ffffff',
 			paddingTop: `${ padding }px`,
 			paddingBottom: `${ padding }px`,
 			'--category-columns': columns,
 		},
-		'data-block': 'twork/category-card-grid',
+		'data-block': 'mk/category-card-grid',
 	} );
 
 	const containerStyle = {

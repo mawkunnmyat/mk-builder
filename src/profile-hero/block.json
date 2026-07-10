@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/profile-hero",
+	"name": "mk/profile-hero",
 	"version": "1.0.0",
 	"title": "Profile Hero",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "admin-users",
 	"description": "Doctor profile hero section with image, name, designation, specs, bio, and action buttons.",
-	"keywords": [ "profile", "doctor", "hero", "twork", "jivaka" ],
+	"keywords": [ "profile", "doctor", "hero", "mk", "jivaka" ],
 	"supports": {
 		"html": false,
 		"align": [ "full", "wide" ]
@@ -164,7 +164,7 @@
 			"secondaryButtonTarget": false
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,9 +1,11 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
 	PanelColorSettings,
+	MediaUpload,
+	MediaUploadCheck,
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -37,6 +39,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		featureUnavailableColor,
 		featureIconColor,
 		featureFontSize,
+		featureMarkerType,
+		featureMarkerImageUrl,
+		featureMarkerImageId,
+		itemDisplayType,
+		itemImageUrl,
+		itemImageId,
+		itemImageAlt,
 		showButton,
 		buttonText,
 		buttonUrl,
@@ -51,11 +60,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		buttonFontWeight,
 	} = attributes;
 
+	const isImageDisplayType =
+		itemDisplayType === 'image' || itemDisplayType === 'image-only';
+	const shouldUseImageCard = isImageDisplayType && !! itemImageUrl;
+	const isImageOnly = itemDisplayType === 'image-only' && !! itemImageUrl;
+	const showHeader = ! isImageOnly;
+	const showFooterButton = showButton && ! isImageOnly;
+
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `twork-package-item-editor package-card ${
-				isRecommended ? 'recommended' : ''
-			}`,
+			className: [
+				'mk-package-item-editor',
+				'package-card',
+				isRecommended ? 'recommended' : '',
+				shouldUseImageCard ? 'is-image-card' : '',
+				isImageOnly ? 'is-image-only' : '',
+			]
+				.filter( Boolean )
+				.join( ' ' ),
 
 			'data-category': category,
 			style: {
@@ -67,14 +89,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				flexDirection: 'column',
 			},
 		} ),
-		[ category, isRecommended ]
+		[ category, isRecommended, shouldUseImageCard, isImageOnly ]
 	);
 
 	const addFeature = () => {
 		setAttributes( {
 			features: [
 				...features,
-				{ text: __( 'New feature', 'twork-builder' ), available: true },
+				{ text: __( 'New feature', 'mk-builder' ), available: true },
 			],
 		} );
 	};
@@ -90,18 +112,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		setAttributes( { features: filtered } );
 	};
 
+	const shouldUseImageMarker =
+		featureMarkerType === 'image' && !! featureMarkerImageUrl;
+
 	return (
 		<>
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Package & Category', 'twork-builder' ) }
+						title={ __( 'Package & Category', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Category (for filter)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ category }
 							onChange={ ( val ) =>
@@ -109,7 +134,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Must match a filter tab value (e.g. general, heart, women).',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -117,7 +142,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Recommended / Highlight',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ isRecommended }
 							onChange={ ( val ) =>
@@ -127,17 +152,109 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ isRecommended && (
 							<TextControl
-								label={ __( 'Ribbon Text', 'twork-builder' ) }
+								label={ __( 'Ribbon Text', 'mk-builder' ) }
 								value={ ribbonText }
 								onChange={ ( val ) =>
 									setAttributes( { ribbonText: val } )
 								}
 							/>
 						) }
+						<Divider />
+						<SelectControl
+							label={ __( 'Package Display Type', 'mk-builder' ) }
+							value={ itemDisplayType }
+							options={ [
+								{
+									label: __( 'Bullet List Card', 'mk-builder' ),
+									value: 'bullet',
+								},
+								{
+									label: __( 'Image Card', 'mk-builder' ),
+									value: 'image',
+								},
+								{
+									label: __( 'Image Only', 'mk-builder' ),
+									value: 'image-only',
+								},
+							] }
+							onChange={ ( val ) =>
+								setAttributes( { itemDisplayType: val } )
+							}
+						/>
+						{ isImageDisplayType && (
+							<BaseControl
+								label={ __( 'Package Image', 'mk-builder' ) }
+							>
+								<MediaUploadCheck>
+									<MediaUpload
+										onSelect={ ( media ) =>
+											setAttributes( {
+												itemImageUrl: media?.url || '',
+												itemImageId:
+													media?.id || undefined,
+												itemImageAlt:
+													media?.alt || '',
+											} )
+										}
+										allowedTypes={ [ 'image' ] }
+										value={ itemImageId }
+										render={ ( { open } ) => (
+											<Button
+												isSecondary
+												isSmall
+												onClick={ open }
+											>
+												{ itemImageUrl
+													? __(
+															'Replace Package Image',
+															'mk-builder'
+													  )
+													: __(
+															'Select Package Image',
+															'mk-builder'
+													  ) }
+											</Button>
+										) }
+									/>
+								</MediaUploadCheck>
+								{ itemImageUrl && (
+									<div style={ { marginTop: '10px' } }>
+										<img
+											src={ itemImageUrl }
+											alt={ itemImageAlt || '' }
+											style={ {
+												width: '100%',
+												maxWidth: '220px',
+												height: 'auto',
+												display: 'block',
+												marginBottom: '8px',
+												borderRadius: '6px',
+											} }
+										/>
+										<Button
+											isDestructive
+											isSmall
+											onClick={ () =>
+												setAttributes( {
+													itemImageUrl: '',
+													itemImageId: undefined,
+													itemImageAlt: '',
+												} )
+											}
+										>
+											{ __(
+												'Remove Package Image',
+												'mk-builder'
+											) }
+										</Button>
+									</div>
+								) }
+							</BaseControl>
+						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Package Name', 'twork-builder' ) }
+						title={ __( 'Package Name', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
@@ -148,13 +265,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											packageNameColor: val,
 										} ),
-									label: __( 'Name Color', 'twork-builder' ),
+									label: __( 'Name Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ packageNameFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { packageNameFontSize: val } )
@@ -165,7 +282,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ packageNameFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { packageNameFontWeight: val } )
@@ -177,11 +294,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Price', 'twork-builder' ) }
+						title={ __( 'Price', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Currency', 'twork-builder' ) }
+							label={ __( 'Currency', 'mk-builder' ) }
 							value={ currency }
 							onChange={ ( val ) =>
 								setAttributes( { currency: val } )
@@ -189,7 +306,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Amount', 'twork-builder' ) }
+							label={ __( 'Amount', 'mk-builder' ) }
 							value={ amount }
 							onChange={ ( val ) =>
 								setAttributes( { amount: val } )
@@ -202,7 +319,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									value: priceColor,
 									onChange: ( val ) =>
 										setAttributes( { priceColor: val } ),
-									label: __( 'Price Color', 'twork-builder' ),
+									label: __( 'Price Color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -210,7 +327,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Amount Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ amountFontSize }
 							onChange={ ( val ) =>
@@ -223,7 +340,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Description', 'twork-builder' ) }
+						title={ __( 'Description', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
@@ -236,14 +353,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Description Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ descriptionFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { descriptionFontSize: val } )
@@ -255,11 +372,104 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Features List', 'twork-builder' ) }
+						title={ __( 'Features List', 'mk-builder' ) }
 						initialOpen={ false }
 					>
+						<SelectControl
+							label={ __( 'Feature Marker Style', 'mk-builder' ) }
+							value={ featureMarkerType }
+							options={ [
+								{
+									label: __(
+										'Bullet (Default Icons)',
+										'mk-builder'
+									),
+									value: 'bullet',
+								},
+								{
+									label: __( 'Image', 'mk-builder' ),
+									value: 'image',
+								},
+							] }
+							onChange={ ( val ) =>
+								setAttributes( { featureMarkerType: val } )
+							}
+						/>
+
+						{ featureMarkerType === 'image' && (
+							<BaseControl
+								label={ __( 'Feature Marker Image', 'mk-builder' ) }
+							>
+								<MediaUploadCheck>
+									<MediaUpload
+										onSelect={ ( media ) =>
+											setAttributes( {
+												featureMarkerImageUrl:
+													media?.url || '',
+												featureMarkerImageId:
+													media?.id || undefined,
+											} )
+										}
+										allowedTypes={ [ 'image' ] }
+										value={ featureMarkerImageId }
+										render={ ( { open } ) => (
+											<Button
+												isSecondary
+												isSmall
+												onClick={ open }
+											>
+												{ featureMarkerImageUrl
+													? __(
+															'Replace Marker Image',
+															'mk-builder'
+													  )
+													: __(
+															'Select Marker Image',
+															'mk-builder'
+													  ) }
+											</Button>
+										) }
+									/>
+								</MediaUploadCheck>
+								{ featureMarkerImageUrl && (
+									<div style={ { marginTop: '10px' } }>
+										<img
+											src={ featureMarkerImageUrl }
+											alt={ __(
+												'Feature marker preview',
+												'mk-builder'
+											) }
+											style={ {
+												width: '24px',
+												height: '24px',
+												objectFit: 'contain',
+												display: 'block',
+												marginBottom: '8px',
+											} }
+										/>
+										<Button
+											isDestructive
+											isSmall
+											onClick={ () =>
+												setAttributes( {
+													featureMarkerImageUrl: '',
+													featureMarkerImageId:
+														undefined,
+												} )
+											}
+										>
+											{ __(
+												'Remove Marker Image',
+												'mk-builder'
+											) }
+										</Button>
+									</div>
+								) }
+							</BaseControl>
+						) }
+						<Divider />
 						<BaseControl
-							label={ __( 'Features', 'twork-builder' ) }
+							label={ __( 'Features', 'mk-builder' ) }
 						>
 							{ features.map( ( feat, index ) => (
 								<div
@@ -274,7 +484,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<TextControl
 										label={ __(
 											'Feature text',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ feat.text }
 										onChange={ ( val ) =>
@@ -285,7 +495,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									<ToggleControl
 										label={ __(
 											'Available (check icon)',
-											'twork-builder'
+											'mk-builder'
 										) }
 										checked={ feat.available }
 										onChange={ ( val ) =>
@@ -303,17 +513,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										onClick={ () => removeFeature( index ) }
 										style={ { marginTop: '8px' } }
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) ) }
 							<Button isPrimary isSmall onClick={ addFeature }>
-								{ __( 'Add Feature', 'twork-builder' ) }
+								{ __( 'Add Feature', 'mk-builder' ) }
 							</Button>
 						</BaseControl>
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Feature Colors', 'twork-builder' ) }
+							title={ __( 'Feature Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: featureTextColor,
@@ -321,7 +531,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											featureTextColor: val,
 										} ),
-									label: __( 'Text Color', 'twork-builder' ),
+									label: __( 'Text Color', 'mk-builder' ),
 								},
 								{
 									value: featureUnavailableColor,
@@ -331,7 +541,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Unavailable Text Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -342,7 +552,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Check Icon Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -351,7 +561,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Feature Font Size (rem)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ featureFontSize }
 							onChange={ ( val ) =>
@@ -364,11 +574,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Button', 'twork-builder' ) }
+						title={ __( 'Button', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show Button', 'twork-builder' ) }
+							label={ __( 'Show Button', 'mk-builder' ) }
 							checked={ showButton }
 							onChange={ ( val ) =>
 								setAttributes( { showButton: val } )
@@ -380,7 +590,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Button Text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ buttonText }
 									onChange={ ( val ) =>
@@ -391,7 +601,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Button URL',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ buttonUrl }
 									onChange={ ( val ) =>
@@ -403,7 +613,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Open in New Tab',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ buttonTarget }
 									onChange={ ( val ) =>
@@ -412,7 +622,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'Rel', 'twork-builder' ) }
+									label={ __( 'Rel', 'mk-builder' ) }
 									value={ buttonRel }
 									onChange={ ( val ) =>
 										setAttributes( { buttonRel: val } )
@@ -422,21 +632,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Button Style',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ buttonStyle }
 									options={ [
 										{
 											label: __(
 												'Primary (filled)',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'primary',
 										},
 										{
 											label: __(
 												'Outline',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'outline',
 										},
@@ -456,7 +666,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Background',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 										{
@@ -467,7 +677,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Text Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 										{
@@ -478,7 +688,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} ),
 											label: __(
 												'Border Color',
-												'twork-builder'
+												'mk-builder'
 											),
 										},
 									] }
@@ -487,7 +697,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Border Radius (px)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ buttonBorderRadius }
 									onChange={ ( val ) =>
@@ -503,7 +713,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Size (rem)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ buttonFontSize }
 									onChange={ ( val ) =>
@@ -517,7 +727,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<RangeControl
 									label={ __(
 										'Font Weight',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ buttonFontWeight }
 									onChange={ ( val ) =>
@@ -555,6 +765,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						{ ribbonText }
 					</div>
 				) }
+				{ showHeader && (
 				<div
 					className="pkg-header"
 					style={ {
@@ -571,7 +782,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { packageName: val } )
 						}
-						placeholder={ __( 'Package name...', 'twork-builder' ) }
+						placeholder={ __( 'Package name...', 'mk-builder' ) }
 						style={ {
 							fontSize: `${ packageNameFontSize }rem`,
 							fontWeight: packageNameFontWeight,
@@ -622,7 +833,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'Short description...',
-							'twork-builder'
+							'mk-builder'
 						) }
 						style={ {
 							fontSize: `${ descriptionFontSize }rem`,
@@ -631,57 +842,88 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						} }
 					/>
 				</div>
+				) }
 				<div
 					className="pkg-body"
-					style={ { padding: 30, flexGrow: 1 } }
+					style={ {
+						padding: shouldUseImageCard ? 0 : 30,
+						flexGrow: 1,
+					} }
 				>
-					<ul
-						className="pkg-features"
-						style={ { listStyle: 'none', padding: 0, margin: 0 } }
-					>
-						{ features.map( ( feat, index ) => (
-							<li
-								key={ index }
-								className={
-									feat.available ? '' : 'unavailable'
-								}
-								style={ {
-									display: 'flex',
-									alignItems: 'flex-start',
-									marginBottom: 15,
-									fontSize: `${ featureFontSize }rem`,
-									color: feat.available
-										? featureTextColor
-										: featureUnavailableColor,
-									textDecoration: feat.available
-										? 'none'
-										: 'line-through',
-								} }
-							>
-								<i
+					{ shouldUseImageCard ? (
+						<div className="pkg-display-image">
+							<img
+								src={ itemImageUrl }
+								alt={ itemImageAlt || packageName || '' }
+								loading="lazy"
+								decoding="async"
+							/>
+						</div>
+					) : (
+						<ul
+							className="pkg-features"
+							style={ { listStyle: 'none', padding: 0, margin: 0 } }
+						>
+							{ features.map( ( feat, index ) => (
+								<li
+									key={ index }
 									className={
-										feat.available
-											? 'fas fa-check-circle'
-											: 'fas fa-times-circle'
+										feat.available ? '' : 'unavailable'
 									}
 									style={ {
+										display: 'flex',
+										alignItems: 'flex-start',
+										marginBottom: 15,
+										fontSize: `${ featureFontSize }rem`,
 										color: feat.available
-											? featureIconColor
-											: '#ccc',
-										marginRight: 12,
-										marginTop: 4,
-										fontSize: '1rem',
-										flexShrink: 0,
+											? featureTextColor
+											: featureUnavailableColor,
+										textDecoration: feat.available
+											? 'none'
+											: 'line-through',
 									} }
-									aria-hidden
-								/>
+								>
+									{ shouldUseImageMarker ? (
+										<img
+											src={ featureMarkerImageUrl }
+											alt=""
+											style={ {
+												width: '18px',
+												height: '18px',
+												marginRight: 12,
+												marginTop: 2,
+												objectFit: 'contain',
+												flexShrink: 0,
+											} }
+											aria-hidden
+										/>
+									) : (
+										<i
+											className={
+												feat.available
+													? 'fas fa-check-circle'
+													: 'fas fa-times-circle'
+											}
+											style={ {
+												color: feat.available
+													? featureIconColor
+													: '#ccc',
+												marginRight: 12,
+												marginTop: 4,
+												fontSize: '1rem',
+												flexShrink: 0,
+											} }
+											aria-hidden
+										/>
+									) }
 
-								<span>{ feat.text }</span>
-							</li>
-						) ) }
-					</ul>
+									<span>{ feat.text }</span>
+								</li>
+							) ) }
+						</ul>
+					) }
 				</div>
-				{ showButton && (
+				{ showFooterButton && (
 					<div
 						className="pkg-footer"
 						style={ {

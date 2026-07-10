@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/story-item",
+	"name": "mk/story-item",
 	"title": "Story Item",
-	"parent": [ "twork/story-grid" ],
+	"parent": [ "mk/story-grid" ],
 	"attributes": {
 		"layout": {
 			"type": "string",

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, MediaPlaceholder } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -10,21 +10,21 @@ import {
 } from '@wordpress/components';
 
 const PHOTO_TYPE_OPTIONS = [
-	{ value: 'image', label: __( 'Image / GIF', 'twork-builder' ) },
-	{ value: 'video', label: __( 'Video', 'twork-builder' ) },
+	{ value: 'image', label: __( 'Image / GIF', 'mk-builder' ) },
+	{ value: 'video', label: __( 'Video', 'mk-builder' ) },
 	{
 		value: 'dashicon',
-		label: __( 'WordPress (Dashicons)', 'twork-builder' ),
+		label: __( 'WordPress (Dashicons)', 'mk-builder' ),
 	},
-	{ value: 'fontawesome', label: __( 'Font Awesome', 'twork-builder' ) },
+	{ value: 'fontawesome', label: __( 'Font Awesome', 'mk-builder' ) },
 ];
 
 const DASHICON_OPTIONS = [
-	{ value: 'dashicons-admin-users', label: __( 'Users', 'twork-builder' ) },
-	{ value: 'dashicons-groups', label: __( 'Groups', 'twork-builder' ) },
-	{ value: 'dashicons-heart', label: __( 'Heart', 'twork-builder' ) },
-	{ value: 'dashicons-editor-help', label: __( 'Help', 'twork-builder' ) },
-	{ value: 'dashicons-awards', label: __( 'Awards', 'twork-builder' ) },
+	{ value: 'dashicons-admin-users', label: __( 'Users', 'mk-builder' ) },
+	{ value: 'dashicons-groups', label: __( 'Groups', 'mk-builder' ) },
+	{ value: 'dashicons-heart', label: __( 'Heart', 'mk-builder' ) },
+	{ value: 'dashicons-editor-help', label: __( 'Help', 'mk-builder' ) },
+	{ value: 'dashicons-awards', label: __( 'Awards', 'mk-builder' ) },
 ];
 
 function SpecialistPhotoRender( {
@@ -84,7 +84,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	} = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'doc-card twork-centre-specialist-card-editor',
+			className: 'doc-card mk-centre-specialist-card-editor',
 		} ),
 		[]
 	);
@@ -94,21 +94,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Photo / Icon', 'twork-builder' ) }
+						title={ __( 'Photo / Icon', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
 							label={ __(
 								'Photo or icon type',
-								'twork-builder'
+								'mk-builder'
 							) }
 							help={ __(
 								'Image/GIF, video, or WordPress/FA icon.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							<SelectControl
-								label={ __( 'Type', 'twork-builder' ) }
+								label={ __( 'Type', 'mk-builder' ) }
 								value={ photoType || 'image' }
 								options={ PHOTO_TYPE_OPTIONS }
 								onChange={ ( v ) =>
@@ -130,7 +130,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Doctor photo (image/GIF)',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -160,7 +160,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }
@@ -178,7 +178,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										labels={ {
 											title: __(
 												'Photo (video)',
-												'twork-builder'
+												'mk-builder'
 											),
 										} }
 									/>
@@ -210,7 +210,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 								) ) }
@@ -218,7 +218,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Font Awesome class',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ photoIconClass || 'fas fa-user-md' }
 									onChange={ ( v ) =>
@@ -229,7 +229,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'e.g. fas fa-user-md',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							) }
@@ -237,7 +237,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'WordPress Dashicon',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={
 										photoDashicon || 'dashicons-admin-users'
@@ -250,15 +250,15 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							) }
 						</BaseControl>
 					</PanelBody>
-					<PanelBody title={ __( 'Details', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Details', 'mk-builder' ) }>
 						<TextControl
-							label={ __( 'Name', 'twork-builder' ) }
+							label={ __( 'Name', 'mk-builder' ) }
 							value={ name }
 							onChange={ ( v ) => setAttributes( { name: v } ) }
 						/>
 
 						<TextControl
-							label={ __( 'Specialization', 'twork-builder' ) }
+							label={ __( 'Specialization', 'mk-builder' ) }
 							value={ specialization }
 							onChange={ ( v ) =>
 								setAttributes( { specialization: v } )
@@ -266,7 +266,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Qualifications', 'twork-builder' ) }
+							label={ __( 'Qualifications', 'mk-builder' ) }
 							value={ qualifications }
 							onChange={ ( v ) =>
 								setAttributes( { qualifications: v } )
@@ -275,7 +275,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Profile URL', 'twork-builder' ) }
+							label={ __( 'Profile URL', 'mk-builder' ) }
 							value={ profileUrl }
 							onChange={ ( v ) =>
 								setAttributes( { profileUrl: v || '#' } )
@@ -283,7 +283,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button text', 'twork-builder' ) }
+							label={ __( 'Button text', 'mk-builder' ) }
 							value={ profileLinkText }
 							onChange={ ( v ) =>
 								setAttributes( { profileLinkText: v } )
@@ -314,10 +314,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					aria-label={
 						profileLinkText
 							? undefined
-							: __( 'View profile', 'twork-builder' )
+							: __( 'View profile', 'mk-builder' )
 					}
 				>
-					{ profileLinkText || __( 'View Profile', 'twork-builder' ) }
+					{ profileLinkText || __( 'View Profile', 'mk-builder' ) }
 				</a>
 			</div>
 		</>

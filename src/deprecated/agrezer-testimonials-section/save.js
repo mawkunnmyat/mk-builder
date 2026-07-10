@@ -28,7 +28,7 @@ export default function save( { attributes } ) {
 	);
 
 	const blockProps = useBlockProps.save( {
-		className: 'agrezer-testimonials twork-agrezer-testimonials-section',
+		className: 'agrezer-testimonials mk-agrezer-testimonials-section',
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,

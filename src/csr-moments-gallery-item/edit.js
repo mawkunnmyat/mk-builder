@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, MediaPlaceholder } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -14,7 +14,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `twork-csr-moments-gallery-item-editor gallery-item stagger-img ${
+			className: `mk-csr-moments-gallery-item-editor gallery-item stagger-img ${
 				spanTwoColumns ? 'span-two' : ''
 			}`,
 
@@ -36,11 +36,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Gallery Image', 'twork-builder' ) }
+							label={ __( 'Gallery Image', 'mk-builder' ) }
 						>
 							{ ! imageUrl ? (
 								<MediaPlaceholder
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Select Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -88,33 +88,33 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove Image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>
 							) }
 						</BaseControl>
 						<TextControl
-							label={ __( 'Alt Text', 'twork-builder' ) }
+							label={ __( 'Alt Text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
 							}
 							help={ __(
 								'Accessibility and SEO',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<ToggleControl
-							label={ __( 'Span 2 Columns', 'twork-builder' ) }
+							label={ __( 'Span 2 Columns', 'mk-builder' ) }
 							checked={ spanTwoColumns }
 							onChange={ ( val ) =>
 								setAttributes( { spanTwoColumns: val } )
 							}
 							help={ __(
 								'Make this item span two grid columns (featured/large)',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -146,7 +146,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							fontSize: '0.9rem',
 						} }
 					>
-						{ __( 'Add image in sidebar', 'twork-builder' ) }
+						{ __( 'Add image in sidebar', 'mk-builder' ) }
 					</div>
 				) }
 			</div>

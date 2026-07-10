@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/inquiry-form-section",
+	"name": "mk/inquiry-form-section",
 	"version": "1.0.0",
 	"title": "Inquiry Form Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "feedback",
 	"description": "International patient inquiry form section with left content panel and right form.",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"international",
 		"patient",
 		"contact",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"sectionPaddingTop": {
@@ -245,7 +245,7 @@
 			"animationOnScroll": true
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

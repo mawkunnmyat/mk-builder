@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 // eslint-disable-next-line import/no-unresolved -- workspace alias via webpack
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -19,7 +19,7 @@ import {
 function CustomImagePlaceholder() {
 	return (
 		<svg
-			className="twork-hero-feature__icon-placeholder"
+			className="mk-hero-feature__icon-placeholder"
 			width="30"
 			height="30"
 			viewBox="0 0 24 24"
@@ -148,12 +148,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	} = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `twork-hero-feature${
+			className: `mk-hero-feature${
 				enableHoverAnimation ? ' is-hover-anim-enabled' : ''
 			}`,
 			style: {
-				'--twork-icon-x': `${ iconOffsetX }px`,
-				'--twork-icon-y': `${ iconOffsetY }px`,
+				'--mk-icon-x': `${ iconOffsetX }px`,
+				'--mk-icon-y': `${ iconOffsetY }px`,
 			},
 		} ),
 		[ enableHoverAnimation, iconOffsetX, iconOffsetY ]
@@ -230,29 +230,29 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Feature Settings', 'twork-builder' ) }
+						title={ __( 'Feature Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Icon Variant', 'twork-builder' ) }
+							label={ __( 'Icon Variant', 'mk-builder' ) }
 							value={ iconVariant }
 							options={ [
 								{
-									label: __( 'Leaf', 'twork-builder' ),
+									label: __( 'Leaf', 'mk-builder' ),
 									value: 'leaf',
 								},
 								{
-									label: __( 'Drop', 'twork-builder' ),
+									label: __( 'Drop', 'mk-builder' ),
 									value: 'drop',
 								},
 								{
-									label: __( 'Sprout', 'twork-builder' ),
+									label: __( 'Sprout', 'mk-builder' ),
 									value: 'sprout',
 								},
 								{
 									label: __(
 										'Custom Media',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'image',
 								},
@@ -280,7 +280,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												>
 													{ __(
 														'Select icon media',
-														'twork-builder'
+														'mk-builder'
 													) }
 												</Button>
 											) }
@@ -336,7 +336,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 													>
 														{ __(
 															'Replace media',
-															'twork-builder'
+															'mk-builder'
 														) }
 													</Button>
 												) }
@@ -349,7 +349,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Remove media',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									</>
@@ -357,7 +357,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							</div>
 						) }
 						<RangeControl
-							label={ __( 'Icon size (px)', 'twork-builder' ) }
+							label={ __( 'Icon size (px)', 'mk-builder' ) }
 							value={ iconSize }
 							onChange={ ( val ) =>
 								setAttributes( { iconSize: val } )
@@ -369,7 +369,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Icon offset X (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconOffsetX }
 							onChange={ ( val ) =>
@@ -382,7 +382,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Icon offset Y (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconOffsetY }
 							onChange={ ( val ) =>
@@ -395,7 +395,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Enable hover animation',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ enableHoverAnimation }
 							onChange={ ( val ) =>
@@ -403,19 +403,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 						/>
 						<PanelColorSettings
-							title={ __( 'Colors', 'twork-builder' ) }
+							title={ __( 'Colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: badgeColor,
 									onChange: ( val ) =>
 										setAttributes( { badgeColor: val } ),
-									label: __( 'Badge color', 'twork-builder' ),
+									label: __( 'Badge color', 'mk-builder' ),
 								},
 								{
 									value: iconColor,
 									onChange: ( val ) =>
 										setAttributes( { iconColor: val } ),
-									label: __( 'Icon color', 'twork-builder' ),
+									label: __( 'Icon color', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -424,9 +424,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<article { ...blockProps }>
-				<div className="twork-hero-feature__badge" aria-hidden="true">
+				<div className="mk-hero-feature__badge" aria-hidden="true">
 					<svg
-						className="twork-hero-feature__badge-svg"
+						className="mk-hero-feature__badge-svg"
 						viewBox="0 0 100 100"
 						xmlns="http://www.w3.org/2000/svg"
 					>
@@ -435,16 +435,16 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							fill={ badgeColor }
 						/>
 					</svg>
-					<span className="twork-hero-feature__icon-wrap">
+					<span className="mk-hero-feature__icon-wrap">
 						{ renderIconArea() }
 					</span>
 				</div>
 				<RichText
 					tagName="h3"
-					className="twork-hero-feature__title"
+					className="mk-hero-feature__title"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Feature title…', 'twork-builder' ) }
+					placeholder={ __( 'Feature title…', 'mk-builder' ) }
 				/>
 			</article>
 		</>

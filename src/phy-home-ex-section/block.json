@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-home-ex-section",
+	"name": "mk/phy-home-ex-section",
 	"version": "1.0.0",
 	"title": "Home Exercise Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "excerpt-view",
 	"description": "Continue Healing at Home section with badge, title, description, bullet list, and image. Matches physiotherapy-rehab.html.",
-	"keywords": [ "physio", "home exercise", "wellness", "twork" ],
+	"keywords": [ "physio", "home exercise", "wellness", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -83,7 +83,7 @@
 			"imageAlt": "Home Exercise"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

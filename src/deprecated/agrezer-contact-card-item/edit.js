@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -29,7 +29,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-agrezer-contact-card-item-editor',
+			className: 'mk-agrezer-contact-card-item-editor',
 			style: {
 				backgroundColor: cardBgColor,
 			},
@@ -42,7 +42,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Card', 'twork-builder' ) }
+						title={ __( 'Card', 'mk-builder' ) }
 						initialOpen
 					>
 						{ iconUrl && (
@@ -56,24 +56,24 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove icon', 'twork-builder' ) }
+								{ __( 'Remove icon', 'mk-builder' ) }
 							</Button>
 						) }
 						<SelectControl
-							label={ __( 'Bottom content', 'twork-builder' ) }
+							label={ __( 'Bottom content', 'mk-builder' ) }
 							value={ contentType }
 							options={ [
 								{
 									label: __(
 										'Clickable link (tel, mail, URL)',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'link',
 								},
 								{
 									label: __(
 										'Plain text (e.g. address)',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'text',
 								},
@@ -86,21 +86,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						{ contentType === 'link' && (
 							<>
 								<TextControl
-									label={ __( 'Link URL', 'twork-builder' ) }
+									label={ __( 'Link URL', 'mk-builder' ) }
 									value={ linkUrl }
 									onChange={ ( v ) =>
 										setAttributes( { linkUrl: v } )
 									}
 									help={ __(
 										'Use tel:, mailto:, or https://',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<TextControl
 									label={ __(
 										'Link label',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ linkText }
 									onChange={ ( v ) =>
@@ -113,7 +113,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<TextControl
 								label={ __(
 									'Address / text',
-									'twork-builder'
+									'mk-builder'
 								) }
 								value={ plainText }
 								onChange={ ( v ) =>
@@ -122,7 +122,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							/>
 						) }
 						<BaseControl
-							label={ __( 'Card background', 'twork-builder' ) }
+							label={ __( 'Card background', 'mk-builder' ) }
 						>
 							<input
 								type="color"
@@ -135,7 +135,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							/>
 						</BaseControl>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ iconAlt }
 							onChange={ ( v ) =>
 								setAttributes( { iconAlt: v } )
@@ -158,7 +158,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					) : (
 						<MediaPlaceholder
 							labels={ {
-								title: __( 'Icon image', 'twork-builder' ),
+								title: __( 'Icon image', 'mk-builder' ),
 							} }
 							onSelect={ ( media ) => {
 								setAttributes( {
@@ -178,7 +178,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-contact-card__title"
 					value={ title }
 					onChange={ ( v ) => setAttributes( { title: v } ) }
-					placeholder={ __( 'Title', 'twork-builder' ) }
+					placeholder={ __( 'Title', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 
@@ -187,7 +187,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-contact-card__subtitle"
 					value={ subtitle }
 					onChange={ ( v ) => setAttributes( { subtitle: v } ) }
-					placeholder={ __( 'Subtitle', 'twork-builder' ) }
+					placeholder={ __( 'Subtitle', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 
@@ -196,7 +196,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<span className="agrezer-contact-card__link agrezer-contact-card__link--preview">
 							{ linkText ||
 								linkUrl ||
-								__( 'Link', 'twork-builder' ) }
+								__( 'Link', 'mk-builder' ) }
 						</span>
 					</p>
 				) : (
@@ -205,7 +205,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						className="agrezer-contact-card__text"
 						value={ plainText }
 						onChange={ ( v ) => setAttributes( { plainText: v } ) }
-						placeholder={ __( 'Plain text', 'twork-builder' ) }
+						placeholder={ __( 'Plain text', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 				) }

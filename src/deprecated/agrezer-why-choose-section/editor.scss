@@ -1,4 +1,4 @@
-.twork-agrezer-why-choose-section-editor {
+.mk-agrezer-why-choose-section-editor {
 	.agrezer-why-choose__tagline span[contenteditable="true"],
 	.agrezer-why-choose__title[contenteditable="true"] {
 		&:focus {
@@ -7,7 +7,7 @@
 		}
 	}
 
-	.twork-agrezer-why-choose__stage-editor {
+	.mk-agrezer-why-choose__stage-editor {
 		> .block-editor-inner-blocks {
 			display: contents;
 
@@ -15,7 +15,7 @@
 				display: contents;
 
 				> .wp-block,
-				> [data-type="twork/agrezer-why-choose-point-item"] {
+				> [data-type="mk/agrezer-why-choose-point-item"] {
 					display: block;
 				}
 			}

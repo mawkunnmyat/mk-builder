@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hc-faq-item",
+	"name": "mk/hc-faq-item",
 	"title": "FAQ Item",
-	"parent": [ "twork/hc-faq-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/hc-faq-section" ],
+	"category": "mk-builder",
 	"description": "Single FAQ: question and answer for the Home Care FAQ section.",
-	"keywords": [ "home care", "faq", "accordion", "question", "twork" ],
+	"keywords": [ "home care", "faq", "accordion", "question", "mk" ],
 	"attributes": {
 		"question": {
 			"type": "string",
@@ -26,6 +26,6 @@
 			"answer": "Yes, our nursing and doctor visit services can be arranged for any time of the day, depending on availability."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

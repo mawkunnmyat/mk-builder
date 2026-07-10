@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { useInstanceId } from '@wordpress/compose';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	useInnerBlocksProps,
 	InspectorControls,
@@ -15,17 +15,17 @@ import {
 } from '@wordpress/components';
 
 const ALLOWED_BLOCKS = [
-	'twork/features-grid',
-	'twork/images-grid',
+	'mk/features-grid',
+	'mk/images-grid',
 ];
 
 const TEMPLATE = [
-	[ 'twork/features-grid', {} ],
-	[ 'twork/images-grid', {} ],
+	[ 'mk/features-grid', {} ],
+	[ 'mk/images-grid', {} ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
-	const titleId = useInstanceId( Edit, 'twork-about-title' );
+	const titleId = useInstanceId( Edit, 'mk-about-title' );
 
 	const {
 		backgroundColor,
@@ -45,13 +45,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-about twork-about-section-editor',
+			className: 'mk-about mk-about-section-editor',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
-				'--twork-about-max-width': `${ containerMaxWidth }px`,
-				'--twork-about-gutter': `${ containerGutter }px`,
+				'--mk-about-max-width': `${ containerMaxWidth }px`,
+				'--mk-about-gutter': `${ containerGutter }px`,
 			},
 		} ),
 		[
@@ -72,7 +72,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const innerBlocksProps = useInnerBlocksProps(
 		{
-			className: 'twork-about-section__inner-blocks',
+			className: 'mk-about-section__inner-blocks',
 		},
 		{
 			allowedBlocks: ALLOWED_BLOCKS,
@@ -86,13 +86,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section header', 'twork-builder' ) }
+						title={ __( 'Section header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Label icon (emoji)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ labelIcon }
 							onChange={ ( val ) =>
@@ -100,12 +100,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Single emoji or short symbol.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Label text', 'twork-builder' ) }
+							label={ __( 'Label text', 'mk-builder' ) }
 							value={ labelText }
 							onChange={ ( val ) =>
 								setAttributes( { labelText: val } )
@@ -113,7 +113,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Label color', 'twork-builder' ) }
+							title={ __( 'Label color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: labelColor,
@@ -121,14 +121,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { labelColor: val } ),
 									label: __(
 										'Label text color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Label icon tint', 'twork-builder' ) }
+							title={ __( 'Label icon tint', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: labelIconColor,
@@ -136,14 +136,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											labelIconColor: val,
 										} ),
-									label: __( 'Icon color', 'twork-builder' ),
+									label: __( 'Icon color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Title color', 'twork-builder' ) }
+							title={ __( 'Title color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
@@ -151,14 +151,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( { titleColor: val } ),
 									label: __(
 										'Heading color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Title size (rem)', 'twork-builder' ) }
+							label={ __( 'Title size (rem)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -169,7 +169,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Title weight', 'twork-builder' ) }
+							label={ __( 'Title weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -181,11 +181,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -195,7 +195,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Background color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
@@ -204,7 +204,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Max content width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -216,7 +216,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Side gutter (px)', 'twork-builder' ) }
+							label={ __( 'Side gutter (px)', 'mk-builder' ) }
 							value={ containerGutter }
 							onChange={ ( val ) =>
 								setAttributes( { containerGutter: val } )
@@ -227,7 +227,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -240,7 +240,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -259,17 +259,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				aria-labelledby={ titleId }
 			>
 				<div
-					className="twork-about__container"
+					className="mk-about__container"
 					style={ containerStyle }
 				>
-					<div className="twork-about__header">
-						<div className="twork-about__heading">
+					<div className="mk-about__header">
+						<div className="mk-about__heading">
 							<p
-								className="twork-about__label"
+								className="mk-about__label"
 								style={ { color: labelColor } }
 							>
 								<span
-									className="twork-about__label-icon"
+									className="mk-about__label-icon"
 									style={ { color: labelIconColor } }
 									aria-hidden="true"
 								>
@@ -283,7 +283,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'About Us',
-										'twork-builder'
+										'mk-builder'
 									) }
 									allowedFormats={ [] }
 								/>
@@ -291,14 +291,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<RichText
 								tagName="h2"
 								id={ titleId }
-								className="twork-about__title"
+								className="mk-about__title"
 								value={ sectionTitle }
 								onChange={ ( val ) =>
 									setAttributes( { sectionTitle: val } )
 								}
 								placeholder={ __(
 									'Section title…',
-									'twork-builder'
+									'mk-builder'
 								) }
 								style={ {
 									color: titleColor,

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -18,13 +18,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Hotline', 'twork-builder' ) }
+						title={ __( 'Hotline', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Label (e.g. Direct Line)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ labelText }
 							onChange={ ( val ) =>
@@ -33,7 +33,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Phone Number', 'twork-builder' ) }
+							label={ __( 'Phone Number', 'mk-builder' ) }
 							value={ phoneNumber }
 							onChange={ ( val ) =>
 								setAttributes( { phoneNumber: val } )
@@ -43,7 +43,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Icon Class (Font Awesome)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ iconClass }
 							onChange={ ( val ) =>
@@ -51,7 +51,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'e.g. fas fa-phone-alt',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -66,7 +66,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) => setAttributes( { title: val } ) }
 						placeholder={ __(
 							'Department name…',
-							'twork-builder'
+							'mk-builder'
 						) }
 						className="acc-head-title"
 					/>

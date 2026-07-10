@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/amb-tech-section",
+	"name": "mk/amb-tech-section",
 	"version": "1.0.0",
 	"title": "Ambulance Tech Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "admin-tools",
 	"description": "ICU on Wheels – dark section with technology/equipment grid (icon, title, description per item).",
-	"keywords": [ "ambulance", "tech", "ICU", "equipment", "twork" ],
+	"keywords": [ "ambulance", "tech", "ICU", "equipment", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -141,7 +141,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/amb-tech-item",
+				"name": "mk/amb-tech-item",
 				"attributes": {
 					"icon": "fa-heartbeat",
 					"title": "Defibrillator",
@@ -149,7 +149,7 @@
 				}
 			},
 			{
-				"name": "twork/amb-tech-item",
+				"name": "mk/amb-tech-item",
 				"attributes": {
 					"icon": "fa-lungs",
 					"title": "Mobile Ventilator",
@@ -157,7 +157,7 @@
 				}
 			},
 			{
-				"name": "twork/amb-tech-item",
+				"name": "mk/amb-tech-item",
 				"attributes": {
 					"icon": "fa-map-marker-alt",
 					"title": "GPS Tracking",
@@ -165,7 +165,7 @@
 				}
 			},
 			{
-				"name": "twork/amb-tech-item",
+				"name": "mk/amb-tech-item",
 				"attributes": {
 					"icon": "fa-first-aid",
 					"title": "Trauma Kit",
@@ -174,7 +174,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

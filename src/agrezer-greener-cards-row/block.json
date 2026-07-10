@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/cards-row",
+	"name": "mk/cards-row",
 	"version": "1.0.0",
 	"title": "Cards Row",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/highlights-section"
+		"mk/highlights-section"
 	],
 	"icon": "screenoptions",
 	"description": "Row/grid container for card items.",
@@ -17,7 +17,7 @@
 	"example": {
 		"innerBlocks": [
 			{
-				"name": "twork/image-link-card",
+				"name": "mk/image-link-card",
 				"attributes": {
 					"title": "Organic Farm Solutions",
 					"linkText": "Read More",
@@ -27,7 +27,7 @@
 				}
 			},
 			{
-				"name": "twork/image-link-card",
+				"name": "mk/image-link-card",
 				"attributes": {
 					"title": "Eco-Friendly Farming",
 					"linkText": "Read More",
@@ -37,7 +37,7 @@
 				}
 			},
 			{
-				"name": "twork/image-link-card",
+				"name": "mk/image-link-card",
 				"attributes": {
 					"title": "Organic Produce Supply",
 					"linkText": "Read More",
@@ -48,6 +48,6 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

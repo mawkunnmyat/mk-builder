@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/nearby-accommodation-item",
+	"name": "mk/nearby-accommodation-item",
 	"title": "Nearby Location Card",
 	"parent": [
-		"twork/nearby-accommodation-section",
-		"twork/neuro-centre-section"
+		"mk/nearby-accommodation-section",
+		"mk/neuro-centre-section"
 	],
 	"description": "Single hotel/accommodation card with image and overlay (name, rating, distance).",
 	"keywords": [
@@ -14,7 +14,7 @@
 		"nearby",
 		"international",
 		"patient",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"image": {
@@ -105,7 +105,7 @@
 			"linkOpenInNewTab": false
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

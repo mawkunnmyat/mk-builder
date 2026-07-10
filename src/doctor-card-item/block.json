@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/doctor-card-item",
+	"name": "mk/doctor-card-item",
 	"title": "Doctor Card Item",
-	"parent": [ "twork/doctor-directory-section" ],
+	"parent": [ "mk/doctor-directory-section" ],
 	"description": "Single doctor card for the Doctor Directory. Used inside Doctor Directory Section.",
-	"keywords": [ "doctor", "card", "profile", "twork" ],
+	"keywords": [ "doctor", "card", "profile", "mk" ],
 	"attributes": {
 		"doctorImage": {
 			"type": "string",
@@ -103,6 +103,6 @@
 			"bookButtonText": "Book"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

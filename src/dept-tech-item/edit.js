@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, MediaPlaceholder } from '@wordpress/block-editor';
 import { PanelBody, TextControl, Button } from '@wordpress/components';
 
@@ -7,7 +7,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 	const { imageUrl = '', imageId, caption = '' } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'tech-item twork-dept-tech-editor',
+			className: 'tech-item mk-dept-tech-editor',
 		} ),
 		[]
 	);
@@ -16,7 +16,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Tech Item', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Tech Item', 'mk-builder' ) }>
 						{ ! imageUrl ? (
 							<MediaPlaceholder
 								onSelect={ ( m ) =>
@@ -28,7 +28,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 								allowedTypes={ [ 'image' ] }
 								multiple={ false }
 								labels={ {
-									title: __( 'Tech Image', 'twork-builder' ),
+									title: __( 'Tech Image', 'mk-builder' ),
 								} }
 							/>
 						) : (
@@ -52,12 +52,12 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
 						<TextControl
-							label={ __( 'Caption', 'twork-builder' ) }
+							label={ __( 'Caption', 'mk-builder' ) }
 							value={ caption }
 							onChange={ ( v ) =>
 								setAttributes( { caption: v } )

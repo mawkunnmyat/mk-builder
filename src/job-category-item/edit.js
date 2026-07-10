@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -21,10 +21,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		categoryMarginBottom,
 	} = attributes;
 
-	const ALLOWED_BLOCKS = [ 'twork/job-card-item' ];
+	const ALLOWED_BLOCKS = [ 'mk/job-card-item' ];
 	const TEMPLATE = [
 		[
-			'twork/job-card-item',
+			'mk/job-card-item',
 			{
 				jobTitle: 'Senior Staff Nurse (ICU)',
 				location: 'Mandalay',
@@ -35,7 +35,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		],
 
 		[
-			'twork/job-card-item',
+			'mk/job-card-item',
 			{
 				jobTitle: 'Resident Medical Officer (RMO)',
 				location: 'Mandalay',
@@ -48,7 +48,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-job-category-item-editor job-category',
+			className: 'mk-job-category-item-editor job-category',
 			style: {
 				marginBottom: `${ categoryMarginBottom }px`,
 				border: '2px dashed #e0e0e0',
@@ -64,11 +64,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Category Title', 'twork-builder' ) }
+						title={ __( 'Category Title', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
-							title={ __( 'Title Color', 'twork-builder' ) }
+							title={ __( 'Title Color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: categoryTitleColor,
@@ -76,7 +76,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											categoryTitleColor: val,
 										} ),
-									label: __( 'Title Color', 'twork-builder' ),
+									label: __( 'Title Color', 'mk-builder' ),
 								},
 								{
 									value: categoryBorderColor,
@@ -86,14 +86,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Left Border Color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'twork-builder' ) }
+							label={ __( 'Font Size (rem)', 'mk-builder' ) }
 							value={ categoryTitleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { categoryTitleFontSize: val } )
@@ -106,7 +106,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Margin Bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ categoryMarginBottom }
 							onChange={ ( val ) =>
@@ -127,7 +127,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) =>
 						setAttributes( { categoryTitle: val } )
 					}
-					placeholder={ __( 'Category title...', 'twork-builder' ) }
+					placeholder={ __( 'Category title...', 'mk-builder' ) }
 					className="cat-title"
 					style={ {
 						fontSize: `${ categoryTitleFontSize }rem`,

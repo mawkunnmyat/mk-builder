@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	RichText,
@@ -20,7 +20,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	} = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'centre-cta fade-up twork-centre-cta-editor',
+			className: 'centre-cta fade-up mk-centre-cta-editor',
 			style: {
 				background: `linear-gradient(135deg, ${ gradientStart } 0%, ${ gradientEnd } 100%)`,
 				padding: `${ padding }px`,
@@ -38,11 +38,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'CTA content', 'twork-builder' ) }
+						title={ __( 'CTA content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Button text', 'twork-builder' ) }
+							label={ __( 'Button text', 'mk-builder' ) }
 							value={ buttonText }
 							onChange={ ( v ) =>
 								setAttributes( { buttonText: v } )
@@ -50,7 +50,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Button URL', 'twork-builder' ) }
+							label={ __( 'Button URL', 'mk-builder' ) }
 							value={ buttonUrl }
 							onChange={ ( v ) =>
 								setAttributes( { buttonUrl: v || '#' } )
@@ -58,33 +58,33 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Background gradient', 'twork-builder' ) }
+						title={ __( 'Background gradient', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
-							title={ __( 'Gradient colors', 'twork-builder' ) }
+							title={ __( 'Gradient colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: gradientStart,
 									onChange: ( v ) =>
 										setAttributes( { gradientStart: v } ),
-									label: __( 'Start', 'twork-builder' ),
+									label: __( 'Start', 'mk-builder' ),
 								},
 								{
 									value: gradientEnd,
 									onChange: ( v ) =>
 										setAttributes( { gradientEnd: v } ),
-									label: __( 'End', 'twork-builder' ),
+									label: __( 'End', 'mk-builder' ),
 								},
 							] }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Padding (px)', 'twork-builder' ) }
+							label={ __( 'Padding (px)', 'mk-builder' ) }
 							value={ padding }
 							onChange={ ( v ) =>
 								setAttributes( { padding: v } )
@@ -97,7 +97,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Border radius (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ borderRadius }
 							onChange={ ( v ) =>
@@ -117,7 +117,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( v ) => setAttributes( { title: v } ) }
 					placeholder={ __(
 						'Expert Neurological Care',
-						'twork-builder'
+						'mk-builder'
 					) }
 					className="centre-cta-title"
 				/>
@@ -128,7 +128,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( v ) => setAttributes( { text: v } ) }
 					placeholder={ __(
 						"Don't ignore the symptoms. Schedule a consultation with our specialists today.",
-						'twork-builder'
+						'mk-builder'
 					) }
 					className="centre-cta-text"
 				/>
@@ -141,10 +141,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					aria-label={
 						buttonText
 							? undefined
-							: __( 'Book Appointment', 'twork-builder' )
+							: __( 'Book Appointment', 'mk-builder' )
 					}
 				>
-					{ buttonText || __( 'Book Appointment', 'twork-builder' ) }
+					{ buttonText || __( 'Book Appointment', 'mk-builder' ) }
 				</a>
 			</div>
 		</>

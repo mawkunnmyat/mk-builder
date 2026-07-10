@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	RichText,
@@ -42,7 +42,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'paed-hero twork-paediatrics-hero-editor',
+			className: 'paed-hero mk-paediatrics-hero-editor',
 			style: {
 				backgroundColor: '#000000',
 				paddingTop: `${ paddingTop }px`,
@@ -85,25 +85,25 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Badge', 'twork-builder' ) }
+							label={ __( 'Badge', 'mk-builder' ) }
 							value={ badge }
 							onChange={ ( val ) =>
 								setAttributes( { badge: val } )
 							}
 							help={ __(
 								'Small label above the title.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<p style={ { marginBottom: 4, fontWeight: 600 } }>
 							{ __(
 								'Title (Enter for line break)',
-								'twork-builder'
+								'mk-builder'
 							) }
 						</p>
 						<RichText
@@ -112,13 +112,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
 							}
-							placeholder={ __( 'Hero title…', 'twork-builder' ) }
+							placeholder={ __( 'Hero title…', 'mk-builder' ) }
 							multiline="br"
 							style={ { marginBottom: 12 } }
 						/>
 
 						<p style={ { marginBottom: 4, fontWeight: 600 } }>
-							{ __( 'Subtitle', 'twork-builder' ) }
+							{ __( 'Subtitle', 'mk-builder' ) }
 						</p>
 						<RichText
 							tagName="p"
@@ -128,7 +128,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Hero subtitle…',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ { marginBottom: 12 } }
 						/>
@@ -137,7 +137,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Primary button text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ primaryButtonText }
 							onChange={ ( val ) =>
@@ -148,7 +148,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Primary button URL',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ primaryButtonUrl }
 							onChange={ ( val ) =>
@@ -159,7 +159,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Outline button text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ outlineButtonText }
 							onChange={ ( val ) =>
@@ -170,7 +170,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Outline button URL',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ outlineButtonUrl }
 							onChange={ ( val ) =>
@@ -181,7 +181,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Outline button light (white text/border)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ !! outlineButtonLight }
 							onChange={ ( val ) =>
@@ -191,7 +191,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Background image', 'twork-builder' ) }
+						title={ __( 'Background image', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ ! backgroundImage ? (
@@ -207,7 +207,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Hero background',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -234,7 +234,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
@@ -242,7 +242,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<>
 								<Divider />
 								<ToggleControl
-									label={ __( 'Overlay', 'twork-builder' ) }
+									label={ __( 'Overlay', 'mk-builder' ) }
 									checked={ backgroundOverlay }
 									onChange={ ( val ) =>
 										setAttributes( {
@@ -264,7 +264,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														} ),
 													label: __(
 														'Overlay color',
-														'twork-builder'
+														'mk-builder'
 													),
 												},
 											] }
@@ -273,7 +273,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<RangeControl
 											label={ __(
 												'Overlay opacity',
-												'twork-builder'
+												'mk-builder'
 											) }
 											value={ backgroundOverlayOpacity }
 											onChange={ ( v ) =>
@@ -292,7 +292,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Side image', 'twork-builder' ) }
+						title={ __( 'Side image', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						{ ! imageUrl ? (
@@ -309,7 +309,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Hero side image',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -337,10 +337,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove', 'twork-builder' ) }
+									{ __( 'Remove', 'mk-builder' ) }
 								</Button>
 								<TextControl
-									label={ __( 'Alt text', 'twork-builder' ) }
+									label={ __( 'Alt text', 'mk-builder' ) }
 									value={ imageAlt }
 									onChange={ ( v ) =>
 										setAttributes( { imageAlt: v } )
@@ -352,11 +352,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -369,7 +369,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -381,7 +381,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Min height (px)', 'twork-builder' ) }
+							label={ __( 'Min height (px)', 'mk-builder' ) }
 							value={ minHeight }
 							onChange={ ( v ) =>
 								setAttributes( { minHeight: v } )
@@ -394,7 +394,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -408,7 +408,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -472,7 +472,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Gentle Care for Your Little Ones',
-								'twork-builder'
+								'mk-builder'
 							) }
 							multiline="br"
 						/>
@@ -486,7 +486,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Hero subtitle…',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -497,7 +497,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								style={ { pointerEvents: 'none' } }
 							>
 								{ primaryButtonText ||
-									__( 'Book Appointment', 'twork-builder' ) }
+									__( 'Book Appointment', 'mk-builder' ) }
 							</a>
 							<a
 								href={ outlineButtonUrl || '#' }
@@ -508,7 +508,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								} }
 							>
 								{ outlineButtonText ||
-									__( 'View Services', 'twork-builder' ) }
+									__( 'View Services', 'mk-builder' ) }
 							</a>
 						</div>
 					</div>
@@ -536,7 +536,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									fontSize: 14,
 								} }
 							>
-								{ __( 'Side image', 'twork-builder' ) }
+								{ __( 'Side image', 'mk-builder' ) }
 							</div>
 						) }
 					</div>

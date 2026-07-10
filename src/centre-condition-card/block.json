@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/centre-condition-card",
+	"name": "mk/centre-condition-card",
 	"version": "1.0.0",
 	"title": "Condition Card",
-	"category": "twork-builder",
-	"parent": [ "twork/centre-conditions-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/centre-conditions-section" ],
 	"attributes": {
 		"iconClass": {
 			"type": "string",

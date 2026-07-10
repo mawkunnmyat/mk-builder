@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -12,7 +12,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-about-intro__feature',
+			className: 'mk-about-intro__feature',
 		} ),
 		[]
 	);
@@ -22,11 +22,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Icon', 'twork-builder' ) }
+						title={ __( 'Icon', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -50,7 +50,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image' ] }
 						multiple={ false }
 						labels={ {
-							title: __( 'Feature icon', 'twork-builder' ),
+							title: __( 'Feature icon', 'mk-builder' ),
 						} }
 					/>
 				) : (
@@ -58,7 +58,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<img
 							src={ image }
 							alt=""
-							className="twork-about-intro__feature-icon"
+							className="mk-about-intro__feature-icon"
 						/>
 
 						<Button
@@ -68,7 +68,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								setAttributes( { image: '', imageId: null } )
 							}
 						>
-							{ __( 'Replace icon', 'twork-builder' ) }
+							{ __( 'Replace icon', 'mk-builder' ) }
 						</Button>
 					</>
 				) }
@@ -76,7 +76,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					tagName="span"
 					value={ label }
 					onChange={ ( val ) => setAttributes( { label: val } ) }
-					placeholder={ __( 'Feature label', 'twork-builder' ) }
+					placeholder={ __( 'Feature label', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 			</div>

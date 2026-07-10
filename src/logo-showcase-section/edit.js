@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -7,10 +7,10 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/logo-showcase-item' ];
+const ALLOWED_BLOCKS = [ 'mk/logo-showcase-item' ];
 const TEMPLATE = [
 	[
-		'twork/logo-showcase-item',
+		'mk/logo-showcase-item',
 		{
 			name: 'Mandalay Region',
 			imageUrl:
@@ -19,7 +19,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/logo-showcase-item',
+		'mk/logo-showcase-item',
 		{
 			name: 'Yangon Region',
 			imageUrl:
@@ -28,7 +28,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/logo-showcase-item',
+		'mk/logo-showcase-item',
 		{
 			name: 'Sagaing Region',
 			imageUrl:
@@ -37,7 +37,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/logo-showcase-item',
+		'mk/logo-showcase-item',
 		{
 			name: 'Shan State',
 			imageUrl:
@@ -46,7 +46,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/logo-showcase-item',
+		'mk/logo-showcase-item',
 		{
 			name: 'Magway Region',
 			imageUrl:
@@ -69,7 +69,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'partners twork-logo-showcase-section twork-logo-showcase-section-editor',
+				'partners mk-logo-showcase-section mk-logo-showcase-section-editor',
 		} ),
 		[]
 	);
@@ -79,11 +79,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Read more link', 'twork-builder' ) }
+						title={ __( 'Read more link', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Link URL', 'twork-builder' ) }
+							label={ __( 'Link URL', 'mk-builder' ) }
 							value={ readMoreHref || '' }
 							onChange={ ( val ) =>
 								setAttributes( { readMoreHref: val } )
@@ -106,7 +106,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'DISTRIBUTION NETWORK',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 							<RichText
@@ -118,7 +118,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Serving Customers Across Myanmar.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</header>
@@ -134,7 +134,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'From Mandalay to every region,',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 								<RichText
@@ -145,14 +145,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Description text…',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 							</p>
 							<p className="partners__more">
 								{ __(
 									'For more information about brands.',
-									'twork-builder'
+									'mk-builder'
 								) }{ ' ' }
 								<RichText
 									tagName="a"
@@ -162,7 +162,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Contact us',
-										'twork-builder'
+										'mk-builder'
 									) }
 									href={ readMoreHref || '#' }
 									onClick={ ( e ) => e.preventDefault() }

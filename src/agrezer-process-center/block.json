@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/process-center",
+	"name": "mk/process-center",
 	"version": "1.0.0",
 	"title": "Process Center",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/process"
+		"mk/process"
 	],
 	"icon": "format-image",
 	"description": "Center element in a process timeline/steps layout.",
@@ -38,6 +38,6 @@
 			"maxWidth": 520
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

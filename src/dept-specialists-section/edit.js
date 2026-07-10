@@ -1,12 +1,12 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/dept-doc-card-item' ];
+const ALLOWED_BLOCKS = [ 'mk/dept-doc-card-item' ];
 const TEMPLATE = [
 	[
-		'twork/dept-doc-card-item',
+		'mk/dept-doc-card-item',
 		{
 			name: 'Dr. Kyaw Swar',
 			specialization: 'Interventional Cardiologist',
@@ -15,7 +15,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/dept-doc-card-item',
+		'mk/dept-doc-card-item',
 		{
 			name: 'Dr. Susan May',
 			specialization: 'Cardiothoracic Surgeon',
@@ -28,7 +28,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { sectionId, title } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'content-section twork-dept-specialists-editor',
+			className: 'content-section mk-dept-specialists-editor',
 		} ),
 		[]
 	);
@@ -37,9 +37,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Section', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Section', 'mk-builder' ) }>
 						<TextControl
-							label={ __( 'Section ID', 'twork-builder' ) }
+							label={ __( 'Section ID', 'mk-builder' ) }
 							value={ sectionId }
 							onChange={ ( v ) =>
 								setAttributes( { sectionId: v } )
@@ -47,7 +47,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( v ) => setAttributes( { title: v } ) }
 						/>

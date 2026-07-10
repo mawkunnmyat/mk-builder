@@ -25,17 +25,17 @@
 }
 
 /* Pause only when enabled */
-.twork-agrezer-partners-section[data-pause-hover="true"] .agrezer-partners__marquee:hover .agrezer-partners__track {
+.mk-agrezer-partners-section[data-pause-hover="true"] .agrezer-partners__marquee:hover .agrezer-partners__track {
 	animation-play-state: paused;
 }
 
-.twork-agrezer-partners-section[data-marquee="false"] .agrezer-partners__track,
+.mk-agrezer-partners-section[data-marquee="false"] .agrezer-partners__track,
 .agrezer-partners.agrezer-partners--reduced-motion .agrezer-partners__track {
 	animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.twork-agrezer-partners-section.agrezer-partners .agrezer-partners__track {
+	.mk-agrezer-partners-section.agrezer-partners .agrezer-partners__track {
 		animation: none;
 	}
 }

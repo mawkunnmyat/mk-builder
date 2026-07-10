@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/rad-why-section",
+	"name": "mk/rad-why-section",
 	"version": "1.0.0",
 	"title": "Why Choose Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "awards",
 	"description": "Radiology & Imaging “Why Choose Jivaka Imaging?” section with icon grid cards.",
-	"keywords": [ "radiology", "imaging", "why choose", "icons", "twork" ],
+	"keywords": [ "radiology", "imaging", "why choose", "icons", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -116,7 +116,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/rad-why-item",
+				"name": "mk/rad-why-item",
 				"attributes": {
 					"iconClass": "fas fa-certificate",
 					"title": "ISO Certified",
@@ -124,7 +124,7 @@
 				}
 			},
 			{
-				"name": "twork/rad-why-item",
+				"name": "mk/rad-why-item",
 				"attributes": {
 					"iconClass": "fas fa-bolt",
 					"title": "Fast Turnaround",
@@ -132,7 +132,7 @@
 				}
 			},
 			{
-				"name": "twork/rad-why-item",
+				"name": "mk/rad-why-item",
 				"attributes": {
 					"iconClass": "fas fa-user-md",
 					"title": "Sub-Specialists",
@@ -140,7 +140,7 @@
 				}
 			},
 			{
-				"name": "twork/rad-why-item",
+				"name": "mk/rad-why-item",
 				"attributes": {
 					"iconClass": "fas fa-money-bill-wave",
 					"title": "Affordable",
@@ -149,7 +149,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/review-carousel",
+	"name": "mk/review-carousel",
 	"version": "1.0.0",
 	"title": "Review Carousel",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "format-quote",
 	"description": "Customer reviews carousel with scroll navigation. Ports shweghee testimonials component.",
-	"keywords": [ "testimonials", "reviews", "carousel", "quotes", "twork" ],
+	"keywords": [ "testimonials", "reviews", "carousel", "quotes", "mk" ],
 	"attributes": {
 		"eyebrow": {
 			"type": "string",
@@ -41,7 +41,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/review-card",
+				"name": "mk/review-card",
 				"attributes": {
 					"text": "Shwe Myanmar butter has been our kitchen staple for years. The natural taste is unmatched — we use it for everything from curries to baking.",
 					"name": "Daw Khin M.",
@@ -52,7 +52,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js"

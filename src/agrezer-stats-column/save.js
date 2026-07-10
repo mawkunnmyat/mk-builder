@@ -2,7 +2,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 export default function save() {
 	const blockProps = useBlockProps.save( {
-		className: 'twork-stats__col',
+		className: 'mk-stats__col',
 	} );
 
 	return (

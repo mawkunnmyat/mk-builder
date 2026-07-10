@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/team-member-item",
+	"name": "mk/team-member-item",
 	"title": "Team Member Item",
-	"parent": [ "twork/team-members-grid" ],
+	"parent": [ "mk/team-members-grid" ],
 	"description": "Single team member card with image, name, position, bio, specializations, contact, social links, and CTA button.",
-	"keywords": [ "team", "member", "specialist", "doctor", "twork" ],
+	"keywords": [ "team", "member", "specialist", "doctor", "mk" ],
 	"attributes": {
 		"memberImage": {
 			"type": "string",
@@ -525,6 +525,6 @@
 			"buttonPaddingHorizontalMobile": 0
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/benefits-section",
+	"name": "mk/benefits-section",
 	"version": "1.0.0",
 	"title": "Benefits Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "awards",
 	"description": "Hero stage with positioned benefit points.",
 	"keywords": [
@@ -12,7 +12,7 @@
 		"choose",
 		"farm",
 		"tractor",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -259,7 +259,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/benefit-point",
+				"name": "mk/benefit-point",
 				"attributes": {
 					"slot": 1,
 					"badgeText": "01",
@@ -267,7 +267,7 @@
 				}
 			},
 			{
-				"name": "twork/benefit-point",
+				"name": "mk/benefit-point",
 				"attributes": {
 					"slot": 2,
 					"badgeText": "02",
@@ -275,7 +275,7 @@
 				}
 			},
 			{
-				"name": "twork/benefit-point",
+				"name": "mk/benefit-point",
 				"attributes": {
 					"slot": 3,
 					"badgeText": "03",
@@ -283,7 +283,7 @@
 				}
 			},
 			{
-				"name": "twork/benefit-point",
+				"name": "mk/benefit-point",
 				"attributes": {
 					"slot": 4,
 					"badgeText": "04",
@@ -291,7 +291,7 @@
 				}
 			},
 			{
-				"name": "twork/benefit-point",
+				"name": "mk/benefit-point",
 				"attributes": {
 					"slot": 5,
 					"badgeText": "05",
@@ -300,7 +300,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

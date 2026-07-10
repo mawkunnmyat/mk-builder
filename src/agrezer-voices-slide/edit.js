@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -19,7 +19,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-voices-section__slide',
+			className: 'mk-voices-section__slide',
 		} ),
 		[]
 	);
@@ -29,11 +29,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Author photo', 'twork-builder' ) }
+						title={ __( 'Author photo', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Image alt text', 'twork-builder' ) }
+							label={ __( 'Image alt text', 'mk-builder' ) }
 							value={ authorImageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { authorImageAlt: val } )
@@ -51,18 +51,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove photo', 'twork-builder' ) }
+								{ __( 'Remove photo', 'mk-builder' ) }
 							</Button>
 						) }
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Quote mark', 'twork-builder' ) }
+						title={ __( 'Quote mark', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
 							label={ __(
 								'Character (decorative)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ quoteMark }
 							onChange={ ( val ) =>
@@ -76,14 +76,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			<article { ...blockProps }>
 				<RichText
 					tagName="p"
-					className="twork-voices-section__quote"
+					className="mk-voices-section__quote"
 					value={ quote }
 					onChange={ ( val ) => setAttributes( { quote: val } ) }
-					placeholder={ __( 'Quote…', 'twork-builder' ) }
+					placeholder={ __( 'Quote…', 'mk-builder' ) }
 				/>
 
-				<div className="twork-voices-section__author-row">
-					<div className="twork-voices-section__author">
+				<div className="mk-voices-section__author-row">
+					<div className="mk-voices-section__author">
 						{ ! authorImage ? (
 							<MediaPlaceholder
 								icon="format-image"
@@ -97,42 +97,42 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								allowedTypes={ [ 'image' ] }
 								labels={ {
-									title: __( 'Author', 'twork-builder' ),
+									title: __( 'Author', 'mk-builder' ),
 								} }
 							/>
 						) : (
 							<img
 								src={ authorImage }
 								alt=""
-								className="twork-voices-section__author-img"
+								className="mk-voices-section__author-img"
 							/>
 						) }
 						<div>
 							<RichText
 								tagName="h4"
-								className="twork-voices-section__author-name"
+								className="mk-voices-section__author-name"
 								value={ authorName }
 								onChange={ ( val ) =>
 									setAttributes( { authorName: val } )
 								}
-								placeholder={ __( 'Name', 'twork-builder' ) }
+								placeholder={ __( 'Name', 'mk-builder' ) }
 								allowedFormats={ [] }
 							/>
 
 							<RichText
 								tagName="p"
-								className="twork-voices-section__author-role"
+								className="mk-voices-section__author-role"
 								value={ authorRole }
 								onChange={ ( val ) =>
 									setAttributes( { authorRole: val } )
 								}
-								placeholder={ __( 'Role', 'twork-builder' ) }
+								placeholder={ __( 'Role', 'mk-builder' ) }
 								allowedFormats={ [] }
 							/>
 						</div>
 					</div>
 					<span
-						className="twork-voices-section__quote-mark"
+						className="mk-voices-section__quote-mark"
 						aria-hidden="true"
 					>
 						{ quoteMark || '❝' }

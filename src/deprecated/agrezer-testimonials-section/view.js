@@ -1,7 +1,7 @@
 /**
  * Agrezer testimonials carousel (vanilla JS).
  *
- * @package twork-builder
+ * @package mk-builder
  */
 
 ( function () {
@@ -66,7 +66,7 @@
 
 		var slides = qsa(
 			track,
-			'.wp-block-twork-agrezer-testimonial-slide, .agrezer-testimonials__slide'
+			'.wp-block-mk-agrezer-testimonial-slide, .agrezer-testimonials__slide'
 		);
 		if ( slides.length === 0 ) {
 			return;
@@ -129,7 +129,7 @@
 	function init() {
 		document
 			.querySelectorAll(
-				'.twork-agrezer-testimonials-section.agrezer-testimonials'
+				'.mk-agrezer-testimonials-section.agrezer-testimonials'
 			)
 			.forEach( initSection );
 	}

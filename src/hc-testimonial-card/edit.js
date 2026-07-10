@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -41,7 +41,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'hc-testi-card twork-hc-testimonial-card-editor',
+			className: 'hc-testi-card mk-hc-testimonial-card-editor',
 		} ),
 		[]
 	);
@@ -53,11 +53,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Rating', 'twork-builder' ) }
+						title={ __( 'Rating', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Stars (0.5 - 5)', 'twork-builder' ) }
+							label={ __( 'Stars (0.5 - 5)', 'mk-builder' ) }
 							value={ rating }
 							onChange={ ( val ) =>
 								setAttributes( { starRating: val } )
@@ -68,11 +68,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Client', 'twork-builder' ) }
+						title={ __( 'Client', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Name', 'twork-builder' ) }
+							label={ __( 'Name', 'mk-builder' ) }
 							value={ clientName || '' }
 							onChange={ ( val ) =>
 								setAttributes( { clientName: val } )
@@ -80,7 +80,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Location', 'twork-builder' ) }
+							label={ __( 'Location', 'mk-builder' ) }
 							value={ clientLocation || '' }
 							onChange={ ( val ) =>
 								setAttributes( { clientLocation: val } )
@@ -114,7 +114,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										>
 											{ __(
 												'Choose image',
-												'twork-builder'
+												'mk-builder'
 											) }
 										</Button>
 									) }
@@ -159,7 +159,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												>
 													{ __(
 														'Replace',
-														'twork-builder'
+														'mk-builder'
 													) }
 												</Button>
 											) }
@@ -177,13 +177,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 												} )
 											}
 										>
-											{ __( 'Remove', 'twork-builder' ) }
+											{ __( 'Remove', 'mk-builder' ) }
 										</Button>
 									</div>
 									<TextControl
 										label={ __(
 											'Alt text',
-											'twork-builder'
+											'mk-builder'
 										) }
 										value={ clientImageAlt || '' }
 										onChange={ ( val ) =>
@@ -206,7 +206,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="hc-review"
 					value={ review }
 					onChange={ ( val ) => setAttributes( { review: val } ) }
-					placeholder={ __( 'Testimonial quote…', 'twork-builder' ) }
+					placeholder={ __( 'Testimonial quote…', 'mk-builder' ) }
 				/>
 
 				<div className="hc-client">
@@ -235,7 +235,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { clientName: val } )
 							}
-							placeholder={ __( 'Name', 'twork-builder' ) }
+							placeholder={ __( 'Name', 'mk-builder' ) }
 						/>
 
 						<RichText
@@ -244,7 +244,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							onChange={ ( val ) =>
 								setAttributes( { clientLocation: val } )
 							}
-							placeholder={ __( 'Location', 'twork-builder' ) }
+							placeholder={ __( 'Location', 'mk-builder' ) }
 						/>
 					</div>
 				</div>

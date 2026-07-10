@@ -4,7 +4,7 @@ export default function save( { attributes } ) {
 	const { eyebrow, title } = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'blog-news twork-news-card-grid',
+		className: 'blog-news mk-news-card-grid',
 	} );
 
 	return (

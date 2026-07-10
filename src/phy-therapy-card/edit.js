@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	InspectorControls,
@@ -12,7 +12,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'phy-service-card twork-phy-therapy-card-editor',
+			className: 'phy-service-card mk-phy-therapy-card-editor',
 			style: {
 				position: 'relative',
 				overflow: 'hidden',
@@ -34,7 +34,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Therapy card', 'twork-builder' ) }
+						title={ __( 'Therapy card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<MediaPlaceholder
@@ -48,13 +48,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							labels={ {
 								title: __(
 									'Background image',
-									'twork-builder'
+									'mk-builder'
 								),
 							} }
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title || '' }
 							onChange={ ( val ) =>
 								setAttributes( {
@@ -64,7 +64,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Description', 'twork-builder' ) }
+							label={ __( 'Description', 'mk-builder' ) }
 							value={ description || '' }
 							onChange={ ( val ) =>
 								setAttributes( { description: val || '' } )
@@ -82,7 +82,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { title: val || 'Manual Therapy' } )
 						}
-						placeholder={ __( 'Manual Therapy', 'twork-builder' ) }
+						placeholder={ __( 'Manual Therapy', 'mk-builder' ) }
 					/>
 
 					<RichText
@@ -93,7 +93,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'Therapy description…',
-							'twork-builder'
+							'mk-builder'
 						) }
 					/>
 				</div>

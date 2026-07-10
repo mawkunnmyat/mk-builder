@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/gm-service-item",
+	"name": "mk/gm-service-item",
 	"title": "Service Item",
-	"category": "twork-builder",
-	"parent": [ "twork/gm-services-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/gm-services-section" ],
 	"attributes": {
 		"icon": {
 			"type": "string",
@@ -30,7 +30,7 @@
 			"description": "Service description goes here."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

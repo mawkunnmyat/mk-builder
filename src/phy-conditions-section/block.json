@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/phy-conditions-section",
+	"name": "mk/phy-conditions-section",
 	"version": "1.0.0",
 	"title": "Conditions Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "forms",
 	"description": "Conditions We Treat section: header + three condition columns, matching physiotherapy-rehab.html.",
-	"keywords": [ "physio", "conditions", "body map", "treat", "twork" ],
+	"keywords": [ "physio", "conditions", "body map", "treat", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -91,7 +91,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/phy-condition-col",
+				"name": "mk/phy-condition-col",
 				"attributes": {
 					"iconClass": "fas fa-bone",
 					"heading": "Orthopedic",
@@ -104,7 +104,7 @@
 				}
 			},
 			{
-				"name": "twork/phy-condition-col",
+				"name": "mk/phy-condition-col",
 				"attributes": {
 					"iconClass": "fas fa-running",
 					"heading": "Sports Injury",
@@ -117,7 +117,7 @@
 				}
 			},
 			{
-				"name": "twork/phy-condition-col",
+				"name": "mk/phy-condition-col",
 				"attributes": {
 					"iconClass": "fas fa-brain",
 					"heading": "Neurological",
@@ -131,7 +131,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

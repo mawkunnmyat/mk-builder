@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, TextControl } from '@wordpress/components';
 
@@ -18,48 +18,48 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Position', 'twork-builder' ) }
+						title={ __( 'Position', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
 							label={ __(
 								'Stage slot (layout)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ String( slot ) }
 							options={ [
 								{
 									label: __(
 										'1 — left lower',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: '1',
 								},
 								{
 									label: __(
 										'2 — left upper',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: '2',
 								},
 								{
 									label: __(
 										'3 — top center',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: '3',
 								},
 								{
 									label: __(
 										'4 — right upper',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: '4',
 								},
 								{
 									label: __(
 										'5 — right lower',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: '5',
 								},
@@ -74,12 +74,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Badge text', 'twork-builder' ) }
+							label={ __( 'Badge text', 'mk-builder' ) }
 							value={ badgeText }
 							onChange={ ( val ) =>
 								setAttributes( { badgeText: val } )
 							}
-							help={ __( 'Usually 01, 02, …', 'twork-builder' ) }
+							help={ __( 'Usually 01, 02, …', 'mk-builder' ) }
 						/>
 					</PanelBody>
 				</InspectorControls>
@@ -94,7 +94,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="agrezer-why-choose__point-text"
 					value={ pointText }
 					onChange={ ( val ) => setAttributes( { pointText: val } ) }
-					placeholder={ __( 'Point text…', 'twork-builder' ) }
+					placeholder={ __( 'Point text…', 'mk-builder' ) }
 				/>
 			</div>
 		</>

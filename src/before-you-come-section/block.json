@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/before-you-come-section",
+	"name": "mk/before-you-come-section",
 	"version": "1.0.0",
 	"title": "Before You Come Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "list-view",
 	"description": "Info section with optional title and a grid of tip cards (e.g. Fasting, Reports, Appointment).",
-	"keywords": [ "before", "info", "tips", "grid", "twork" ],
+	"keywords": [ "before", "info", "tips", "grid", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -141,7 +141,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/before-you-come-item",
+				"name": "mk/before-you-come-item",
 				"attributes": {
 					"icon": "fas fa-clock",
 					"title": "Fasting",
@@ -149,7 +149,7 @@
 				}
 			},
 			{
-				"name": "twork/before-you-come-item",
+				"name": "mk/before-you-come-item",
 				"attributes": {
 					"icon": "fas fa-file-medical",
 					"title": "Reports",
@@ -157,7 +157,7 @@
 				}
 			},
 			{
-				"name": "twork/before-you-come-item",
+				"name": "mk/before-you-come-item",
 				"attributes": {
 					"icon": "fas fa-calendar-check",
 					"title": "Appointment",
@@ -166,7 +166,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

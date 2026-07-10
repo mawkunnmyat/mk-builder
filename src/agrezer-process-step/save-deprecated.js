@@ -22,13 +22,13 @@ export default function saveDeprecated( { attributes } ) {
 	const side = position === 'right' ? 'right' : 'left';
 	const isVideo = mediaUrl && mediaUrl.match( /\.(mp4|webm)$/i );
 	const blockProps = useBlockProps.save( {
-		className: `twork-process__step twork-process__step--${ side }`,
+		className: `mk-process__step mk-process__step--${ side }`,
 	} );
 
 	return (
 		<div { ...blockProps }>
-			<div className="twork-process__badge-wrapper">
-				<div className="twork-process__badge">
+			<div className="mk-process__badge-wrapper">
+				<div className="mk-process__badge">
 					{ mediaType === 'media' && mediaUrl ? (
 						isVideo ? (
 							<video
@@ -43,22 +43,22 @@ export default function saveDeprecated( { attributes } ) {
 							<img src={ mediaUrl } alt="" style={ badgeMediaStyle } />
 						)
 					) : (
-						<span className="twork-process__badge-num">{ badgeNum }</span>
+						<span className="mk-process__badge-num">{ badgeNum }</span>
 					) }
 				</div>
 			</div>
 			<RichText.Content
 				tagName="h3"
-				className="twork-process__step-title"
+				className="mk-process__step-title"
 				value={ stepTitle }
 			/>
 			<RichText.Content
 				tagName="p"
-				className="twork-process__step-text"
+				className="mk-process__step-text"
 				value={ stepText }
 			/>
 			{ showCta && (
-				<a href={ ctaUrl || '#' } className="twork-process__btn">
+				<a href={ ctaUrl || '#' } className="mk-process__btn">
 					<RichText.Content tagName="span" value={ ctaText } />
 					<span aria-hidden="true">↗</span>
 				</a>

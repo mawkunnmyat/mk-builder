@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/benefit-point",
+	"name": "mk/benefit-point",
 	"version": "1.0.0",
 	"title": "Benefit Point",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/benefits-section"
+		"mk/benefits-section"
 	],
 	"icon": "marker",
 	"description": "Numbered point item positioned on a stage.",
@@ -43,6 +43,6 @@
 			"pointText": "Health From the Earth — nutrient-rich soil and transparent sourcing."
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

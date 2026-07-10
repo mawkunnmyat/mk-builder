@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/em-doc-section",
+	"name": "mk/em-doc-section",
 	"version": "1.0.0",
 	"title": "Specialists Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "groups",
 	"description": "Emergency Specialists grid – section header with doctor cards (photo, role, name, specialty).",
-	"keywords": [ "emergency", "specialists", "doctors", "team", "twork" ],
+	"keywords": [ "emergency", "specialists", "doctors", "team", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -121,7 +121,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/em-doc-card",
+				"name": "mk/em-doc-card",
 				"attributes": {
 					"imageUrl": "https://jivakahospital.com/wp-content/uploads/2025/12/img-team-member-03.jpg",
 					"role": "Head of Emergency",
@@ -130,7 +130,7 @@
 				}
 			},
 			{
-				"name": "twork/em-doc-card",
+				"name": "mk/em-doc-card",
 				"attributes": {
 					"imageUrl": "https://i.pravatar.cc/400?img=11",
 					"role": "Cardiologist",
@@ -139,7 +139,7 @@
 				}
 			},
 			{
-				"name": "twork/em-doc-card",
+				"name": "mk/em-doc-card",
 				"attributes": {
 					"imageUrl": "https://i.pravatar.cc/400?img=5",
 					"role": "Anesthesiologist",
@@ -148,7 +148,7 @@
 				}
 			},
 			{
-				"name": "twork/em-doc-card",
+				"name": "mk/em-doc-card",
 				"attributes": {
 					"imageUrl": "https://i.pravatar.cc/400?img=33",
 					"role": "Physician",
@@ -158,7 +158,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

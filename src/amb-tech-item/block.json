@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/amb-tech-item",
+	"name": "mk/amb-tech-item",
 	"title": "Ambulance Tech Item",
-	"parent": [ "twork/amb-tech-section" ],
-	"category": "twork-builder",
+	"parent": [ "mk/amb-tech-section" ],
+	"category": "mk-builder",
 	"description": "Single tech/equipment item with icon, title and description.",
-	"keywords": [ "ambulance", "tech", "icon", "equipment", "twork" ],
+	"keywords": [ "ambulance", "tech", "icon", "equipment", "mk" ],
 	"attributes": {
 		"icon": {
 			"type": "string",
@@ -78,6 +78,6 @@
 			"itemPadding": 30
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

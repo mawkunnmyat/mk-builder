@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/rad-prep-faq-section",
+	"name": "mk/rad-prep-faq-section",
 	"version": "1.0.0",
 	"title": "Preparation FAQ Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "editor-help",
 	"description": "Radiology patient preparation guide with image and FAQ accordion.",
-	"keywords": [ "radiology", "preparation", "faq", "guide", "twork" ],
+	"keywords": [ "radiology", "preparation", "faq", "guide", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -114,28 +114,28 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/rad-faq-item",
+				"name": "mk/rad-faq-item",
 				"attributes": {
 					"question": "Do I need to fast before a CT Scan?",
 					"answer": "Yes, usually 4-6 hours of fasting is required for abdominal CT scans, especially if contrast dye is used."
 				}
 			},
 			{
-				"name": "twork/rad-faq-item",
+				"name": "mk/rad-faq-item",
 				"attributes": {
 					"question": "Is MRI safe for everyone?",
 					"answer": "MRI uses magnets, not radiation. However, it is NOT safe if you have metal implants, pacemakers, or older surgical clips."
 				}
 			},
 			{
-				"name": "twork/rad-faq-item",
+				"name": "mk/rad-faq-item",
 				"attributes": {
 					"question": "How long does a report take?",
 					"answer": "Emergency X-rays are reported instantly. CT/MRI reports are typically ready within 2-4 hours."
 				}
 			},
 			{
-				"name": "twork/rad-faq-item",
+				"name": "mk/rad-faq-item",
 				"attributes": {
 					"question": "What should I wear?",
 					"answer": "Wear loose, comfortable clothing without zippers or metal buttons. We will provide a hospital gown if needed."
@@ -143,7 +143,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

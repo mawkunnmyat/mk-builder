@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -108,7 +108,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const isVideo = mediaUrl && mediaUrl.match( /\.(mp4|webm)$/i );
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `twork-process__step twork-process__step--${ position }`,
+			className: `mk-process__step mk-process__step--${ position }`,
 		} ),
 		[ position ]
 	);
@@ -118,21 +118,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Step', 'twork-builder' ) }
+						title={ __( 'Step', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Column alignment', 'twork-builder' ) }
+							label={ __( 'Column alignment', 'mk-builder' ) }
 							value={ position }
 							options={ [
 								{
-									label: __( 'Left column', 'twork-builder' ),
+									label: __( 'Left column', 'mk-builder' ),
 									value: 'left',
 								},
 								{
 									label: __(
 										'Right column',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'right',
 								},
@@ -142,12 +142,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Should match block order: left step, center, right step.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Badge number', 'twork-builder' ) }
+							label={ __( 'Badge number', 'mk-builder' ) }
 							value={ badgeNum }
 							onChange={ ( val ) =>
 								setAttributes( { badgeNum: val } )
@@ -155,11 +155,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Badge Type', 'twork-builder' ) }
+							label={ __( 'Badge Type', 'mk-builder' ) }
 							value={ mediaType }
 							options={ [
-								{ label: __( 'Text Number', 'twork-builder' ), value: 'text' },
-								{ label: __( 'Custom Image/Video', 'twork-builder' ), value: 'media' },
+								{ label: __( 'Text Number', 'mk-builder' ), value: 'text' },
+								{ label: __( 'Custom Image/Video', 'mk-builder' ), value: 'media' },
 							] }
 							onChange={ ( val ) => setAttributes( { mediaType: val } ) }
 						/>
@@ -176,8 +176,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										<div>
 											<Button variant="secondary" onClick={ open }>
 												{ mediaUrl
-													? __( 'Replace media', 'twork-builder' )
-													: __( 'Upload media', 'twork-builder' ) }
+													? __( 'Replace media', 'mk-builder' )
+													: __( 'Upload media', 'mk-builder' ) }
 											</Button>
 											{ !! mediaUrl && (
 												<Button
@@ -187,7 +187,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 														setAttributes( { mediaUrl: '' } )
 													}
 												>
-													{ __( 'Remove media', 'twork-builder' ) }
+													{ __( 'Remove media', 'mk-builder' ) }
 												</Button>
 											) }
 										</div>
@@ -197,7 +197,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) }
 
 						<ToggleControl
-							label={ __( 'Show CTA button', 'twork-builder' ) }
+							label={ __( 'Show CTA button', 'mk-builder' ) }
 							checked={ showCta }
 							onChange={ ( val ) =>
 								setAttributes( { showCta: val } )
@@ -209,7 +209,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Button URL',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ ctaUrl }
 									onChange={ ( val ) =>
@@ -220,7 +220,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<ToggleControl
 									label={ __(
 										'Show button icon',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ showButtonIcon }
 									onChange={ ( val ) =>
@@ -231,33 +231,33 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<SelectControl
 									label={ __(
 										'Button icon type',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ buttonIconType }
 									options={ [
 										{
 											label: __(
 												'Diagonal arrow',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'diagonal-arrow',
 										},
 										{
 											label: __(
 												'Arrow right',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'arrow-right',
 										},
 										{
 											label: __(
 												'External link',
-												'twork-builder'
+												'mk-builder'
 											),
 											value: 'external',
 										},
 										{
-											label: __( 'Plus', 'twork-builder' ),
+											label: __( 'Plus', 'mk-builder' ),
 											value: 'plus',
 										},
 									] }
@@ -273,8 +273,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<div { ...blockProps }>
-				<div className="twork-process__badge-wrapper">
-					<div className="twork-process__badge">
+				<div className="mk-process__badge-wrapper">
+					<div className="mk-process__badge">
 						{ mediaType === 'media' && mediaUrl ? (
 							isVideo ? (
 								<video
@@ -289,28 +289,28 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<img src={ mediaUrl } alt="" style={ badgeMediaStyle } />
 							)
 						) : (
-							<span className="twork-process__badge-num">{ badgeNum }</span>
+							<span className="mk-process__badge-num">{ badgeNum }</span>
 						) }
 					</div>
 				</div>
 				<RichText
 					tagName="h3"
-					className="twork-process__step-title"
+					className="mk-process__step-title"
 					value={ stepTitle }
 					onChange={ ( val ) => setAttributes( { stepTitle: val } ) }
-					placeholder={ __( 'Step title', 'twork-builder' ) }
+					placeholder={ __( 'Step title', 'mk-builder' ) }
 				/>
 
 				<RichText
 					tagName="p"
-					className="twork-process__step-text"
+					className="mk-process__step-text"
 					value={ stepText }
 					onChange={ ( val ) => setAttributes( { stepText: val } ) }
-					placeholder={ __( 'Description…', 'twork-builder' ) }
+					placeholder={ __( 'Description…', 'mk-builder' ) }
 				/>
 
 				{ showCta && (
-					<div className="twork-process__btn twork-process__btn--editor">
+					<div className="mk-process__btn mk-process__btn--editor">
 						<RichText
 							tagName="span"
 							value={ ctaText }
@@ -319,13 +319,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'More Details',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						{ showButtonIcon && (
 							<span
-								className="twork-process__btn-icon"
+								className="mk-process__btn-icon"
 								aria-hidden="true"
 							>
 								{ actionIcon }

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/category-card-grid",
+	"name": "mk/category-card-grid",
 	"version": "1.0.0",
 	"title": "Category Card Grid",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "category",
 	"description": "Product categories grid with optional CTA card.",
-	"keywords": [ "categories", "products", "grid", "shop", "twork" ],
+	"keywords": [ "categories", "products", "grid", "shop", "mk" ],
 	"attributes": {
 		"eyebrow": {
 			"type": "string",
@@ -66,7 +66,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/category-card",
+				"name": "mk/category-card",
 				"attributes": {
 					"title": "Butter",
 					"count": "3 Sizes",
@@ -76,7 +76,7 @@
 				}
 			},
 			{
-				"name": "twork/category-card",
+				"name": "mk/category-card",
 				"attributes": {
 					"title": "Ghee",
 					"count": "2 Sizes",
@@ -86,7 +86,7 @@
 				}
 			},
 			{
-				"name": "twork/category-card",
+				"name": "mk/category-card",
 				"attributes": {
 					"title": "Bulk (10 Viss)",
 					"count": "1 Item",
@@ -97,7 +97,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

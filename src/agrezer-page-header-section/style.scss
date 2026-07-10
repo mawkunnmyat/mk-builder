@@ -2,8 +2,8 @@
  * Agrezer inner page header — from my-avocado _page-header.scss
  */
 
-.twork-page-header.twork-page-header-section,
-.wp-block-twork-page-header-section.twork-page-header {
+.mk-page-header.mk-page-header-section,
+.wp-block-mk-page-header-section.mk-page-header {
 	position: relative;
 	color: var(--tw-title-color, #fff);
 	background-color: var(--tw-bg-color, #0c2614);
@@ -11,9 +11,9 @@
 	overflow: hidden;
 }
 
-.twork-page-header__image-layer,
-.twork-page-header__video-layer,
-.twork-page-header__bg-overlay {
+.mk-page-header__image-layer,
+.mk-page-header__video-layer,
+.mk-page-header__bg-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -23,43 +23,43 @@
 	pointer-events: none;
 }
 
-.twork-page-header__image-layer {
+.mk-page-header__image-layer {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
 
-.twork-page-header__video-layer video {
+.mk-page-header__video-layer video {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	display: block;
 }
 
-.twork-page-header__bg-overlay {
+.mk-page-header__bg-overlay {
 	background-color: var(--tw-bg-color, #0c2614);
 	opacity: var(--tw-overlay-opacity, 0.85);
 	z-index: 1;
 }
 
-.twork-page-header__container {
-	max-width: var(--twork-page-header-max, 1200px);
-	width: min(var(--twork-page-header-width-pct, 90%), var(--twork-page-header-max, 1200px));
+.mk-page-header__container {
+	max-width: var(--mk-page-header-max, 1200px);
+	width: min(var(--mk-page-header-width-pct, 90%), var(--mk-page-header-max, 1200px));
 	margin: 0 auto;
 	position: relative;
 	z-index: 2;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	min-height: var(--twork-page-header-min-h, 180px);
+	min-height: var(--mk-page-header-min-h, 180px);
 }
 
-.twork-page-header__content {
+.mk-page-header__content {
 	max-width: 50%;
 	text-align: right;
 }
 
-.twork-page-header__title {
+.mk-page-header__title {
 	font-size: var(--tw-title-size, 4.5rem);
 	font-weight: 700;
 	color: var(--tw-title-color, #fff);
@@ -67,12 +67,12 @@
 	line-height: 1.1;
 }
 
-.twork-page-header__breadcrumb-nav {
+.mk-page-header__breadcrumb-nav {
 	display: inline-block;
 	max-width: 100%;
 }
 
-.twork-page-header__breadcrumb {
+.mk-page-header__breadcrumb {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -85,7 +85,7 @@
 	flex-wrap: wrap;
 }
 
-.twork-page-header__breadcrumb li {
+.mk-page-header__breadcrumb li {
 	display: inline-flex;
 	align-items: center;
 	color: var(--tw-crumb-color, #fff);
@@ -109,7 +109,7 @@
 	}
 }
 
-.twork-page-header__graphic {
+.mk-page-header__graphic {
 	position: absolute;
 	left: 0;
 	bottom: -40px;
@@ -117,29 +117,29 @@
 	pointer-events: none;
 }
 
-.twork-page-header__img {
+.mk-page-header__img {
 	max-width: 420px;
 	width: 100%;
 	height: auto;
 	display: block;
-	animation: twork-slide-tractor 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+	animation: mk-slide-tractor 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
-.twork-page-header[data-tractor-anim="false"] .twork-page-header__img {
+.mk-page-header[data-tractor-anim="false"] .mk-page-header__img {
 	animation: none;
 	opacity: 1;
 	transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.twork-page-header__img {
+	.mk-page-header__img {
 		animation: none !important;
 		opacity: 1 !important;
 		transform: none !important;
 	}
 }
 
-@keyframes twork-slide-tractor {
+@keyframes mk-slide-tractor {
 	0% {
 		transform: translateX(-200px);
 		opacity: 0;
@@ -152,22 +152,22 @@
 }
 
 @media (max-width: 992px) {
-	.twork-page-header__container {
+	.mk-page-header__container {
 		flex-direction: column;
 		justify-content: center;
 		gap: 1.25rem;
 	}
 
-	.twork-page-header__content {
+	.mk-page-header__content {
 		max-width: 100%;
 		text-align: center;
 	}
 
-	.twork-page-header__breadcrumb {
+	.mk-page-header__breadcrumb {
 		justify-content: center;
 	}
 
-	.twork-page-header__graphic {
+	.mk-page-header__graphic {
 		display: flex;
 		justify-content: center;
 		position: relative;
@@ -177,13 +177,13 @@
 		width: 100%;
 	}
 
-	.twork-page-header__img {
+	.mk-page-header__img {
 		max-width: 280px;
 	}
 }
 
 @media (max-width: 768px) {
-	.twork-page-header__title {
+	.mk-page-header__title {
 		font-size: 3rem;
 	}
 }

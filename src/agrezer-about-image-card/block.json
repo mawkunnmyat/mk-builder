@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/image-card",
+	"name": "mk/image-card",
 	"version": "1.0.0",
 	"title": "Image Card",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/images-grid"
+		"mk/images-grid"
 	],
 	"icon": "format-image",
 	"description": "Image card with overlay text and optional button.",
@@ -95,6 +95,6 @@
 			"buttonIconType": "diagonal-arrow"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

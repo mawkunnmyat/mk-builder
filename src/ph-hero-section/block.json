@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/ph-hero-section",
+	"name": "mk/ph-hero-section",
 	"version": "1.0.0",
 	"title": "Hero Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "cart",
 	"description": "Pharmacy hero section with search box and floating pills.",
-	"keywords": [ "pharmacy", "hero", "search", "twork" ],
+	"keywords": [ "pharmacy", "hero", "search", "mk" ],
 	"attributes": {
 		"backgroundImage": {
 			"type": "string",
@@ -83,7 +83,7 @@
 			"minHeight": 520
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

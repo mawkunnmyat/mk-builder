@@ -1,34 +1,34 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 import { InspectorControls } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/dept-condition-item' ];
+const ALLOWED_BLOCKS = [ 'mk/dept-condition-item' ];
 const TEMPLATE = [
 	[
-		'twork/dept-condition-item',
+		'mk/dept-condition-item',
 		{ icon: 'fa-heart-broken', title: 'Coronary Artery Disease' },
 	],
 
-	[ 'twork/dept-condition-item', { icon: 'fa-bolt', title: 'Arrhythmia' } ],
+	[ 'mk/dept-condition-item', { icon: 'fa-bolt', title: 'Arrhythmia' } ],
 	[
-		'twork/dept-condition-item',
+		'mk/dept-condition-item',
 		{ icon: 'fa-heartbeat', title: 'Heart Failure' },
 	],
 
 	[
-		'twork/dept-condition-item',
+		'mk/dept-condition-item',
 		{ icon: 'fa-child', title: 'Congenital Defects' },
 	],
 
 	[
-		'twork/dept-condition-item',
+		'mk/dept-condition-item',
 		{ icon: 'fa-procedures', title: 'Valvular Disease' },
 	],
 
 	[
-		'twork/dept-condition-item',
+		'mk/dept-condition-item',
 		{ icon: 'fa-user-md', title: 'Hypertension' },
 	],
 ];
@@ -37,7 +37,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { sectionId, title } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'content-section twork-dept-conditions-editor',
+			className: 'content-section mk-dept-conditions-editor',
 		} ),
 		[]
 	);
@@ -46,9 +46,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'Section', 'twork-builder' ) }>
+					<PanelBody title={ __( 'Section', 'mk-builder' ) }>
 						<TextControl
-							label={ __( 'Section ID', 'twork-builder' ) }
+							label={ __( 'Section ID', 'mk-builder' ) }
 							value={ sectionId }
 							onChange={ ( v ) =>
 								setAttributes( { sectionId: v } )
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( v ) => setAttributes( { title: v } ) }
 						/>

@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/centre-faq-section",
+	"name": "mk/centre-faq-section",
 	"version": "1.0.0",
 	"title": "FAQ Section",
-	"category": "twork-builder",
-	"parent": [ "twork/centre-layout-section" ],
+	"category": "mk-builder",
+	"parent": [ "mk/centre-layout-section" ],
 	"attributes": {
 		"sectionId": {
 			"type": "string",
@@ -25,14 +25,14 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/centre-faq-item",
+				"name": "mk/centre-faq-item",
 				"attributes": {
 					"question": "What are the signs of a Stroke (FAST)?",
 					"answer": "Face drooping, Arm weakness, Speech difficulty, Time to call 09-789 101 101 immediately. Immediate treatment is crucial."
 				}
 			},
 			{
-				"name": "twork/centre-faq-item",
+				"name": "mk/centre-faq-item",
 				"attributes": {
 					"question": "When should I see a doctor for a headache?",
 					"answer": "You should seek medical attention if headaches are sudden and severe, accompanied by fever, stiff neck, confusion, vision loss, or after a head injury."

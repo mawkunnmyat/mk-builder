@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	MediaPlaceholder,
@@ -50,7 +50,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Technology Image', 'twork-builder' ) }
+						title={ __( 'Technology Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ ! imageUrl ? (
@@ -65,7 +65,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								allowedTypes={ [ 'image' ] }
 								multiple={ false }
 								labels={ {
-									title: __( 'Tech Image', 'twork-builder' ),
+									title: __( 'Tech Image', 'mk-builder' ),
 								} }
 							/>
 						) : (
@@ -91,34 +91,34 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove Image', 'twork-builder' ) }
+									{ __( 'Remove Image', 'mk-builder' ) }
 								</Button>
 							</div>
 						) }
 
 						{ imageUrl && (
 							<TextControl
-								label={ __( 'Alt Text', 'twork-builder' ) }
+								label={ __( 'Alt Text', 'mk-builder' ) }
 								value={ imageAlt }
 								onChange={ ( val ) =>
 									setAttributes( { imageAlt: val } )
 								}
 								help={ __(
 									'Describe the image for accessibility and SEO.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Content', 'twork-builder' ) }
+						title={ __( 'Content', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
 							label={ __(
 								'Tag / Category Label',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ tag }
 							onChange={ ( val ) =>
@@ -126,12 +126,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Short label such as Immunology, Hematology, etc.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Title', 'twork-builder' ) }
+							label={ __( 'Title', 'mk-builder' ) }
 							value={ title }
 							onChange={ ( val ) =>
 								setAttributes( { title: val } )
@@ -141,7 +141,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<Divider />
 
 						<p style={ { fontWeight: 600, marginBottom: 8 } }>
-							{ __( 'Bullet Points', 'twork-builder' ) }
+							{ __( 'Bullet Points', 'mk-builder' ) }
 						</p>
 
 						{ bullets &&
@@ -163,7 +163,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Bullet text…',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 
@@ -174,7 +174,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										icon="no-alt"
 										label={ __(
 											'Remove bullet',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								</div>
@@ -185,7 +185,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							isSmall
 							onClick={ addBullet }
 						>
-							{ __( 'Add Bullet', 'twork-builder' ) }
+							{ __( 'Add Bullet', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 				</InspectorControls>
@@ -216,7 +216,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) => setAttributes( { title: val } ) }
 						placeholder={ __(
 							'Technology title…',
-							'twork-builder'
+							'mk-builder'
 						) }
 						className="lab-tech-title"
 					/>
@@ -229,7 +229,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'Short description of the equipment…',
-							'twork-builder'
+							'mk-builder'
 						) }
 						className="lab-tech-description"
 					/>
@@ -251,7 +251,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										}
 										placeholder={ __(
 											'Bullet text…',
-											'twork-builder'
+											'mk-builder'
 										) }
 									/>
 								</li>

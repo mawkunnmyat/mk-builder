@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/page-header",
+	"name": "mk/page-header",
 	"version": "1.0.0",
 	"title": "Page Header",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "heading",
 	"description": "Page header with title, background, and breadcrumb.",
 	"keywords": [
@@ -12,7 +12,7 @@
 		"header",
 		"banner",
 		"title",
-		"twork"
+		"mk"
 	],
 	"supports": {
 		"html": false,
@@ -181,7 +181,7 @@
 			"fallbackBgColor": "#0c2614"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

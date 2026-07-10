@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/gm-split-section",
+	"name": "mk/gm-split-section",
 	"version": "1.0.0",
 	"title": "Split Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "layout",
 	"description": "Why Choose Jivaka split layout: image + title, description, feature list, CTA button.",
-	"keywords": [ "general medicine", "split", "why choose", "twork" ],
+	"keywords": [ "general medicine", "split", "why choose", "mk" ],
 	"supports": {
 		"html": false,
 		"anchor": true,
@@ -152,7 +152,7 @@
 			"splitGap": 80
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -2,7 +2,7 @@
 
 // Emergency Hero (24/7) – same design as page-hero Emergency style
 
-.wp-block-twork-emergency-hero.em-hero,
+.wp-block-mk-emergency-hero.em-hero,
 .em-hero.page-hero-emergency {
     --em-primary: #f48b2a;
     --em-hover: #d6701b;
@@ -144,7 +144,7 @@
 }
 
 @media (max-width: 768px) {
-    .wp-block-twork-emergency-hero.em-hero,
+    .wp-block-mk-emergency-hero.em-hero,
     .em-hero.page-hero-emergency {
         height: 500px;
 

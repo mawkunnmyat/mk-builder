@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -15,10 +15,10 @@ import {
 	Button,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/agrezer-testimonial-slide' ];
+const ALLOWED_BLOCKS = [ 'mk/agrezer-testimonial-slide' ];
 const TEMPLATE = [
 	[
-		'twork/agrezer-testimonial-slide',
+		'mk/agrezer-testimonial-slide',
 		{
 			quote: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
 			authorName: 'Alex Robin',
@@ -28,7 +28,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-testimonial-slide',
+		'mk/agrezer-testimonial-slide',
 		{
 			quote: 'We saw measurable growth after switching to their organic program — clear communication and real results.',
 			authorName: 'Jordan Lee',
@@ -38,7 +38,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-testimonial-slide',
+		'mk/agrezer-testimonial-slide',
 		{
 			quote: 'Reliable partners who understand both sustainability and scale. Highly recommended for any agri business.',
 			authorName: 'Sam Rivera',
@@ -80,7 +80,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'agrezer-testimonials twork-agrezer-testimonials-section-editor',
+				'agrezer-testimonials mk-agrezer-testimonials-section-editor',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
@@ -105,11 +105,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -122,7 +122,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -136,7 +136,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -150,7 +150,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Side inset (% each side)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerGutter }
 							onChange={ ( val ) =>
@@ -161,12 +161,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 1 }
 							help={ __(
 								'Container width ≈ 100% minus twice this value.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<RangeControl
-							label={ __( 'Column gap (px)', 'twork-builder' ) }
+							label={ __( 'Column gap (px)', 'mk-builder' ) }
 							value={ columnGap }
 							onChange={ ( val ) =>
 								setAttributes( { columnGap: val } )
@@ -178,13 +178,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Left image & badge', 'twork-builder' ) }
+						title={ __( 'Left image & badge', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Main image alt text',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ mainImageAlt }
 							onChange={ ( val ) =>
@@ -207,7 +207,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Testimonial main photo',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -234,14 +234,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove image', 'twork-builder' ) }
+									{ __( 'Remove image', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 						<ToggleControl
 							label={ __(
 								'Show experience badge',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ showBadge }
 							onChange={ ( val ) =>
@@ -251,7 +251,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ showBadge && (
 							<TextControl
-								label={ __( 'Badge number', 'twork-builder' ) }
+								label={ __( 'Badge number', 'mk-builder' ) }
 								value={ badgeNum }
 								onChange={ ( val ) =>
 									setAttributes( { badgeNum: val } )
@@ -261,11 +261,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Tagline icon', 'twork-builder' ) }
+						title={ __( 'Tagline icon', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ tagIconAlt }
 							onChange={ ( val ) =>
 								setAttributes( { tagIconAlt: val } )
@@ -287,7 +287,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Small tagline icon',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -309,18 +309,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove icon', 'twork-builder' ) }
+									{ __( 'Remove icon', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Carousel', 'twork-builder' ) }
+						title={ __( 'Carousel', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Loop slides', 'twork-builder' ) }
+							label={ __( 'Loop slides', 'mk-builder' ) }
 							checked={ loopCarousel }
 							onChange={ ( val ) =>
 								setAttributes( { loopCarousel: val } )
@@ -330,7 +330,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Previous button label (screen readers)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ prevLabel }
 							onChange={ ( val ) =>
@@ -341,7 +341,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Next button label (screen readers)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ nextLabel }
 							onChange={ ( val ) =>
@@ -351,7 +351,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						colorSettings={ [
 							{
 								value: backgroundColor,
@@ -359,7 +359,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									setAttributes( { backgroundColor: val } ),
 								label: __(
 									'Section background',
-									'twork-builder'
+									'mk-builder'
 								),
 							},
 						] }
@@ -393,7 +393,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Main testimonial image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -417,7 +417,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										] }
 										placeholder={ __(
 											'Badge line…',
-											'twork-builder'
+											'mk-builder'
 										) }
 										multiline="br"
 									/>
@@ -441,7 +441,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { tagline: val } )
 								}
-								placeholder={ __( 'Tagline', 'twork-builder' ) }
+								placeholder={ __( 'Tagline', 'mk-builder' ) }
 								allowedFormats={ [] }
 							/>
 						</div>
@@ -455,7 +455,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Section title',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
@@ -476,7 +476,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<p className="agrezer-testimonials__editor-hint">
 								{ __(
 									'Author for each slide appears here on the site when visitors change slides.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							</p>
 							<div className="agrezer-testimonials__controls">

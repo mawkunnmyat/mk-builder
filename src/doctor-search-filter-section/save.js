@@ -40,7 +40,7 @@ export default function save( { attributes } ) {
 
 	const marginTopPx = sectionMarginTop !== undefined ? sectionMarginTop : -80;
 	const blockProps = useBlockProps.save( {
-		className: 'twork-doctor-search-filter-section',
+		className: 'mk-doctor-search-filter-section',
 		style: {
 			// Use only physical margin properties so the serialized HTML
 			// from the editor matches exactly what save() generates.
@@ -51,19 +51,19 @@ export default function save( { attributes } ) {
 					: undefined,
 			position: 'relative',
 			zIndex: 10,
-			'--twork-search-section-margin-top': `${ marginTopPx }px`,
-			'--twork-search-section-margin-bottom':
+			'--mk-search-section-margin-top': `${ marginTopPx }px`,
+			'--mk-search-section-margin-bottom':
 				sectionMarginBottom !== undefined
 					? `${ sectionMarginBottom }px`
 					: undefined,
-			'--twork-search-label-color': labelColor || undefined,
-			'--twork-search-input-border': inputBorderColor || undefined,
-			'--twork-search-input-focus-border':
+			'--mk-search-label-color': labelColor || undefined,
+			'--mk-search-input-border': inputBorderColor || undefined,
+			'--mk-search-input-focus-border':
 				inputFocusBorderColor || undefined,
-			'--twork-search-reset-bg': resetButtonBg || undefined,
-			'--twork-search-reset-color': resetButtonColor || undefined,
-			'--twork-search-reset-hover-bg': resetButtonHoverBg || undefined,
-			'--twork-search-reset-hover-color':
+			'--mk-search-reset-bg': resetButtonBg || undefined,
+			'--mk-search-reset-color': resetButtonColor || undefined,
+			'--mk-search-reset-hover-bg': resetButtonHoverBg || undefined,
+			'--mk-search-reset-hover-color':
 				resetButtonHoverColor || undefined,
 		},
 	} );

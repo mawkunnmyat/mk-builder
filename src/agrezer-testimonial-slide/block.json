@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/testimonial",
+	"name": "mk/testimonial",
 	"version": "1.0.0",
 	"title": "Testimonial",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/testimonials"
+		"mk/testimonials"
 	],
 	"icon": "format-quote",
 	"description": "Single testimonial slide/card.",
@@ -40,6 +40,6 @@
 			"rating": 5
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

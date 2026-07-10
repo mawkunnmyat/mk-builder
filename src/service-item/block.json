@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/service-item",
+	"name": "mk/service-item",
 	"title": "Service Item",
-	"parent": [ "twork/services-grid" ],
+	"parent": [ "mk/services-grid" ],
 	"attributes": {
 		"itemType": {
 			"type": "string",
@@ -448,7 +448,7 @@
 			"borderStyle": "solid"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

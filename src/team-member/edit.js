@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, PanelColorSettings, TextControl } from '@wordpress/components';
 
@@ -8,9 +8,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-team-member',
+			className: 'mk-team-member',
 			style: {
-				'--twork-team-member-accent': accentColor || undefined,
+				'--mk-team-member-accent': accentColor || undefined,
 			},
 		} ),
 		[ accentColor ]
@@ -21,29 +21,29 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Team member', 'twork-builder' ) }
+						title={ __( 'Team member', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Name', 'twork-builder' ) }
+							label={ __( 'Name', 'mk-builder' ) }
 							value={ name || '' }
 							onChange={ ( val ) => setAttributes( { name: val } ) }
 						/>
 
 						<TextControl
-							label={ __( 'Role', 'twork-builder' ) }
+							label={ __( 'Role', 'mk-builder' ) }
 							value={ role || '' }
 							onChange={ ( val ) => setAttributes( { role: val } ) }
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Accent color', 'twork-builder' ) }
+							title={ __( 'Accent color', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: accentColor,
 									onChange: ( val ) =>
 										setAttributes( { accentColor: val } ),
-									label: __( 'Accent', 'twork-builder' ),
+									label: __( 'Accent', 'mk-builder' ),
 								},
 							] }
 						/>
@@ -54,18 +54,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			<div { ...blockProps }>
 				<RichText
 					tagName="p"
-					className="twork-team-member__name"
+					className="mk-team-member__name"
 					value={ name }
 					onChange={ ( val ) => setAttributes( { name: val } ) }
-					placeholder={ __( 'Name', 'twork-builder' ) }
+					placeholder={ __( 'Name', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 				<RichText
 					tagName="span"
-					className="twork-team-member__role"
+					className="mk-team-member__role"
 					value={ role }
 					onChange={ ( val ) => setAttributes( { role: val } ) }
-					placeholder={ __( 'Role', 'twork-builder' ) }
+					placeholder={ __( 'Role', 'mk-builder' ) }
 					allowedFormats={ [] }
 				/>
 			</div>

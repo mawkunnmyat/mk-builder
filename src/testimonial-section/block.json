@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/testimonial-section",
+	"name": "mk/testimonial-section",
 	"version": "1.0.0",
 	"title": "Testimonial Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "format-quote",
 	"description": "Patient testimonials with meta-title, highlight heading, avatar, quote and procedure. Matches home.html design.",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"stories",
 		"quote",
 		"review",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundColor": {
@@ -291,7 +291,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/testimonial-item",
+				"name": "mk/testimonial-item",
 				"attributes": {
 					"image": "https://i.pravatar.cc/150?img=25",
 					"name": "Laraine Flemming",
@@ -300,7 +300,7 @@
 				}
 			},
 			{
-				"name": "twork/testimonial-item",
+				"name": "mk/testimonial-item",
 				"attributes": {
 					"image": "https://i.pravatar.cc/150?img=60",
 					"name": "Herbie Hannes",
@@ -309,7 +309,7 @@
 				}
 			},
 			{
-				"name": "twork/testimonial-item",
+				"name": "mk/testimonial-item",
 				"attributes": {
 					"image": "https://i.pravatar.cc/150?img=56",
 					"name": "William Smith",
@@ -318,7 +318,7 @@
 				}
 			},
 			{
-				"name": "twork/testimonial-item",
+				"name": "mk/testimonial-item",
 				"attributes": {
 					"image": "https://i.pravatar.cc/150?img=47",
 					"name": "Ellen Norton",
@@ -328,7 +328,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

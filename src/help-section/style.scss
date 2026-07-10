@@ -11,14 +11,14 @@
 // Ensure two-column layout in Editor View (match frontend)
 .editor-styles-wrapper,
 .block-editor-block-list__layout {
-    .wp-block-twork-help-section,
-    .wp-block[data-type="twork/help-section"] {
+    .wp-block-mk-help-section,
+    .wp-block[data-type="mk/help-section"] {
         width: 100% !important;
         max-width: 100% !important;
 
         // Target both block wrapper and inner section
         .block-editor-block-list__block-edit > div,
-        .twork-help-section-editor.help-section,
+        .mk-help-section-editor.help-section,
         .help-section.jivaka-section {
             width: 100% !important;
             box-sizing: border-box !important;

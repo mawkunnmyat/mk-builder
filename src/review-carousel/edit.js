@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -7,10 +7,10 @@ import {
 } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/review-card' ];
+const ALLOWED_BLOCKS = [ 'mk/review-card' ];
 const TEMPLATE = [
 	[
-		'twork/review-card',
+		'mk/review-card',
 		{
 			text: 'Shwe Myanmar butter has been our kitchen staple for years. The natural taste is unmatched — we use it for everything from curries to baking.',
 			name: 'Daw Khin M.',
@@ -21,7 +21,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/review-card',
+		'mk/review-card',
 		{
 			text: 'We order the 10 Viss bulk pack for our restaurant. Consistent quality every delivery — our customers notice the difference in flavor.',
 			name: 'U Aung K.',
@@ -32,7 +32,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/review-card',
+		'mk/review-card',
 		{
 			text: 'The ghee quality is excellent for traditional Myanmar cooking. Shwe Myanmar is a brand we trust for our family\'s daily meals.',
 			name: 'Ma Thida W.',
@@ -50,7 +50,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'testimonials twork-review-carousel twork-review-carousel-editor',
+				'testimonials mk-review-carousel mk-review-carousel-editor',
 		} ),
 		[]
 	);
@@ -60,13 +60,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Carousel controls', 'twork-builder' ) }
+						title={ __( 'Carousel controls', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Previous button label',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ prevLabel || '' }
 							onChange={ ( val ) =>
@@ -74,7 +74,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 						/>
 						<TextControl
-							label={ __( 'Next button label', 'twork-builder' ) }
+							label={ __( 'Next button label', 'mk-builder' ) }
 							value={ nextLabel || '' }
 							onChange={ ( val ) =>
 								setAttributes( { nextLabel: val } )
@@ -97,7 +97,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'CUSTOMER REVIEWS',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 							<RichText
@@ -109,7 +109,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'What Our Customers Say.',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 						</div>
@@ -159,7 +159,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					>
 						{ __(
 							'Carousel scroll and dots work on the front end.',
-							'twork-builder'
+							'mk-builder'
 						) }
 					</p>
 				</div>

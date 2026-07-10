@@ -107,7 +107,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const isRealLink = urlTrim !== '';
 
 	const blockProps = useBlockProps( {
-		className: 'twork-team-card',
+		className: 'mk-team-card',
 	} );
 
 	const actionIcon = ICONS[ actionIconType ] || ICONS[ 'diagonal-arrow' ];
@@ -122,23 +122,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Profile link', 'twork-builder' ) }
+						title={ __( 'Profile link', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Profile URL', 'twork-builder' ) }
+							label={ __( 'Profile URL', 'mk-builder' ) }
 							value={ profileUrl }
 							onChange={ ( val ) =>
 								setAttributes( { profileUrl: val } )
 							}
 							help={ __(
 								'Leave empty to show the arrow as non-clickable (decorative).',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<ToggleControl
-							label={ __( 'Open in new tab', 'twork-builder' ) }
+							label={ __( 'Open in new tab', 'mk-builder' ) }
 							checked={ profileOpenInNewTab }
 							onChange={ ( val ) =>
 								setAttributes( { profileOpenInNewTab: val } )
@@ -149,7 +149,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<TextControl
 							label={ __(
 								'Arrow button label (screen readers)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ actionAriaLabel }
 							onChange={ ( val ) =>
@@ -159,11 +159,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Card Action Icon', 'twork-builder' ) }
+						title={ __( 'Card Action Icon', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
-							label={ __( 'Show action icon', 'twork-builder' ) }
+							label={ __( 'Show action icon', 'mk-builder' ) }
 							checked={ showActionIcon }
 							onChange={ ( val ) =>
 								setAttributes( { showActionIcon: val } )
@@ -171,29 +171,29 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<SelectControl
-							label={ __( 'Icon type', 'twork-builder' ) }
+							label={ __( 'Icon type', 'mk-builder' ) }
 							value={ actionIconType }
 							options={ [
 								{
 									label: __(
 										'Diagonal arrow',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'diagonal-arrow',
 								},
 								{
-									label: __( 'Arrow right', 'twork-builder' ),
+									label: __( 'Arrow right', 'mk-builder' ),
 									value: 'arrow-right',
 								},
 								{
 									label: __(
 										'External link',
-										'twork-builder'
+										'mk-builder'
 									),
 									value: 'external',
 								},
 								{
-									label: __( 'Plus', 'twork-builder' ),
+									label: __( 'Plus', 'mk-builder' ),
 									value: 'plus',
 								},
 							] }
@@ -204,7 +204,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Action colors', 'twork-builder' ) }
+							title={ __( 'Action colors', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: actionBgColor,
@@ -212,7 +212,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											actionBgColor: val,
 										} ),
-									label: __( 'Background', 'twork-builder' ),
+									label: __( 'Background', 'mk-builder' ),
 									disabled: ! showActionIcon,
 								},
 								{
@@ -221,7 +221,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											actionIconColor: val,
 										} ),
-									label: __( 'Icon', 'twork-builder' ),
+									label: __( 'Icon', 'mk-builder' ),
 									disabled: ! showActionIcon,
 								},
 							] }
@@ -229,11 +229,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Photo', 'twork-builder' ) }
+						title={ __( 'Photo', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Image alt text', 'twork-builder' ) }
+							label={ __( 'Image alt text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -251,7 +251,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove image', 'twork-builder' ) }
+								{ __( 'Remove image', 'mk-builder' ) }
 							</Button>
 						) }
 					</PanelBody>
@@ -281,7 +281,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							labels={ {
 								title: __(
 									'Team member photo',
-									'twork-builder'
+									'mk-builder'
 								),
 							} }
 						/>
@@ -301,7 +301,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							<img
 								src={ image }
 								alt={ imageAlt || '' }
-								className="twork-team-card__img"
+								className="mk-team-card__img"
 								onClick={ open }
 								role="button"
 								tabIndex={ 0 }
@@ -323,7 +323,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					( isRealLink ? (
 						<a
 							href={ urlTrim }
-							className="twork-team-card__action"
+							className="mk-team-card__action"
 							aria-label={ actionAriaLabel || 'View profile' }
 							onClick={ ( e ) => e.preventDefault() }
 							style={ actionStyles }
@@ -332,7 +332,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</a>
 					) : (
 						<span
-							className="twork-team-card__action twork-team-card__action--static"
+							className="mk-team-card__action mk-team-card__action--static"
 							aria-hidden="true"
 							style={ actionStyles }
 						>
@@ -340,22 +340,22 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</span>
 					) ) }
 
-				<div className="twork-team-card__content">
+				<div className="mk-team-card__content">
 					<RichText
 						tagName="h3"
-						className="twork-team-card__name"
+						className="mk-team-card__name"
 						value={ name }
 						onChange={ ( val ) => setAttributes( { name: val } ) }
-						placeholder={ __( 'Name', 'twork-builder' ) }
+						placeholder={ __( 'Name', 'mk-builder' ) }
 						allowedFormats={ [ 'core/bold', 'core/italic' ] }
 					/>
 
 					<RichText
 						tagName="p"
-						className="twork-team-card__role"
+						className="mk-team-card__role"
 						value={ role }
 						onChange={ ( val ) => setAttributes( { role: val } ) }
-						placeholder={ __( 'Role', 'twork-builder' ) }
+						placeholder={ __( 'Role', 'mk-builder' ) }
 						allowedFormats={ [] }
 					/>
 				</div>

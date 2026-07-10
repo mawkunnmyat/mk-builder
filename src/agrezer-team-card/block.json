@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/team-member",
+	"name": "mk/team-member",
 	"version": "1.0.0",
 	"title": "Team Member",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/team-section"
+		"mk/team-section"
 	],
 	"icon": "admin-users",
 	"description": "Team member card.",
@@ -74,7 +74,7 @@
 			"actionAriaLabel": "View profile"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css"
 }

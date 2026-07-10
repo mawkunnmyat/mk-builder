@@ -1,10 +1,10 @@
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { useInnerBlocksProps, InnerBlocks } from '@wordpress/block-editor';
 
-const ALLOWED_BLOCKS = [ 'twork/stat-item' ];
+const ALLOWED_BLOCKS = [ 'mk/stat-item' ];
 const TEMPLATE = [
 	[
-		'twork/stat-item',
+		'mk/stat-item',
 		{
 			iconVariant: 'growth',
 			title: '80% Pure Growth',
@@ -13,7 +13,7 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/stat-item',
+		'mk/stat-item',
 		{
 			iconVariant: 'organic',
 			title: '95% Organic Roots',
@@ -25,7 +25,7 @@ const TEMPLATE = [
 
 export default function Edit() {
 	const blockProps = useStableBlockProps(
-		() => ( { className: 'twork-greener__stats twork-greener-stats-row-editor' } ),
+		() => ( { className: 'mk-greener__stats mk-greener-stats-row-editor' } ),
 		[]
 	);
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {

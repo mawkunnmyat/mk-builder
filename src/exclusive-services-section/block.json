@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/exclusive-services-section",
+	"name": "mk/exclusive-services-section",
 	"version": "1.0.0",
 	"title": "Exclusive Services Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "grid-view",
 	"description": "Exclusive services section with icon cards (icon left, content right) for international patients.",
 	"keywords": [
@@ -13,7 +13,7 @@
 		"international",
 		"patient",
 		"icon",
-		"twork"
+		"mk"
 	],
 	"attributes": {
 		"backgroundColor": {
@@ -191,7 +191,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/exclusive-service-item",
+				"name": "mk/exclusive-service-item",
 				"attributes": {
 					"icon": "fas fa-language",
 					"title": "Language Interpretation",
@@ -199,7 +199,7 @@
 				}
 			},
 			{
-				"name": "twork/exclusive-service-item",
+				"name": "mk/exclusive-service-item",
 				"attributes": {
 					"icon": "fas fa-plane-arrival",
 					"title": "Airport Transfer",
@@ -207,7 +207,7 @@
 				}
 			},
 			{
-				"name": "twork/exclusive-service-item",
+				"name": "mk/exclusive-service-item",
 				"attributes": {
 					"icon": "fas fa-passport",
 					"title": "Visa Assistance",
@@ -215,7 +215,7 @@
 				}
 			},
 			{
-				"name": "twork/exclusive-service-item",
+				"name": "mk/exclusive-service-item",
 				"attributes": {
 					"icon": "fas fa-hotel",
 					"title": "Accommodation",
@@ -223,7 +223,7 @@
 				}
 			},
 			{
-				"name": "twork/exclusive-service-item",
+				"name": "mk/exclusive-service-item",
 				"attributes": {
 					"icon": "fas fa-utensils",
 					"title": "International Cuisine",
@@ -231,7 +231,7 @@
 				}
 			},
 			{
-				"name": "twork/exclusive-service-item",
+				"name": "mk/exclusive-service-item",
 				"attributes": {
 					"icon": "fas fa-wifi",
 					"title": "Connectivity",
@@ -240,7 +240,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/help-section",
+	"name": "mk/help-section",
 	"version": "1.0.0",
 	"title": "Help Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "editor-help",
 	"description": "How can we Care for you? Two-column section with intro text and booking card with department select.",
-	"keywords": [ "help", "care", "booking", "appointment", "jivaka", "twork" ],
+	"keywords": [ "help", "care", "booking", "appointment", "jivaka", "mk" ],
 	"attributes": {
 		"metaTitle": {
 			"type": "string",
@@ -214,7 +214,7 @@
 			"bookingTitleColor": "#f48b2a"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

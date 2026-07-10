@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/hero-new-section",
+	"name": "mk/hero-new-section",
 	"version": "1.0.0",
 	"title": "Hero Section (Split Layout)",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "cover-image",
 	"description": "Two-column hero with background image, tagline, heading with highlight, description, CTA buttons, and glass card (e.g. Heart Centre / Centres of Excellence).",
-	"keywords": [ "hero", "banner", "page", "glass", "centres", "twork" ],
+	"keywords": [ "hero", "banner", "page", "glass", "centres", "mk" ],
 	"attributes": {
 		"backgroundType": {
 			"type": "string",
@@ -371,7 +371,7 @@
 			"animationOnScroll": true
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

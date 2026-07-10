@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/neuro-centre-section",
+	"name": "mk/neuro-centre-section",
 	"version": "1.0.0",
 	"title": "Centre Content Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "heart-pulse",
 	"description": "Neuro Centre overview, treatments, specialists, FAQ and CTA laid out in a two-column grid.",
 	"supports": {
@@ -216,7 +216,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/neuro-treatment-item",
+				"name": "mk/neuro-treatment-item",
 				"attributes": {
 					"title": "Stroke Management",
 					"text": "Rapid response \"Golden Hour\" treatment for ischemic and hemorrhagic strokes.",
@@ -224,7 +224,7 @@
 				}
 			},
 			{
-				"name": "twork/neuro-treatment-item",
+				"name": "mk/neuro-treatment-item",
 				"attributes": {
 					"title": "Brain Tumor Surgery",
 					"text": "Precision removal of tumors using neuro-navigation systems to protect healthy tissue.",
@@ -232,7 +232,7 @@
 				}
 			},
 			{
-				"name": "twork/neuro-treatment-item",
+				"name": "mk/neuro-treatment-item",
 				"attributes": {
 					"title": "Spinal Surgery",
 					"text": "Treatments for slipped discs, spinal stenosis, and trauma with minimally invasive techniques.",
@@ -240,7 +240,7 @@
 				}
 			},
 			{
-				"name": "twork/neuro-treatment-item",
+				"name": "mk/neuro-treatment-item",
 				"attributes": {
 					"title": "EEG & EMG Services",
 					"text": "Diagnostic testing for epilepsy, nerve damage, and muscle disorders.",
@@ -249,5 +249,5 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder"
+	"textdomain": "mk-builder"
 }

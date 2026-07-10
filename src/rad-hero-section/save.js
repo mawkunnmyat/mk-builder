@@ -12,7 +12,7 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'rad-hero twork-rad-hero-section',
+		className: 'rad-hero mk-rad-hero-section',
 	} );
 
 	const headerStyle = {

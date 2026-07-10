@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/testimonial-item",
+	"name": "mk/testimonial-item",
 	"title": "Testimonial Item",
-	"parent": [ "twork/testimonial-section" ],
+	"parent": [ "mk/testimonial-section" ],
 	"description": "Single testimonial card with avatar, name, location and quote.",
-	"keywords": [ "testimonial", "quote", "patient", "review", "twork" ],
+	"keywords": [ "testimonial", "quote", "patient", "review", "mk" ],
 	"attributes": {
 		"image": {
 			"type": "string",
@@ -120,7 +120,7 @@
 			"headerMarginBottom": 20
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

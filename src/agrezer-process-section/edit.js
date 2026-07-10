@@ -17,13 +17,13 @@ import {
 } from '@wordpress/components';
 
 const ALLOWED_BLOCKS = [
-	'twork/process-step',
-	'twork/process-center',
+	'mk/process-step',
+	'mk/process-center',
 ];
 
 const TEMPLATE = [
 	[
-		'twork/process-step',
+		'mk/process-step',
 		{
 			position: 'left',
 			badgeNum: '01',
@@ -36,13 +36,13 @@ const TEMPLATE = [
 		},
 	],
 	[
-		'twork/process-center',
+		'mk/process-center',
 		{
 			alt: 'Process Wheel',
 		},
 	],
 	[
-		'twork/process-step',
+		'mk/process-step',
 		{
 			position: 'right',
 			badgeNum: '02',
@@ -80,15 +80,15 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		: undefined;
 
 	const blockProps = useBlockProps( {
-		className: `twork-process twork-process-section-editor ${
+		className: `mk-process mk-process-section-editor ${
 			wreathDecorationUrl ? 'has-process-wreath' : ''
 		}`,
 		style: {
 			backgroundColor,
 			paddingTop: `${ paddingTop }px`,
 			paddingBottom: `${ paddingBottom }px`,
-			'--twork-process-grid-gap': `${ gridGap }px`,
-			...( wreathVar ? { '--twork-process-wreath': wreathVar } : {} ),
+			'--mk-process-grid-gap': `${ gridGap }px`,
+			...( wreathVar ? { '--mk-process-wreath': wreathVar } : {} ),
 		},
 	} );
 
@@ -100,7 +100,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const innerBlocksProps = useInnerBlocksProps(
 		{
-			className: 'twork-process__container twork-process__container-editor',
+			className: 'mk-process__container mk-process__container-editor',
 			style: containerStyle,
 		},
 		{
@@ -115,13 +115,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Header', 'twork-builder' ) }
+						title={ __( 'Header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
 							label={ __(
 								'Tagline icon (emoji)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ taglineIcon }
 							onChange={ ( val ) =>
@@ -130,13 +130,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<PanelColorSettings
-							title={ __( 'Tagline', 'twork-builder' ) }
+							title={ __( 'Tagline', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: taglineColor,
 									onChange: ( val ) =>
 										setAttributes( { taglineColor: val } ),
-									label: __( 'Text', 'twork-builder' ),
+									label: __( 'Text', 'mk-builder' ),
 								},
 								{
 									value: taglineIconColor,
@@ -144,26 +144,26 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											taglineIconColor: val,
 										} ),
-									label: __( 'Icon', 'twork-builder' ),
+									label: __( 'Icon', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<Divider />
 						<PanelColorSettings
-							title={ __( 'Title', 'twork-builder' ) }
+							title={ __( 'Title', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: titleColor,
 									onChange: ( val ) =>
 										setAttributes( { titleColor: val } ),
-									label: __( 'Color', 'twork-builder' ),
+									label: __( 'Color', 'mk-builder' ),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Title size (rem)', 'twork-builder' ) }
+							label={ __( 'Title size (rem)', 'mk-builder' ) }
 							value={ titleFontSize }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontSize: val } )
@@ -174,7 +174,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Title weight', 'twork-builder' ) }
+							label={ __( 'Title weight', 'mk-builder' ) }
 							value={ titleFontWeight }
 							onChange={ ( val ) =>
 								setAttributes( { titleFontWeight: val } )
@@ -186,17 +186,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Badge wreath', 'twork-builder' ) }
+						title={ __( 'Badge wreath', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<BaseControl
 							label={ __(
 								'Wreath image (optional)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							help={ __(
 								'Upload wreath.png-style graphic behind step numbers.',
-								'twork-builder'
+								'mk-builder'
 							) }
 						>
 							{ ! wreathDecorationUrl ? (
@@ -212,7 +212,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Wreath decoration',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -238,7 +238,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											} )
 										}
 									>
-										{ __( 'Remove', 'twork-builder' ) }
+										{ __( 'Remove', 'mk-builder' ) }
 									</Button>
 								</div>
 							) }
@@ -246,11 +246,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
-							title={ __( 'Background', 'twork-builder' ) }
+							title={ __( 'Background', 'mk-builder' ) }
 							colorSettings={ [
 								{
 									value: backgroundColor,
@@ -260,14 +260,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Section background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 
 						<RangeControl
-							label={ __( 'Grid gap (px)', 'twork-builder' ) }
+							label={ __( 'Grid gap (px)', 'mk-builder' ) }
 							value={ gridGap }
 							onChange={ ( val ) =>
 								setAttributes( { gridGap: val } )
@@ -278,7 +278,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Max width (px)', 'twork-builder' ) }
+							label={ __( 'Max width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -289,7 +289,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Side gutter (px)', 'twork-builder' ) }
+							label={ __( 'Side gutter (px)', 'mk-builder' ) }
 							value={ containerGutter }
 							onChange={ ( val ) =>
 								setAttributes( { containerGutter: val } )
@@ -300,7 +300,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -313,7 +313,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -327,14 +327,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				</InspectorControls>
 			) }
 
-			<section { ...blockProps } aria-labelledby="twork-process-title">
-				<div className="twork-process__header">
+			<section { ...blockProps } aria-labelledby="mk-process-title">
+				<div className="mk-process__header">
 					<p
-						className="twork-process__tagline"
+						className="mk-process__tagline"
 						style={ { color: taglineColor } }
 					>
 						<span
-							className="twork-process__tagline-icon"
+							className="mk-process__tagline-icon"
 							style={ { color: taglineIconColor } }
 							aria-hidden="true"
 						>
@@ -348,20 +348,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Agri Intelligence',
-								'twork-builder'
+								'mk-builder'
 							) }
 							allowedFormats={ [] }
 						/>
 					</p>
 					<RichText
 						tagName="h2"
-						id="twork-process-title"
-						className="twork-process__title"
+						id="mk-process-title"
+						className="mk-process__title"
 						value={ sectionTitle }
 						onChange={ ( val ) =>
 							setAttributes( { sectionTitle: val } )
 						}
-						placeholder={ __( 'Section title…', 'twork-builder' ) }
+						placeholder={ __( 'Section title…', 'mk-builder' ) }
 						style={ {
 							color: titleColor,
 							fontSize: `${ titleFontSize }rem`,

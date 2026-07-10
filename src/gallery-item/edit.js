@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls, MediaPlaceholder } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -10,9 +10,9 @@ import {
 } from '@wordpress/components';
 
 const CATEGORY_OPTIONS = [
-	{ label: __( 'Patient Rooms', 'twork-builder' ), value: 'rooms' },
-	{ label: __( 'Technology', 'twork-builder' ), value: 'tech' },
-	{ label: __( 'Amenities', 'twork-builder' ), value: 'amenity' },
+	{ label: __( 'Patient Rooms', 'mk-builder' ), value: 'rooms' },
+	{ label: __( 'Technology', 'mk-builder' ), value: 'tech' },
+	{ label: __( 'Amenities', 'mk-builder' ), value: 'amenity' },
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -20,7 +20,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-gallery-item-editor gallery-item fade-up',
+			className: 'mk-gallery-item-editor gallery-item fade-up',
 			style: {
 				position: 'relative',
 				borderRadius: '8px',
@@ -39,10 +39,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Image', 'twork-builder' ) }
+						title={ __( 'Image', 'mk-builder' ) }
 						initialOpen={ true }
 					>
-						<BaseControl label={ __( 'Image', 'twork-builder' ) }>
+						<BaseControl label={ __( 'Image', 'mk-builder' ) }>
 							{ ! imageUrl ? (
 								<MediaPlaceholder
 									onSelect={ ( media ) =>
@@ -57,7 +57,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									labels={ {
 										title: __(
 											'Gallery Image',
-											'twork-builder'
+											'mk-builder'
 										),
 									} }
 								/>
@@ -89,14 +89,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									>
 										{ __(
 											'Remove Image',
-											'twork-builder'
+											'mk-builder'
 										) }
 									</Button>
 								</div>
 							) }
 						</BaseControl>
 						<TextControl
-							label={ __( 'Alt Text', 'twork-builder' ) }
+							label={ __( 'Alt Text', 'mk-builder' ) }
 							value={ imageAlt }
 							onChange={ ( val ) =>
 								setAttributes( { imageAlt: val } )
@@ -105,11 +105,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Filter Category', 'twork-builder' ) }
+						title={ __( 'Filter Category', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<SelectControl
-							label={ __( 'Category', 'twork-builder' ) }
+							label={ __( 'Category', 'mk-builder' ) }
 							value={ category }
 							options={ CATEGORY_OPTIONS }
 							onChange={ ( val ) =>
@@ -117,14 +117,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Must match a tab’s “Filter value” (e.g. rooms, tech, amenity).',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
 							label={ __(
 								'Overlay Icon Class',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ overlayIcon }
 							onChange={ ( val ) =>
@@ -132,7 +132,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							help={ __(
 								'Font Awesome class, e.g. fas fa-search-plus',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -187,7 +187,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image' ] }
 						multiple={ false }
 						labels={ {
-							title: __( 'Gallery Image', 'twork-builder' ),
+							title: __( 'Gallery Image', 'mk-builder' ),
 						} }
 						className="gallery-item-placeholder"
 					/>

@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -7,7 +7,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 	const { question = '', answer = '' } = attributes;
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'faq-item twork-dept-faq-editor',
+			className: 'faq-item mk-dept-faq-editor',
 		} ),
 		[]
 	);
@@ -16,9 +16,9 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 		<>
 			{ isSelected && (
 				<InspectorControls>
-					<PanelBody title={ __( 'FAQ', 'twork-builder' ) }>
+					<PanelBody title={ __( 'FAQ', 'mk-builder' ) }>
 						<TextControl
-							label={ __( 'Question', 'twork-builder' ) }
+							label={ __( 'Question', 'mk-builder' ) }
 							value={ question }
 							onChange={ ( v ) =>
 								setAttributes( { question: v } )
@@ -26,7 +26,7 @@ export default function Edit( { attributes = {}, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Answer', 'twork-builder' ) }
+							label={ __( 'Answer', 'mk-builder' ) }
 							value={ answer }
 							onChange={ ( v ) => setAttributes( { answer: v } ) }
 							multiline

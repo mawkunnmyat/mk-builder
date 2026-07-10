@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 
@@ -9,7 +9,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'jivaka-gm-review-card gm-anim-stagger twork-gm-review-card-editor',
+				'jivaka-gm-review-card gm-anim-stagger mk-gm-review-card-editor',
 			style: {
 				border: '2px dashed #e0e0e0',
 				background: '#fafafa',
@@ -26,23 +26,23 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Review Card', 'twork-builder' ) }
+						title={ __( 'Review Card', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'Quote Icon Class', 'twork-builder' ) }
+							label={ __( 'Quote Icon Class', 'mk-builder' ) }
 							value={ quoteIcon }
 							onChange={ ( val ) =>
 								setAttributes( { quoteIcon: val } )
 							}
 							help={ __(
 								'e.g. fas fa-quote-left',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 
 						<TextControl
-							label={ __( 'Reviewer Name', 'twork-builder' ) }
+							label={ __( 'Reviewer Name', 'mk-builder' ) }
 							value={ reviewerName }
 							onChange={ ( val ) =>
 								setAttributes( { reviewerName: val } )
@@ -50,14 +50,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Reviewer Label', 'twork-builder' ) }
+							label={ __( 'Reviewer Label', 'mk-builder' ) }
 							value={ reviewerLabel }
 							onChange={ ( val ) =>
 								setAttributes( { reviewerLabel: val } )
 							}
 							help={ __(
 								'e.g. Diabetes Patient, Regular Check-up',
-								'twork-builder'
+								'mk-builder'
 							) }
 						/>
 					</PanelBody>
@@ -79,7 +79,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					onChange={ ( val ) => setAttributes( { reviewText: val } ) }
 					placeholder={ __(
 						'Patient quote or review text...',
-						'twork-builder'
+						'mk-builder'
 					) }
 					style={ {
 						fontStyle: 'italic',
@@ -96,7 +96,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						onChange={ ( val ) =>
 							setAttributes( { reviewerName: val } )
 						}
-						placeholder={ __( 'Name', 'twork-builder' ) }
+						placeholder={ __( 'Name', 'mk-builder' ) }
 						style={ { margin: 0, fontSize: '1.1rem' } }
 					/>
 
@@ -108,7 +108,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						placeholder={ __(
 							'Label (e.g. Diabetes Patient)',
-							'twork-builder'
+							'mk-builder'
 						) }
 						style={ {
 							fontSize: '0.9rem',

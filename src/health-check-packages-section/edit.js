@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -15,10 +15,10 @@ import {
 	ToggleControl,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/health-check-package-card' ];
+const ALLOWED_BLOCKS = [ 'mk/health-check-package-card' ];
 const TEMPLATE = [
 	[
-		'twork/health-check-package-card',
+		'mk/health-check-package-card',
 		{
 			category: 'basic',
 			title: 'Basic Checkup',
@@ -37,7 +37,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/health-check-package-card',
+		'mk/health-check-package-card',
 		{
 			category: 'basic',
 			title: 'Master Health',
@@ -57,7 +57,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/health-check-package-card',
+		'mk/health-check-package-card',
 		{
 			category: 'basic',
 			title: 'Executive',
@@ -77,7 +77,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/health-check-package-card',
+		'mk/health-check-package-card',
 		{
 			category: 'special',
 			title: 'Heart Check',
@@ -96,7 +96,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/health-check-package-card',
+		'mk/health-check-package-card',
 		{
 			category: 'special',
 			title: 'Diabetes Care',
@@ -115,7 +115,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/health-check-package-card',
+		'mk/health-check-package-card',
 		{
 			category: 'gender',
 			title: "Women's Wellness",
@@ -134,7 +134,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/health-check-package-card',
+		'mk/health-check-package-card',
 		{
 			category: 'gender',
 			title: "Men's Vitality",
@@ -174,7 +174,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'chk-section twork-health-check-packages-section-editor',
+			className: 'chk-section mk-health-check-packages-section-editor',
 			style: {
 				backgroundColor: backgroundColor || '#fff',
 				paddingTop: `${ paddingTop }px`,
@@ -202,7 +202,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		setAttributes( {
 			tabs: [
 				...tabs,
-				{ label: __( 'New tab', 'twork-builder' ), value: 'new' },
+				{ label: __( 'New tab', 'mk-builder' ), value: 'new' },
 			],
 		} );
 	};
@@ -223,7 +223,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Section header', 'twork-builder' ) }
+						title={ __( 'Section header', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<PanelColorSettings
@@ -234,7 +234,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											sectionTitleColor: v ?? undefined,
 										} ),
-									label: __( 'Title color', 'twork-builder' ),
+									label: __( 'Title color', 'mk-builder' ),
 								},
 								{
 									value: sectionSubtitleColor,
@@ -245,14 +245,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Subtitle color',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Tabs', 'twork-builder' ) }
+						title={ __( 'Tabs', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ tabs.map( ( tab, index ) => (
@@ -266,7 +266,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								} }
 							>
 								<TextControl
-									label={ __( 'Label', 'twork-builder' ) }
+									label={ __( 'Label', 'mk-builder' ) }
 									value={ tab.label }
 									onChange={ ( v ) =>
 										updateTab( index, 'label', v )
@@ -276,7 +276,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Value (slug)',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ tab.value }
 									onChange={ ( v ) =>
@@ -284,7 +284,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									help={ __(
 										'Must match category on cards: e.g. basic, special, gender',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
@@ -295,17 +295,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										onClick={ () => removeTab( index ) }
 										style={ { marginTop: 8 } }
 									>
-										{ __( 'Remove tab', 'twork-builder' ) }
+										{ __( 'Remove tab', 'mk-builder' ) }
 									</Button>
 								) }
 							</div>
 						) ) }
 						<Button isSecondary isSmall onClick={ addTab }>
-							{ __( 'Add tab', 'twork-builder' ) }
+							{ __( 'Add tab', 'mk-builder' ) }
 						</Button>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<PanelColorSettings
@@ -318,7 +318,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Section background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -327,7 +327,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											primaryColor: v ?? undefined,
 										} ),
-									label: __( 'Primary', 'twork-builder' ),
+									label: __( 'Primary', 'mk-builder' ),
 								},
 								{
 									value: secondaryColor,
@@ -335,7 +335,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										setAttributes( {
 											secondaryColor: v ?? undefined,
 										} ),
-									label: __( 'Secondary', 'twork-builder' ),
+									label: __( 'Secondary', 'mk-builder' ),
 								},
 								{
 									value: tabActiveBg,
@@ -345,7 +345,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Tab active background',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 								{
@@ -356,18 +356,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} ),
 									label: __(
 										'Tab active text',
-										'twork-builder'
+										'mk-builder'
 									),
 								},
 							] }
 						/>
 					</PanelBody>
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( v ) =>
 								setAttributes( { paddingTop: v } )
@@ -380,7 +380,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( v ) =>
@@ -394,7 +394,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( v ) =>
@@ -408,7 +408,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container padding (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerPadding }
 							onChange={ ( v ) =>
@@ -422,7 +422,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<ToggleControl
 							label={ __(
 								'Animation on scroll',
-								'twork-builder'
+								'mk-builder'
 							) }
 							checked={ !! animationOnScroll }
 							onChange={ ( v ) =>
@@ -444,7 +444,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							placeholder={ __(
 								'Our Packages',
-								'twork-builder'
+								'mk-builder'
 							) }
 							style={ {
 								color: sectionTitleColor,
@@ -496,7 +496,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) ) }
 					</div>
 					<div
-						className="chk-pkg-grid twork-chk-pkg-grid-editor"
+						className="chk-pkg-grid mk-chk-pkg-grid-editor"
 						data-active="basic"
 						style={ {
 							display: 'grid',

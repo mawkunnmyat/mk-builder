@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InnerBlocks,
 	InspectorControls,
@@ -15,10 +15,10 @@ import {
 	Button,
 } from '@wordpress/components';
 
-const ALLOWED_BLOCKS = [ 'twork/agrezer-third-section-card' ];
+const ALLOWED_BLOCKS = [ 'mk/agrezer-third-section-card' ];
 const TEMPLATE = [
 	[
-		'twork/agrezer-third-section-card',
+		'mk/agrezer-third-section-card',
 		{
 			cardAlign: 'left',
 			stat: '80%',
@@ -27,7 +27,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-third-section-card',
+		'mk/agrezer-third-section-card',
 		{
 			cardAlign: 'center',
 			stat: '98%',
@@ -36,7 +36,7 @@ const TEMPLATE = [
 	],
 
 	[
-		'twork/agrezer-third-section-card',
+		'mk/agrezer-third-section-card',
 		{
 			cardAlign: 'right',
 			stat: '50%',
@@ -70,7 +70,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className:
-				'agrezer-third-section twork-agrezer-third-section-editor',
+				'agrezer-third-section mk-agrezer-third-section-editor',
 			style: {
 				backgroundColor,
 				paddingTop: `${ paddingTop }px`,
@@ -104,11 +104,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Call to action', 'twork-builder' ) }
+						title={ __( 'Call to action', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
-							label={ __( 'Show CTA', 'twork-builder' ) }
+							label={ __( 'Show CTA', 'mk-builder' ) }
 							checked={ showCta }
 							onChange={ ( val ) =>
 								setAttributes( { showCta: val } )
@@ -120,7 +120,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								<TextControl
 									label={ __(
 										'Button text',
-										'twork-builder'
+										'mk-builder'
 									) }
 									value={ ctaText }
 									onChange={ ( val ) =>
@@ -129,21 +129,21 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								/>
 
 								<TextControl
-									label={ __( 'URL', 'twork-builder' ) }
+									label={ __( 'URL', 'mk-builder' ) }
 									value={ ctaUrl }
 									onChange={ ( val ) =>
 										setAttributes( { ctaUrl: val } )
 									}
 									help={ __(
 										'Leave empty for a non-clickable button. Any URL (including #) becomes a link.',
-										'twork-builder'
+										'mk-builder'
 									) }
 								/>
 
 								<ToggleControl
 									label={ __(
 										'Open in new tab',
-										'twork-builder'
+										'mk-builder'
 									) }
 									checked={ ctaOpenInNewTab }
 									onChange={ ( val ) =>
@@ -158,11 +158,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Tagline icon', 'twork-builder' ) }
+						title={ __( 'Tagline icon', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<TextControl
-							label={ __( 'Icon alt text', 'twork-builder' ) }
+							label={ __( 'Icon alt text', 'mk-builder' ) }
 							value={ tagIconAlt }
 							onChange={ ( val ) =>
 								setAttributes( { tagIconAlt: val } )
@@ -183,7 +183,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								labels={ {
 									title: __(
 										'Tagline icon',
-										'twork-builder'
+										'mk-builder'
 									),
 								} }
 							/>
@@ -205,20 +205,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								>
-									{ __( 'Remove icon', 'twork-builder' ) }
+									{ __( 'Remove icon', 'mk-builder' ) }
 								</Button>
 							</>
 						) }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'twork-builder' ) }
+						title={ __( 'Layout', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<RangeControl
 							label={ __(
 								'Container max width (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
@@ -232,7 +232,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Container width (%)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ containerWidthPct }
 							onChange={ ( val ) =>
@@ -243,7 +243,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Top row gap (px)', 'twork-builder' ) }
+							label={ __( 'Top row gap (px)', 'mk-builder' ) }
 							value={ topGridGap }
 							onChange={ ( val ) =>
 								setAttributes( { topGridGap: val } )
@@ -255,7 +255,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Space below top row (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ topMarginBottom }
 							onChange={ ( val ) =>
@@ -266,7 +266,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Cards gap (px)', 'twork-builder' ) }
+							label={ __( 'Cards gap (px)', 'mk-builder' ) }
 							value={ cardsGap }
 							onChange={ ( val ) =>
 								setAttributes( { cardsGap: val } )
@@ -278,7 +278,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Cards top margin (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ cardsMarginTop }
 							onChange={ ( val ) =>
@@ -289,7 +289,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'twork-builder' ) }
+							label={ __( 'Padding top (px)', 'mk-builder' ) }
 							value={ paddingTop }
 							onChange={ ( val ) =>
 								setAttributes( { paddingTop: val } )
@@ -302,7 +302,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<RangeControl
 							label={ __(
 								'Padding bottom (px)',
-								'twork-builder'
+								'mk-builder'
 							) }
 							value={ paddingBottom }
 							onChange={ ( val ) =>
@@ -315,7 +315,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Colors', 'twork-builder' ) }
+						title={ __( 'Colors', 'mk-builder' ) }
 						colorSettings={ [
 							{
 								value: backgroundColor,
@@ -323,7 +323,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									setAttributes( { backgroundColor: val } ),
 								label: __(
 									'Section background',
-									'twork-builder'
+									'mk-builder'
 								),
 							},
 						] }
@@ -351,7 +351,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									}
 									placeholder={ __(
 										'Tagline',
-										'twork-builder'
+										'mk-builder'
 									) }
 									allowedFormats={ [
 										'core/bold',
@@ -366,7 +366,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								onChange={ ( val ) =>
 									setAttributes( { title: val } )
 								}
-								placeholder={ __( 'Heading', 'twork-builder' ) }
+								placeholder={ __( 'Heading', 'mk-builder' ) }
 								allowedFormats={ [
 									'core/bold',
 									'core/italic',
@@ -386,7 +386,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								placeholder={ __(
 									'Description…',
-									'twork-builder'
+									'mk-builder'
 								) }
 							/>
 

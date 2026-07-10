@@ -36,7 +36,7 @@ export default function save( { attributes } ) {
 			: '#';
 
 	const blockProps = useBlockProps.save( {
-		className: 'agrezer-hero agrezer-hero--bg twork-agrezer-hero-section',
+		className: 'agrezer-hero agrezer-hero--bg mk-agrezer-hero-section',
 		style: {
 			backgroundImage: backgroundImage
 				? `url(${ backgroundImage })`

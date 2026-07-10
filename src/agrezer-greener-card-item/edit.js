@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	RichText,
 	MediaPlaceholder,
@@ -10,7 +10,7 @@ import { PanelBody, TextControl, Button } from '@wordpress/components';
 export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const { image, alt, title, linkText, linkUrl } = attributes;
 	const blockProps = useStableBlockProps(
-		() => ( { className: 'twork-greener-card' } ),
+		() => ( { className: 'mk-greener-card' } ),
 		[]
 	);
 
@@ -19,11 +19,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Link', 'twork-builder' ) }
+						title={ __( 'Link', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<TextControl
-							label={ __( 'URL', 'twork-builder' ) }
+							label={ __( 'URL', 'mk-builder' ) }
 							value={ linkUrl }
 							onChange={ ( val ) =>
 								setAttributes( { linkUrl: val } )
@@ -31,7 +31,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						/>
 
 						<TextControl
-							label={ __( 'Image alt', 'twork-builder' ) }
+							label={ __( 'Image alt', 'mk-builder' ) }
 							value={ alt }
 							onChange={ ( val ) =>
 								setAttributes( { alt: val } )
@@ -54,18 +54,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						allowedTypes={ [ 'image' ] }
 						multiple={ false }
 						labels={ {
-							title: __( 'Card image', 'twork-builder' ),
+							title: __( 'Card image', 'mk-builder' ),
 						} }
 					/>
 				) : (
 					<>
 						<img
-							className="twork-greener-card__img"
+							className="mk-greener-card__img"
 							src={ image }
 							alt=""
 						/>
 
-						<div className="twork-greener-card__editor-tools">
+						<div className="mk-greener-card__editor-tools">
 							<Button
 								isSecondary
 								isSmall
@@ -76,27 +76,27 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 									} )
 								}
 							>
-								{ __( 'Remove image', 'twork-builder' ) }
+								{ __( 'Remove image', 'mk-builder' ) }
 							</Button>
 						</div>
 					</>
 				) }
 				<RichText
 					tagName="h4"
-					className="twork-greener-card__title"
+					className="mk-greener-card__title"
 					value={ title }
 					onChange={ ( val ) => setAttributes( { title: val } ) }
-					placeholder={ __( 'Card title', 'twork-builder' ) }
+					placeholder={ __( 'Card title', 'mk-builder' ) }
 				/>
 
-				<div className="twork-greener-card__link twork-greener-card__link--editor">
+				<div className="mk-greener-card__link mk-greener-card__link--editor">
 					<RichText
 						tagName="span"
 						value={ linkText }
 						onChange={ ( val ) =>
 							setAttributes( { linkText: val } )
 						}
-						placeholder={ __( 'Read More', 'twork-builder' ) }
+						placeholder={ __( 'Read More', 'mk-builder' ) }
 					/>
 
 					<span aria-hidden="true">-&gt;</span>

@@ -1,11 +1,11 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/page-hero",
+	"name": "mk/page-hero",
 	"title": "Page Hero",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"description": "Professional page hero section with background image, breadcrumb, and title with responsive settings",
-	"keywords": [ "hero", "banner", "page", "header", "twork" ],
+	"keywords": [ "hero", "banner", "page", "header", "mk" ],
 	"attributes": {
 		"backgroundImage": {
 			"type": "string",

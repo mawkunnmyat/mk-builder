@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/features-grid",
+	"name": "mk/features-grid",
 	"version": "1.0.0",
 	"title": "Features Grid",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/info-section"
+		"mk/info-section"
 	],
 	"icon": "grid-view",
 	"description": "Grid container for feature items.",
@@ -17,7 +17,7 @@
 	"example": {
 		"innerBlocks": [
 			{
-				"name": "twork/feature-item",
+				"name": "mk/feature-item",
 				"attributes": {
 					"title": "Farm Development",
 					"description": "End-to-end planning for irrigation, drainage, and resilient field layouts.",
@@ -25,7 +25,7 @@
 				}
 			},
 			{
-				"name": "twork/feature-item",
+				"name": "mk/feature-item",
 				"attributes": {
 					"title": "Crop Management",
 					"description": "Scouting, IPM, and input programs tuned to each growth stage.",
@@ -33,7 +33,7 @@
 				}
 			},
 			{
-				"name": "twork/feature-item",
+				"name": "mk/feature-item",
 				"attributes": {
 					"title": "Soil Restoration",
 					"description": "Cover crops and organic amendments that rebuild soil structure.",
@@ -41,7 +41,7 @@
 				}
 			},
 			{
-				"name": "twork/feature-item",
+				"name": "mk/feature-item",
 				"attributes": {
 					"title": "Organic Cultivation",
 					"description": "Certification-ready processes from planting through harvest.",
@@ -50,6 +50,6 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

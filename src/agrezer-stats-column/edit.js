@@ -1,15 +1,15 @@
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { useInnerBlocksProps, InnerBlocks } from '@wordpress/block-editor';
 
 const ALLOWED_BLOCKS = [
-	'twork/cta-block',
-	'twork/stat-card',
+	'mk/cta-block',
+	'mk/stat-card',
 ];
 
 export default function Edit() {
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-stats__col twork-stats-column-editor',
+			className: 'mk-stats__col mk-stats-column-editor',
 		} ),
 		[]
 	);

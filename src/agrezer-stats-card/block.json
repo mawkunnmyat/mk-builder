@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/stat-card",
+	"name": "mk/stat-card",
 	"version": "1.0.0",
 	"title": "Stat Card",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"parent": [
-		"twork/stats-column"
+		"mk/stats-column"
 	],
 	"icon": "analytics",
 	"description": "Statistic image card.",
@@ -43,6 +43,6 @@
 			"statLabel": "Field Efficiency"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js"
 }

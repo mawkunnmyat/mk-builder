@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/how-it-works-section",
+	"name": "mk/how-it-works-section",
 	"version": "1.0.0",
 	"title": "How It Works Section",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "editor-ol",
 	"description": "Process / How It Works steps section with numbered rows, ideal for lab tests, departments, or service flows.",
-	"keywords": [ "how it works", "process", "steps", "flow", "twork" ],
+	"keywords": [ "how it works", "process", "steps", "flow", "mk" ],
 	"attributes": {
 		"backgroundColor": {
 			"type": "string",
@@ -174,7 +174,7 @@
 		},
 		"innerBlocks": [
 			{
-				"name": "twork/journey-step-item",
+				"name": "mk/journey-step-item",
 				"attributes": {
 					"stepNumber": 1,
 					"title": "Book a Test",
@@ -182,7 +182,7 @@
 				}
 			},
 			{
-				"name": "twork/journey-step-item",
+				"name": "mk/journey-step-item",
 				"attributes": {
 					"stepNumber": 2,
 					"title": "Sample Collection",
@@ -190,7 +190,7 @@
 				}
 			},
 			{
-				"name": "twork/journey-step-item",
+				"name": "mk/journey-step-item",
 				"attributes": {
 					"stepNumber": 3,
 					"title": "Analysis",
@@ -198,7 +198,7 @@
 				}
 			},
 			{
-				"name": "twork/journey-step-item",
+				"name": "mk/journey-step-item",
 				"attributes": {
 					"stepNumber": 4,
 					"title": "Report",
@@ -207,7 +207,7 @@
 			}
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

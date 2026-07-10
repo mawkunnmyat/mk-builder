@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody } from '@wordpress/components';
 
@@ -8,7 +8,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'rad-stat-item twork-rad-stat-item-editor',
+			className: 'rad-stat-item mk-rad-stat-item-editor',
 			style: {
 				textAlign: 'center',
 			},
@@ -21,7 +21,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Stat Item', 'twork-builder' ) }
+						title={ __( 'Stat Item', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						{ /* Text is edited inline; no extra controls needed for now */ }
@@ -35,7 +35,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="rad-stat-num"
 					value={ statNumber }
 					onChange={ ( val ) => setAttributes( { statNumber: val } ) }
-					placeholder={ __( '24/7', 'twork-builder' ) }
+					placeholder={ __( '24/7', 'mk-builder' ) }
 					withoutInteractiveFormatting
 				/>
 
@@ -44,7 +44,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					className="rad-stat-label"
 					value={ statLabel }
 					onChange={ ( val ) => setAttributes( { statLabel: val } ) }
-					placeholder={ __( 'Operating Hours', 'twork-builder' ) }
+					placeholder={ __( 'Operating Hours', 'mk-builder' ) }
 					withoutInteractiveFormatting
 				/>
 			</div>

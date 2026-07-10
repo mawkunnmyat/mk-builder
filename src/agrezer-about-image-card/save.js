@@ -95,8 +95,8 @@ export default function save( { attributes } ) {
 
 	const blockProps = useBlockProps.save( {
 		className: [
-			'twork-about-card',
-			variant === 'overlay' ? 'twork-about-card--overlay' : '',
+			'mk-about-card',
+			variant === 'overlay' ? 'mk-about-card--overlay' : '',
 			`is-media-${ mediaType }`,
 		]
 			.filter( Boolean )
@@ -123,22 +123,22 @@ export default function save( { attributes } ) {
 
 			{ mediaType === 'color' && (
 				<div
-					className="twork-about-card__color-bg"
+					className="mk-about-card__color-bg"
 					style={ { backgroundColor } }
 					aria-hidden="true"
 				/>
 			) }
 
 			{ variant === 'overlay' && (
-				<div className="twork-about-card__overlay">
+				<div className="mk-about-card__overlay">
 					<RichText.Content
 						tagName="p"
-						className="twork-about-card__overlay-text"
+						className="mk-about-card__overlay-text"
 						value={ overlayText }
 					/>
 					<a
 						href={ overlayButtonUrl || '#' }
-						className="twork-about-card__overlay-btn"
+						className="mk-about-card__overlay-btn"
 					>
 						<RichText.Content
 							tagName="span"
@@ -146,7 +146,7 @@ export default function save( { attributes } ) {
 						/>
 						{ showButtonIcon && (
 							<span
-								className="twork-about-card__overlay-btn-icon"
+								className="mk-about-card__overlay-btn-icon"
 								aria-hidden="true"
 							>
 								{ actionIcon }
