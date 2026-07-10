@@ -7,7 +7,7 @@
 # suitable for WordPress plugin installation.
 #
 # Usage: ./zip-plugin.sh
-# Output: ../twork-builder.zip
+# Output: ../mk-builder.zip
 ###############################################################################
 
 set -euo pipefail  # Exit on error, undefined vars, pipe failures
@@ -23,7 +23,7 @@ NC='\033[0m' # No Color
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
 
-echo -e "${GREEN}=== Twork Builder Plugin ZIP Creator ===${NC}\n"
+echo -e "${GREEN}=== MK Builder Plugin ZIP Creator ===${NC}\n"
 
 # Step 1: Build the plugin
 echo -e "${YELLOW}Step 1: Building plugin...${NC}"

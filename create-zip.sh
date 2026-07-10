@@ -7,7 +7,7 @@
 # This script should be run from the plugin directory.
 #
 # Usage: ./create-zip.sh
-# Output: ../twork-builder.zip
+# Output: ../mk-builder.zip
 ###############################################################################
 
 set -euo pipefail  # Exit on error, undefined vars, pipe failures
@@ -16,8 +16,8 @@ set -euo pipefail  # Exit on error, undefined vars, pipe failures
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PLUGIN_DIR="$SCRIPT_DIR"
 PARENT_DIR="$(dirname "$PLUGIN_DIR")"
-ZIP_FILE="$PARENT_DIR/twork-builder.zip"
-PLUGIN_NAME="twork-builder"
+ZIP_FILE="$PARENT_DIR/$(basename "$PLUGIN_DIR").zip"
+PLUGIN_NAME="$(basename "$PLUGIN_DIR")"
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -44,8 +44,8 @@ print_error() {
 }
 
 # Validate we're in the right directory
-if [ ! -f "$PLUGIN_DIR/twork-builder.php" ]; then
-    print_error "twork-builder.php not found. Are you in the plugin directory?"
+if [ ! -f "$PLUGIN_DIR/mk-builder.php" ]; then
+    print_error "mk-builder.php not found. Are you in the plugin directory?"
     exit 1
 fi
 

@@ -112,7 +112,7 @@ module.exports = {
 			...( defaultConfig.resolve && defaultConfig.resolve.alias
 				? defaultConfig.resolve.alias
 				: {} ),
-			'@twork-builder/editor-utils': path.resolve(
+			'@mk-builder/editor-utils': path.resolve(
 				__dirname,
 				'src/editor-utils/block-editor-performance.js'
 			),
