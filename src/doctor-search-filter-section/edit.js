@@ -7,6 +7,10 @@ import {
 	TextControl,
 	ToggleControl,
 } from '@wordpress/components';
+import { DEFAULT_DEPARTMENTS, DEFAULT_GENDERS } from '@mk-builder/shared/doctor-filter-data';
+import FilterListsInspectorPanel from '@mk-builder/shared/filter-lists-inspector-panel';
+import { useDoctorFilterLists } from '@mk-builder/shared/use-doctor-filter-lists';
+import { FILTER_BLOCK } from '@mk-builder/shared/doctor-filter-sync';
 
 const DEFAULT_ATTS = {
 	nameLabel: "Doctor's Name",
@@ -33,19 +37,11 @@ const DEFAULT_ATTS = {
 	resetButtonHoverBg: '#e0e0e0',
 	resetButtonHoverColor: '#212121',
 	addAnimationClass: true,
+	departments: DEFAULT_DEPARTMENTS,
+	genders: DEFAULT_GENDERS,
 };
 
-const DEPT_OPTIONS = [
-	{ value: 'heart', label: 'Heart Centre' },
-	{ value: 'neuro', label: 'Neuro Centre' },
-	{ value: 'cancer', label: 'Cancer Centre' },
-	{ value: 'peds', label: 'Paediatrics' },
-	{ value: 'general', label: 'General Medicine' },
-	{ value: 'ent', label: 'ENT' },
-	{ value: 'dental', label: 'Dental' },
-];
-
-export default function Edit( { attributes, setAttributes, isSelected } ) {
+export default function Edit( { attributes, setAttributes, clientId } ) {
 	const attrs = { ...DEFAULT_ATTS, ...attributes };
 	const {
 		nameLabel,
@@ -68,6 +64,22 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		inputBorderColor,
 		addAnimationClass,
 	} = attrs;
+
+	const {
+		departments,
+		genders,
+		updateDepartment,
+		removeDepartment,
+		addDepartment,
+		updateGender,
+		removeGender,
+		addGender,
+	} = useDoctorFilterLists( {
+		attributes,
+		setAttributes,
+		clientId,
+		blockName: FILTER_BLOCK,
+	} );
 
 	const blockProps = useStableBlockProps(
 		() => ( {
@@ -119,313 +131,322 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	return (
 		<>
-			{ isSelected && (
-				<InspectorControls>
-					<PanelBody
-						title={ __( 'Labels & Placeholder', 'mk-builder' ) }
-						initialOpen={ true }
-					>
-						<TextControl
-							label={ __( 'Name field label', 'mk-builder' ) }
-							value={ attrs.nameLabel }
-							onChange={ ( val ) =>
-								setAttributes( { nameLabel: val } )
-							}
-						/>
+			<InspectorControls>
+				<FilterListsInspectorPanel
+					departments={ departments }
+					genders={ genders }
+					updateDepartment={ updateDepartment }
+					removeDepartment={ removeDepartment }
+					addDepartment={ addDepartment }
+					updateGender={ updateGender }
+					removeGender={ removeGender }
+					addGender={ addGender }
+				/>
 
-						<TextControl
-							label={ __(
-								'Search placeholder',
-								'mk-builder'
-							) }
-							value={ attrs.searchPlaceholder }
-							onChange={ ( val ) =>
-								setAttributes( { searchPlaceholder: val } )
-							}
-						/>
+				<PanelBody
+					title={ __( 'Labels & Placeholder', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<TextControl
+						label={ __( 'Name field label', 'mk-builder' ) }
+						value={ attrs.nameLabel }
+						onChange={ ( val ) =>
+							setAttributes( { nameLabel: val } )
+						}
+					/>
 
-						<TextControl
-							label={ __( 'Department label', 'mk-builder' ) }
-							value={ attrs.departmentLabel }
-							onChange={ ( val ) =>
-								setAttributes( { departmentLabel: val } )
-							}
-						/>
+					<TextControl
+						label={ __(
+							'Search placeholder',
+							'mk-builder'
+						) }
+						value={ attrs.searchPlaceholder }
+						onChange={ ( val ) =>
+							setAttributes( { searchPlaceholder: val } )
+						}
+					/>
 
-						<TextControl
-							label={ __(
-								'Department "All" option',
-								'mk-builder'
-							) }
-							value={ attrs.departmentAllLabel }
-							onChange={ ( val ) =>
-								setAttributes( { departmentAllLabel: val } )
-							}
-						/>
+					<TextControl
+						label={ __( 'Department label', 'mk-builder' ) }
+						value={ attrs.departmentLabel }
+						onChange={ ( val ) =>
+							setAttributes( { departmentLabel: val } )
+						}
+					/>
 
-						<TextControl
-							label={ __( 'Gender label', 'mk-builder' ) }
-							value={ attrs.genderLabel }
-							onChange={ ( val ) =>
-								setAttributes( { genderLabel: val } )
-							}
-						/>
+					<TextControl
+						label={ __(
+							'Department "All" option',
+							'mk-builder'
+						) }
+						value={ attrs.departmentAllLabel }
+						onChange={ ( val ) =>
+							setAttributes( { departmentAllLabel: val } )
+						}
+					/>
 
-						<TextControl
-							label={ __(
-								'Gender "All" option',
-								'mk-builder'
-							) }
-							value={ attrs.genderAllLabel }
-							onChange={ ( val ) =>
-								setAttributes( { genderAllLabel: val } )
-							}
-						/>
+					<TextControl
+						label={ __( 'Gender label', 'mk-builder' ) }
+						value={ attrs.genderLabel }
+						onChange={ ( val ) =>
+							setAttributes( { genderLabel: val } )
+						}
+					/>
 
-						<TextControl
-							label={ __( 'Reset button text', 'mk-builder' ) }
-							value={ attrs.resetButtonText }
-							onChange={ ( val ) =>
-								setAttributes( { resetButtonText: val } )
-							}
-						/>
-					</PanelBody>
+					<TextControl
+						label={ __(
+							'Gender "All" option',
+							'mk-builder'
+						) }
+						value={ attrs.genderAllLabel }
+						onChange={ ( val ) =>
+							setAttributes( { genderAllLabel: val } )
+						}
+					/>
 
-					<PanelBody
-						title={ __( 'Container', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<RangeControl
-							label={ __( 'Max width (px)', 'mk-builder' ) }
-							value={ attrs.containerMaxWidth }
-							onChange={ ( val ) =>
-								setAttributes( { containerMaxWidth: val } )
-							}
-							min={ 800 }
-							max={ 1920 }
-							step={ 10 }
-						/>
+					<TextControl
+						label={ __( 'Reset button text', 'mk-builder' ) }
+						value={ attrs.resetButtonText }
+						onChange={ ( val ) =>
+							setAttributes( { resetButtonText: val } )
+						}
+					/>
+				</PanelBody>
 
-						<RangeControl
-							label={ __(
-								'Container padding (px)',
-								'mk-builder'
-							) }
-							value={ attrs.containerPadding }
-							onChange={ ( val ) =>
-								setAttributes( { containerPadding: val } )
-							}
-							min={ 0 }
-							max={ 80 }
-							step={ 5 }
-						/>
+				<PanelBody
+					title={ __( 'Container', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<RangeControl
+						label={ __( 'Max width (px)', 'mk-builder' ) }
+						value={ attrs.containerMaxWidth }
+						onChange={ ( val ) =>
+							setAttributes( { containerMaxWidth: val } )
+						}
+						min={ 800 }
+						max={ 1920 }
+						step={ 10 }
+					/>
 
-						<RangeControl
-							label={ __(
-								'Section margin top (px)',
-								'mk-builder'
-							) }
-							value={ attrs.sectionMarginTop }
-							onChange={ ( val ) =>
-								setAttributes( { sectionMarginTop: val } )
-							}
-							min={ -150 }
-							max={ 50 }
-							step={ 5 }
-							help={ __(
-								'Negative values pull the filter up over the hero. Default -80.',
-								'mk-builder'
-							) }
-						/>
+					<RangeControl
+						label={ __(
+							'Container padding (px)',
+							'mk-builder'
+						) }
+						value={ attrs.containerPadding }
+						onChange={ ( val ) =>
+							setAttributes( { containerPadding: val } )
+						}
+						min={ 0 }
+						max={ 80 }
+						step={ 5 }
+					/>
 
-						<RangeControl
-							label={ __(
-								'Section margin bottom (px)',
-								'mk-builder'
-							) }
-							value={ attrs.sectionMarginBottom }
-							onChange={ ( val ) =>
-								setAttributes( { sectionMarginBottom: val } )
-							}
-							min={ 0 }
-							max={ 120 }
-							step={ 5 }
-						/>
-					</PanelBody>
+					<RangeControl
+						label={ __(
+							'Section margin top (px)',
+							'mk-builder'
+						) }
+						value={ attrs.sectionMarginTop }
+						onChange={ ( val ) =>
+							setAttributes( { sectionMarginTop: val } )
+						}
+						min={ -150 }
+						max={ 50 }
+						step={ 5 }
+						help={ __(
+							'Negative values pull the filter up over the hero. Default -80.',
+							'mk-builder'
+						) }
+					/>
 
-					<PanelBody
-						title={ __( 'Search box styling', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<RangeControl
-							label={ __( 'Box padding (px)', 'mk-builder' ) }
-							value={ attrs.boxPadding }
-							onChange={ ( val ) =>
-								setAttributes( { boxPadding: val } )
-							}
-							min={ 16 }
-							max={ 60 }
-							step={ 2 }
-						/>
+					<RangeControl
+						label={ __(
+							'Section margin bottom (px)',
+							'mk-builder'
+						) }
+						value={ attrs.sectionMarginBottom }
+						onChange={ ( val ) =>
+							setAttributes( { sectionMarginBottom: val } )
+						}
+						min={ 0 }
+						max={ 120 }
+						step={ 5 }
+					/>
+				</PanelBody>
 
-						<RangeControl
-							label={ __(
-								'Border radius (px)',
-								'mk-builder'
-							) }
-							value={ attrs.boxBorderRadius }
-							onChange={ ( val ) =>
-								setAttributes( { boxBorderRadius: val } )
-							}
-							min={ 0 }
-							max={ 24 }
-							step={ 1 }
-						/>
+				<PanelBody
+					title={ __( 'Search box styling', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<RangeControl
+						label={ __( 'Box padding (px)', 'mk-builder' ) }
+						value={ attrs.boxPadding }
+						onChange={ ( val ) =>
+							setAttributes( { boxPadding: val } )
+						}
+						min={ 16 }
+						max={ 60 }
+						step={ 2 }
+					/>
 
-						<RangeControl
-							label={ __(
-								'Top border width (px)',
-								'mk-builder'
-							) }
-							value={ attrs.boxBorderTopWidth }
-							onChange={ ( val ) =>
-								setAttributes( { boxBorderTopWidth: val } )
-							}
-							min={ 0 }
-							max={ 12 }
-							step={ 1 }
-						/>
+					<RangeControl
+						label={ __(
+							'Border radius (px)',
+							'mk-builder'
+						) }
+						value={ attrs.boxBorderRadius }
+						onChange={ ( val ) =>
+							setAttributes( { boxBorderRadius: val } )
+						}
+						min={ 0 }
+						max={ 24 }
+						step={ 1 }
+					/>
 
-						<PanelColorSettings
-							title={ __( 'Box colors', 'mk-builder' ) }
-							colorSettings={ [
-								{
-									value: attrs.boxBackgroundColor,
-									onChange: ( val ) =>
-										setAttributes( {
-											boxBackgroundColor: val,
-										} ),
-									label: __( 'Background', 'mk-builder' ),
-								},
-								{
-									value: attrs.boxBorderTopColor,
-									onChange: ( val ) =>
-										setAttributes( {
-											boxBorderTopColor: val,
-										} ),
-									label: __( 'Top border', 'mk-builder' ),
-								},
-							] }
-						/>
-					</PanelBody>
+					<RangeControl
+						label={ __(
+							'Top border width (px)',
+							'mk-builder'
+						) }
+						value={ attrs.boxBorderTopWidth }
+						onChange={ ( val ) =>
+							setAttributes( { boxBorderTopWidth: val } )
+						}
+						min={ 0 }
+						max={ 12 }
+						step={ 1 }
+					/>
 
-					<PanelBody
-						title={ __( 'Labels & inputs', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<PanelColorSettings
-							title={ __( 'Label color', 'mk-builder' ) }
-							colorSettings={ [
-								{
-									value: attrs.labelColor,
-									onChange: ( val ) =>
-										setAttributes( { labelColor: val } ),
-									label: __( 'Label color', 'mk-builder' ),
-								},
-							] }
-						/>
+					<PanelColorSettings
+						title={ __( 'Box colors', 'mk-builder' ) }
+						colorSettings={ [
+							{
+								value: attrs.boxBackgroundColor,
+								onChange: ( val ) =>
+									setAttributes( {
+										boxBackgroundColor: val,
+									} ),
+								label: __( 'Background', 'mk-builder' ),
+							},
+							{
+								value: attrs.boxBorderTopColor,
+								onChange: ( val ) =>
+									setAttributes( {
+										boxBorderTopColor: val,
+									} ),
+								label: __( 'Top border', 'mk-builder' ),
+							},
+						] }
+					/>
+				</PanelBody>
 
-						<PanelColorSettings
-							title={ __( 'Input border', 'mk-builder' ) }
-							colorSettings={ [
-								{
-									value: attrs.inputBorderColor,
-									onChange: ( val ) =>
-										setAttributes( {
-											inputBorderColor: val,
-										} ),
-									label: __( 'Border', 'mk-builder' ),
-								},
-								{
-									value: attrs.inputFocusBorderColor,
-									onChange: ( val ) =>
-										setAttributes( {
-											inputFocusBorderColor: val,
-										} ),
-									label: __(
-										'Focus border',
-										'mk-builder'
-									),
-								},
-							] }
-						/>
-					</PanelBody>
+				<PanelBody
+					title={ __( 'Labels & inputs', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<PanelColorSettings
+						title={ __( 'Label color', 'mk-builder' ) }
+						colorSettings={ [
+							{
+								value: attrs.labelColor,
+								onChange: ( val ) =>
+									setAttributes( { labelColor: val } ),
+								label: __( 'Label color', 'mk-builder' ),
+							},
+						] }
+					/>
 
-					<PanelBody
-						title={ __( 'Reset button', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<PanelColorSettings
-							title={ __( 'Button colors', 'mk-builder' ) }
-							colorSettings={ [
-								{
-									value: attrs.resetButtonBg,
-									onChange: ( val ) =>
-										setAttributes( { resetButtonBg: val } ),
-									label: __( 'Background', 'mk-builder' ),
-								},
-								{
-									value: attrs.resetButtonColor,
-									onChange: ( val ) =>
-										setAttributes( {
-											resetButtonColor: val,
-										} ),
-									label: __( 'Text', 'mk-builder' ),
-								},
-								{
-									value: attrs.resetButtonHoverBg,
-									onChange: ( val ) =>
-										setAttributes( {
-											resetButtonHoverBg: val,
-										} ),
-									label: __(
-										'Hover background',
-										'mk-builder'
-									),
-								},
-								{
-									value: attrs.resetButtonHoverColor,
-									onChange: ( val ) =>
-										setAttributes( {
-											resetButtonHoverColor: val,
-										} ),
-									label: __( 'Hover text', 'mk-builder' ),
-								},
-							] }
-						/>
-					</PanelBody>
+					<PanelColorSettings
+						title={ __( 'Input border', 'mk-builder' ) }
+						colorSettings={ [
+							{
+								value: attrs.inputBorderColor,
+								onChange: ( val ) =>
+									setAttributes( {
+										inputBorderColor: val,
+									} ),
+								label: __( 'Border', 'mk-builder' ),
+							},
+							{
+								value: attrs.inputFocusBorderColor,
+								onChange: ( val ) =>
+									setAttributes( {
+										inputFocusBorderColor: val,
+									} ),
+								label: __(
+									'Focus border',
+									'mk-builder'
+								),
+							},
+						] }
+					/>
+				</PanelBody>
 
-					<PanelBody
-						title={ __( 'Animation', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<ToggleControl
-							label={ __(
-								'Add animate-hero class',
-								'mk-builder'
-							) }
-							checked={ attrs.addAnimationClass }
-							onChange={ ( val ) =>
-								setAttributes( { addAnimationClass: val } )
-							}
-							help={ __(
-								'Adds class for hero entrance animation if your theme uses it.',
-								'mk-builder'
-							) }
-						/>
-					</PanelBody>
-				</InspectorControls>
-			) }
+				<PanelBody
+					title={ __( 'Reset button', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<PanelColorSettings
+						title={ __( 'Button colors', 'mk-builder' ) }
+						colorSettings={ [
+							{
+								value: attrs.resetButtonBg,
+								onChange: ( val ) =>
+									setAttributes( { resetButtonBg: val } ),
+								label: __( 'Background', 'mk-builder' ),
+							},
+							{
+								value: attrs.resetButtonColor,
+								onChange: ( val ) =>
+									setAttributes( {
+										resetButtonColor: val,
+									} ),
+								label: __( 'Text', 'mk-builder' ),
+							},
+							{
+								value: attrs.resetButtonHoverBg,
+								onChange: ( val ) =>
+									setAttributes( {
+										resetButtonHoverBg: val,
+									} ),
+								label: __(
+									'Hover background',
+									'mk-builder'
+								),
+							},
+							{
+								value: attrs.resetButtonHoverColor,
+								onChange: ( val ) =>
+									setAttributes( {
+										resetButtonHoverColor: val,
+									} ),
+								label: __( 'Hover text', 'mk-builder' ),
+							},
+						] }
+					/>
+				</PanelBody>
+
+				<PanelBody
+					title={ __( 'Animation', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<ToggleControl
+						label={ __(
+							'Add animate-hero class',
+							'mk-builder'
+						) }
+						checked={ attrs.addAnimationClass }
+						onChange={ ( val ) =>
+							setAttributes( { addAnimationClass: val } )
+						}
+						help={ __(
+							'Adds class for hero entrance animation if your theme uses it.',
+							'mk-builder'
+						) }
+					/>
+				</PanelBody>
+			</InspectorControls>
 
 			<div { ...blockProps }>
 				<div style={ containerStyle }>
@@ -475,11 +496,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								</label>
 								<select
 									className="filter-input"
-									disabled
 									style={ inputStyle }
-									aria-hidden
+									defaultValue="all"
 								>
-									<option>{ departmentAllLabel }</option>
+									<option value="all">{ departmentAllLabel }</option>
+									{ departments.map( ( dept ) => (
+										<option
+											key={ dept.value }
+											value={ dept.value }
+										>
+											{ dept.label }
+										</option>
+									) ) }
 								</select>
 							</div>
 							<div
@@ -497,11 +525,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								</label>
 								<select
 									className="filter-input"
-									disabled
 									style={ inputStyle }
-									aria-hidden
+									defaultValue="all"
 								>
-									<option>{ genderAllLabel }</option>
+									<option value="all">{ genderAllLabel }</option>
+									{ genders.map( ( gender ) => (
+										<option
+											key={ gender.value }
+											value={ gender.value }
+										>
+											{ gender.label }
+										</option>
+									) ) }
 								</select>
 							</div>
 							<div

@@ -52,7 +52,44 @@
 		"noResultsMessage": {
 			"type": "string",
 			"default": "Please try adjusting your filters or search term."
+		},
+		"departments": {
+			"type": "array",
+			"default": [
+				{ "value": "heart", "label": "Heart Centre" },
+				{ "value": "neuro", "label": "Neuro Centre" },
+				{ "value": "cancer", "label": "Cancer Centre" },
+				{ "value": "peds", "label": "Paediatrics" },
+				{ "value": "general", "label": "General Medicine" },
+				{ "value": "ent", "label": "ENT" },
+				{ "value": "dental", "label": "Dental" }
+			],
+			"items": {
+				"type": "object",
+				"properties": {
+					"value": { "type": "string" },
+					"label": { "type": "string" }
+				}
+			}
+		},
+		"genders": {
+			"type": "array",
+			"default": [
+				{ "value": "male", "label": "Male" },
+				{ "value": "female", "label": "Female" }
+			],
+			"items": {
+				"type": "object",
+				"properties": {
+					"value": { "type": "string" },
+					"label": { "type": "string" }
+				}
+			}
 		}
+	},
+	"providesContext": {
+		"mk/departments": "departments",
+		"mk/genders": "genders"
 	},
 	"supports": {
 		"html": false,
@@ -72,7 +109,20 @@
 			"containerMaxWidth": 1200,
 			"containerPadding": 30,
 			"noResultsHeading": "No doctors found matching your criteria.",
-			"noResultsMessage": "Please try adjusting your filters or search term."
+			"noResultsMessage": "Please try adjusting your filters or search term.",
+			"departments": [
+				{ "value": "heart", "label": "Heart Centre" },
+				{ "value": "neuro", "label": "Neuro Centre" },
+				{ "value": "cancer", "label": "Cancer Centre" },
+				{ "value": "peds", "label": "Paediatrics" },
+				{ "value": "general", "label": "General Medicine" },
+				{ "value": "ent", "label": "ENT" },
+				{ "value": "dental", "label": "Dental" }
+			],
+			"genders": [
+				{ "value": "male", "label": "Male" },
+				{ "value": "female", "label": "Female" }
+			]
 		},
 		"innerBlocks": [
 			{

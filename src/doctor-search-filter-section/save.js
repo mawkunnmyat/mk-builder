@@ -1,14 +1,10 @@
 import { useBlockProps } from '@wordpress/block-editor';
-
-const DEPT_OPTIONS = [
-	{ value: 'heart', label: 'Heart Centre' },
-	{ value: 'neuro', label: 'Neuro Centre' },
-	{ value: 'cancer', label: 'Cancer Centre' },
-	{ value: 'peds', label: 'Paediatrics' },
-	{ value: 'general', label: 'General Medicine' },
-	{ value: 'ent', label: 'ENT' },
-	{ value: 'dental', label: 'Dental' },
-];
+import {
+	DEFAULT_DEPARTMENTS,
+	normalizeDepartments,
+	normalizeGenders,
+	DEFAULT_GENDERS,
+} from '@mk-builder/shared/doctor-filter-data';
 
 export default function save( { attributes } ) {
 	const {
@@ -36,7 +32,12 @@ export default function save( { attributes } ) {
 		resetButtonHoverBg,
 		resetButtonHoverColor,
 		addAnimationClass,
+		departments,
+		genders,
 	} = attributes;
+
+	const departmentOptions = normalizeDepartments( departments );
+	const genderOptions = normalizeGenders( genders );
 
 	const marginTopPx = sectionMarginTop !== undefined ? sectionMarginTop : -80;
 	const blockProps = useBlockProps.save( {
@@ -129,7 +130,7 @@ export default function save( { attributes } ) {
 								<option value="all">
 									{ departmentAllLabel || 'All Departments' }
 								</option>
-								{ DEPT_OPTIONS.map( ( opt ) => (
+								{ departmentOptions.map( ( opt ) => (
 									<option
 										key={ opt.value }
 										value={ opt.value }
@@ -152,8 +153,14 @@ export default function save( { attributes } ) {
 								<option value="all">
 									{ genderAllLabel || 'All Genders' }
 								</option>
-								<option value="male">Male</option>
-								<option value="female">Female</option>
+								{ genderOptions.map( ( opt ) => (
+									<option
+										key={ opt.value }
+										value={ opt.value }
+									>
+										{ opt.label }
+									</option>
+								) ) }
 							</select>
 						</div>
 

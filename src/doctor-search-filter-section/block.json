@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "mk/doctor-search-filter-section",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"title": "Doctor Search Filter",
 	"category": "mk-builder",
 	"icon": "search",
@@ -101,6 +101,39 @@
 			"type": "string",
 			"default": "#212121"
 		},
+		"departments": {
+			"type": "array",
+			"default": [
+				{ "value": "heart", "label": "Heart Centre" },
+				{ "value": "neuro", "label": "Neuro Centre" },
+				{ "value": "cancer", "label": "Cancer Centre" },
+				{ "value": "peds", "label": "Paediatrics" },
+				{ "value": "general", "label": "General Medicine" },
+				{ "value": "ent", "label": "ENT" },
+				{ "value": "dental", "label": "Dental" }
+			],
+			"items": {
+				"type": "object",
+				"properties": {
+					"value": { "type": "string" },
+					"label": { "type": "string" }
+				}
+			}
+		},
+		"genders": {
+			"type": "array",
+			"default": [
+				{ "value": "male", "label": "Male" },
+				{ "value": "female", "label": "Female" }
+			],
+			"items": {
+				"type": "object",
+				"properties": {
+					"value": { "type": "string" },
+					"label": { "type": "string" }
+				}
+			}
+		},
 		"addAnimationClass": {
 			"type": "boolean",
 			"default": true
@@ -137,6 +170,19 @@
 			"resetButtonColor": "#666666",
 			"resetButtonHoverBg": "#e0e0e0",
 			"resetButtonHoverColor": "#212121",
+			"departments": [
+				{ "value": "heart", "label": "Heart Centre" },
+				{ "value": "neuro", "label": "Neuro Centre" },
+				{ "value": "cancer", "label": "Cancer Centre" },
+				{ "value": "peds", "label": "Paediatrics" },
+				{ "value": "general", "label": "General Medicine" },
+				{ "value": "ent", "label": "ENT" },
+				{ "value": "dental", "label": "Dental" }
+			],
+			"genders": [
+				{ "value": "male", "label": "Male" },
+				{ "value": "female", "label": "Female" }
+			],
 			"addAnimationClass": true
 		}
 	},

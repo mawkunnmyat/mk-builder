@@ -1,4 +1,5 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { getDepartmentLabelFromList } from '@mk-builder/shared/doctor-filter-data';
 
 export default function save( { attributes } ) {
 	const {
@@ -29,17 +30,10 @@ export default function save( { attributes } ) {
 		'data-name': ( doctorName && String( doctorName ).trim() ) || '',
 	} );
 
-	const deptLabels = {
-		heart: 'Heart Centre',
-		neuro: 'Neuro Centre',
-		cancer: 'Cancer Centre',
-		peds: 'Paediatrics',
-		general: 'General Medicine',
-		ent: 'ENT',
-		dental: 'Dental',
-	};
 	const resolvedDeptLabel =
-		departmentLabel || deptLabels[ departmentSlug ] || departmentSlug;
+		departmentLabel ||
+		getDepartmentLabelFromList( departmentSlug ) ||
+		departmentSlug;
 
 	return (
 		<div { ...blockProps }>

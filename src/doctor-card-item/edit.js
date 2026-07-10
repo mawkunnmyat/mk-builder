@@ -15,30 +15,21 @@ import {
 	__experimentalDivider as ExperimentalDivider,
 	Divider as StableDivider,
 } from '@wordpress/components';
+import { useDoctorCardFilterOptions } from '@mk-builder/shared/use-doctor-card-filter-options';
+import {
+	getDepartmentLabelFromList,
+	toSelectOptions,
+} from '@mk-builder/shared/doctor-filter-data';
 
 const Divider = StableDivider || ExperimentalDivider;
 
-const DEPARTMENT_OPTIONS = [
-	{ label: __( 'Heart Centre', 'mk-builder' ), value: 'heart' },
-	{ label: __( 'Neuro Centre', 'mk-builder' ), value: 'neuro' },
-	{ label: __( 'Cancer Centre', 'mk-builder' ), value: 'cancer' },
-	{ label: __( 'Paediatrics', 'mk-builder' ), value: 'peds' },
-	{ label: __( 'General Medicine', 'mk-builder' ), value: 'general' },
-	{ label: __( 'ENT', 'mk-builder' ), value: 'ent' },
-	{ label: __( 'Dental', 'mk-builder' ), value: 'dental' },
-];
-
-const GENDER_OPTIONS = [
-	{ label: __( 'Male', 'mk-builder' ), value: 'male' },
-	{ label: __( 'Female', 'mk-builder' ), value: 'female' },
-];
-
-const getDepartmentLabel = ( slug ) => {
-	const found = DEPARTMENT_OPTIONS.find( ( o ) => o.value === slug );
-	return found ? found.label : slug;
-};
-
-export default function Edit( { attributes, setAttributes, isSelected } ) {
+export default function Edit( {
+	attributes,
+	setAttributes,
+	isSelected,
+	context,
+	clientId,
+} ) {
 	const {
 		doctorImage,
 		doctorImageId,
@@ -60,6 +51,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		bookButtonText,
 	} = attributes;
 
+	const { departments, genders } = useDoctorCardFilterOptions(
+		clientId,
+		context
+	);
+	const departmentOptions = toSelectOptions( departments );
+	const genderOptions = toSelectOptions( genders );
+
 	const blockProps = useStableBlockProps(
 		() => ( {
 			className: 'mk-doctor-card-item-editor',
@@ -74,7 +72,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	);
 
 	const displayDeptLabel =
-		departmentLabel || getDepartmentLabel( departmentSlug );
+		departmentLabel ||
+		getDepartmentLabelFromList( departmentSlug, departments );
 
 	return (
 		<>
@@ -230,11 +229,14 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<SelectControl
 							label={ __( 'Department (slug)', 'mk-builder' ) }
 							value={ departmentSlug }
-							options={ DEPARTMENT_OPTIONS }
+							options={ departmentOptions }
 							onChange={ ( val ) =>
 								setAttributes( {
 									departmentSlug: val,
-									departmentLabel: getDepartmentLabel( val ),
+									departmentLabel: getDepartmentLabelFromList(
+										val,
+										departments
+									),
 								} )
 							}
 							help={ __(
@@ -261,7 +263,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						<SelectControl
 							label={ __( 'Gender', 'mk-builder' ) }
 							value={ gender }
-							options={ GENDER_OPTIONS }
+							options={ genderOptions }
 							onChange={ ( val ) =>
 								setAttributes( { gender: val } )
 							}

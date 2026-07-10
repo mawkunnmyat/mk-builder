@@ -6,6 +6,13 @@ import {
 	PanelColorSettings,
 } from '@wordpress/block-editor';
 import { PanelBody, RangeControl, TextControl } from '@wordpress/components';
+import {
+	DEFAULT_DEPARTMENTS,
+	DEFAULT_GENDERS,
+} from '@mk-builder/shared/doctor-filter-data';
+import FilterListsInspectorPanel from '@mk-builder/shared/filter-lists-inspector-panel';
+import { useDoctorFilterLists } from '@mk-builder/shared/use-doctor-filter-lists';
+import { DIRECTORY_BLOCK } from '@mk-builder/shared/doctor-filter-sync';
 
 const ALLOWED_BLOCKS = [ 'mk/doctor-card-item' ];
 const TEMPLATE = [
@@ -27,9 +34,11 @@ const DEFAULT_ATTS = {
 	containerPadding: 30,
 	noResultsHeading: 'No doctors found matching your criteria.',
 	noResultsMessage: 'Please try adjusting your filters or search term.',
+	departments: DEFAULT_DEPARTMENTS,
+	genders: DEFAULT_GENDERS,
 };
 
-export default function Edit( { attributes, setAttributes, isSelected } ) {
+export default function Edit( { attributes, setAttributes, clientId } ) {
 	const attrs = { ...DEFAULT_ATTS, ...attributes };
 	const {
 		backgroundColor,
@@ -44,6 +53,22 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		noResultsHeading,
 		noResultsMessage,
 	} = attrs;
+
+	const {
+		departments,
+		genders,
+		updateDepartment,
+		removeDepartment,
+		addDepartment,
+		updateGender,
+		removeGender,
+		addGender,
+	} = useDoctorFilterLists( {
+		attributes,
+		setAttributes,
+		clientId,
+		blockName: DIRECTORY_BLOCK,
+	} );
 
 	const blockProps = useStableBlockProps(
 		() => ( {
@@ -76,167 +101,180 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	return (
 		<>
-			{ isSelected && (
-				<InspectorControls>
-					<PanelBody
-						title={ __( 'Section Background', 'mk-builder' ) }
-						initialOpen={ true }
-					>
-						<PanelColorSettings
-							title={ __( 'Background Color', 'mk-builder' ) }
-							colorSettings={ [
-								{
-									value: backgroundColor,
-									onChange: ( val ) =>
-										setAttributes( {
-											backgroundColor: val,
-										} ),
-									label: __(
-										'Background Color',
-										'mk-builder'
-									),
-								},
-							] }
-						/>
-					</PanelBody>
+			<InspectorControls>
+				<FilterListsInspectorPanel
+					departments={ departments }
+					genders={ genders }
+					updateDepartment={ updateDepartment }
+					removeDepartment={ removeDepartment }
+					addDepartment={ addDepartment }
+					updateGender={ updateGender }
+					removeGender={ removeGender }
+					addGender={ addGender }
+					introText={ __(
+						'Synced with Doctor Search Filter. Doctor cards use these department/gender slugs.',
+						'mk-builder'
+					) }
+				/>
 
-					<PanelBody
-						title={ __( 'Layout Settings', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<RangeControl
-							label={ __( 'Columns (Desktop)', 'mk-builder' ) }
-							value={ columns }
-							onChange={ ( val ) =>
-								setAttributes( { columns: val } )
-							}
-							min={ 1 }
-							max={ 6 }
-							step={ 1 }
-							help={ __(
-								'Number of columns on desktop screens',
-								'mk-builder'
-							) }
-						/>
+				<PanelBody
+					title={ __( 'Section Background', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<PanelColorSettings
+						title={ __( 'Background Color', 'mk-builder' ) }
+						colorSettings={ [
+							{
+								value: backgroundColor,
+								onChange: ( val ) =>
+									setAttributes( {
+										backgroundColor: val,
+									} ),
+								label: __(
+									'Background Color',
+									'mk-builder'
+								),
+							},
+						] }
+					/>
+				</PanelBody>
 
-						<RangeControl
-							label={ __( 'Columns (Tablet)', 'mk-builder' ) }
-							value={ columnsTablet }
-							onChange={ ( val ) =>
-								setAttributes( { columnsTablet: val } )
-							}
-							min={ 1 }
-							max={ 4 }
-							step={ 1 }
-						/>
+				<PanelBody
+					title={ __( 'Layout Settings', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<RangeControl
+						label={ __( 'Columns (Desktop)', 'mk-builder' ) }
+						value={ columns }
+						onChange={ ( val ) =>
+							setAttributes( { columns: val } )
+						}
+						min={ 1 }
+						max={ 6 }
+						step={ 1 }
+						help={ __(
+							'Number of columns on desktop screens',
+							'mk-builder'
+						) }
+					/>
 
-						<RangeControl
-							label={ __( 'Columns (Mobile)', 'mk-builder' ) }
-							value={ columnsMobile }
-							onChange={ ( val ) =>
-								setAttributes( { columnsMobile: val } )
-							}
-							min={ 1 }
-							max={ 2 }
-							step={ 1 }
-						/>
+					<RangeControl
+						label={ __( 'Columns (Tablet)', 'mk-builder' ) }
+						value={ columnsTablet }
+						onChange={ ( val ) =>
+							setAttributes( { columnsTablet: val } )
+						}
+						min={ 1 }
+						max={ 4 }
+						step={ 1 }
+					/>
 
-						<RangeControl
-							label={ __(
-								'Gap Between Items (px)',
-								'mk-builder'
-							) }
-							value={ gap }
-							onChange={ ( val ) =>
-								setAttributes( { gap: val } )
-							}
-							min={ 0 }
-							max={ 60 }
-							step={ 5 }
-						/>
-					</PanelBody>
+					<RangeControl
+						label={ __( 'Columns (Mobile)', 'mk-builder' ) }
+						value={ columnsMobile }
+						onChange={ ( val ) =>
+							setAttributes( { columnsMobile: val } )
+						}
+						min={ 1 }
+						max={ 2 }
+						step={ 1 }
+					/>
 
-					<PanelBody
-						title={ __( 'Container Settings', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<RangeControl
-							label={ __( 'Max Width (px)', 'mk-builder' ) }
-							value={ containerMaxWidth }
-							onChange={ ( val ) =>
-								setAttributes( { containerMaxWidth: val } )
-							}
-							min={ 800 }
-							max={ 1920 }
-							step={ 10 }
-						/>
+					<RangeControl
+						label={ __(
+							'Gap Between Items (px)',
+							'mk-builder'
+						) }
+						value={ gap }
+						onChange={ ( val ) =>
+							setAttributes( { gap: val } )
+						}
+						min={ 0 }
+						max={ 60 }
+						step={ 5 }
+					/>
+				</PanelBody>
 
-						<RangeControl
-							label={ __(
-								'Container Padding (px)',
-								'mk-builder'
-							) }
-							value={ containerPadding }
-							onChange={ ( val ) =>
-								setAttributes( { containerPadding: val } )
-							}
-							min={ 0 }
-							max={ 100 }
-							step={ 5 }
-						/>
+				<PanelBody
+					title={ __( 'Container Settings', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<RangeControl
+						label={ __( 'Max Width (px)', 'mk-builder' ) }
+						value={ containerMaxWidth }
+						onChange={ ( val ) =>
+							setAttributes( { containerMaxWidth: val } )
+						}
+						min={ 800 }
+						max={ 1920 }
+						step={ 10 }
+					/>
 
-						<RangeControl
-							label={ __( 'Padding Top (px)', 'mk-builder' ) }
-							value={ paddingTop }
-							onChange={ ( val ) =>
-								setAttributes( { paddingTop: val } )
-							}
-							min={ 0 }
-							max={ 200 }
-							step={ 5 }
-						/>
+					<RangeControl
+						label={ __(
+							'Container Padding (px)',
+							'mk-builder'
+						) }
+						value={ containerPadding }
+						onChange={ ( val ) =>
+							setAttributes( { containerPadding: val } )
+						}
+						min={ 0 }
+						max={ 100 }
+						step={ 5 }
+					/>
 
-						<RangeControl
-							label={ __(
-								'Padding Bottom (px)',
-								'mk-builder'
-							) }
-							value={ paddingBottom }
-							onChange={ ( val ) =>
-								setAttributes( { paddingBottom: val } )
-							}
-							min={ 0 }
-							max={ 200 }
-							step={ 5 }
-						/>
-					</PanelBody>
+					<RangeControl
+						label={ __( 'Padding Top (px)', 'mk-builder' ) }
+						value={ paddingTop }
+						onChange={ ( val ) =>
+							setAttributes( { paddingTop: val } )
+						}
+						min={ 0 }
+						max={ 200 }
+						step={ 5 }
+					/>
 
-					<PanelBody
-						title={ __( 'No Results Message', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<TextControl
-							label={ __( 'Heading', 'mk-builder' ) }
-							value={ noResultsHeading }
-							onChange={ ( val ) =>
-								setAttributes( { noResultsHeading: val } )
-							}
-							help={ __(
-								'Shown when no doctors match the current filters.',
-								'mk-builder'
-							) }
-						/>
+					<RangeControl
+						label={ __(
+							'Padding Bottom (px)',
+							'mk-builder'
+						) }
+						value={ paddingBottom }
+						onChange={ ( val ) =>
+							setAttributes( { paddingBottom: val } )
+						}
+						min={ 0 }
+						max={ 200 }
+						step={ 5 }
+					/>
+				</PanelBody>
 
-						<TextControl
-							label={ __( 'Message', 'mk-builder' ) }
-							value={ noResultsMessage }
-							onChange={ ( val ) =>
-								setAttributes( { noResultsMessage: val } )
-							}
-						/>
-					</PanelBody>
-				</InspectorControls>
-			) }
+				<PanelBody
+					title={ __( 'No Results Message', 'mk-builder' ) }
+					initialOpen={ false }
+				>
+					<TextControl
+						label={ __( 'Heading', 'mk-builder' ) }
+						value={ noResultsHeading }
+						onChange={ ( val ) =>
+							setAttributes( { noResultsHeading: val } )
+						}
+						help={ __(
+							'Shown when no doctors match the current filters.',
+							'mk-builder'
+						) }
+					/>
+
+					<TextControl
+						label={ __( 'Message', 'mk-builder' ) }
+						value={ noResultsMessage }
+						onChange={ ( val ) =>
+							setAttributes( { noResultsMessage: val } )
+						}
+					/>
+				</PanelBody>
+			</InspectorControls>
 
 			<div { ...blockProps }>
 				<div style={ containerStyle }>
