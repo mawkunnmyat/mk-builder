@@ -1,39 +1,61 @@
-GNU GENERAL PUBLIC LICENSE
-Version 2, June 1991
+================================================================================
+  MK Builder — WordPress Gutenberg Blocks Plugin
+  Copyright (C) 2026 Maw Kunn Myat
+================================================================================
 
-Copyright (C) 2026 Maw Kunn
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 2 of the License, or (at your option) any later
+version.
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <https://www.gnu.org/licenses/gpl-2.0.html>.
 
-You should have received a copy of the GNU General Public License along
-with this program; if not, write to the Free Software Foundation, Inc.,
-51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+--------------------------------------------------------------------------------
+  ABOUT THIS SOFTWARE
+--------------------------------------------------------------------------------
 
----
+  Name:        MK Builder
+  Version:     1.0.0
+  Author:      Maw Kunn Myat
+  Organization: Maw Kunn
+  License:     GNU General Public License v2.0 or later (GPL-2.0-or-later)
 
-ADDITIONAL TERMS
+  MK Builder is a WordPress plugin that provides 270+ custom Gutenberg blocks
+  for building modern, responsive websites within the MK Ecosystem — including
+  hospital portals, corporate marketing sites, pharmacy shops, CSR pages, and
+  food & retail brand layouts.
 
-This program is developed and maintained by Maw Kunn.
+--------------------------------------------------------------------------------
+  CONTACT & SUPPORT
+--------------------------------------------------------------------------------
 
-For commercial licensing or support inquiries, please contact:
-Maw Kunn
-Website: https://github.com/mawkunnmyat
-Email: mapoeeiphyu2017.miitinternship@gmail.com
+  Author:       Maw Kunn Myat
+  Email:         mapoeeiphyu2017.miitinternship@gmail.com
+  GitHub:        https://github.com/mawkunnmyat
+  Repository:    https://github.com/mawkunnmyat/mk-builder
+  Plugin URI:    https://github.com/mawkunnmyat/mk-builder
 
----
+  For bug reports, feature requests, or enterprise support inquiries, please
+  open an issue on GitHub or contact the author directly via email.
 
-Full text of the GNU General Public License:
+--------------------------------------------------------------------------------
+  THIRD-PARTY COMPONENTS
+--------------------------------------------------------------------------------
 
-                    GNU GENERAL PUBLIC LICENSE
-                       Version 2, June 1991
+  MK Builder may bundle or load third-party libraries at runtime, including but
+  not limited to Swiper.js, GSAP, Font Awesome, and UIKit. Each third-party
+  library is subject to its own license terms. Refer to the respective project
+  documentation for license details.
+
+================================================================================
+  GNU GENERAL PUBLIC LICENSE
+  Version 2, June 1991
+================================================================================
 
  Copyright (C) 1989, 1991 Free Software Foundation, Inc.,
  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
@@ -170,21 +192,21 @@ under Section 2) in object code or executable form under the terms of
 Sections 1 and 2 above provided that you also do one of the following:
 
     a) Accompany it with the complete corresponding machine-readable
-    source code, which must be distributed under the terms of Sections
-    1 and 2 above on a medium customarily used for software interchange; or,
+source code, which must be distributed under the terms of Sections
+1 and 2 above on a medium customarily used for software interchange; or,
 
     b) Accompany it with a written offer, valid for at least three
-    years, to give any third party, for a charge no more than your
-    cost of physically performing source distribution, a complete
-    machine-readable copy of the corresponding source code, to be
-    distributed under the terms of Sections 1 and 2 above on a medium
-    customarily used for software interchange; or,
+years, to give any third party, for a charge no more than your
+cost of physically performing source distribution, a complete
+machine-readable copy of the corresponding source code, to be
+distributed under the terms of Sections 1 and 2 above on a medium
+customarily used for software interchange; or,
 
     c) Accompany it with the information you received as to the offer
-    to distribute corresponding source code.  (This alternative is
-    allowed only for noncommercial distribution and only if you
-    received the program in object code or executable form with such
-    an offer, in accord with Subsection b above.)
+to distribute corresponding source code.  (This alternative is
+allowed only for noncommercial distribution and only if you
+received the program in object code or executable form with such
+an offer, in accord with Subsection b above.)
 
 The source code for a work means the preferred form of the work for
 making modifications to it.  For an executable work, complete source

@@ -22,7 +22,6 @@
 - [Key Features](#-key-features)
 - [Requirements](#-requirements)
 - [Quick Start](#-quick-start)
-- [Migration from Twork Builder](#-migration-from-twork-builder)
 - [Project Structure](#-project-structure)
 - [Block Catalog](#-block-catalog)
 - [Brand Page Blocks](#-brand-page-blocks-industry-agnostic)
@@ -44,18 +43,17 @@
 
 ## 🆕 What's New
 
-### ✨ July 11, 2026 — MK Builder Rebrand Release
+### ✨ July 11, 2026 — MK Builder v1.0.0
 
 | Area | Update |
 |------|--------|
-| 🏷️ **Plugin Identity** | Official rename from `twork-builder` → **`mk-builder`** |
-| 📦 **Bootstrap** | New `mk-builder.php` entry point with `MK_BUILDER_*` constants |
-| 🐘 **PHP Classes** | All `class-twork-*` render callbacks migrated to `class-mk-*` |
-| 🧱 **Block Namespace** | Legacy `twork/*` blocks renamed to `mk/*` where applicable |
-| 🔧 **Tooling** | Added `scripts/rebrand-twork-to-mk.mjs` and `scripts/wp-migrate-block-namespace.sh` |
-| 📚 **Documentation** | Comprehensive README, migration guide, and commit conventions |
-
-> 🔔 **Upgrading from Twork Builder?** See the [Migration from Twork Builder](#-migration-from-twork-builder) section below.
+| 🧱 **Block Library** | 270+ production-ready Gutenberg blocks for healthcare, retail, and corporate sites |
+| 🏪 **Brand Suite** | Complete `mk/*` home page block stack — header, carousels, grids, FAQ, newsletter, footer |
+| 🧈 **Shweghee QA** | Modular static reference site for design-to-block migration validation |
+| 📦 **Build Pipeline** | Optimized Webpack build with 8 GB heap support for large block sets |
+| 🔧 **Developer Tooling** | Linting, block example scaffolder, and inspector validation gates |
+| 📚 **Documentation** | Comprehensive README, security guide, and commit conventions |
+| 🧹 **Repository** | Removed static HTML mockups and non-essential assets from version control |
 
 ---
 
@@ -175,52 +173,6 @@ wp block list --format=table | grep mk/
 ```
 
 You should see **MK Builder** active and `mk/*` blocks registered in the block list.
-
----
-
-## 🔄 Migration from Twork Builder
-
-If you are upgrading from the legacy **Twork Builder** plugin, follow this checklist to avoid broken layouts or missing blocks.
-
-### ⚠️ Before You Begin
-
-1. 💾 **Back up** your database and `wp-content/plugins/` directory
-2. 🧪 **Test on staging** before applying to production
-3. 📸 **Export** critical pages as reusable block patterns (optional safety net)
-
-### 🛠️ Step-by-Step Migration
-
-| Step | Action | Command / Location |
-|------|--------|-------------------|
-| 1️⃣ | Deactivate old plugin | `wp plugin deactivate twork-builder` |
-| 2️⃣ | Install MK Builder | Upload `mk-builder.zip` or clone this repo |
-| 3️⃣ | Run block namespace migration | `bash scripts/wp-migrate-block-namespace.sh` |
-| 4️⃣ | Activate MK Builder | `wp plugin activate mk-builder` |
-| 5️⃣ | Clear all caches | Object cache, page cache, CDN |
-| 6️⃣ | Re-save permalinks | `Settings → Permalinks → Save Changes` |
-| 7️⃣ | Visual QA | Compare editor + frontend for every critical page |
-
-### 🔁 Namespace Mapping (Legacy → MK)
-
-| Legacy (Twork) | New (MK Builder) |
-|----------------|------------------|
-| `twork-builder.php` | `mk-builder.php` |
-| `TWORK_BUILDER_*` constants | `MK_BUILDER_*` constants |
-| `class-twork-award.php` | `class-mk-award.php` |
-| `twork/header` block | `mk/mk-header` block |
-| `twork/nav-item` block | `mk/mk-nav-item` block |
-| `@twork-builder/editor-utils` | `@mk-builder/editor-utils` |
-
-### 🤖 Automated Rebrand Script
-
-For developers migrating a fork or custom branch:
-
-```bash
-node scripts/rebrand-twork-to-mk.mjs
-npm run build
-```
-
-> ⚡ The script performs ordered, safe replacements while preserving `tworksystem.com` domain references.
 
 ---
 
@@ -655,7 +607,7 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 | `feat` | ✨ New feature or enhancement | `feat: 11072026 - add brand page Gutenberg block suite for retail sites` |
 | `fix` | 🐛 Bug fix | `fix: 11072026 - restore FAQ accordion keyboard navigation on mobile` |
 | `docs` | 📚 Documentation only | `docs: 11072026 - expand README with brand blocks catalog and shweghee guide` |
-| `refactor` | ♻️ Code restructure (no behavior change) | `refactor: 11072026 - migrate plugin namespace from twork to mk` |
+| `refactor` | ♻️ Code restructure (no behavior change) | `refactor: 11072026 - modernize block editor inspector control patterns` |
 | `style` | 💅 Formatting / SCSS-only (no logic change) | `style: 11072026 - normalize hero section typography tokens` |
 | `chore` | 🔧 Tooling, deps, config | `chore: 11072026 - bump @wordpress/scripts to v27` |
 | `perf` | ⚡ Performance improvement | `perf: 11072026 - defer non-critical frontend init scripts` |
@@ -674,15 +626,14 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 
 ### 🚀 `1.0.0` — July 11, 2026
 
-- 🏷️ **Rebrand:** Full migration from Twork Builder to MK Builder
-- 📦 **Plugin:** New `mk-builder.php` bootstrap with `MK_BUILDER_*` constants
-- 🐘 **PHP:** Renamed all `class-twork-*` to `class-mk-*` render callbacks
-- 🧱 **Blocks:** Updated 270+ block namespaces, attributes, and asset handles
-- 🏪 **Brand Suite:** Industry-agnostic `mk/*` home page block stack
+- 🧱 **Blocks:** 270+ Gutenberg blocks with `mk/*` namespace and dedicated inserter category
+- 📦 **Plugin:** `mk-builder.php` bootstrap with `MK_BUILDER_*` constants and conditional asset loading
+- 🐘 **PHP:** Server-side render callbacks for blog, shop, awards, CSR, and hospital content
+- 🏪 **Brand Suite:** Industry-agnostic home page block stack for retail and corporate sites
 - 🧈 **Shweghee:** Static reference site for design-to-block migration QA
-- 🔧 **Scripts:** Rebrand automation (`rebrand-twork-to-mk.mjs`) and WP migration shell script
-- 📚 **Docs:** Professional README with migration guide, security section, and changelog
-- 🧹 **Cleanup:** Removed 35 root-level static HTML mockups and non-essential assets from VCS
+- 🔧 **Tooling:** Linting, block example scaffolder, and inspector validation gates
+- 📚 **Docs:** Professional README with security guide, deployment checklist, and changelog
+- 🧹 **Cleanup:** Removed static HTML mockups and non-essential assets from version control
 
 ### 📦 Earlier Releases
 
@@ -694,7 +645,11 @@ See [Git commit history](https://github.com/mawkunnmyat/mk-builder/commits/main)
 
 ### License
 
-This project is licensed under the **GPL v2 or later** — see [LICENSE](LICENSE) for details.
+This project is licensed under the **GNU General Public License v2.0 or later (GPL-2.0-or-later)**.
+
+- 📄 Full license text: [LICENSE](LICENSE)
+- 🔗 GPL reference: [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
+- © 2026 **Maw Kunn Myat** — All rights reserved under the terms of the GPL.
 
 ### Support
 
