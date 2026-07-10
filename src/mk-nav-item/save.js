@@ -13,12 +13,12 @@ export default function save( { attributes } ) {
 	} = attributes;
 
 	const blockProps = useBlockProps.save( {
-		className: 'twork-nav-item',
+		className: 'mk-nav-item',
 		style: {
-			'--twork-nav-item-color': linkColor || undefined,
-			'--twork-nav-item-hover': linkHoverColor || undefined,
-			'--twork-nav-item-size': `${ fontSize }px`,
-			'--twork-nav-item-weight': fontWeight,
+			'--mk-nav-item-color': linkColor || undefined,
+			'--mk-nav-item-hover': linkHoverColor || undefined,
+			'--mk-nav-item-size': `${ fontSize }px`,
+			'--mk-nav-item-weight': fontWeight,
 		},
 	} );
 
@@ -26,13 +26,13 @@ export default function save( { attributes } ) {
 		<div { ...blockProps }>
 			<a
 				href={ url || '#' }
-				className="twork-nav-item__link"
+				className="mk-nav-item__link"
 				target={ openInNewTab ? '_blank' : undefined }
 				rel={ openInNewTab ? 'noopener noreferrer' : undefined }
 			>
 				<RichText.Content tagName="span" value={ label } />
 				{ hasDropdown && (
-					<span className="twork-nav-item__chevron" aria-hidden="true">
+					<span className="mk-nav-item__chevron" aria-hidden="true">
 						<svg
 							width="14"
 							height="14"

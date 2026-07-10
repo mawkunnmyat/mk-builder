@@ -1,23 +1,23 @@
 @import "../scss/typography";
 
-.twork-header {
-	--twork-header-bg: #ffffff;
-	--twork-header-text: #333333;
-	--twork-header-hover: #4caf50;
-	--twork-header-height: 80px;
-	--twork-header-container-max: 1200px;
-	--twork-header-nav-justify: center;
-	--twork-header-cta-bg: #133a22;
-	--twork-header-cta-text: #ffffff;
-	--twork-header-cta-radius: 10px;
-	--twork-header-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-	--twork-header-logo-font: "Times New Roman", Georgia, "Nimbus Roman No9 L", serif;
+.mk-header {
+	--mk-header-bg: #ffffff;
+	--mk-header-text: #333333;
+	--mk-header-hover: #4caf50;
+	--mk-header-height: 80px;
+	--mk-header-container-max: 1200px;
+	--mk-header-nav-justify: center;
+	--mk-header-cta-bg: #133a22;
+	--mk-header-cta-text: #ffffff;
+	--mk-header-cta-radius: 10px;
+	--mk-header-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+	--mk-header-logo-font: "Times New Roman", Georgia, "Nimbus Roman No9 L", serif;
 
 	position: relative;
 	z-index: 50;
-	background: var(--twork-header-bg);
-	color: var(--twork-header-text);
-	box-shadow: var(--twork-header-shadow);
+	background: var(--mk-header-bg);
+	color: var(--mk-header-text);
+	box-shadow: var(--mk-header-shadow);
 	font-family: $font-primary;
 
 	&,
@@ -27,14 +27,14 @@
 		box-sizing: border-box;
 	}
 
-	&.twork-header--sticky {
+	&.mk-header--sticky {
 		position: sticky;
 		top: 0;
 	}
 
 	&__container {
-		max-width: var(--twork-header-container-max);
-		min-height: var(--twork-header-height);
+		max-width: var(--mk-header-container-max);
+		min-height: var(--mk-header-height);
 		margin: 0 auto;
 		padding: 0 20px;
 		display: flex;
@@ -51,11 +51,11 @@
 		font-size: 1.4rem;
 		font-weight: 700;
 		line-height: 1;
-		font-family: var(--twork-header-logo-font);
+		font-family: var(--mk-header-logo-font);
 
 		img {
 			display: block;
-			max-height: calc(var(--twork-header-height) - 26px);
+			max-height: calc(var(--mk-header-height) - 26px);
 			width: auto;
 			max-width: 220px;
 			object-fit: contain;
@@ -69,14 +69,14 @@
 	&__nav {
 		display: flex;
 		align-items: center;
-		justify-content: var(--twork-header-nav-justify);
+		justify-content: var(--mk-header-nav-justify);
 		flex: 1;
 		gap: clamp(15px, 2vw, 30px);
 
-		.twork-header__nav-list {
+		.mk-header__nav-list {
 			display: flex;
 			align-items: center;
-			justify-content: var(--twork-header-nav-justify);
+			justify-content: var(--mk-header-nav-justify);
 			gap: clamp(15px, 2vw, 30px);
 			width: 100%;
 		}
@@ -102,7 +102,7 @@
 		transition: color 0.2s ease;
 
 		&:hover {
-			color: var(--twork-header-hover);
+			color: var(--mk-header-hover);
 		}
 
 		svg {
@@ -119,9 +119,9 @@
 		gap: 10px;
 		text-decoration: none;
 		padding: 12px 18px;
-		border-radius: var(--twork-header-cta-radius);
-		background: var(--twork-header-cta-bg);
-		color: var(--twork-header-cta-text);
+		border-radius: var(--mk-header-cta-radius);
+		background: var(--mk-header-cta-bg);
+		color: var(--mk-header-cta-text);
 		font-size: 0.95rem;
 		font-weight: 600;
 		transition: filter 0.2s ease, transform 0.2s ease;
@@ -159,7 +159,7 @@
 	}
 
 	&.is-active {
-		.twork-header__hamburger {
+		.mk-header__hamburger {
 			span:nth-child(1) {
 				transform: translateY(6px) rotate(45deg);
 			}
@@ -174,8 +174,8 @@
 }
 
 .editor-styles-wrapper {
-	.wp-block-twork-header {
-		.twork-header__preview-badge {
+	.wp-block-mk-header {
+		.mk-header__preview-badge {
 			position: absolute;
 			top: 8px;
 			right: 10px;
@@ -193,20 +193,20 @@
 			pointer-events: none;
 		}
 
-		.twork-header__nav-list > .block-editor-inner-blocks > .block-editor-block-list__layout {
+		.mk-header__nav-list > .block-editor-inner-blocks > .block-editor-block-list__layout {
 			display: flex;
 			align-items: center;
-			justify-content: var(--twork-header-nav-justify);
+			justify-content: var(--mk-header-nav-justify);
 			gap: clamp(15px, 2vw, 30px);
 			flex-wrap: wrap;
 			width: 100%;
 		}
 
-		.twork-header__hamburger {
+		.mk-header__hamburger {
 			display: inline-flex;
 		}
 
-		.twork-header__nav {
+		.mk-header__nav {
 			position: static;
 			transform: none;
 			opacity: 1;
@@ -215,22 +215,22 @@
 		}
 	}
 
-	.wp-block-twork-header.twork-header--preview-mobile {
-		.twork-header__preview-badge {
+	.wp-block-mk-header.mk-header--preview-mobile {
+		.mk-header__preview-badge {
 			color: #ffffff;
 			background: rgba(19, 58, 34, 0.92);
 			border-color: rgba(19, 58, 34, 1);
 		}
 
-		.twork-header__hamburger {
+		.mk-header__hamburger {
 			display: inline-flex;
 		}
 
-		.twork-header__cta {
+		.mk-header__cta {
 			display: none;
 		}
 
-		.twork-header__nav {
+		.mk-header__nav {
 			position: absolute;
 			top: 100%;
 			left: 0;
@@ -239,7 +239,7 @@
 			flex-direction: column;
 			align-items: stretch;
 			justify-content: flex-start;
-			background: var(--twork-header-bg);
+			background: var(--mk-header-bg);
 			padding: 10px 20px 20px;
 			border-top: 1px solid rgba(17, 17, 17, 0.08);
 			box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
@@ -250,8 +250,8 @@
 			pointer-events: none;
 		}
 
-		.twork-header__nav-list,
-		.twork-header__nav-list > .block-editor-inner-blocks > .block-editor-block-list__layout {
+		.mk-header__nav-list,
+		.mk-header__nav-list > .block-editor-inner-blocks > .block-editor-block-list__layout {
 			flex-direction: column;
 			align-items: stretch;
 			justify-content: flex-start;
@@ -259,7 +259,7 @@
 			width: 100%;
 		}
 
-		&.is-active .twork-header__nav {
+		&.is-active .mk-header__nav {
 			opacity: 1;
 			visibility: visible;
 			transform: translateY(0);
@@ -269,7 +269,7 @@
 }
 
 @media (max-width: 991px) {
-	.twork-header {
+	.mk-header {
 		&__hamburger {
 			display: inline-flex;
 		}
@@ -287,7 +287,7 @@
 			flex-direction: column;
 			align-items: stretch;
 			justify-content: flex-start;
-			background: var(--twork-header-bg);
+			background: var(--mk-header-bg);
 			padding: 10px 20px 20px;
 			border-top: 1px solid rgba(17, 17, 17, 0.08);
 			box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
@@ -297,7 +297,7 @@
 			transition: all 0.3s ease;
 			pointer-events: none;
 
-			.twork-header__nav-list {
+			.mk-header__nav-list {
 				flex-direction: column;
 				align-items: stretch;
 				justify-content: flex-start;
@@ -305,7 +305,7 @@
 			}
 		}
 
-		&.is-active .twork-header__nav {
+		&.is-active .mk-header__nav {
 			opacity: 1;
 			visibility: visible;
 			transform: translateY(0);

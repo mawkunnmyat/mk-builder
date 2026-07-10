@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/nav-item",
+	"name": "mk/nav-item",
 	"version": "1.0.0",
 	"title": "Nav Item",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "admin-links",
 	"description": "Single navigation item for the Header Template block.",
-	"parent": [ "twork/header" ],
+	"parent": [ "mk/header" ],
 	"supports": {
 		"html": false,
 		"reusable": false
@@ -31,7 +31,7 @@
 			"fontWeight": "500"
 		}
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css"
 }

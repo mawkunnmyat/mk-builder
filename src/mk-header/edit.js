@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { useState } from '@wordpress/element';
 import {
 	InnerBlocks,
@@ -94,12 +94,12 @@ const ICONS = {
 	),
 };
 
-const ALLOWED_BLOCKS = [ 'twork/nav-item' ];
+const ALLOWED_BLOCKS = [ 'mk/nav-item' ];
 const TEMPLATE = [
-	[ 'twork/nav-item', { label: 'Home', url: '#' } ],
-	[ 'twork/nav-item', { label: 'About', url: '#' } ],
-	[ 'twork/nav-item', { label: 'Services', url: '#', hasDropdown: true } ],
-	[ 'twork/nav-item', { label: 'Contact', url: '#' } ],
+	[ 'mk/nav-item', { label: 'Home', url: '#' } ],
+	[ 'mk/nav-item', { label: 'About', url: '#' } ],
+	[ 'mk/nav-item', { label: 'Services', url: '#', hasDropdown: true } ],
+	[ 'mk/nav-item', { label: 'Contact', url: '#' } ],
 ];
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
@@ -141,20 +141,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: `twork-header twork-header--editor${
-				editorIsMobilePreview ? ' is-active twork-header--preview-mobile' : ''
+			className: `mk-header mk-header--editor${
+				editorIsMobilePreview ? ' is-active mk-header--preview-mobile' : ''
 			}`,
 			style: {
-				'--twork-header-bg': backgroundColor,
-				'--twork-header-text': textColor,
-				'--twork-header-hover': hoverColor,
-				'--twork-header-height': `${ headerHeight }px`,
-				'--twork-header-container-max': `${ containerMaxWidth }px`,
-				'--twork-header-nav-justify': navJustify,
-				'--twork-header-cta-bg': ctaBgColor,
-				'--twork-header-cta-text': ctaTextColor,
-				'--twork-header-cta-radius': `${ ctaBorderRadius }px`,
-				'--twork-header-shadow': boxShadow
+				'--mk-header-bg': backgroundColor,
+				'--mk-header-text': textColor,
+				'--mk-header-hover': hoverColor,
+				'--mk-header-height': `${ headerHeight }px`,
+				'--mk-header-container-max': `${ containerMaxWidth }px`,
+				'--mk-header-nav-justify': navJustify,
+				'--mk-header-cta-bg': ctaBgColor,
+				'--mk-header-cta-text': ctaTextColor,
+				'--mk-header-cta-radius': `${ ctaBorderRadius }px`,
+				'--mk-header-shadow': boxShadow
 					? '0 8px 30px rgba(0, 0, 0, 0.08)'
 					: 'none',
 			},
@@ -180,12 +180,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				tagName="span"
 				value={ logoText }
 				onChange={ ( val ) => setAttributes( { logoText: val } ) }
-				placeholder={ __( 'Logo text', 'twork-builder' ) }
+				placeholder={ __( 'Logo text', 'mk-builder' ) }
 			/>
 		);
 		const imageNode =
 			logoImage ? <img src={ logoImage } alt="" /> : null;
-		const iconNode = <span className="twork-header__logo-icon">{ logoIcon || '🥑' }</span>;
+		const iconNode = <span className="mk-header__logo-icon">{ logoIcon || '🥑' }</span>;
 
 		switch ( logoType ) {
 			case 'icon-text':
@@ -215,45 +215,45 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Editor Preview', 'twork-builder' ) }
+						title={ __( 'Editor Preview', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<BaseControl
-							label={ __( 'Preview Mode', 'twork-builder' ) }
+							label={ __( 'Preview Mode', 'mk-builder' ) }
 						>
 							<ButtonGroup>
 								<Button
 									isPressed={ previewMode === 'desktop' }
 									onClick={ () => setPreviewMode( 'desktop' ) }
 								>
-									{ __( 'Desktop', 'twork-builder' ) }
+									{ __( 'Desktop', 'mk-builder' ) }
 								</Button>
 								<Button
 									isPressed={ previewMode === 'mobile' }
 									onClick={ () => setPreviewMode( 'mobile' ) }
 								>
-									{ __( 'Mobile', 'twork-builder' ) }
+									{ __( 'Mobile', 'mk-builder' ) }
 								</Button>
 							</ButtonGroup>
 						</BaseControl>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Header Settings', 'twork-builder' ) }
+						title={ __( 'Header Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
 						<ToggleControl
-							label={ __( 'Sticky Header', 'twork-builder' ) }
+							label={ __( 'Sticky Header', 'mk-builder' ) }
 							checked={ isSticky }
 							onChange={ ( val ) => setAttributes( { isSticky: val } ) }
 						/>
 						<ToggleControl
-							label={ __( 'Enable Header Shadow', 'twork-builder' ) }
+							label={ __( 'Enable Header Shadow', 'mk-builder' ) }
 							checked={ boxShadow }
 							onChange={ ( val ) => setAttributes( { boxShadow: val } ) }
 						/>
 						<RangeControl
-							label={ __( 'Header Height (px)', 'twork-builder' ) }
+							label={ __( 'Header Height (px)', 'mk-builder' ) }
 							value={ headerHeight }
 							onChange={ ( val ) => setAttributes( { headerHeight: val } ) }
 							min={ 56 }
@@ -261,7 +261,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 1 }
 						/>
 						<RangeControl
-							label={ __( 'Container Max Width (px)', 'twork-builder' ) }
+							label={ __( 'Container Max Width (px)', 'mk-builder' ) }
 							value={ containerMaxWidth }
 							onChange={ ( val ) =>
 								setAttributes( { containerMaxWidth: val } )
@@ -271,42 +271,42 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 10 }
 						/>
 						<SelectControl
-							label={ __( 'Menu Alignment', 'twork-builder' ) }
+							label={ __( 'Menu Alignment', 'mk-builder' ) }
 							value={ navAlignment }
 							options={ [
-								{ label: __( 'Left', 'twork-builder' ), value: 'left' },
-								{ label: __( 'Center', 'twork-builder' ), value: 'center' },
-								{ label: __( 'Right', 'twork-builder' ), value: 'right' },
+								{ label: __( 'Left', 'mk-builder' ), value: 'left' },
+								{ label: __( 'Center', 'mk-builder' ), value: 'center' },
+								{ label: __( 'Right', 'mk-builder' ), value: 'right' },
 							] }
 							onChange={ ( val ) => setAttributes( { navAlignment: val } ) }
 						/>
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Logo Settings', 'twork-builder' ) }
+						title={ __( 'Logo Settings', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<SelectControl
-							label={ __( 'Logo Type', 'twork-builder' ) }
+							label={ __( 'Logo Type', 'mk-builder' ) }
 							value={ logoType }
 							options={ [
-								{ label: __( 'Text Logo', 'twork-builder' ), value: 'text' },
+								{ label: __( 'Text Logo', 'mk-builder' ), value: 'text' },
 								{
-									label: __( 'Icon + Text Logo', 'twork-builder' ),
+									label: __( 'Icon + Text Logo', 'mk-builder' ),
 									value: 'icon-text',
 								},
 								{
-									label: __( 'Image + Text Logo', 'twork-builder' ),
+									label: __( 'Image + Text Logo', 'mk-builder' ),
 									value: 'image-text',
 								},
-								{ label: __( 'Image Logo', 'twork-builder' ), value: 'image' },
+								{ label: __( 'Image Logo', 'mk-builder' ), value: 'image' },
 							] }
 							onChange={ ( val ) => setAttributes( { logoType: val } ) }
 						/>
 
 						{ ( logoType === 'text' || logoType === 'icon-text' || logoType === 'image-text' ) && (
 							<TextControl
-								label={ __( 'Logo Text', 'twork-builder' ) }
+								label={ __( 'Logo Text', 'mk-builder' ) }
 								value={ logoText }
 								onChange={ ( val ) => setAttributes( { logoText: val } ) }
 							/>
@@ -314,15 +314,15 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						{ logoType === 'icon-text' && (
 							<TextControl
-								label={ __( 'Logo Icon', 'twork-builder' ) }
+								label={ __( 'Logo Icon', 'mk-builder' ) }
 								value={ logoIcon }
 								onChange={ ( val ) => setAttributes( { logoIcon: val } ) }
-								help={ __( 'Emoji or short icon text.', 'twork-builder' ) }
+								help={ __( 'Emoji or short icon text.', 'mk-builder' ) }
 							/>
 						) }
 
 						{ ( logoType === 'image' || logoType === 'image-text' ) && (
-							<BaseControl label={ __( 'Logo Image', 'twork-builder' ) }>
+							<BaseControl label={ __( 'Logo Image', 'mk-builder' ) }>
 								<MediaUploadCheck>
 									<MediaUpload
 										allowedTypes={ [ 'image' ] }
@@ -336,8 +336,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										render={ ( { open } ) => (
 											<Button variant="secondary" onClick={ open }>
 												{ logoImage
-													? __( 'Replace Logo', 'twork-builder' )
-													: __( 'Upload Logo', 'twork-builder' ) }
+													? __( 'Replace Logo', 'mk-builder' )
+													: __( 'Upload Logo', 'mk-builder' ) }
 											</Button>
 										) }
 									/>
@@ -350,7 +350,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 											setAttributes( { logoImage: '', logoImageId: null } )
 										}
 									>
-										{ __( 'Remove Logo', 'twork-builder' ) }
+										{ __( 'Remove Logo', 'mk-builder' ) }
 									</Button>
 								) }
 							</BaseControl>
@@ -358,18 +358,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'CTA & Actions', 'twork-builder' ) }
+						title={ __( 'CTA & Actions', 'mk-builder' ) }
 						initialOpen={ false }
 					>
 						<ToggleControl
-							label={ __( 'Show Search Icon', 'twork-builder' ) }
+							label={ __( 'Show Search Icon', 'mk-builder' ) }
 							checked={ showSearchIcon }
 							onChange={ ( val ) =>
 								setAttributes( { showSearchIcon: val } )
 							}
 						/>
 						<ToggleControl
-							label={ __( 'Show CTA Button', 'twork-builder' ) }
+							label={ __( 'Show CTA Button', 'mk-builder' ) }
 							checked={ showCtaButton }
 							onChange={ ( val ) =>
 								setAttributes( { showCtaButton: val } )
@@ -379,13 +379,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						{ showCtaButton && (
 							<>
 								<TextControl
-									label={ __( 'CTA Text', 'twork-builder' ) }
+									label={ __( 'CTA Text', 'mk-builder' ) }
 									value={ ctaText }
 									onChange={ ( val ) =>
 										setAttributes( { ctaText: val } )
 									}
 								/>
-								<BaseControl label={ __( 'CTA URL', 'twork-builder' ) }>
+								<BaseControl label={ __( 'CTA URL', 'mk-builder' ) }>
 									<URLInput
 										value={ ctaUrl }
 										onChange={ ( val ) =>
@@ -395,37 +395,37 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								</BaseControl>
 								<Divider />
 								<ToggleControl
-									label={ __( 'Show CTA Icon', 'twork-builder' ) }
+									label={ __( 'Show CTA Icon', 'mk-builder' ) }
 									checked={ showCtaIcon }
 									onChange={ ( val ) =>
 										setAttributes( { showCtaIcon: val } )
 									}
 								/>
 								<SelectControl
-									label={ __( 'CTA Icon Type', 'twork-builder' ) }
+									label={ __( 'CTA Icon Type', 'mk-builder' ) }
 									value={ ctaIconType }
 									disabled={ ! showCtaIcon }
 									options={ [
 										{
-											label: __( 'Diagonal Arrow', 'twork-builder' ),
+											label: __( 'Diagonal Arrow', 'mk-builder' ),
 											value: 'diagonal-arrow',
 										},
 										{
-											label: __( 'Arrow Right', 'twork-builder' ),
+											label: __( 'Arrow Right', 'mk-builder' ),
 											value: 'arrow-right',
 										},
 										{
-											label: __( 'External', 'twork-builder' ),
+											label: __( 'External', 'mk-builder' ),
 											value: 'external',
 										},
-										{ label: __( 'Plus', 'twork-builder' ), value: 'plus' },
+										{ label: __( 'Plus', 'mk-builder' ), value: 'plus' },
 									] }
 									onChange={ ( val ) =>
 										setAttributes( { ctaIconType: val } )
 									}
 								/>
 								<RangeControl
-									label={ __( 'CTA Border Radius (px)', 'twork-builder' ) }
+									label={ __( 'CTA Border Radius (px)', 'mk-builder' ) }
 									value={ ctaBorderRadius }
 									onChange={ ( val ) =>
 										setAttributes( { ctaBorderRadius: val } )
@@ -439,31 +439,31 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Color Settings', 'twork-builder' ) }
+						title={ __( 'Color Settings', 'mk-builder' ) }
 						colorSettings={ [
 							{
-								label: __( 'Header Background', 'twork-builder' ),
+								label: __( 'Header Background', 'mk-builder' ),
 								value: backgroundColor,
 								onChange: ( val ) =>
 									setAttributes( { backgroundColor: val } ),
 							},
 							{
-								label: __( 'Text Color', 'twork-builder' ),
+								label: __( 'Text Color', 'mk-builder' ),
 								value: textColor,
 								onChange: ( val ) => setAttributes( { textColor: val } ),
 							},
 							{
-								label: __( 'Hover Color', 'twork-builder' ),
+								label: __( 'Hover Color', 'mk-builder' ),
 								value: hoverColor,
 								onChange: ( val ) => setAttributes( { hoverColor: val } ),
 							},
 							{
-								label: __( 'CTA Background', 'twork-builder' ),
+								label: __( 'CTA Background', 'mk-builder' ),
 								value: ctaBgColor,
 								onChange: ( val ) => setAttributes( { ctaBgColor: val } ),
 							},
 							{
-								label: __( 'CTA Text Color', 'twork-builder' ),
+								label: __( 'CTA Text Color', 'mk-builder' ),
 								value: ctaTextColor,
 								onChange: ( val ) => setAttributes( { ctaTextColor: val } ),
 							},
@@ -473,18 +473,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<header { ...blockProps }>
-				<div className="twork-header__preview-badge" aria-hidden="true">
+				<div className="mk-header__preview-badge" aria-hidden="true">
 					{ previewMode === 'mobile'
-						? __( '📱 Mobile Preview', 'twork-builder' )
-						: __( '💻 Desktop Preview', 'twork-builder' ) }
+						? __( '📱 Mobile Preview', 'mk-builder' )
+						: __( '💻 Desktop Preview', 'mk-builder' ) }
 				</div>
-				<div className="twork-header__container">
-					<div className="twork-header__logo">
+				<div className="mk-header__container">
+					<div className="mk-header__logo">
 						{ renderLogo() }
 					</div>
 
-					<nav className="twork-header__nav">
-						<div className="twork-header__nav-list">
+					<nav className="mk-header__nav">
+						<div className="mk-header__nav-list">
 							<InnerBlocks
 								allowedBlocks={ ALLOWED_BLOCKS }
 								template={ TEMPLATE }
@@ -493,12 +493,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</div>
 					</nav>
 
-					<div className="twork-header__actions">
+					<div className="mk-header__actions">
 						{ showSearchIcon && (
 							<button
 								type="button"
-								className="twork-header__search"
-								aria-label={ __( 'Search', 'twork-builder' ) }
+								className="mk-header__search"
+								aria-label={ __( 'Search', 'mk-builder' ) }
 							>
 								<svg
 									width="20"
@@ -519,12 +519,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) }
 
 						{ showCtaButton && (
-							<a href={ ctaUrl || '#' } className="twork-header__cta">
-								<span className="twork-header__cta-label">
-									{ ctaText || __( 'Get In Touch', 'twork-builder' ) }
+							<a href={ ctaUrl || '#' } className="mk-header__cta">
+								<span className="mk-header__cta-label">
+									{ ctaText || __( 'Get In Touch', 'mk-builder' ) }
 								</span>
 								{ showCtaIcon && (
-									<span className="twork-header__cta-icon" aria-hidden="true">
+									<span className="mk-header__cta-icon" aria-hidden="true">
 										{ ctaIcon }
 									</span>
 								) }
@@ -533,9 +533,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 						<button
 							type="button"
-							className="twork-header__hamburger"
+							className="mk-header__hamburger"
 							aria-expanded="false"
-							aria-label={ __( 'Toggle menu', 'twork-builder' ) }
+							aria-label={ __( 'Toggle menu', 'mk-builder' ) }
 						>
 							<span />
 							<span />

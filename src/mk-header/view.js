@@ -1,47 +1,47 @@
 ( function () {
 	'use strict';
 
-	const HEADER_SELECTOR = '.wp-block-twork-header.twork-header';
+	const HEADER_SELECTOR = '.wp-block-mk-header.mk-header';
 
 	const closeHeaderMenu = ( header ) => {
 		header.classList.remove( 'is-active' );
-		const toggle = header.querySelector( '.twork-header__hamburger' );
-		const nav = header.querySelector( '.twork-header__nav' );
+		const toggle = header.querySelector( '.mk-header__hamburger' );
+		const nav = header.querySelector( '.mk-header__nav' );
 		if ( toggle ) {
 			toggle.setAttribute( 'aria-expanded', 'false' );
 		}
 		if ( nav ) {
 			nav.setAttribute( 'aria-hidden', 'true' );
 		}
-		document.body.classList.remove( 'twork-header-menu-open' );
+		document.body.classList.remove( 'mk-header-menu-open' );
 		document.body.style.removeProperty( 'overflow' );
 	};
 
 	const openHeaderMenu = ( header ) => {
 		header.classList.add( 'is-active' );
-		const toggle = header.querySelector( '.twork-header__hamburger' );
-		const nav = header.querySelector( '.twork-header__nav' );
+		const toggle = header.querySelector( '.mk-header__hamburger' );
+		const nav = header.querySelector( '.mk-header__nav' );
 		if ( toggle ) {
 			toggle.setAttribute( 'aria-expanded', 'true' );
 		}
 		if ( nav ) {
 			nav.setAttribute( 'aria-hidden', 'false' );
 		}
-		document.body.classList.add( 'twork-header-menu-open' );
+		document.body.classList.add( 'mk-header-menu-open' );
 		document.body.style.overflow = 'hidden';
 	};
 
 	const initHeader = ( header ) => {
-		if ( header.dataset.tworkHeaderInit === 'true' ) {
+		if ( header.dataset.mkHeaderInit === 'true' ) {
 			return;
 		}
 
-		const toggle = header.querySelector( '.twork-header__hamburger' );
+		const toggle = header.querySelector( '.mk-header__hamburger' );
 		if ( ! toggle ) {
 			return;
 		}
 
-		header.dataset.tworkHeaderInit = 'true';
+		header.dataset.mkHeaderInit = 'true';
 
 		toggle.addEventListener( 'click', () => {
 			if ( header.classList.contains( 'is-active' ) ) {
@@ -57,7 +57,7 @@
 			}
 		} );
 
-		const links = header.querySelectorAll( '.twork-header__nav a' );
+		const links = header.querySelectorAll( '.mk-header__nav a' );
 		links.forEach( ( link ) => {
 			link.addEventListener( 'click', () => closeHeaderMenu( header ) );
 		} );

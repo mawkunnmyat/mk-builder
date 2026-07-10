@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useStableBlockProps } from '@twork-builder/editor-utils';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
 	InspectorControls,
 	PanelColorSettings,
@@ -28,12 +28,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const blockProps = useStableBlockProps(
 		() => ( {
-			className: 'twork-nav-item',
+			className: 'mk-nav-item',
 			style: {
-				'--twork-nav-item-color': linkColor || undefined,
-				'--twork-nav-item-hover': linkHoverColor || undefined,
-				'--twork-nav-item-size': `${ fontSize }px`,
-				'--twork-nav-item-weight': fontWeight,
+				'--mk-nav-item-color': linkColor || undefined,
+				'--mk-nav-item-hover': linkHoverColor || undefined,
+				'--mk-nav-item-size': `${ fontSize }px`,
+				'--mk-nav-item-weight': fontWeight,
 			},
 		} ),
 		[ fontSize, fontWeight, linkColor, linkHoverColor ]
@@ -44,29 +44,29 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			{ isSelected && (
 				<InspectorControls>
 					<PanelBody
-						title={ __( 'Nav Item Settings', 'twork-builder' ) }
+						title={ __( 'Nav Item Settings', 'mk-builder' ) }
 						initialOpen={ true }
 					>
-						<BaseControl label={ __( 'Link URL', 'twork-builder' ) }>
+						<BaseControl label={ __( 'Link URL', 'mk-builder' ) }>
 							<URLInput
 								value={ url }
 								onChange={ ( val ) => setAttributes( { url: val } ) }
 							/>
 						</BaseControl>
 						<ToggleControl
-							label={ __( 'Open in New Tab', 'twork-builder' ) }
+							label={ __( 'Open in New Tab', 'mk-builder' ) }
 							checked={ openInNewTab }
 							onChange={ ( val ) =>
 								setAttributes( { openInNewTab: val } )
 							}
 						/>
 						<ToggleControl
-							label={ __( 'Show Dropdown Chevron', 'twork-builder' ) }
+							label={ __( 'Show Dropdown Chevron', 'mk-builder' ) }
 							checked={ hasDropdown }
 							onChange={ ( val ) => setAttributes( { hasDropdown: val } ) }
 						/>
 						<RangeControl
-							label={ __( 'Font Size (px)', 'twork-builder' ) }
+							label={ __( 'Font Size (px)', 'mk-builder' ) }
 							value={ fontSize }
 							onChange={ ( val ) => setAttributes( { fontSize: val } ) }
 							min={ 12 }
@@ -74,7 +74,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 1 }
 						/>
 						<SelectControl
-							label={ __( 'Font Weight', 'twork-builder' ) }
+							label={ __( 'Font Weight', 'mk-builder' ) }
 							value={ fontWeight }
 							options={ [
 								{ label: '400', value: '400' },
@@ -87,15 +87,15 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Link Colors', 'twork-builder' ) }
+						title={ __( 'Link Colors', 'mk-builder' ) }
 						colorSettings={ [
 							{
-								label: __( 'Link Color', 'twork-builder' ),
+								label: __( 'Link Color', 'mk-builder' ),
 								value: linkColor,
 								onChange: ( val ) => setAttributes( { linkColor: val } ),
 							},
 							{
-								label: __( 'Hover Color', 'twork-builder' ),
+								label: __( 'Hover Color', 'mk-builder' ),
 								value: linkHoverColor,
 								onChange: ( val ) =>
 									setAttributes( { linkHoverColor: val } ),
@@ -107,7 +107,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 			<div { ...blockProps }>
 				<a
-					className="twork-nav-item__link"
+					className="mk-nav-item__link"
 					href={ url || '#' }
 					onClick={ ( e ) => e.preventDefault() }
 				>
@@ -115,11 +115,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="span"
 						value={ label }
 						onChange={ ( val ) => setAttributes( { label: val } ) }
-						placeholder={ __( 'Menu Item', 'twork-builder' ) }
+						placeholder={ __( 'Menu Item', 'mk-builder' ) }
 						allowedFormats={ [ 'core/bold', 'core/italic' ] }
 					/>
 					{ hasDropdown && (
-						<span className="twork-nav-item__chevron" aria-hidden="true">
+						<span className="mk-nav-item__chevron" aria-hidden="true">
 							<svg
 								width="14"
 								height="14"

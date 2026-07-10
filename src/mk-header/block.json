@@ -1,13 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "twork/header",
+	"name": "mk/header",
 	"version": "1.0.0",
 	"title": "Header Template",
-	"category": "twork-builder",
+	"category": "mk-builder",
 	"icon": "menu",
 	"description": "Highly customizable header template with logo, navigation items, search, and CTA button.",
-	"keywords": [ "header", "navigation", "menu", "cta", "twork" ],
+	"keywords": [ "header", "navigation", "menu", "cta", "mk" ],
 	"supports": {
 		"html": false,
 		"align": [ "full", "wide" ]
@@ -57,13 +57,13 @@
 			"ctaIconType": "diagonal-arrow"
 		},
 		"innerBlocks": [
-			{ "name": "twork/nav-item", "attributes": { "label": "Home", "url": "#" } },
-			{ "name": "twork/nav-item", "attributes": { "label": "About", "url": "#" } },
-			{ "name": "twork/nav-item", "attributes": { "label": "Services", "url": "#", "hasDropdown": true } },
-			{ "name": "twork/nav-item", "attributes": { "label": "Contact", "url": "#" } }
+			{ "name": "mk/nav-item", "attributes": { "label": "Home", "url": "#" } },
+			{ "name": "mk/nav-item", "attributes": { "label": "About", "url": "#" } },
+			{ "name": "mk/nav-item", "attributes": { "label": "Services", "url": "#", "hasDropdown": true } },
+			{ "name": "mk/nav-item", "attributes": { "label": "Contact", "url": "#" } }
 		]
 	},
-	"textdomain": "twork-builder",
+	"textdomain": "mk-builder",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
 	"viewScript": "file:./view.js"

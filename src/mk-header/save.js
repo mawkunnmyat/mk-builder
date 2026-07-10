@@ -111,7 +111,7 @@ export default function save( { attributes } ) {
 		);
 		const imageNode = logoImage ? <img src={ logoImage } alt="" /> : null;
 		const iconNode = (
-			<span className="twork-header__logo-icon">{ logoIcon || '🥑' }</span>
+			<span className="mk-header__logo-icon">{ logoIcon || '🥑' }</span>
 		);
 
 		switch ( logoType ) {
@@ -138,18 +138,18 @@ export default function save( { attributes } ) {
 	};
 
 	const blockProps = useBlockProps.save( {
-		className: `twork-header${ isSticky ? ' twork-header--sticky' : '' }`,
+		className: `mk-header${ isSticky ? ' mk-header--sticky' : '' }`,
 		style: {
-			'--twork-header-bg': backgroundColor,
-			'--twork-header-text': textColor,
-			'--twork-header-hover': hoverColor,
-			'--twork-header-height': `${ headerHeight }px`,
-			'--twork-header-container-max': `${ containerMaxWidth }px`,
-			'--twork-header-nav-justify': navJustify,
-			'--twork-header-cta-bg': ctaBgColor,
-			'--twork-header-cta-text': ctaTextColor,
-			'--twork-header-cta-radius': `${ ctaBorderRadius }px`,
-			'--twork-header-shadow': boxShadow
+			'--mk-header-bg': backgroundColor,
+			'--mk-header-text': textColor,
+			'--mk-header-hover': hoverColor,
+			'--mk-header-height': `${ headerHeight }px`,
+			'--mk-header-container-max': `${ containerMaxWidth }px`,
+			'--mk-header-nav-justify': navJustify,
+			'--mk-header-cta-bg': ctaBgColor,
+			'--mk-header-cta-text': ctaTextColor,
+			'--mk-header-cta-radius': `${ ctaBorderRadius }px`,
+			'--mk-header-shadow': boxShadow
 				? '0 8px 30px rgba(0, 0, 0, 0.08)'
 				: 'none',
 		},
@@ -158,22 +158,22 @@ export default function save( { attributes } ) {
 
 	return (
 		<header { ...blockProps }>
-			<div className="twork-header__container">
-				<div className="twork-header__logo">
+			<div className="mk-header__container">
+				<div className="mk-header__logo">
 					{ renderLogo() }
 				</div>
 
-				<nav className="twork-header__nav">
-					<div className="twork-header__nav-list">
+				<nav className="mk-header__nav">
+					<div className="mk-header__nav-list">
 						<InnerBlocks.Content />
 					</div>
 				</nav>
 
-				<div className="twork-header__actions">
+				<div className="mk-header__actions">
 					{ showSearchIcon && (
 						<button
 							type="button"
-							className="twork-header__search"
+							className="mk-header__search"
 							aria-label="Search"
 						>
 							<svg
@@ -195,12 +195,12 @@ export default function save( { attributes } ) {
 					) }
 
 					{ showCtaButton && (
-						<a href={ ctaUrl || '#' } className="twork-header__cta">
-							<span className="twork-header__cta-label">
+						<a href={ ctaUrl || '#' } className="mk-header__cta">
+							<span className="mk-header__cta-label">
 								{ ctaText || 'Get In Touch' }
 							</span>
 							{ showCtaIcon && (
-								<span className="twork-header__cta-icon" aria-hidden="true">
+								<span className="mk-header__cta-icon" aria-hidden="true">
 									{ ctaIcon }
 								</span>
 							) }
@@ -209,7 +209,7 @@ export default function save( { attributes } ) {
 
 					<button
 						type="button"
-						className="twork-header__hamburger"
+						className="mk-header__hamburger"
 						aria-expanded="false"
 						aria-label="Toggle menu"
 					>
