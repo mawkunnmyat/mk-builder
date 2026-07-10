@@ -21,7 +21,6 @@
         .mk-amb-steps-container {
             display: grid !important;
             width: 100% !important;
-            counter-reset: step;
 
             > .block-editor-inner-blocks {
                 display: contents !important;
@@ -31,12 +30,16 @@
 
                     > .wp-block,
                     > [data-type="mk/amb-process-step"] {
+                        display: block !important;
                         position: relative;
+                        min-width: 0;
+                        width: 100%;
                         padding: 20px;
                         border: 2px dashed #e0e0e0;
                         border-radius: 8px;
                         background: #fafafa;
                         transition: border-color 0.2s ease;
+                        box-sizing: border-box;
 
                         &:hover,
                         &.is-selected {
@@ -46,21 +49,28 @@
                 }
             }
 
-            .amb-step {
-                &::before {
-                    counter-increment: step;
-                    content: counter(step);
-                    width: 40px;
-                    height: 40px;
-                    background: var(--amb-step-number-bg, var(--amb-primary));
-                    color: var(--amb-step-number-color, #fff);
-                    border-radius: 50%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 1.2rem;
-                    font-weight: 700;
-                    margin: 0 auto 12px;
+            .amb-step-number-editor {
+                width: 40px;
+                height: 40px;
+                background: var(--amb-step-number-bg, var(--amb-primary));
+                color: var(--amb-step-number-color, #fff);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                font-weight: 700;
+                margin: 0 auto 12px;
+                box-shadow: 0 0 0 5px rgba(244, 139, 42, 0.2);
+            }
+
+            .mk-amb-process-step-editor {
+                h4,
+                p {
+                    &[contenteditable="true"]:focus {
+                        outline: 1px dashed #2271b1;
+                        outline-offset: 2px;
+                    }
                 }
             }
 

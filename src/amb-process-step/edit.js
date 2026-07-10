@@ -1,13 +1,14 @@
 import { __ } from '@wordpress/i18n';
 import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
+import { useSelect } from '@wordpress/data';
 import {
 	PanelBody,
 	RangeControl,
 	PanelColorSettings,
 } from '@wordpress/components';
 
-export default function Edit( { attributes, setAttributes, isSelected } ) {
+export default function Edit( { attributes, setAttributes, clientId, isSelected } ) {
 	const {
 		title,
 		description,
@@ -19,6 +20,19 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		descriptionFontSize,
 		stepPadding,
 	} = attributes;
+
+	const stepIndex = useSelect(
+		( select ) => {
+			const { getBlockIndex, getBlockRootClientId } =
+				select( 'core/block-editor' );
+			const rootClientId = getBlockRootClientId( clientId );
+			if ( ! rootClientId ) {
+				return 1;
+			}
+			return getBlockIndex( clientId, rootClientId ) + 1;
+		},
+		[ clientId ]
+	);
 
 	const blockProps = useStableBlockProps(
 		() => ( {
@@ -138,6 +152,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 			) }
 
 			<div { ...blockProps }>
+				<div className="amb-step-number-editor" aria-hidden="true">
+					{ stepIndex }
+				</div>
 				<RichText
 					tagName="h4"
 					value={ title }

@@ -3,7 +3,7 @@ import { useStableBlockProps } from '@mk-builder/editor-utils';
 import { RichText, InspectorControls } from '@wordpress/block-editor';
 import {
 	PanelBody,
-	TextControl,
+	SelectControl,
 	RangeControl,
 	PanelColorSettings,
 } from '@wordpress/components';
@@ -60,19 +60,13 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						title={ __( 'Icon', 'mk-builder' ) }
 						initialOpen={ true }
 					>
-						<TextControl
-							label={ __(
-								'Font Awesome Icon Class',
-								'mk-builder'
-							) }
+						<SelectControl
+							label={ __( 'Icon', 'mk-builder' ) }
 							value={ icon }
+							options={ ICON_OPTIONS }
 							onChange={ ( val ) =>
-								setAttributes( { icon: val || 'fa-circle' } )
+								setAttributes( { icon: val || 'fa-heartbeat' } )
 							}
-							help={ __(
-								'e.g. fa-heartbeat, fa-lungs, fa-first-aid',
-								'mk-builder'
-							) }
 						/>
 
 						<PanelColorSettings

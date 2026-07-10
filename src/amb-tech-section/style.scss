@@ -1,5 +1,42 @@
 @import "../scss/typography";
 
+@mixin amb-tech-icon-font-awesome {
+    i {
+        display: block;
+        font-style: normal;
+        line-height: 1;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        &[class*="fa-"] {
+            font-family: $font-icon-solid !important;
+        }
+
+        &[class*="fas"] {
+            font-weight: 900 !important;
+        }
+
+        &[class*="far"] {
+            font-weight: 400 !important;
+        }
+
+        &[class*="fal"] {
+            font-weight: 300 !important;
+        }
+
+        &[class*="fab"] {
+            font-family: $font-icon-brands !important;
+            font-weight: 400 !important;
+        }
+
+        &[class*="fa fa-"] {
+            font-family: $font-icon-solid !important;
+            font-weight: normal !important;
+        }
+    }
+}
+
 // Ambulance Tech Section (ICU on Wheels) – matches ambulance-service.html
 :root {
     --amb-primary: #f48b2a;
@@ -37,6 +74,10 @@
 
                     > .wp-block,
                     > [data-type="mk/amb-tech-item"] {
+                        display: block !important;
+                        min-width: 0;
+                        width: 100%;
+                        box-sizing: border-box;
                         transition: all 0.2s ease;
 
                         &:hover {
@@ -48,6 +89,18 @@
                             border-color: #2271b1 !important;
                             box-shadow: 0 0 0 2px #2271b1;
                         }
+                    }
+                }
+            }
+
+            .mk-amb-tech-item-editor {
+                @include amb-tech-icon-font-awesome;
+
+                h3,
+                p {
+                    &[contenteditable="true"]:focus {
+                        outline: 1px dashed #2271b1;
+                        outline-offset: 2px;
                     }
                 }
             }
