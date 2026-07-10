@@ -4,7 +4,7 @@
  * Plugin Name:       MK Builder
  * Plugin URI:        https://github.com/mawkunnmyat/mk-builder
  * Description:       General Company Page Builder Blocks for MK Ecosystem.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Maw Kunn
  * Author URI:        https://github.com/mawkunnmyat
  * Text Domain:       mk-builder
@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 }
 
 /** Define Constants */
-define('MK_BUILDER_VERSION', '1.0.0');
+define('MK_BUILDER_VERSION', '1.1.0');
 define('MK_BUILDER_PATH', plugin_dir_path(__FILE__));
 define('MK_BUILDER_URL', plugin_dir_url(__FILE__));
 
