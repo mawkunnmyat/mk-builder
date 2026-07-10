@@ -1,4 +1,4 @@
-# 🧱 MK Builder
+# 🧩 MK Builder
 
 > **Professional WordPress Gutenberg Blocks Plugin** — purpose-built for the MK Ecosystem  
 > Enterprise-grade page building blocks for hospitals, clinics, corporate sites, and e-commerce.
@@ -47,7 +47,7 @@
 
 | Area | Update |
 |------|--------|
-| 🧱 **Block Library** | 270+ production-ready Gutenberg blocks for healthcare, retail, and corporate sites |
+| 🧩 **Block Library** | 270+ production-ready Gutenberg blocks for healthcare, retail, and corporate sites |
 | 🏪 **Brand Suite** | Complete `mk/*` home page block stack — header, carousels, grids, FAQ, newsletter, footer |
 | 🧈 **Shweghee QA** | Modular static reference site for design-to-block migration validation |
 | 📦 **Build Pipeline** | Optimized Webpack build with 8 GB heap support for large block sets |
@@ -269,7 +269,7 @@ csr-initiatives-section · csr-events-section · csr-stats-section
 accreditation-section · mission-vision-grid · team-members-grid · …
 ```
 
-### 🧱 Layout & Utility
+### 📐 Layout & Utility
 
 Containers, page heroes, timelines, story grids, feature sections, navigation, and shared structural blocks.
 
@@ -377,7 +377,7 @@ python3 -m http.server 8080
 
 1. 🎨 **Design** — Build or refine section in `shweghee/src/components/<section>/`
 2. 📋 **Map** — Add row to `shweghee/docs/block-mapping.md` with `data-block` slug
-3. 🧱 **Scaffold** — Create matching block in `src/<block-name>/`
+3. 🛠️ **Scaffold** — Create matching block in `src/<block-name>/`
 4. 🎨 **Port styles** — Move `*.css` → block `style.scss`
 5. ⚡ **Port scripts** — Move `init*` logic → block `view.js`
 6. 📝 **Attributes** — Replace `*.mock.json` fields with `block.json` attributes
@@ -626,7 +626,7 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 
 ### 🚀 `1.0.0` — July 11, 2026
 
-- 🧱 **Blocks:** 270+ Gutenberg blocks with `mk/*` namespace and dedicated inserter category
+- 🧩 **Blocks:** 270+ Gutenberg blocks with `mk/*` namespace and dedicated inserter category
 - 📦 **Plugin:** `mk-builder.php` bootstrap with `MK_BUILDER_*` constants and conditional asset loading
 - 🐘 **PHP:** Server-side render callbacks for blog, shop, awards, CSR, and hospital content
 - 🏪 **Brand Suite:** Industry-agnostic home page block stack for retail and corporate sites
