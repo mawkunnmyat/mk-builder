@@ -6,7 +6,7 @@
 	 * Handles scroll animations for event cards
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 */
 	const prefersReducedMotion =
 		window.matchMedia &&
@@ -22,7 +22,7 @@
 
 		if ( prefersReducedMotion || ! ( 'IntersectionObserver' in window ) ) {
 			document
-				.querySelectorAll( '.twork-csr-events-section .event-card' )
+				.querySelectorAll( '.mk-csr-events-section .event-card' )
 				.forEach( ( card ) => {
 					card.style.opacity = '1';
 					card.style.transform = 'none';
@@ -32,7 +32,7 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-csr-events-section'
+			'.mk-csr-events-section'
 		);
 		if ( sections.length === 0 ) return;
 
@@ -86,5 +86,5 @@
 
 	window.addEventListener( 'load', initCsrEvents );
 
-	window.TworkCsrEvents = { init: initCsrEvents };
+	window.MkCsrEvents = { init: initCsrEvents };
 } )();

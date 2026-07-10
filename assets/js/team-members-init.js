@@ -18,7 +18,7 @@
 		initialized = true;
 		// Get all team members sections
 		const teamSections = document.querySelectorAll(
-			'.twork-team-members-section'
+			'.mk-team-members-section'
 		);
 
 		if ( teamSections.length === 0 ) {

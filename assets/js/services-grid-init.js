@@ -6,7 +6,7 @@
 	 * Handles scroll animations and hover effects for service items
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 * @follows WordPress Coding Standards (WPCS)
 	 */
 	const prefersReducedMotion =
@@ -33,7 +33,7 @@
 		}
 		// Get all services grid sections
 		const servicesGrids = document.querySelectorAll(
-			'.twork-services-section'
+			'.mk-services-section'
 		);
 
 		if ( servicesGrids.length === 0 ) {
@@ -190,7 +190,7 @@
 	 * Re-initialize on window load (for dynamic content and images)
 	 */
 	window.addEventListener( 'load', () => {
-		console.log( 'Twork Services Grid: Window loaded, re-initializing...' );
+		console.log( 'Mk Services Grid: Window loaded, re-initializing...' );
 		initServicesGrid();
 	} );
 
@@ -202,12 +202,12 @@
 		'resize',
 		debounce( () => {
 			console.log(
-				'Twork Services Grid: Window resized, checking visibility...'
+				'Mk Services Grid: Window resized, checking visibility...'
 			);
 			// Only check visibility, don't re-initialize everything
 			const allCards = document.querySelectorAll( '.service-card' );
 			allCards.forEach( ( card ) => {
-				const section = card.closest( '.twork-services-section' );
+				const section = card.closest( '.mk-services-section' );
 				if ( section && section.dataset.animation !== 'true' ) {
 					card.style.opacity = '1';
 					card.style.transform = 'none';
@@ -220,10 +220,10 @@
 	 * Expose initialization function globally for manual re-initialization
 	 * Useful for AJAX-loaded content or dynamic page builders
 	 */
-	window.TworkServicesGrid = {
+	window.MkServicesGrid = {
 		init: initServicesGrid,
 		version: '1.0.0',
 	};
 
-	console.log( 'Twork Services Grid: Script loaded successfully.' );
+	console.log( 'Mk Services Grid: Script loaded successfully.' );
 } )();

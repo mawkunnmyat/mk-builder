@@ -1,12 +1,12 @@
 /**
  * Radiology Prep FAQ Section – accordion behaviour.
  * Toggles open/close on .rad-faq-a when .rad-faq-q is clicked.
- * Mirrors the structure used by twork/rad-faq-item.
+ * Mirrors the structure used by mk/rad-faq-item.
  */
 ( function () {
 	'use strict';
 
-	var SECTION_SELECTOR = '.twork-rad-prep-faq-section';
+	var SECTION_SELECTOR = '.mk-rad-prep-faq-section';
 	var ITEM_SELECTOR = '.rad-faq-item';
 	var QUESTION_SELECTOR = '.rad-faq-q';
 	var ANSWER_SELECTOR = '.rad-faq-a';

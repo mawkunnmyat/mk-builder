@@ -6,7 +6,7 @@
 	'use strict';
 
 	function initAccordions() {
-		var section = document.querySelector( '.twork-contact-layout-section' );
+		var section = document.querySelector( '.mk-contact-layout-section' );
 		if ( ! section ) return;
 
 		var accordion = section.querySelector( '.hotline-accordion' );

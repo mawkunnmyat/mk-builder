@@ -6,7 +6,7 @@
 	 * Handles scroll animations and hover effects for initiative cards
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 */
 	const prefersReducedMotion =
 		window.matchMedia &&
@@ -23,7 +23,7 @@
 		if ( prefersReducedMotion || ! ( 'IntersectionObserver' in window ) ) {
 			document
 				.querySelectorAll(
-					'.twork-csr-initiatives-section .initiative-card'
+					'.mk-csr-initiatives-section .initiative-card'
 				)
 				.forEach( ( card ) => {
 					card.style.opacity = '1';
@@ -34,7 +34,7 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-csr-initiatives-section'
+			'.mk-csr-initiatives-section'
 		);
 		if ( sections.length === 0 ) return;
 
@@ -106,5 +106,5 @@
 
 	window.addEventListener( 'load', initCsrInitiatives );
 
-	window.TworkCsrInitiatives = { init: initCsrInitiatives };
+	window.MkCsrInitiatives = { init: initCsrInitiatives };
 } )();

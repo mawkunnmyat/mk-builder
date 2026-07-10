@@ -6,14 +6,14 @@
 	 * Handles scroll animations for section header, category titles, job cards, and CTA
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 */
 	const initJobOpenings = () => {
 		const jobSections = document.querySelectorAll(
-			'.twork-job-openings-section'
+			'.mk-job-openings-section'
 		);
 		const ctaSections = document.querySelectorAll(
-			'.twork-career-cta-section'
+			'.mk-career-cta-section'
 		);
 		const sections = Array.from( jobSections ).concat(
 			Array.from( ctaSections )

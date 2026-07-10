@@ -8,10 +8,10 @@
 	 * Matches neuro-centre.html design: .fade-up, .stagger-card, .stagger-doc
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 */
 	const initNeuroCentre = () => {
-		const section = document.querySelector( '.twork-neuro-centre-section' );
+		const section = document.querySelector( '.mk-neuro-centre-section' );
 		if ( ! section ) return;
 
 		if ( ! ( 'IntersectionObserver' in window ) ) {

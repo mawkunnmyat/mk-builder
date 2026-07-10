@@ -5,12 +5,12 @@
  * - Expands/collapses .phy-faq-a with a smooth height transition.
  * - Swaps the icon between fa-plus / fa-minus.
  *
- * Works for any number of twork/phy-faq-section blocks on the page.
+ * Works for any number of mk/phy-faq-section blocks on the page.
  */
 ( function () {
 	'use strict';
 
-	var SECTION_SELECTOR = '.twork-phy-faq-section';
+	var SECTION_SELECTOR = '.mk-phy-faq-section';
 	var ITEM_SELECTOR = '.phy-faq-item';
 	var QUESTION_SELECTOR = '.phy-faq-q';
 	var ANSWER_SELECTOR = '.phy-faq-a';

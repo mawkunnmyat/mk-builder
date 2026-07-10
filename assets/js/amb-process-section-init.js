@@ -7,7 +7,7 @@
 	const initAmbProcessSection = () => {
 		if ( ! ( 'IntersectionObserver' in window ) ) {
 			document
-				.querySelectorAll( '.twork-amb-process-section .amb-step' )
+				.querySelectorAll( '.mk-amb-process-section .amb-step' )
 				.forEach( ( el ) => {
 					el.style.opacity = '1';
 					el.style.transform = 'none';
@@ -17,13 +17,13 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-amb-process-section[data-animation="true"]'
+			'.mk-amb-process-section[data-animation="true"]'
 		);
 		if ( ! sections.length ) return;
 
 		sections.forEach( ( section ) => {
 			const steps = section.querySelectorAll(
-				'.amb-step.twork-amb-process-step'
+				'.amb-step.mk-amb-process-step'
 			);
 			const delay = parseInt( section.dataset.animationDelay, 10 ) || 80;
 

@@ -1,15 +1,15 @@
 /**
  * Centre Layout Section – FAQ accordion and scroll animations.
  * Reusable for Neuro Centre, Heart Centre, Cancer Centre, etc.
- * Uses .twork-centre-layout-section as container.
+ * Uses .mk-centre-layout-section as container.
  *
  * @since 1.0.0
- * @author Twork Builder
+ * @author MK Builder
  */
 ( function () {
 	'use strict';
 
-	var SECTION_SELECTOR = '.twork-centre-layout-section';
+	var SECTION_SELECTOR = '.mk-centre-layout-section';
 	var FAQ_ITEM_SELECTOR = '.faq-item';
 	var FAQ_BTN_SELECTOR = '.faq-btn';
 	var FAQ_CONTENT_SELECTOR = '.faq-content';

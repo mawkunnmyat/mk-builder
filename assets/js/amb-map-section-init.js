@@ -7,7 +7,7 @@
 	const initAmbMapSection = () => {
 		if ( ! ( 'IntersectionObserver' in window ) ) {
 			document
-				.querySelectorAll( '.twork-amb-map-section .amb-map-box' )
+				.querySelectorAll( '.mk-amb-map-section .amb-map-box' )
 				.forEach( ( el ) => {
 					el.style.opacity = '1';
 					el.style.transform = 'none';
@@ -17,13 +17,13 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-amb-map-section[data-animation="true"]'
+			'.mk-amb-map-section[data-animation="true"]'
 		);
 		if ( ! sections.length ) return;
 
 		sections.forEach( ( section ) => {
 			const box = section.querySelector(
-				'.amb-map-box.twork-amb-map-box'
+				'.amb-map-box.mk-amb-map-box'
 			);
 			if ( ! box ) return;
 

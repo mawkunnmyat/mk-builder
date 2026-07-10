@@ -6,7 +6,7 @@
 	 * Handles scroll animations and hover effects for svc-cards
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 * @follows WordPress Coding Standards (WPCS)
 	 */
 	const prefersReducedMotion =
@@ -23,7 +23,7 @@
 
 		if ( prefersReducedMotion || ! ( 'IntersectionObserver' in window ) ) {
 			const allCards = document.querySelectorAll(
-				'.twork-exclusive-services-section .svc-card'
+				'.mk-exclusive-services-section .svc-card'
 			);
 			allCards.forEach( ( card ) => {
 				card.style.opacity = '1';
@@ -34,7 +34,7 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-exclusive-services-section'
+			'.mk-exclusive-services-section'
 		);
 
 		if ( sections.length === 0 ) {
@@ -131,7 +131,7 @@
 
 	window.addEventListener( 'load', initExclusiveServices );
 
-	window.TworkExclusiveServices = {
+	window.MkExclusiveServices = {
 		init: initExclusiveServices,
 		version: '1.0.1',
 	};

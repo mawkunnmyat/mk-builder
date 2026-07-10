@@ -6,7 +6,7 @@
 	 * Handles scroll animations for gallery items
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 */
 	const prefersReducedMotion =
 		window.matchMedia &&
@@ -23,7 +23,7 @@
 		if ( prefersReducedMotion || ! ( 'IntersectionObserver' in window ) ) {
 			document
 				.querySelectorAll(
-					'.twork-csr-moments-gallery-section .gallery-item'
+					'.mk-csr-moments-gallery-section .gallery-item'
 				)
 				.forEach( ( item ) => {
 					item.style.opacity = '1';
@@ -34,7 +34,7 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-csr-moments-gallery-section'
+			'.mk-csr-moments-gallery-section'
 		);
 		if ( sections.length === 0 ) return;
 
@@ -90,5 +90,5 @@
 
 	window.addEventListener( 'load', initCsrMomentsGallery );
 
-	window.TworkCsrMomentsGallery = { init: initCsrMomentsGallery };
+	window.MkCsrMomentsGallery = { init: initCsrMomentsGallery };
 } )();

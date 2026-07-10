@@ -7,7 +7,7 @@
 	const initAmbTechSection = () => {
 		if ( ! ( 'IntersectionObserver' in window ) ) {
 			document
-				.querySelectorAll( '.twork-amb-tech-section .amb-tech-item' )
+				.querySelectorAll( '.mk-amb-tech-section .amb-tech-item' )
 				.forEach( ( el ) => {
 					el.style.opacity = '1';
 					el.style.transform = 'none';
@@ -17,13 +17,13 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-amb-tech-section[data-animation="true"]'
+			'.mk-amb-tech-section[data-animation="true"]'
 		);
 		if ( ! sections.length ) return;
 
 		sections.forEach( ( section ) => {
 			const items = section.querySelectorAll(
-				'.amb-tech-item.twork-amb-tech-item'
+				'.amb-tech-item.mk-amb-tech-item'
 			);
 			const delay = parseInt( section.dataset.animationDelay, 10 ) || 80;
 

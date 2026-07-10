@@ -6,13 +6,13 @@
 	 * Handles scroll animations for hotel cards (stagger-hotel)
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 * @follows WordPress Coding Standards (WPCS)
 	 */
 	const initNearbyAccommodation = () => {
 		if ( ! ( 'IntersectionObserver' in window ) ) {
 			const allCards = document.querySelectorAll(
-				'.twork-nearby-accommodation-section .hotel-card'
+				'.mk-nearby-accommodation-section .hotel-card'
 			);
 			allCards.forEach( ( card ) => {
 				card.style.opacity = '1';
@@ -23,7 +23,7 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-nearby-accommodation-section'
+			'.mk-nearby-accommodation-section'
 		);
 
 		if ( sections.length === 0 ) {
@@ -123,7 +123,7 @@
 
 	window.addEventListener( 'load', initNearbyAccommodation );
 
-	window.TworkNearbyAccommodation = {
+	window.MkNearbyAccommodation = {
 		init: initNearbyAccommodation,
 		version: '1.0.0',
 	};

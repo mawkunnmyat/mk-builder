@@ -3,10 +3,10 @@
  * Enqueued globally so filtering works regardless of block viewScript build.
  * Cards must have .doctor-card and data-dept, data-gender, data-name.
  * Filter bar must have #searchInput, #deptFilter, #genderFilter, #resetBtn
- * (from twork/doctor-search-filter-section).
+ * (from mk/doctor-search-filter-section).
  *
  * @since 1.0.0
- * @package TworkBuilder
+ * @package MkBuilder
  */
 
 ( function () {
@@ -14,7 +14,7 @@
 
 	function getFilterElements() {
 		var filterSection =
-			document.querySelector( '.twork-doctor-search-filter-section' ) ||
+			document.querySelector( '.mk-doctor-search-filter-section' ) ||
 			document;
 		return {
 			searchInput: filterSection.querySelector( '#searchInput' ),
@@ -88,7 +88,7 @@
 
 	function initDoctorDirectorySections() {
 		var sections = document.querySelectorAll(
-			'.doctor-directory.twork-doctor-directory-section, .twork-doctor-directory-section'
+			'.doctor-directory.mk-doctor-directory-section, .mk-doctor-directory-section'
 		);
 		if ( ! sections.length ) return;
 
@@ -152,7 +152,7 @@
 		initDoctorDirectorySections();
 	}
 
-	window.TworkDoctorDirectorySection = {
+	window.MkDoctorDirectorySection = {
 		init: initDoctorDirectorySections,
 		version: '1.0.1',
 	};

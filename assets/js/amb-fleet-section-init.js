@@ -19,7 +19,7 @@
 
 		if ( prefersReducedMotion || ! ( 'IntersectionObserver' in window ) ) {
 			document
-				.querySelectorAll( '.twork-amb-fleet-section .amb-fleet-card' )
+				.querySelectorAll( '.mk-amb-fleet-section .amb-fleet-card' )
 				.forEach( ( card ) => {
 					card.style.opacity = '1';
 					card.style.transform = 'none';
@@ -29,13 +29,13 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-amb-fleet-section[data-animation="true"]'
+			'.mk-amb-fleet-section[data-animation="true"]'
 		);
 		if ( ! sections.length ) return;
 
 		sections.forEach( ( section ) => {
 			const cards = section.querySelectorAll(
-				'.amb-fleet-card.twork-amb-fleet-card'
+				'.amb-fleet-card.mk-amb-fleet-card'
 			);
 			const delay = parseInt( section.dataset.animationDelay, 10 ) || 100;
 			const type = section.dataset.animationType || 'fadeInUp';

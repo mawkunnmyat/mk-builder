@@ -7,11 +7,11 @@
 	 * using IntersectionObserver (no GSAP dependency).
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 */
 	const initLabHero = () => {
 		const sections = document.querySelectorAll(
-			'.twork-lab-hero-section[data-animation="true"]'
+			'.mk-lab-hero-section[data-animation="true"]'
 		);
 		if ( ! sections.length ) return;
 

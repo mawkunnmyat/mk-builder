@@ -6,7 +6,7 @@
 	 * Handles scroll animation for inquiry-wrapper (fade-up)
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 * @follows WordPress Coding Standards (WPCS)
 	 */
 	const prefersReducedMotion =
@@ -23,7 +23,7 @@
 
 		if ( prefersReducedMotion || ! ( 'IntersectionObserver' in window ) ) {
 			const wrappers = document.querySelectorAll(
-				'.twork-inquiry-form-section .inquiry-wrapper.fade-up'
+				'.mk-inquiry-form-section .inquiry-wrapper.fade-up'
 			);
 			wrappers.forEach( ( el ) => {
 				el.style.opacity = '1';
@@ -34,7 +34,7 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-inquiry-form-section'
+			'.mk-inquiry-form-section'
 		);
 
 		if ( sections.length === 0 ) {
@@ -98,7 +98,7 @@
 
 	window.addEventListener( 'load', initInquiryForm );
 
-	window.TworkInquiryForm = {
+	window.MkInquiryForm = {
 		init: initInquiryForm,
 		version: '1.0.1',
 	};

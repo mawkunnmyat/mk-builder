@@ -6,7 +6,7 @@
 	 * Handles scroll animations for testimonial cards
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 * @follows WordPress Coding Standards (WPCS)
 	 */
 	const prefersReducedMotion =
@@ -23,7 +23,7 @@
 
 		if ( prefersReducedMotion || ! ( 'IntersectionObserver' in window ) ) {
 			const allCards = document.querySelectorAll(
-				'.twork-testimonial-section .testimonial-card'
+				'.mk-testimonial-section .testimonial-card'
 			);
 			allCards.forEach( ( card ) => {
 				card.style.opacity = '1';
@@ -34,7 +34,7 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-testimonial-section'
+			'.mk-testimonial-section'
 		);
 
 		if ( sections.length === 0 ) {
@@ -132,7 +132,7 @@
 
 	window.addEventListener( 'load', initTestimonials );
 
-	window.TworkTestimonials = {
+	window.MkTestimonials = {
 		init: initTestimonials,
 		version: '1.0.1',
 	};

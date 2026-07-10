@@ -7,7 +7,7 @@
 	 * When enabled: elements start hidden, reveal on scroll. Fallback: reveal after 500ms if above fold.
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 */
 	const prefersReducedMotion =
 		window.matchMedia &&
@@ -22,7 +22,7 @@
 		initialized = true;
 
 		const blocks = document.querySelectorAll(
-			'.wp-block-twork-hero-new-section'
+			'.wp-block-mk-hero-new-section'
 		);
 
 		if ( ! blocks.length ) {
@@ -154,7 +154,7 @@
 								mutations[ i ].addedNodes[
 									j
 								].classList.contains(
-									'wp-block-twork-hero-new-section'
+									'wp-block-mk-hero-new-section'
 								)
 							)
 								hasNew = true;

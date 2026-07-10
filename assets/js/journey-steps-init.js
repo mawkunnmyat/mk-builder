@@ -6,7 +6,7 @@
 	 * Handles scroll animations and hover effects for step cards
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 * @follows WordPress Coding Standards (WPCS)
 	 */
 	const prefersReducedMotion =
@@ -23,7 +23,7 @@
 
 		if ( prefersReducedMotion || ! ( 'IntersectionObserver' in window ) ) {
 			const allCards = document.querySelectorAll(
-				'.twork-journey-steps-section .step-card, .twork-how-it-works-section .step-card'
+				'.mk-journey-steps-section .step-card, .mk-how-it-works-section .step-card'
 			);
 			allCards.forEach( ( card ) => {
 				card.style.opacity = '1';
@@ -34,7 +34,7 @@
 		}
 
 		const sections = document.querySelectorAll(
-			'.twork-journey-steps-section, .twork-how-it-works-section'
+			'.mk-journey-steps-section, .mk-how-it-works-section'
 		);
 
 		if ( sections.length === 0 ) {
@@ -132,7 +132,7 @@
 
 	window.addEventListener( 'load', initJourneySteps );
 
-	window.TworkJourneySteps = {
+	window.MkJourneySteps = {
 		init: initJourneySteps,
 		version: '1.0.1',
 	};

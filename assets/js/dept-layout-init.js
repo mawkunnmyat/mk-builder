@@ -6,10 +6,10 @@
 	 */
 	var initDeptLayout = function () {
 		var sections = document.querySelectorAll(
-			'.twork-dept-layout-section .content-section'
+			'.mk-dept-layout-section .content-section'
 		);
 		var navLinks = document.querySelectorAll(
-			'.twork-dept-layout-section .sidebar-nav a'
+			'.mk-dept-layout-section .sidebar-nav a'
 		);
 
 		if ( sections.length === 0 || navLinks.length === 0 ) return;

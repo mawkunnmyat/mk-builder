@@ -6,7 +6,7 @@
 	 * Handles scroll animations for benefit cards
 	 *
 	 * @since 1.0.0
-	 * @author Twork Builder
+	 * @author MK Builder
 	 */
 	const prefersReducedMotion =
 		window.matchMedia &&
@@ -22,7 +22,7 @@
 
 		if ( prefersReducedMotion || ! ( 'IntersectionObserver' in window ) ) {
 			const cards = document.querySelectorAll(
-				'.twork-benefits-section .benefit-card'
+				'.mk-benefits-section .benefit-card'
 			);
 			cards.forEach( ( card ) => {
 				card.style.opacity = '1';
@@ -32,7 +32,7 @@
 			return;
 		}
 
-		const sections = document.querySelectorAll( '.twork-benefits-section' );
+		const sections = document.querySelectorAll( '.mk-benefits-section' );
 
 		sections.forEach( ( section ) => {
 			const enabled = section.dataset.animation === 'true';

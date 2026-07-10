@@ -6,7 +6,7 @@
 ( function () {
 	'use strict';
 
-	var SECTION_SELECTOR = '.twork-neuro-centre-section';
+	var SECTION_SELECTOR = '.mk-neuro-centre-section';
 	var FAQ_ITEM_SELECTOR = '.faq-item';
 	var BTN_SELECTOR = '.faq-btn';
 	var CONTENT_SELECTOR = '.faq-content';
