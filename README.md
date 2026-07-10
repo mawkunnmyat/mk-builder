@@ -1,24 +1,28 @@
-# 🧱 Twork Builder
+# 🧱 MK Builder
 
-> **Professional WordPress Gutenberg Blocks Plugin** — purpose-built for the Twork Ecosystem  
+> **Professional WordPress Gutenberg Blocks Plugin** — purpose-built for the MK Ecosystem  
 > Enterprise-grade page building blocks for hospitals, clinics, corporate sites, and e-commerce.
 
 [![License: GPL v2 or later](https://img.shields.io/badge/License-GPL%20v2%20or%20later-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-[![GitHub](https://img.shields.io/badge/GitHub-mawkunnmyat%2Ftwork--builder-181717.svg)](https://github.com/mawkunnmyat/twork-builder)
+[![GitHub](https://img.shields.io/badge/GitHub-mawkunnmyat%2Fmk--builder-181717.svg)](https://github.com/mawkunnmyat/mk-builder)
 [![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-blue.svg)](https://wordpress.org/)
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg)](https://www.php.net/)
 [![Node.js](https://img.shields.io/badge/Node.js-18.0%2B-339933.svg)](https://nodejs.org/)
 [![Gutenberg](https://img.shields.io/badge/Gutenberg-Block%20Editor-0073aa.svg)](https://developer.wordpress.org/block-editor/)
 [![Blocks](https://img.shields.io/badge/Blocks-270%2B-orange.svg)](#-block-catalog)
+[![Version](https://img.shields.io/badge/Version-1.0.0-green.svg)](https://github.com/mawkunnmyat/mk-builder/releases)
+[![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/mawkunnmyat/mk-builder)
 
 ---
 
 ## 📋 Table of Contents
 
+- [What's New](#-whats-new)
 - [Overview](#-overview)
 - [Key Features](#-key-features)
 - [Requirements](#-requirements)
 - [Quick Start](#-quick-start)
+- [Migration from Twork Builder](#-migration-from-twork-builder)
 - [Project Structure](#-project-structure)
 - [Block Catalog](#-block-catalog)
 - [Brand Page Blocks](#-brand-page-blocks-industry-agnostic)
@@ -29,17 +33,36 @@
 - [PHP Render Callbacks](#-php-render-callbacks)
 - [Frontend Assets](#-frontend-assets)
 - [HTML Page Templates](#-html-page-templates)
+- [Security](#-security)
 - [Deployment](#-deployment)
 - [Troubleshooting](#-troubleshooting)
 - [Contributing](#-contributing)
 - [Commit Convention](#-commit-convention)
+- [Changelog](#-changelog)
 - [License & Support](#-license--support)
+
+---
+
+## 🆕 What's New
+
+### ✨ July 11, 2026 — MK Builder Rebrand Release
+
+| Area | Update |
+|------|--------|
+| 🏷️ **Plugin Identity** | Official rename from `twork-builder` → **`mk-builder`** |
+| 📦 **Bootstrap** | New `mk-builder.php` entry point with `MK_BUILDER_*` constants |
+| 🐘 **PHP Classes** | All `class-twork-*` render callbacks migrated to `class-mk-*` |
+| 🧱 **Block Namespace** | Legacy `twork/*` blocks renamed to `mk/*` where applicable |
+| 🔧 **Tooling** | Added `scripts/rebrand-twork-to-mk.mjs` and `scripts/wp-migrate-block-namespace.sh` |
+| 📚 **Documentation** | Comprehensive README, migration guide, and commit conventions |
+
+> 🔔 **Upgrading from Twork Builder?** See the [Migration from Twork Builder](#-migration-from-twork-builder) section below.
 
 ---
 
 ## 🌟 Overview
 
-**Twork Builder** is a production-ready WordPress plugin that delivers **270+ custom Gutenberg blocks** for building modern, responsive websites within the Twork Ecosystem. It powers hospital portals, corporate marketing sites, pharmacy shops, CSR pages, food & retail brand sites, and specialty department layouts — all editable through the native WordPress Block Editor.
+**MK Builder** is a production-ready WordPress plugin that delivers **270+ custom Gutenberg blocks** for building modern, responsive websites within the MK Ecosystem. It powers hospital portals, corporate marketing sites, pharmacy shops, CSR pages, food & retail brand sites, and specialty department layouts — all editable through the native WordPress Block Editor.
 
 Built with **ES6+**, **SCSS**, **@wordpress/scripts**, and **WordPress best practices**, the plugin is designed for:
 
@@ -91,11 +114,11 @@ Built with **ES6+**, **SCSS**, **@wordpress/scripts**, and **WordPress best prac
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/mawkunnmyat/twork-builder.git
-cd twork-builder
+git clone https://github.com/mawkunnmyat/mk-builder.git
+cd mk-builder
 ```
 
-> 🔗 **Upstream mirror:** [tworksystem/twork-builder](https://github.com/tworksystem/twork-builder) — official T-Work System organization repository.
+> 🔗 **Repository:** [mawkunnmyat/mk-builder](https://github.com/mawkunnmyat/mk-builder) — official MK Builder repository.
 
 ### 2️⃣ Install Dependencies
 
@@ -130,26 +153,82 @@ Builds minified, optimized assets into `build/`. Uses **8 GB Node heap** by defa
 npm run plugin-zip
 ```
 
-Generates `../twork-builder.zip` — ready for WordPress upload.
+Generates `../mk-builder.zip` — ready for WordPress upload.
 
 ### 6️⃣ Install in WordPress
 
 **Via Admin Dashboard:**
 
-`Plugins → Add New → Upload Plugin → twork-builder.zip → Activate`
+`Plugins → Add New → Upload Plugin → mk-builder.zip → Activate`
 
 **Via WP-CLI:**
 
 ```bash
-wp plugin install twork-builder.zip --activate
+wp plugin install mk-builder.zip --activate
+wp plugin activate mk-builder
 ```
+
+### 7️⃣ Verify Installation
+
+```bash
+wp plugin list | grep mk-builder
+wp block list --format=table | grep mk/
+```
+
+You should see **MK Builder** active and `mk/*` blocks registered in the block list.
+
+---
+
+## 🔄 Migration from Twork Builder
+
+If you are upgrading from the legacy **Twork Builder** plugin, follow this checklist to avoid broken layouts or missing blocks.
+
+### ⚠️ Before You Begin
+
+1. 💾 **Back up** your database and `wp-content/plugins/` directory
+2. 🧪 **Test on staging** before applying to production
+3. 📸 **Export** critical pages as reusable block patterns (optional safety net)
+
+### 🛠️ Step-by-Step Migration
+
+| Step | Action | Command / Location |
+|------|--------|-------------------|
+| 1️⃣ | Deactivate old plugin | `wp plugin deactivate twork-builder` |
+| 2️⃣ | Install MK Builder | Upload `mk-builder.zip` or clone this repo |
+| 3️⃣ | Run block namespace migration | `bash scripts/wp-migrate-block-namespace.sh` |
+| 4️⃣ | Activate MK Builder | `wp plugin activate mk-builder` |
+| 5️⃣ | Clear all caches | Object cache, page cache, CDN |
+| 6️⃣ | Re-save permalinks | `Settings → Permalinks → Save Changes` |
+| 7️⃣ | Visual QA | Compare editor + frontend for every critical page |
+
+### 🔁 Namespace Mapping (Legacy → MK)
+
+| Legacy (Twork) | New (MK Builder) |
+|----------------|------------------|
+| `twork-builder.php` | `mk-builder.php` |
+| `TWORK_BUILDER_*` constants | `MK_BUILDER_*` constants |
+| `class-twork-award.php` | `class-mk-award.php` |
+| `twork/header` block | `mk/mk-header` block |
+| `twork/nav-item` block | `mk/mk-nav-item` block |
+| `@twork-builder/editor-utils` | `@mk-builder/editor-utils` |
+
+### 🤖 Automated Rebrand Script
+
+For developers migrating a fork or custom branch:
+
+```bash
+node scripts/rebrand-twork-to-mk.mjs
+npm run build
+```
+
+> ⚡ The script performs ordered, safe replacements while preserving `tworksystem.com` domain references.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-twork-builder/
+mk-builder/
 ├── 📂 src/                          # Block source (ES6, SCSS, block.json)
 │   ├── agrezer-*/                   # Agrezer / Avocado brand blocks
 │   ├── health-check-*/              # Health check package blocks
@@ -180,18 +259,18 @@ twork-builder/
 │   ├── images/                      # Static image assets
 │   └── js/                          # Frontend init scripts (conditionally enqueued)
 ├── 📂 includes/                     # PHP classes & render callbacks
-│   ├── class-twork-award.php
-│   ├── class-twork-blog-section.php
-│   ├── class-twork-csr-initiative.php
-│   ├── class-twork-em-units-section.php
-│   ├── class-twork-ph-shop-category-section.php
-│   ├── class-twork-ph-popular-products-section.php
-│   ├── class-twork-agrezer-shop-grid-section.php
-│   ├── class-twork-phy-facilities-section.php
-│   └── class-twork-updates-section.php
+│   ├── class-mk-award.php
+│   ├── class-mk-blog-section.php
+│   ├── class-mk-csr-initiative.php
+│   ├── class-mk-em-units-section.php
+│   ├── class-mk-ph-shop-category-section.php
+│   ├── class-mk-ph-popular-products-section.php
+│   ├── class-mk-agrezer-shop-grid-section.php
+│   ├── class-mk-phy-facilities-section.php
+│   └── class-mk-updates-section.php
 ├── 📂 scripts/                      # Dev & migration utilities
 ├── 📄 *.html                        # Static page layout references
-├── 📄 twork-builder.php             # Main plugin bootstrap
+├── 📄 mk-builder.php             # Main plugin bootstrap
 ├── 📄 webpack.config.js             # Custom Webpack / Sass config
 ├── 📄 create-zip.sh                 # Production ZIP creator
 ├── 📄 package.json
@@ -202,7 +281,7 @@ twork-builder/
 
 ## 🧩 Block Catalog
 
-Blocks are registered automatically from `build/` and appear under **"Twork Builder Blocks"** in the Gutenberg inserter.
+Blocks are registered automatically from `build/` and appear under **"MK Builder Blocks"** in the Gutenberg inserter.
 
 ### 🥑 Agrezer / Avocado Brand
 
@@ -245,57 +324,57 @@ accreditation-section · mission-vision-grid · team-members-grid · …
 Containers, page heroes, timelines, story grids, feature sections, navigation, and shared structural blocks.
 
 ```
-container · page-hero · timeline · story-grid · features-section · twork-nav-item · …
+container · page-hero · timeline · story-grid · features-section · mk-nav-item · …
 ```
 
 ---
 
 ## 🏪 Brand Page Blocks (Industry-Agnostic)
 
-A complete **home-page block suite** with sector-neutral naming (`twork/*`). Designed for food, retail, healthcare, and corporate brand sites — originally scaffolded from the **Shweghee / Shwe Myanmar** reference implementation.
+A complete **home-page block suite** with sector-neutral naming (`mk/*`). Designed for food, retail, healthcare, and corporate brand sites — originally scaffolded from the **Shweghee / Shwe Myanmar** reference implementation.
 
 ### 🧭 Navigation & Shell
 
 | Block | Slug | Description |
 |-------|------|-------------|
-| 🏷️ Brand Header | `twork/brand-header` | Logo, hotline, search toggle, sticky header, mobile menu |
-| 🔗 Brand Nav Item | `twork/brand-nav-item` | Child nav link with optional dropdown |
-| 🦶 Brand Footer | `twork/brand-footer` | Multi-column footer shell |
-| 📇 Footer Info Card | `twork/brand-footer-info-card` | Contact / address info card child |
-| 📂 Footer Column | `twork/brand-footer-column` | Link list column child |
+| 🏷️ Brand Header | `mk/brand-header` | Logo, hotline, search toggle, sticky header, mobile menu |
+| 🔗 Brand Nav Item | `mk/brand-nav-item` | Child nav link with optional dropdown |
+| 🦶 Brand Footer | `mk/brand-footer` | Multi-column footer shell |
+| 📇 Footer Info Card | `mk/brand-footer-info-card` | Contact / address info card child |
+| 📂 Footer Column | `mk/brand-footer-column` | Link list column child |
 
 ### 🎠 Hero & Carousels
 
 | Block | Slug | Description |
 |-------|------|-------------|
-| 🖼️ Hero Banner Carousel | `twork/hero-banner-carousel` | Fade hero slider with autoplay, arrows, and dots |
-| 🎞️ Hero Banner Slide | `twork/hero-banner-slide` | Single hero slide (eyebrow, title, CTA, image) |
-| 🃏 Image Card Carousel | `twork/image-card-carousel` | Services / features horizontal carousel |
-| 🃏 Image Card Slide | `twork/image-card-slide` | Individual carousel card child |
+| 🖼️ Hero Banner Carousel | `mk/hero-banner-carousel` | Fade hero slider with autoplay, arrows, and dots |
+| 🎞️ Hero Banner Slide | `mk/hero-banner-slide` | Single hero slide (eyebrow, title, CTA, image) |
+| 🃏 Image Card Carousel | `mk/image-card-carousel` | Services / features horizontal carousel |
+| 🃏 Image Card Slide | `mk/image-card-slide` | Individual carousel card child |
 
 ### 📊 Content Grids & Social Proof
 
 | Block | Slug | Description |
 |-------|------|-------------|
-| 🔢 Numbered Features Grid | `twork/numbered-features-grid` | "Why choose us" numbered feature grid |
-| 🔢 Numbered Feature Item | `twork/numbered-feature-item` | Single numbered feature child |
-| 🗂️ Category Card Grid | `twork/category-card-grid` | Product / service category card grid |
-| 🗂️ Category Card | `twork/category-card` | Individual category card child |
-| 🏢 Logo Showcase Section | `twork/logo-showcase-section` | Partner / certification logo strip |
-| 🏢 Logo Showcase Item | `twork/logo-showcase-item` | Single logo child |
-| 📰 News Card Grid | `twork/news-card-grid` | Blog / news article card grid |
-| 📰 News Card | `twork/news-card` | Single news card child |
-| ⭐ Review Carousel | `twork/review-carousel` | Customer testimonial carousel |
-| ⭐ Review Card | `twork/review-card` | Single review card child |
+| 🔢 Numbered Features Grid | `mk/numbered-features-grid` | "Why choose us" numbered feature grid |
+| 🔢 Numbered Feature Item | `mk/numbered-feature-item` | Single numbered feature child |
+| 🗂️ Category Card Grid | `mk/category-card-grid` | Product / service category card grid |
+| 🗂️ Category Card | `mk/category-card` | Individual category card child |
+| 🏢 Logo Showcase Section | `mk/logo-showcase-section` | Partner / certification logo strip |
+| 🏢 Logo Showcase Item | `mk/logo-showcase-item` | Single logo child |
+| 📰 News Card Grid | `mk/news-card-grid` | Blog / news article card grid |
+| 📰 News Card | `mk/news-card` | Single news card child |
+| ⭐ Review Carousel | `mk/review-carousel` | Customer testimonial carousel |
+| ⭐ Review Card | `mk/review-card` | Single review card child |
 
 ### 🎯 Conversion & Engagement
 
 | Block | Slug | Description |
 |-------|------|-------------|
-| 📱 Split Promo Section | `twork/split-promo-section` | App download / split-layout CTA with features |
-| ❓ FAQ Accordion Section | `twork/faq-accordion-section` | Accessible FAQ accordion with FAQPage schema |
-| ❓ FAQ Accordion Item | `twork/faq-accordion-item` | Single FAQ question/answer child |
-| ✉️ Subscribe Bar | `twork/subscribe-bar` | Email newsletter strip with honeypot anti-spam |
+| 📱 Split Promo Section | `mk/split-promo-section` | App download / split-layout CTA with features |
+| ❓ FAQ Accordion Section | `mk/faq-accordion-section` | Accessible FAQ accordion with FAQPage schema |
+| ❓ FAQ Accordion Item | `mk/faq-accordion-item` | Single FAQ question/answer child |
+| ✉️ Subscribe Bar | `mk/subscribe-bar` | Email newsletter strip with honeypot anti-spam |
 
 ### 🏠 Recommended Home Page Stack
 
@@ -433,23 +512,23 @@ Dynamic blocks with server-side rendering live in `includes/`:
 
 | Class | Purpose |
 |-------|---------|
-| `class-twork-award.php` | 🏆 Award custom post type & block support |
-| `class-twork-blog-section.php` | 📰 Blog layout with featured posts, grid, sidebar |
-| `class-twork-csr-initiative.php` | 🌱 CSR initiative post meta |
-| `class-twork-em-units-section.php` | 🚑 Emergency units from posts |
-| `class-twork-ph-shop-category-section.php` | 🛒 Pharmacy categories (WooCommerce) |
-| `class-twork-ph-popular-products-section.php` | ⭐ Popular products (WooCommerce) |
-| `class-twork-agrezer-shop-grid-section.php` | 🥑 Agrezer shop grid layout |
-| `class-twork-phy-facilities-section.php` | 💪 Physio facilities from posts |
-| `class-twork-updates-section.php` | 📢 Hospital news & updates section |
+| `class-mk-award.php` | 🏆 Award custom post type & block support |
+| `class-mk-blog-section.php` | 📰 Blog layout with featured posts, grid, sidebar |
+| `class-mk-csr-initiative.php` | 🌱 CSR initiative post meta |
+| `class-mk-em-units-section.php` | 🚑 Emergency units from posts |
+| `class-mk-ph-shop-category-section.php` | 🛒 Pharmacy categories (WooCommerce) |
+| `class-mk-ph-popular-products-section.php` | ⭐ Popular products (WooCommerce) |
+| `class-mk-agrezer-shop-grid-section.php` | 🥑 Agrezer shop grid layout |
+| `class-mk-phy-facilities-section.php` | 💪 Physio facilities from posts |
+| `class-mk-updates-section.php` | 📢 Hospital news & updates section |
 
-Blocks are auto-registered by scanning `build/*/block.json` in `twork-builder.php`.
+Blocks are auto-registered by scanning `build/*/block.json` in `mk-builder.php`.
 
 ---
 
 ## ⚡ Frontend Assets
 
-Frontend JavaScript is **registered globally** and **enqueued conditionally** per page in `twork-builder.php`:
+Frontend JavaScript is **registered globally** and **enqueued conditionally** per page in `mk-builder.php`:
 
 ```
 assets/js/
@@ -483,6 +562,30 @@ health-check-up.html · neuro-centre.html · csr.html · maintenance.html · …
 
 ---
 
+## 🔒 Security
+
+MK Builder follows WordPress security best practices across PHP, JavaScript, and the block editor.
+
+| Practice | Implementation |
+|----------|----------------|
+| 🛡️ **Direct Access Guard** | `ABSPATH` check in all PHP entry points |
+| 🧼 **Output Escaping** | `esc_html()`, `esc_attr()`, `esc_url()` in render callbacks |
+| 🔐 **Input Sanitization** | `sanitize_*` functions for all user-facing attributes |
+| 🍯 **Anti-Spam** | Honeypot field on `mk/subscribe-bar` block |
+| ♿ **Accessible Markup** | ARIA roles on FAQ accordion, keyboard-navigable carousels |
+| 📦 **Scoped Assets** | Conditional script enqueue — no global pollution |
+| 🚫 **No Secrets in VCS** | `.env`, SSH keys, and credentials excluded from repository |
+
+### 🧪 Security Checklist for Contributors
+
+- [ ] Never commit API keys, database credentials, or `.env` files
+- [ ] Sanitize all `block.json` attributes before rendering in PHP
+- [ ] Use WordPress nonces for any custom AJAX endpoints
+- [ ] Validate and escape all dynamic HTML in `render.php` files
+- [ ] Run `npm run lint:js` before opening a pull request
+
+---
+
 ## 🚢 Deployment
 
 ### Development / Staging
@@ -496,7 +599,7 @@ npm run build
 
 ```bash
 npm run plugin-zip
-# Upload ../twork-builder.zip to production WordPress
+# Upload ../mk-builder.zip to production WordPress
 ```
 
 ### Checklist Before Release
@@ -564,14 +667,14 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 
 | Type | When to Use | Example |
 |------|-------------|---------|
-| `feat` | ✨ New feature or enhancement | `feat: 07062026 - add brand page Gutenberg block suite for retail sites` |
-| `fix` | 🐛 Bug fix | `fix: 07062026 - restore FAQ accordion keyboard navigation on mobile` |
-| `docs` | 📚 Documentation only | `docs: 07062026 - expand README with brand blocks catalog and shweghee guide` |
-| `refactor` | ♻️ Code restructure (no behavior change) | `refactor: 24052026 - modernize stats section spacing architecture` |
-| `style` | 💅 Formatting / SCSS-only (no logic change) | `style: 24052026 - normalize hero section typography tokens` |
-| `chore` | 🔧 Tooling, deps, config | `chore: 24052026 - bump @wordpress/scripts to v27` |
-| `perf` | ⚡ Performance improvement | `perf: 24052026 - defer non-critical frontend init scripts` |
-| `test` | 🧪 Tests | `test: 24052026 - add block registration smoke tests` |
+| `feat` | ✨ New feature or enhancement | `feat: 11072026 - add brand page Gutenberg block suite for retail sites` |
+| `fix` | 🐛 Bug fix | `fix: 11072026 - restore FAQ accordion keyboard navigation on mobile` |
+| `docs` | 📚 Documentation only | `docs: 11072026 - expand README with brand blocks catalog and shweghee guide` |
+| `refactor` | ♻️ Code restructure (no behavior change) | `refactor: 11072026 - migrate plugin namespace from twork to mk` |
+| `style` | 💅 Formatting / SCSS-only (no logic change) | `style: 11072026 - normalize hero section typography tokens` |
+| `chore` | 🔧 Tooling, deps, config | `chore: 11072026 - bump @wordpress/scripts to v27` |
+| `perf` | ⚡ Performance improvement | `perf: 11072026 - defer non-critical frontend init scripts` |
+| `test` | 🧪 Tests | `test: 11072026 - add block registration smoke tests` |
 
 **Rules:**
 
@@ -579,6 +682,25 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 - ✅ Use present tense, imperative mood ("add", "fix", "update" — not "added", "fixed")
 - ✅ Keep the first line under 72 characters when possible
 - ✅ Add body paragraphs for complex changes if needed
+
+---
+
+## 📅 Changelog
+
+### 🚀 `1.0.0` — July 11, 2026
+
+- 🏷️ **Rebrand:** Full migration from Twork Builder to MK Builder
+- 📦 **Plugin:** New `mk-builder.php` bootstrap with `MK_BUILDER_*` constants
+- 🐘 **PHP:** Renamed all `class-twork-*` to `class-mk-*` render callbacks
+- 🧱 **Blocks:** Updated 270+ block namespaces, attributes, and asset handles
+- 🏪 **Brand Suite:** Industry-agnostic `mk/*` home page block stack
+- 🧈 **Shweghee:** Static reference site for design-to-block migration QA
+- 🔧 **Scripts:** Rebrand automation (`rebrand-twork-to-mk.mjs`) and WP migration shell script
+- 📚 **Docs:** Professional README with migration guide, security section, and changelog
+
+### 📦 Earlier Releases
+
+See [Git commit history](https://github.com/mawkunnmyat/mk-builder/commits/main) for the full development timeline including brand blocks, Agrezer suite, and hospital/clinical block additions.
 
 ---
 
@@ -590,27 +712,26 @@ This project is licensed under the **GPL v2 or later** — see [LICENSE](LICENSE
 
 ### Support
 
-**T-Work System Co., Ltd.**
+**Maw Kunn**
 
-- 🌐 **Website:** [https://www.tworksystem.com](https://www.tworksystem.com)
-- 🔗 **Plugin URI:** [https://www.tworksystem.com/twork-builder](https://www.tworksystem.com/twork-builder)
-- 🐙 **Primary Repo:** [https://github.com/mawkunnmyat/twork-builder](https://github.com/mawkunnmyat/twork-builder)
-- 🏢 **Org Repo:** [https://github.com/tworksystem/twork-builder](https://github.com/tworksystem/twork-builder)
+- 🐙 **GitHub:** [https://github.com/mawkunnmyat](https://github.com/mawkunnmyat)
+- 🔗 **Plugin URI:** [https://github.com/mawkunnmyat/mk-builder](https://github.com/mawkunnmyat/mk-builder)
+- 📦 **Repository:** [https://github.com/mawkunnmyat/mk-builder](https://github.com/mawkunnmyat/mk-builder)
 
 ### Author & Maintainer
 
 **Maw Kunn Myat** — [@mawkunnmyat](https://github.com/mawkunnmyat)  
 📧 [mapoeeiphyu2017.miitinternship@gmail.com](mailto:mapoeeiphyu2017.miitinternship@gmail.com)  
-💼 Principal Developer — T-Work System Co., Ltd.
+💼 Principal Developer — Maw Kunn
 
 ---
 
 <div align="center">
 
-**🏢 T-Work System Co., Ltd.**
+**Maw Kunn**
 
-© 2026 T-Work System Co., Ltd. All rights reserved.
+© 2026 Maw Kunn. All rights reserved.
 
-*Built with ❤️ for the Twork Ecosystem*
+*Built with ❤️ for the MK Ecosystem*
 
 </div>

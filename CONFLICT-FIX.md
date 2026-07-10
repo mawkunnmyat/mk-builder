@@ -1,7 +1,7 @@
 # Plugin Conflict Resolution
 
 ## Issue
-When the twork-builder plugin is activated, the home page's Swiper slider stops working.
+When the mk-builder plugin is activated, the home page's Swiper slider stops working.
 
 ## Root Cause
 The plugin's `slider-init.js` was targeting generic classes (`.hero-slider`, `.swiper-slide`) that are also used by the home page's Swiper implementation, causing conflicts.
@@ -10,14 +10,14 @@ The plugin's `slider-init.js` was targeting generic classes (`.hero-slider`, `.s
 Updated `slider-init.js` to:
 
 1. **Only target plugin-specific classes:**
-   - `.twork-hero-slider` (plugin-specific)
-   - `.wp-block-twork-hero-slider` (WordPress block class)
-   - `[data-twork-slider="true"]` (data attribute selector)
+   - `.mk-hero-slider` (plugin-specific)
+   - `.wp-block-mk-hero-slider` (WordPress block class)
+   - `[data-mk-slider="true"]` (data attribute selector)
    - Removed: `.hero-slider` (generic, used by home page)
 
 2. **Only target plugin-specific slide classes:**
-   - `.twork-hero-slide` (plugin-specific)
-   - `.twork-slide` (plugin-specific)
+   - `.mk-hero-slide` (plugin-specific)
+   - `.mk-slide` (plugin-specific)
    - Removed: `.swiper-slide` (generic, used by Swiper)
 
 3. **Added Swiper conflict detection:**
