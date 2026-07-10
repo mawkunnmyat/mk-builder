@@ -1,5 +1,5 @@
 /**
- * Migrate Agrezer-branded blocks to structural twork/* blocks.
+ * Migrate Agrezer-branded blocks to structural mk/* blocks.
  *
  * Strategy:
  * - Copy existing src/agrezer-* directories into src/deprecated/<agrezer-dir>/ (keeps old block names working).
@@ -22,202 +22,202 @@ const deprecatedRoot = path.join(srcDir, 'deprecated');
 
 /** @type {Record<string,string>} */
 const nameMap = {
-	'twork/agrezer-about-feature-item': 'twork/feature-item',
-	'twork/agrezer-about-features-grid': 'twork/features-grid',
-	'twork/agrezer-about-image-card': 'twork/image-card',
-	'twork/agrezer-about-images-grid': 'twork/images-grid',
-	'twork/agrezer-about-intro-feature': 'twork/intro-feature',
-	'twork/agrezer-about-intro-section': 'twork/intro-section',
-	'twork/agrezer-about-section': 'twork/info-section',
-	'twork/agrezer-blog-section': 'twork/posts-grid',
-	'twork/agrezer-contact-card-item': 'twork/contact-card',
-	'twork/agrezer-contact-cards': 'twork/contact-cards',
-	'twork/agrezer-contact-map': 'twork/contact-map',
-	'twork/agrezer-greener-card-item': 'twork/image-link-card',
-	'twork/agrezer-greener-cards-row': 'twork/cards-row',
-	'twork/agrezer-greener-section': 'twork/highlights-section',
-	'twork/agrezer-greener-stat-item': 'twork/stat-item',
-	'twork/agrezer-greener-stats-row': 'twork/stats-row',
-	'twork/agrezer-hero-feature-item': 'twork/hero-feature',
-	'twork/agrezer-hero-section': 'twork/hero-section',
-	'twork/agrezer-page-header-section': 'twork/page-header',
-	'twork/agrezer-partners-item': 'twork/partner-item',
-	'twork/agrezer-partners-section': 'twork/partners',
-	'twork/agrezer-process-center': 'twork/process-center',
-	'twork/agrezer-process-section': 'twork/process',
-	'twork/agrezer-process-step': 'twork/process-step',
-	'twork/agrezer-shop-grid-section': 'twork/products-grid',
-	'twork/agrezer-stats-card': 'twork/stat-card',
-	'twork/agrezer-stats-column': 'twork/stats-column',
-	'twork/agrezer-stats-cta': 'twork/cta-block',
-	'twork/agrezer-stats-section': 'twork/stats-section',
-	'twork/agrezer-team-card': 'twork/team-member',
-	'twork/agrezer-team-section': 'twork/team-section',
-	'twork/agrezer-testimonial-slide': 'twork/testimonial',
-	'twork/agrezer-testimonials-section': 'twork/testimonials',
-	'twork/agrezer-third-section': 'twork/cta-cards-section',
-	'twork/agrezer-third-section-card': 'twork/stat-image-card',
-	'twork/agrezer-voices-slide': 'twork/voice',
-	'twork/agrezer-voices-section': 'twork/voices',
-	'twork/agrezer-why-choose-point-item': 'twork/benefit-point',
-	'twork/agrezer-why-choose-section': 'twork/benefits-section',
+	'mk/agrezer-about-feature-item': 'mk/feature-item',
+	'mk/agrezer-about-features-grid': 'mk/features-grid',
+	'mk/agrezer-about-image-card': 'mk/image-card',
+	'mk/agrezer-about-images-grid': 'mk/images-grid',
+	'mk/agrezer-about-intro-feature': 'mk/intro-feature',
+	'mk/agrezer-about-intro-section': 'mk/intro-section',
+	'mk/agrezer-about-section': 'mk/info-section',
+	'mk/agrezer-blog-section': 'mk/posts-grid',
+	'mk/agrezer-contact-card-item': 'mk/contact-card',
+	'mk/agrezer-contact-cards': 'mk/contact-cards',
+	'mk/agrezer-contact-map': 'mk/contact-map',
+	'mk/agrezer-greener-card-item': 'mk/image-link-card',
+	'mk/agrezer-greener-cards-row': 'mk/cards-row',
+	'mk/agrezer-greener-section': 'mk/highlights-section',
+	'mk/agrezer-greener-stat-item': 'mk/stat-item',
+	'mk/agrezer-greener-stats-row': 'mk/stats-row',
+	'mk/agrezer-hero-feature-item': 'mk/hero-feature',
+	'mk/agrezer-hero-section': 'mk/hero-section',
+	'mk/agrezer-page-header-section': 'mk/page-header',
+	'mk/agrezer-partners-item': 'mk/partner-item',
+	'mk/agrezer-partners-section': 'mk/partners',
+	'mk/agrezer-process-center': 'mk/process-center',
+	'mk/agrezer-process-section': 'mk/process',
+	'mk/agrezer-process-step': 'mk/process-step',
+	'mk/agrezer-shop-grid-section': 'mk/products-grid',
+	'mk/agrezer-stats-card': 'mk/stat-card',
+	'mk/agrezer-stats-column': 'mk/stats-column',
+	'mk/agrezer-stats-cta': 'mk/cta-block',
+	'mk/agrezer-stats-section': 'mk/stats-section',
+	'mk/agrezer-team-card': 'mk/team-member',
+	'mk/agrezer-team-section': 'mk/team-section',
+	'mk/agrezer-testimonial-slide': 'mk/testimonial',
+	'mk/agrezer-testimonials-section': 'mk/testimonials',
+	'mk/agrezer-third-section': 'mk/cta-cards-section',
+	'mk/agrezer-third-section-card': 'mk/stat-image-card',
+	'mk/agrezer-voices-slide': 'mk/voice',
+	'mk/agrezer-voices-section': 'mk/voices',
+	'mk/agrezer-why-choose-point-item': 'mk/benefit-point',
+	'mk/agrezer-why-choose-section': 'mk/benefits-section',
 };
 
 /** @type {Record<string,{title:string,description:string,keywords?:string[]}>} */
 const meta = {
-	'twork/feature-item': {
+	'mk/feature-item': {
 		title: 'Feature Item',
 		description: 'Single feature column with icon, title, and description.',
 	},
-	'twork/features-grid': {
+	'mk/features-grid': {
 		title: 'Features Grid',
 		description: 'Grid container for feature items.',
 	},
-	'twork/image-card': {
+	'mk/image-card': {
 		title: 'Image Card',
 		description: 'Image card with overlay text and optional button.',
 	},
-	'twork/images-grid': {
+	'mk/images-grid': {
 		title: 'Images Grid',
 		description: 'Grid container for image cards.',
 	},
-	'twork/intro-feature': {
+	'mk/intro-feature': {
 		title: 'Intro Feature',
 		description: 'Small feature label (intro list item).',
 	},
-	'twork/intro-section': {
+	'mk/intro-section': {
 		title: 'Intro Section',
 		description: 'Intro section with media and feature list.',
 	},
-	'twork/info-section': {
+	'mk/info-section': {
 		title: 'Info Section',
 		description: 'Section with heading and nested content blocks.',
 	},
-	'twork/posts-grid': {
+	'mk/posts-grid': {
 		title: 'Posts Grid',
 		description: 'Dynamic posts grid (server-rendered).',
 	},
-	'twork/contact-card': {
+	'mk/contact-card': {
 		title: 'Contact Card',
 		description: 'Single contact card item.',
 	},
-	'twork/contact-cards': {
+	'mk/contact-cards': {
 		title: 'Contact Cards',
 		description: 'Grid of contact card items.',
 	},
-	'twork/contact-map': {
+	'mk/contact-map': {
 		title: 'Contact Map',
 		description: 'Contact map / embed section.',
 	},
-	'twork/image-link-card': {
+	'mk/image-link-card': {
 		title: 'Image Link Card',
 		description: 'Image card with title and link.',
 	},
-	'twork/cards-row': {
+	'mk/cards-row': {
 		title: 'Cards Row',
 		description: 'Row/grid container for card items.',
 	},
-	'twork/highlights-section': {
+	'mk/highlights-section': {
 		title: 'Highlights Section',
 		description: 'Highlights section with stats row and cards row.',
 	},
-	'twork/stat-item': {
+	'mk/stat-item': {
 		title: 'Stat Item',
 		description: 'Single stat item with icon, title and description.',
 	},
-	'twork/stats-row': {
+	'mk/stats-row': {
 		title: 'Stats Row',
 		description: 'Row/grid container for stat items.',
 	},
-	'twork/hero-feature': {
+	'mk/hero-feature': {
 		title: 'Hero Feature',
 		description: 'Hero feature item.',
 	},
-	'twork/hero-section': {
+	'mk/hero-section': {
 		title: 'Hero Section',
 		description: 'Hero section with background and feature items.',
 	},
-	'twork/page-header': {
+	'mk/page-header': {
 		title: 'Page Header',
 		description: 'Page header with title, background, and breadcrumb.',
 	},
-	'twork/partner-item': {
+	'mk/partner-item': {
 		title: 'Partner Item',
 		description: 'Single partner/logo item.',
 	},
-	'twork/partners': {
+	'mk/partners': {
 		title: 'Partners',
 		description: 'Partners marquee/row section.',
 	},
-	'twork/process-center': {
+	'mk/process-center': {
 		title: 'Process Center',
 		description: 'Center element in a process timeline/steps layout.',
 	},
-	'twork/process': {
+	'mk/process': {
 		title: 'Process',
 		description: 'Process section with steps and center element.',
 	},
-	'twork/process-step': {
+	'mk/process-step': {
 		title: 'Process Step',
 		description: 'Process step item.',
 	},
-	'twork/products-grid': {
+	'mk/products-grid': {
 		title: 'Products Grid',
 		description: 'Dynamic products grid (server-rendered).',
 	},
-	'twork/stat-card': {
+	'mk/stat-card': {
 		title: 'Stat Card',
 		description: 'Statistic image card.',
 	},
-	'twork/stats-column': {
+	'mk/stats-column': {
 		title: 'Stats Column',
 		description: 'Column container for stats cards/CTA.',
 	},
-	'twork/cta-block': {
+	'mk/cta-block': {
 		title: 'CTA Block',
 		description: 'Call-to-action block.',
 	},
-	'twork/stats-section': {
+	'mk/stats-section': {
 		title: 'Stats Section',
 		description: 'Stats section with columns.',
 	},
-	'twork/team-member': {
+	'mk/team-member': {
 		title: 'Team Member',
 		description: 'Team member card.',
 	},
-	'twork/team-section': {
+	'mk/team-section': {
 		title: 'Team Section',
 		description: 'Team section with team member blocks.',
 	},
-	'twork/testimonial': {
+	'mk/testimonial': {
 		title: 'Testimonial',
 		description: 'Single testimonial slide/card.',
 	},
-	'twork/testimonials': {
+	'mk/testimonials': {
 		title: 'Testimonials',
 		description: 'Testimonials section/slider.',
 	},
-	'twork/cta-cards-section': {
+	'mk/cta-cards-section': {
 		title: 'CTA + Cards Section',
 		description: 'Intro row with optional CTA and stat-image cards.',
 	},
-	'twork/stat-image-card': {
+	'mk/stat-image-card': {
 		title: 'Stat Image Card',
 		description: 'Image card with stat and label overlay.',
 	},
-	'twork/voice': {
+	'mk/voice': {
 		title: 'Voice',
 		description: 'Single voice/testimonial slide.',
 	},
-	'twork/voices': {
+	'mk/voices': {
 		title: 'Voices',
 		description: 'Voices/testimonials section.',
 	},
-	'twork/benefit-point': {
+	'mk/benefit-point': {
 		title: 'Benefit Point',
 		description: 'Numbered point item positioned on a stage.',
 	},
-	'twork/benefits-section': {
+	'mk/benefits-section': {
 		title: 'Benefits Section',
 		description: 'Hero stage with positioned benefit points.',
 	},
@@ -277,7 +277,7 @@ function updateBlockJson(blockJsonPath) {
 	json.name = newName;
 	json.title = meta[newName]?.title ?? json.title;
 	json.description = meta[newName]?.description ?? json.description;
-	json.textdomain = 'twork-builder';
+	json.textdomain = 'mk-builder';
 	if (Array.isArray(json.keywords)) {
 		json.keywords = json.keywords.filter((k) => !String(k).includes('agrezer'));
 	}

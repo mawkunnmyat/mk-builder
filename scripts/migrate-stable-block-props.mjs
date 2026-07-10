@@ -231,9 +231,9 @@ function processFile( filePath ) {
 		return false;
 	}
 
-	if ( ! out.includes( "from '@twork-builder/editor-utils'" ) ) {
+	if ( ! out.includes( "from '@mk-builder/editor-utils'" ) ) {
 		const utilsImport =
-			"import { useStableBlockProps } from '@twork-builder/editor-utils';\n";
+			"import { useStableBlockProps } from '@mk-builder/editor-utils';\n";
 		const i18n = out.indexOf( "from '@wordpress/i18n'" );
 		if ( i18n !== -1 ) {
 			const lineEnd = out.indexOf( '\n', i18n );

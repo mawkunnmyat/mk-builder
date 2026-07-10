@@ -3,10 +3,10 @@
  *
  * - Targets: src/<agrezer-dir>/ (NOT src/deprecated/**)
  * - Rewrites:
- *   - CSS/JS class prefix "agrezer-" -> "twork-"
- *   - CSS var prefix "--agrezer-" -> "--twork-"
- *   - helper/editor class prefix "twork-agrezer-" -> "twork-"
- *   - section/editor class tokens "twork-agrezer" -> "twork"
+ *   - CSS/JS class prefix "agrezer-" -> "mk-"
+ *   - CSS var prefix "--agrezer-" -> "--mk-"
+ *   - helper/editor class prefix "mk-agrezer-" -> "mk-"
+ *   - section/editor class tokens "mk-agrezer" -> "mk"
  *
  * This keeps legacy content in src/deprecated/ intact for backward compatibility.
  */
@@ -36,12 +36,12 @@ function rewriteText(txt) {
 	return (
 		txt
 			// block wrapper/editor helper tokens
-			.replaceAll('twork-agrezer-', 'twork-')
-			.replaceAll('twork-agrezer', 'twork')
+			.replaceAll('mk-agrezer-', 'mk-')
+			.replaceAll('mk-agrezer', 'mk')
 			// CSS variables
-			.replaceAll('--agrezer-', '--twork-')
+			.replaceAll('--agrezer-', '--mk-')
 			// BEM base
-			.replaceAll('agrezer-', 'twork-')
+			.replaceAll('agrezer-', 'mk-')
 	);
 }
 
