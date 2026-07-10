@@ -112,6 +112,10 @@ if zip -r "$ZIP_FILE" "$PLUGIN_NAME/" \
   -x "$PLUGIN_NAME/yarn-error.log*" \
   -x "$PLUGIN_NAME/src/*" \
   -x "$PLUGIN_NAME/src/**/*" \
+  -x "$PLUGIN_NAME/*.html" \
+  -x "$PLUGIN_NAME/24/*" \
+  -x "$PLUGIN_NAME/shweghee/*" \
+  -x "$PLUGIN_NAME/shweghee/**/*" \
   -x "$PLUGIN_NAME/.wp-env.json" \
   -x "$PLUGIN_NAME/zip-plugin.sh" \
   -x "$PLUGIN_NAME/create-zip.sh" \

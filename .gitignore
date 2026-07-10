@@ -7,6 +7,18 @@ package-lock.json
 # Local experiments / scratch
 my-avocado/
 
+# Static HTML mockups (design QA only — not for version control)
+/*.html
+24/
+
+# IDE / agent workspace rules
+.cursorrules
+**/.cursorrules
+
+# Backup assets
+*.bak
+*.bak.*
+
 # Build outputs
 build/
 dist/

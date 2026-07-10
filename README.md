@@ -32,7 +32,6 @@
 - [Block Architecture](#-block-architecture)
 - [PHP Render Callbacks](#-php-render-callbacks)
 - [Frontend Assets](#-frontend-assets)
-- [HTML Page Templates](#-html-page-templates)
 - [Security](#-security)
 - [Deployment](#-deployment)
 - [Troubleshooting](#-troubleshooting)
@@ -269,8 +268,7 @@ mk-builder/
 │   ├── class-mk-phy-facilities-section.php
 │   └── class-mk-updates-section.php
 ├── 📂 scripts/                      # Dev & migration utilities
-├── 📄 *.html                        # Static page layout references
-├── 📄 mk-builder.php             # Main plugin bootstrap
+├── 📄 mk-builder.php                # Main plugin bootstrap
 ├── 📄 webpack.config.js             # Custom Webpack / Sass config
 ├── 📄 create-zip.sh                 # Production ZIP creator
 ├── 📄 package.json
@@ -549,19 +547,6 @@ assets/js/
 
 ---
 
-## 📄 HTML Page Templates
-
-Static HTML reference layouts are included at the project root for design QA and block composition planning:
-
-```
-home.html · about.html · contact.html · blog.html · pharmacy.html
-health-check-up.html · neuro-centre.html · csr.html · maintenance.html · …
-```
-
-> 🛠️ **`maintenance.html`** — Standalone Avocado-branded maintenance page for site downtime (no WordPress dependency).
-
----
-
 ## 🔒 Security
 
 MK Builder follows WordPress security best practices across PHP, JavaScript, and the block editor.
@@ -697,6 +682,7 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 - 🧈 **Shweghee:** Static reference site for design-to-block migration QA
 - 🔧 **Scripts:** Rebrand automation (`rebrand-twork-to-mk.mjs`) and WP migration shell script
 - 📚 **Docs:** Professional README with migration guide, security section, and changelog
+- 🧹 **Cleanup:** Removed 35 root-level static HTML mockups and non-essential assets from VCS
 
 ### 📦 Earlier Releases
 
