@@ -116,6 +116,7 @@ module.exports = {
 				__dirname,
 				'src/editor-utils/block-editor-performance.js'
 			),
+			'@mk-builder/shared': path.resolve( __dirname, 'src/shared' ),
 		},
 	},
 

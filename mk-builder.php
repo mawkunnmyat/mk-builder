@@ -111,6 +111,7 @@ function mk_builder_register_frontend_scripts()
         'mk-neuro-centre-init'         => 'neuro-centre-init.js',
         'mk-benefits-init'             => 'benefits-init.js',
         'mk-job-openings-init'         => 'job-openings-init.js',
+        'mk-help-section-init'         => 'help-section-init.js',
     );
 
     foreach ($scripts as $handle => $file) {
@@ -196,6 +197,8 @@ function mk_builder_enqueue_assets()
         // Benefits / jobs
         'mk/benefits-section'              => array('mk-benefits-init'),
         'mk/job-openings-section'          => array('mk-job-openings-init'),
+        'mk/help-section'                  => array('mk-help-section-init'),
+        'mk/jivaka-header-section'         => array('mk-jivaka-header-init'),
 
         // Testimonials
         'mk/testimonial-section'           => array('mk-testimonial-init'),
