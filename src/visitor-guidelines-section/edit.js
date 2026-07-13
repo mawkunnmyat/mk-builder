@@ -41,6 +41,12 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		sectionTitleFontSizeMobile,
 		sectionTitleFontWeight,
 		sectionTitleAlignment,
+		showSectionSubtitle,
+		sectionSubtitle,
+		sectionSubtitleColor,
+		sectionSubtitleFontSize,
+		sectionSubtitleFontSizeMobile,
+		sectionHeaderMaxWidth,
 		sectionHeaderMarginBottom,
 		containerMaxWidth,
 		containerPadding,
@@ -130,7 +136,8 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	const sectionHeaderStyle = {
 		textAlign: sectionTitleAlignment,
-		marginBottom: `${ sectionHeaderMarginBottom }px`,
+		maxWidth: `${ sectionHeaderMaxWidth }px`,
+		margin: `0 auto ${ sectionHeaderMarginBottom }px`,
 	};
 
 	const gridStyle = {
@@ -404,24 +411,118 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										} )
 									}
 								/>
+							</>
+						) }
+						<Divider />
+						<ToggleControl
+							label={ __(
+								'Show Section Subtitle',
+								'mk-builder'
+							) }
+							checked={ showSectionSubtitle }
+							onChange={ ( val ) =>
+								setAttributes( { showSectionSubtitle: val } )
+							}
+						/>
+
+						{ showSectionSubtitle && (
+							<>
+								<TextControl
+									label={ __(
+										'Subtitle Text',
+										'mk-builder'
+									) }
+									value={ sectionSubtitle }
+									onChange={ ( val ) =>
+										setAttributes( {
+											sectionSubtitle: val,
+										} )
+									}
+								/>
+
+								<PanelColorSettings
+									title={ __(
+										'Subtitle Color',
+										'mk-builder'
+									) }
+									colorSettings={ [
+										{
+											value: sectionSubtitleColor,
+											onChange: ( val ) =>
+												setAttributes( {
+													sectionSubtitleColor: val,
+												} ),
+											label: __(
+												'Subtitle Color',
+												'mk-builder'
+											),
+										},
+									] }
+								/>
 
 								<RangeControl
 									label={ __(
-										'Header Margin Bottom (px)',
+										'Font Size (rem)',
 										'mk-builder'
 									) }
-									value={ sectionHeaderMarginBottom }
+									value={ sectionSubtitleFontSize }
 									onChange={ ( val ) =>
 										setAttributes( {
-											sectionHeaderMarginBottom: val,
+											sectionSubtitleFontSize: val,
 										} )
 									}
-									min={ 20 }
-									max={ 80 }
-									step={ 5 }
+									min={ 0.8 }
+									max={ 2 }
+									step={ 0.05 }
+								/>
+
+								<RangeControl
+									label={ __(
+										'Font Size Mobile (rem)',
+										'mk-builder'
+									) }
+									value={ sectionSubtitleFontSizeMobile }
+									onChange={ ( val ) =>
+										setAttributes( {
+											sectionSubtitleFontSizeMobile: val,
+										} )
+									}
+									min={ 0.8 }
+									max={ 1.5 }
+									step={ 0.05 }
 								/>
 							</>
 						) }
+
+						<RangeControl
+							label={ __(
+								'Header Max Width (px)',
+								'mk-builder'
+							) }
+							value={ sectionHeaderMaxWidth }
+							onChange={ ( val ) =>
+								setAttributes( { sectionHeaderMaxWidth: val } )
+							}
+							min={ 400 }
+							max={ 900 }
+							step={ 10 }
+						/>
+
+						<RangeControl
+							label={ __(
+								'Header Margin Bottom (px)',
+								'mk-builder'
+							) }
+							value={ sectionHeaderMarginBottom }
+							onChange={ ( val ) =>
+								setAttributes( {
+									sectionHeaderMarginBottom: val,
+								} )
+							}
+							min={ 20 }
+							max={ 80 }
+							step={ 5 }
+						/>
 					</PanelBody>
 
 					<PanelBody
@@ -679,28 +780,54 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				) }
 
 				<div className="jivaka-container" style={ containerStyle }>
-					{ showSectionTitle && (
+					{ ( showSectionTitle || showSectionSubtitle ) && (
 						<div
 							className="section-header fade-up"
 							style={ sectionHeaderStyle }
 						>
-							<RichText
-								tagName="h2"
-								value={ sectionTitle }
-								onChange={ ( val ) =>
-									setAttributes( { sectionTitle: val } )
-								}
-								placeholder={ __(
-									'Section Title...',
-									'mk-builder'
-								) }
-								style={ {
-									fontSize: `${ sectionTitleFontSize }rem`,
-									fontWeight: sectionTitleFontWeight,
-									color: sectionTitleColor,
-									margin: 0,
-								} }
-							/>
+							{ showSectionTitle && (
+								<RichText
+									tagName="h2"
+									className="section-title"
+									value={ sectionTitle }
+									onChange={ ( val ) =>
+										setAttributes( { sectionTitle: val } )
+									}
+									placeholder={ __(
+										'Section Title...',
+										'mk-builder'
+									) }
+									style={ {
+										fontSize: `${ sectionTitleFontSize }rem`,
+										fontWeight: sectionTitleFontWeight,
+										color: sectionTitleColor,
+										marginBottom: showSectionSubtitle
+											? '15px'
+											: '0',
+									} }
+								/>
+							) }
+							{ showSectionSubtitle && (
+								<RichText
+									tagName="p"
+									className="section-subtitle"
+									value={ sectionSubtitle }
+									onChange={ ( val ) =>
+										setAttributes( {
+											sectionSubtitle: val,
+										} )
+									}
+									placeholder={ __(
+										'Section Subtitle...',
+										'mk-builder'
+									) }
+									style={ {
+										fontSize: `${ sectionSubtitleFontSize }rem`,
+										color: sectionSubtitleColor,
+										margin: 0,
+									} }
+								/>
+							) }
 						</div>
 					) }
 
