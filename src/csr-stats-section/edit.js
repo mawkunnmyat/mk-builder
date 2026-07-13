@@ -4,6 +4,7 @@ import {
 	InnerBlocks,
 	InspectorControls,
 	PanelColorSettings,
+	useInnerBlocksProps,
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -13,13 +14,49 @@ import {
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
+const DEFAULT_ATTS = {
+	backgroundColor: '#f8f9fa',
+	paddingTop: 40,
+	paddingBottom: 40,
+	paddingHorizontal: 40,
+	columns: 4,
+	columnsTablet: 2,
+	columnsMobile: 1,
+	gap: 30,
+	borderRadius: 12,
+	boxShadow: true,
+	boxShadowColor: 'rgba(0, 0, 0, 0.08)',
+	boxShadowBlur: 30,
+	boxShadowSpread: 0,
+	boxShadowOffsetX: 0,
+	boxShadowOffsetY: 10,
+	sectionMaxWidth: 1100,
+	marginTop: -60,
+	containerMaxWidth: 1200,
+	containerPadding: 20,
+	animationOnScroll: true,
+	animationType: 'fadeInUp',
+	animationDelay: 100,
+};
+
+const ANIMATION_CLASS_MAP = {
+	fadeInUp: 'fade-up',
+	fadeIn: 'fade-in',
+	slideInLeft: 'slide-in-left',
+	slideInRight: 'slide-in-right',
+	zoomIn: 'zoom-in',
+};
+
 export default function Edit( { attributes, setAttributes, isSelected } ) {
+	const attrs = { ...DEFAULT_ATTS, ...attributes };
 	const {
 		backgroundColor,
 		paddingTop,
 		paddingBottom,
 		paddingHorizontal,
 		columns,
+		columnsTablet,
+		columnsMobile,
 		gap,
 		borderRadius,
 		boxShadow,
@@ -35,9 +72,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		animationOnScroll,
 		animationType,
 		animationDelay,
-	} = attributes;
+	} = attrs;
 
-	const ALLOWED_BLOCKS = [ 'mk/stat-item' ];
+	const ALLOWED_BLOCKS = [ 'mk/stat-item', 'mk/stat-item' ];
 	const TEMPLATE = [
 		[
 			'mk/stat-item',
@@ -67,6 +104,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				paddingTop: `${ paddingTop }px`,
 				paddingBottom: `${ paddingBottom }px`,
 				position: 'relative',
+				zIndex: 10,
+				isolation: 'isolate',
+				pointerEvents: 'auto',
 			},
 		} ),
 		[ paddingBottom, paddingTop ]
@@ -95,17 +135,43 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		zIndex: 5,
 	};
 
+	// Negative margin overlaps hero on frontend; keep editor clickable (no overlap).
+	const editorSectionStyle = {
+		...sectionStyle,
+		marginTop: '0px',
+	};
+
 	const gridStyle = {
 		display: 'grid',
 		gridTemplateColumns: `repeat(${ columns }, 1fr)`,
 		gap: `${ gap }px`,
 		textAlign: 'center',
+		'--csr-stats-columns': columns,
+		'--csr-stats-columns-tablet': columnsTablet,
+		'--csr-stats-columns-mobile': columnsMobile,
+		'--csr-stat-gap': `${ gap }px`,
 	};
+
+	const animationClass =
+		animationOnScroll && animationType
+			? ANIMATION_CLASS_MAP[ animationType ] || 'fade-up'
+			: '';
+
+	const innerBlocksProps = useInnerBlocksProps(
+		{
+			className: 'stats-grid',
+			style: gridStyle,
+		},
+		{
+			allowedBlocks: ALLOWED_BLOCKS,
+			template: TEMPLATE,
+			renderAppender: InnerBlocks.ButtonBlockAppender,
+		}
+	);
 
 	return (
 		<>
-			{ isSelected && (
-				<InspectorControls>
+			<InspectorControls>
 					<PanelBody
 						title={ __( 'Section Appearance', 'mk-builder' ) }
 						initialOpen={ true }
@@ -233,6 +299,36 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							step={ 1 }
 							help={ __(
 								'Number of stat columns on desktop',
+								'mk-builder'
+							) }
+						/>
+
+						<RangeControl
+							label={ __( 'Columns (Tablet)', 'mk-builder' ) }
+							value={ columnsTablet }
+							onChange={ ( val ) =>
+								setAttributes( { columnsTablet: val } )
+							}
+							min={ 1 }
+							max={ 4 }
+							step={ 1 }
+							help={ __(
+								'Columns at max-width 992px',
+								'mk-builder'
+							) }
+						/>
+
+						<RangeControl
+							label={ __( 'Columns (Mobile)', 'mk-builder' ) }
+							value={ columnsMobile }
+							onChange={ ( val ) =>
+								setAttributes( { columnsMobile: val } )
+							}
+							min={ 1 }
+							max={ 2 }
+							step={ 1 }
+							help={ __(
+								'Columns at max-width 768px',
 								'mk-builder'
 							) }
 						/>
@@ -465,24 +561,22 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						) }
 					</PanelBody>
 				</InspectorControls>
-			) }
 
 			<div { ...blockProps }>
-				<div style={ containerStyle }>
+				<div className="jivaka-container" style={ containerStyle }>
 					<div
-						className="stats-section mk-csr-stats-grid-container"
-						style={ sectionStyle }
+						className={ `stats-section mk-csr-stats-grid-container${
+							animationClass ? ` ${ animationClass }` : ''
+						}` }
+						style={ editorSectionStyle }
 						data-columns={ columns }
+						data-columns-tablet={ columnsTablet }
+						data-columns-mobile={ columnsMobile }
+						data-animation={ animationOnScroll }
+						data-animation-type={ animationType }
+						data-animation-delay={ animationDelay }
 					>
-						<div className="stats-grid" style={ gridStyle }>
-							<InnerBlocks
-								allowedBlocks={ ALLOWED_BLOCKS }
-								template={ TEMPLATE }
-								renderAppender={
-									InnerBlocks.ButtonBlockAppender
-								}
-							/>
-						</div>
+						<div { ...innerBlocksProps } />
 					</div>
 				</div>
 			</div>

@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "mk/stat-item",
 	"title": "Stat Item",
-	"parent": [ "mk/csr-stats-section" ],
+	"parent": [ "mk/csr-stats-section", "mk/csr-stats-section" ],
 	"category": "mk-builder",
 	"description": "Single stat item (number + label) for CSR Stats Section.",
 	"keywords": [ "stat", "number", "label", "csr", "mk" ],
