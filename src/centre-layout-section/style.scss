@@ -101,6 +101,9 @@
 }
 
 .mk-centre-layout-section .sidebar-contact {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
     padding: 30px;
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -109,6 +112,14 @@
     color: #fff;
     margin-top: 30px;
     border-radius: var(--centre-radius);
+    overflow: hidden;
+}
+
+.mk-centre-layout-section .sidebar-contact-actions {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .mk-centre-layout-section .sidebar-contact h3 {
@@ -123,11 +134,14 @@
 }
 
 .mk-centre-layout-section .sidebar-contact .jivaka-btn.btn-primary {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
     min-height: 48px;
     padding: 14px 24px;
     font-size: 0.95rem;
@@ -523,6 +537,16 @@
 .mk-centre-layout-section.mk-centre-layout-editor .specialists-doc-list .doc-btn {
     pointer-events: none;
     cursor: default;
+}
+
+.mk-centre-layout-section .specialists-doc-list .doc-card--no-image .doc-info,
+.mk-centre-layout-section .specialists-doc-list .doc-card--no-button .doc-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.mk-centre-layout-section .specialists-doc-list .doc-card--no-image.doc-card--no-button {
+    justify-content: flex-start;
 }
 
 // Responsive: stack doc-card
@@ -1027,6 +1051,67 @@
     border-radius: 4px;
     font-weight: 600;
     text-align: center;
+}
+
+// Editor: keep sidebar contact card + phone CTA inside the grid column
+.mk-centre-layout-section.mk-centre-layout-editor .sidebar-wrapper {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact.animate-sidebar {
+    transform: none !important;
+    will-change: auto;
+}
+
+.mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .sidebar-contact-actions {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .centre-editor-phone-btn,
+.mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .jivaka-btn.btn-primary {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    transform: none !important;
+}
+
+.block-editor-block-list__layout .mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .centre-editor-phone-btn,
+.block-editor-block-list__layout .mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .jivaka-btn.btn-primary,
+.editor-styles-wrapper .mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .centre-editor-phone-btn,
+.editor-styles-wrapper .mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .jivaka-btn.btn-primary,
+.wp-block-mk-centre-layout-section .mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .centre-editor-phone-btn,
+.wp-block-mk-centre-layout-section .mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .jivaka-btn.btn-primary,
+.wp-block[data-type='mk/centre-layout-section'] .mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .centre-editor-phone-btn,
+.wp-block[data-type='mk/centre-layout-section'] .mk-centre-layout-section.mk-centre-layout-editor .sidebar-contact .jivaka-btn.btn-primary {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    transform: none !important;
+    float: none !important;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
 }
 
 .mk-centre-layout-section.mk-centre-layout-editor .main-content .block-editor-inner-blocks {

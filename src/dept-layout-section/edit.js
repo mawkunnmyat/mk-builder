@@ -5,6 +5,7 @@ import {
 	PanelBody,
 	RangeControl,
 	TextControl,
+	Button,
 	__experimentalDivider as Divider,
 } from '@wordpress/components';
 
@@ -55,6 +56,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		const next = [ ...( navItems || [] ) ];
 		if ( ! next[ index ] ) next[ index ] = { label: '', href: '#' };
 		next[ index ] = { ...next[ index ], [ field ]: value };
+		setAttributes( { navItems: next } );
+	};
+
+	const addNavItem = () => {
+		setAttributes( {
+			navItems: [ ...( navItems || [] ), { label: '', href: '#' } ],
+		} );
+	};
+
+	const removeNavItem = ( index ) => {
+		const next = ( navItems || [] ).filter( ( _, i ) => i !== index );
 		setAttributes( { navItems: next } );
 	};
 
@@ -112,8 +124,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 										updateNavItem( i, 'href', v || '#' )
 									}
 								/>
+
+								<Button
+									isDestructive
+									isSmall
+									onClick={ () => removeNavItem( i ) }
+									style={ { marginTop: 8 } }
+								>
+									{ __( 'Remove link', 'mk-builder' ) }
+								</Button>
 							</div>
 						) ) }
+						<Button isSecondary isSmall onClick={ addNavItem }>
+							{ __( 'Add link', 'mk-builder' ) }
+						</Button>
 					</PanelBody>
 
 					<PanelBody

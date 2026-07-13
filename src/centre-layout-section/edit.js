@@ -1135,45 +1135,46 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 									<h3>{ contactTitle }</h3>
 									<p>{ contactText }</p>
-									<a
-										href={ contactPhoneUrl || 'tel:' }
-										className="jivaka-btn btn-primary centre-editor-phone-btn"
-										style={ { width: '100%' } }
-										onClick={ ( e ) => e.preventDefault() }
-										role="presentation"
-										aria-label={
-											contactPhone
-												? undefined
-												: __(
-														'Emergency phone – set in block settings',
-														'mk-builder'
-												  )
-										}
-									>
-										<CentreIconRender
-											iconType={
-												contactPhoneIconType ||
-												'fontawesome'
+									<div className="sidebar-contact-actions">
+										<a
+											href={ contactPhoneUrl || 'tel:' }
+											className="jivaka-btn btn-primary centre-editor-phone-btn"
+											onClick={ ( e ) => e.preventDefault() }
+											role="presentation"
+											aria-label={
+												contactPhone
+													? undefined
+													: __(
+															'Emergency phone – set in block settings',
+															'mk-builder'
+													  )
 											}
-											faClass={
-												contactPhoneIcon ||
-												'fas fa-phone'
-											}
-											dashicon={ contactPhoneDashicon }
-											imageUrl={
-												contactPhoneIconImageUrl
-											}
-											videoUrl={
-												contactPhoneIconVideoUrl
-											}
-											className="sidebar-contact-phone-icon"
-										/>{ ' ' }
-										{ contactPhone ||
-											__(
-												'Phone number',
-												'mk-builder'
-											) }
-									</a>
+										>
+											<CentreIconRender
+												iconType={
+													contactPhoneIconType ||
+													'fontawesome'
+												}
+												faClass={
+													contactPhoneIcon ||
+													'fas fa-phone'
+												}
+												dashicon={ contactPhoneDashicon }
+												imageUrl={
+													contactPhoneIconImageUrl
+												}
+												videoUrl={
+													contactPhoneIconVideoUrl
+												}
+												className="sidebar-contact-phone-icon"
+											/>{ ' ' }
+											{ contactPhone ||
+												__(
+													'Phone number',
+													'mk-builder'
+												) }
+										</a>
+									</div>
 								</div>
 							) : (
 								<div
