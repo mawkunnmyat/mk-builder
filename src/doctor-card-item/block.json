@@ -26,6 +26,10 @@
 			"type": "string",
 			"default": "top center"
 		},
+		"showImage": {
+			"type": "boolean",
+			"default": true
+		},
 		"showBadge": {
 			"type": "boolean",
 			"default": false
@@ -77,6 +81,18 @@
 		"bookButtonText": {
 			"type": "string",
 			"default": "Book"
+		},
+		"showButtons": {
+			"type": "boolean",
+			"default": true
+		},
+		"showProfileButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"showBookButton": {
+			"type": "boolean",
+			"default": true
 		}
 	},
 	"supports": {
@@ -89,6 +105,7 @@
 			"imageHeight": 260,
 			"imageObjectFit": "cover",
 			"imageObjectPosition": "top center",
+			"showImage": true,
 			"showBadge": false,
 			"badgeText": "Available Today",
 			"departmentSlug": "heart",
@@ -101,9 +118,14 @@
 			"bookUrl": "#",
 			"bookOpenInNewTab": false,
 			"profileButtonText": "Profile",
-			"bookButtonText": "Book"
+			"bookButtonText": "Book",
+			"showButtons": true,
+			"showProfileButton": true,
+			"showBookButton": true
 		}
 	},
 	"textdomain": "mk-builder",
-	"editorScript": "file:./index.js"
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"editorStyle": "file:./style-index.css"
 }

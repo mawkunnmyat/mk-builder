@@ -7,6 +7,7 @@ export default function save( { attributes } ) {
 		imageHeight,
 		imageObjectFit,
 		imageObjectPosition,
+		showImage = true,
 		showBadge,
 		badgeText,
 		departmentSlug,
@@ -20,10 +21,25 @@ export default function save( { attributes } ) {
 		bookOpenInNewTab,
 		profileButtonText,
 		bookButtonText,
+		showButtons = true,
+		showProfileButton = true,
+		showBookButton = true,
 	} = attributes;
 
+	const showProfile = showButtons && showProfileButton;
+	const showBook = showButtons && showBookButton;
+	const hasActions = showProfile || showBook;
+	const isSingleAction = hasActions && showProfile !== showBook;
+
+	const cardClassName = [
+		'doctor-card',
+		showImage ? '' : 'doctor-card--no-image',
+	]
+		.filter( Boolean )
+		.join( ' ' );
+
 	const blockProps = useBlockProps.save( {
-		className: 'doctor-card',
+		className: cardClassName,
 		'data-dept':
 			( departmentSlug && String( departmentSlug ).trim() ) || 'general',
 		'data-gender': ( gender && String( gender ).trim() ) || 'male',
@@ -35,35 +51,45 @@ export default function save( { attributes } ) {
 		getDepartmentLabelFromList( departmentSlug ) ||
 		departmentSlug;
 
+	const actionsClassName = [
+		'doc-actions',
+		isSingleAction ? 'doc-actions--single' : '',
+	]
+		.filter( Boolean )
+		.join( ' ' );
+
 	return (
 		<div { ...blockProps }>
-			<div
-				className="doc-img-wrapper"
-				style={ {
-					position: 'relative',
-					height: `${ Number( imageHeight ) || 260 }px`,
-					overflow: 'hidden',
-					background: '#f0f0f0',
-				} }
-			>
-				{ doctorImage && (
-					<img
-						src={ doctorImage }
-						alt={ doctorName || '' }
-						decoding="async"
-						style={ {
-							width: '100%',
-							height: '100%',
-							objectFit: imageObjectFit,
-							objectPosition: imageObjectPosition,
-							display: 'block',
-						} }
-					/>
-				) }
-				{ showBadge && badgeText && (
-					<span className="doc-badge">{ badgeText }</span>
-				) }
-			</div>
+			{ showImage && (
+				<div
+					className="doc-img-wrapper"
+					style={ {
+						position: 'relative',
+						height: `${ Number( imageHeight ) || 260 }px`,
+						overflow: 'hidden',
+						background: '#f0f0f0',
+					} }
+				>
+					{ doctorImage && (
+						<img
+							src={ doctorImage }
+							alt={ doctorName || '' }
+							decoding="async"
+							loading="lazy"
+							style={ {
+								width: '100%',
+								height: '100%',
+								objectFit: imageObjectFit,
+								objectPosition: imageObjectPosition,
+								display: 'block',
+							} }
+						/>
+					) }
+					{ showBadge && badgeText && (
+						<span className="doc-badge">{ badgeText }</span>
+					) }
+				</div>
+			) }
 
 			<div className="doc-content">
 				<span className="doc-dept">{ resolvedDeptLabel }</span>
@@ -77,30 +103,40 @@ export default function save( { attributes } ) {
 					value={ qualifications }
 					className="doc-qual"
 				/>
-				<div className="doc-actions">
-					<a
-						href={ profileUrl || '#' }
-						className="jivaka-btn btn-outline"
-						target={ profileOpenInNewTab ? '_blank' : undefined }
-						rel={
-							profileOpenInNewTab
-								? 'noopener noreferrer'
-								: undefined
-						}
-					>
-						{ profileButtonText || 'Profile' }
-					</a>
-					<a
-						href={ bookUrl || '#' }
-						className="jivaka-btn btn-primary"
-						target={ bookOpenInNewTab ? '_blank' : undefined }
-						rel={
-							bookOpenInNewTab ? 'noopener noreferrer' : undefined
-						}
-					>
-						{ bookButtonText || 'Book' }
-					</a>
-				</div>
+				{ hasActions && (
+					<div className={ actionsClassName }>
+						{ showProfile && (
+							<a
+								href={ profileUrl || '#' }
+								className="jivaka-btn btn-outline"
+								target={
+									profileOpenInNewTab ? '_blank' : undefined
+								}
+								rel={
+									profileOpenInNewTab
+										? 'noopener noreferrer'
+										: undefined
+								}
+							>
+								{ profileButtonText || 'Profile' }
+							</a>
+						) }
+						{ showBook && (
+							<a
+								href={ bookUrl || '#' }
+								className="jivaka-btn btn-primary"
+								target={ bookOpenInNewTab ? '_blank' : undefined }
+								rel={
+									bookOpenInNewTab
+										? 'noopener noreferrer'
+										: undefined
+								}
+							>
+								{ bookButtonText || 'Book' }
+							</a>
+						) }
+					</div>
+				) }
 			</div>
 		</div>
 	);
