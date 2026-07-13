@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "mk/ipd-consent-clause-item",
+	"title": "IPD Consent Clause",
+	"category": "mk-builder",
+	"parent": [ "mk/ipd-consent-content-section" ],
+	"description": "Single numbered clause for the inpatient consent document.",
+	"keywords": [ "ipd", "consent", "clause", "terms", "mk" ],
+	"icon": "editor-ol",
+	"attributes": {
+		"clauseNumber": {
+			"type": "string",
+			"default": "၁"
+		},
+		"clauseTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"clauseParagraphs": {
+			"type": "array",
+			"default": []
+		},
+		"clauseItems": {
+			"type": "array",
+			"default": []
+		},
+		"showClause": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"reusable": false
+	},
+	"textdomain": "mk-builder",
+	"editorScript": "file:./index.js"
+}
