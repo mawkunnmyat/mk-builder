@@ -10,7 +10,7 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18.0%2B-339933.svg)](https://nodejs.org/)
 [![Gutenberg](https://img.shields.io/badge/Gutenberg-Block%20Editor-0073aa.svg)](https://developer.wordpress.org/block-editor/)
 [![Blocks](https://img.shields.io/badge/Blocks-270%2B-orange.svg)](#-block-catalog)
-[![Version](https://img.shields.io/badge/Version-1.1.0-green.svg)](https://github.com/mawkunnmyat/mk-builder/releases)
+[![Version](https://img.shields.io/badge/Version-1.1.1-green.svg)](https://github.com/mawkunnmyat/mk-builder/releases)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/mawkunnmyat/mk-builder)
 
 ---
@@ -44,6 +44,19 @@
 ---
 
 ## 🆕 What's New
+
+### ✨ July 13, 2026 — MK Builder v1.1.1
+
+| Area | Update |
+|------|--------|
+| 🦶 **Jivaka Footer** | New `mk/jivaka-footer-section` with floating CTA, link columns, drag-and-drop ordering |
+| 📋 **IPD Patient Guide** | Inpatient consent document, clause items, and PDF terms section blocks |
+| 📱 **Social QR Suite** | `mk/social-qr-section` grid with platform presets and QR image utilities |
+| 📜 **Visitor Guidelines** | Enhanced section and column blocks with improved editor controls |
+| 🏥 **Centre Layouts** | Refined centre and department layout sections with editor style parity |
+| 👨‍⚕️ **Doctor Cards** | Doctor card item styles and directory filter attribute improvements |
+| 🔧 **Legacy Editors** | `register-legacy-block-editors.js` for PHP-registered block editor attachment |
+| 📚 **Documentation** | README expanded with patient guide blocks and v1.1.1 changelog |
 
 ### ✨ July 11, 2026 — MK Builder v1.1.0
 
@@ -205,7 +218,14 @@ mk-builder/
 │   ├── csr-*/                       # CSR & community blocks
 │   ├── brand-*/                     # Industry-agnostic brand page blocks
 │   ├── jivaka-header-section/       # Jivaka Hospital site header + mega menu
+│   ├── jivaka-footer-section/       # Jivaka Hospital footer + floating CTA
 │   ├── help-section/                # Healthcare help & booking CTA section
+│   ├── ipd-consent-content-section/ # Inpatient consent document (Burmese)
+│   ├── ipd-consent-clause-item/     # Single consent clause child block
+│   ├── ipd-terms-section/           # IPD terms PDF view & download section
+│   ├── social-qr-section/           # Social media QR code card grid
+│   ├── social-qr-item/              # Individual platform QR card child
+│   ├── visitor-guidelines-section/  # Hospital visitor guidelines layout
 │   ├── hero-new-section/            # Modern hero with editor-only styles
 │   ├── doctor-*/                    # Doctor directory, search, and card blocks
 │   ├── shared/                      # Cross-block editor utilities (@mk-builder/shared)
@@ -526,6 +546,7 @@ Cross-block editor helpers live in `src/shared/` and are importable via the `@mk
 
 | Module | Purpose |
 |--------|---------|
+| `register-legacy-block-editors.js` | 🔗 Attach edit/save to PHP-registered legacy `mk/*` block names |
 | `block-helpers.js` | 🎨 Flexible icon renderer, department labels, shared markup helpers |
 | `doctor-filter-data.js` | 👨‍⚕️ Default doctor filter taxonomy and department slug maps |
 | `doctor-filter-sync.js` | 🔄 Sync filter state between parent sections and child card blocks |
@@ -554,14 +575,30 @@ Purpose-built blocks for **Jivaka Hospital** and similar healthcare portals.
 | Block | Slug | Description |
 |-------|------|-------------|
 | 🏷️ Jivaka Header | `mk/jivaka-header-section` | Site header with logo, hotline, CTA, desktop mega menu, and mobile drawer |
+| 🦶 Jivaka Footer | `mk/jivaka-footer-section` | Site footer with floating emergency CTA, link columns, social links, and bottom bar |
 | 🩺 Help Section | `mk/help-section` | Two-column care intro with department booking card and media helpers |
 | 🖼️ Hero New | `mk/hero-new-section` | Modern hero banner with dedicated `editor.scss` for accurate editor preview |
 | 🔍 Doctor Search Filter | `mk/doctor-search-filter-section` | Searchable doctor directory with department and specialty filters |
 | 📋 Doctor Directory | `mk/doctor-directory-section` | Grid layout for doctor profiles with shared filter sync |
 | 👤 Doctor Card Item | `mk/doctor-card-item` | Individual doctor profile card child block |
+| 📋 IPD Consent Document | `mk/ipd-consent-content-section` | Full inpatient consent form with Burmese text, signatures, and PDF preview |
+| 📝 IPD Consent Clause | `mk/ipd-consent-clause-item` | Numbered consent clause child block for IPD document |
+| 📄 IPD Terms Section | `mk/ipd-terms-section` | Inpatient terms PDF with view and download action buttons |
+| 📱 Social QR Section | `mk/social-qr-section` | Social media QR code card grid with hospital branding |
+| 🔲 Social QR Item | `mk/social-qr-item` | Individual platform QR card (Facebook, Instagram, TikTok, Viber, Telegram) |
+| 📜 Visitor Guidelines | `mk/visitor-guidelines-section` | Hospital visitor policy section with column child blocks |
+| 🏥 Centre Layout | `mk/centre-layout-section` | Specialty centre page layout with sidebar and content areas |
+| 🏢 Department Layout | `mk/dept-layout-section` | Department page shell with navigation and content zones |
 | 🚑 Ambulance Process | `mk/amb-process-section` | Emergency ambulance process flow section |
 | 🔬 Radiology Hero | `mk/rad-hero-section` | Radiology department hero with CTA and imagery |
 | 🧪 Diagnostic Tabs | `mk/rad-diagnostic-tabs` | Tabbed radiology diagnostic services layout |
+
+### 📋 Patient Guide Page Stack
+
+```
+visitor-guidelines-section → ipd-terms-section → ipd-consent-content-section
+→ social-qr-section → jivaka-footer-section
+```
 
 ### 🏠 Recommended Jivaka Home Page Stack
 
@@ -686,14 +723,14 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 
 | Type | When to Use | Example |
 |------|-------------|---------|
-| `feat` | ✨ New feature or enhancement | `feat: 11072026 - add brand page Gutenberg block suite for retail sites` |
-| `fix` | 🐛 Bug fix | `fix: 11072026 - restore FAQ accordion keyboard navigation on mobile` |
-| `docs` | 📚 Documentation only | `docs: 11072026 - expand README with brand blocks catalog and shweghee guide` |
-| `refactor` | ♻️ Code restructure (no behavior change) | `refactor: 11072026 - modernize block editor inspector control patterns` |
-| `style` | 💅 Formatting / SCSS-only (no logic change) | `style: 11072026 - normalize hero section typography tokens` |
-| `chore` | 🔧 Tooling, deps, config | `chore: 11072026 - bump @wordpress/scripts to v27` |
-| `perf` | ⚡ Performance improvement | `perf: 11072026 - defer non-critical frontend init scripts` |
-| `test` | 🧪 Tests | `test: 11072026 - add block registration smoke tests` |
+| `feat` | ✨ New feature or enhancement | `feat: 13072026 - add Jivaka footer section with drag-and-drop layout controls` |
+| `fix` | 🐛 Bug fix | `fix: 13072026 - restore doctor card filter attribute binding in directory grid` |
+| `docs` | 📚 Documentation only | `docs: 13072026 - expand README with patient guide blocks and v1.1.1 release` |
+| `refactor` | ♻️ Code restructure (no behavior change) | `refactor: 13072026 - improve centre layout section editor style parity` |
+| `style` | 💅 Formatting / SCSS-only (no logic change) | `style: 13072026 - normalize visitor guidelines column spacing tokens` |
+| `chore` | 🔧 Tooling, deps, config | `chore: 13072026 - bump plugin version to 1.1.1` |
+| `perf` | ⚡ Performance improvement | `perf: 13072026 - defer non-critical frontend init scripts` |
+| `test` | 🧪 Tests | `test: 13072026 - add block registration smoke tests` |
 
 **Rules:**
 
@@ -705,6 +742,17 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 ---
 
 ## 📅 Changelog
+
+### 🚀 `1.1.1` — July 13, 2026
+
+- 🦶 **Jivaka Footer:** `mk/jivaka-footer-section` with floating CTA, DnD column ordering, and legacy save migration
+- 📋 **IPD Blocks:** Consent document section, clause item child, and terms PDF section for patient guide pages
+- 📱 **Social QR:** Platform preset cards with QR image utilities for hospital social media outreach
+- 📜 **Visitor Guidelines:** Enhanced section and column blocks with improved inspector and responsive styles
+- 🏥 **Layouts:** Centre and department layout sections with `editorStyle` parity and init script updates
+- 👨‍⚕️ **Doctor Cards:** Dedicated `style.scss` and refined filter attribute binding in directory grid
+- 🔧 **Legacy Editors:** `register-legacy-block-editors.js` for csr-stats and stat-item PHP-registered blocks
+- 📚 **Docs:** README v1.1.1 with patient guide stack, expanded Jivaka block catalog, and changelog
 
 ### 🚀 `1.1.0` — July 11, 2026
 
