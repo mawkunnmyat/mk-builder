@@ -88,7 +88,7 @@ export const DEFAULT_NAV_ITEMS = [
 ];
 
 export function resolveNavItems( navItems ) {
-	if ( Array.isArray( navItems ) && navItems.length > 0 ) {
+	if ( Array.isArray( navItems ) ) {
 		return navItems;
 	}
 
