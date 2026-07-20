@@ -4,13 +4,15 @@
  * Plugin Name:       MK Builder
  * Plugin URI:        https://github.com/mawkunnmyat/mk-builder
  * Description:       General Company Page Builder Blocks for MK Ecosystem.
- * Version:           1.1.1
+ * Version:           1.1.2
  * Author:            Maw Kunn
  * Author URI:        https://github.com/mawkunnmyat
  * Text Domain:       mk-builder
  * Domain Path:       /languages
  * Requires at least: 6.0
  * Requires PHP:      7.4
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package           MkBuilder
  */
@@ -21,9 +23,28 @@ if (!defined('ABSPATH')) {
 }
 
 /** Define Constants */
-define('MK_BUILDER_VERSION', '1.1.1');
+define('MK_BUILDER_VERSION', '1.1.2');
 define('MK_BUILDER_PATH', plugin_dir_path(__FILE__));
 define('MK_BUILDER_URL', plugin_dir_url(__FILE__));
+
+/**
+ * Write debug messages only when WordPress debug logging is enabled.
+ *
+ * @param string $message Log message.
+ */
+function mk_builder_debug_log($message)
+{
+    if (!defined('WP_DEBUG') || !WP_DEBUG || !defined('WP_DEBUG_LOG') || !WP_DEBUG_LOG) {
+        return;
+    }
+
+    if (!is_string($message)) {
+        $message = wp_json_encode($message);
+    }
+
+    // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log -- Wrapped for debug-only logging.
+    error_log($message);
+}
 
 /** Load Award CPT and dynamic block support */
 require_once MK_BUILDER_PATH . 'includes/class-mk-award.php';
@@ -260,7 +281,7 @@ function mk_builder_enqueue_global_block_fonts()
             'mk-builder-google-fonts',
             'https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;500;600;700;800&family=Marcellus&family=Roboto:wght@300;400;500;600;700;900&display=swap',
             array(),
-            null
+            MK_BUILDER_VERSION
         );
     }
 }
@@ -430,9 +451,7 @@ function mk_builder_init_blocks()
 {
     // Early exit if register_block_type is not available
     if (!function_exists('register_block_type')) {
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('MK Builder: register_block_type function not available');
-        }
+        mk_builder_debug_log('MK Builder: register_block_type function not available');
         return;
     }
 
@@ -440,9 +459,7 @@ function mk_builder_init_blocks()
 
     // Check if build directory exists
     if (!is_dir($blocks_path)) {
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('MK Builder: Build directory does not exist: ' . $blocks_path);
-        }
+        mk_builder_debug_log('MK Builder: Build directory does not exist: ' . $blocks_path);
         // Don't break the site if build directory is missing
         return;
     }
@@ -450,18 +467,14 @@ function mk_builder_init_blocks()
     // Get block folders with error handling
     $block_folders = @scandir($blocks_path);
     if ($block_folders === false) {
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('MK Builder: Failed to scan build directory: ' . $blocks_path);
-        }
+        mk_builder_debug_log('MK Builder: Failed to scan build directory: ' . $blocks_path);
         return;
     }
 
     $block_folders = array_diff($block_folders, array('..', '.', 'images'));
 
     if (empty($block_folders)) {
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('MK Builder: No block folders found in build directory');
-        }
+        mk_builder_debug_log('MK Builder: No block folders found in build directory');
         return;
     }
 
@@ -497,9 +510,7 @@ function mk_builder_init_blocks()
         // Check if block.json exists and is readable
         $block_json = $block_dir . '/block.json';
         if (!file_exists($block_json) || !is_readable($block_json)) {
-            if (defined('WP_DEBUG') && WP_DEBUG) {
-                error_log('MK Builder: block.json not found or not readable: ' . $block_json);
-            }
+            mk_builder_debug_log('MK Builder: block.json not found or not readable: ' . $block_json);
             $failed_count++;
             continue;
         }
@@ -507,9 +518,7 @@ function mk_builder_init_blocks()
         // Validate block.json is valid JSON
         $block_json_content = @file_get_contents($block_json);
         if ($block_json_content === false) {
-            if (defined('WP_DEBUG') && WP_DEBUG) {
-                error_log('MK Builder: Failed to read block.json for ' . $folder);
-            }
+            mk_builder_debug_log('MK Builder: Failed to read block.json for ' . $folder);
             $failed_count++;
             continue;
         }
@@ -517,18 +526,14 @@ function mk_builder_init_blocks()
         $block_data = json_decode($block_json_content, true);
         
         if (json_last_error() !== JSON_ERROR_NONE) {
-            if (defined('WP_DEBUG') && WP_DEBUG) {
-                error_log('MK Builder: Invalid JSON in block.json for ' . $folder . ': ' . json_last_error_msg());
-            }
+            mk_builder_debug_log('MK Builder: Invalid JSON in block.json for ' . $folder . ': ' . json_last_error_msg());
             $failed_count++;
             continue;
         }
 
         // Check if block has required name attribute
         if (empty($block_data['name'])) {
-            if (defined('WP_DEBUG') && WP_DEBUG) {
-                error_log('MK Builder: Block missing name attribute: ' . $folder);
-            }
+            mk_builder_debug_log('MK Builder: Block missing name attribute: ' . $folder);
             $failed_count++;
             continue;
         }
@@ -536,9 +541,7 @@ function mk_builder_init_blocks()
         // Check if required index.js exists
         $index_js = $block_dir . '/index.js';
         if (!file_exists($index_js)) {
-            if (defined('WP_DEBUG') && WP_DEBUG) {
-                error_log('MK Builder: index.js not found for block: ' . $folder);
-            }
+            mk_builder_debug_log('MK Builder: index.js not found for block: ' . $folder);
             $failed_count++;
             continue;
         }
@@ -588,44 +591,31 @@ function mk_builder_init_blocks()
             if ($result && !is_wp_error($result)) {
                 $registered_count++;
                 
-                if (defined('WP_DEBUG') && WP_DEBUG && WP_DEBUG_LOG) {
-                    error_log('MK Builder: Successfully registered block: ' . $block_data['name']);
-                }
+                mk_builder_debug_log('MK Builder: Successfully registered block: ' . $block_data['name']);
             } else {
                 $failed_count++;
                 $error_message = is_wp_error($result) ? $result->get_error_message() : 'Unknown error';
                 
-                if (defined('WP_DEBUG') && WP_DEBUG) {
-                    error_log('MK Builder: Failed to register block ' . $folder . ' (' . $block_data['name'] . '): ' . $error_message);
-                }
+                mk_builder_debug_log('MK Builder: Failed to register block ' . $folder . ' (' . $block_data['name'] . '): ' . $error_message);
             }
         } catch (Exception $e) {
             $failed_count++;
             
-            if (defined('WP_DEBUG') && WP_DEBUG) {
-                error_log('MK Builder: Exception registering block ' . $folder . ': ' . $e->getMessage());
-            }
+            mk_builder_debug_log('MK Builder: Exception registering block ' . $folder . ': ' . $e->getMessage());
             continue;
         } catch (Error $e) {
             $failed_count++;
             
-            if (defined('WP_DEBUG') && WP_DEBUG) {
-                error_log('MK Builder: Fatal error registering block ' . $folder . ': ' . $e->getMessage());
-            }
+            mk_builder_debug_log('MK Builder: Fatal error registering block ' . $folder . ': ' . $e->getMessage());
             continue;
         }
     }
 
-    // Log summary in debug mode
-    if (defined('WP_DEBUG') && WP_DEBUG && WP_DEBUG_LOG) {
-        error_log('MK Builder: Registration complete - Success: ' . $registered_count . ', Failed: ' . $failed_count);
-    }
+    mk_builder_debug_log('MK Builder: Registration complete - Success: ' . $registered_count . ', Failed: ' . $failed_count);
 
     // If no blocks registered at all, log warning
     if ($registered_count === 0) {
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('MK Builder WARNING: No blocks were successfully registered!');
-        }
+        mk_builder_debug_log('MK Builder WARNING: No blocks were successfully registered!');
     }
 }
 
@@ -635,13 +625,9 @@ add_action('init', function() {
     try {
         mk_builder_init_blocks();
     } catch (Exception $e) {
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('MK Builder: Exception during block initialization: ' . $e->getMessage());
-        }
+        mk_builder_debug_log('MK Builder: Exception during block initialization: ' . $e->getMessage());
     } catch (Error $e) {
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_log('MK Builder: Fatal error during block initialization: ' . $e->getMessage());
-        }
+        mk_builder_debug_log('MK Builder: Fatal error during block initialization: ' . $e->getMessage());
     }
 }, 20);
 
@@ -673,8 +659,8 @@ function mk_builder_activation_check()
     if (!is_dir($blocks_path)) {
         deactivate_plugins(plugin_basename(__FILE__));
         wp_die(
-            __('MK Builder plugin could not be activated. Build directory is missing. Please run "npm run build" first.', 'mk-builder'),
-            __('Plugin Activation Error', 'mk-builder'),
+            esc_html__('MK Builder plugin could not be activated. Build directory is missing. Please run "npm run build" first.', 'mk-builder'),
+            esc_html__('Plugin Activation Error', 'mk-builder'),
             array('back_link' => true)
         );
     }

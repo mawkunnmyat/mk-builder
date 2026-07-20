@@ -16,7 +16,9 @@ set -euo pipefail  # Exit on error, undefined vars, pipe failures
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PLUGIN_DIR="$SCRIPT_DIR"
 PARENT_DIR="$(dirname "$PLUGIN_DIR")"
-ZIP_FILE="$PARENT_DIR/$(basename "$PLUGIN_DIR").zip"
+# WordPress plugin slug / zip root folder name (must match plugin directory on install).
+PLUGIN_SLUG="mk-builder"
+ZIP_FILE="$PARENT_DIR/${PLUGIN_SLUG}.zip"
 PLUGIN_NAME="$(basename "$PLUGIN_DIR")"
 
 # Colors for output
@@ -71,55 +73,60 @@ if [ ! -d "$PLUGIN_NAME" ]; then
     exit 1
 fi
 
-# Create ZIP with comprehensive exclusions
-# Using explicit paths to avoid pattern matching issues
-if zip -r "$ZIP_FILE" "$PLUGIN_NAME/" \
-  -x "$PLUGIN_NAME/.git/*" \
-  -x "$PLUGIN_NAME/.gitignore" \
-  -x "$PLUGIN_NAME/.gitattributes" \
-  -x "$PLUGIN_NAME/.git/*" \
-  -x "$PLUGIN_NAME/node_modules/*" \
-  -x "$PLUGIN_NAME/node_modules/**/*" \
-  -x "$PLUGIN_NAME/.DS_Store" \
-  -x "$PLUGIN_NAME/**/*.DS_Store" \
-  -x "$PLUGIN_NAME/**/.DS_Store" \
-  -x "$PLUGIN_NAME/**/*.log" \
-  -x "$PLUGIN_NAME/**/*.scss" \
-  -x "$PLUGIN_NAME/**/*.map" \
-  -x "$PLUGIN_NAME/.env" \
-  -x "$PLUGIN_NAME/.env.*" \
-  -x "$PLUGIN_NAME/package.json" \
-  -x "$PLUGIN_NAME/package-lock.json" \
-  -x "$PLUGIN_NAME/yarn.lock" \
-  -x "$PLUGIN_NAME/composer.json" \
-  -x "$PLUGIN_NAME/composer.lock" \
-  -x "$PLUGIN_NAME/README.md" \
-  -x "$PLUGIN_NAME/CHANGELOG.md" \
-  -x "$PLUGIN_NAME/LICENSE*" \
-  -x "$PLUGIN_NAME/tests/*" \
-  -x "$PLUGIN_NAME/tests/**/*" \
-  -x "$PLUGIN_NAME/phpunit.xml" \
-  -x "$PLUGIN_NAME/phpcs.xml" \
-  -x "$PLUGIN_NAME/webpack.config.js" \
-  -x "$PLUGIN_NAME/babel.config.js" \
-  -x "$PLUGIN_NAME/tsconfig.json" \
-  -x "$PLUGIN_NAME/tsconfig*.json" \
-  -x "$PLUGIN_NAME/.eslintrc*" \
-  -x "$PLUGIN_NAME/.prettierrc*" \
-  -x "$PLUGIN_NAME/.editorconfig" \
-  -x "$PLUGIN_NAME/npm-debug.log*" \
-  -x "$PLUGIN_NAME/yarn-debug.log*" \
-  -x "$PLUGIN_NAME/yarn-error.log*" \
-  -x "$PLUGIN_NAME/src/*" \
-  -x "$PLUGIN_NAME/src/**/*" \
-  -x "$PLUGIN_NAME/*.html" \
-  -x "$PLUGIN_NAME/24/*" \
-  -x "$PLUGIN_NAME/shweghee/*" \
-  -x "$PLUGIN_NAME/shweghee/**/*" \
-  -x "$PLUGIN_NAME/.wp-env.json" \
-  -x "$PLUGIN_NAME/zip-plugin.sh" \
-  -x "$PLUGIN_NAME/create-zip.sh" \
-  > /dev/null 2>&1; then
+# Staging directory so the zip root folder is mk-builder/ (WordPress slug), not twork-builder/.
+STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/mk-builder-zip.XXXXXX")"
+trap 'rm -rf "$STAGING_DIR"' EXIT
+
+print_info "Staging release files into ${PLUGIN_SLUG}/"
+
+rsync -a \
+  --exclude='.git' \
+  --exclude='.gitignore' \
+  --exclude='.gitattributes' \
+  --exclude='.cursor' \
+  --exclude='.cursorrules' \
+  --exclude='.vscode' \
+  --exclude='.venv' \
+  --exclude='.wp-env.json' \
+  --exclude='node_modules' \
+  --exclude='src' \
+  --exclude='scripts' \
+  --exclude='shweghee' \
+  --exclude='my-avocado' \
+  --exclude='wporg-assets' \
+  --exclude='active_context.md' \
+  --exclude='progress.md' \
+  --exclude='CONFLICT-FIX.md' \
+  --exclude='README.md' \
+  --exclude='package.json' \
+  --exclude='package-lock.json' \
+  --exclude='yarn.lock' \
+  --exclude='composer.json' \
+  --exclude='composer.lock' \
+  --exclude='webpack.config.js' \
+  --exclude='babel.config.js' \
+  --exclude='tsconfig.json' \
+  --exclude='tsconfig*.json' \
+  --exclude='.eslintrc*' \
+  --exclude='.prettierrc*' \
+  --exclude='.editorconfig' \
+  --exclude='.distignore' \
+  --exclude='create-zip.sh' \
+  --exclude='zip-plugin.sh' \
+  --exclude='tests' \
+  --exclude='phpunit.xml' \
+  --exclude='phpcs.xml' \
+  --exclude='*.html' \
+  --exclude='*.log' \
+  --exclude='*.map' \
+  --exclude='*.scss' \
+  --exclude='.DS_Store' \
+  --exclude='.env' \
+  --exclude='.env.*' \
+  "$PLUGIN_NAME/" "$STAGING_DIR/$PLUGIN_SLUG/"
+
+# Create ZIP from staged mk-builder/ folder only (runtime files).
+if (cd "$STAGING_DIR" && zip -r -q "$ZIP_FILE" "$PLUGIN_SLUG/"); then
     
     if [ -f "$ZIP_FILE" ]; then
         ZIP_SIZE=$(du -h "$ZIP_FILE" | cut -f1)
