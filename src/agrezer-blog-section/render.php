@@ -208,8 +208,10 @@ if (!empty($category_ids)) {
     $query_args['category__in'] = $category_ids;
 }
 
+$exclude_lookup = array();
 if (!empty($exclude_ids)) {
-    $query_args['post__not_in'] = $exclude_ids;
+    $exclude_lookup = array_fill_keys($exclude_ids, true);
+    $query_args['posts_per_page'] = min(50, $posts_to_show + count($exclude_ids));
 }
 
 $image_size = sanitize_key((string) $atts['imageSize']);
@@ -366,9 +368,25 @@ ob_start();
 
         <div class="mk-blog__grid">
             <?php
-            if ($q->have_posts()) :
-                while ($q->have_posts()) :
+            $posts_to_render = array();
+            if ($q->have_posts()) {
+                while ($q->have_posts()) {
                     $q->the_post();
+                    $candidate_id = get_the_ID();
+                    if (!empty($exclude_lookup) && isset($exclude_lookup[$candidate_id])) {
+                        continue;
+                    }
+                    $posts_to_render[] = get_post();
+                    if (count($posts_to_render) >= $posts_to_show) {
+                        break;
+                    }
+                }
+                wp_reset_postdata();
+            }
+
+            if (!empty($posts_to_render)) :
+                foreach ($posts_to_render as $post) :
+                    setup_postdata($post);
                     $post_id   = get_the_ID();
                     $permalink = get_permalink($post_id);
                     $title     = get_the_title($post_id);
@@ -472,13 +490,13 @@ ob_start();
                         </div>
                     </article>
                     <?php
-                endwhile;
+                endforeach;
                 wp_reset_postdata();
             else :
                 $debug_payload = array(
-                    'post_count'   => (int) $q->post_count,
-                    'category__in' => !empty($category_ids) ? $category_ids : null,
-                    'post__not_in' => !empty($exclude_ids) ? $exclude_ids : null,
+                    'post_count'        => (int) $q->post_count,
+                    'category__in'      => !empty($category_ids) ? $category_ids : null,
+                    'excluded_post_ids' => !empty($exclude_ids) ? $exclude_ids : null,
                     'posts_per_pg' => $posts_to_show,
                     'offset'       => $offset,
                 );
@@ -493,4 +511,5 @@ ob_start();
     </div>
 </section>
 <?php
-echo ob_get_clean();
+// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Buffered template markup uses esc_* helpers throughout.
+return ob_get_clean();

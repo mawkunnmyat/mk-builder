@@ -22,7 +22,7 @@
 		},
 		"imageUrl": {
 			"type": "string",
-			"default": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=400&fit=crop&q=75"
+			"default": ""
 		},
 		"imageId": {
 			"type": "number",
@@ -42,7 +42,7 @@
 			"title": "Butter",
 			"count": "3 Sizes",
 			"href": "/pages/shop.html",
-			"imageUrl": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=400&fit=crop&q=75",
+			"imageUrl": "",
 			"imageAlt": "Shwe Myanmar Butter"
 		}
 	},

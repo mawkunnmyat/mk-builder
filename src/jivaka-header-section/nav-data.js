@@ -1,5 +1,5 @@
 export const DEFAULT_LOGO_IMAGE =
-	'https://jivakahospital.com/wp-content/uploads/2025/12/0-02-06-a90eb79c273489ee9c9d50c8cd87cd8185f0ff16619e0905d2055889329a1c5a_2231d085a20.jpg';
+	'';
 
 export const DEFAULT_NAV_ITEMS = [
 	{

@@ -67,7 +67,7 @@
 		},
 		"logoImage": {
 			"type": "string",
-			"default": "https://jivakahospital.com/wp-content/uploads/2026/07/0-02-06-a32e7501b38cad92550a0eec9cf96d13cc709cc316160f9f1064bb232fa6d251_226837de68a.png"
+			"default": ""
 		},
 		"logoImageId": {
 			"type": "number"

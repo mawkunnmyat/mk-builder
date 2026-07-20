@@ -7,7 +7,7 @@ const TEMPLATE = [
 		'mk/agrezer-about-image-card',
 		{
 			variant: 'simple',
-			image: 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1400&q=80',
+			image: '',
 			alt: 'Tractor in field',
 		},
 	],
@@ -16,7 +16,7 @@ const TEMPLATE = [
 		'mk/agrezer-about-image-card',
 		{
 			variant: 'overlay',
-			image: 'https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&w=1400&q=80',
+			image: '',
 			alt: 'Farmer in corn field',
 			overlayText:
 				'Agriculture nurtures life through organic growth, sustainable farming.',

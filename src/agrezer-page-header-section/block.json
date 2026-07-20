@@ -144,7 +144,7 @@
 		"attributes": {
 			"title": "About Our Farm",
 			"backgroundType": "image",
-			"backgroundImage": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=80",
+			"backgroundImage": "",
 			"backgroundVideo": "",
 			"backgroundColor": "#0c2614",
 			"overlayOpacity": 82,
@@ -154,7 +154,7 @@
 			"breadcrumbActiveColor": "#8bc34a",
 			"backgroundPosition": "center center",
 			"overlayColor": "rgba(12, 38, 20, 0.82)",
-			"graphicImage": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80",
+			"graphicImage": "",
 			"graphicAlt": "Tractor illustration",
 			"graphicMaxWidth": 380,
 			"breadcrumbs": [

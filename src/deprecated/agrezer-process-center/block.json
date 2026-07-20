@@ -31,7 +31,7 @@
 	},
 	"example": {
 		"attributes": {
-			"image": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80",
+			"image": "",
 			"alt": "Hands holding soil and seedlings",
 			"maxWidth": 520
 		}

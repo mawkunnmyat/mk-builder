@@ -16,7 +16,7 @@ const TEMPLATE = [
 			name: 'Daw Khin M.',
 			location: 'Mandalay, Myanmar',
 			avatarUrl:
-				'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80',
+				'',
 			avatarAlt: 'Daw Khin M.',
 		},
 	],
@@ -27,7 +27,7 @@ const TEMPLATE = [
 			name: 'U Aung K.',
 			location: 'Yangon, Myanmar',
 			avatarUrl:
-				'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80',
+				'',
 			avatarAlt: 'U Aung K.',
 		},
 	],
@@ -38,7 +38,7 @@ const TEMPLATE = [
 			name: 'Ma Thida W.',
 			location: 'Sagaing, Myanmar',
 			avatarUrl:
-				'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80',
+				'',
 			avatarAlt: 'Ma Thida W.',
 		},
 	],

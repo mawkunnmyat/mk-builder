@@ -22,7 +22,7 @@ const TEMPLATE = [
 			count: '3 Sizes',
 			href: '/pages/shop.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=400&fit=crop&q=75',
+				'',
 			imageAlt: 'Shwe Myanmar Butter',
 		},
 	],
@@ -33,7 +33,7 @@ const TEMPLATE = [
 			count: '2 Sizes',
 			href: '/pages/shop.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=400&fit=crop&q=75',
+				'',
 			imageAlt: 'Shwe Myanmar Ghee',
 		},
 	],
@@ -44,7 +44,7 @@ const TEMPLATE = [
 			count: '1 Item',
 			href: '/pages/shop.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=400&fit=crop&q=75',
+				'',
 			imageAlt: '10 Viss bulk butter pack',
 		},
 	],
@@ -55,7 +55,7 @@ const TEMPLATE = [
 			count: '2 Items',
 			href: '/pages/shop.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=400&fit=crop&q=75',
+				'',
 			imageAlt: 'Retail butter packs',
 		},
 	],
@@ -66,7 +66,7 @@ const TEMPLATE = [
 			count: '4 Items',
 			href: '/pages/shop.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=400&fit=crop&q=75',
+				'',
 			imageAlt: 'Cooking essentials',
 		},
 	],
@@ -77,7 +77,7 @@ const TEMPLATE = [
 			count: '3 Items',
 			href: '/pages/shop.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=400&fit=crop&q=75',
+				'',
 			imageAlt: 'Dairy products',
 		},
 	],
@@ -88,7 +88,7 @@ const TEMPLATE = [
 			count: '2 Items',
 			href: '/pages/shop.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=400&fit=crop&q=75',
+				'',
 			imageAlt: 'Gift set packaging',
 		},
 	],
@@ -99,7 +99,7 @@ const TEMPLATE = [
 			count: 'Contact Us',
 			href: '/pages/wholesale.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=400&fit=crop&q=75',
+				'',
 			imageAlt: 'Wholesale orders',
 		},
 	],

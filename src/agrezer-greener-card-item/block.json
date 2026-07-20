@@ -41,7 +41,7 @@
 	},
 	"example": {
 		"attributes": {
-			"image": "https://images.unsplash.com/photo-1500937386664-56d1dfef385a?auto=format&fit=crop&w=900&q=80",
+			"image": "",
 			"alt": "Organic farm at sunrise",
 			"title": "Organic Farm Solutions",
 			"linkText": "Read More",

@@ -71,7 +71,7 @@
 					"title": "Butter",
 					"count": "3 Sizes",
 					"href": "/pages/shop.html",
-					"imageUrl": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=400&fit=crop&q=75",
+					"imageUrl": "",
 					"imageAlt": "Shwe Myanmar Butter"
 				}
 			},
@@ -81,7 +81,7 @@
 					"title": "Ghee",
 					"count": "2 Sizes",
 					"href": "/pages/shop.html",
-					"imageUrl": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=400&fit=crop&q=75",
+					"imageUrl": "",
 					"imageAlt": "Shwe Myanmar Ghee"
 				}
 			},
@@ -91,7 +91,7 @@
 					"title": "Bulk (10 Viss)",
 					"count": "1 Item",
 					"href": "/pages/shop.html",
-					"imageUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=400&fit=crop&q=75",
+					"imageUrl": "",
 					"imageAlt": "10 Viss bulk butter pack"
 				}
 			}

@@ -16,7 +16,7 @@ const TEMPLATE = [
 				'Our flagship 10 Viss (≈ 16.33 kg) butter pack is now available for wholesale and commercial customers across Myanmar.',
 			href: '/pages/blog-single.html?id=post_1',
 			imageUrl:
-				'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop&q=80',
+				'',
 			imageAlt: '10 Viss Shwe Myanmar butter pack',
 		},
 	],
@@ -32,7 +32,7 @@ const TEMPLATE = [
 				'Learn about our quality control process that ensures every pack of Shwe Myanmar butter delivers natural scent and natural taste.',
 			href: '/pages/blog-single.html?id=post_2',
 			imageUrl:
-				'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop&q=80',
+				'',
 			imageAlt: 'Quality control at Shwe Myanmar',
 		},
 	],
@@ -48,7 +48,7 @@ const TEMPLATE = [
 				'Shwe Myanmar Foodstuff Industry continues to invest in our Mandalay facility to meet growing demand for premium butter and ghee.',
 			href: '/pages/blog-single.html?id=post_3',
 			imageUrl:
-				'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop&q=80',
+				'',
 			imageAlt: 'Mandalay production facility',
 		},
 	],

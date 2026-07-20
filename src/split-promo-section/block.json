@@ -49,7 +49,7 @@
 		},
 		"imageUrl": {
 			"type": "string",
-			"default": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=560&h=480&fit=crop&q=80"
+			"default": ""
 		},
 		"imageId": {
 			"type": "number"
@@ -82,7 +82,7 @@
 			"primaryCtaLabel": "Call 095-2-55122",
 			"secondaryCtaHref": "tel:09592001227",
 			"secondaryCtaLabel": "Call 095-9-200 1227",
-			"imageUrl": "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=560&h=480&fit=crop&q=80",
+			"imageUrl": "",
 			"imageAlt": "Shwe Myanmar butter products",
 			"backgroundColor": "#f7fcff",
 			"padding": 80

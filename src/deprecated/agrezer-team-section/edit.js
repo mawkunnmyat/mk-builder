@@ -1,334 +1,335 @@
 import { __ } from '@wordpress/i18n';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
-	InnerBlocks,
-	InspectorControls,
-	RichText,
-	MediaPlaceholder,
-	MediaUpload,
-	PanelColorSettings,
-	useBlockProps,
-} from '@wordpress/block-editor';
-import {
-	PanelBody,
-	RangeControl,
-	TextControl,
-	Button,
-} from '@wordpress/components';
+  InnerBlocks,
+  InspectorControls,
+  RichText,
+  MediaPlaceholder,
+  MediaUpload,
+  PanelColorSettings } from
 
-const ALLOWED_BLOCKS = [ 'mk/agrezer-team-card' ];
+'@wordpress/block-editor';
+import {
+  PanelBody,
+  RangeControl,
+  TextControl,
+  Button } from
+'@wordpress/components';
+
+const ALLOWED_BLOCKS = ['mk/agrezer-team-card'];
 const TEMPLATE = [
-	[
-		'mk/agrezer-team-card',
-		{
-			name: 'Harry Black',
-			role: 'Chief Executive Officer',
-		},
-	],
+[
+'mk/agrezer-team-card',
+{
+  name: 'Harry Black',
+  role: 'Chief Executive Officer'
+}],
 
-	[
-		'mk/agrezer-team-card',
-		{
-			name: 'Marry Olson',
-			role: 'Shop Keeper',
-		},
-	],
 
-	[
-		'mk/agrezer-team-card',
-		{
-			name: 'Arun Patel',
-			role: 'Chief Agronomist',
-		},
-	],
-];
+[
+'mk/agrezer-team-card',
+{
+  name: 'Marry Olson',
+  role: 'Shop Keeper'
+}],
 
-export default function Edit( { attributes, setAttributes, isSelected } ) {
-	const {
-		backgroundColor,
-		paddingTop,
-		paddingBottom,
-		containerMaxWidth,
-		containerWidthPct,
-		gridGap,
-		columns,
-		headerMarginBottom,
-		tagIcon,
-		tagIconId,
-		tagIconAlt,
-		tagline,
-		title,
-	} = attributes;
 
-	const blockProps = useBlockProps( {
-		className: 'agrezer-team-section mk-agrezer-team-section-editor',
-		style: {
-			backgroundColor,
-			paddingTop: `${ paddingTop }px`,
-			paddingBottom: `${ paddingBottom }px`,
-			'--agrezer-team-max': `${ containerMaxWidth }px`,
-			'--agrezer-team-width-pct': `${ containerWidthPct }%`,
-			'--agrezer-team-gap': `${ gridGap }px`,
-			'--agrezer-team-cols': String(
-				Math.min( 4, Math.max( 1, columns || 3 ) )
-			),
-			'--agrezer-team-header-mb': `${ headerMarginBottom }px`,
-		},
-	} );
+[
+'mk/agrezer-team-card',
+{
+  name: 'Arun Patel',
+  role: 'Chief Agronomist'
+}]];
 
-	return (
-		<>
-			{ isSelected && (
-				<InspectorControls>
+
+
+export default function Edit({ attributes, setAttributes, isSelected }) {
+  const {
+    backgroundColor,
+    paddingTop,
+    paddingBottom,
+    containerMaxWidth,
+    containerWidthPct,
+    gridGap,
+    columns,
+    headerMarginBottom,
+    tagIcon,
+    tagIconId,
+    tagIconAlt,
+    tagline,
+    title
+  } = attributes;
+
+  const blockProps = useStableBlockProps(() => ({
+    className: 'agrezer-team-section mk-agrezer-team-section-editor',
+    style: {
+      backgroundColor,
+      paddingTop: `${paddingTop}px`,
+      paddingBottom: `${paddingBottom}px`,
+      '--agrezer-team-max': `${containerMaxWidth}px`,
+      '--agrezer-team-width-pct': `${containerWidthPct}%`,
+      '--agrezer-team-gap': `${gridGap}px`,
+      '--agrezer-team-cols': String(
+        Math.min(4, Math.max(1, columns || 3))
+      ),
+      '--agrezer-team-header-mb': `${headerMarginBottom}px`
+    }
+  }), [backgroundColor, columns, containerMaxWidth, containerWidthPct, gridGap, headerMarginBottom, paddingBottom, paddingTop]);
+
+  return (
+    <>
+			{isSelected &&
+      <InspectorControls>
 					<PanelBody
-						title={ __( 'Tagline icon', 'mk-builder' ) }
-						initialOpen={ true }
-					>
-						<TextControl
-							label={ __( 'Icon alt text', 'mk-builder' ) }
-							value={ tagIconAlt }
-							onChange={ ( val ) =>
-								setAttributes( { tagIconAlt: val } )
-							}
-						/>
+          title={__('Tagline icon', 'mk-builder')}
+          initialOpen={true}>
 
-						{ ! tagIcon ? (
-							<MediaPlaceholder
-								icon="format-image"
-								onSelect={ ( media ) =>
-									setAttributes( {
-										tagIcon: media.url,
-										tagIconId: media.id,
-										tagIconAlt: media.alt || tagIconAlt,
-									} )
-								}
-								allowedTypes={ [ 'image' ] }
-								labels={ {
-									title: __(
-										'Small tagline icon',
-										'mk-builder'
-									),
-								} }
-							/>
-						) : (
-							<>
+						<TextControl
+            label={__('Icon alt text', 'mk-builder')}
+            value={tagIconAlt}
+            onChange={(val) =>
+            setAttributes({ tagIconAlt: val })
+            } />
+
+
+						{!tagIcon ?
+          <MediaPlaceholder
+            icon="format-image"
+            onSelect={(media) =>
+            setAttributes({
+              tagIcon: media.url,
+              tagIconId: media.id,
+              tagIconAlt: media.alt || tagIconAlt
+            })
+            }
+            allowedTypes={['image']}
+            labels={{
+              title: __(
+                'Small tagline icon',
+                'mk-builder'
+              )
+            }} /> :
+
+
+          <>
 								<img
-									src={ tagIcon }
-									alt=""
-									className="agrezer-team-section__tag-icon"
-								/>
+              src={tagIcon}
+              alt=""
+              className="agrezer-team-section__tag-icon" />
+
 
 								<Button
-									isSecondary
-									isSmall
-									onClick={ () =>
-										setAttributes( {
-											tagIcon: '',
-											tagIconId: null,
-										} )
-									}
-								>
-									{ __( 'Remove icon', 'mk-builder' ) }
+              isSecondary
+              isSmall
+              onClick={() =>
+              setAttributes({
+                tagIcon: '',
+                tagIconId: null
+              })
+              }>
+
+									{__('Remove icon', 'mk-builder')}
 								</Button>
 							</>
-						) }
+          }
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Grid', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<RangeControl
-							label={ __(
-								'Columns (large screens)',
-								'mk-builder'
-							) }
-							value={ columns }
-							onChange={ ( val ) =>
-								setAttributes( { columns: val } )
-							}
-							min={ 1 }
-							max={ 4 }
-						/>
+          title={__('Grid', 'mk-builder')}
+          initialOpen={false}>
 
 						<RangeControl
-							label={ __( 'Gap (px)', 'mk-builder' ) }
-							value={ gridGap }
-							onChange={ ( val ) =>
-								setAttributes( { gridGap: val } )
-							}
-							min={ 8 }
-							max={ 40 }
-						/>
+            label={__(
+              'Columns (large screens)',
+              'mk-builder'
+            )}
+            value={columns}
+            onChange={(val) =>
+            setAttributes({ columns: val })
+            }
+            min={1}
+            max={4} />
+
 
 						<RangeControl
-							label={ __(
-								'Space below heading (px)',
-								'mk-builder'
-							) }
-							value={ headerMarginBottom }
-							onChange={ ( val ) =>
-								setAttributes( { headerMarginBottom: val } )
-							}
-							min={ 16 }
-							max={ 80 }
-						/>
+            label={__('Gap (px)', 'mk-builder')}
+            value={gridGap}
+            onChange={(val) =>
+            setAttributes({ gridGap: val })
+            }
+            min={8}
+            max={40} />
+
+
+						<RangeControl
+            label={__(
+              'Space below heading (px)',
+              'mk-builder'
+            )}
+            value={headerMarginBottom}
+            onChange={(val) =>
+            setAttributes({ headerMarginBottom: val })
+            }
+            min={16}
+            max={80} />
+
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Layout', 'mk-builder' ) }
-						initialOpen={ false }
-					>
-						<RangeControl
-							label={ __(
-								'Container max width (px)',
-								'mk-builder'
-							) }
-							value={ containerMaxWidth }
-							onChange={ ( val ) =>
-								setAttributes( { containerMaxWidth: val } )
-							}
-							min={ 600 }
-							max={ 1600 }
-							step={ 10 }
-						/>
+          title={__('Layout', 'mk-builder')}
+          initialOpen={false}>
 
 						<RangeControl
-							label={ __(
-								'Container width (%)',
-								'mk-builder'
-							) }
-							value={ containerWidthPct }
-							onChange={ ( val ) =>
-								setAttributes( { containerWidthPct: val } )
-							}
-							min={ 70 }
-							max={ 100 }
-						/>
+            label={__(
+              'Container max width (px)',
+              'mk-builder'
+            )}
+            value={containerMaxWidth}
+            onChange={(val) =>
+            setAttributes({ containerMaxWidth: val })
+            }
+            min={600}
+            max={1600}
+            step={10} />
+
 
 						<RangeControl
-							label={ __( 'Padding top (px)', 'mk-builder' ) }
-							value={ paddingTop }
-							onChange={ ( val ) =>
-								setAttributes( { paddingTop: val } )
-							}
-							min={ 40 }
-							max={ 200 }
-							step={ 2 }
-						/>
+            label={__(
+              'Container width (%)',
+              'mk-builder'
+            )}
+            value={containerWidthPct}
+            onChange={(val) =>
+            setAttributes({ containerWidthPct: val })
+            }
+            min={70}
+            max={100} />
+
 
 						<RangeControl
-							label={ __(
-								'Padding bottom (px)',
-								'mk-builder'
-							) }
-							value={ paddingBottom }
-							onChange={ ( val ) =>
-								setAttributes( { paddingBottom: val } )
-							}
-							min={ 40 }
-							max={ 200 }
-							step={ 2 }
-						/>
+            label={__('Padding top (px)', 'mk-builder')}
+            value={paddingTop}
+            onChange={(val) =>
+            setAttributes({ paddingTop: val })
+            }
+            min={40}
+            max={200}
+            step={2} />
+
+
+						<RangeControl
+            label={__(
+              'Padding bottom (px)',
+              'mk-builder'
+            )}
+            value={paddingBottom}
+            onChange={(val) =>
+            setAttributes({ paddingBottom: val })
+            }
+            min={40}
+            max={200}
+            step={2} />
+
 					</PanelBody>
 
 					<PanelColorSettings
-						title={ __( 'Colors', 'mk-builder' ) }
-						colorSettings={ [
-							{
-								value: backgroundColor,
-								onChange: ( val ) =>
-									setAttributes( { backgroundColor: val } ),
-								label: __(
-									'Section background',
-									'mk-builder'
-								),
-							},
-						] }
-					/>
-				</InspectorControls>
-			) }
+          title={__('Colors', 'mk-builder')}
+          colorSettings={[
+          {
+            value: backgroundColor,
+            onChange: (val) =>
+            setAttributes({ backgroundColor: val }),
+            label: __(
+              'Section background',
+              'mk-builder'
+            )
+          }]
+          } />
 
-			<section { ...blockProps }>
+				</InspectorControls>
+      }
+
+			<section {...blockProps}>
 				<div className="agrezer-team-section__container">
 					<div className="agrezer-team-section__header">
 						<div className="agrezer-team-section__tagline">
-							{ tagIcon && (
-								<MediaUpload
-									onSelect={ ( media ) =>
-										setAttributes( {
-											tagIcon: media.url,
-											tagIconId: media.id,
-											tagIconAlt: media.alt || tagIconAlt,
-										} )
-									}
-									allowedTypes={ [ 'image' ] }
-									value={ tagIconId }
-									render={ ( { open } ) => (
-										<img
-											src={ tagIcon }
-											alt={ tagIconAlt || '' }
-											className="agrezer-team-section__tag-icon"
-											width="20"
-											height="20"
-											onClick={ open }
-											role="button"
-											tabIndex={ 0 }
-											onKeyDown={ ( event ) => {
-												if (
-													event.key === 'Enter' ||
-													event.key === ' '
-												) {
-													event.preventDefault();
-													open();
-												}
-											} }
-										/>
-									) }
-								/>
-							) }
+							{tagIcon &&
+              <MediaUpload
+                onSelect={(media) =>
+                setAttributes({
+                  tagIcon: media.url,
+                  tagIconId: media.id,
+                  tagIconAlt: media.alt || tagIconAlt
+                })
+                }
+                allowedTypes={['image']}
+                value={tagIconId}
+                render={({ open }) =>
+                <img
+                  src={tagIcon}
+                  alt={tagIconAlt || ''}
+                  className="agrezer-team-section__tag-icon"
+                  width="20"
+                  height="20"
+                  onClick={open}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(event) => {
+                    if (
+                    event.key === 'Enter' ||
+                    event.key === ' ')
+                    {
+                      event.preventDefault();
+                      open();
+                    }
+                  }} />
+
+                } />
+
+              }
 							<RichText
-								tagName="span"
-								value={ tagline }
-								onChange={ ( val ) =>
-									setAttributes( { tagline: val } )
-								}
-								placeholder={ __( 'Tagline', 'mk-builder' ) }
-								allowedFormats={ [
-									'core/bold',
-									'core/italic',
-								] }
-							/>
+                tagName="span"
+                value={tagline}
+                onChange={(val) =>
+                setAttributes({ tagline: val })
+                }
+                placeholder={__('Tagline', 'mk-builder')}
+                allowedFormats={[
+                'core/bold',
+                'core/italic']
+                } />
+
 						</div>
 						<RichText
-							tagName="h2"
-							className="agrezer-team-section__title"
-							value={ title }
-							onChange={ ( val ) =>
-								setAttributes( { title: val } )
-							}
-							placeholder={ __(
-								'Section title',
-								'mk-builder'
-							) }
-							allowedFormats={ [
-								'core/bold',
-								'core/italic',
-								'core/underline',
-							] }
-							multiline="br"
-						/>
+              tagName="h2"
+              className="agrezer-team-section__title"
+              value={title}
+              onChange={(val) =>
+              setAttributes({ title: val })
+              }
+              placeholder={__(
+                'Section title',
+                'mk-builder'
+              )}
+              allowedFormats={[
+              'core/bold',
+              'core/italic',
+              'core/underline']
+              }
+              multiline="br" />
+
 					</div>
 
 					<div className="agrezer-team-section__grid agrezer-team-section__grid--editor">
 						<InnerBlocks
-							allowedBlocks={ ALLOWED_BLOCKS }
-							template={ TEMPLATE }
-							templateLock={ false }
-							renderAppender={ InnerBlocks.ButtonBlockAppender }
-						/>
+              allowedBlocks={ALLOWED_BLOCKS}
+              template={TEMPLATE}
+              templateLock={false}
+              renderAppender={InnerBlocks.ButtonBlockAppender} />
+
 					</div>
 				</div>
 			</section>
-		</>
-	);
+		</>);
+
 }

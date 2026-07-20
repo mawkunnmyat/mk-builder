@@ -98,7 +98,7 @@
 			"containerMaxWidth": 1240,
 			"containerGutter": 24,
 			"mainColumnGap": 64,
-			"mainImage": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80",
+			"mainImage": "",
 			"mainImageAlt": "Farmer in a wide green field",
 			"taglineIcon": "🌿",
 			"taglineText": "Agro Excellence",
@@ -152,7 +152,7 @@
 							"title": "Organic Farm Solutions",
 							"linkText": "Read More",
 							"linkUrl": "#",
-							"image": "https://images.unsplash.com/photo-1500937386664-56d1dfef385a?auto=format&fit=crop&w=900&q=80",
+							"image": "",
 							"alt": "Rolling farm landscape"
 						}
 					},
@@ -162,7 +162,7 @@
 							"title": "Eco-Friendly Farming",
 							"linkText": "Read More",
 							"linkUrl": "#",
-							"image": "https://images.unsplash.com/photo-1625246333195-f8989295e467?auto=format&fit=crop&w=900&q=80",
+							"image": "",
 							"alt": "Young crops in rows"
 						}
 					},
@@ -172,7 +172,7 @@
 							"title": "Organic Produce Supply",
 							"linkText": "Read More",
 							"linkUrl": "#",
-							"image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80",
+							"image": "",
 							"alt": "Fresh vegetables at market"
 						}
 					}

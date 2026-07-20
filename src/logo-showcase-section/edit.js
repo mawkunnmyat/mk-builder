@@ -14,7 +14,7 @@ const TEMPLATE = [
 		{
 			name: 'Mandalay Region',
 			imageUrl:
-				'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=200&h=120&fit=crop&q=75',
+				'',
 			imageAlt: 'Mandalay Region — Shwe Myanmar',
 		},
 	],
@@ -23,7 +23,7 @@ const TEMPLATE = [
 		{
 			name: 'Yangon Region',
 			imageUrl:
-				'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=120&fit=crop&q=75',
+				'',
 			imageAlt: 'Yangon Region — Shwe Myanmar',
 		},
 	],
@@ -32,7 +32,7 @@ const TEMPLATE = [
 		{
 			name: 'Sagaing Region',
 			imageUrl:
-				'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=200&h=120&fit=crop&q=75',
+				'',
 			imageAlt: 'Sagaing Region — Shwe Myanmar',
 		},
 	],
@@ -41,7 +41,7 @@ const TEMPLATE = [
 		{
 			name: 'Shan State',
 			imageUrl:
-				'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=120&fit=crop&q=75',
+				'',
 			imageAlt: 'Shan State — Shwe Myanmar',
 		},
 	],
@@ -50,7 +50,7 @@ const TEMPLATE = [
 		{
 			name: 'Magway Region',
 			imageUrl:
-				'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=200&h=120&fit=crop&q=75',
+				'',
 			imageAlt: 'Magway Region — Shwe Myanmar',
 		},
 	],

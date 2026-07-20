@@ -20,7 +20,7 @@ const SLIDE_TEMPLATE = [
 			ctaHref: '#categories',
 			imageAlt: 'Premium golden butter and ghee',
 			imageUrl:
-				'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=1400&h=800&fit=crop&q=80',
+				'',
 			backgroundPosition: 'right center',
 			headingLevel: 'h1',
 		},
@@ -36,7 +36,7 @@ const SLIDE_TEMPLATE = [
 			ctaHref: '/shop',
 			imageAlt: 'Fresh dairy butter on wooden board',
 			imageUrl:
-				'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=1400&h=800&fit=crop&q=80',
+				'',
 			backgroundPosition: 'center right',
 		},
 	],
@@ -51,7 +51,7 @@ const SLIDE_TEMPLATE = [
 			ctaHref: '#services',
 			imageAlt: 'Golden ghee in traditional kitchen setting',
 			imageUrl:
-				'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=1400&h=800&fit=crop&q=80',
+				'',
 			backgroundPosition: 'center right',
 		},
 	],

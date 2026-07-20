@@ -1,220 +1,221 @@
 import { __ } from '@wordpress/i18n';
+import { useStableBlockProps } from '@mk-builder/editor-utils';
 import {
-	useBlockProps,
-	RichText,
-	InspectorControls,
-	PanelColorSettings,
-} from '@wordpress/block-editor';
+
+  RichText,
+  InspectorControls,
+  PanelColorSettings } from
+'@wordpress/block-editor';
 import {
-	PanelBody,
-	RangeControl,
-	SelectControl,
-	__experimentalDivider as Divider,
-} from '@wordpress/components';
+  PanelBody,
+  RangeControl,
+  SelectControl,
+  __experimentalDivider as Divider } from
+'@wordpress/components';
 
 const DEFAULT_TYPOGRAPHY = {
-	numberColor: '#f48b2a',
-	numberFontSize: 2.5,
-	numberFontWeight: 900,
-	labelColor: '#212121',
-	labelFontSize: 0.95,
-	labelFontWeight: 700,
-	labelTextTransform: 'uppercase',
+  numberColor: '#f48b2a',
+  numberFontSize: 2.5,
+  numberFontWeight: 900,
+  labelColor: '#212121',
+  labelFontSize: 0.95,
+  labelFontWeight: 700,
+  labelTextTransform: 'uppercase'
 };
 
-export default function Edit( { attributes, setAttributes, isSelected } ) {
-	const {
-		statNumber,
-		statLabel,
-		numberColor,
-		numberFontSize,
-		numberFontWeight,
-		labelColor,
-		labelFontSize,
-		labelFontWeight,
-		labelTextTransform,
-		// Fallback for alternate stat-item schema (icon-based variants)
-		iconVariant,
-		title: iconTitle,
-		description: iconDescription,
-	} = attributes;
+export default function Edit({ attributes, setAttributes, isSelected }) {
+  const {
+    statNumber,
+    statLabel,
+    numberColor,
+    numberFontSize,
+    numberFontWeight,
+    labelColor,
+    labelFontSize,
+    labelFontWeight,
+    labelTextTransform,
+    // Fallback for alternate stat-item schema (icon-based variants)
+    iconVariant,
+    title: iconTitle,
+    description: iconDescription
+  } = attributes;
 
-	// If this instance is coming from an example/template that uses the icon-based schema,
-	// derive CSR fields so hover previews don't render empty.
-	const derivedStatNumber =
-		statNumber ?? ( typeof iconTitle === 'string' ? iconTitle.split('%')[0] + '%' : undefined );
-	const derivedStatLabel =
-		statLabel ?? iconTitle ?? iconDescription ?? '';
-	const derivedNumberColor = numberColor ?? DEFAULT_TYPOGRAPHY.numberColor;
-	const derivedLabelColor = labelColor ?? DEFAULT_TYPOGRAPHY.labelColor;
-	const derivedNumberFontSize =
-		numberFontSize ?? DEFAULT_TYPOGRAPHY.numberFontSize;
-	const derivedNumberFontWeight =
-		numberFontWeight ?? DEFAULT_TYPOGRAPHY.numberFontWeight;
-	const derivedLabelFontSize =
-		labelFontSize ?? DEFAULT_TYPOGRAPHY.labelFontSize;
-	const derivedLabelFontWeight =
-		labelFontWeight ?? DEFAULT_TYPOGRAPHY.labelFontWeight;
-	const derivedLabelTextTransform =
-		labelTextTransform ?? DEFAULT_TYPOGRAPHY.labelTextTransform;
+  // If this instance is coming from an example/template that uses the icon-based schema,
+  // derive CSR fields so hover previews don't render empty.
+  const derivedStatNumber =
+  statNumber ?? (typeof iconTitle === 'string' ? iconTitle.split('%')[0] + '%' : undefined);
+  const derivedStatLabel =
+  statLabel ?? iconTitle ?? iconDescription ?? '';
+  const derivedNumberColor = numberColor ?? DEFAULT_TYPOGRAPHY.numberColor;
+  const derivedLabelColor = labelColor ?? DEFAULT_TYPOGRAPHY.labelColor;
+  const derivedNumberFontSize =
+  numberFontSize ?? DEFAULT_TYPOGRAPHY.numberFontSize;
+  const derivedNumberFontWeight =
+  numberFontWeight ?? DEFAULT_TYPOGRAPHY.numberFontWeight;
+  const derivedLabelFontSize =
+  labelFontSize ?? DEFAULT_TYPOGRAPHY.labelFontSize;
+  const derivedLabelFontWeight =
+  labelFontWeight ?? DEFAULT_TYPOGRAPHY.labelFontWeight;
+  const derivedLabelTextTransform =
+  labelTextTransform ?? DEFAULT_TYPOGRAPHY.labelTextTransform;
 
-	const blockProps = useBlockProps( {
-		className: 'mk-stat-item-editor stat-item',
-		style: {
-			display: 'flex',
-			flexDirection: 'column',
-			alignItems: 'center',
-			justifyContent: 'center',
-			textAlign: 'center',
-			width: '100%',
-			minHeight: '80px',
-			cursor: 'text',
-		},
-	} );
+  const blockProps = useStableBlockProps(() => ({
+    className: 'mk-stat-item-editor stat-item',
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+      width: '100%',
+      minHeight: '80px',
+      cursor: 'text'
+    }
+  }), []);
 
-	return (
-		<>
+  return (
+    <>
 			<InspectorControls>
 					<PanelBody
-						title={ __( 'Stat Number', 'mk-builder' ) }
-						initialOpen={ true }
-					>
+          title={__('Stat Number', 'mk-builder')}
+          initialOpen={true}>
+
 						<PanelColorSettings
-							title={ __( 'Number Color', 'mk-builder' ) }
-							colorSettings={ [
-								{
-									value: derivedNumberColor,
-									onChange: ( val ) =>
-										setAttributes( { numberColor: val } ),
-									label: __(
-										'Number Color',
-										'mk-builder'
-									),
-								},
-							] }
-						/>
+            title={__('Number Color', 'mk-builder')}
+            colorSettings={[
+            {
+              value: derivedNumberColor,
+              onChange: (val) =>
+              setAttributes({ numberColor: val }),
+              label: __(
+                'Number Color',
+                'mk-builder'
+              )
+            }]
+            } />
+
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'mk-builder' ) }
-							value={ derivedNumberFontSize }
-							onChange={ ( val ) =>
-								setAttributes( { numberFontSize: val } )
-							}
-							min={ 1 }
-							max={ 4 }
-							step={ 0.1 }
-						/>
+            label={__('Font Size (rem)', 'mk-builder')}
+            value={derivedNumberFontSize}
+            onChange={(val) =>
+            setAttributes({ numberFontSize: val })
+            }
+            min={1}
+            max={4}
+            step={0.1} />
+
 
 						<RangeControl
-							label={ __( 'Font Weight', 'mk-builder' ) }
-							value={ derivedNumberFontWeight }
-							onChange={ ( val ) =>
-								setAttributes( { numberFontWeight: val } )
-							}
-							min={ 100 }
-							max={ 900 }
-							step={ 100 }
-						/>
+            label={__('Font Weight', 'mk-builder')}
+            value={derivedNumberFontWeight}
+            onChange={(val) =>
+            setAttributes({ numberFontWeight: val })
+            }
+            min={100}
+            max={900}
+            step={100} />
+
 					</PanelBody>
 
 					<PanelBody
-						title={ __( 'Stat Label', 'mk-builder' ) }
-						initialOpen={ false }
-					>
+          title={__('Stat Label', 'mk-builder')}
+          initialOpen={false}>
+
 						<PanelColorSettings
-							title={ __( 'Label Color', 'mk-builder' ) }
-							colorSettings={ [
-								{
-									value: derivedLabelColor,
-									onChange: ( val ) =>
-										setAttributes( { labelColor: val } ),
-									label: __( 'Label Color', 'mk-builder' ),
-								},
-							] }
-						/>
+            title={__('Label Color', 'mk-builder')}
+            colorSettings={[
+            {
+              value: derivedLabelColor,
+              onChange: (val) =>
+              setAttributes({ labelColor: val }),
+              label: __('Label Color', 'mk-builder')
+            }]
+            } />
+
 
 						<RangeControl
-							label={ __( 'Font Size (rem)', 'mk-builder' ) }
-							value={ derivedLabelFontSize }
-							onChange={ ( val ) =>
-								setAttributes( { labelFontSize: val } )
-							}
-							min={ 0.7 }
-							max={ 1.5 }
-							step={ 0.05 }
-						/>
+            label={__('Font Size (rem)', 'mk-builder')}
+            value={derivedLabelFontSize}
+            onChange={(val) =>
+            setAttributes({ labelFontSize: val })
+            }
+            min={0.7}
+            max={1.5}
+            step={0.05} />
+
 
 						<RangeControl
-							label={ __( 'Font Weight', 'mk-builder' ) }
-							value={ derivedLabelFontWeight }
-							onChange={ ( val ) =>
-								setAttributes( { labelFontWeight: val } )
-							}
-							min={ 400 }
-							max={ 900 }
-							step={ 100 }
-						/>
+            label={__('Font Weight', 'mk-builder')}
+            value={derivedLabelFontWeight}
+            onChange={(val) =>
+            setAttributes({ labelFontWeight: val })
+            }
+            min={400}
+            max={900}
+            step={100} />
+
 
 						<SelectControl
-							label={ __( 'Text Transform', 'mk-builder' ) }
-							value={ derivedLabelTextTransform }
-							options={ [
-								{
-									label: __( 'None', 'mk-builder' ),
-									value: 'none',
-								},
-								{
-									label: __( 'Uppercase', 'mk-builder' ),
-									value: 'uppercase',
-								},
-								{
-									label: __( 'Lowercase', 'mk-builder' ),
-									value: 'lowercase',
-								},
-								{
-									label: __( 'Capitalize', 'mk-builder' ),
-									value: 'capitalize',
-								},
-							] }
-							onChange={ ( val ) =>
-								setAttributes( { labelTextTransform: val } )
-							}
-						/>
+            label={__('Text Transform', 'mk-builder')}
+            value={derivedLabelTextTransform}
+            options={[
+            {
+              label: __('None', 'mk-builder'),
+              value: 'none'
+            },
+            {
+              label: __('Uppercase', 'mk-builder'),
+              value: 'uppercase'
+            },
+            {
+              label: __('Lowercase', 'mk-builder'),
+              value: 'lowercase'
+            },
+            {
+              label: __('Capitalize', 'mk-builder'),
+              value: 'capitalize'
+            }]
+            }
+            onChange={(val) =>
+            setAttributes({ labelTextTransform: val })
+            } />
+
 					</PanelBody>
 				</InspectorControls>
 
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<RichText
-					tagName="h3"
-					value={ statNumber ?? derivedStatNumber ?? '' }
-					onChange={ ( val ) => setAttributes( { statNumber: val } ) }
-					placeholder={ __( '50+', 'mk-builder' ) }
-					style={ {
-						fontSize: `${ derivedNumberFontSize }rem`,
-						fontWeight: derivedNumberFontWeight,
-						color: derivedNumberColor,
-						margin: 0,
-						lineHeight: 1.2,
-					} }
-					withoutInteractiveFormatting
-				/>
+          tagName="h3"
+          value={statNumber ?? derivedStatNumber ?? ''}
+          onChange={(val) => setAttributes({ statNumber: val })}
+          placeholder={__('50+', 'mk-builder')}
+          style={{
+            fontSize: `${derivedNumberFontSize}rem`,
+            fontWeight: derivedNumberFontWeight,
+            color: derivedNumberColor,
+            margin: 0,
+            lineHeight: 1.2
+          }}
+          withoutInteractiveFormatting />
+
 
 				<RichText
-					tagName="p"
-					value={ statLabel ?? derivedStatLabel ?? '' }
-					onChange={ ( val ) => setAttributes( { statLabel: val } ) }
-					placeholder={ __( 'Rural Medical Camps', 'mk-builder' ) }
-					style={ {
-						fontSize: `${ derivedLabelFontSize }rem`,
-						fontWeight: derivedLabelFontWeight,
-						color: derivedLabelColor,
-						textTransform: derivedLabelTextTransform,
-						margin: '5px 0 0 0',
-						lineHeight: 1.3,
-					} }
-					withoutInteractiveFormatting
-				/>
+          tagName="p"
+          value={statLabel ?? derivedStatLabel ?? ''}
+          onChange={(val) => setAttributes({ statLabel: val })}
+          placeholder={__('Rural Medical Camps', 'mk-builder')}
+          style={{
+            fontSize: `${derivedLabelFontSize}rem`,
+            fontWeight: derivedLabelFontWeight,
+            color: derivedLabelColor,
+            textTransform: derivedLabelTextTransform,
+            margin: '5px 0 0 0',
+            lineHeight: 1.3
+          }}
+          withoutInteractiveFormatting />
+
 			</div>
-		</>
-	);
+		</>);
+
 }

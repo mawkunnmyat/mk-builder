@@ -44,7 +44,7 @@
 	"example": {
 		"attributes": {
 			"quote": "Working with Agrezer improved our seasonal planning and crop quality—clear communication every step of the way.",
-			"authorImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+			"authorImage": "",
 			"authorImageAlt": "Customer portrait",
 			"authorName": "Jesonal Jelins",
 			"authorRole": "Customer",

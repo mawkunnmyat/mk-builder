@@ -31,7 +31,7 @@
 		},
 		"pastureImageUrl": {
 			"type": "string",
-			"default": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1600&h=400&fit=crop&q=80"
+			"default": ""
 		},
 		"pastureImageId": {
 			"type": "number"
@@ -65,7 +65,7 @@
 			"brandSuffix": "Myanmar",
 			"description": "Shwe Myanmar Foodstuff Industry — premium butter and ghee from Mandalay, Myanmar.",
 			"copyright": "© 2026 Shwe Myanmar Foodstuff Industry. All rights reserved.",
-			"pastureImageUrl": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1600&h=400&fit=crop&q=80",
+			"pastureImageUrl": "",
 			"pastureImageAlt": "Shwe Myanmar premium butter products",
 			"showBackToTop": true,
 			"backgroundColor": "#f7fcff"

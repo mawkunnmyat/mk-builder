@@ -41,7 +41,7 @@
 	},
 	"example": {
 		"attributes": {
-			"image": "https://images.unsplash.com/photo-1631368647931-4f3ec6d1df92?auto=format&fit=crop&w=1000&q=80",
+			"image": "",
 			"imageAlt": "Corn harvest in the field",
 			"stat": "80%",
 			"label": "Operational Efficiency",

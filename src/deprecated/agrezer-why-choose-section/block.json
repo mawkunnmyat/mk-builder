@@ -103,7 +103,7 @@
 			"titleColor": "#161b14",
 			"titleFontSize": 2.75,
 			"titleFontWeight": 700,
-			"tractorImage": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1000&q=80",
+			"tractorImage": "",
 			"tractorAlt": "Green tractor in a field",
 			"tractorMaxWidth": 520,
 			"stageMinHeight": 620

@@ -31,7 +31,7 @@
 	},
 	"example": {
 		"attributes": {
-			"image": "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=128&q=80",
+			"image": "",
 			"imageAlt": "Feature icon",
 			"label": "World Class Services"
 		}

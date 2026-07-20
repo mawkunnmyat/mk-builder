@@ -22,7 +22,7 @@
 		},
 		"imageUrl": {
 			"type": "string",
-			"default": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop&q=80"
+			"default": ""
 		},
 		"imageId": {
 			"type": "number",
@@ -42,7 +42,7 @@
 			"title": "Butter & Ghee Production",
 			"ctaLabel": "Learn more",
 			"href": "#categories",
-			"imageUrl": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop&q=80",
+			"imageUrl": "",
 			"imageAlt": "Premium butter production"
 		}
 	},

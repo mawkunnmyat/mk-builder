@@ -53,7 +53,7 @@
 		},
 		"mapEmbedUrl": {
 			"type": "string",
-			"default": "https://www.google.com/maps?q=London%20Eye&z=12&output=embed"
+			"default": ""
 		},
 		"mapIframeTitle": {
 			"type": "string",
@@ -108,7 +108,7 @@
 			"subjectPlaceholder": "Subject *",
 			"messagePlaceholder": "Message",
 			"submitButtonText": "Send Message",
-			"mapEmbedUrl": "https://www.google.com/maps?q=London%20Eye&z=12&output=embed",
+			"mapEmbedUrl": "",
 			"mapIframeTitle": "Map location",
 			"sectionBackgroundColor": "#f6f6f6",
 			"containerBackgroundColor": "#efebe8",

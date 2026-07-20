@@ -32,7 +32,7 @@
 	"example": {
 		"attributes": {
 			"name": "Mandalay Region",
-			"imageUrl": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=200&h=120&fit=crop&q=75",
+			"imageUrl": "",
 			"imageAlt": "Mandalay Region — Shwe Myanmar"
 		}
 	},

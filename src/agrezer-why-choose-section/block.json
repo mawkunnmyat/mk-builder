@@ -230,7 +230,7 @@
 			"titleLineHeight": 1.1,
 			"bgGradientStartColor": "#f5f8ee",
 			"bgGradientEndColor": "#3a4d1e",
-			"centerMediaUrl": "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1000&q=80",
+			"centerMediaUrl": "",
 			"centerMediaType": "image",
 			"centerMediaAlt": "Green tractor in a field",
 			"videoAutoplay": true,

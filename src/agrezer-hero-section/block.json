@@ -142,7 +142,7 @@
 			"buttonIconType": "diagonal-arrow",
 			"buttonUrl": "#",
 			"buttonLinkTarget": false,
-			"backgroundImage": "https://images.unsplash.com/photo-1625246333195-f8989295e467?auto=format&fit=crop&w=1920&q=80",
+			"backgroundImage": "",
 			"overlayColor": "rgba(6, 42, 12, 0.55)",
 			"overlayGradient": "linear-gradient(135deg, rgba(143, 189, 69, 0.24) 0%, rgba(22, 46, 22, 0.1) 100%)",
 			"overlayGradientPreset": "meadow-dawn",

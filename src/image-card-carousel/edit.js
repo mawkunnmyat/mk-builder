@@ -21,7 +21,7 @@ const TEMPLATE = [
 			ctaLabel: 'Learn more',
 			href: '#categories',
 			imageUrl:
-				'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop&q=80',
+				'',
 			imageAlt: 'Premium butter production',
 		},
 	],
@@ -32,7 +32,7 @@ const TEMPLATE = [
 			ctaLabel: 'Learn more',
 			href: '/pages/quality.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop&q=80',
+				'',
 			imageAlt: 'Quality inspection of dairy products',
 		},
 	],
@@ -43,7 +43,7 @@ const TEMPLATE = [
 			ctaLabel: 'Learn more',
 			href: '/pages/where-to-buy.html',
 			imageUrl:
-				'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop&q=80',
+				'',
 			imageAlt: 'Product distribution and logistics',
 		},
 	],
@@ -54,7 +54,7 @@ const TEMPLATE = [
 			ctaLabel: 'Learn more',
 			href: '/pages/about.html#story',
 			imageUrl:
-				'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&h=400&fit=crop&q=80',
+				'',
 			imageAlt: 'Traditional butter making craft',
 		},
 	],

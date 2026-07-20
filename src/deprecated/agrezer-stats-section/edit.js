@@ -23,7 +23,7 @@ const TEMPLATE = [
 			[
 				'mk/agrezer-stats-card',
 				{
-					image: 'https://images.unsplash.com/photo-1631368647931-4f3ec6d1df92?auto=format&fit=crop&w=1000&q=80',
+					image: '',
 					alt: 'Corn cobs and leaves',
 					statValue: '80%',
 					statLabel: 'Efficiency',
@@ -47,7 +47,7 @@ const TEMPLATE = [
 			[
 				'mk/agrezer-stats-card',
 				{
-					image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=80',
+					image: '',
 					alt: 'Scattered corn grains',
 					statValue: '98%',
 					statLabel: 'Increase in Yields',
@@ -63,7 +63,7 @@ const TEMPLATE = [
 			[
 				'mk/agrezer-stats-card',
 				{
-					image: 'https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=1000&q=80',
+					image: '',
 					alt: 'Corn stalk growth',
 					statValue: '50%',
 					statLabel: 'Farm Growth',
