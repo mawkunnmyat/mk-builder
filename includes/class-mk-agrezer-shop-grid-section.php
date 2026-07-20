@@ -66,6 +66,7 @@ function mk_agrezer_shop_grid_resolve_orderby($atts)
  */
 function mk_agrezer_shop_grid_apply_product_orderby(&$args, $orderby)
 {
+    // phpcs:disable WordPress.DB.SlowDBQuery.slow_db_query_meta_key -- WooCommerce product sorting requires meta_key.
     switch ($orderby) {
         case 'price':
             $args['orderby']  = 'meta_value_num';
@@ -97,6 +98,7 @@ function mk_agrezer_shop_grid_apply_product_orderby(&$args, $orderby)
             $args['order']   = 'ASC';
             break;
     }
+    // phpcs:enable WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 }
 
 /**
@@ -350,7 +352,10 @@ function mk_render_agrezer_shop_grid_section($attributes, $content, $block)
                                             <h4>
                                                 <a href="<?php echo esc_url($permalink); ?>"><?php echo esc_html($title); ?></a>
                                             </h4>
-                                            <div class="agrezer-shop-widget__stars" aria-label="<?php echo esc_attr(sprintf(__('Rated %s out of 5', 'mk-builder'), wc_format_decimal($rating, 1))); ?>">
+                                            <div class="agrezer-shop-widget__stars" aria-label="<?php
+                                            /* translators: %s: product rating out of 5. */
+                                            echo esc_attr(sprintf(__('Rated %s out of 5', 'mk-builder'), wc_format_decimal($rating, 1)));
+                                            ?>">
                                                 <?php echo esc_html(mk_agrezer_shop_grid_star_string($rating)); ?>
                                             </div>
                                             <p class="agrezer-shop-widget__price price">
@@ -404,9 +409,9 @@ function mk_render_agrezer_shop_grid_section($attributes, $content, $block)
                                 printf(
                                     /* translators: 1: from index, 2: to index, 3: total results */
                                     esc_html__('Showing %1$d–%2$d of %3$d results', 'mk-builder'),
-                                    $from,
-                                    $to,
-                                    $found
+                                    absint($from),
+                                    absint($to),
+                                    absint($found)
                                 );
                             } else {
                                 esc_html_e('No results', 'mk-builder');
@@ -448,7 +453,10 @@ function mk_render_agrezer_shop_grid_section($attributes, $content, $block)
                                 <h3 class="agrezer-product-card__title">
                                     <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a>
                                 </h3>
-                                <div class="agrezer-product-card__stars" aria-label="<?php echo esc_attr(sprintf(__('Rated %s out of 5', 'mk-builder'), wc_format_decimal($rating, 1))); ?>">
+                                <div class="agrezer-product-card__stars" aria-label="<?php
+                                /* translators: %s: product rating out of 5. */
+                                echo esc_attr(sprintf(__('Rated %s out of 5', 'mk-builder'), wc_format_decimal($rating, 1)));
+                                ?>">
                                     <?php echo esc_html(mk_agrezer_shop_grid_star_string($rating)); ?>
                                 </div>
                                 <p class="agrezer-product-card__price price"><?php echo wp_kses_post($product->get_price_html()); ?></p>

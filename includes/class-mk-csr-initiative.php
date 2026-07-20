@@ -204,8 +204,8 @@ function mk_render_csr_initiatives_section($attributes, $content, $block)
     <section
         class="section-padding mk-csr-initiatives-section wp-block-mk-csr-initiatives-section"
         style="<?php echo esc_attr($section_style_str); ?>"
-        data-hover-effect="<?php echo $atts['hoverEffect'] ? 'true' : 'false'; ?>"
-        data-animation="<?php echo $atts['animationOnScroll'] ? 'true' : 'false'; ?>"
+        data-hover-effect="<?php echo esc_attr( $atts['hoverEffect'] ? 'true' : 'false' ); ?>"
+        data-animation="<?php echo esc_attr( $atts['animationOnScroll'] ? 'true' : 'false' ); ?>"
         data-animation-type="fadeInUp"
         data-animation-delay="100"
     >
