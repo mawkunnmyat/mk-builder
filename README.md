@@ -10,7 +10,8 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18.0%2B-339933.svg)](https://nodejs.org/)
 [![Gutenberg](https://img.shields.io/badge/Gutenberg-Block%20Editor-0073aa.svg)](https://developer.wordpress.org/block-editor/)
 [![Blocks](https://img.shields.io/badge/Blocks-270%2B-orange.svg)](#-block-catalog)
-[![Version](https://img.shields.io/badge/Version-1.1.1-green.svg)](https://github.com/mawkunnmyat/mk-builder/releases)
+[![Version](https://img.shields.io/badge/Version-1.1.2-green.svg)](https://github.com/mawkunnmyat/mk-builder/releases)
+[![WordPress.org](https://img.shields.io/badge/WordPress.org-ready-21759b.svg)](https://wordpress.org/plugins/)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)](https://github.com/mawkunnmyat/mk-builder)
 
 ---
@@ -20,6 +21,7 @@
 - [What's New](#-whats-new)
 - [Overview](#-overview)
 - [Key Features](#-key-features)
+- [Source Code & Build](#-source-code--build)
 - [Requirements](#-requirements)
 - [Quick Start](#-quick-start)
 - [Project Structure](#-project-structure)
@@ -44,6 +46,18 @@
 ---
 
 ## 🆕 What's New
+
+### ✨ July 20, 2026 — MK Builder v1.1.2
+
+| Area | Update |
+|------|--------|
+| 🛡️ **WP.org Compliance** | Documented public GPL source + build steps; WordPress.org `readme.txt` |
+| 🖼️ **Remote Media Defaults** | Removed Unsplash / placehold.co / live-site image URL defaults from blocks |
+| 🧼 **Output Escaping** | Hardened `esc_attr()` on dynamic data attributes in PHP render callbacks |
+| 📦 **Release Zip** | Staging-based `create-zip.sh` with correct `mk-builder/` slug root folder |
+| 🏷️ **Plugin Metadata** | License headers, version `1.1.2`, Google Fonts cache-busting via plugin version |
+| 🎨 **WP.org Assets** | Banner + icon assets under `wporg-assets/` for plugin directory submission |
+| 📚 **Documentation** | README + FAQ covering source accessibility and external resource policy |
 
 ### ✨ July 13, 2026 — MK Builder v1.1.1
 
@@ -115,6 +129,32 @@ Built with **ES6+**, **SCSS**, **@wordpress/scripts**, and **WordPress best prac
 | 🧩 **Dynamic PHP Blocks** | Server-side render callbacks for blog, shop, updates, and CPT-driven content |
 | 🎯 **Editor Experience** | Dedicated block category, inspector controls, editor-only styles |
 | 🗂️ **Deprecated Block Support** | Legacy blocks preserved under `src/deprecated/` for safe migration |
+| 🛡️ **Guideline-Friendly Defaults** | No remote placeholder media; images chosen via Media Library |
+| 📖 **Public Source** | Full `/src` tree + build docs for WordPress.org reviewers |
+
+---
+
+## 🧬 Source Code & Build
+
+Compiled assets under `/build` are generated from the public source in this repository.
+
+| Item | Detail |
+|------|--------|
+| 🔗 **Public repo** | [github.com/mawkunnmyat/mk-builder](https://github.com/mawkunnmyat/mk-builder) |
+| 📂 **Source tree** | `/src` (ES6, SCSS, `block.json`) |
+| 🛠️ **Build tool** | `@wordpress/scripts` (Webpack via `wp-scripts`) |
+| 🟢 **Node.js** | `>= 18.0.0` |
+| 📥 **Install** | `npm install` |
+| 📦 **Rebuild** | `npm run build` |
+| 🗜️ **Plugin ZIP** | `npm run plugin-zip` → `../mk-builder.zip` |
+
+> 📌 **WordPress.org note:** Release ZIPs ship runtime files (`build/`, PHP, assets). Human-readable source lives here in `/src` so reviewers can rebuild identical assets.
+
+**Third-party resources:**
+
+- 🎨 **Font Awesome Free** — bundled locally with the plugin
+- 🔤 **Google Fonts** — optional CDN load when block styles display (`fonts.googleapis.com` / `fonts.gstatic.com`)
+- 🗺️ **Map embeds** — only when an editor pastes a map URL (no forced remote media)
 
 ---
 
@@ -178,7 +218,7 @@ Builds minified, optimized assets into `build/`. Uses **8 GB Node heap** by defa
 npm run plugin-zip
 ```
 
-Generates `../mk-builder.zip` — ready for WordPress upload.
+Generates `../mk-builder.zip` with root folder `mk-builder/` (WordPress plugin slug) — ready for upload.
 
 ### 6️⃣ Install in WordPress
 
@@ -260,9 +300,13 @@ mk-builder/
 │   ├── class-mk-phy-facilities-section.php
 │   └── class-mk-updates-section.php
 ├── 📂 scripts/                      # Dev & migration utilities
+├── 📂 languages/                    # i18n placeholder (text domain: mk-builder)
+├── 📂 wporg-assets/                 # WordPress.org banner + icon artwork
 ├── 📄 mk-builder.php                # Main plugin bootstrap
+├── 📄 readme.txt                    # WordPress.org plugin directory readme
 ├── 📄 webpack.config.js             # Custom Webpack / Sass config
-├── 📄 create-zip.sh                 # Production ZIP creator
+├── 📄 create-zip.sh                 # Production ZIP creator (slug-staged)
+├── 📄 .distignore                   # Release packaging exclusions
 ├── 📄 package.json
 └── 📄 README.md
 ```
@@ -627,10 +671,12 @@ MK Builder follows WordPress security best practices across PHP, JavaScript, and
 | 🛡️ **Direct Access Guard** | `ABSPATH` check in all PHP entry points |
 | 🧼 **Output Escaping** | `esc_html()`, `esc_attr()`, `esc_url()` in render callbacks |
 | 🔐 **Input Sanitization** | `sanitize_*` functions for all user-facing attributes |
+| 🖼️ **No Remote Media Offload** | Block image defaults are empty — Media Library only |
 | 🍯 **Anti-Spam** | Honeypot field on `mk/subscribe-bar` block |
 | ♿ **Accessible Markup** | ARIA roles on FAQ accordion, keyboard-navigable carousels |
 | 📦 **Scoped Assets** | Conditional script enqueue — no global pollution |
 | 🚫 **No Secrets in VCS** | `.env`, SSH keys, and credentials excluded from repository |
+| 📣 **No Forced Credits** | Plugin does not inject third-party promo/credit links on the frontend |
 
 ### 🧪 Security Checklist for Contributors
 
@@ -660,12 +706,14 @@ npm run plugin-zip
 
 ### Checklist Before Release
 
-- [ ] ✅ `npm run build` completes without errors
+- [ ] ✅ `npm run build` completes without errors (rebuild after any `/src` change)
 - [ ] ✅ `npm run lint:js` and `npm run lint:css` pass
 - [ ] ✅ Blocks render correctly in editor and frontend
 - [ ] ✅ Dynamic blocks tested with live post/product data
+- [ ] ✅ No remote placeholder image URLs in `block.json` / editor defaults
 - [ ] ✅ Responsive layouts verified (mobile, tablet, desktop)
-- [ ] ✅ Plugin ZIP installs cleanly on a fresh WordPress instance
+- [ ] ✅ Plugin ZIP root is `mk-builder/` and installs cleanly on fresh WordPress
+- [ ] ✅ `readme.txt` Stable tag matches `MK_BUILDER_VERSION`
 
 ---
 
@@ -723,14 +771,14 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 
 | Type | When to Use | Example |
 |------|-------------|---------|
-| `feat` | ✨ New feature or enhancement | `feat: 13072026 - add Jivaka footer section with drag-and-drop layout controls` |
-| `fix` | 🐛 Bug fix | `fix: 13072026 - restore doctor card filter attribute binding in directory grid` |
-| `docs` | 📚 Documentation only | `docs: 13072026 - expand README with patient guide blocks and v1.1.1 release` |
-| `refactor` | ♻️ Code restructure (no behavior change) | `refactor: 13072026 - improve centre layout section editor style parity` |
-| `style` | 💅 Formatting / SCSS-only (no logic change) | `style: 13072026 - normalize visitor guidelines column spacing tokens` |
-| `chore` | 🔧 Tooling, deps, config | `chore: 13072026 - bump plugin version to 1.1.1` |
-| `perf` | ⚡ Performance improvement | `perf: 13072026 - defer non-critical frontend init scripts` |
-| `test` | 🧪 Tests | `test: 13072026 - add block registration smoke tests` |
+| `feat` | ✨ New feature or enhancement | `feat: 20072026 - add social QR section with platform presets` |
+| `fix` | 🐛 Bug fix / compliance fix | `fix: 20072026 - remove remote placeholder media defaults from block sources` |
+| `docs` | 📚 Documentation only | `docs: 20072026 - expand README and WordPress.org readme for v1.1.2 release` |
+| `refactor` | ♻️ Code restructure (no behavior change) | `refactor: 20072026 - improve centre layout section editor style parity` |
+| `style` | 💅 Formatting / SCSS-only (no logic change) | `style: 20072026 - normalize visitor guidelines column spacing tokens` |
+| `chore` | 🔧 Tooling, deps, config | `chore: 20072026 - bump to v1.1.2 and harden mk-builder release zip pipeline` |
+| `perf` | ⚡ Performance improvement | `perf: 20072026 - defer non-critical frontend init scripts` |
+| `test` | 🧪 Tests | `test: 20072026 - add block registration smoke tests` |
 
 **Rules:**
 
@@ -742,6 +790,16 @@ This project follows **[Conventional Commits](https://www.conventionalcommits.or
 ---
 
 ## 📅 Changelog
+
+### 🚀 `1.1.2` — July 20, 2026
+
+- 🛡️ **WP.org:** Public source URL + build steps documented in `readme.txt` and README
+- 🖼️ **Defaults:** Stripped Unsplash / placehold.co / live-site remote image URLs from block defaults
+- 🧼 **Security:** Escaped dynamic `data-*` attributes in PHP section render callbacks
+- 📦 **Packaging:** `create-zip.sh` stages files under `mk-builder/` slug; `.distignore` aligned
+- 🏷️ **Version:** Plugin header, constants, and package metadata bumped to `1.1.2`
+- 🎨 **Assets:** WordPress.org banner and icon files added under `wporg-assets/`
+- 📚 **Docs:** Professional README refresh with source/build, security, and release checklist updates
 
 ### 🚀 `1.1.1` — July 13, 2026
 
